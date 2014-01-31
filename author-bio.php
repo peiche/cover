@@ -8,16 +8,7 @@
 
 <div class="postprofile">
 	
-	<?php
-	/**
-	 * Filter the author bio avatar size.
-	 *
-	 * @since Twenty Thirteen 1.0
-	 *
-	 * @param int $size The avatar height and width size in pixels.
-	 */
-	echo get_avatar( get_the_author_meta( 'ID' ) );
-	?>
+	<?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
 	
 	<div class="info">
 		<h4><?php echo get_the_author(); ?></h4>
