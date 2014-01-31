@@ -10,6 +10,10 @@
 
 	</div><!-- #content -->
 
+	<?php if (is_single()) { ?>
+		<?php related_posts();?>
+	<?php } ?>
+	
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'beats_credits' ); ?>
