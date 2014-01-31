@@ -2,32 +2,23 @@
 /**
  * The template for displaying the footer.
  *
- * Contains the closing of the id=main div and all content after
+ * Contains the closing of the #content div and all content after
  *
- * @package _tk
+ * @package Beats
  */
 ?>
-			</div><!-- close .*-inner (main-content or sidebar, depending if sidebar is used) -->
-		</div><!-- close .row -->
-	</div><!-- close .container -->
-</div><!-- close .main-content -->
 
-<footer id="colophon" class="site-footer" role="contentinfo">
-	<div class="container">
-		<div class="row">
-			<div class="site-footer-inner col-sm-12">
-			
-				<div class="site-info">
-					<?php do_action( '_tk_credits' ); ?>
-					<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', '_tk' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', '_tk' ), 'WordPress' ); ?></a>
-					<span class="sep"> | </span>
-					<?php printf( __( 'Theme: %1$s by %2$s.', '_tk' ), '_tk', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-				</div><!-- close .site-info -->
-			
-			</div>	
-		</div>
-	</div><!-- close .container -->
-</footer><!-- close #colophon -->
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<?php do_action( 'beats_credits' ); ?>
+			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'beats' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'beats' ), 'Beats', '<a href="http://eichefam.net" rel="designer">Paul Eiche</a>' ); ?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
 
 <?php wp_footer(); ?>
 
