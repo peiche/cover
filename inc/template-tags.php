@@ -56,8 +56,8 @@ function beats_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'beats' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'beats' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'beats' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<i class="fa fa-chevron-left meta-nav"></i> %title', 'Previous post link', 'beats' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <i class="fa fa-chevron-right meta-nav"></i>', 'Next post link',     'beats' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
