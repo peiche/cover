@@ -24,11 +24,11 @@ function beats_paging_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<i class="fa fa-chevron-left"></i> Older posts', 'beats' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<i class="fa fa-chevron-left meta-nav"></i><span>Older posts</span>', 'beats' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <i class="fa fa-chevron-right"></i>', 'beats' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( '<span>Newer posts</span><i class="fa fa-chevron-right meta-nav"></i>', 'beats' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -56,8 +56,8 @@ function beats_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'beats' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<i class="fa fa-chevron-left meta-nav"></i> %title', 'Previous post link', 'beats' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <i class="fa fa-chevron-right meta-nav"></i>', 'Next post link',     'beats' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<i class="fa fa-chevron-left meta-nav"></i><span>%title</span>', 'Previous post link', 'beats' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '<span>%title</span><i class="fa fa-chevron-right meta-nav"></i>', 'Next post link',     'beats' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
