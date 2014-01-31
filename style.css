@@ -14,7 +14,7 @@ Tags:
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
- Beats is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+Beats is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -617,4 +617,119 @@ object {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+
+/** NEW STYLES **/
+
+body, html {
+	font: 400 16px "Open Sans", sans-serif;
+	color: #3b3b3b;
+}
+
+h1, h2, h3, h4 {
+	margin: 30px 0;
+	font: 700 34px Domine,Serif;
+	line-height: 56px;
+	color: #262b30;
+}
+
+p {
+	margin: 30px 0;
+	line-height: 38px;
+	color: #333332;
+	word-wrap: break-word;
+}
+
+blockquote, cite, q {
+	margin: 30px 0 30px 4%;
+	border-left: 3px solid #c6d5e1;
+	padding: 5px 4%;
+	font: italic 700 18px Domine,Serif;
+	line-height: 38px;
+}
+
+blockquote p,
+cite p,
+q p {
+	margin:0;
+	padding:0
+}
+
+a:link,
+a:visited {
+	font-weight: 600;
+	color: #026ed2;
+	text-decoration: none;
+	border-bottom: 3px solid transparent;
+	-webkit-transition: border .2s,color .2s ease-out;
+	-moz-transition: border .2s,color .2s ease-out;
+	-o-transition: border .2s,color .2s ease-out;
+	transition: border .2s,color .2s ease-out;
+}
+a:hover {
+	color: #0079ec;
+}
+
+h1 a:hover,
+p a:hover {
+	border-bottom: 3px solid #f1ece9;
+	text-decoration: none;
+}
+
+#masthead {
+	display: none; /* for now */
+}
+
+#content {
+	width: 90%;
+	max-width: 760px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+
+.post {
+	padding: 50px 0;
+	border-bottom: 1px solid #d7d7d7;
+	clear: both;
+	margin: 0;
+}
+
+.post header h1 {
+	margin: 20px 0;
+}
+
+.post header h1 a {
+	position: relative;
+	padding: 10px 0;
+	color: #262b30;
+}
+.post header h1 a:hover {
+	color: #0079ec;
+}
+
+.post header h2 {
+	font: 600 20px 'Open Sans',Serif;
+	color: #D5D5D5;
+	margin: 0;
+}
+
+.post header h2 a {
+	color: #D5D5D5;
+}
+.post header h2 a:hover {
+	border-bottom: 2px solid #D5D5D5;
+}
+
+.post header span {
+	color: #b6b6b6;
+}
+
+.post .entry-summary p {
+	margin: 30px 0 0;
+}
+.post .entry-summary blockquote p,
+.post .entry-summary cite p,
+.post .entry-summary q p {
+	margin:0;
+	padding:0
 }

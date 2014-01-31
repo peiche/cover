@@ -6,6 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<h2><?php the_category(', ', 'multiple') ?></h2>
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
@@ -15,22 +16,21 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary">
-		<?php the_excerpt(); ?>
+		<?php if ( is_search() ) { // Only display Excerpts for Search ?>
+			<?php the_excerpt(); ?>
+		<?php } else { ?>
+			<?php the_content( __( 'Continue reading <i class="fa fa-chevron-right"></i>', 'beats' ) ); ?>
+			<?php
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'beats' ),
+					'after'  => '</div>',
+				) );
+			?>
+		<?php } ?>
 	</div><!-- .entry-summary -->
-	<?php else : ?>
-	<div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'beats' ) ); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'beats' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-	<?php endif; ?>
-
+	
+	<!--
 	<footer class="entry-meta">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
@@ -59,5 +59,8 @@
 		<?php endif; ?>
 
 		<?php edit_post_link( __( 'Edit', 'beats' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta -->
+	</footer>
+	-->
+	<!-- .entry-meta -->
+	
 </article><!-- #post-## -->
