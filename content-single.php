@@ -5,6 +5,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if ('' == get_the_post_thumbnail()) { ?>
 	<header class="entry-header">
 		<h2><?php the_category(', ', 'multiple') ?></h2>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -13,6 +14,7 @@
 			<?php beats_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
+	<?php } ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>

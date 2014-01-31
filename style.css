@@ -622,8 +622,12 @@ object {
 /** NEW STYLES **/
 
 body, html {
-	font: 400 16px "Open Sans", sans-serif;
+	height: 100%;
+	background: #fff;
+	font: 400 16px "Open Sans",serif;
 	color: #3b3b3b;
+	padding: 0;
+	margin: 0;
 }
 
 h1, h2, h3, h4 {
@@ -668,6 +672,7 @@ a:visited {
 }
 a:hover {
 	color: #0079ec;
+	/* border-bottom: 2px solid #0079ec; */
 }
 
 h1 a:hover,
@@ -678,6 +683,83 @@ p a:hover {
 
 #masthead {
 	display: none; /* for now */
+}
+
+.cover {
+	display: none;
+	position: relative;
+	background-color: #2b2b2b;
+	background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#2b2b2b),color-stop(100%,#000));
+	background-image: -webkit-linear-gradient(#2b2b2b,#000);
+	background-image: -moz-linear-gradient(#2b2b2b,#000);
+	background-image: -o-linear-gradient(#2b2b2b,#000);
+	background-image: linear-gradient(#2b2b2b,#000);
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+.cover.featured-image {
+	display: block;
+}
+
+.cover .background {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: .6;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.cover header {
+	position: relative;
+	width: 90%;
+	top: 35%;
+	max-width: 760px;
+	margin: 0 auto;
+	left: auto;
+}
+
+.cover header h1 a {
+	color: #fff;
+	font: 700 1.7em Domine,Serif;
+	line-height: 86px;
+	text-shadow: 0 0 30px rgba(0,0,0,.8);
+	-webkit-transform3d: translate(0,0,0);
+	-moz-transform3d: translate(0,0,0);
+	transform3d: translate(0,0,0);
+}
+.cover header h1 a:hover {
+	border-bottom: 3px solid rgba(255,255,255,0.2);
+}
+
+.cover header h2 {
+	font: 600 22px 'Open Sans',Serif;
+	color: #e4e4e4;
+	opacity: 0.6;
+}
+
+.cover header h2 a {
+	color: #e4e4e4;
+}
+.cover header h2 a:hover {
+	border-bottom: 2px solid #e4e4e4;
+}
+
+.cover header span {
+	color: #dedede;
+	opacity: 0.9;
+}
+
+.cover header span a,
+.cover header span time {
+	font-weight: 600;
+	color: #fff;
+}
+.cover header span a:hover {
+	border-bottom: 2px solid #fff;
 }
 
 #content {
@@ -692,6 +774,9 @@ p a:hover {
 	border-bottom: 1px solid #d7d7d7;
 	clear: both;
 	margin: 0;
+}
+.single .post {
+	padding-top: 0;
 }
 
 .post header h1 {
@@ -732,4 +817,10 @@ p a:hover {
 .post .entry-summary q p {
 	margin:0;
 	padding:0
+}
+
+.post .entry-content > p:first-child {
+	margin: 40px 0 30px;
+	font-weight: 600;
+	color: #1d1d1d;
 }
