@@ -27,18 +27,15 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', 'beats' ) );
-
-			$meta_text = __( '<i class="fa fa-tag"></i> %2$s', 'beats' );
-
-			printf(
-				$meta_text,
-				$tag_list
-			);
-		?>
-
-		<?php edit_post_link( __( 'Edit', 'beats' ), '<span class="edit-link">', '</span>' ); ?>
+		
+		<?php get_template_part( 'author-bio' ); ?>
+		
+		<div class="clearfix">
+			<?php $tag_list = get_the_tag_list( '', __( ', ', 'beats' ) ); ?>
+			<?php if ( '' != $tag_list ) { ?>
+				<i class="fa fa-tag"></i> <?php echo $tag_list; ?>
+			<?php } ?>
+			<?php edit_post_link( __( 'Edit', 'beats' ), '<span class="edit-link">', '</span>' ); ?>
+		</div>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
