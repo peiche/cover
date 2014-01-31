@@ -6,7 +6,18 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h2><?php the_category(', ', 'multiple') ?></h2>
+		<h2>
+			<?php the_category(', ', 'multiple') ?>
+			
+			<span class="post-format pull-right">
+				<?php $format = get_post_format( $post_id ); ?>
+				<?php if ('video' == $format){ ?>
+					<i class="fa fa-youtube-play fa-sm"></i>
+				<?php } else if ('quote' == $format){ ?>
+					<i class="fa fa-quote-right fa-sm"></i>
+				<?php } ?>
+			</span>
+		</h2>
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
