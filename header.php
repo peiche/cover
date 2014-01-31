@@ -24,6 +24,23 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<?php if (is_single() && '' != get_the_post_thumbnail()) { ?>
+	<div id="cover" class="cover featured-image">
+		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+		<div class="background" style="background-image: url('<?php echo $image[0]; ?>');"></div>
+		<header>
+			<h2><?php the_category(', ', 'multiple') ?></h2>
+			<h1><a href="#"><?php the_title(); ?></a></h1>
+			<span>
+				<?php beats_posted_on(); ?>
+			</span>
+		</header>
+	</div>
+<?php } ?>
+
+
+
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
@@ -39,5 +56,5 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
+	
 	<div id="content" class="site-content">
