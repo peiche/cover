@@ -76,7 +76,7 @@ get_header(); ?>
 					endif;
 				?>
 			</header><!-- .page-header -->
-
+			
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
