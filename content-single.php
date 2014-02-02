@@ -7,7 +7,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ('' == get_the_post_thumbnail()) { ?>
 	<header class="entry-header">
-		<h2><?php the_category(', ', 'multiple') ?></h2>
+		<h2><?php the_category(', ') ?></h2>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
