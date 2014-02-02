@@ -7,7 +7,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<h2>
-			<?php the_category(', ', 'multiple') ?>
+			<?php the_category(', ') ?>
 			
 			<span class="post-format pull-right">
 				<?php $format = get_post_format( $post_id ); ?>
