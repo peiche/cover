@@ -10,7 +10,6 @@
  * Add theme support for Infinite Scroll.
  * See: http://jetpack.me/support/infinite-scroll/
  */
-/*
 function beats_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
@@ -18,4 +17,3 @@ function beats_jetpack_setup() {
 	) );
 }
 add_action( 'after_setup_theme', 'beats_jetpack_setup' );
-*/
