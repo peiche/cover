@@ -1,23 +1,19 @@
 /*
-Theme Name: _s
-Theme URI: http://underscores.me/
-Author: Automattic
-Author URI: http://automattic.com/
-Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
-Version: 1.0-wpcom
-License: GNU General Public License v2 or later
+Theme Name: Beats
+Theme URI: http://eichefam.net/projects/beats/
+Author: Paul Eiche
+Author URI: http://eichefam.net/
+Description: A simple content-focused responsive theme inspired by Medium. No sidebars, no widgets, just content.
+Version: 1.0
+License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: _s
+Tags: light, white, one-column, fluid-layout, responsive-layout, custom-background, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, translation-ready
 Domain Path: /languages/
-Tags:
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+Beats is built on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
- _s is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
-
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
+Other credits include:
+Google Fonts http://www.google.com/fonts
+Font Awesome http://fontawesome.io/
+LESS CSS http://www.lesscss.org/
 */
