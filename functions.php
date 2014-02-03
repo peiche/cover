@@ -81,7 +81,10 @@ add_action( 'widgets_init', 'beats_widgets_init' );
  * Enqueue scripts and styles.
  */
 function beats_scripts() {
-	wp_enqueue_style( 'beats-style', get_stylesheet_uri() );
+	
+	wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Rock+Salt|Neucha');
+	wp_enqueue_style( 'fa-style', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'beats-style', get_template_directory_uri() . '/css/style.css' );
 
 	wp_enqueue_script( 'beats-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
