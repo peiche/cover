@@ -1,0 +1,117 @@
+#content {
+	width: 90%;
+	max-width: 760px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+@media screen and (max-width: 906px) {
+	#content {
+		padding-top: 110px;
+	}
+	#cover + #page #content {
+		padding-top: 50px;
+	}
+}
+
+.hentry {
+	padding: 50px 0;
+	border-bottom: 1px solid #d7d7d7;
+	clear: both;
+	margin: 0;
+}
+.single #cover + #page .hentry,
+.page #cover + #page .hentry {
+	padding-top: 0;
+}
+
+.entry-header h1 {
+	margin: 20px 0;
+}
+
+.entry-header h1 a {
+	position: relative;
+	padding: 10px 0;
+	color: #262b30;
+}
+.entry-header h1 a:hover {
+	color: #0079ec;
+}
+
+.entry-header h2 {
+	font: 600 20px 'Open Sans',Serif;
+	color: #D5D5D5;
+	margin: 0;
+}
+
+.entry-header h2 a {
+	color: #D5D5D5;
+}
+.entry-header h2 a:hover {
+	border-bottom: 2px solid #D5D5D5;
+}
+
+.entry-header span {
+	color: #b6b6b6;
+}
+.entry-header span.post-format {
+	color: #78a300;
+	padding: 0 15px;
+}
+
+.hentry .entry-summary p {
+	margin: 30px 0 0;
+}
+.hentry .entry-summary blockquote p,
+.hentry .entry-summary cite p,
+.hentry .entry-summary q p {
+	margin:0;
+	padding:0
+}
+
+.hentry .entry-content > p:first-child {
+	margin: 40px 0 30px;
+	font-weight: 600;
+	color: #1d1d1d;
+}
+
+.wp-caption.aligncenter {
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+	position: relative;
+}
+
+.wp-caption.aligncenter .wp-caption-text {
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: -175px;
+	width: 150px;
+	padding: 10px 0 10px;
+	border-top: 1px solid #dcd8d5;
+	border-bottom: 1px solid #dcd8d5;
+	margin: 0;
+	text-align: right;
+	font: 400 12px 'Open Sans',Serif;
+	line-height: 24px;
+}
+@media screen and (max-width: 1140px) {
+	.wp-caption.aligncenter .wp-caption-text {
+		position: static;
+		width: 100%;
+		border-top: 0;
+		padding: 10px 0;
+	}
+}
+
+.entry-meta {
+	margin-top: 10px;
+}
+
+.entry-meta .tags-links {
+	margin-bottom: 5px;
+}
+
+.entry-meta .edit-link {
+	float: right;
+}

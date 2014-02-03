@@ -1,0 +1,146 @@
+/** main nav **/
+
+.main-navigation {
+	position: absolute;
+	width: auto;
+	z-index: 400;
+	top: 20px;
+	right: 20px;
+	font: 600 14px 'Open Sans',Serif;
+	clear: both;
+	-webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+}
+@media screen and (max-width: 906px) {
+	.main-navigation {
+		display: none;
+	}
+}
+
+.main-navigation a {
+	color: #383838;
+}
+.main-navigation.featured-image a {
+	color: #fff;
+	opacity: .7;
+}
+.main-navigation a:hover {
+	opacity: 1;
+}
+.main-navigation a.bars {
+	float: right;
+	padding: 6px 12px;
+	opacity: .4;
+}
+.main-navigation a.bars:hover {
+	color: #0079ec;
+	opacity: 1;
+}
+.main-navigation.featured-image a.bars:hover {
+	color: #fff;
+}
+
+.main-navigation > div {
+	float: left;
+	opacity: 0;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+.main-navigation:hover > div {
+	opacity: 1;
+}
+
+.main-navigation ul a {
+	color: #007cc3;
+	padding: 6px 17px;
+}
+.main-navigation ul a:hover {
+	color: #0079ec;
+}
+.main-navigation.featured-image ul a:hover {
+	color: #fff;
+}
+
+.main-navigation ul ul {
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	margin-top: 10px;
+}
+
+.main-navigation.featured-image ul ul a {
+	color: #007cc3;
+}
+.main-navigation.featured-image ul ul a:hover {
+	color: #0079ec;
+}
+
+/** paging and post nav **/
+
+.site-main [class*="navigation"] {
+	padding: 50px 0;
+	border-bottom: 1px solid #dfdfdf;
+}
+
+// jetpack infinite scrolling support
+#infinite-handle {
+	padding: 50px 0;
+	text-align: center;
+}
+
+.paging-navigation a,
+.post-navigation a,
+#infinite-handle span {
+	border: 2px solid #c3c2c9;
+	background: #fff;
+	color: #686868;
+	display: inline-block;
+	padding: 7px 22px;
+	font: 600 14px 'Open Sans',Serif;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.paging-navigation a:hover,
+.post-navigation a:hover,
+#infinite-handle span:hover {
+	border: 2px solid #0066d9;
+	background: #0066d9;
+	color: #fff;
+}
+
+// fix spacing around loading spinner
+.infinite-loader {
+	margin: 50px 0;
+}
+.infinite-loader .spinner {
+	margin: 0 auto;
+}
+
+/** font awesome nav elements **/
+
+.fa-chevron-left.meta-nav {
+	margin-right: 15px;
+}
+.fa-chevron-right.meta-nav {
+	margin-left: 15px;
+}
+
+@media screen and (max-width: 405px) {
+	.paging-navigation .fa.meta-nav,
+	.post-navigation .fa.meta-nav {
+		margin: 0;
+	}
+	
+	.paging-navigation a span,
+	.post-navigation a span {
+		display: none;
+	}
+}

@@ -1,0 +1,121 @@
+.cover {
+	display: none;
+	position: relative;
+	background-color: #2b2b2b;
+	background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#2b2b2b),color-stop(100%,#000));
+	background-image: -webkit-linear-gradient(#2b2b2b,#000);
+	background-image: -moz-linear-gradient(#2b2b2b,#000);
+	background-image: -o-linear-gradient(#2b2b2b,#000);
+	background-image: linear-gradient(#2b2b2b,#000);
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+.cover.show {
+	overflow: visible;
+}
+.cover.auto {
+	height: auto;
+	padding: 50px 0;
+}
+@media screen and (max-width: 595px) {
+	.cover,
+	.cover.auto {
+		height: auto;
+		min-height: 0;
+		padding: 40px 0;
+	}
+}
+.cover.featured-image {
+	display: block;
+}
+
+.cover .background {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: .6;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+}
+.cover .background.darken {
+	opacity: 0.1;
+}
+
+.cover header {
+	position: relative;
+	width: 90%;
+	top: 35%;
+	max-width: 760px;
+	margin: 0 auto;
+	left: auto;
+}
+@media screen and (max-width: 595px) {
+	.cover header {
+		padding: 80px 0 20px;
+	}
+}
+@media screen and (max-height: 640px) {
+	.cover header {
+		top: 25%;
+	}
+}
+
+.cover header h1 a {
+	color: #fff;
+	font: 700 1.7em Domine,Serif;
+	line-height: 86px;
+	text-shadow: 0 0 30px rgba(0,0,0,.8);
+	-webkit-transform3d: translate(0,0,0);
+	-moz-transform3d: translate(0,0,0);
+	transform3d: translate(0,0,0);
+}
+@media screen and (max-width: 595px) {
+	.cover header h1 a {
+		font: 700 1.2em Domine,Serif;
+		line-height: 22px;
+	}
+}
+.cover header h1 a:hover {
+	border-bottom: 3px solid rgba(255,255,255,0.2);
+}
+
+.cover header h2 {
+	font: 600 22px 'Open Sans',Serif;
+	color: #e4e4e4;
+	opacity: 0.6;
+}
+
+.cover header h2 a {
+	color: #e4e4e4;
+}
+.cover header h2 a:hover {
+	border-bottom: 2px solid #e4e4e4;
+}
+
+.cover header p {
+	color: #dedede;
+	opacity: 0.9;
+}
+
+.cover header span {
+	color: #dedede;
+	opacity: 0.9;
+}
+
+.cover header span a,
+.cover header span time {
+	font-weight: 600;
+	color: #fff;
+}
+.cover header span a:hover {
+	border-bottom: 2px solid #fff;
+}
+
+.cover header .avatar {
+	display: block;
+	margin: 0 auto;
+}
