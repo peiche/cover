@@ -11,10 +11,12 @@
 			
 			<span class="post-format pull-right">
 				<?php $format = get_post_format( $post_id ); ?>
-				<?php if ('video' == $format){ ?>
-					<i class="fa fa-youtube-play fa-sm"></i>
+				<?php if (is_sticky()) { ?>
+					<i class="fa fa-bookmark"></i>
+				<?php } else if ('video' == $format){ ?>
+					<i class="fa fa-youtube-play"></i>
 				<?php } else if ('quote' == $format){ ?>
-					<i class="fa fa-quote-right fa-sm"></i>
+					<i class="fa fa-quote-right"></i>
 				<?php } ?>
 			</span>
 		</h2>
