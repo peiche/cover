@@ -31,70 +31,7 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 </nav>
 
-<?php if ((is_single() || is_page()) && '' != get_the_post_thumbnail()) { ?>
-	<div id="cover" class="cover featured-image">
-		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-		<div class="background" style="background-image: url('<?php echo $image[0]; ?>');"></div>
-		<header>
-			
-			<?php if (is_single()) { ?>
-				<h2><?php the_category(', ') ?></h2>
-			<?php } else if (is_page() && $post->post_parent) { ?>
-				<?php
-					$parent_permalink = get_permalink($post->post_parent);
-					$parent_title = get_the_title($post->post_parent);
-				?>
-				<h2><a href="<?php echo $parent_permalink; ?>"><?php echo $parent_title; ?></a></h2>
-			<?php } ?>
-			
-			<h1><a href="#"><?php the_title(); ?></a></h1>
-			
-			<?php if (is_single()) { ?>
-				<span>
-					<?php beats_posted_on(); ?>
-				</span>
-			<?php } ?>
-		</header>
-	</div>
-<?php } ?>
-
-<?php if (is_author()) { ?>
-	<div id="cover" class="cover auto featured-image">
-		<header>
-			<?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
-			<h2 class="align-center">Posts by <?php echo get_the_author(); ?></h2>
-		</header>
-	</div>
-<?php } ?>
-
-<?php if (is_category()) { ?>
-	<div id="cover" class="cover auto featured-image">
-		<?php
-			$cat = get_category( get_query_var( 'cat' ) );
-			$cat_slug = $cat->slug;
-		?>
-		<div class="background darken" style="background-image: url('/assets/featured-image/category/<?php echo $cat_slug; ?>.jpg');"></div>
-		<header>
-			<h2><?php echo single_cat_title(); ?></h2>
-			<?php
-				// Show an optional term description.
-				$term_description = term_description();
-				if ( ! empty( $term_description ) ) :
-					printf( '<div class="taxonomy-description">%s</div>', $term_description );
-				endif;
-			?>
-		</header>
-	</div>
-<?php } ?>
-
-<?php if (is_tag()) { ?>
-	<div id="cover" class="cover auto featured-image">
-		<div class="background"></div>
-		<header>
-			<h2><i class="fa fa-tag"></i> <?php echo single_tag_title(); ?></h2>
-		</header>
-	</div>
-<?php } ?>
+<?php get_template_part( 'cover' ); ?>
 
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
