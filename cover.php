@@ -13,7 +13,5 @@
 		get_template_part( 'cover', 'author' );
 	} else if (is_category()) {
 		get_template_part( 'cover', 'category' );
-	} else if (is_tag()) {
-		get_template_part( 'cover', 'tag' );
 	}
 ?>
