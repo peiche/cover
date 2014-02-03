@@ -995,6 +995,36 @@ p a:hover {
 	color: #1d1d1d;
 }
 
+.wp-caption.aligncenter {
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+	position: relative;
+}
+
+.wp-caption.aligncenter .wp-caption-text {
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: -175px;
+	width: 150px;
+	padding: 10px 0 10px;
+	border-top: 1px solid #dcd8d5;
+	border-bottom: 1px solid #dcd8d5;
+	margin: 0;
+	text-align: right;
+	font: 400 12px 'Open Sans',Serif;
+	line-height: 24px;
+}
+@media screen and (max-width: 1140px) {
+	.wp-caption.aligncenter .wp-caption-text {
+		position: static;
+		width: 100%;
+		border-top: 0;
+		padding: 10px 0;
+	}
+}
+
 .entry-meta {
 	margin-top: 10px;
 }
