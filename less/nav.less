@@ -29,40 +29,23 @@
 .main-navigation a:hover {
 	opacity: 1;
 }
-.main-navigation a.bars {
-	float: right;
-	padding: 6px 12px;
-	opacity: .4;
-}
-.main-navigation a.bars:hover {
-	color: #0079ec;
-	opacity: 1;
-}
-.main-navigation.featured-image a.bars:hover {
-	color: #fff;
-}
 
 .main-navigation > div {
 	float: left;
-	opacity: 0;
-	-webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
-}
-.main-navigation:hover > div {
-	opacity: 1;
 }
 
 .main-navigation ul a {
-	color: #007cc3;
 	padding: 6px 17px;
 }
-.main-navigation ul a:hover {
-	color: #0079ec;
+.main-navigation ul a:hover,
+.main-navigation li.current-menu-item a {
+	color: #026ed2;
+	opacity: 1;
 }
-.main-navigation.featured-image ul a:hover {
+.main-navigation.featured-image ul a:hover,
+.main-navigation.featured-image li.current-menu-item a {
 	color: #fff;
+	opacity: 1;
 }
 
 .main-navigation ul ul {
@@ -76,6 +59,38 @@
 }
 .main-navigation.featured-image ul ul a:hover {
 	color: #0079ec;
+}
+
+/** footer nav **/
+
+.smallnav {
+	display: none;
+}
+@media screen and (max-width: 906px) {
+	.smallnav {
+		display: block;
+	}
+}
+
+.smallnav ul {
+	margin: 10px 0;
+}
+.smallnav ul ul {
+	display: none;
+}
+
+.smallnav li {
+	display: inline-block;
+	margin-right: 10px;
+}
+.smallnav li:after {
+	display: inline-block;
+	content: '\2022';
+	color: #ccc;
+	padding-left: 10px;
+}
+.smallnav li:last-child:after {
+	display: none;
 }
 
 /** paging and post nav **/
