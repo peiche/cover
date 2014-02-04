@@ -82,7 +82,7 @@ add_action( 'widgets_init', 'beats_widgets_init' );
  */
 function beats_scripts() {
 	
-	wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Rock+Salt|Neucha');
+	wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Domine:700|Open+Sans:400,600|Source+Code+Pro:500');
 	wp_enqueue_style( 'fa-style', get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'beats-style', get_template_directory_uri() . '/css/style.css' );
 
