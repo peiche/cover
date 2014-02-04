@@ -17,7 +17,7 @@ Author: mitcho (Michael Yoshitaka Erlewine)
 			<div class="related-cover" <?php if ( '' != get_the_post_thumbnail()) { ?>style="background-image: url('<?php echo $image; ?>');"<?php } ?>></div>
 			<div class="related-title">
 				<h2>Related</h2>
-				<h1><a href="#"><?php the_title(); ?></a></h1>
+				<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 			</div>
 		</div>
 	<?php endwhile; ?>
