@@ -21,11 +21,9 @@
 <body <?php body_class(); ?>>
 
 <header class="title">
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa fa-bookmark-o fa-lg"></i><span><?php bloginfo( 'name' ); ?></span></a>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 </header>
-
 <nav id="site-navigation" class="main-navigation<?php if ((is_single() || is_page() || is_author() || is_category() || is_tag()) && '' != get_the_post_thumbnail()) { ?> featured-image<?php } ?>" role="navigation">
-	<a class="bars" href="#"><i class="fa fa-align-justify fa-lg"></i></a>
 	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 </nav>
 
@@ -33,6 +31,4 @@
 
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
-	<!-- #masthead -->
-	
 	<div id="content" class="site-content">
