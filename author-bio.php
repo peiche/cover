@@ -21,18 +21,26 @@
 				<?php printf( __( 'View all posts by %s <i class="fa fa-chevron-right"></i>', 'beats' ), get_the_author() ); ?>
 			</a>
 		</p>
-		<?php /*
+		
 		<ul class="social">
-			<li><a href="http://twitter.com/" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
-			<li><a href="http://facebook.com/" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="http://github.com/" class="github" target="_blank"><i class="fa fa-github-alt"></i></a></li>
-			<li><a href="http://astro.ecko.me/rss/" class="rss" target="_blank"><i class="fa fa-rss"></i></a></li>
-			<li><a href="http://youtube.com/" class="youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
-			<li><a href="http://dribbble.com/" class="dribbble" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-			<li><a href="http://plus.google.com/" class="googleplus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-			<li><a href="http://instagram.com/" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
-			<li><a href="http://linkedin.com/" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li> 
+			
+			<?php
+				$fb = get_the_author_meta( 'facebook' );	// full facebook profile url
+				$tw = get_the_author_meta( 'twitter' );		// twitter username
+				$gp = get_the_author_meta( 'googleplus' );	// full g+ profile url
+				$jb = get_the_author_meta( 'jabber' );
+			?>
+			
+			<?php if ('' != $fb) { ?>
+				<li><a href="<?php echo $fb; ?>" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+			<?php } ?>
+			<?php if ('' != $tw) { ?>
+				<li><a href="http://twitter.com/<?php echo $tw; ?>" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+			<?php } ?>
+			<?php if ('' != $gp) { ?>
+				<li><a href="<?php echo $gp; ?>" class="google-plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+			<?php } ?>
+			
 		</ul>
-		*/ ?>
 	</div>
 </div>
