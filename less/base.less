@@ -33,19 +33,47 @@ p {
 	word-wrap: break-word;
 }
 
-blockquote, cite, q {
-	margin: 30px 0 30px 4%;
+blockquote,
+cite,
+q {
+	margin: 30px 0 30px -30px;
 	border-left: 3px solid #c6d5e1;
-	padding: 5px 4%;
-	font: italic 700 18px Domine,Serif;
+	padding: 5px 30px;
 	line-height: 38px;
 }
+@media screen and (max-width: 800px) {
+	blockquote,
+	cite,
+	q {
+		margin-left: 0;
+	}
+}
 
+.format-quote blockquote {
+}
+.format-quote blockquote:before {
+}
+
+blockquote.pullquote {
+	font-size: 24px;
+	margin: 48px -100px;
+	text-align: center;
+	border: none;
+}
+@media screen and (max-width: 1000px) {
+	blockquote.pullquote {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+blockquote cite,
 blockquote p,
 cite p,
 q p {
 	margin:0;
-	padding:0
+	padding:0;
+	border: none;
 }
 
 h1 a:hover,
@@ -66,7 +94,6 @@ a:visited {
 
 p img {
 	margin: 30px 0;
-	width: 100%;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
