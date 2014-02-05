@@ -21,10 +21,18 @@
 
 .main-navigation a {
 	color: #383838;
+	-webkit-transition: color .2s,color .2s ease-out;
+	-moz-transition: color .2s,color .2s ease-out;
+	-o-transition: color .2s,color .2s ease-out;
+	transition: color .2s,color .2s ease-out;
 }
 .main-navigation.featured-image a {
 	color: #fff;
 	opacity: .7;
+	-webkit-transition: opacity .2s,color .2s ease-out;
+	-moz-transition: opacity .2s,color .2s ease-out;
+	-o-transition: opacity .2s,color .2s ease-out;
+	transition: opacity .2s,color .2s ease-out;
 }
 .main-navigation a:hover {
 	opacity: 1;
@@ -38,7 +46,8 @@
 	padding: 6px 17px;
 }
 .main-navigation ul a:hover,
-.main-navigation li.current-menu-item a {
+.main-navigation li.current-menu-item a,
+.main-navigation li.current-page-ancestor a {
 	color: #026ed2;
 	opacity: 1;
 }
