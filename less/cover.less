@@ -18,6 +18,9 @@
 	height: auto;
 	padding: 50px 0;
 }
+.cover.home {
+	margin-bottom: -50px;
+}
 @media screen and (max-width: 595px) {
 	.cover,
 	.cover.auto {
@@ -41,8 +44,16 @@
 	background-attachment: fixed;
 	background-position: center;
 }
+.cover.auto .background {
+	background-attachment: scroll;
+}
 .cover .background.darken {
 	opacity: 0.1;
+}
+@media screen and (max-width: 595px) {
+	.cover .background {
+		background-attachment: scroll;
+	}
 }
 
 .cover header {
@@ -107,11 +118,13 @@
 }
 
 .cover header span a,
-.cover header span time {
+.cover header span time,
+.cover header a.more-link {
 	font-weight: 600;
 	color: #fff;
 }
-.cover header span a:hover {
+.cover header span a:hover,
+.cover header a.more-link:hover {
 	border-bottom: 2px solid #fff;
 }
 

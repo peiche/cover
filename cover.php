@@ -5,7 +5,9 @@
 ?>
 
 <?php 
-	if (is_single()) {
+	if (is_home()) {
+		get_template_part( 'cover', 'home' );
+	} else if (is_single()) {
 		get_template_part( 'cover', 'post' );
 	} else if (is_page()) {
 		get_template_part( 'cover', 'page' );
