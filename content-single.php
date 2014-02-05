@@ -30,12 +30,12 @@
 		
 		<?php get_template_part( 'author-bio' ); ?>
 		
-		<div class="clearfix">
+		<div class="cf">
 			<?php $tag_list = get_the_tag_list( '', __( ', ', 'beats' ) ); ?>
 			<?php if ( '' != $tag_list ) { ?>
 				<i class="fa fa-tag"></i> <?php echo $tag_list; ?>
 			<?php } ?>
-			<?php edit_post_link( __( 'Edit', 'beats' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( __( 'Edit', 'beats' ), '<span class="edit-link pull-right">', '</span>' ); ?>
 		</div>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
