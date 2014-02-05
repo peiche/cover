@@ -17,6 +17,10 @@ get_header(); ?>
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php
+						if ( is_tag() ) :
+							echo '<i class="fa fa-tag"></i> ';
+							single_tag_title();
+							
 						elseif ( is_day() ) :
 							printf( __( 'Day: %s', 'beats' ), '<span>' . get_the_date() . '</span>' );
 
