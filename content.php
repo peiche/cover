@@ -10,14 +10,7 @@
 			<?php the_category(', ') ?>
 			
 			<span class="post-format pull-right">
-				<?php $format = get_post_format( $post_id ); ?>
-				<?php if (is_sticky()) { ?>
-					<i class="fa fa-bookmark"></i>
-				<?php } else if ('video' == $format){ ?>
-					<i class="fa fa-youtube-play"></i>
-				<?php } else if ('quote' == $format){ ?>
-					<i class="fa fa-quote-right"></i>
-				<?php } ?>
+				<?php get_template_part( 'postformatglyph' ); ?>
 			</span>
 		</h2>
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
