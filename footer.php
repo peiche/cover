@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package Beats
+ * @package Cover
  */
 ?>
 
@@ -19,10 +19,8 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</div>
 		<div class="site-info">
-			<?php do_action( 'beats_credits' ); ?>
-			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'beats' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'beats' ), 'Beats', '<a href="http://eichefam.net" rel="designer">Paul Eiche</a>' ); ?>
+			<?php do_action( 'cover_credits' ); ?>
+			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'cover' ), 'WordPress' ); ?></a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

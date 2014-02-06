@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package Beats
+ * @package Cover
  */
 ?>
 	<div id="secondary" class="widget-area" role="complementary">

@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Beats
+ * @package Cover
  */
 ?>
 
@@ -17,7 +17,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php beats_posted_on(); ?>
+			<?php cover_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -26,10 +26,10 @@
 		<?php if ( is_search() ) { // Only display Excerpts for Search ?>
 			<?php the_excerpt(); ?>
 		<?php } else { ?>
-			<?php the_content( __( 'Continue reading <span class=\"meta-nav\">&rarr;</span>', 'beats' ) ); ?>
+			<?php the_content( __( 'Continue reading <span class=\"meta-nav\">&rarr;</span>', 'cover' ) ); ?>
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'beats' ),
+					'before' => '<div class="page-links">' . __( 'Pages:', 'cover' ),
 					'after'  => '</div>',
 				) );
 			?>
@@ -40,16 +40,16 @@
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'beats' ) );
+				$tags_list = get_the_tag_list( '', __( ', ', 'cover' ) );
 				if ( $tags_list ) :
 			?>
 			<div class="tags-links pull-left">
-				<?php printf( __( '<i class="fa fa-tag"></i> %1$s', 'beats' ), $tags_list ); ?>
+				<?php printf( __( '<i class="fa fa-tag"></i> %1$s', 'cover' ), $tags_list ); ?>
 			</div>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 		
-		<?php edit_post_link( __( 'Edit', 'beats' ), '<span class="edit-link pull-right">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'cover' ), '<span class="edit-link pull-right">', '</span>' ); ?>
 	</footer>
 	<!-- .entry-meta -->
 	

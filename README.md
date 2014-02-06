@@ -1,4 +1,4 @@
-Beats
+Cover
 ===
 
 A simple WordPress theme with a focus on content. Features include responsive layout and images, 
@@ -7,7 +7,7 @@ No sidebars, no widgets, just content.
 
 ----
 
-Beats is built on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+Cover is built on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
 **Other credits include:**  
 Google Fonts http://www.google.com/fonts  

@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Beats
+ * @package Cover
  */
 
 get_header(); ?>
@@ -26,7 +26,7 @@ get_header(); ?>
 				<?php } ?>
 				<?php $count++; ?>
 			<?php endwhile; ?>
-			<?php beats_paging_nav(); ?>
+			<?php cover_paging_nav(); ?>
 
 		<?php else : ?>
 

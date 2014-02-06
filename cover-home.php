@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Beats
+ * @package Cover
  */
 ?>
 
@@ -21,11 +21,11 @@
 				</h2>
 				<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 				<span>
-					<?php beats_posted_on(); ?>
+					<?php cover_posted_on(); ?>
 				</span>
 				<!--
 				<div class="entry-summary">
-					<?php the_content( __( 'Continue reading <span class=\"meta-nav\">&rarr;</span>', 'beats' ) ); ?>
+					<?php the_content( __( 'Continue reading <span class=\"meta-nav\">&rarr;</span>', 'cover' ) ); ?>
 				</div>
 				-->
 			</header>

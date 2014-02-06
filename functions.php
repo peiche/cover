@@ -1,8 +1,8 @@
 <?php
 /**
- * Beats functions and definitions
+ * Cover functions and definitions
  *
- * @package Beats
+ * @package Cover
  */
 
 /**
@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 760; /* pixels */ // 640
 }
 
-if ( ! function_exists( 'beats_setup' ) ) :
+if ( ! function_exists( 'cover_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,15 +20,15 @@ if ( ! function_exists( 'beats_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function beats_setup() {
+function cover_setup() {
 	
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Beats, use a find and replace
-	 * to change 'beats' to the name of your theme in all the template files
+	 * If you're building a theme based on Cover, use a find and replace
+	 * to change 'cover' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'beats', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'cover', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -42,14 +42,14 @@ function beats_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'beats' ),
+		'primary' => __( 'Primary Menu', 'cover' ),
 	) );
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
 	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'beats_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'cover_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -57,16 +57,16 @@ function beats_setup() {
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
 }
-endif; // beats_setup
-add_action( 'after_setup_theme', 'beats_setup' );
+endif; // cover_setup
+add_action( 'after_setup_theme', 'cover_setup' );
 
 /**
  * Register widgetized area and update sidebar with default widgets.
  */
 /*
-function beats_widgets_init() {
+function cover_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'beats' ),
+		'name'          => __( 'Sidebar', 'cover' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -74,26 +74,26 @@ function beats_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 }
-add_action( 'widgets_init', 'beats_widgets_init' );
+add_action( 'widgets_init', 'cover_widgets_init' );
 */
 
 /**
  * Enqueue scripts and styles.
  */
-function beats_scripts() {
+function cover_scripts() {
 	
 	wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Domine:700|Gentium+Basic:400italic|Source+Code+Pro:500|Open+Sans:400,600');
 	wp_enqueue_style( 'fa-style', get_template_directory_uri() . '/css/font-awesome.min.css' );
-	wp_enqueue_style( 'beats-style', get_template_directory_uri() . '/css/style.css' );
+	wp_enqueue_style( 'cover-style', get_template_directory_uri() . '/css/style.css' );
 
-	wp_enqueue_script( 'beats-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
-	wp_enqueue_script( 'beats-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
+	wp_enqueue_script( 'cover-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
+	wp_enqueue_script( 'cover-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'beats_scripts' );
+add_action( 'wp_enqueue_scripts', 'cover_scripts' );
 
 /**
  * Implement the Custom Header feature.

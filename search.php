@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package Beats
+ * @package Cover
  */
 
 get_header(); ?>
@@ -13,7 +13,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( '<i class="fa fa-search"></i> Search Results for "%s"', 'beats' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( __( '<i class="fa fa-search"></i> Search Results for "%s"', 'cover' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
@@ -23,7 +23,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php beats_paging_nav(); ?>
+			<?php cover_paging_nav(); ?>
 
 		<?php else : ?>
 

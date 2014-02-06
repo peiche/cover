@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Beats
+ * @package Cover
  */
 ?>
 
@@ -17,7 +17,7 @@
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 
 			<div class="entry-meta">
-				<?php beats_posted_on(); ?>
+				<?php cover_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 	<?php } ?>
@@ -26,7 +26,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'beats' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'cover' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -37,11 +37,11 @@
 		<?php get_template_part( 'author-bio' ); ?>
 		
 		<div class="cf">
-			<?php $tag_list = get_the_tag_list( '', __( ', ', 'beats' ) ); ?>
+			<?php $tag_list = get_the_tag_list( '', __( ', ', 'cover' ) ); ?>
 			<?php if ( '' != $tag_list ) { ?>
 				<i class="fa fa-tag"></i> <?php echo $tag_list; ?>
 			<?php } ?>
-			<?php edit_post_link( __( 'Edit', 'beats' ), '<span class="edit-link pull-right">', '</span>' ); ?>
+			<?php edit_post_link( __( 'Edit', 'cover' ), '<span class="edit-link pull-right">', '</span>' ); ?>
 		</div>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

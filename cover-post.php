@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Beats
+ * @package Cover
  */
 ?>
 
@@ -18,7 +18,7 @@
 			</h2>
 			<h1><a href="#"><?php the_title(); ?></a></h1>
 			<span>
-				<?php beats_posted_on(); ?>
+				<?php cover_posted_on(); ?>
 			</span>
 		</header>
 	</div>

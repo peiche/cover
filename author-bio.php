@@ -2,7 +2,7 @@
 /**
  * The template for displaying Author bios
  *
- * @package Beats
+ * @package Cover
  */
 ?>
 
@@ -18,7 +18,7 @@
 		</p>
 		<p>
 			<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-				<?php printf( __( 'View all posts by %s <i class="fa fa-chevron-right"></i>', 'beats' ), get_the_author() ); ?>
+				<?php printf( __( 'View all posts by %s <i class="fa fa-chevron-right"></i>', 'cover' ), get_the_author() ); ?>
 			</a>
 		</p>
 		
