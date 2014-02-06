@@ -22,12 +22,6 @@ if ( ! function_exists( 'beats_setup' ) ) :
  */
 function beats_setup() {
 	
-	// load scripts in the footer
-	remove_action('wp_head', 'wp_print_scripts');
-	remove_action('wp_head', 'wp_print_head_scripts', 9);
-	add_action('wp_footer', 'wp_print_scripts', 5);
-	add_action('wp_footer', 'wp_print_head_scripts', 5);
-	
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
