@@ -23,7 +23,20 @@
 <header class="title">
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 </header>
-<nav id="site-navigation" class="main-navigation<?php if (((is_single() || is_page()) && '' != get_the_post_thumbnail()) || is_home() || is_author() || is_category()) { ?> featured-image<?php } ?>" role="navigation">
+
+<?php 
+	$first_post_has_featured_image = false;
+	$count = 0;
+	if ( have_posts() ) {
+		while ( have_posts() ) : the_post();
+			if ($count == 0 && '' != get_the_post_thumbnail()) {
+				$first_post_has_featured_image = true;
+			}
+			$count++;
+		endwhile;
+	}
+?>
+<nav id="site-navigation" class="main-navigation<?php if (((is_single() || is_page()) && '' != get_the_post_thumbnail()) || (is_home() && $first_post_has_featured_image) || is_author() || is_category()) { ?> featured-image<?php } ?>" role="navigation">
 	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 </nav>
 
