@@ -12,7 +12,7 @@
 	
 	<div class="info">
 		<h4><?php echo get_the_author(); ?></h4>
-		<a href="<?php echo the_author_url(); ?>"><?php echo the_author_url(); ?></a>
+		<a href="<?php echo the_author_meta('url'); ?>"><?php echo the_author_meta('url'); ?></a>
 		<p>
 			<?php the_author_meta( 'description' ); ?>
 		</p>
