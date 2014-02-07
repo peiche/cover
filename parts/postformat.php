@@ -6,7 +6,7 @@
 
 <?php $format = get_post_format( $post_id ); ?>
 <?php if (is_sticky()) { ?>
-	<span>Featured</span> <i class="fa fa-bookmark"></i>
+	<span>Featured</span> <i class="fa fa-heart"></i>
 <?php } else if ('video' == $format){ ?>
 	<span>Video</span> <i class="fa fa-youtube-play"></i>
 <?php } else if ('quote' == $format){ ?>

@@ -16,7 +16,7 @@
 					<?php the_category(', ') ?>
 					
 					<span class="post-format pull-right">
-						<?php get_template_part( 'postformatglyph' ); ?>
+						<?php get_template_part( 'parts/postformat' ); ?>
 					</span>
 				</h2>
 				<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>

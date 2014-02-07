@@ -2,6 +2,8 @@
 /**
  * The template for displaying Author bios
  *
+ * Called from parts/cover-author and content-single
+ *
  * @package Cover
  */
 ?>
@@ -11,16 +13,25 @@
 	<?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
 	
 	<div class="info">
-		<h4><?php echo get_the_author(); ?></h4>
-		<a href="<?php echo the_author_meta('url'); ?>"><?php echo the_author_meta('url'); ?></a>
+		<?php if (is_author()) { ?>
+			<h2><?php echo get_the_author(); ?></h2>
+		<?php } else { ?>
+			<h4><?php echo get_the_author(); ?></h4>
+		<?php } ?>
+		
+		<?php if (!is_author()) { ?>
+			<a href="<?php echo the_author_meta('url'); ?>"><?php echo the_author_meta('url'); ?></a>
+		<?php } ?>
 		<p>
 			<?php the_author_meta( 'description' ); ?>
 		</p>
-		<p>
-			<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-				<?php printf( __( 'View all posts by %s <i class="fa fa-chevron-right"></i>', 'cover' ), get_the_author() ); ?>
-			</a>
-		</p>
+		<?php if (!is_author()) { ?>
+			<p>
+				<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
+					<?php printf( __( 'View all posts by %s <i class="fa fa-chevron-right"></i>', 'cover' ), get_the_author() ); ?>
+				</a>
+			</p>
+		<?php } ?>
 		
 		<ul class="social">
 			
