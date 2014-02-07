@@ -11,7 +11,7 @@
 				<?php the_category(', ') ?>
 				
 				<span class="post-format pull-right">
-					<?php get_template_part( 'postformatglyph' ); ?>
+					<?php get_template_part( 'parts/postformat' ); ?>
 				</span>
 			</h2>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -34,7 +34,7 @@
 
 	<footer class="entry-meta">
 		
-		<?php get_template_part( 'author-bio' ); ?>
+		<?php get_template_part( 'parts/author-bio' ); ?>
 		
 		<div class="cf">
 			<?php $tag_list = get_the_tag_list( '', __( ', ', 'cover' ) ); ?>

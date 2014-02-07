@@ -40,7 +40,7 @@
 	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 </nav>
 
-<?php get_template_part( 'cover' ); ?>
+<?php get_template_part( 'parts/cover' ); ?>
 
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
