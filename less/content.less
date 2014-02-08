@@ -85,11 +85,13 @@ header .post-format:hover span {
 	color: #1d1d1d;
 }
 
-.wp-caption.aligncenter {
-	margin: 0 auto;
+.wp-caption {
 	padding: 0;
 	border: 0;
 	position: relative;
+}
+.wp-caption.aligncenter {
+	margin: 0 auto;
 }
 
 .wp-caption img[class*="wp-image-"] {
@@ -100,26 +102,30 @@ header .post-format:hover span {
 	border-radius: 4px;
 }
 
-.wp-caption.aligncenter .wp-caption-text {
-	padding: 0;
-	position: absolute;
-	top: 0;
-	left: -175px;
-	width: 150px;
-	padding: 10px 0 10px;
-	border-top: 1px solid #dcd8d5;
-	border-bottom: 1px solid #dcd8d5;
-	margin: 0;
-	text-align: right;
+.wp-caption .wp-caption-text {
+	padding: 10px 0;
 	font: 400 12px 'Open Sans',Serif;
 	line-height: 24px;
+	border-bottom: 1px solid #dcd8d5;
+	text-align: right;
 }
-@media screen and (max-width: 1140px) {
-	.wp-caption.aligncenter .wp-caption-text {
-		position: static;
-		width: 100%;
-		border-top: 0;
-		padding: 10px 0;
+@media screen and (min-width: 1140px) {
+	.wp-caption.aligncenter .wp-caption-text,
+	.wp-caption.alignleft .wp-caption-text,
+	.wp-caption.alignright .wp-caption-text {
+		padding: 0;
+		position: absolute;
+		top: 0;
+		left: -175px;
+		width: 150px;
+		padding: 10px 0 10px;
+		border-top: 1px solid #dcd8d5;
+		margin: 0;
+	}
+	.wp-caption.alignright .wp-caption-text {
+		left: auto;
+		right: -175px;
+		text-align: left;
 	}
 }
 
