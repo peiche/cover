@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php $counter = 0; ?>
+<?php $home_counter = 0; ?>
 <div id="cover-home" class="swiper-container">
 	<div class="swiper-wrapper">
 
@@ -30,13 +30,13 @@
 						</span>
 					</header>
 				</div>
-				<?php $counter++; ?>
+				<?php $home_counter++; ?>
 			<?php } ?>
 		<?php endwhile; ?><!-- end of loop -->
 		
 	</div>
 	
-	<?php if ($counter > 1) { ?>
+	<?php if ($home_counter > 1) { ?>
 		<span id="cover-home-left" class="fa fa-angle-left fa-fw"></span>
 		<span id="cover-home-right" class="fa fa-angle-right fa-fw"></span>
 	<?php } ?>
