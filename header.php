@@ -25,18 +25,16 @@
 </header>
 
 <?php 
-	$first_post_has_featured_image = false;
-	$count = 0;
+	$has_sticky = false;
 	if ( have_posts() ) {
 		while ( have_posts() ) : the_post();
-			if ($count == 0 && '' != get_the_post_thumbnail()) {
-				$first_post_has_featured_image = true;
+			if (is_sticky()) {
+				$has_sticky = true;
 			}
-			$count++;
 		endwhile;
 	}
 ?>
-<nav id="site-navigation" class="main-navigation<?php if (((is_single() || is_page()) && '' != get_the_post_thumbnail()) || (is_home() && $first_post_has_featured_image) || is_author() || is_category()) { ?> featured-image<?php } ?>" role="navigation">
+<nav id="site-navigation" class="main-navigation<?php if (((is_single() || is_page()) && '' != get_the_post_thumbnail()) || (is_home() && $has_sticky) || is_author() || is_category()) { ?> featured-image<?php } ?>" role="navigation">
 	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 </nav>
 
