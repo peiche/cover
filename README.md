@@ -13,4 +13,5 @@ Cover is built on Underscores http://underscores.me/, (C) 2012-2014 Automattic, 
 Google Fonts http://www.google.com/fonts  
 Font Awesome http://fontawesome.io/  
 LESS CSS http://www.lesscss.org/  
+iDangerous Swiper http://www.idangero.us/sliders/swiper/  
 Yet Another Related Posts Plugin (YARPP) http://wordpress.org/plugins/yet-another-related-posts-plugin/
