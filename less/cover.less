@@ -19,7 +19,7 @@
 	padding: 50px 0;
 }
 .cover.home {
-	margin-bottom: -50px;
+	/* margin-bottom: -50px; */
 	padding-top: 66px;
 }
 @media screen and (max-width: 595px) {
@@ -75,6 +75,9 @@
 	.cover header {
 		top: 25%;
 	}
+}
+.cover.home header {
+	top: auto;
 }
 
 .cover header h1 a {
@@ -132,4 +135,24 @@
 .cover header .avatar {
 	display: block;
 	margin: 0 auto;
+}
+
+/* pagers */
+.swiper-container .fa-angle-left,
+.swiper-container .fa-angle-right {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	color: #fff;
+	font-size: 60px;
+	height: 60px;
+	cursor: pointer;
+}
+.swiper-container .fa-angle-left {
+	left: 0;
+}
+.swiper-container .fa-angle-right {
+	left: auto;
+	right: 0;
 }
