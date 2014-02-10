@@ -16,15 +16,13 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php $count = 0; ?>
 		<?php if ( have_posts() ) : ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php if (($count == 0 && '' == get_the_post_thumbnail()) || $count > 0) { ?>
+				<?php if ( !is_sticky() ) { ?>
 					<?php
 						get_template_part( 'content', get_post_format() );
 					?>
 				<?php } ?>
-				<?php $count++; ?>
 			<?php endwhile; ?>
 			<?php cover_paging_nav(); ?>
 
