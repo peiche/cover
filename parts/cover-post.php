@@ -21,5 +21,6 @@
 				<?php cover_posted_on(); ?>
 			</span>
 		</header>
+		<i class="fa fa-angle-down"></i>
 	</div>
 <?php } ?>

@@ -19,6 +19,14 @@ jQuery(document).ready(function() {
 		});
 	}
 	
+	// cover scroller
+	jQuery('.cover .fa-angle-down').click(function() {
+		var top = jQuery('.cover').height();
+		jQuery('html, body').animate({
+			scrollTop: top
+		}, 500);
+	});
+	
 	// related slider
 	if (jQuery('#related').length > 0) {
 		var relatedSlides = jQuery('#related .cover').length;

@@ -18,5 +18,6 @@
 			<?php } ?>
 			<h1><a href="#"><?php the_title(); ?></a></h1>
 		</header>
+		<i class="fa fa-angle-down"></i>
 	</div>
 <?php } ?>

@@ -10,6 +10,7 @@
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
+	z-index: 1;
 }
 .cover.show {
 	overflow: visible;
@@ -135,6 +136,24 @@
 .cover header .avatar {
 	display: block;
 	margin: 0 auto;
+}
+
+// scroller
+.cover .fa-angle-down {
+	position: absolute;
+	bottom: 0;
+	color: #fff;
+	left: 0;
+	right: 0;
+	cursor: pointer;
+	font-size: 60px;
+	margin: auto;
+	width: 40px;
+}
+@media screen and (max-width: 595px) {
+	.cover .fa-angle-down {
+		display: none;
+	}
 }
 
 /* pagers */
