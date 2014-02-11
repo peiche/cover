@@ -92,16 +92,6 @@ blockquote em {
 	font-style: normal;
 }
 
-// quote format styling
-.format-quote blockquote {
-}
-.format-quote blockquote:before {
-}
-
-.format-quote blockquote i,
-.format-quote blockquote em {
-}
-
 h1 a:hover,
 p a:hover {
 	border-bottom: 3px solid #f1ece9;
@@ -171,4 +161,35 @@ img.avatar {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
+}
+
+// quote format styling
+.format-quote blockquote {
+}
+.format-quote blockquote:before {
+}
+
+.format-quote blockquote i,
+.format-quote blockquote em {
+}
+
+// link format styling
+.format-link a.special {
+	display: block;
+	color: #686868;
+	font-weight: 600;
+	text-align: center;
+	border: 2px solid #c3c2c9;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+.format-link a.special:hover {
+	border: 2px solid #0066d9;
+	background: #0066d9;
+	color: #fff;
 }
