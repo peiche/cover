@@ -26,7 +26,8 @@
 	-o-transition: color .2s,color .2s ease-out;
 	transition: color .2s,color .2s ease-out;
 }
-.main-navigation.featured-image a {
+.main-navigation.featured-image a,
+.main-navigation.featured-image .btn {
 	color: #fff;
 	opacity: .7;
 	-webkit-transition: opacity .2s,color .2s ease-out;
@@ -34,7 +35,8 @@
 	-o-transition: opacity .2s,color .2s ease-out;
 	transition: opacity .2s,color .2s ease-out;
 }
-.main-navigation a:hover {
+.main-navigation a:hover,
+.main-navigation .btn:hover {
 	opacity: 1;
 }
 
@@ -60,8 +62,39 @@
 
 .main-navigation ul ul {
 	background: #fff;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+	display: block;
+	visibility: hidden;
+	opacity: 0;
 	margin-top: 10px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+.main-navigation ul ul:before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-bottom: 10px solid #fff;
+	top: -17px;
+	left: 25%;
+}
+.main-navigation ul li:hover > ul {
+	visibility: visible;
+	opacity: 1;
+	margin-top: 20px;
+}
+
+.main-navigation ul ul a {
+	width: auto;
+	max-width: 200px;
+	white-space: nowrap;
 }
 
 .main-navigation.featured-image ul ul a {
@@ -69,6 +102,19 @@
 }
 .main-navigation.featured-image ul ul a:hover {
 	color: #0079ec;
+}
+
+.main-navigation .search-form .search-field {
+	padding: 3px 0;
+	border: 0;
+	-webkit-transition: all 200ms;
+	max-width: 0;
+}
+.main-navigation .search-form:hover .search-field,
+.main-navigation .search-form .search-field:focus {
+	padding: 3px;
+	border: 1px solid #ccc;
+	max-width: 150px;
 }
 
 /** footer nav **/
