@@ -8,7 +8,7 @@ jQuery(document).ready(function() {
 		homeSwiper = jQuery('#cover-home').swiper({
 			loop: true,
 			noSwiping: (homeSlides > 1 ? false : true),
-			simulateTouch: (homeSlides > 1 ? true : false),
+			simulateTouch: false,
 			calculateHeight: true
 		});
 		jQuery('#cover-home-left').click(function() {
@@ -33,7 +33,7 @@ jQuery(document).ready(function() {
 		relatedSwiper = jQuery('#related').swiper({
 			loop: true,
 			noSwiping: (relatedSlides > 1 ? false : true),
-			simulateTouch: (relatedSlides > 1 ? true : false),
+			simulateTouch: false,
 			calculateHeight: true
 		});
 		jQuery('#related-left').click(function() {
