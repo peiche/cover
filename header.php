@@ -24,20 +24,7 @@
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 </header>
 
-<?php 
-	$has_sticky = false;
-	if ( have_posts() ) {
-		while ( have_posts() ) : the_post();
-			if (is_sticky()) {
-				$has_sticky = true;
-			}
-		endwhile;
-	}
-?>
-<nav id="site-navigation" class="main-navigation<?php if (((is_single() || is_page()) && '' != get_the_post_thumbnail()) || (is_home() && $has_sticky) || is_author() || is_category()) { ?> featured-image<?php } ?>" role="navigation">
-	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-</nav>
-
+<?php get_template_part( 'parts/nav', 'header' ); ?>
 <?php get_template_part( 'parts/cover' ); ?>
 
 <div id="page" class="hfeed site">
