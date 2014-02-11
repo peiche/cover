@@ -5,7 +5,7 @@
 ?>
 
 <?php 
-	if (is_home()) {
+	if (is_home() && !is_paged()) {
 		get_template_part( 'parts/cover', 'home' );
 	} else if (is_single()) {
 		get_template_part( 'parts/cover', 'post' );
