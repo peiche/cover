@@ -20,7 +20,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php if ( !is_sticky() ) { ?>
 					<?php
-						get_template_part( 'content', get_post_format() );
+						get_template_part( 'parts/content', get_post_format() );
 					?>
 				<?php } ?>
 			<?php endwhile; ?>
@@ -28,7 +28,7 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'parts/content', 'none' ); ?>
 
 		<?php endif; ?>
 
