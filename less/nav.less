@@ -62,7 +62,7 @@
 
 .main-navigation ul ul {
 	background: #fff;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+	box-shadow: 0 0 1px #000;
 	display: block;
 	visibility: hidden;
 	opacity: 0;
@@ -75,15 +75,19 @@
 	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
-.main-navigation ul ul:before {
+.main-navigation ul ul:before,
+.main-navigation ul ul:after {
 	content: '';
 	position: absolute;
 	width: 0;
 	height: 0;
 	border: 10px solid transparent;
-	border-bottom: 10px solid #fff;
-	top: -17px;
+	border-bottom: 10px solid #000;
+	top: -20px;
 	left: 25%;
+}
+.main-navigation ul ul:after {
+	border-bottom: 10px solid #fff;
 }
 .main-navigation ul li:hover > ul {
 	visibility: visible;
