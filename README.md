@@ -14,4 +14,5 @@ Google Fonts http://www.google.com/fonts
 Font Awesome http://fontawesome.io/  
 LESS CSS http://www.lesscss.org/  
 iDangerous Swiper http://www.idangero.us/sliders/swiper/  
+Skrollr https://github.com/Prinzhorn/skrollr  
 Yet Another Related Posts Plugin (YARPP) http://wordpress.org/plugins/yet-another-related-posts-plugin/
