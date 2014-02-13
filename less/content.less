@@ -28,6 +28,10 @@
 	padding-top: 0;
 }
 
+.entry-summary {
+	margin: 0;
+}
+
 .entry-header h1 {
 	margin: 20px 0;
 }
@@ -58,6 +62,12 @@
 	color: #b6b6b6;
 }
 
+@media screen and (max-width: 906px) {
+	header .post-format {
+		display: none;
+	}
+}
+
 header .post-format span {
 	padding: 5px 10px;
 	font-size: 14px;
@@ -85,7 +95,7 @@ header .post-format:hover span {
 }
 
 .hentry .entry-content > p:first-child {
-	margin: 40px 0 30px;
+	margin: 0 0 30px;
 	font-weight: 600;
 	color: #1d1d1d;
 }
