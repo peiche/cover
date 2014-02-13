@@ -2,6 +2,16 @@ var homeSwiper, relatedSwiper;
 
 jQuery(document).ready(function() {
 	
+	// menu button
+	jQuery('#header a.burger').click(function(e) {
+		e.preventDefault();
+		jQuery('#header').addClass('show-nav');
+	});
+	jQuery('#header a.close').click(function(e) {
+		e.preventDefault();
+		jQuery('#header').removeClass('show-nav');
+	});
+	
 	// home slider
 	if (jQuery('#cover-home').length > 0) {
 		var homeSlides = jQuery('#cover-home .cover').length;
@@ -22,7 +32,7 @@ jQuery(document).ready(function() {
 	jQuery('.cover .fa-angle-down').click(function() {
 		var top = jQuery('.cover').height();
 		jQuery('html, body').animate({
-			scrollTop: top
+			scrollTop: top + jQuery('#header').height();
 		}, 500);
 	});
 	
