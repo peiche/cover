@@ -18,8 +18,7 @@ Cover’s clean typography lets your writing stand on its own.
 
 ###Full-screen featured images
 
-When you use a featured image in Cover, it displays it full-screen behind the title – just like on this page. 
-If this looks familiar, it’s because it was inspired by Medium. You know, imitation being the sincerest form of flattery, and all that.
+When you use a featured image in Cover, it displays it full-screen behind the title – just like on this page.
 
 ###Sticky post slider
 
@@ -29,13 +28,13 @@ left and right arrows will appear so they can be quickly paged through.
 
 ###Scalable vector icons
 
-Cover is bundled with Font Awesome v4.0.3, allowing you to include any icon available here, in any post or page.
+Cover is bundled with Font Awesome v4.0.3, allowing you to include any icon in any post or page.
 
 ###Custom Yet Another Related Post Plugin (YARPP) template
 
-Borrowing another design element from Medium, related posts (powered by YARPP) are shown in a full width area at the bottom 
-of the page. Here’s an example. If you have YARPP configured to return more than one related post, Cover will build a slider 
-similar to the sticky post slider on the homepage.
+Similar to the homepage’s sticky post slider, related posts (powered by YARPP) are shown in a full-width content area at 
+the bottom of each post. Here’s an example. If you have YARPP configured to return more than one related post, Cover will 
+build a slider similar to the sticky post slider on the homepage.
 
 If you don’t have YARPP installed or active, no problem! You don’t have to use it if you don’t want to. If you do, though, 
 be sure to select “Custom” in the YARPP Display Options box. The only option available will be the “Thumbnails” selection, 
