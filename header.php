@@ -31,6 +31,15 @@
 		
 		<nav id="site-navigation" class="main-navigation">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			
+			<!--
+			<ul class="menu">
+				<li>
+					<a href="#"><i class="fa fa-search"></i></a>
+				</li>
+			</ul>
+			-->
+				
 		</nav>
 	</div>
 </header>
