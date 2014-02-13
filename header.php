@@ -20,11 +20,21 @@
 
 <body <?php body_class(); ?>>
 
-<header class="title">
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+<header id="header">
+	<div class="header-container">
+		<a class="title" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+		
+		<div class="mobile-menu">
+			<a class="burger" href="#"><i class="fa fa-bars"></i></a>
+			<a class="close" href="#"><i class="fa fa-times"></i></a>
+		</div>
+		
+		<nav id="site-navigation" class="main-navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav>
+	</div>
 </header>
 
-<?php get_template_part( 'parts/nav', 'header' ); ?>
 <?php get_template_part( 'parts/cover' ); ?>
 
 <div id="page" class="hfeed site">
