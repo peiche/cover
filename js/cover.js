@@ -3,13 +3,23 @@ var homeSwiper, relatedSwiper;
 jQuery(document).ready(function() {
 	
 	// menu button
-	jQuery('#header a.burger').click(function(e) {
+	jQuery('#header .mobile-menu a.burger').click(function(e) {
 		e.preventDefault();
-		jQuery('#header').addClass('show-nav');
+		jQuery('#header').removeClass('show-search').addClass('show-nav');
 	});
-	jQuery('#header a.close').click(function(e) {
+	jQuery('#header .mobile-menu a.close').click(function(e) {
 		e.preventDefault();
-		jQuery('#header').removeClass('show-nav');
+		jQuery('#header').removeClass('show-nav show-search');
+	});
+	
+	// search button
+	jQuery('#header .search-container a.search').click(function(e) {
+		e.preventDefault();
+		jQuery('#header').removeClass('show-nav').addClass('show-search');
+	});
+	jQuery('#header .search-container a.close').click(function(e) {
+		e.preventDefault();
+		jQuery('#header').removeClass('show-nav show-search');
 	});
 	
 	// home slider
@@ -32,7 +42,7 @@ jQuery(document).ready(function() {
 	jQuery('.cover .fa-angle-down').click(function() {
 		var top = jQuery('.cover').height();
 		jQuery('html, body').animate({
-			scrollTop: top + jQuery('#header').height();
+			scrollTop: top + jQuery('#header').outerHeight()
 		}, 500);
 	});
 	
