@@ -25,22 +25,20 @@
 		<a class="title" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 		
 		<div class="mobile-menu">
-			<a class="burger" href="#"><i class="fa fa-bars"></i></a>
-			<a class="close" href="#"><i class="fa fa-times"></i></a>
+			<a class="burger" href="#"><i class="fa fa-bars fa-fw"></i></a>
+			<a class="close" href="#"><i class="fa fa-times fa-fw"></i></a>
+		</div>
+		
+		<div class="search-container">
+			<a class="search" href="#"><i class="fa fa-search fa-fw"></i></a>
+			<a class="close" href="#"><i class="fa fa-times fa-fw"></i></a>
+			<?php get_search_form(); ?>
 		</div>
 		
 		<nav id="site-navigation" class="main-navigation">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			
-			<!--
-			<ul class="menu">
-				<li>
-					<a href="#"><i class="fa fa-search"></i></a>
-				</li>
-			</ul>
-			-->
-				
 		</nav>
+		
 	</div>
 </header>
 
