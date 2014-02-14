@@ -104,11 +104,12 @@ header .post-format:hover span {
 	position: relative;
 }
 .wp-caption.aligncenter {
-	margin: 0 auto;
+	margin: 0 auto 30px;
 }
 .wp-caption.alignleft,
 .wp-caption.alignright {
 	max-width: 50%;
+	margin: 0 0 30px;
 }
 
 .wp-caption img[class*="wp-image-"] {
@@ -124,7 +125,7 @@ header .post-format:hover span {
 	font: 400 12px 'Open Sans',Serif;
 	line-height: 24px;
 	border-bottom: 1px solid #dcd8d5;
-	text-align: right;
+	text-align: left;
 }
 @media screen and (min-width: 1140px) {
 	.wp-caption.aligncenter .wp-caption-text,
@@ -139,11 +140,18 @@ header .post-format:hover span {
 		border-top: 1px solid #dcd8d5;
 		margin: 0;
 	}
+	.wp-caption.aligncenter .wp-caption-text,
+	.wp-caption.alignleft .wp-caption-text {
+		text-align: right;
+	}
 	.wp-caption.alignright .wp-caption-text {
 		left: auto;
 		right: -175px;
-		text-align: left;
 	}
+}
+
+.wp-caption + p {
+	clear: both;
 }
 
 .entry-meta {
