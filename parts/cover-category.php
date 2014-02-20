@@ -12,7 +12,7 @@
 			<?php if ('' != get_the_post_thumbnail()) { ?>
 				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 			<?php } ?>
-			<div class="background darken"<?php if ('' != get_the_post_thumbnail()) { ?> style="background-image: url('<?php echo $image[0]; ?>');"<?php } ?>></div>
+			<div class="background<?php if ('' != get_the_post_thumbnail()) { ?> darken" style="background-image: url('<?php echo $image[0]; ?>');<?php } ?>"></div>
 			<header>
 				<h2><?php echo single_cat_title(); ?></h2>
 				<?php
