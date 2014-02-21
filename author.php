@@ -9,6 +9,9 @@
 
 get_header(); ?>
 
+<?php get_template_part( 'parts/cover', 'author' ); ?>
+<?php get_template_part( 'parts/wrapper', 'top' ); ?>
+
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

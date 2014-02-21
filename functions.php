@@ -123,3 +123,32 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Extract and return the first image from content.
+ */
+if ( ! function_exists( 'cover_get_image_in_content' ) ) :
+function cover_get_image_in_content() {
+	remove_filter( 'the_content', 'cover_remove_image_from_content' );
+
+	$content = apply_filters( 'the_content', get_the_content() );
+
+	add_filter( 'the_content', 'cover_remove_image_from_content' );
+
+	if ( preg_match( '/\[caption .+?\[\/caption\]|\< *[img][^\>]*[.]*\>/i', $content, $matches ) )
+		return $matches[0];
+	else
+		return false;
+}
+endif;
+
+if ( ! function_exists( 'cover_remove_image_from_content' ) ) :
+function cover_remove_image_from_content( $content ) {
+	if ( 'image' !== get_post_format() )
+		return $content;
+
+	$content = preg_replace( '/\[caption .+?\[\/caption\]|\< *[img][^\>]*[.]*\>/i', '', $content, 1 );
+
+	return $content;
+}
+endif;

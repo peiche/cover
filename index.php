@@ -5,26 +5,15 @@
 
 get_header(); ?>
 
+<?php get_template_part( 'parts/wrapper', 'top' ); ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php 
-			/*
-			$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-			query_posts(array(
-				'post__not_in' => get_option('sticky_posts'),
-				'paged' => $paged
-			));
-			*/
-		?>
 		<?php if ( have_posts() ) : ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				
-				<?php if ( !is_sticky() ) { ?>
-					<?php
-						get_template_part( 'content', get_post_format() );
-					?>
-				<?php } ?>
+				<?php get_template_part( 'content', get_post_format() ); ?>
 				
 			<?php endwhile; ?>
 			<?php cover_paging_nav(); ?>

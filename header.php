@@ -42,8 +42,4 @@
 	</div>
 </header>
 
-<?php get_template_part( 'parts/cover' ); ?>
-
-<div id="page" class="hfeed site">
-	<?php do_action( 'before' ); ?>
-	<div id="content" class="site-content">
+<?php // get_template_part( 'parts/cover' ); ?>
