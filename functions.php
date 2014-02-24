@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 760; /* pixels */ // 640
+	$content_width = 760; /* pixels */
 }
 
 if ( ! function_exists( 'cover_setup' ) ) :
@@ -56,9 +56,32 @@ function cover_setup() {
 
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
+	
+	// Enable featured content.
+	add_theme_support( 'featured-content', array(
+		'filter'		=> 'cover_get_featured_posts'
+	) );
 }
 endif; // cover_setup
 add_action( 'after_setup_theme', 'cover_setup' );
+
+/**
+ * Getter function for Featured Content Plugin.
+ *
+ * @return array An array of WP_Post objects.
+ */
+function cover_get_featured_posts() {
+	return apply_filters( 'cover_get_featured_posts', array() );
+}
+
+/**
+ * A helper conditional function that returns a boolean value.
+ *
+ * @return bool Whether there are featured posts.
+ */
+function cover_has_featured_posts() {
+	return ! is_paged() && (bool) cover_get_featured_posts();
+}
 
 /**
  * Register widgetized area and update sidebar with default widgets.
@@ -123,32 +146,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Extract and return the first image from content.
- */
-if ( ! function_exists( 'cover_get_image_in_content' ) ) :
-function cover_get_image_in_content() {
-	remove_filter( 'the_content', 'cover_remove_image_from_content' );
-
-	$content = apply_filters( 'the_content', get_the_content() );
-
-	add_filter( 'the_content', 'cover_remove_image_from_content' );
-
-	if ( preg_match( '/\[caption .+?\[\/caption\]|\< *[img][^\>]*[.]*\>/i', $content, $matches ) )
-		return $matches[0];
-	else
-		return false;
-}
-endif;
-
-if ( ! function_exists( 'cover_remove_image_from_content' ) ) :
-function cover_remove_image_from_content( $content ) {
-	if ( 'image' !== get_post_format() )
-		return $content;
-
-	$content = preg_replace( '/\[caption .+?\[\/caption\]|\< *[img][^\>]*[.]*\>/i', '', $content, 1 );
-
-	return $content;
-}
-endif;
