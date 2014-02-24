@@ -4,8 +4,6 @@
  */
 ?>
 
-<!--
-
 <?php $format = get_post_format( $post_id ); ?>
 <?php if ('video' == $format) { ?>
 	<span>Video</span> <i class="fa fa-youtube-play fa-fw"></i>
@@ -20,5 +18,3 @@
 <?php if (is_sticky()) { ?>
 	<i class="fa fa-thumb-tack fa-fw"></i>
 <?php } ?>
-
--->
