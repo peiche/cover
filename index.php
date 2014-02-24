@@ -5,6 +5,12 @@
 
 get_header(); ?>
 
+<?php
+	if ( cover_has_featured_posts() ) {
+		get_template_part( 'parts/cover', 'featured' );
+	}
+?>
+
 <?php get_template_part( 'parts/wrapper', 'top' ); ?>
 
 	<div id="primary" class="content-area">
@@ -13,7 +19,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				
-				<?php get_template_part( 'content', get_post_format() ); ?>
+				<?php get_template_part( 'content' ); ?>
 				
 			<?php endwhile; ?>
 			<?php cover_paging_nav(); ?>
