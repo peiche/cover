@@ -49,7 +49,11 @@
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 		
-		<?php edit_post_link( __( 'Edit', 'cover' ), '<span class="edit-link pull-right">', '</span>' ); ?>
+		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+			<span class="comments-link pull-right"><?php comments_popup_link( __( '<i class="fa fa-comment fa-fw"></i>', 'cover' ), __( '1 <i class="fa fa-comment fa-fw"></i>', 'cover' ), __( '% <i class="fa fa-comment fa-fw"></i>', 'cover' ) ); ?></span>
+		<?php endif; ?>
+		
+		<?php // edit_post_link( __( 'Edit', 'cover' ), '<span class="edit-link pull-right">', '</span>' ); ?>
 	</footer>
 	<!-- .entry-meta -->
 	
