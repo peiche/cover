@@ -10,6 +10,9 @@ body, html {
 body {
 	padding-top: 72px;
 }
+body.has-cover {
+	padding-top: 0;
+}
 
 h1, h2, h3, h4 {
 	margin: 30px 0;
@@ -104,6 +107,7 @@ p a:hover {
 
 a:link,
 a:visited {
+	font-weight: 600;
 	text-decoration: none;
 	border-bottom: 3px solid transparent;
 	-webkit-transition: border .2s,color .2s ease-out;
@@ -174,6 +178,18 @@ img.avatar {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
+}
+
+.avatar-20 {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: -4px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	border-radius: 20px;
 }
 
 // quote format styling
