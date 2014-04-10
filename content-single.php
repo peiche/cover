@@ -37,9 +37,9 @@
 		<?php get_template_part( 'parts/author-bio' ); ?>
 		
 		<div class="cf">
-			<?php $tag_list = get_the_tag_list( '', __( ', ', 'cover' ) ); ?>
+			<?php $tag_list = get_the_tag_list( '<ul class="tag-list"><li>', '</li><li>', '</li></ul>' ); ?>
 			<?php if ( '' != $tag_list ) { ?>
-				<i class="fa fa-tag"></i> <?php echo $tag_list; ?>
+				<?php echo $tag_list; ?>
 			<?php } ?>
 			<?php edit_post_link( __( 'Edit', 'cover' ), '<span class="edit-link pull-right">', '</span>' ); ?>
 		</div>
