@@ -12,14 +12,21 @@ jQuery(document).ready(function() {
 		jQuery('#header').removeClass('show-nav show-search');
 	});
 	
-	// search button
-	jQuery('#header .search-container a.search').click(function(e) {
-		e.preventDefault();
-		jQuery('#header').removeClass('show-nav').addClass('show-search');
+	// search
+	jQuery('.searchopen').click(function() {
+		jQuery('.searchopen, .searchbar').addClass('active');
+		jQuery('.searchbar .search-field').focus();
+		return false;
 	});
-	jQuery('#header .search-container a.close').click(function(e) {
-		e.preventDefault();
-		jQuery('#header').removeClass('show-nav show-search');
+	jQuery('.searchbar .search-field').focusout(function() {
+		jQuery('.searchbar .search-field').val('');
+		jQuery('.searchopen, .searchbar').removeClass('active');
+	});
+	
+	// back to top
+	jQuery('.backtotop').click(function() {
+		jQuery('html, body').animate({ scrollTop: jQuery('body').offset().top });
+		return false;
 	});
 	
 	// home slider
@@ -42,7 +49,7 @@ jQuery(document).ready(function() {
 	jQuery('.cover .fa-angle-down').click(function() {
 		var top = jQuery('.cover').height();
 		jQuery('html, body').animate({
-			scrollTop: top + jQuery('#header').outerHeight()
+			scrollTop: top
 		}, 500);
 	});
 	
