@@ -9,6 +9,7 @@
 	margin: 0 auto;
 	top: 0;
 	height: 72px;
+	z-index: 410;
 }
 
 #header .header-container {
@@ -231,4 +232,32 @@
 	.post-navigation a span {
 		display: none;
 	}
+}
+
+a.backtotop:link,
+a.backtotop:visited {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	background: #ededed;
+	color: #fff;
+	height: 38px;
+	width: 38px;
+	text-align: center;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	z-index: 400;
+	opacity: 0;
+	-webkit-transition: all 200ms;
+	-moz-transition: all 200ms;
+	-o-transition: all 200ms;
+	transition: all 200ms;
+}
+a.backtotop:hover {
+	background: #026ed6;
+}
+
+.backtotop i {
+	margin-top: 13px;
 }
