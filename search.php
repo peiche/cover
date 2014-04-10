@@ -14,10 +14,14 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( '<i class="fa fa-search"></i> Search Results for "%s"', 'cover' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
-
+			<div class="notification">
+				<span class="ntitle">Search</span>
+				<span class="message">
+					<?php printf( __( '%s', 'cover' ), get_search_query() ); ?>
+				</span>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa fa-times"></i></a>
+			</div>
+			
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
