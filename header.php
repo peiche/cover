@@ -18,7 +18,13 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php 
+	$hascover = '';
+	if ((is_single() || is_page()) && '' != get_the_post_thumbnail()) {
+		$hascover = 'has-cover';
+	}
+?>
+<body <?php body_class( $hascover ); ?>>
 
 <header id="header">
 	<div class="header-container">
@@ -29,17 +35,18 @@
 			<a class="close" href="#"><i class="fa fa-times fa-fw"></i></a>
 		</div>
 		
-		<div class="search-container">
-			<a class="search" href="#"><i class="fa fa-search fa-fw"></i></a>
-			<a class="close" href="#"><i class="fa fa-times fa-fw"></i></a>
-			<?php get_search_form(); ?>
-		</div>
-		
 		<nav id="site-navigation" class="main-navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
 		</nav>
 		
 	</div>
 </header>
 
-<?php // get_template_part( 'parts/cover' ); ?>
+<div id="search">
+	<div class="searchbar">
+		<?php get_search_form(); ?>
+	</div>
+	<a class="searchopen" href="#"><i class="fa fa-search"></i></a>
+</div>
+
+<a href="#" class="backtotop" data-0-start="opacity: 0;" data-100-start="opacity: 1;"><i class="fa fa-chevron-up"></i></a>
