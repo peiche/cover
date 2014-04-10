@@ -36,25 +36,4 @@
 		<?php } ?>
 	</div><!-- .entry-summary -->
 	
-	<footer class="entry-meta cf">
-		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'cover' ) );
-				if ( $tags_list ) :
-			?>
-			<div class="tags-links pull-left">
-				<?php printf( __( '<i class="fa fa-tag"></i> %1$s', 'cover' ), $tags_list ); ?>
-			</div>
-			<?php endif; // End if $tags_list ?>
-		<?php endif; // End if 'post' == get_post_type() ?>
-		
-		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
-			<span class="comments-link pull-right"><?php comments_popup_link( __( '<i class="fa fa-comment fa-fw"></i>', 'cover' ), __( '1 <i class="fa fa-comment fa-fw"></i>', 'cover' ), __( '% <i class="fa fa-comment fa-fw"></i>', 'cover' ) ); ?></span>
-		<?php endif; ?>
-		
-		<?php // edit_post_link( __( 'Edit', 'cover' ), '<span class="edit-link pull-right">', '</span>' ); ?>
-	</footer>
-	<!-- .entry-meta -->
-	
 </article><!-- #post-## -->
