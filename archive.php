@@ -15,12 +15,61 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title">
+			
+			<div class="notification">
+				<span class="ntitle">
+					
 					<?php
 						if ( is_tag() ) :
-							echo '<i class="fa fa-tag"></i> ';
+							_e( 'Tag', 'cover');
+							
+						elseif ( is_day() ) :
+							_e( 'Day', 'cover');
+
+						elseif ( is_month() ) :
+							_e( 'Month', 'cover');
+
+						elseif ( is_year() ) :
+							_e( 'Year', 'cover');
+
+						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+							_e( 'Asides', 'cover' );
+
+						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
+							_e( 'Galleries', 'cover');
+
+						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
+							_e( 'Images', 'cover');
+
+						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
+							_e( 'Videos', 'cover' );
+
+						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
+							_e( 'Quotes', 'cover' );
+
+						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
+							_e( 'Links', 'cover' );
+
+						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
+							_e( 'Statuses', 'cover' );
+
+						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
+							_e( 'Audios', 'cover' );
+
+						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
+							_e( 'Chats', 'cover' );
+
+						else :
+							_e( 'Archives', 'cover' );
+
+						endif;
+					?>
+					
+				</span>
+				<span class="message">
+					
+					<?php
+						if ( is_tag() ) :
 							single_tag_title();
 							
 						elseif ( is_day() ) :
@@ -64,15 +113,10 @@ get_header(); ?>
 
 						endif;
 					?>
-				</h1>
-				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
-				?>
-			</header><!-- .page-header -->
+					
+				</span>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa fa-times"></i></a>
+			</div>
 			
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
