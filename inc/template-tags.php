@@ -82,7 +82,7 @@ function cover_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">Posted by&nbsp;&nbsp;%2$s on <i class="fa fa-clock-o"></i> %1$s</span><span class="byline"></span>', 'cover' ),
+	printf( __( '<span class="posted-on">Posted by&nbsp;&nbsp;%2$s on <i class="fa fa-clock-o"></i> %1$s</span>', 'cover' ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
 			$time_string
