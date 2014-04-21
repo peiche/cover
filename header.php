@@ -21,7 +21,13 @@
 <?php 
 	$hascover = '';
 	if ((is_single() || is_page()) && '' != get_the_post_thumbnail()) {
-		$hascover = 'has-cover';
+		
+		$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+		$height = $img[2];
+		
+		if ($height > 600) {
+			$hascover = 'has-cover';
+		}
 	}
 ?>
 <body <?php body_class( $hascover ); ?>>
