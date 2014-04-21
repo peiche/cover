@@ -5,7 +5,28 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ('' == get_the_post_thumbnail()) { ?>
+	
+	<?php
+		$show_header = true;
+		if ('' != get_the_post_thumbnail()) {
+			$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+			$height = $img[2];
+			
+			if ($height <= 600) {
+				$show_header = true;
+			} else {
+				$show_header = false;
+			}
+		}
+	?>
+	
+	<?php
+		
+		// TODO: extra crap for small featured image
+		
+	?>
+	
+	<?php if ($show_header) { ?>
 		<header class="entry-header">
 			<h2>
 				<?php the_category(', ') ?>
@@ -34,8 +55,6 @@
 
 	<footer class="entry-meta">
 		
-		<?php get_template_part( 'parts/author-bio' ); ?>
-		
 		<div class="cf">
 			<?php $tag_list = get_the_tag_list( '<ul class="tag-list"><li>', '</li><li>', '</li></ul>' ); ?>
 			<?php if ( '' != $tag_list ) { ?>
@@ -43,5 +62,8 @@
 			<?php } ?>
 			<?php edit_post_link( __( 'Edit', 'cover' ), '<span class="edit-link pull-right">', '</span>' ); ?>
 		</div>
+		
+		<?php get_template_part( 'parts/author-bio' ); ?>
+
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
