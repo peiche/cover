@@ -9,9 +9,11 @@
 		<h2>
 			<?php the_category(', ') ?>
 			
+			<?php /*
 			<span class="post-format pull-right">
 				<?php get_template_part( 'parts/postformat' ); ?>
 			</span>
+			*/ ?>
 		</h2>
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 

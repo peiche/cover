@@ -7,6 +7,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<?php
+		/*
 		$show_header = true;
 		if ('' != get_the_post_thumbnail()) {
 			$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
@@ -18,15 +19,10 @@
 				$show_header = false;
 			}
 		}
+		*/
 	?>
 	
-	<?php
-		
-		// TODO: extra crap for small featured image
-		
-	?>
-	
-	<?php if ($show_header) { ?>
+	<?php if ('' == get_the_post_thumbnail()) { ?>
 		<header class="entry-header">
 			<h2>
 				<?php the_category(', ') ?>
