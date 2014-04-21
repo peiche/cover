@@ -23,12 +23,8 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
-		<h3 class="comments-title">
-			<?php
-				printf( _nx( 'One comment', '%1$s comments', get_comments_number(), 'cover' ),
-					number_format_i18n( get_comments_number() ) );
-			?>
-		</h3>
+		
+		<div class="graybar"><i class="fa fa-comments-o"></i>Comments</div>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
@@ -42,7 +38,7 @@ if ( post_password_required() ) {
 			<?php
 				wp_list_comments( array(
 					'style'      	=> 'ol',
-					'avatar_size'	=> 48,
+					'avatar_size'	=> 96,
 					'short_ping'	=> true,
 				) );
 			?>
