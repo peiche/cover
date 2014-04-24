@@ -13,8 +13,8 @@
 	z-index: 400;
 }
 .cover.half {
-	height: 400px;
-	margin-bottom: 50px;
+	height: auto;
+	min-height: 500px;
 }
 .cover.show {
 	overflow: visible;
@@ -31,7 +31,8 @@
 }
 @media screen and (max-width: 595px) {
 	.cover,
-	.cover.auto {
+	.cover.auto,
+	.cover.half {
 		height: auto;
 		min-height: 0;
 		padding: 40px 0;
@@ -84,7 +85,8 @@
 	top: auto;
 }
 .cover.half header {
-	top: 50px;
+	top: auto;
+	padding: 80px 0;
 }
 
 .cover header h1 {
