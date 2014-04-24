@@ -193,7 +193,8 @@ img.avatar {
 }
 
 // quote format styling
-.format-quote blockquote {
+.format-quote blockquote,
+blockquote.large {
 	font-size: 200%;
 	border-color: transparent;
 	position: relative;
@@ -201,11 +202,13 @@ img.avatar {
 	margin: 30px 0;
 }
 @media screen and (max-width: 1000px) {
-	.format-quote blockquote {
+	.format-quote blockquote,
+	blockquote.large {
 		margin-left: 50px;
 	}
 }
-.format-quote blockquote:before {
+.format-quote blockquote:before,
+blockquote.large:before {
 	position: absolute;
 	top: -10px;
 	left: -50px;
@@ -215,7 +218,8 @@ img.avatar {
 }
 
 // link format styling
-.format-link a.special {
+.format-link a.special,
+a.block {
 	display: block;
 	color: #686868;
 	font-weight: 600;
@@ -229,7 +233,8 @@ img.avatar {
 	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
-.format-link a.special:hover {
+.format-link a.special:hover,
+a.block:hover {
 	border: 2px solid #0066d9;
 	background: #0066d9;
 	color: #fff;
