@@ -6,15 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h2>
-			<?php the_category(', ') ?>
-			
-			<?php /*
-			<span class="post-format pull-right">
-				<?php get_template_part( 'parts/postformat' ); ?>
-			</span>
-			*/ ?>
-		</h2>
+		<h2><?php the_category(', ') ?></h2>
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 		<?php if ( 'post' == get_post_type() ) : ?>

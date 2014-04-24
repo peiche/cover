@@ -24,13 +24,7 @@
 	
 	<?php if ('' == get_the_post_thumbnail()) { ?>
 		<header class="entry-header">
-			<h2>
-				<?php the_category(', ') ?>
-				
-				<span class="post-format pull-right">
-					<?php get_template_part( 'parts/postformat' ); ?>
-				</span>
-			</h2>
+			<h2><?php the_category(', ') ?></h2>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 
 			<div class="entry-meta">
