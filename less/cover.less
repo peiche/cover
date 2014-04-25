@@ -21,7 +21,7 @@
 }
 .cover.auto {
 	height: auto;
-	padding: 50px 0;
+	padding: 80px 0;
 }
 .cover.home {
 	padding-top: 66px;
@@ -111,6 +111,7 @@
 .cover header h2 {
 	font: 600 22px 'Open Sans',Serif;
 	color: #dedede;
+	margin-top: 0;
 }
 
 .cover header h2 a {
@@ -154,5 +155,37 @@
 @media screen and (max-width: 595px) {
 	.cover .fa-angle-down {
 		display: none;
+	}
+}
+
+.cover blockquote {
+	font-size: 100%;
+	border-color: transparent;
+	position: relative;
+	padding: 0;
+	margin: 30px 0;
+	color: #fff;
+}
+.cover blockquote:before {
+	position: absolute;
+	top: -10px;
+	left: -60px;
+	content: '“';
+	font-size: 200%;
+	opacity: 0.3;
+}
+
+.cover header blockquote p {
+	color: #fff;
+	line-height: 1.1;
+}
+
+.cover blockquote cite {
+	font-size: 50%;
+}
+
+@media screen and (max-width: 1000px) {
+	.cover blockquote {
+		margin-left: 55px;
 	}
 }
