@@ -147,9 +147,8 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-
 /**
- * Extract and return the first image from content.
+ * Extract and return the first blockquote from content.
  */
 if ( ! function_exists( 'cover_get_blockquote_in_content' ) ) :
 function cover_get_blockquote_in_content() {
@@ -179,6 +178,39 @@ function cover_remove_blockquote_from_content( $content ) {
 		$content = preg_replace( '/<blockquote>(.+?)<\/blockquote>/is', '', $content, 1 );
 	} else if ( preg_match( '/<blockquote class="large">(.+?)<\/blockquote>/is', $content, $matches ) ) {
 		$content = preg_replace( '/<blockquote class="large">(.+?)<\/blockquote>/is', '', $content, 1 );
+	}
+	
+	return $content;
+}
+endif;
+
+/**
+ * Extract and return the first link from content.
+ */
+if ( ! function_exists( 'cover_get_link_in_content' ) ) :
+function cover_get_link_in_content() {
+	remove_filter( 'the_content', 'cover_remove_link_from_content' );
+
+	$content = apply_filters( 'the_content', get_the_content() );
+
+	add_filter( 'the_content', 'cover_remove_link_from_content' );
+
+	if ( preg_match( '<a([^>]+)>(.+?)</a>', $content, $matches ) ) {
+		return $matches[0];
+	} else {
+		return false;
+	}
+}
+endif;
+
+if ( ! function_exists( 'cover_remove_link_from_content' ) ) :
+function cover_remove_link_from_content( $content ) {
+	if ( 'link' !== get_post_format() ) {
+		return $content;
+	}
+	
+	if ( preg_match( '/<a>(.+?)<\/a>/is', $content, $matches ) ) {
+		$content = preg_replace( '/<a>(.+?)<\/a>/is', '', $content, 1 );
 	}
 	
 	return $content;
