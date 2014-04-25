@@ -46,7 +46,7 @@ function cover_setup() {
 	) );
 
 	// Enable support for Post Formats.
-	add_theme_support( 'post-formats', array( 'image', 'video', 'quote', 'link' ) );
+	add_theme_support( 'post-formats', array( 'quote', 'link' ) );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'cover_custom_background_args', array(
@@ -146,3 +146,41 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/**
+ * Extract and return the first image from content.
+ */
+if ( ! function_exists( 'cover_get_blockquote_in_content' ) ) :
+function cover_get_blockquote_in_content() {
+	remove_filter( 'the_content', 'cover_remove_blockquote_from_content' );
+
+	$content = apply_filters( 'the_content', get_the_content() );
+
+	add_filter( 'the_content', 'cover_remove_blockquote_from_content' );
+
+	if ( preg_match( '/<blockquote>(.+?)<\/blockquote>/is', $content, $matches ) ) {
+		return $matches[0];
+	} else if ( preg_match( '/<blockquote class="large">(.+?)<\/blockquote>/is', $content, $matches ) ) {
+		return $matches[0];
+	} else {
+		return false;
+	}
+}
+endif;
+
+if ( ! function_exists( 'cover_remove_blockquote_from_content' ) ) :
+function cover_remove_blockquote_from_content( $content ) {
+	if ( 'quote' !== get_post_format() ) {
+		return $content;
+	}
+	
+	if ( preg_match( '/<blockquote>(.+?)<\/blockquote>/is', $content, $matches ) ) {
+		$content = preg_replace( '/<blockquote>(.+?)<\/blockquote>/is', '', $content, 1 );
+	} else if ( preg_match( '/<blockquote class="large">(.+?)<\/blockquote>/is', $content, $matches ) ) {
+		$content = preg_replace( '/<blockquote class="large">(.+?)<\/blockquote>/is', '', $content, 1 );
+	}
+	
+	return $content;
+}
+endif;

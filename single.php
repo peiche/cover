@@ -7,7 +7,16 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'parts/cover', 'single' ); ?>
+<?php
+	if ( get_post_format() == 'quote' ) {
+		get_template_part( 'parts/cover', 'quote' );
+	} else if ( get_post_format() == 'link' ) {
+		get_template_part( 'parts/cover', 'link' );
+	} else {
+		get_template_part( 'parts/cover', 'single' );
+	}
+?>
+
 <?php get_template_part( 'parts/wrapper', 'top' ); ?>
 
 	<div id="primary" class="content-area">

@@ -7,22 +7,13 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<?php
-		/*
 		$show_header = true;
-		if ('' != get_the_post_thumbnail()) {
-			$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-			$height = $img[2];
-			
-			if ($height <= 600) {
-				$show_header = true;
-			} else {
-				$show_header = false;
-			}
+		if ('' != get_the_post_thumbnail() || get_post_format() == 'quote') {
+			$show_header = false;
 		}
-		*/
 	?>
 	
-	<?php if ('' == get_the_post_thumbnail()) { ?>
+	<?php if ($show_header) { ?>
 		<header class="entry-header">
 			<h2><?php the_category(', ') ?></h2>
 			<h1 class="entry-title"><?php the_title(); ?></h1>

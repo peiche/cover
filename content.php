@@ -17,17 +17,13 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
-		<?php if ( is_search() ) { // Only display Excerpts for Search ?>
-			<?php the_excerpt(); ?>
-		<?php } else { ?>
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'cover' ) ); ?>
-			<?php
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'cover' ),
-					'after'  => '</div>',
-				) );
-			?>
-		<?php } ?>
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'cover' ) ); ?>
+		<?php
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . __( 'Pages:', 'cover' ),
+				'after'  => '</div>',
+			) );
+		?>
 	</div><!-- .entry-summary -->
 	
 </article><!-- #post-## -->
