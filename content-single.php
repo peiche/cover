@@ -11,6 +11,10 @@
 		if ('' != get_the_post_thumbnail() || get_post_format() == 'quote') {
 			$show_header = false;
 		}
+		
+		if ( '' != get_the_post_thumbnail() && get_post_format() == 'image' ) {
+			$show_header = true;
+		}
 	?>
 	
 	<?php if ($show_header) { ?>

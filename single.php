@@ -12,6 +12,8 @@ get_header(); ?>
 		get_template_part( 'parts/cover', 'quote' );
 	} else if ( get_post_format() == 'link' ) {
 		get_template_part( 'parts/cover', 'link' );
+	} else if ( get_post_format() == 'image' ) {
+		get_template_part( 'parts/cover', 'image' );
 	} else {
 		get_template_part( 'parts/cover', 'single' );
 	}
@@ -25,7 +27,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
-
+				
 				<?php cover_post_nav(); ?>
 
 				<?php
