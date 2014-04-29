@@ -14,5 +14,7 @@
 	
 <div class="cover featured-image">
 	<div class="background" <?php if ( $has_image ) { ?>style="background-image: url('<?php echo $img[0]; ?>');"<?php } ?>></div>
-	<i class="fa fa-angle-down"></i>
+	<header>
+		<div class="header-content"><?php the_content(); ?></div>
+	</header>
 </div>

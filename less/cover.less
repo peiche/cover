@@ -71,7 +71,7 @@
 .cover header {
 	position: relative;
 	width: 90%;
-	top: 25%;
+	top: 30%;
 	max-width: 760px;
 	margin: 0 auto;
 	left: auto;
@@ -83,6 +83,7 @@
 }
 .cover.home header {
 	top: auto;
+	padding: 60px 0 20px;
 }
 .cover.half header {
 	top: auto;
@@ -121,9 +122,23 @@
 	border-bottom: 2px solid #dedede;
 }
 
+.cover header .header-content {
+	font-size: 200%;
+}
+
+// hide jetpack-driven related posts
+.cover header .header-content .jp-relatedposts {
+	display: none !important;
+}
+
 .cover header p {
 	color: #dedede;
 	opacity: 0.9;
+}
+
+.cover header .header-content p {
+	color: #fff;
+	opacity: 1;
 }
 
 .cover header span {
@@ -138,6 +153,11 @@
 .cover header span a:hover,
 .cover header .entry-summary a:hover {
 	border-bottom: 2px solid #fff;
+}
+
+.cover header .author a,
+.cover header .author a:hover {
+	border: none;
 }
 
 // scroller
