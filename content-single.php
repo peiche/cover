@@ -16,6 +16,10 @@
 	<?php if ($show_header) { ?>
 		<header class="entry-header">
 			<h1 class="entry-title"><?php the_title(); ?></h1>
+			
+			<div class="entry-meta">
+				<?php cover_posted_on(); ?>
+			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 	<?php } ?>
 

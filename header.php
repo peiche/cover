@@ -25,7 +25,7 @@
 		$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 		$height = $img[2];
 		
-		if ( $height > 600 && get_post_format() != 'quote' ) {
+		if ( $height > 600 && get_post_format() != 'quote' && get_post_format() != 'link' ) {
 			$hascover = 'has-cover';
 		}
 	}

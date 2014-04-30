@@ -16,5 +16,8 @@
 	<div class="background" <?php if ( $has_image ) { ?>style="background-image: url('<?php echo $img[0]; ?>');"<?php } ?>></div>
 	<header>
 		<div class="header-content"><?php the_content(); ?></div>
+		<span>
+			<?php cover_posted_on(); ?>
+		</span>
 	</header>
 </div>

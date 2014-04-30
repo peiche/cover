@@ -195,8 +195,8 @@ function cover_get_link_in_content() {
 
 	add_filter( 'the_content', 'cover_remove_link_from_content' );
 
-	if ( preg_match( '/<a href=\'(.*?)\'>(.*?)<\/a>/i', $content, $matches ) ) {
-		return $matches[0];
+	if ( preg_match( '/<a href=\"(.*?)\">(.*?)<\/a>/i', $content, $matches ) ) {
+		return $matches;
 	} else {
 		return false;
 	}
@@ -209,8 +209,8 @@ function cover_remove_link_from_content( $content ) {
 		return $content;
 	}
 	
-	if ( preg_match( '/<a href=\'(.*?)\'>(.*?)<\/a>/i', $content, $matches ) ) {
-		$content = preg_replace( '/<a href=\'(.*?)\'>(.*?)<\/a>/i', '', $content, 1 );
+	if ( preg_match( '/<a href=\"(.*?)\">(.*?)<\/a>/i', $content, $matches ) ) {
+		$content = preg_replace( '/<a href=\"(.*?)\">(.*?)<\/a>/i', '', $content, 1 );
 	}
 	
 	return $content;

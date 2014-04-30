@@ -101,7 +101,9 @@ header .post-format:hover span {
 }
 
 .hentry .entry-content > p:first-child,
-.hentry .entry-content > p:first-of-type {
+.hentry .entry-content > p:first-of-type,
+.hentry .entry-content > p:first-child:empty + p,
+.hentry .entry-content > p:first-of-type:empty + p {
 	font-weight: 600;
 	color: #1d1d1d;
 }

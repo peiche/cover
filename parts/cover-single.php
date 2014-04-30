@@ -21,6 +21,9 @@
 		<div class="background" style="background-image: url('<?php echo $img[0]; ?>');"></div>
 		<header>
 			<h1><a href="#"><?php the_title(); ?></a></h1>
+			<span>
+				<?php cover_posted_on(); ?>
+			</span>
 		</header>
 		<?php if ( !$half ) { ?>
 			<i class="fa fa-angle-down"></i>
