@@ -87,7 +87,7 @@ function cover_posted_on() {
 			esc_url( get_permalink() ),
 			$time_string
 		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s%3$s</a></span>',
+		sprintf( '<span class="author vcard">%2$s<a class="url fn n" href="%1$s">%3$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			get_avatar( get_the_author_meta( 'ID' ), 35 ) . ' ',
 			esc_html( get_the_author() )
