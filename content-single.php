@@ -37,18 +37,19 @@
 		
 		<div class="cf">
 			
-			<ul class="tag-list pull-left">
+			<ul class="tag-list">
 				<li>
 					<?php the_category('</li><li>') ?>
 				</li>
 			</ul>
 			
-			<?php $tag_list = get_the_tag_list( '<ul class="tag-list pull-right"><li>', '</li><li>', '</li></ul>' ); ?>
+			<?php $tag_list = get_the_tag_list( '<ul class="tag-list"><li>', '</li><li>', '</li></ul>' ); ?>
 			<?php if ( '' != $tag_list ) { ?>
 				<?php echo $tag_list; ?>
 			<?php } ?>
-			<?php // edit_post_link( __( 'Edit', 'cover' ), '<span class="edit-link pull-right">', '</span>' ); ?>
 		</div>
+		
+		<?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit', 'cover' ), '<div><span class="edit-link">', '</span></div>' ); ?>
 		
 		<?php get_template_part( 'parts/author-bio' ); ?>
 
