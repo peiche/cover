@@ -27,7 +27,7 @@
 				?>
 				<h2><a href="<?php echo $parent_permalink; ?>"><?php echo $parent_title; ?></a></h2>
 			<?php } ?>
-			<h1><a href="#"><?php the_title(); ?></a></h1>
+			<h1><?php the_title(); ?></h1>
 		</header>
 		<i class="fa fa-angle-down"></i>
 	</div>
