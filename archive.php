@@ -73,13 +73,13 @@ get_header(); ?>
 							single_tag_title();
 							
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'cover' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( '%s', 'cover' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'cover' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'cover' ) ) . '</span>' );
+							printf( __( '%s', 'cover' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'cover' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'cover' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'cover' ) ) . '</span>' );
+							printf( __( '%s', 'cover' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'cover' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
 							_e( 'Asides', 'cover' );
