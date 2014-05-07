@@ -82,9 +82,9 @@ function cover_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">%2$s on <i class="fa fa-clock-o"></i> %1$s</span>', 'cover' ),
+	printf( __( '<span class="posted-on">%2$s on %1$s</span>', 'cover' ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-			esc_url( get_permalink() ),
+			get_day_link( get_the_time('Y'), get_the_time('m'), get_the_time('d') ),
 			$time_string
 		),
 		sprintf( '<span class="author vcard">%2$s<a class="url fn n" href="%1$s">%3$s</a></span>',
