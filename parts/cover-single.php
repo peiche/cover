@@ -20,7 +20,7 @@
 	<div class="cover featured-image <?php if ( $half ) { echo 'half'; } ?>">
 		<div class="background" style="background-image: url('<?php echo $img[0]; ?>');"></div>
 		<header>
-			<h1><a href="#"><?php the_title(); ?></a></h1>
+			<h1><?php the_title(); ?></h1>
 			<span>
 				<?php cover_posted_on(); ?>
 			</span>
