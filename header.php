@@ -47,12 +47,3 @@
 		
 	</div>
 </header>
-
-<div id="search">
-	<div class="searchbar">
-		<?php get_search_form(); ?>
-	</div>
-	<a class="searchopen" href="#"><i class="fa fa-search"></i></a>
-</div>
-
-<a href="#" class="backtotop" data-0-start="opacity: 0;" data-100-start="opacity: 1;"><i class="fa fa-chevron-up"></i></a>
