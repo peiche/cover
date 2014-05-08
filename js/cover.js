@@ -19,7 +19,6 @@ jQuery(document).ready(function() {
 		return false;
 	});
 	jQuery('.searchbar .search-field').focusout(function() {
-		jQuery('.searchbar .search-field').val('');
 		jQuery('.searchopen, .searchbar').removeClass('active');
 	});
 	
@@ -69,11 +68,11 @@ jQuery(document).ready(function() {
 		});
 	}
 	
-	// cover parallax
-	if (!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
-		skrollr.init({
-			forceHeight: false
-		});
-	}
+	// back to top link
+    jQuery('#page').waypoint({
+		handler: function(event, direction) {
+		  jQuery('.backtotop').toggleClass('show');
+		}
+	});
 	
 });
