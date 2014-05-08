@@ -68,11 +68,24 @@ jQuery(document).ready(function() {
 		});
 	}
 	
-	// back to top link
+	// waypoints
     jQuery('#page').waypoint({
-		handler: function(event, direction) {
-		  jQuery('.backtotop').toggleClass('show');
-		}
-	});
-	
+        handler: function(direction) {
+            jQuery('.backtotop').toggleClass('show');
+        }
+    });
+    
+    jQuery('.entry-content').waypoint({
+        handler: function(direction) {
+            jQuery('.profile').toggleClass('show');
+        },
+        offset: 50
+    });
+    jQuery('.postprofile').waypoint({
+        handler: function(direction) {
+            jQuery('.profile').toggleClass('force-hide');
+        },
+        offset: '100%'
+    });
+    
 });

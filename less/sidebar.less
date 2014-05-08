@@ -1,0 +1,81 @@
+.profile {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    width: 15%;
+    right: 5%;
+    top: 130px;
+    z-index: 400;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+.profile.show {
+    opacity: 1;
+    visibility: visible;
+}
+.profile.force-hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media screen and (max-height: 640px) {
+    
+    .profile {
+        // display: none;
+    }
+    
+}
+
+@media screen and (max-width: 1330px) {
+    
+    .profile {
+        display: none;
+    }
+
+}
+
+.profile .profileimage {
+    width: 96px;
+    height: 96px;
+    margin: 10px 0;
+    -webkit-border-radius: 96px;
+    -moz-border-radius: 96px;
+    border-radius: 96px;
+}
+
+.profile h4 {
+    margin: 15px 0;
+}
+
+.profile hr {
+    margin: 30px 0;
+    border: 0;
+    width: 100%;
+    height: 1px;
+    background: #b6b6b6;
+}
+
+.profile strong {
+    margin: 20px 0 10px;
+    font: 600 14px 'Open Sans',Serif;
+    color: #3a3a3a;
+}
+
+.profile .tweet {
+    font: 600 12px 'Open Sans',Serif;
+    line-height: 24px;
+    margin: 20px 0;
+}
+
+.profile p a {
+    color: #3b7bbf;
+}
+
+.profile .tweet span {
+    display: block;
+    text-align: left;
+    color: #848484;
+}
