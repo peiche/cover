@@ -12,13 +12,14 @@
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
-.profile.show {
+.single-format-standard .profile.show,
+.single-format-quote .profile.show {
     opacity: 1;
     visibility: visible;
 }
 .profile.force-hide {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0 !important;
+    visibility: hidden !important;
 }
 
 @media screen and (max-height: 640px) {
@@ -65,7 +66,7 @@
 }
 
 .profile .tweet {
-    font: 600 12px 'Open Sans',Serif;
+    font: 200 14px 'Open Sans',Serif;
     line-height: 24px;
     margin: 20px 0;
 }
