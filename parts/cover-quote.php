@@ -16,9 +16,7 @@
 	<div class="background" <?php if ($has_thumbnail) { ?>style="background-image: url('<?php echo $img[0]; ?>');"<?php } ?>></div>
 	<header>
 		<h1>
-			<a href="#">
-				<?php echo cover_get_blockquote_in_content(); ?>
-			</a>
+			<?php echo cover_get_blockquote_in_content(); ?>
 		</h1>
 	</header>
 </div>
