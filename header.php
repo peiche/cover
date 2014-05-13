@@ -18,14 +18,14 @@
 <?php wp_head(); ?>
 </head>
 
-<?php 
+<?php
 	$hascover = '';
 	if ((is_single() || is_page()) && '' != get_the_post_thumbnail()) {
-		
+
 		$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 		$height = $img[2];
-		
-		if ( $height > 600 && get_post_format() != 'quote' && get_post_format() != 'link' ) {
+
+		if ( $height > 600 && get_post_format() != 'quote' ) {
 			$hascover = 'has-cover';
 		}
 	}
@@ -35,15 +35,15 @@
 <header id="header">
 	<div class="header-container">
 		<a class="title" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-		
+
 		<div class="mobile-menu">
 			<a class="burger" href="#"><i class="fa fa-bars fa-fw"></i></a>
 			<a class="close" href="#"><i class="fa fa-times fa-fw"></i></a>
 		</div>
-		
+
 		<nav id="site-navigation" class="main-navigation">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
 		</nav>
-		
+
 	</div>
 </header>
