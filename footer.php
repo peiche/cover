@@ -29,7 +29,7 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<a href="#" class="backtotop" data-0-start="opacity: 0;" data-100-start="opacity: 1;"><i class="fa fa-chevron-up"></i></a>
+<a href="#" class="backtotop"><i class="fa fa-chevron-up"></i></a>
 
 <?php wp_footer(); ?>
 
