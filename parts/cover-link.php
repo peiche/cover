@@ -12,14 +12,23 @@
 	}
 ?>
 
-<div class="cover featured-image auto">
-	<?php $link = cover_get_link_in_content(); ?>
-	
+<div class="cover featured-image">
 	<div class="background" <?php if ($has_thumbnail) { ?>style="background-image: url('<?php echo $img[0]; ?>');"<?php } ?>></div>
 	<header>
-		<h1>
-			<?php echo $link[0]; ?>
-			<span class="fa fa-external-link fa-fw"></span>
+		<h1 class="align-center">
+			<?php the_title(); ?>
 		</h1>
+		<!--
+		<span>
+			<?php cover_posted_on(); ?>
+		</span>
+		-->
+		<div class="header-content align-center">
+			<?php
+				$link = cover_get_link_in_content();
+				echo $link[0];
+			?>
+		</div>
 	</header>
+	<i class="fa fa-angle-down"></i>
 </div>
