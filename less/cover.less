@@ -29,7 +29,7 @@
 .cover.auto.home {
 	height: 450px;
 }
-@media screen and (max-width: 595px) {
+@media screen and (max-width: 768px) {
 	.cover,
 	.cover.auto,
 	.cover.half {
@@ -51,21 +51,12 @@
 	opacity: .6;
 	background-color: #355264;
 	background-size: cover;
-	background-attachment: scroll; // fixed
+	background-attachment: scroll;
 	background-position: center;
 	background-repeat: no-repeat;
 }
-.cover.auto .background,
-.cover.half .background {
-	background-attachment: scroll;
-}
 .cover .background.darken {
 	opacity: 0.1;
-}
-@media screen and (max-width: 595px) {
-	.cover .background {
-		background-attachment: scroll;
-	}
 }
 
 .cover header {
@@ -76,7 +67,7 @@
 	margin: 0 auto;
 	left: auto;
 }
-@media screen and (max-width: 595px) {
+@media screen and (max-width: 768px) {
 	.cover header {
 		padding: 80px 0 20px;
 	}
@@ -99,7 +90,7 @@
 .cover header h1 a {
 	color: #fff;
 }
-@media screen and (max-width: 595px) {
+@media screen and (max-width: 768px) {
 	.cover header h1 {
 		font-size: 2.5em;
 		line-height: 50px;
@@ -167,7 +158,7 @@
 	margin: auto;
 	width: 40px;
 }
-@media screen and (max-width: 595px) {
+@media screen and (max-width: 768px) {
 	.cover .fa-angle-down {
 		display: none;
 	}
