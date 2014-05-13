@@ -15,15 +15,13 @@
 <div class="cover featured-image">
 	<div class="background" <?php if ($has_thumbnail) { ?>style="background-image: url('<?php echo $img[0]; ?>');"<?php } ?>></div>
 	<header>
-		<h1 class="align-center">
+		<h1>
 			<?php the_title(); ?>
 		</h1>
-		<!--
 		<span>
 			<?php cover_posted_on(); ?>
 		</span>
-		-->
-		<div class="header-content align-center">
+		<div class="header-content">
 			<?php
 				$link = cover_get_link_in_content();
 				echo $link[0];
