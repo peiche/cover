@@ -205,10 +205,6 @@ endif;
 
 if ( ! function_exists( 'cover_remove_link_from_content' ) ) :
 function cover_remove_link_from_content( $content ) {
-	if ( 'link' !== get_post_format() ) {
-		return $content;
-	}
-	
 	if ( preg_match( '/<a href=\"(.*?)\">(.*?)<\/a>/i', $content, $matches ) ) {
 		$content = preg_replace( '/<a href=\"(.*?)\">(.*?)<\/a>/i', '', $content, 1 );
 	}
@@ -221,7 +217,6 @@ function get_related_author_posts() {
     global $authordata, $post;
     $authors_posts = get_posts( array( 'author' => $authordata->ID, 'post__not_in' => array( $post->ID ), 'posts_per_page' => 2 ) );
     foreach ( $authors_posts as $authors_post ) {
-		// <p class="tweet"><a href="http://astrowp.ecko.me/getting-started-with-yeoman-grunt/">Getting Started with Yeoman &amp; Grunt</a><span> 07th March, 2014</span></p>
         $output .= '<p class="tweet"><a href="' . get_permalink( $authors_post->ID ) . '">' . apply_filters( 'the_title', $authors_post->post_title, $authors_post->ID ) . '</a><span>' . mysql2date('M j, Y', $authors_post->post_date) . '</span></p>';
     }
     return $output;
