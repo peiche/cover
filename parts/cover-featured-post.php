@@ -11,5 +11,8 @@
 	<div class="background"<?php if ('' != get_the_post_thumbnail()) { ?> style="background-image: url('<?php echo $image[0]; ?>');"<?php } ?>></div>
 	<header>
 		<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+		<span>
+			<?php cover_posted_on(); ?>
+		</span>
 	</header>
 </div>
