@@ -1,4 +1,4 @@
-var homeSwiper, relatedSwiper;
+var homeSwiper, gallerySwiper, relatedSwiper;
 
 jQuery(document).ready(function() {
 	
@@ -43,6 +43,34 @@ jQuery(document).ready(function() {
 			homeSwiper.swipeNext();
 		});
 	}
+    
+    // gallery slider
+    if (jQuery('#cover-gallery').length > 0) {
+        var gallerySlides = jQuery('#cover-gallery .cover').length;
+		var fading;
+        gallerySwiper = jQuery('#cover-gallery').swiper({
+			loop: true,
+			noSwiping: (gallerySlides > 1 ? false : true),
+			simulateTouch: false,
+            onSlideChangeStart: function(swiper, direction) {
+                
+                // fade out post content to view images
+                // fade back in after 5 seconds of inactivity
+                jQuery('.cover.featured-image header').fadeOut();
+                fading = setTimeout(function() {
+                    jQuery('.cover.featured-image header').fadeIn();
+                }, 5000);
+                
+            }
+		});
+        
+		jQuery('#cover-gallery-left').click(function() {
+			gallerySwiper.swipePrev();
+		});
+		jQuery('#cover-gallery-right').click(function() {
+			gallerySwiper.swipeNext();
+		});
+    }
 	
 	// cover scroller
 	jQuery('.cover .fa-angle-down').click(function() {
