@@ -14,6 +14,8 @@ get_header(); ?>
 		get_template_part( 'parts/cover', 'link' );
 	} else if ( get_post_format() == 'image' ) {
 		get_template_part( 'parts/cover', 'image' );
+    } else if ( get_post_format() == 'gallery' ) {
+        get_template_part( 'parts/cover', 'gallery' );
 	} else {
 		get_template_part( 'parts/cover', 'single' );
 	}
