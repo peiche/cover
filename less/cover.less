@@ -67,6 +67,11 @@
 	left: auto;
     text-align: center;
 }
+.single-format-image .cover header,
+.single-format-gallery .cover header {
+    max-width: 760px;
+    text-align: left;
+}
 @media screen and (max-width: 768px) {
 	.cover header {
 		padding: 80px 0 20px;
@@ -74,6 +79,7 @@
 }
 .cover.home header {
 	top: auto;
+    padding: 50px 0;
 }
 .cover.half header {
 	top: auto;
@@ -114,7 +120,6 @@
 
 .cover header .header-content {
 	font-size: 200%;
-    max-width: 760px;
     margin: 30px auto;
 }
 
@@ -195,4 +200,17 @@
 	.cover blockquote {
 		margin-left: 55px;
 	}
+}
+
+// gallery stuff
+
+#cover-gallery.swiper-container {
+    height: 100%;
+}
+
+#cover-gallery.swiper-container .swiper-slide {
+    height: 100%;
+    display: block;
+    background-size: cover;
+    background-position: 50% 50%;
 }
