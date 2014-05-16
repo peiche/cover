@@ -54,6 +54,12 @@
 	background-attachment: scroll;
 	background-position: center;
 	background-repeat: no-repeat;
+    -webkit-transition: opacity 200ms;
+    -moz-transition: opacity 200ms;
+    transition: opacity 200ms;
+}
+.cover .background.lighten {
+    opacity: 1;
 }
 .cover .background.darken {
 	opacity: 0.1;
@@ -71,6 +77,14 @@
 .single-format-gallery .cover header {
     max-width: 760px;
     text-align: left;
+}
+.single-format-gallery .cover header {
+    -webkit-transition: opacity 200ms;
+    -moz-transition: opacity 200ms;
+    transition: opacity 200ms;
+}
+.single-format-gallery .cover header.hide {
+    opacity: 0;
 }
 @media screen and (max-width: 768px) {
 	.cover header {
