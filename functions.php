@@ -263,7 +263,7 @@ function cover_gallery_images() {
 	}
 
 	foreach ( $attachments_ids as $attachment_id ) {
-        printf( '<div class="swiper-slide cover" style="background-image: url(\'%s\')"></div>',
+        printf( '<div class="swiper-slide cover" style="background-image: url(\'%s\')"><span></span></div>',
             wp_get_attachment_url( $attachment_id )
 		);
 	}
