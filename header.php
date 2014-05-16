@@ -38,7 +38,7 @@
 
 		<div class="mobile-menu">
 			<a class="burger" href="#"><i class="fa fa-bars fa-fw"></i></a>
-			<a class="close" href="#"><i class="fa fa-times fa-fw"></i></a>
+			<!-- <a class="close" href="#"><i class="fa fa-times fa-fw"></i></a> -->
 		</div>
 
 		<nav id="site-navigation" class="main-navigation">
