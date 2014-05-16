@@ -5,11 +5,10 @@ jQuery(document).ready(function() {
 	// menu button
 	jQuery('#header .mobile-menu a.burger').click(function(e) {
 		e.preventDefault();
-		jQuery('#header').removeClass('show-search').addClass('show-nav');
+		jQuery('body').addClass('show-nav');
 	});
-	jQuery('#header .mobile-menu a.close').click(function(e) {
-		e.preventDefault();
-		jQuery('#header').removeClass('show-nav show-search');
+    jQuery('#overlay').click(function() {
+		jQuery('body').removeClass('show-nav');
 	});
 	
 	// search
