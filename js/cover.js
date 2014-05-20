@@ -101,9 +101,13 @@ jQuery(document).ready(function() {
 	}
 	
 	// waypoints
+    
+    jQuery('img[alt="Fork me on GitHub"]').hide();
+    
     jQuery('#page').waypoint({
         handler: function(direction) {
             jQuery('.backtotop').toggleClass('show');
+            jQuery('img[alt="Fork me on GitHub"]').fadeToggle(200);
         }
     });
     
