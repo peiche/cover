@@ -105,8 +105,8 @@ add_action( 'widgets_init', 'cover_widgets_init' );
  */
 function cover_scripts() {
 	
-	wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Domine:700|Gentium+Basic:400italic|Source+Code+Pro:500|Open+Sans:400,600');
-	wp_enqueue_style( 'fa-style', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Source+Code+Pro:500|Montserrat:400,700|Open+Sans:400,600');
+    wp_enqueue_style( 'fa-style', get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'idangerous-style', get_template_directory_uri() . '/css/idangerous.swiper.css' );
 	wp_enqueue_style( 'cover-style', get_template_directory_uri() . '/css/style.css' );
 
@@ -147,72 +147,6 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-/**
- * Extract and return the first blockquote from content.
- */
-if ( ! function_exists( 'cover_get_blockquote_in_content' ) ) :
-function cover_get_blockquote_in_content() {
-	remove_filter( 'the_content', 'cover_remove_blockquote_from_content' );
-
-	$content = apply_filters( 'the_content', get_the_content() );
-
-	add_filter( 'the_content', 'cover_remove_blockquote_from_content' );
-
-	if ( preg_match( '/<blockquote>(.+?)<\/blockquote>/is', $content, $matches ) ) {
-		return $matches[0];
-	} else if ( preg_match( '/<blockquote class="large">(.+?)<\/blockquote>/is', $content, $matches ) ) {
-		return $matches[0];
-	} else {
-		return false;
-	}
-}
-endif;
-
-if ( ! function_exists( 'cover_remove_blockquote_from_content' ) ) :
-function cover_remove_blockquote_from_content( $content ) {
-	if ( 'quote' !== get_post_format() ) {
-		return $content;
-	}
-	
-	if ( preg_match( '/<blockquote>(.+?)<\/blockquote>/is', $content, $matches ) ) {
-		$content = preg_replace( '/<blockquote>(.+?)<\/blockquote>/is', '', $content, 1 );
-	} else if ( preg_match( '/<blockquote class="large">(.+?)<\/blockquote>/is', $content, $matches ) ) {
-		$content = preg_replace( '/<blockquote class="large">(.+?)<\/blockquote>/is', '', $content, 1 );
-	}
-	
-	return $content;
-}
-endif;
-
-/**
- * Extract and return the first link from content.
- */
-if ( ! function_exists( 'cover_get_link_in_content' ) ) :
-function cover_get_link_in_content() {
-	remove_filter( 'the_content', 'cover_remove_link_from_content' );
-
-	$content = apply_filters( 'the_content', get_the_content() );
-
-	add_filter( 'the_content', 'cover_remove_link_from_content' );
-
-	if ( preg_match( '/<a href=\"(.*?)\">(.*?)<\/a>/i', $content, $matches ) ) {
-		return $matches;
-	} else {
-		return false;
-	}
-}
-endif;
-
-if ( ! function_exists( 'cover_remove_link_from_content' ) ) :
-function cover_remove_link_from_content( $content ) {
-	if ( preg_match( '/<a href=\"(.*?)\">(.*?)<\/a>/i', $content, $matches ) ) {
-		$content = preg_replace( '/<a href=\"(.*?)\">(.*?)<\/a>/i', '', $content, 1 );
-	}
-	
-	return $content;
-}
-endif;
-
 function get_related_author_posts() {
     global $authordata, $post;
     $authors_posts = get_posts( array( 'author' => $authordata->ID, 'post__not_in' => array( $post->ID ), 'posts_per_page' => 2 ) );
@@ -221,73 +155,3 @@ function get_related_author_posts() {
     }
     return $output;
 }
-
-if ( ! function_exists( 'cover_gallery_images' ) ) :
-function cover_gallery_images() {
-	$output = $images_ids = '';
-
-	if ( function_exists( 'get_post_galleries' ) ) {
-		$galleries = get_post_galleries( get_the_ID(), false );
-
-		if ( empty( $galleries ) ) return false;
-
-		if ( isset( $galleries[0]['ids'] ) ) {
-			foreach ( $galleries as $gallery ) {
-				// Grabs all attachments ids from one or multiple galleries in the post
-				$images_ids .= ( '' !== $images_ids ? ',' : '' ) . $gallery['ids'];
-			}
-
-			$attachments_ids = explode( ',', $images_ids );
-			// Removes duplicate attachments ids
-			$attachments_ids = array_unique( $attachments_ids );
-		} else {
-			$attachments_ids = get_posts( array(
-				'fields'         => 'ids',
-				'numberposts'    => 999,
-				'order'          => 'ASC',
-				'orderby'        => 'menu_order',
-				'post_mime_type' => 'image',
-				'post_parent'    => get_the_ID(),
-				'post_type'      => 'attachment',
-			) );
-		}
-	} else {
-		$pattern = get_shortcode_regex();
-		preg_match( "/$pattern/s", get_the_content(), $match );
-		$atts = shortcode_parse_atts( $match[3] );
-
-		if ( isset( $atts['ids'] ) )
-			$attachments_ids = explode( ',', $atts['ids'] );
-		else
-			return false;
-	}
-
-	foreach ( $attachments_ids as $attachment_id ) {
-        printf( '<div class="swiper-slide cover" style="background-image: url(\'%s\')"><span></span></div>',
-            wp_get_attachment_url( $attachment_id )
-		);
-	}
-
-	return $output;
-}
-endif;
-
-/**
- * Removes galleries on single gallery posts, since we display images from all
- * galleries on top of the page
- */
-function cover_delete_post_gallery( $content ) {
-	if ( is_single() && is_main_query() && has_post_format( 'gallery' ) ) :
-		$regex = get_shortcode_regex();
-		preg_match_all( "/{$regex}/s", $content, $matches );
-
-		// $matches[2] holds an array of shortcodes names in the post
-		foreach ( $matches[2] as $key => $shortcode_match ) {
-			if ( 'gallery' === $shortcode_match )
-				$content = str_replace( $matches[0][$key], '', $content );
-		}
-	endif;
-
-	return $content;
-}
-add_filter( 'the_content', 'cover_delete_post_gallery' );
