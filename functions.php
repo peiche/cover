@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 760; /* pixels */
+	$content_width = 760;
 }
 
 if ( ! function_exists( 'cover_setup' ) ) :
@@ -45,15 +45,6 @@ function cover_setup() {
 		'primary' => __( 'Primary Menu', 'cover' ),
 	) );
 
-	// Enable support for Post Formats.
-	add_theme_support( 'post-formats', array( 'quote', 'link', 'image', 'gallery' ) );
-
-	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'cover_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
 	
@@ -84,23 +75,6 @@ function cover_has_featured_posts() {
 }
 
 /**
- * Register widgetized area and update sidebar with default widgets.
- */
-/*
-function cover_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'cover' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'cover_widgets_init' );
-*/
-
-/**
  * Enqueue scripts and styles.
  */
 function cover_scripts() {
@@ -121,11 +95,6 @@ function cover_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cover_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
