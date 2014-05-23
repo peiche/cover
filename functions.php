@@ -79,7 +79,7 @@ function cover_has_featured_posts() {
  */
 function cover_scripts() {
 	
-	wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Source+Code+Pro:500|Montserrat:400,700|Open+Sans:400,600');
+	wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Source+Code+Pro:500|Montserrat:400,700|Open+Sans:400,600|Gentium+Basic:400italic');
     wp_enqueue_style( 'fa-style', get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'idangerous-style', get_template_directory_uri() . '/css/idangerous.swiper.css' );
 	wp_enqueue_style( 'cover-style', get_template_directory_uri() . '/css/style.css' );
