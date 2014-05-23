@@ -1,0 +1,9 @@
+#colophon {
+	@include site-width;
+	margin-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	font: 400 13px $font-stack-content;
+	line-height: 34px;
+	color: #a6a6a6;
+}

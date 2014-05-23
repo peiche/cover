@@ -1,0 +1,30 @@
+.notification {
+	margin-top: 50px;
+	padding: 20px 25px;
+	background: #1c78be;
+    @include border-radius(4px);
+    .ntitle {
+        color: #c4e2f8;
+        font: 700 18px 'Open Sans',Serif;
+        padding-right: 20px;
+        border-right: 2px solid #3285c4;
+    }
+    .message {
+        color: #fff;
+        font: 700 18px 'Open Sans',Serif;
+        padding-left: 20px;
+    }
+    a {
+        position: relative;
+        margin-top: -3px;
+        display: inline-block;
+        float: right;
+        padding: 4px 10px 3px;
+        color: #fff;
+        background: #0b4673;
+        @include border-radius(30px);
+        i {
+            margin-top: 3px;
+        }
+    }
+}

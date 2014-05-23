@@ -1,0 +1,35 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin transition-all {
+    -webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+@mixin transition-opacity {
+    -webkit-transition: opacity 200ms;
+    -moz-transition: opacity 200ms;
+    -o-transition: opacity 200ms;
+    transition: opacity 200ms;
+}
+
+@mixin site-width {
+    width: 90%;
+	max-width: 760px;
+    margin: 0 auto;
+}
+
+@mixin background-gradient($color1, $color2) {
+	background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, $color1), color-stop(100%, $color2));
+	background-image: -webkit-linear-gradient($color1, $color2);
+	background-image: -moz-linear-gradient($color1, $color2);
+	background-image: -o-linear-gradient($color1, $color2);
+	background-image: linear-gradient($color1, $color2);
+}

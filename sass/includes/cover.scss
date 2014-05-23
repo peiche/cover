@@ -1,0 +1,124 @@
+.cover {
+	display: none;
+	position: relative;
+	background-color: #2b2b2b;
+    @include background-gradient(#2b2b2b, #000);
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	z-index: 400;
+    &.featured-image {
+        display: block;
+    }
+    &.half {
+        height: auto;
+        min-height: 500px;
+        header {
+            top: auto;
+            padding: 80px 0;
+        }
+    }
+    &.show {
+        overflow: visible;
+    }
+    &.auto {
+        height: auto;
+	   padding: 80px 0;
+    }
+    &.home {
+        padding-top: 66px;
+        &.auto {
+            height: 450px;
+        }
+        header {
+            top: auto;
+            padding: 50px 0;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        height: auto;
+		min-height: 500px;
+		padding: 40px 0;
+    }
+    .background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: .6;
+        background-color: #355264;
+        background-size: cover;
+        background-attachment: scroll;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include transition-opacity;
+        &.darken {
+            opacity: 0.1;
+        }
+    }
+    header {
+        position: relative;
+        top: 30%;
+        left: auto;
+        @include site-width;
+        @media screen and (max-width: 768px) {
+            padding: 80px 0;
+        }
+        h1 {
+            color: #fff;
+            font: 700 3.6em $font-stack-heading;
+            line-height: 86px;
+            text-shadow: 0 0 30px rgba(0,0,0,.8);
+            a {
+                color: #fff;
+                &:hover {
+                    border-bottom: 3px solid rgba(255,255,255,0.2);
+                }
+            }
+            @media screen and (max-width: 768px) {
+                font-size: 2.5em;
+                line-height: 50px;
+            }
+        }
+        h2 {
+        	font: 600 22px $font-stack-content;
+            color: #dedede;
+            margin-top: 0;
+            a {
+                color: #dedede;
+                &:hover {
+                    border-bottom: 2px solid #dedede;
+                }
+            }
+        }
+        p {
+            color: #dedede;
+            opacity: 0.9;
+        }
+        span {
+            color: #dedede;
+            a,
+            time {
+                color: #fff;
+            }
+            a:hover {
+                border-bottom: 2px solid #fff;
+            }
+        }
+    }
+    .fa-angle-down {
+    	position: absolute;
+        bottom: 0;
+        color: #fff;
+        left: 0;
+        right: 0;
+        cursor: pointer;
+        font-size: 60px;
+        margin: auto;
+        width: 40px;
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+}
