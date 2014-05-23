@@ -43,40 +43,7 @@ jQuery(document).ready(function() {
 		});
 	}
     
-    // gallery slider
-    if (jQuery('#cover-gallery').length > 0) {
-        var gallerySlides = jQuery('#cover-gallery .cover').length;
-		var fading = setTimeout(function() {
-            // do nothing yet
-        }, 0);
-        gallerySwiper = jQuery('#cover-gallery').swiper({
-			loop: true,
-			noSwiping: (gallerySlides > 1 ? false : true),
-			simulateTouch: true, // false
-            onSlideChangeStart: function(swiper, direction) {
-                
-                // fade out post content to view images
-                // fade back in after 5 seconds of inactivity
-                
-                clearTimeout(fading);
-                
-                jQuery('.cover.featured-image .background').addClass('lighten');
-                fading = setTimeout(function() {
-                    jQuery('.cover.featured-image .background').removeClass('lighten');
-                }, 5000);
-                
-            }
-		});
-        
-		jQuery('#cover-gallery-left').click(function() {
-			gallerySwiper.swipePrev();
-		});
-		jQuery('#cover-gallery-right').click(function() {
-			gallerySwiper.swipeNext();
-		});
-    }
-	
-	// cover scroller
+    // cover scroller
 	jQuery('.cover .fa-angle-down').click(function() {
 		var top = jQuery('.cover').height();
 		jQuery('html, body').animate({
