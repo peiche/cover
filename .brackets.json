@@ -3,7 +3,7 @@
         "sass/style.scss": {
             "sass.enabled": true,
             "sass.options": {
-                "output": "../css/style.sass.css",
+                "output": "../css/style.css",
                 "includePaths": [],
                 "imagePath": null,
                 "sourceComments": "map",
@@ -15,7 +15,8 @@
             "sass.enabled": false
         },
         "sass/includes/*": {
-            "sass.enabled": false
+            "sass.enabled": false,
+            "useTabChar": false
         }
     }
 }
