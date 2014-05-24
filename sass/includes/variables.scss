@@ -5,6 +5,8 @@ $text-color-content: #333332;
 $text-color-quote: #888;
 $text-color-cite: #bbb;
 
+$font-weight-normal: 400;
+
 $font-stack-content: 'Open Sans', sans-serif;
 $font-stack-heading: Montserrat, sans-serif;
 $font-stack-quote: 'Gentium Basic', serif;
@@ -12,9 +14,9 @@ $font-stack-code: 'Source Code Pro', monospace;
 
 $link-color: #026ed2;
 $link-color-hover: darken($link-color, 10%);
+$link-border-color: #c3c2c9;
 
 $button-background: #fff;
-$button-background-hover: #0066d9;
 $button-border-color: #c3c2c9;
 $button-color: #686868;
 $button-color-hover: #fff;
@@ -22,3 +24,7 @@ $button-gray-background: #edebf3;
 $button-gray-color: #858585;
 
 $site-width: 760px;
+
+$social-color-facebook: #3b5998;
+$social-color-twitter: #00acee;
+$social-color-google-plus: #dd4b39;

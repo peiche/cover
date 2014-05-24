@@ -20,6 +20,20 @@
     transition: opacity 200ms;
 }
 
+@mixin transition($type, $duration, $timing) {
+    -webkit-transition: $type $duration $timing;
+    -moz-transition: $type $duration $timing;
+    -o-transition: $type $duration $timing;
+    transition: $type $duration $timing;
+}
+
+@mixin translateZ($val) {
+    -webkit-transform: translateZ($val);
+    -moz-transform: translateZ($val);
+    -o-transform: translateZ($val);
+    transform: translateZ($val);
+}
+
 @mixin site-width {
     width: 90%;
 	max-width: 760px;
@@ -32,4 +46,27 @@
 	background-image: -moz-linear-gradient($color1, $color2);
 	background-image: -o-linear-gradient($color1, $color2);
 	background-image: linear-gradient($color1, $color2);
+}
+
+@mixin social-box-shadow($width, $color) {
+    -webkit-box-shadow: inset 0 0 0 $width $color;
+    -moz-box-shadow: inset 0 0 0 $width $color;
+    -o-box-shadow: inset 0 0 0 $width $color;
+	box-shadow: inset 0 0 0 $width $color;
+}
+
+@mixin swiper-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: #fff;
+    font-size: 60px;
+    height: 60px;
+    cursor: pointer;
+    @media screen and (max-width: 920px) {
+        font-size: 30px;
+        width: 5%;
+        display: none; // remove to show arrows on smaller screens
+    }
 }

@@ -22,7 +22,7 @@
         font-weight: 600;
         font-size: 125%;
         &:hover {
-            border-color: #0079ec;
+            border-color: $link-color;
         }
     }
     .main-navigation {
@@ -32,13 +32,13 @@
         li {
             padding: 2px 0 2px 30px;
             &:hover a {
-                border-color: $link-color-hover;
+                border-color: $link-color;
             }
         }
         a {
             padding: 1px 0 2px;
             &:hover {
-                border-color: $link-color-hover;
+                border-color: $link-color;
             }
         }
     }
@@ -72,12 +72,9 @@
 	}
 	
 	#header .main-navigation {
-		// display: none;
         visibility: hidden;
         opacity: 0;
-        -webkit-transition: all 200ms;
-        -moz-transition: all 200ms;
-        transition: all 200ms;
+        @include transition-all;
         position: absolute;
 		z-index: 1080;
         left: 35px;
@@ -89,7 +86,6 @@
         transform: scale(1.1);
 	}
 	.show-nav #header .main-navigation {
-		// display: block;
 		visibility: visible;
         opacity: 1;
         -webkit-transform: scale(1);
@@ -147,9 +143,7 @@
         bottom: 0;
         z-index: 1079;
         background: rgba(0,0,0,0.5);
-        -webkit-transition: all 200ms;
-        -moz-transition: all 200ms;
-        transition: all 200ms;
+        @include transition-all;
     }
     body.show-nav #overlay {
         position: fixed;
@@ -179,19 +173,14 @@
 	display: inline-block;
 	padding: 7px 22px;
 	font: 600 14px 'Open Sans',Serif;
-	-webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	border-radius: 20px;
+    @include border-radius(20px);
+    @include transition-all;
 }
 .paging-navigation a:hover,
 .post-navigation a:hover,
 #infinite-handle span:hover {
-	border: 2px solid #0066d9;
-	background: #0066d9;
+	border: 2px solid $link-color;
+	background: $link-color;
 	color: #fff;
 }
 
@@ -237,22 +226,17 @@ a.backtotop:visited {
 	bottom: 14px;
 	right: 15px;
 	text-align: center;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	border-radius: 20px;
-	z-index: 400;
-	-webkit-transition: all 200ms;
-	-moz-transition: all 200ms;
-	-o-transition: all 200ms;
-	transition: all 200ms;
+    z-index: 400;
+    @include border-radius(20px);
+    @include transition-all;
 }
 a.backtotop.show {
     visibility: visible;
     opacity: 1;
 }
 a.backtotop:hover {
-	background: #026ed6;
-    border-color: #026ed6;
+	background: $link-color;
+    border-color: $link-color;
     color: #fff;
 }
 

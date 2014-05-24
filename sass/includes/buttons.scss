@@ -8,8 +8,8 @@
     @include border-radius(20px);
     @include transition-all;
     &:hover {
-        border-color: $button-background-hover;
-        background: $button-background-hover;
+        border-color: $link-color;
+        background: $link-color;
         color: $button-color-hover;    
     }
     &.gray {

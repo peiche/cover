@@ -131,6 +131,7 @@ a {
     &:hover {
         text-decoration: none;
         color: $link-color-hover;
+        border-color: $link-border-color;
     }
     &.block {
         display: block;
