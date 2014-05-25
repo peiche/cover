@@ -1,6 +1,6 @@
 {
     "path": {
-        "sass/style.scss": {
+        "scss/style.scss": {
             "sass.enabled": true,
             "sass.options": {
                 "output": "../css/style.css",
@@ -11,12 +11,11 @@
             },
             "debug.showErrorsInStatusBar": true
         },
-        "sass/_*.scss": {
+		"scss/_*": {
+			"sass.enabled": false
+		},
+        "scss/includes/*": {
             "sass.enabled": false
-        },
-        "sass/includes/*": {
-            "sass.enabled": false,
-            "useTabChar": false
         }
     }
 }
