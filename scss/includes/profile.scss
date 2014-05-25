@@ -12,6 +12,7 @@
         display: block;
         float: left;
         width: 12%;
+        height: 12%;
         margin: 30px 0;
         @include border-radius(50%);
     }
@@ -49,25 +50,15 @@
             @include border-radius(50%);
             @include transition(all, .25s, ease-out);
         }
-        .facebook {
-            @include social-box-shadow(20px, $social-color-facebook);
-            &:hover {
-                color: $social-color-facebook;
-                @include social-box-shadow(2px, $social-color-facebook);
-            }
-        }
-        .twitter {
-            @include social-box-shadow(20px, $social-color-twitter);
-            &:hover {
-                color: $social-color-twitter;
-                @include social-box-shadow(2px, $social-color-twitter);
-            }
-        }
-        .google-plus {
-            @include social-box-shadow(20px, $social-color-google-plus);
-            &:hover {
-                color: $social-color-google-plus;
-                @include social-box-shadow(2px, $social-color-google-plus);
+        @each $val in $social-icons {
+            $social-network: nth($val, 1);
+            $color: nth($val, 2);
+            .#{$social-network} {
+                @include social-box-shadow(20px, $color);
+                &:hover {
+                    color: $color;
+                    @include social-box-shadow(2px, $color);
+                }
             }
         }
     }

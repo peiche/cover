@@ -1,0 +1,14 @@
+.btn {
+	@include button;
+    &.gray {
+        border-color: $button-gray-background;
+        background: $button-gray-background;
+        color: $button-gray-color;
+        &:hover {
+            background: $button-background;
+        }
+    }
+    .entry-meta & {
+        margin: 0 15px 15px 0;
+    }
+}

@@ -26,13 +26,6 @@
 	padding: 30px 0 10px;
 }
 
-.comment-author .avatar {
-	float: left;
-	margin: -5px 23px 0 0;
-	width: 62px;
-	height: 62px;
-}
-
 .comment-author {
 	margin: 5px 0;
 	font: 700 24px $font-stack-heading;
@@ -42,12 +35,21 @@
     .says {
         display: none;
     }
+    .avatar {
+        float: left;
+        margin: -5px 23px 0 0;
+        width: 62px;
+        height: 62px;
+    }
 }
 
 .comment-metadata {
-	margin: 8px 0;
+	margin: 5px 0 8px;
 	font: 600 14px $font-stack-content;
 	color: #abaeb6;
+    a {
+        color: #b6b6b6;
+    }
     time {
         color: #65686e;
     }
@@ -57,12 +59,5 @@
 	clear: both;
     p {
         margin: 15px 0;
-    }
-}
-
-.comment-metadata {
-	margin-top: 5px;
-    a {
-        color: #b6b6b6;
     }
 }

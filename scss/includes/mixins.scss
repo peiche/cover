@@ -70,3 +70,19 @@
         display: none; // remove to show arrows on smaller screens
     }
 }
+
+@mixin button {
+    display: inline-block;
+    padding: 7px 22px;
+    font: 600 14px $font-stack-content;
+    border: 2px solid $button-border-color;
+    background: $button-background;
+    color: $button-color;
+    @include border-radius(20px);
+    @include transition-all;
+    &:hover {
+        border-color: $link-color;
+        background: $link-color;
+        color: $button-color-hover;    
+    }
+}
