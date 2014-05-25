@@ -36,21 +36,12 @@
 	<footer class="entry-meta">
 		
         <?php
-
-            $categories = get_the_category();
-            if ( $categories ) {
-                foreach ( $categories as $category ) {
-                    echo '<a class="btn" href="' . get_category_link( $category->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">' . $category->cat_name . '</a>';
-                }
-            }
-
             $tags = get_the_tags();
             if ( $tags ) {
                 foreach( $tags as $tag ) {
                     echo '<a class="btn gray" href="' . get_tag_link( $tag->term_id ) . '" title="' . esc_attr( sprintf( __("View all posts in %s" ), $tag->name ) ) . '">' . $tag->name . '</a>'; 
                 }
             }
-
         ?>
 		
         <?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit', 'cover' ), '<div><span class="edit-link">', '</span></div>' ); ?>

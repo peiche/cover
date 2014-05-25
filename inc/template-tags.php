@@ -81,19 +81,28 @@ function cover_posted_on() {
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
-
-	printf( __( '<span class="posted-on">%2$s on %1$s</span>', 'cover' ),
-		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
+    
+    $category_output = '';
+    $category_separator = ', ';
+    $categories = get_the_category();
+    foreach($categories as $category) {
+        $category_output .= '<a href="' . get_category_link( $category->term_id ) . '">' . $category->cat_name . '</a>' . $category_separator;
+    }
+    $category_output = trim( $category_output, $category_separator );
+    
+    printf( __( '<span class="posted-on">%1$s on %2$s in %3$s</span>', 'cover' ),
+		sprintf( '<span class="author vcard">%1$s <a class="url fn n" href="%2$s">%3$s</a></span>',
+			get_avatar( get_the_author_meta( 'ID' ), 35 ) . ' ',
+            esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			esc_html( get_the_author() )
+		),
+        sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			get_day_link( get_the_time('Y'), get_the_time('m'), get_the_time('d') ),
 			$time_string
 		),
-		sprintf( '<span class="author vcard">%2$s<a class="url fn n" href="%1$s">%3$s</a></span>',
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			get_avatar( get_the_author_meta( 'ID' ), 35 ) . ' ',
-			esc_html( get_the_author() )
-		)
+        sprintf( $category_output )
 	);
-
+    
 }
 endif;
 
