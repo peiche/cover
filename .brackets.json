@@ -7,13 +7,13 @@
                 "includePaths": [],
                 "imagePath": null,
                 "sourceComments": "map",
-                "outputStyle": "nested"
+                "outputStyle": "compressed"
             },
             "debug.showErrorsInStatusBar": true
         },
-		"scss/_*": {
-			"sass.enabled": false
-		},
+        "scss/_*": {
+            "sass.enabled": false
+        },
         "scss/includes/*": {
             "sass.enabled": false
         }
