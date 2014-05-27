@@ -113,29 +113,21 @@
         border-bottom: 1px solid #dcd8d5;
         text-align: left;
     }
-}
-
-@media screen and (min-width: 1140px) {
-	.wp-caption.aligncenter .wp-caption-text,
-	.wp-caption.alignleft .wp-caption-text,
-	.wp-caption.alignright .wp-caption-text {
-		padding: 0;
-		position: absolute;
-		top: 0;
-		left: -175px;
-		width: 150px;
-		padding: 10px 0 10px;
-		border-top: 1px solid #dcd8d5;
-		margin: 0;
-	}
-	.wp-caption.aligncenter .wp-caption-text,
-	.wp-caption.alignleft .wp-caption-text {
-		text-align: right;
-	}
-	.wp-caption.alignright .wp-caption-text {
-		left: auto;
-		right: -175px;
-	}
+    @each $alignment in (aligncenter, alignleft) {
+        &.#{$alignment} .wp-caption-text {
+            @media screen and (min-width: 1140px) {
+                padding: 0;
+                position: absolute;
+                top: 0;
+                left: -175px;
+                width: 150px;
+                padding: 10px 0 10px;
+                border-top: 1px solid #dcd8d5;
+                margin: 0;
+                text-align: right;
+            }
+        }
+    }
 }
 
 .entry-meta {
