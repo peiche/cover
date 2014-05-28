@@ -1,21 +1,17 @@
 {
     "path": {
-        "scss/style.scss": {
+        "sass/style.scss": {
             "sass.enabled": true,
             "sass.options": {
                 "output": "../css/style.css",
                 "includePaths": [],
                 "imagePath": null,
-                "sourceComments": "map",
-				"sourceMap": "style.css.map",
+                "sourceComments": "none",
                 "outputStyle": "compressed"
             },
             "debug.showErrorsInStatusBar": true
         },
-        "scss/_*": {
-            "sass.enabled": false
-        },
-        "scss/includes/*": {
+        "sass/includes/*": {
             "sass.enabled": false
         }
     }

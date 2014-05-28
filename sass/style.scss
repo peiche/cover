@@ -2,10 +2,10 @@
 @import 'includes/variables';
 @import 'includes/mixins';
 
-// initial Underscores styles
-@import 'includes/_s';
+/* initial Underscores styles */
+@import 'includes/underscores';
 
-// styles - split into smaller chunks
+/* styles - split into smaller chunks */
 @import 'includes/base';
 @import 'includes/buttons';
 @import 'includes/nav';
@@ -20,5 +20,5 @@
 @import 'includes/archive';
 @import 'includes/footer';
 
-// Utility classes
+/* Utility classes */
 @import 'includes/utility';
