@@ -34,8 +34,8 @@
         margin: 20px 0 0;
         padding: 0;
         overflow: hidden;
-        @include transition(all, .25s, ease-out);
-        @include translateZ(0);
+        @include transition(all .25s ease-out);
+        @include transform(translateZ(0));
         li {
             float: left;
             margin: 0 10px 10px 0;
@@ -48,7 +48,7 @@
             text-align: center;
             color: #fff;
             @include border-radius(50%);
-            @include transition(all, .25s, ease-out);
+            @include transition(all .25s ease-out);
         }
         @each $val in $social-icons {
             $social-network: nth($val, 1);

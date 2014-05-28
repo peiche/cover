@@ -22,7 +22,7 @@
         height: 65px;
         opacity: 0;
         visibility: hidden;
-        @include transition-opacity;
+        @include transition(opacity 200ms);
         @media screen and (max-width: $site-width) {
             position: static;
             opacity: 1;

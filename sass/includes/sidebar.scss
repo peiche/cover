@@ -6,7 +6,7 @@
     right: 5%;
     top: 130px;
     z-index: 400;
-    @include transition-all;
+    @include transition(all .2s ease-in-out);
     &.show {
         opacity: 1;
         visibility: visible;

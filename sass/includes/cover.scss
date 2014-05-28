@@ -52,7 +52,7 @@
         background-attachment: scroll;
         background-position: center;
         background-repeat: no-repeat;
-        @include transition-opacity;
+        @include transition(opacity 200ms);
         &.darken {
             opacity: 0.1;
         }

@@ -84,7 +84,7 @@
 		@media screen and (max-width: 768px) {
 			visibility: hidden;
 			opacity: 0;
-			@include transition-all;
+			@include transition(all .2s ease-in-out);
 			position: absolute;
 			z-index: 1080;
 			left: 35px;
@@ -136,7 +136,7 @@
 	bottom: 0;
 	z-index: 1079;
 	background: rgba(0,0,0,0.5);
-	@include transition-all;
+	@include transition(all .2s ease-in-out);
 	@media screen and (max-width: 768px) {
 		display: block;
 		.show-nav & {
@@ -198,7 +198,7 @@ a.backtotop {
 	text-align: center;
     z-index: 400;
     @include border-radius(20px);
-    @include transition-all;
+    @include transition(all .2s ease-in-out);
 	&:hover {
 		background: $link-color;
 		border-color: $link-color;

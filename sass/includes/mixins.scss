@@ -6,37 +6,23 @@
     border-radius: $radius;
 }
 
-@mixin transition-all {
-    -webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
+@mixin transition($val) {
+    -webkit-transition: $val;
+    -moz-transition: $val;
+    -o-transition: $val;
+    transition: $val;
 }
 
-@mixin transition-opacity {
-    -webkit-transition: opacity 200ms;
-    -moz-transition: opacity 200ms;
-    -o-transition: opacity 200ms;
-    transition: opacity 200ms;
-}
-
-@mixin transition($type, $duration, $timing) {
-    -webkit-transition: $type $duration $timing;
-    -moz-transition: $type $duration $timing;
-    -o-transition: $type $duration $timing;
-    transition: $type $duration $timing;
-}
-
-@mixin translateZ($val) {
-    -webkit-transform: translateZ($val);
-    -moz-transform: translateZ($val);
-    -o-transform: translateZ($val);
-    transform: translateZ($val);
+@mixin transform($val) {
+    -webkit-transform: $val;
+    -moz-transform: $val;
+    -o-transform: $val;
+    transform: $val;
 }
 
 @mixin site-width {
     width: 90%;
-	max-width: 760px;
+	max-width: $site-width;
     margin: 0 auto;
 }
 
@@ -79,7 +65,7 @@
     background: $button-background;
     color: $button-color;
     @include border-radius(20px);
-    @include transition-all;
+    @include transition(all .2s ease-in-out);
     &:hover {
         border-color: $link-color;
         background: $link-color;
