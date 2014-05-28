@@ -8,8 +8,7 @@
                 "imagePath": null,
                 "sourceComments": "none",
                 "outputStyle": "compressed"
-            },
-            "debug.showErrorsInStatusBar": true
+            }
         },
         "sass/includes/*": {
             "sass.enabled": false
