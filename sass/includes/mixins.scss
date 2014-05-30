@@ -20,6 +20,12 @@
     transform: $val;
 }
 
+@mixin transform3d($val) {
+	-webkit-transform3d: $val;
+	-moz-transform3d: $val;
+	transform3d: $val;
+}
+
 @mixin site-width {
     width: 90%;
 	max-width: $site-width;
