@@ -35,4 +35,5 @@
 		<span id="cover-home-right" class="fa fa-angle-right fa-fw"></span>
 	<?php } ?>
 	
+	<div class="swiper-pagination"></div>
 </div>
