@@ -226,3 +226,5 @@ pip-log.txt
 #############
 
 *.min.js
+css/style.css
+js/cover.min.js
