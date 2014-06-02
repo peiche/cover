@@ -9,11 +9,11 @@
 ?>
 
 	</div><!-- #content -->
-
-	<?php if (function_exists('related_posts') && is_single()) { ?>
-		<?php related_posts();?>
+	
+	<?php if ( is_single() ) { ?>
+		<?php cover_post_nav(); ?>
 	<?php } ?>
-
+	
     <div id="search">
         <div class="searchbar">
             <?php get_search_form(); ?>
