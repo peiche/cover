@@ -213,3 +213,16 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#############
+## Sass
+#############
+
+*.css
+*.css.map
+
+#############
+## JavaScript
+#############
+
+*.min.js
