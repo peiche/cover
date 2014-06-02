@@ -6,6 +6,8 @@
                 "output": "../css/style.css",
                 "includePaths": [],
                 "imagePath": null,
+				"sourceComments": "map",
+				"sourceMap": "style.css.map",
                 "outputStyle": "compressed"
             }
         },
