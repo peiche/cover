@@ -45,8 +45,8 @@ if ( ! function_exists( 'cover_post_nav' ) ) :
  */
 function cover_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
-	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( true, '', true );
+	$next = get_adjacent_post( true, '', false );
 
 	if ( ! $next && ! $previous ) {
 		return;
@@ -54,10 +54,13 @@ function cover_post_nav() {
 	?>
 	<nav class="navigation post-navigation" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'cover' ); ?></h1>
-		<div class="nav-links">
+		<div class="nav-links cf">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<i class="fa fa-chevron-left meta-nav"></i><span>%title</span>', 'Previous post link', 'cover' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '<span>%title</span><i class="fa fa-chevron-right meta-nav"></i>', 'Next post link',     'cover' ) );
+				$prev_img = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'single-post-thumbnail' );
+				previous_post_link( '<div class="nav-previous cover featured-image fourth' . ( ( ! $next ) ? ' full-width' : '' ) . '"><div class="background" style="background-image: url(\'' . $prev_img[0] . '\')"></div>%link</div>', _x( '<i class="fa fa-chevron-left meta-nav"></i><span>%title</span>', 'Previous post link', 'cover' ), true );
+				
+				$next_img = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'single-post-thumbnail' );
+				next_post_link( '<div class="nav-next cover featured-image fourth' . ( ( ! $previous ) ?  ' full-width' : '' ) . '"><div class="background" style="background-image: url(\'' . $next_img[0] . '\')"></div>%link</div>', _x( '<span>%title</span><i class="fa fa-chevron-right meta-nav"></i>', 'Next post link', 'cover' ), true );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
