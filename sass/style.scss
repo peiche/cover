@@ -1,24 +1,29 @@
+/* Font Awesome */
+@import "FontAwesome/font-awesome";
+
+/* iDangerous slider */
+@import "iDangerous/idangerous-swiper";
+
 /* variables and mixins */
-@import 'includes/variables';
-@import 'includes/mixins';
+@import "variables";
+@import "mixins";
 
 /* initial Underscores styles */
-@import 'includes/underscores';
+@import "underscores";
 
 /* styles - split into smaller chunks */
-@import 'includes/base';
-@import 'includes/buttons';
-@import 'includes/nav';
-@import 'includes/search';
-@import 'includes/cover';
-@import 'includes/content';
-@import 'includes/profile';
-@import 'includes/comments';
-@import 'includes/sidebar';
-@import 'includes/yarpp';
-@import 'includes/swiper';
-@import 'includes/archive';
-@import 'includes/footer';
+@import "base";
+@import "buttons";
+@import "nav";
+@import "search";
+@import "cover";
+@import "content";
+@import "profile";
+@import "comments";
+@import "sidebar";
+@import "swiper";
+@import "archive";
+@import "footer";
 
 /* Utility classes */
-@import 'includes/utility';
+@import "utility";
