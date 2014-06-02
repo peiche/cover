@@ -6,12 +6,14 @@
                 "output": "../css/style.css",
                 "includePaths": [],
                 "imagePath": null,
-                "sourceComments": "none",
                 "outputStyle": "compressed"
             }
         },
-        "sass/includes/*": {
-            "sass.enabled": false
-        }
+		"sass/iDangerous/*": {
+			"sass.enabled": false
+		},
+		"sass/FontAwesome/*": {
+			"sass.enabled": false
+		}
     }
 }
