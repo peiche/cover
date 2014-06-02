@@ -162,8 +162,7 @@
 	}
 }
 
-.paging-navigation a,
-.post-navigation a {
+.paging-navigation a {
 	@include button;
 	span {
 		@media screen and (max-width: 405px) {
@@ -171,16 +170,66 @@
 		}
 	}
 }
-
-.meta-nav {
-	&.fa-chevron-left {
-		margin-right: 15px;
+.post-navigation {
+	.full-width {
+		width: 100%;
 	}
-	&.fa-chevron-right {
-		margin-left: 15px;
-	}
-	@media screen and (max-width: 405px) {
-		margin: 0;
+	a {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: transparent;
+		border: 0;
+		i.fa {
+			margin: 0;
+			position: absolute;
+			margin: auto;
+			font-size: 50px;
+			display: block;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			text-align: center;
+			height: 50px;
+			color: #fff;
+			@include transition(opacity 200ms);
+		}
+		span {
+			margin: 0;
+			position: absolute;
+			margin: auto;
+			font-size: 50px;
+			display: block;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			text-align: center;
+			height: 68px;
+			color: #fff;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			opacity: 0;
+			@include transition(opacity 200ms);
+		}
+		&:hover {
+			i.fa {
+				opacity: 0;
+				@media screen and (max-width: 768px) {
+					opacity: 1;
+				}
+			}
+			span {
+				opacity: 1;
+				@media screen and (max-width: 768px) {
+					opacity: 0;
+				}
+			}
+		}
 	}
 }
 

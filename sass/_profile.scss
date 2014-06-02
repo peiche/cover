@@ -54,10 +54,10 @@
             $social-network: nth($val, 1);
             $color: nth($val, 2);
             .#{$social-network} {
-                @include social-box-shadow(20px, $color);
+                @include box-shadow(inset 0 0 0 20px $color);
                 &:hover {
                     color: $color;
-                    @include social-box-shadow(2px, $color);
+                    @include box-shadow(inset 0 0 0 2px $color);
                 }
             }
         }

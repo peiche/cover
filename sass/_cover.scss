@@ -18,6 +18,9 @@
             padding: 80px 0;
         }
     }
+	&.fourth {
+		min-height: 200px;
+	}
     &.show {
         overflow: visible;
     }

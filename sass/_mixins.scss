@@ -40,11 +40,11 @@
 	background-image: linear-gradient($color1, $color2);
 }
 
-@mixin social-box-shadow($width, $color) {
-    -webkit-box-shadow: inset 0 0 0 $width $color;
-    -moz-box-shadow: inset 0 0 0 $width $color;
-    -o-box-shadow: inset 0 0 0 $width $color;
-	box-shadow: inset 0 0 0 $width $color;
+@mixin box-shadow($val) {
+    -webkit-box-shadow: $val;
+    -moz-box-shadow: $val;
+    -o-box-shadow: $val;
+	box-shadow: $val;
 }
 
 @mixin swiper-arrow {
@@ -77,4 +77,15 @@
         background: $link-color;
         color: $button-color-hover;    
     }
+}
+
+@mixin user-select($val) {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	outline: 0;
+	-webkit-touch-callout: $val;
+	-webkit-user-select: $val;
+	-khtml-user-select: $val;
+	-moz-user-select: $val;
+	-ms-user-select: $val;
+	user-select: $val;
 }
