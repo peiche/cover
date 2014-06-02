@@ -24,7 +24,7 @@ if ( post_password_required() ) {
 
 	<?php if ( have_comments() ) : ?>
 		
-		<div class="graybar"><i class="fa fa-comments-o"></i>Comments</div>
+		<h2>Comments</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
