@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
 	
 	// search
 	jQuery('.searchopen').click(function() {
-		jQuery('.searchopen, .searchbar').addClass('active');
+		jQuery('.searchopen, .searchbar').addClass('active'); 
 		jQuery('.searchbar .search-field').focus();
 		return false;
 	});
