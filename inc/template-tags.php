@@ -57,10 +57,10 @@ function cover_post_nav() {
 		<div class="nav-links cf">
 			<?php
 				$prev_img = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'single-post-thumbnail' );
-				previous_post_link( '<div class="nav-previous cover featured-image fourth' . ( ( ! $next ) ? ' full-width' : '' ) . '"><div class="background" style="background-image: url(\'' . $prev_img[0] . '\')"></div>%link</div>', _x( '<i class="fa fa-chevron-left meta-nav"></i><span>%title</span>', 'Previous post link', 'cover' ), true );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<div class="post-nav-container"><div class="post-nav-background" style="background-image: url(\'' . $prev_img[0] . '\')"></div><i class="fa fa-chevron-left meta-nav"></i></div><span class="left">%title</span>', 'Previous post link', 'cover' ), true );
 				
 				$next_img = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'single-post-thumbnail' );
-				next_post_link( '<div class="nav-next cover featured-image fourth' . ( ( ! $previous ) ?  ' full-width' : '' ) . '"><div class="background" style="background-image: url(\'' . $next_img[0] . '\')"></div>%link</div>', _x( '<span>%title</span><i class="fa fa-chevron-right meta-nav"></i>', 'Next post link', 'cover' ), true );
+				next_post_link( '<div class="nav-next">%link</div>', _x( '<span class="right">%title</span><div class="post-nav-container"><div class="post-nav-background" style="background-image: url(\'' . $next_img[0] . '\')"></div><i class="fa fa-chevron-right meta-nav"></i></div>', 'Next post link', 'cover' ), true );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
