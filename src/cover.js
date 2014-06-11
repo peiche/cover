@@ -45,6 +45,24 @@ jQuery(document).ready(function() {
 		});
 	}
     
+	// related slider
+	if (jQuery('#related').length > 0) {
+		var relatedSlides = jQuery('#related .cover').length;
+		relatedSlides = jQuery('#related').swiper({
+			loop: true,
+			noSwiping: (relatedSlides > 1 ? false : true),
+			simulateTouch: false,
+			pagination: '.swiper-pagination',
+			paginationClickable: true
+		});
+		jQuery('#related-left').click(function() {
+			relatedSlides.swipePrev();
+		});
+		jQuery('#related-right').click(function() {
+			relatedSlides.swipeNext();
+		});
+	}
+	
     // cover scroller
 	jQuery('.cover .fa-angle-down').click(function() {
 		var top = jQuery('.cover').height();

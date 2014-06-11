@@ -10,11 +10,11 @@
 
 	</div><!-- #content -->
 	
-	<?php if ( is_single() ) { ?>
-		<?php cover_post_nav(); ?>
+	<?php if (function_exists('related_posts') && is_single()) { ?>
+		<?php related_posts();?>
 	<?php } ?>
-	
-    <div id="search">
+
+	<div id="search">
         <div class="searchbar">
             <?php get_search_form(); ?>
         </div>
