@@ -13,7 +13,7 @@ There are no widgets to configure, just a single column view of your content.
 
 Cover is built from the ground up to be responsive. No matter what size screen you’re using, Cover always looks beautiful. 
 Drawing special attention to featured images, from the homepage to posts, category archives to pages, 
-your blog is made uniquely yours through your images. Of course, you don’t have to use images. 
+your blog is made uniquely yours through your images. Of course, you don’t _have_ to use images. 
 Cover’s clean typography lets your writing stand on its own.
 
 ###Full-screen featured images
@@ -35,7 +35,8 @@ Cover is bundled with Font Awesome v4.1.0, allowing you to include any icon in a
 ###Social profiles
 
 Below each blog post is an author profile which contains the post author’s information, which can be set in Users > Your Profile. 
-By default WordPress includes support for linking to your Facebook, Twitter, and Google+ profiles.
+By default WordPress includes support for linking to your Facebook, Twitter, and Google+ profiles. An example of the social profile 
+can be seen on any post.
 
 ###Custom Yet Another Related Post Plugin (YARPP) template
 
@@ -51,9 +52,9 @@ because I’ve only created one template. (If you’d like to see different opti
 
 If you’re a developer and want to play around with Cover, you’ll find that its default style.css stylesheet is nearly empty. 
 This is because while WordPress requires this stylesheet, I prefer to build and compress the theme’s styles using Sass. 
-To that end, in the project you’ll find the folder /sass which holds all the components required to compile the real 
-stylesheet located in /css, including Font Awesome and the base styles for the featured post slider. 
-(Similarly, the JavaScript used in Cover is compressed, but the uncompressed code is provided in /src for ease of modification.)
+To that end, in the project you’ll find the `/sass` folder which holds all the components required to compile the _real_ 
+stylesheet located in the `/css` folder, including Font Awesome and the base styles for the featured post slider. 
+(Similarly, the JavaScript used in Cover is compressed, but the uncompressed code is provided in the `/src` folder for ease of modification.)
 
 ----
 
@@ -65,4 +66,6 @@ Font Awesome http://fontawesome.io/
 Sass http://sass-lang.com/  
 iDangerous Swiper http://www.idangero.us/sliders/swiper/  
 Waypoints http://imakewebthings.com/jquery-waypoints/  
+Pace http://github.hubspot.com/pace/docs/welcome/  
+Google Code Prettify https://code.google.com/p/google-code-prettify/  
 Yet Another Related Posts Plugin (YARPP) http://wordpress.org/plugins/yet-another-related-posts-plugin/
