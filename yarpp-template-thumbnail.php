@@ -33,8 +33,8 @@ Author: mitcho (Michael Yoshitaka Erlewine)
 	<?php if ($related_counter > 1) { ?>
 		<span id="related-left" class="fa fa-angle-left fa-fw"></span>
 		<span id="related-right" class="fa fa-angle-right fa-fw"></span>
+    
+        <div class="swiper-pagination"></div>
 	<?php } ?>
 	
-	<div class="swiper-pagination"></div>
-
 </div>
