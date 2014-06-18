@@ -30,11 +30,9 @@
 		?>
 	</div>
 	
-	<?php if ( sizeof( $featured_posts ) > 1) { ?>
-		<span id="cover-home-left" class="fa fa-angle-left fa-fw"></span>
-		<span id="cover-home-right" class="fa fa-angle-right fa-fw"></span>
-        
-        <div class="swiper-pagination"></div>
-	<?php } ?>
-    
+    <span id="cover-home-left" class="fa fa-angle-left fa-fw <?php if ( sizeof( $featured_posts ) < 2) { ?>hide<?php } ?>"></span>
+    <span id="cover-home-right" class="fa fa-angle-right fa-fw <?php if ( sizeof( $featured_posts ) < 2) { ?>hide<?php } ?>"></span>
+
+    <div class="swiper-pagination <?php if ( sizeof( $featured_posts ) < 2) { ?>hide<?php } ?>"></div>
+	
 </div>

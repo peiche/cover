@@ -29,12 +29,10 @@ Author: mitcho (Michael Yoshitaka Erlewine)
 		<?php } ?>
 		
 	</div>
-
-	<?php if ($related_counter > 1) { ?>
-		<span id="related-left" class="fa fa-angle-left fa-fw"></span>
-		<span id="related-right" class="fa fa-angle-right fa-fw"></span>
     
-        <div class="swiper-pagination"></div>
-	<?php } ?>
+	<span id="related-left" class="fa fa-angle-left fa-fw <?php if ($related_counter < 2) { ?>hide<?php } ?>"></span>
+	<span id="related-right" class="fa fa-angle-right fa-fw <?php if ($related_counter < 2) { ?>hide<?php } ?>"></span>
+    
+    <div class="swiper-pagination <?php if ($related_counter < 2) { ?>hide<?php } ?>"></div>
 	
 </div>
