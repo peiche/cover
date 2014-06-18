@@ -192,6 +192,28 @@
 		z-index: 0;
 		opacity: 0.6;
 		@include border-radius(50%);
+        @include transition(all 200ms);
+        &:after {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            margin: auto;
+            background: #fff;
+            @include border-radius(50%);
+            @include transition(all 200ms);
+        }
+        a:hover & {
+            opacity: 1;
+            &:after {
+                width: 90%;
+                height: 90%;
+            }
+        }
 	}
 }
 
@@ -224,6 +246,9 @@
 			span {
 				border-color: #ccc;
 			}
+            i.fa {
+                color: #333;
+            }
 		}
 	}
 }
