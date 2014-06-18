@@ -28,7 +28,7 @@ jQuery(document).ready(function() {
 	});
 	
 	// home slider
-	if (jQuery('#cover-home').length > 0 && jQuery('#cover-home .cover').length > 0) {
+	if (jQuery('#cover-home').length > 0) {
 		var homeSlides = jQuery('#cover-home .cover').length;
 		homeSwiper = jQuery('#cover-home').swiper({
 			loop: true,
@@ -46,9 +46,9 @@ jQuery(document).ready(function() {
 	}
     
 	// related slider
-	if (jQuery('#related').length > 0 && jQuery('#related .cover').length > 0) {
+	if (jQuery('#related').length > 0) {
 		var relatedSlides = jQuery('#related .cover').length;
-		relatedSlides = jQuery('#related').swiper({
+		relatedSwiper = jQuery('#related').swiper({
 			loop: true,
 			noSwiping: (relatedSlides > 1 ? false : true),
 			simulateTouch: false,
@@ -56,10 +56,10 @@ jQuery(document).ready(function() {
 			paginationClickable: true
 		});
         jQuery('#related-left').click(function() {
-            relatedSlides.swipePrev();
+            relatedSwiper.swipePrev();
         });
         jQuery('#related-right').click(function() {
-            relatedSlides.swipeNext();
+            relatedSwiper.swipeNext();
         });
 	}
 	
