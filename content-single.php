@@ -6,23 +6,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-	<?php
-		$show_header = true;
-		if ('' != get_the_post_thumbnail() || get_post_format() == 'quote') {
-			$show_header = false;
-		}
-	?>
-	
-	<?php if ($show_header) { ?>
-		<header class="entry-header">
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-			
-			<div class="entry-meta">
-				<?php cover_posted_on(); ?>
-			</div><!-- .entry-meta -->
-		</header><!-- .entry-header -->
-	<?php } ?>
-
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
