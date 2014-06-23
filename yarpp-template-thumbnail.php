@@ -11,7 +11,7 @@ Author: mitcho (Michael Yoshitaka Erlewine)
 
 		<?php if (have_posts()) { ?>
 			<?php while (have_posts()) : the_post(); ?>
-				<div class="swiper-slide related-post<?php if ( '' != get_the_post_thumbnail()) { ?> featured-image<?php } ?>">
+				<div class="swiper-slide related-post <?php if ( '' != get_the_post_thumbnail()) { ?>featured-image<?php } ?>">
 					<a class="cover-link" href="<?php the_permalink() ?>"></a>
 					<?php
 						if ( '' != get_the_post_thumbnail()) {
