@@ -7,11 +7,15 @@
 	header {
 		@include site-width;
 		position: relative;
+        top: 20%;
 	}
 	h1 {
 		font: 700 3.6em $font-stack-heading;
 		line-height: 86px;
 		margin-top: 0;
+        a {
+            color: $text-color-heading;
+        }
 		.page & {
 			margin-bottom: 0;
 		}
@@ -21,6 +25,7 @@
 		}
 	}
 	h2 {
+        color: #999;
 		margin-top: 0;
 		a {
 			color: #999;
@@ -48,6 +53,9 @@
 				min-height: 0;
 			}
 		}
+        &.home {
+            height: 450px;
+        }
 		@media screen and (max-width: 768px) {
 			height: auto;
 		}
@@ -68,15 +76,18 @@
 				opacity: 0.1;
 			}
 		}
-		header {
-			top: 30%;
-		}
+        header {
+            top: 30%;
+        }
 		h1 {
 			color: #fff;
 			text-shadow: 0 0 30px rgba(0,0,0,.8);
+            a {
+                color: #fff;
+            }
 		}
 		h2 {
-			color: #fff;
+			color: #ddd;
 			a {
 				color: #ddd;
 				&:hover {
