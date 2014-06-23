@@ -65,7 +65,7 @@ jQuery(document).ready(function() {
 	
     // cover scroller
 	jQuery('.cover .fa-angle-down').click(function() {
-		var top = jQuery('.cover').height();
+		var top = jQuery('.cover').outerHeight();
 		jQuery('html, body').animate({
 			scrollTop: top
 		}, 500);
