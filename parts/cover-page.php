@@ -4,33 +4,38 @@
  */
 ?>
 
-<?php if ('' != get_the_post_thumbnail()) { ?>
-	
-	<?php
-		$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-		$width = $img[1]; // unused
-		$height = $img[2];
+<?php
+    $class = '';
 
-        $class = '';
+    if ( '' != get_the_post_thumbnail() ) {
+        $img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+        $height = $img[2];
+		
+		$class = 'featured-image';
+		
         if ( $height <= 300 ) {
-            $class = 'auto';
-        } else if ($height <= 600) {
-            $class = 'half';
+            $class = $class . ' auto';
+        } else if ( $height <= 600 ) {
+            $class = $class . ' half';
         }
-	?>
-	
-	<div class="cover featured-image <?php echo $class; ?>">
+    }
+?>
+
+<div class="cover <?php echo $class; ?>">
+	<?php if ( '' != get_the_post_thumbnail() ) { ?>
 		<div class="background" style="background-image: url('<?php echo $img[0]; ?>');"></div>
-		<header>
-			<?php if (is_page() && $post->post_parent) { ?>
-				<?php
-					$parent_permalink = get_permalink($post->post_parent);
-					$parent_title = get_the_title($post->post_parent);
-				?>
-				<h2><a href="<?php echo $parent_permalink; ?>"><?php echo $parent_title; ?></a></h2>
-			<?php } ?>
-			<h1><?php the_title(); ?></h1>
-		</header>
+	<?php } ?>
+	<header>
+		<?php if (is_page() && $post->post_parent) { ?>
+			<?php
+				$parent_permalink = get_permalink($post->post_parent);
+				$parent_title = get_the_title($post->post_parent);
+			?>
+			<h2><a href="<?php echo $parent_permalink; ?>"><i class="fa fa-angle-left"></i> <?php echo $parent_title; ?></a></h2>
+		<?php } ?>
+		<h1><?php the_title(); ?></h1>
+	</header>
+	<?php if ( $class == 'featured-image' ) { ?>
 		<i class="fa fa-angle-down"></i>
-	</div>
-<?php } ?>
+	<?php } ?>
+</div>

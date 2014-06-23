@@ -7,19 +7,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ('' == get_the_post_thumbnail()) { ?>
-		<header class="entry-header">
-			<?php if ($post->post_parent) { ?>
-				<?php
-					$parent_permalink = get_permalink($post->post_parent);
-					$parent_title = get_the_title($post->post_parent);
-				?>
-				<h2><a href="<?php echo $parent_permalink; ?>"><?php echo $parent_title; ?></a></h2>
-			<?php } ?>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-		</header><!-- .entry-header -->
-	<?php } ?>
-
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
