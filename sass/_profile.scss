@@ -2,8 +2,8 @@
 	overflow: hidden;
 	padding: 15px 0;
 	margin: 30px 0 50px;
-	border-top: 1px solid #b3b3b3;
-	border-bottom: 1px solid #b3b3b3;
+	border-top: 1px solid $divider-color;
+	border-bottom: 1px solid $divider-color;
     .cover & {
         margin: 0;
         border: none;

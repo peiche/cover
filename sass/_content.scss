@@ -9,7 +9,7 @@
 
 .hentry {
 	padding: 0 0 50px;
-	border-bottom: 1px solid #d7d7d7;
+	border-bottom: 1px solid $divider-color;
 	clear: both;
 	margin: 0;
     @each $location in (home, archive, search) {
