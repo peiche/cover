@@ -21,8 +21,8 @@
         border-color: $link-color;
         border-width: 0;
         &:hover {
-            padding-bottom: 22px;
-            border-width: 3px;
+            padding-bottom: 21px;
+            border-width: 4px;
         }
     }
     .title {
@@ -31,8 +31,8 @@
         padding-bottom: 20px;
         &:hover {
             border-color: $link-color;
-            border-width: 3px;
-            padding-bottom: 17px;
+            border-width: 4px;
+            padding-bottom: 16px;
         }
     }
     .main-navigation {
@@ -53,6 +53,11 @@
 				@media screen and (max-width: 768px) {
 					display: inline-block;
 				}
+			}
+			&.current-menu-item > a,
+			&.current-menu-parent > a {
+				padding-bottom: 21px;
+            	border-width: 4px;
 			}
 			&:hover a {
                 border-color: $link-color;
