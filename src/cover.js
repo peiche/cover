@@ -95,4 +95,8 @@ jQuery(document).ready(function() {
         offset: '100%'
     });
     
+    // fluidbox
+    
+    jQuery('a[rel="lightbox"]').fluidbox();
+    
 });
