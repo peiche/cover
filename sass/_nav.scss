@@ -21,19 +21,16 @@
         border-color: $link-color;
         border-width: 0;
         &:hover {
-            padding-bottom: 21px;
-            border-width: 4px;
+            @include box-shadow(0 -4px 0 $link-color inset);
         }
+    }
+    .menu-item-has-children > a:hover {
+        @include box-shadow(none);
     }
     .title {
         font-weight: 600;
         font-size: 125%;
         padding-bottom: 20px;
-        &:hover {
-            border-color: $link-color;
-            border-width: 4px;
-            padding-bottom: 16px;
-        }
     }
     .main-navigation {
         float: right;
@@ -46,6 +43,34 @@
 			@media screen and (max-width: 600px) {
 				display: block;
 			}
+            ul {
+                padding: 15px;
+                top: 100%;
+                display: block;
+                opacity: 0;
+                visibility: hidden;
+                @include box-shadow(none);
+                @include transition(all 200ms);
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border: 10px solid transparent;
+                    border-bottom: 10px solid $link-color;
+                    top: -5px;
+                    left: 50px;
+                }
+                li {
+                    padding: 0;
+                    background: $link-color;
+                }
+                a {
+                    padding: 10px 15px;
+                    border: 0;
+                    color: #fff;
+                }
+            }
 		}
         li {
             padding-left: 30px;
@@ -59,8 +84,15 @@
 				padding-bottom: 21px;
             	border-width: 4px;
 			}
-			&:hover a {
-                border-color: $link-color;
+            &:hover {
+                & > ul {
+                    opacity: 1;
+                    visibility: visible;
+                    margin-top: -19px;
+                }
+                a {
+                    border-color: $link-color;
+                }
             }
 			@media screen and (max-width: 768px) {
 				float: none;
@@ -72,27 +104,6 @@
 					display: none;
 				}
 			}
-        }
-		li:hover > ul {
-			background: #fff;
-			margin: 6px 0 0 15px;;
-			padding: 22px 0 5px;
-			box-shadow: none;
-			li {
-				padding: 0;
-			}
-			a {
-				padding: 10px 15px;
-				border: 0;
-				&:hover {
-					background: #ddd;
-				}
-			}
-		}
-        a {
-            &:hover {
-                border-color: $link-color;
-            }
         }
 		@media screen and (max-width: 768px) {
 			visibility: hidden;
