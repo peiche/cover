@@ -47,10 +47,9 @@
 			height: auto;
 		}
 		&.half {
-			@extend .auto;
-			min-height: 500px;
+			height: 500px;
 			@media screen and (max-width: 768px) {
-				min-height: 0;
+				height: auto;
 			}
 		}
         &.home {
