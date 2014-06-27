@@ -23,10 +23,9 @@ will be displayed full-screen.
 
 ###Featured post slider
 
-By default, no images are loaded on the homepage. The exception to this is when you’ve set one or more posts to be “sticky.” 
-However many sticky posts you have, Cover will show them in a slider at the top of the page. If you have more than one, 
-left and right arrows will appear so they can be quickly paged through. On smaller screens, the arrows disappear in favor of displaying 
-pagination indicators.
+Cover uses Jetpack's featured content functionality. By default, when a post is tagged as "featured," it is then added to the featured 
+content slider. (This is configurable in the theme customizer.) If you have more than one featured post, left and right arrows will appear 
+so they can be quickly paged through. On smaller screens, the arrows disappear in favor of displaying pagination indicators.
 
 ###Scalable vector icons
 
@@ -68,4 +67,5 @@ iDangerous Swiper http://www.idangero.us/sliders/swiper/
 Waypoints http://imakewebthings.com/jquery-waypoints/  
 Pace http://github.hubspot.com/pace/docs/welcome/  
 Google Code Prettify https://code.google.com/p/google-code-prettify/  
-Yet Another Related Posts Plugin (YARPP) http://wordpress.org/plugins/yet-another-related-posts-plugin/
+Yet Another Related Posts Plugin (YARPP) http://wordpress.org/plugins/yet-another-related-posts-plugin/  
+Fluidbox http://terrymun.github.io/Fluidbox/
