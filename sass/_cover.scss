@@ -52,7 +52,7 @@
 				height: auto;
 			}
 		}
-        &.home {
+        &.swiper-slide {
             height: 450px;
         }
 		@media screen and (max-width: 768px) {
@@ -77,6 +77,9 @@
 		}
         header {
             top: 30%;
+        }
+        &.swiper-slide:not(.home) header {
+            top: 10%;
         }
 		h1 {
 			color: #fff;
