@@ -214,10 +214,4 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 node_modules/
-css/style.css.map
-css/style.css
-js/cover.min.js
-js/customizer.min.js
-js/navigation.min.js
-js/skip-link-focus-fix.min.js
 grunt-watch.bat
