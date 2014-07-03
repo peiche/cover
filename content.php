@@ -16,13 +16,24 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'cover' ) ); ?>
-		<?php
+		
+        <?php 
+        
+        $pos = strpos( $post->post_content, '<!--more-->' );
+        if ( $pos ) {
+            the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'cover' ) );
+        } else {
+            the_excerpt();
+        }
+
+        ?>
+        
+        <?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'cover' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-summary -->
-	
+
 </article><!-- #post-## -->
