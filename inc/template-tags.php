@@ -24,11 +24,11 @@ function cover_paging_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<i class="fa fa-chevron-left meta-nav"></i><span>Older posts</span>', 'cover' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<i class="fa fa-fw fa-chevron-left meta-nav"></i><span>Older posts</span>', 'cover' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( '<span>Newer posts</span><i class="fa fa-chevron-right meta-nav"></i>', 'cover' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( '<span>Newer posts</span><i class="fa fa-fw fa-chevron-right meta-nav"></i>', 'cover' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
