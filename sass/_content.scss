@@ -3,15 +3,24 @@
 }
 
 #content {
-	@include site-width;
 	padding-top: 20px;
 }
 
 .hentry {
 	padding: 0 0 50px;
-	border-bottom: 1px solid $divider-color;
 	clear: both;
 	margin: 0;
+    position: relative;
+    &:after {
+        @include site-width;
+        content: '';
+        height: 1px;
+        background: $divider-color;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
     @each $location in (home, archive, search) {
         .#{$location} & {
             padding-top: 50px;
@@ -24,7 +33,7 @@
     .entry-summary {
         p,
         .tiled-gallery {
-            margin: 30px 0 0;
+            margin-top: 30px;
         }
         blockquote p,
         cite p,
@@ -47,6 +56,7 @@
 }
 
 .entry-header {
+    @include site-width;
     .has-cover & {
         margin-top: 40px;
     }
@@ -80,6 +90,15 @@
 
 .entry-summary {
 	margin: 0;
+    & > * {
+        @include site-width;
+    }
+}
+
+.entry-content {
+    & > * {
+        @include site-width;
+    }
 }
 
 .wp-caption {
@@ -130,6 +149,9 @@
     }
 }
 
+footer.entry-meta {
+    @include site-width;
+}
 .entry-meta {
 	margin-top: 20px;
 }
@@ -139,5 +161,44 @@
 }
 
 .site-main [class*="navigation"] {
-	padding: 50px 0;
+	@include site-width;
+    padding: 50px 0;
+}
+
+.aesop-component {
+    margin: 40px 0;
+    max-width: 100%;
+    width: 100%;
+    &.aesop-audio-component {
+        @include site-width;
+    }
+    &.aesop-quote-component {
+        padding: 80px 120px;
+    }
+}
+
+.aesop-img-enlarge {
+    display: none;
+}
+
+.aesop-parallax-sc-caption-wrap {
+    background: #333;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-family: $font-stack-content;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.aesopicon {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &.aesopicon-search-plus:after {
+        content: '\f00e';
+    }
 }

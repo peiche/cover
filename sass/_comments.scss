@@ -1,6 +1,7 @@
 /** comments **/
 
 #comments {
+    @include site-width;
 	padding-bottom: 30px;
 	border-top: 1px solid $divider-color;
 }
