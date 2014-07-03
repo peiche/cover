@@ -17,6 +17,9 @@
 /* Fluidbox */
 @import "Fluidbox/fluidbox";
 
+/* Utility classes */
+@import "utility";
+
 /* styles - split into smaller chunks */
 @import "base";
 @import "buttons";
@@ -31,6 +34,3 @@
 @import "archive";
 @import "footer";
 @import "yarpp";
-
-/* Utility classes */
-@import "utility";
