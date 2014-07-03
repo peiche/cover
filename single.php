@@ -7,37 +7,27 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'parts/cover', 'single' ); ?>
-<?php get_template_part( 'parts/wrapper', 'top' ); ?>
+<?php while ( have_posts() ) : the_post(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <?php get_template_part( 'parts/cover', 'single' ); ?>
+    <?php get_template_part( 'parts/wrapper', 'top' ); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
 
-				<?php get_template_part( 'content', 'single' ); ?>
-			
-				<?php cover_post_nav(); ?>
-				
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
+                <?php get_template_part( 'content', 'single' ); ?>
 
-			<?php endwhile; // end of the loop. ?>
+                <?php cover_post_nav(); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+                <?php
+                    // If comments are open or we have at least one comment, load up the comment template
+                    if ( comments_open() || '0' != get_comments_number() ) :
+                        comments_template();
+                    endif;
+                ?>
 
-    <div class="profile">
-        <?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
-        <h4><?php echo get_the_author(); ?></h4>
-        <hr>
-        <strong>LATEST POSTS</strong>
-		<?php echo get_related_author_posts(); ?>
-    </div>
+            </main><!-- #main -->
+        </div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>
