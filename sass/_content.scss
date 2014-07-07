@@ -96,34 +96,39 @@
 }
 
 .entry-content {
-    & > * {
+    & > p,
+	& > blockquote,
+	& > h2,
+	& > pre {
         @include site-width;
     }
+	& > blockquote.pullquote {
+		max-width: 1000px;
+	}
 }
 
 .wp-caption {
 	padding: 0;
 	border: 0;
 	position: relative;
-    .aligncenter {
+    &.aligncenter {
         margin: 0 auto 30px;
     }
-    .alignleft,
-    .alignright {
+    &.alignleft,
+    &.alignright {
         max-width: 50%;
-        margin: 0 0 20px;
+        margin: 10px 0 0;
         padding: 0;
     }
-    .alignleft {
-        padding-right: 2px;
+    &.alignleft {
+        padding-right: 15px;
     }
-    .alignright {
-        padding-left: 2px;
+    &.alignright {
+        padding-left: 15px;
     }
     img[class*="wp-image-"] {
         max-width: 100%;
         margin: 0 auto;
-        @include border-radius(4px);
     }
     .wp-caption-text {
         padding: 10px 0;
@@ -132,21 +137,12 @@
         border-bottom: 1px solid #dcd8d5;
         text-align: left;
     }
-    @each $alignment in (aligncenter, alignleft) {
-        &.#{$alignment} .wp-caption-text {
-            @media screen and (min-width: 1140px) {
-                padding: 0;
-                position: absolute;
-                top: 0;
-                left: -175px;
-                width: 150px;
-                padding: 10px 0 10px;
-                border-top: 1px solid #dcd8d5;
-                margin: 0;
-                text-align: right;
-            }
-        }
-    }
+	&.alignleft .wp-caption-text {
+		padding-left: 10px;
+	}
+	&.aligncenter .wp-caption-text {
+		@include site-width;
+	}
 }
 
 footer.entry-meta {
@@ -175,6 +171,22 @@ footer.entry-meta {
     &.aesop-quote-component {
         padding: 80px 120px;
     }
+	&.aesop-image-component {
+		margin: 40px 0;
+	}
+}
+
+.aesop-stacked-img {
+	background-attachment: fixed;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: relative;
+	overflow: hidden;
+	height: 500px; // overridden by jquery
 }
 
 .aesop-img-enlarge {
