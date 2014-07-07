@@ -98,5 +98,9 @@ jQuery(document).ready(function() {
     // fluidbox
     
     jQuery('a[rel="lightbox"]').fluidbox();
+	
+	// aesop
+	
+	jQuery('.aesop-stacked-img').height(jQuery(window).height());
     
 });
