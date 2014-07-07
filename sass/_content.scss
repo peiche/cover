@@ -96,11 +96,10 @@
 }
 
 .entry-content {
-    & > p,
-	& > blockquote,
-	& > h2,
-	& > pre {
-        @include site-width;
+    @each $elem in div, p, blockquote, h2, pre, hr {
+        & > #{$elem} {
+            @include site-width
+        }
     }
 	& > blockquote.pullquote {
 		max-width: 1000px;
@@ -159,58 +158,4 @@ footer.entry-meta {
 .site-main [class*="navigation"] {
 	@include site-width;
     padding: 50px 0;
-}
-
-.aesop-component {
-    margin: 40px 0;
-    max-width: 100%;
-    width: 100%;
-    &.aesop-audio-component {
-        @include site-width;
-    }
-    &.aesop-quote-component {
-        padding: 80px 120px;
-    }
-	&.aesop-image-component {
-		margin: 40px 0;
-	}
-}
-
-.aesop-stacked-img {
-	background-attachment: fixed;
-	background-position: 50%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	width: 100%;
-	left: 0;
-	top: 0;
-	position: relative;
-	overflow: hidden;
-	height: 500px; // overridden by jquery
-}
-
-.aesop-img-enlarge {
-    display: none;
-}
-
-.aesop-parallax-sc-caption-wrap {
-    background: #333;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    font-family: $font-stack-content;
-    font-size: 16px;
-    padding: 10px 20px;
-}
-
-.aesopicon {
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    &.aesopicon-search-plus:after {
-        content: '\f00e';
-    }
 }

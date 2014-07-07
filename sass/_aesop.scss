@@ -1,0 +1,61 @@
+.aesop-component {
+    margin: 40px 0;
+    &.aesop-audio-component {
+        @include site-width;
+    }
+    &.aesop-quote-component {
+        padding: 80px 120px;
+    }
+}
+
+.aesop-stacked-img {
+	background-attachment: fixed;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	left: 0;
+	top: 0;
+	position: relative;
+	overflow: hidden;
+	height: 500px; // default height overridden by jquery
+}
+
+.aesop-img-enlarge {
+    display: none; // do something with this :/
+}
+
+.aesop-parallax-sc-caption-wrap {
+    background: #333;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-family: $font-stack-content;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+// We're already bundling Font Awesome. Might as well use it :D
+.aesopicon {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &.aesopicon-search-plus:after {
+        content: '\f00e';
+    }
+}
+
+.aesop-collection-item {
+    float: left;
+}
+
+// override width for top-level aesop components
+@each $class in aesop-component, aesop-story-collection {
+    .entry-content > .#{$class} {
+        max-width: 100%;
+        width: 100%;
+    }
+}
