@@ -20,7 +20,7 @@
 /* Utility classes */
 @import "utility";
 
-/* styles - split into smaller chunks */
+/* main styles */
 @import "base";
 @import "buttons";
 @import "nav";
@@ -33,4 +33,7 @@
 @import "swiper";
 @import "archive";
 @import "footer";
+
+/* plugin styles */
+@import "aesop";
 @import "yarpp";
