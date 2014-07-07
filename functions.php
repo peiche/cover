@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 760;
+	$content_width = 1600; // actual content width is 760, but I prefer to unrestrict images from having a small width.
 }
 
 if ( ! function_exists( 'cover_setup' ) ) :
