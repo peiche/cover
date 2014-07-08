@@ -6,6 +6,9 @@
     &.aesop-quote-component {
         padding: 80px 120px;
     }
+	&.aesop-image-component {
+		margin: 40px 0; // necessary override
+	}
 }
 
 .aesop-stacked-img {
@@ -50,6 +53,28 @@
 
 .aesop-collection-item {
     float: left;
+}
+
+.aesop-sequence-img-wrap {
+	margin: 0;
+	& img {
+		display: block;
+	}
+}
+
+.aesop-image-component-image {
+	position: relative;
+	.aesop-image-component-caption {
+		position: absolute;
+		bottom: 20px;
+		background: #fff;
+		padding: 10px 20px;
+		font-family: $font-stack-content;
+		font-size: 15px;
+	}
+	&.aesop-image-component-caption-right .aesop-image-component-caption {
+		right: 0;
+	}
 }
 
 // override width for top-level aesop components
