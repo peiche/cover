@@ -65,6 +65,12 @@ p {
 			margin: 10px 0 0;
 			max-width: 50%;
 		}
+		&.alignleft {
+			margin-right: 15px;
+		}
+		&.alignright {
+			margin-left: 15px;
+		}
     }
 }
 
