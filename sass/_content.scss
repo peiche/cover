@@ -104,6 +104,11 @@
 	& > blockquote.pullquote {
 		max-width: 1000px;
 	}
+    & > .tiled-gallery {
+        width: 100%;
+        max-width: 100%;
+        margin: 30px 0;
+    }
 }
 
 .wp-caption {
