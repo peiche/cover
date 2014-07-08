@@ -97,7 +97,7 @@ jQuery(document).ready(function() {
     
     // fluidbox
     
-    jQuery('a[rel="lightbox"]').fluidbox();
+    jQuery('a[rel^="lightbox"]').fluidbox();
 	
 	// aesop
 	
