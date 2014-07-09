@@ -96,7 +96,7 @@
 }
 
 .entry-content {
-    @each $elem in div, p, blockquote, h2, pre, hr {
+    @each $elem in h1, h2, h3, h4, div, p, blockquote, pre, hr {
         & > #{$elem} {
             @include site-width
         }
