@@ -84,10 +84,24 @@
 	}
 }
 
+.aesop-article-chapter {
+    background-color: #333 !important;
+}
+
+.aesop-cover-title {
+    @include site-width;
+    color: #fff;
+    font-size: 42px;
+    padding: 40px 0 20px;
+}
+
 // override width for top-level aesop components
 @each $class in aesop-component, aesop-story-collection {
     .entry-content > .#{$class} {
         max-width: 100%;
         width: 100%;
+        &.aesop-audio-component {
+            @include site-width;
+        }
     }
 }
