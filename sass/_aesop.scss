@@ -9,6 +9,13 @@
 	&.aesop-image-component {
 		margin: 40px 0; // necessary override
 	}
+	&.aesop-quote-component {
+		padding: 60px 0;
+		blockquote {
+			color: inherit;
+			font-family: $font-stack-content;
+		}
+	}
 }
 
 .aesop-stacked-img {
