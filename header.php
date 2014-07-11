@@ -32,6 +32,8 @@
 ?>
 <body <?php body_class( $hascover ); ?>>
 
+<?php do_action(‘ase_theme_body_inside_top’); ?>
+
 <header id="header">
 	<div class="header-container">
 		<a class="title" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
@@ -47,3 +49,5 @@
 
 	</div>
 </header>
+
+<div class="aesop-entry-header"></div>
