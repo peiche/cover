@@ -4,52 +4,6 @@
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
-.sticky {
-    background: #333;
-    * {
-        color: #fff;
-    }
-}
-.hentry {
-	margin: 0 0 1.5em;
-}
-.byline,
-.updated {
-	display: none;
-}
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
-/*--------------------------------------------------------------
-10.2 Asides
---------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
-}
-
-/*--------------------------------------------------------------
-10.3 Comments
---------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
-.bypostauthor {
-}
-
-// --------------------------------------
-
 #page {
 	position: relative;
 }
@@ -58,6 +12,12 @@
 	padding-top: 20px;
 }
 
+.sticky {
+    background: #333;
+    * {
+        color: #fff;
+    }
+}
 .hentry {
 	padding: 0 0 50px;
 	clear: both;
@@ -65,11 +25,12 @@
     position: relative;
     &:after {
         @include site-width;
-        content: '';
-        height: 1px;
+        max-width: 500px;
+		content: '';
+        height: 3px;
         background: $divider-color;
         position: absolute;
-        bottom: 0;
+        bottom: 5px;
         left: 0;
         right: 0;
     }
@@ -106,7 +67,6 @@
         color: #1d1d1d;
     }
 }
-
 .entry {
     &-image {
         @include site-width;
@@ -166,7 +126,46 @@
             margin: 30px 0;
         }
     }
+	&-meta {
+		margin-top: 20px;
+	}
 }
+.byline,
+.updated {
+	display: none;
+}
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+10.2 Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+10.3 Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+}
+
+// --------------------------------------
 
 .wp-caption {
 	padding: 0;
@@ -210,9 +209,6 @@
 
 footer.entry-meta {
     @include site-width;
-}
-.entry-meta {
-	margin-top: 20px;
 }
 
 .edit-link {
