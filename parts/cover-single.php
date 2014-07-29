@@ -28,7 +28,15 @@
 		<div class="background" style="background-image: url('<?php echo $img[0]; ?>');"></div>
 	<?php } ?>
     <header>
-        <h1><?php the_title(); ?></h1>
+        
+		<?php
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( __( ', ', 'cover' ) );
+			if ( $categories_list && cover_categorized_blog() ) :
+		?>
+			<h2><?php echo $categories_list; ?></h2>
+		<?php endif; ?>
+		<h1><?php the_title(); ?></h1>
         <span>
             <?php cover_posted_on(); ?>
         </span>
