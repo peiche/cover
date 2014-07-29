@@ -9,11 +9,12 @@
 		position: relative;
 	}
 	h1 {
-		font-size: 700 3.6em $font-stack-heading;
+		font-size: 5.8rem;
 		line-height: 86px;
 		margin-top: 0;
         a {
             color: $text-color-heading;
+			font-weight: normal;
         }
 		.page & {
 			margin-bottom: 0;
@@ -44,6 +45,7 @@
         padding: 200px 0;
         &.swiper-slide {
             height: 450px;
+			padding: 175px;
         }
         @media screen and (max-width: 768px) {
             padding: 80px 0;
