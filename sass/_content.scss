@@ -34,6 +34,9 @@
         left: 0;
         right: 0;
     }
+    .single &:after {
+        display: none;
+    }
     @each $location in (home, archive, search) {
         .#{$location} & {
             padding-top: 50px;
@@ -117,8 +120,12 @@
                 @include site-width;
             }
         }
-        & > blockquote.pullquote {
+        & > blockquote.pullquote,
+        & > pre {
             max-width: 1000px;
+        }
+        & > hr {
+            max-width: 500px;
         }
         & > .tiled-gallery {
             width: 100%;
