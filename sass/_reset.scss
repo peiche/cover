@@ -95,18 +95,3 @@ a:active {
 a img {
 	border: 0;
 }
-
-hr {
-	background: none;
-	position: relative;
-	&:after {
-		position: absolute;
-		content: '';
-		background: #d8d6de;
-		height: 3px;
-		width: 70%;
-		margin: auto;
-		left: 0;
-		right: 0;
-	}
-}
