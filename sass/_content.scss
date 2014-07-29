@@ -1,3 +1,55 @@
+/*--------------------------------------------------------------
+10.0 Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+10.1 Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+    background: #333;
+    * {
+        color: #fff;
+    }
+}
+.hentry {
+	margin: 0 0 1.5em;
+}
+.byline,
+.updated {
+	display: none;
+}
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+10.2 Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+10.3 Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+}
+
+// --------------------------------------
+
 #page {
 	position: relative;
 }
@@ -55,59 +107,64 @@
     }
 }
 
-.entry-header {
-    @include site-width;
-    .has-cover & {
-        margin-top: 40px;
-    }
-    h1 {
-        margin: 20px 0 0;
-        a {
-            position: relative;
-            padding: 10px 0;
-            color: $text-color-heading;
-            &:hover {
-                color: $link-color;
-                border-color: transparent;
-            }
-        }
-    }
-    h2 {
-        font: 600 20px $font-stack-content;
-        color: #b6b6b6;
-        margin: 0;
-        a {
-            color: #b6b6b6;
-            &:hover {
-                border-bottom: 2px solid #b6b6b6;
-            }
-        }
-    }
-    .span {
-        color: #b6b6b6;
-    }
-}
-
-.entry-summary {
-	margin: 0;
-    & > * {
+.entry {
+    &-image {
         @include site-width;
+        max-width: 1000px;
+        margin-bottom: 30px;
     }
-}
-
-.entry-content {
-    @each $elem in h1, h2, h3, h4, div, span, p, ul, ol, blockquote, pre, hr, form {
-        & > #{$elem} {
-            @include site-width
+    &-header {
+        @include site-width;
+        h1 {
+            margin: 20px 0 0;
+            a {
+                position: relative;
+                padding: 10px 0;
+                color: $text-color-heading;
+                &:hover {
+                    color: $link-color;
+                    border-color: transparent;
+                }
+            }
+        }
+        h2 {
+            font: 600 20px $font-stack-content;
+            color: #b6b6b6;
+            margin: 0;
+            a {
+                color: #b6b6b6;
+                &:hover {
+                    border-bottom: 2px solid #b6b6b6;
+                }
+            }
+        }
+        .span {
+            color: #b6b6b6;
         }
     }
-	& > blockquote.pullquote {
-		max-width: 1000px;
-	}
-    & > .tiled-gallery {
-        width: 100%;
-        max-width: 100%;
-        margin: 30px 0;
+    &-summary {
+        margin: 0;
+        p {
+            margin-bottom: 0;
+        }
+        & > * {
+            @include site-width;
+        }
+    }
+    &-content {
+        @each $elem in h1, h2, h3, h4, div, span, p, ul, ol, blockquote, pre, hr, form {
+            & > #{$elem} {
+                @include site-width;
+            }
+        }
+        & > blockquote.pullquote {
+            max-width: 1000px;
+        }
+        & > .tiled-gallery {
+            width: 100%;
+            max-width: 100%;
+            margin: 30px 0;
+        }
     }
 }
 
@@ -164,5 +221,6 @@ footer.entry-meta {
 
 .site-main [class*="navigation"] {
 	@include site-width;
+    max-width: 1000px;
     padding: 50px 0;
 }

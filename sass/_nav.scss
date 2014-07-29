@@ -1,11 +1,7 @@
 #header {
-	position: absolute;
 	width: 100%;
-	z-index: 2;
 	background: #fff;
 	margin: 0 auto;
-	top: 0;
-	z-index: 410;
     @media screen and (max-width: 768px) {
         position: static;
     }
@@ -196,15 +192,12 @@
 		}
 	}
 }
-.site-main .navigation.post-navigation {
-	padding: 0 0 30px;
-}
 
 .post-nav-container {
 	display: inline-block;
 	position: relative;
-	width: 62px;
-	height: 62px;
+	width: 120px;
+	height: 120px;
 	vertical-align: middle;
 	background-color: #2b2b2b;
 	@include border-radius(50%);
@@ -215,6 +208,7 @@
 		width: 100%;
 		height: 100%;
 		background-size: cover;
+        background-position: 50%;
 		z-index: 0;
 		opacity: 0.6;
 		@include border-radius(50%);
@@ -236,8 +230,8 @@
         a:hover & {
             opacity: 1;
             &:after {
-                width: 52px;
-                height: 52px;
+                width: 100px;
+                height: 100px;
             }
         }
 	}
@@ -253,7 +247,7 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
-			height: 50%;
+			height: 30px;
 			font-size: 200%;
 			text-align: center;
 		}

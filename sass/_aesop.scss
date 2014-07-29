@@ -95,6 +95,10 @@
     padding: 250px 0 20px;
 }
 
+.aesop-video-container {
+    max-width: 100%;
+}
+
 // override width for top-level aesop components
 @each $class in aesop-component, aesop-story-collection {
     .entry-content > .#{$class} {

@@ -1,0 +1,213 @@
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: $text-color-base;
+	font-family: $font-stack-content;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+
+h1, h2, h3, h4 {
+	margin: 30px 0;
+	font-size: 34px;
+    font-size: 3.4rem;
+	line-height: 56px;
+	color: $text-color-heading;
+}
+h1 {
+    font-family: $font-stack-heading;
+}
+h2 {
+	margin-bottom: 20px;
+	font-size: 26px;
+    font-size: 2.6rem;
+}
+h3, h4 {
+	margin: 20px 0 10px;
+	font-size: 22px;
+    font-size: 2.2rem;
+}
+h4 {
+	font-size: 20px;
+    font-size: 2rem;
+}
+p {
+	margin: 30px 0;
+	line-height: 38px;
+	color: $text-color-content;
+	word-wrap: break-word;
+    img {
+        margin: 30px 0;
+		&.alignleft,
+		&.alignright {
+			margin: 10px 0 0;
+			max-width: 50%;
+		}
+		&.alignleft {
+			margin-right: 15px;
+		}
+		&.alignright {
+			margin-left: 15px;
+		}
+    }
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote,
+cite,
+q {
+	margin: 30px 0;
+	border-left: 3px solid #c6d5e1;
+	padding: 5px 0 5px 30px;
+	line-height: 38px;
+	color: $text-color-quote;
+	font: 400 22px $font-stack-quote;
+    cite,
+    p {
+        margin:0;
+        padding:0;
+        border: none;
+        color: $text-color-quote;
+        font-style: italic;
+    }
+    cite {
+        color: $text-color-cite;
+    }
+    i,
+    em {
+        font-style: normal;
+    }
+}
+blockquote {
+    &.pullquote {
+        font-size: 36px;
+        margin: 48px 0;
+        padding: 0;
+        text-align: center;
+        border: none;
+        @media screen and (max-width: 1000px) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    &.large {
+        font-size: 200%;
+        border-color: transparent;
+        position: relative;
+        padding: 0;
+        margin: 30px 0;
+        @media screen and (max-width: 1000px) {
+            margin-left: 50px;
+        }
+        &:before {
+            position: absolute;
+            top: -10px;
+            left: -50px;
+            content: '“';
+            font-size: 250%;
+            opacity: 0.3;
+        }
+    }
+}
+address {
+	margin: 0 0 1.5em;
+}
+code, kbd, tt, var {
+	font: 15px $font-stack-code;
+}
+code {
+	padding: 2px 6px;
+	margin: 0 5px;
+	background: #f3f3f3;
+	border: 1px solid #e6e6e6;
+}
+pre {
+	background: #313339;
+	font-family: $font-stack-code;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 28px;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+	border: 0;
+	color: #fff;
+	margin: 40px 0;
+	padding: 25px 35px;
+	&.prettyprint {
+        line-height: 36px;
+        .entry-content & {
+            border: 0;
+            padding: 25px 35px;
+        }
+    }
+    code {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        color: #eee;
+        line-height: 28px;
+        background: 0 0;
+        border: 0;
+    }
+    
+}
+code .kwd, 
+pre .kwd {
+    color: #66d9ef;
+}
+code .pln, 
+code .pun, 
+pre .pln, 
+pre .pun {
+    color: #fff;
+}
+code .str, 
+pre .str {
+    color: #d64032;
+}
+code .lit, 
+pre .lit {
+    color: #ae81ff;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}

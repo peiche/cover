@@ -1,29 +1,42 @@
-/* Font Awesome */
-@import "FontAwesome/font-awesome";
+/*!
+Theme Name: Cover
+Theme URI: http://eichefam.net/projects/cover/
+Author: Paul Eiche
+Author URI: http://eichefam.net/
+Description: A simple content-focused responsive theme inspired by Medium. No widgets, just content.
+Version: 1.0
+License: GNU General Public License v2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, white, one-column, fixed-layout, fluid-layout, responsive-layout, custom-menu, featured-images, sticky-post
+Domain Path: /languages/
+GitHub Theme URI: https://github.com/peiche/cover
+GitHub Branch: master
+*/
 
-/* iDangerous slider */
+@import "vars";
+
+@import "FontAwesome/font-awesome";
 @import "iDangerous/idangerous-swiper";
 
-/* variables and mixins */
-@import "variables";
-@import "mixins";
+@import "reset";
+@import "typography";
+@import "elements";
+@import "forms";
+@import "navigation";
+@import "accessibility";
+@import "alignments";
+@import "clearings";
+@import "widgets";
+@import "content";
+@import "infinitescroll";
+@import "media";
 
-/* initial Underscores styles */
-@import "underscores";
-
-/* Pace progress bar */
 @import "pace";
 
-/* Utility classes */
-@import "utility";
-
-/* main styles */
-@import "base";
 @import "buttons";
 @import "nav";
 @import "search";
 @import "cover";
-@import "content";
 @import "profile";
 @import "comments";
 @import "sidebar";
@@ -31,6 +44,5 @@
 @import "archive";
 @import "footer";
 
-/* plugin styles */
 @import "aesop";
 @import "yarpp";

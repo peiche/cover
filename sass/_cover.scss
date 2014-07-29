@@ -7,10 +7,9 @@
 	header {
 		@include site-width;
 		position: relative;
-        top: 20%;
 	}
 	h1 {
-		font: 700 3.6em $font-stack-heading;
+		font-size: 700 3.6em $font-stack-heading;
 		line-height: 86px;
 		margin-top: 0;
         a {
@@ -26,7 +25,7 @@
 	}
 	h2 {
         color: #999;
-		margin-top: 0;
+		margin: 0;
 		a {
 			color: #999;
 			border: 0;
@@ -41,22 +40,13 @@
 	}
 	&.featured-image {
 		background-color: #2b2b2b;
-		height: 100%;
 		color: #fff;
-		&.auto {
-			height: auto;
-		}
-		&.half {
-			height: 500px;
-			@media screen and (max-width: 768px) {
-				height: auto;
-			}
-		}
+        padding: 200px 0;
         &.swiper-slide {
             height: 450px;
         }
-		@media screen and (max-width: 768px) {
-			height: auto;
+        @media screen and (max-width: 768px) {
+            padding: 80px 0;
 		}
 		.background {
 			position: absolute;
@@ -76,10 +66,8 @@
 			}
 		}
         header {
-            top: 30%;
         }
         &.swiper-slide:not(.home) header {
-            top: 10%;
         }
 		h1 {
 			color: #fff;
@@ -109,7 +97,8 @@
 		}
 	}
     .fa-angle-down {
-    	position: absolute;
+    	display: none; // remove entirely?
+        position: absolute;
         bottom: 0;
         color: #fff;
         left: 0;
