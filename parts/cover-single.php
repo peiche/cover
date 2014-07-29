@@ -37,9 +37,11 @@
 			<h2><?php echo $categories_list; ?></h2>
 		<?php endif; ?>
 		<h1><?php the_title(); ?></h1>
+		<!--
         <span>
             <?php cover_posted_on(); ?>
         </span>
+		-->
     </header>
     <?php if ( $class == 'featured-image' ) { ?>
     	<i class="fa fa-angle-down"></i>
