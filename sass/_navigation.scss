@@ -6,9 +6,8 @@
 --------------------------------------------------------------*/
 a {
     color: $link-color;
-	font-weight: 600;
 	text-decoration: none;
-	border-bottom: 3px solid transparent;
+	border-bottom: 2px solid transparent;
     @include transition(all .2s ease-in-out);
     &:visited {
         color: $link-color;
@@ -21,7 +20,9 @@ a {
     &:hover {
         text-decoration: none;
         color: $link-color-hover;
-        p & {
+        p &,
+        .info &,
+        .edit-link & {
             border-color: $link-border-color;
         }
     }
@@ -144,7 +145,7 @@ a {
     a {
         display: inline-block;
         color: #000;
-        padding: 25px 0;
+        padding: 26px 0;
         border-width: 0;
         &:hover {
             @include box-shadow(0 -4px 0 $link-color inset);
@@ -167,7 +168,8 @@ a {
 				display: block;
 			}
             ul {
-                padding: 15px 0 0 15px;
+                padding: 15px 0 0 0;
+                margin-left: -15px;
                 top: 100%;
                 display: block;
                 opacity: 0;
@@ -182,7 +184,7 @@ a {
                     border: 10px solid transparent;
                     border-bottom: 10px solid $link-color;
                     top: -5px;
-                    left: 50px;
+                    left: 30px;
                 }
                 li {
                     padding: 0;
@@ -209,8 +211,9 @@ a {
 			}
 			&.current-menu-item > a,
 			&.current-menu-parent > a {
-				padding-bottom: 21px;
+				padding-bottom: 22px;
             	border-width: 4px;
+                border-color: $link-color;
 			}
             &:hover {
                 & > ul {
