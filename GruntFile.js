@@ -16,12 +16,12 @@ module.exports = function(grunt) {
             options: {
                 style: 'compressed',
                 noCache: true,
-				sourcemap: true,
+				sourcemap: false,
 				unixNewlines: true
             },
 			dist: {
 				files: {
-					'css/style.css' : 'sass/style.scss'
+					'style.css' : 'sass/style.scss'
 				}
 			}
 		},
