@@ -16,19 +16,42 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+
 </head>
 
-<body <?php body_class(); ?>>
+<?php
 
-<?php do_action(‘ase_theme_body_inside_top’); ?>
+$has_image = '';
+if ( (is_single() && '' != get_the_post_thumbnail()) || is_category() ) {
+    $has_image = 'has-featured-image';
+}
 
+?>
+
+<body <?php body_class( $has_image ); ?>>
+
+<?php // do_action(‘ase_theme_body_inside_top’); ?>
+
+<header id="header">
+    
+    <div class="header-left">
+        <a id="toggle-menu-area" href="#" style="display: none;"><i class="fa fa-fw fa-bars"></i></a>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+    </div>
+    
+    <div class="header-right">
+        <a id="toggle-widget-area" href="#" style="display: none;"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+    </div>
+    
+</header>
+
+<!--
 <header id="header">
 	<div class="header-container">
 		<a class="title" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 
 		<div class="mobile-menu">
 			<a class="burger" href="#"><i class="fa fa-bars fa-fw"></i></a>
-			<!-- <a class="close" href="#"><i class="fa fa-times fa-fw"></i></a> -->
 		</div>
 
 		<nav id="site-navigation" class="main-navigation">
@@ -37,5 +60,6 @@
 
 	</div>
 </header>
+-->
 
-<div class="aesop-entry-header"></div>
+<!-- <div class="aesop-entry-header"></div> -->
