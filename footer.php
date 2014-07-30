@@ -30,7 +30,6 @@
 </div><!-- #page -->
 
 <a href="#" class="backtotop"><i class="fa fa-chevron-up"></i></a>
-<div id="overlay"></div>
 
 <?php wp_footer(); ?>
 
