@@ -49,12 +49,14 @@
 		background-color: #2b2b2b;
 		color: #fff;
         padding: 200px 0;
+        height: 100%;
         &.swiper-slide {
             height: 450px;
 			padding: 175px 0;
         }
         @media screen and (max-width: 768px) {
             padding: 80px 0;
+            height: auto;
 		}
 		.background {
 			position: absolute;
