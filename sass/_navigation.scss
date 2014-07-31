@@ -238,10 +238,8 @@ a {
 }
 
 /*--------------------------------------------------------------
-5.3 Floating Elements
+5.3 Header
 --------------------------------------------------------------*/
-
-// header link and menu
 
 .header {
     &-left,
@@ -254,12 +252,14 @@ a {
         a {
             float: left;
             color: #000;
-            padding: 5px 15px;
             &:hover {
                 color: $link-color;
             }
             .has-featured-image & {
                 color: #fff;
+            }
+            & + a {
+                padding-left: 10px;
             }
         }
     }
@@ -268,7 +268,104 @@ a {
     }
 }
 
-// widget menu
+/*--------------------------------------------------------------
+5.4 Overlay for menus and widgets
+--------------------------------------------------------------*/
+
+.overlay {
+    position: fixed;
+    overflow: auto;
+    background: #333;
+    height: 100%;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    font-size: 20px;
+    font-size: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(opacity 200ms);
+    .main-navigation {
+        @include site-width($narrow);
+        margin-top: 100px;
+        float: none;
+        ul {
+            display: block;
+            ul {
+                position: static;
+                float: none;
+                box-shadow: none;
+                margin-left: 40px;
+                a {
+                    width: auto;
+                }
+            }
+        }
+        li {
+            float: none;
+        }
+        a {
+            color: #fff;
+            border-color: #666;
+            border-width: 1px;
+            padding: 10px 5px;
+            &:hover {
+                color: $link-color;
+            }
+        }
+    }
+    .search {
+        @include site-width(500px);
+        margin-top: 60px;
+        margin-bottom: 60px;
+        input.search-field {
+            width: 100%;
+            padding: 10px;
+            @include border-radius(0);
+            @include box-sizing(border-box);
+        }
+    }
+    .social-navigation {
+        @include site-width;
+        margin-bottom: 100px;
+        text-align: center;
+        ul {
+            list-style: none;
+            ul {
+                display: none;
+            }
+        }
+        li {
+            display: inline-block;
+            margin: 20px;
+        }
+        a {
+            border: 0;
+        }
+    }
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    &-close {
+        position: fixed;
+        margin: 20px;
+        font-size: 24px;
+        font-size: 2.4rem;
+        color: #fff;
+        z-index: 1;
+        &.right {
+            right: 0;
+        }
+        &:visited {
+            color: #fff;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+5.5 Back To Top
+--------------------------------------------------------------*/
 
 a.backtotop {
     width: 36px;
@@ -317,186 +414,3 @@ a.backtotop {
 		margin: 0 auto;
 	}
 }
-
-// -----------------------------
-
-/*
-
-#header {
-	width: 100%;
-	background: #fff;
-	margin: 0 auto;
-    @media screen and (max-width: 768px) {
-        position: static;
-    }
-    .header-container {
-        width: 90%;
-        margin: 0 auto;
-    }
-    a {
-        display: inline-block;
-        color: #000;
-        padding: 26px 0;
-        border-width: 0;
-        &:hover {
-            @include box-shadow(0 -4px 0 $link-color inset);
-        }
-    }
-    .menu-item-has-children > a:hover {
-        @include box-shadow(none);
-    }
-    .title {
-        font-weight: 600;
-        font-size: 125%;
-        padding-bottom: 20px;
-    }
-    .main-navigation {
-        float: right;
-        width: auto;
-        clear: none;
-		ul {
-			@media screen and (max-width: 600px) {
-				display: block;
-			}
-            ul {
-                padding: 15px 0 0 0;
-                margin-left: -15px;
-                top: 100%;
-                display: block;
-                opacity: 0;
-                visibility: hidden;
-                @include box-shadow(none);
-                @include transition(all 200ms);
-                &:before {
-                    content: '';
-                    position: absolute;
-                    width: 0;
-                    height: 0;
-                    border: 10px solid transparent;
-                    border-bottom: 10px solid $link-color;
-                    top: -5px;
-                    left: 30px;
-                }
-                li {
-                    padding: 0;
-                    background: $link-color;
-                }
-                a {
-                    padding: 10px 15px;
-                    border: 0;
-                    color: #fff;
-                }
-            }
-		}
-        li {
-            padding-left: 30px;
-            a {
-				@media screen and (max-width: 768px) {
-					display: block;
-                    @include box-shadow(none);
-                    &:hover {
-                        background: $link-color;
-                        color: #fff;
-                    }
-				}
-			}
-			&.current-menu-item > a,
-			&.current-menu-parent > a {
-				padding-bottom: 22px;
-            	border-width: 4px;
-                border-color: $link-color;
-			}
-            &:hover {
-                & > ul {
-                    opacity: 1;
-                    visibility: visible;
-                    margin-top: -19px;
-                }
-                a {
-                    border-color: $link-color;
-                }
-            }
-			@media screen and (max-width: 768px) {
-				float: none;
-				padding: 0;
-				text-align: center;
-			}
-			ul {
-				@media screen and (max-width: 768px) {
-					display: none;
-				}
-			}
-        }
-		@media screen and (max-width: 768px) {
-			visibility: hidden;
-			opacity: 0;
-			@include transition(all .2s ease-in-out);
-			position: absolute;
-			z-index: 1080;
-			left: 35px;
-			right: 35px;
-			top: 35px;
-			background: #fff;
-			-webkit-transform: scale(1.1);
-			-moz-transform: scale(1.1);
-			transform: scale(1.1);
-			.show-nav & {
-				visibility: visible;
-				opacity: 1;
-				-webkit-transform: scale(1);
-				-moz-transform: scale(1);
-				transform: scale(1);
-			}
-		}
-    }
-    .mobile-menu {
-        display: none;
-        float: right;
-        position: relative;
-        margin-top: 25px;
-        z-index: 1081;
-        a {
-            font-size: 130%;
-            padding: 0;
-            border: 0;
-            @include box-shadow(none);
-        }
-        @media screen and (max-width: $site-width) {
-            display: block;
-        }
-    }
-	.burger {
-		@media screen and (max-width: 768px) {
-			.show-nav & {
-				display: none;
-			}
-		}
-	}
-}
-
-#overlay {
-	display: none;
-	opacity: 0;
-	visibility: hidden;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 1079;
-	background: rgba(0,0,0,0.5);
-	@include transition(all .2s ease-in-out);
-	@media screen and (max-width: 768px) {
-		display: block;
-		.show-nav & {
-			position: fixed;
-			opacity: 1;
-			visibility: visible;
-		}
-	}
-}
-
-
-
-
-
-*/

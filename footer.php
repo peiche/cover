@@ -10,17 +10,19 @@
 
 	</div><!-- #content -->
 	
-	<?php if (function_exists('related_posts') && is_single()) { ?>
-		<?php related_posts();?>
+    <?php if (function_exists('related_posts') && is_single()) { ?>
+		<?php // related_posts();?>
 	<?php } ?>
-
+    
+    <!--
 	<div id="search">
         <div class="searchbar">
             <?php get_search_form(); ?>
         </div>
         <a class="searchopen" href="#"><i class="fa fa-search"></i></a>
     </div>
-	
+	-->
+    
 	<footer id="colophon" class="site-footer" role="contentinfo">
         <div class="site-info">
 			<?php do_action( 'cover_credits' ); ?>

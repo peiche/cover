@@ -32,18 +32,34 @@ if ( (is_single() && '' != get_the_post_thumbnail()) || is_category() ) {
 
 <?php // do_action(‘ase_theme_body_inside_top’); ?>
 
-<header id="header">
-    
+<header class="header">
     <div class="header-left">
-        <a id="toggle-menu-area" href="#" style="display: none;"><i class="fa fa-fw fa-bars"></i></a>
+        <a class="toggle-overlay" data-overlay-class="menu-area" href="#"><i class="fa fa-fw fa-bars"></i></a>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
     </div>
     
     <div class="header-right">
-        <a id="toggle-widget-area" href="#" style="display: none;"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+        <a class="toggle-overlay" data-overlay-class="widget-area" href="#"><i class="fa fa-fw fa-ellipsis-v"></i></a>
     </div>
-    
 </header>
+
+<div id="menu-area" class="overlay">
+    <a href="#" class="overlay-close"><i class="fa fa-fw fa-times"></i></a>
+    <nav class="main-navigation">
+        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+    </nav>
+    <nav class="search">
+        <?php get_search_form(); ?>
+    </nav>
+    <nav class="social-navigation">
+        <?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
+    </nav>
+</div>
+
+<div id="widget-area" class="overlay">
+    <a href="#" class="overlay-close right"><i class="fa fa-fw fa-times"></i></a>
+    <!-- widgets here -->
+</div>
 
 <!--
 <header id="header">

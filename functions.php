@@ -40,9 +40,12 @@ function cover_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in multiple locations.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'cover' ),
+	) );
+    register_nav_menus( array(
+		'social' => __( 'Social Menu', 'cover' ),
 	) );
 
 	// Enable support for HTML5 markup.

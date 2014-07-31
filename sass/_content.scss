@@ -9,7 +9,7 @@
 }
 
 #content {
-	padding-top: 20px;
+	padding-top: 30px;
 }
 
 .sticky {
@@ -24,8 +24,7 @@
 	margin: 0;
     position: relative;
     &:after {
-        @include site-width;
-        max-width: 500px;
+        @include site-width($narrow);
 		content: '';
         height: 3px;
         background: $divider-color;
@@ -72,8 +71,7 @@
 }
 .entry {
     &-image {
-        @include site-width;
-        max-width: 1000px;
+        @include site-width($wide);
         margin-bottom: 30px;
     }
     &-header {
@@ -223,7 +221,6 @@ footer.entry-meta {
 }
 
 .site-main [class*="navigation"] {
-	@include site-width;
-    max-width: 1000px;
+	@include site-width($wide);
     padding: 50px 0;
 }
