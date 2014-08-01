@@ -285,6 +285,9 @@ a {
     opacity: 0;
     visibility: hidden;
     @include transition(opacity 200ms);
+    a {
+        color: #fff;
+    }
     .main-navigation {
         @include site-width($narrow);
         margin-top: 100px;
@@ -305,7 +308,6 @@ a {
             float: none;
         }
         a {
-            color: #fff;
             border-color: #666;
             border-width: 1px;
             padding: 10px 5px;
@@ -341,6 +343,52 @@ a {
         }
         a {
             border: 0;
+        }
+    }
+    .widget-area {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        color: #ccc;
+        .widget {
+            @include site-width($narrow);
+            margin-bottom: 60px;
+            &.widget_tag_cloud {
+                max-width: $medium;
+            }
+            &-title {
+                color: #999;
+                font-size: 30px;
+                font-size: 3rem;
+                margin-bottom: 0;
+            }
+            ul {
+                list-style: none;
+                margin-left: 0;
+                ul {
+                    margin-left: 40px;
+                }
+            }
+            li {
+                a {
+                    display: block;
+                    border-color: #666;
+                    border-width: 1px;
+                    padding: 10px 5px;
+                }
+            }
+            a {
+                &:hover {
+                    color: $link-color;
+                }
+            }
+            &_tag_cloud {
+                .widget-title {
+                    @include site-width($narrow);
+                }
+            }
+            .tagcloud {
+                text-align: center;
+            }
         }
     }
     &.show {
