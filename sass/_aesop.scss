@@ -40,7 +40,7 @@
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
     font-family: $font-stack-content;
-    font-size: 16px;
+    @include rem(font-size, 16px);
     padding: 10px 20px;
 }
 
@@ -77,7 +77,7 @@
 		background: #fff;
 		padding: 10px 20px;
 		font-family: $font-stack-content;
-		font-size: 15px;
+        @include rem(font-size, 15px);
 	}
 	&.aesop-image-component-caption-right .aesop-image-component-caption {
 		right: 0;
@@ -91,7 +91,7 @@
 .aesop-cover-title {
     @include site-width;
     color: #fff;
-    font-size: 42px;
+    @include rem(font-size, 42px);
     padding: 250px 0 20px;
 }
 

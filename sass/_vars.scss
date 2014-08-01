@@ -33,6 +33,41 @@ $github-color: #000; // TODO
 
 $divider-color: #b3b3b3;
 
+@function parseInt($n) {
+    @return $n / ($n * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+    $px : ();
+    $rem: ();
+    
+    @each $value in $values {
+        
+        @if $value == 0 or $value == auto {
+            $px : append($px , $value);
+            $rem: append($rem, $value);
+        }
+        
+        @else { 
+            $unit: unit($value);
+            $val: parseInt($value);
+            
+            @if $unit == "px" {
+                $px : append($px,  $value);
+                $rem: append($rem, ($val / 10 * 1rem));
+            }
+            
+            @if $unit == "rem" {
+                $px : append($px,  ($val * 10 * 1px));
+                $rem: append($rem, $value);
+            }
+        }
+    }
+    
+    #{$property}: $px;
+    #{$property}: $rem;
+}
+
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
@@ -86,22 +121,6 @@ $divider-color: #b3b3b3;
     -webkit-box-sizing: $val;
     -moz-box-sizing: $val;
     box-sizing: $val;
-}
-
-@mixin swiper-arrow {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    color: #fff;
-    font-size: 60px;
-    height: 60px;
-    cursor: pointer;
-    @media screen and (max-width: 920px) {
-        font-size: 30px;
-        width: 5%;
-        display: none; // remove to show arrows on smaller screens
-    }
 }
 
 @mixin button {

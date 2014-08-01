@@ -246,8 +246,7 @@ a {
     &-right {
         position: absolute;
         margin: 20px;
-        font-size: 24px;
-        font-size: 2.4rem;
+        @include rem(font-size, 24px);
         z-index: 1000;
         a {
             float: left;
@@ -280,8 +279,7 @@ a {
     left: 0;
     right: 0;
     z-index: 9999;
-    font-size: 20px;
-    font-size: 2rem;
+    @include rem(font-size, 20px);
     opacity: 0;
     visibility: hidden;
     @include transition(opacity 200ms);
@@ -357,8 +355,7 @@ a {
             }
             &-title {
                 color: #999;
-                font-size: 30px;
-                font-size: 3rem;
+                @include rem(font-size, 30px);
                 margin-bottom: 0;
             }
             ul {
@@ -398,8 +395,7 @@ a {
     &-close {
         position: fixed;
         margin: 20px;
-        font-size: 24px;
-        font-size: 2.4rem;
+        @include rem(font-size, 24px);
         color: #fff;
         z-index: 1;
         &.right {
@@ -412,40 +408,7 @@ a {
 }
 
 /*--------------------------------------------------------------
-5.5 Back To Top
---------------------------------------------------------------*/
-
-a.backtotop {
-    width: 36px;
-    height: 36px;
-    border: 2px solid #ccc;
-    background: transparent;
-    color: #ccc;
-    visibility: hidden;
-    opacity: 0;
-	position: fixed;
-	bottom: 14px;
-	right: 15px;
-	text-align: center;
-    z-index: 400;
-    @include border-radius(20px);
-    @include transition(all .2s ease-in-out);
-	&:hover {
-		background: $link-color;
-		border-color: $link-color;
-		color: #fff;
-	}
-	&.show {
-	    visibility: visible;
-    	opacity: 1;
-	}
-	i {
-		margin-top: 8px;
-	}
-}
-
-/*--------------------------------------------------------------
-5.4 Jetpack Infinite Scroll
+5.5 Jetpack Infinite Scroll
 --------------------------------------------------------------*/
 
 #infinite-handle {

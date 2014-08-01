@@ -9,8 +9,7 @@
 		position: relative;
 	}
 	h1 {
-        font-size: 58px;
-		font-size: 5.8rem;
+        @include rem(font-size, 58px);
 		line-height: 86px;
 		margin: 0;
         a {
@@ -21,8 +20,7 @@
 			margin-bottom: 0;
 		}
 		@media screen and (max-width: 768px) {
-			font-size: 40px;
-            font-size: 4rem;
+			@include rem(font-size, 40rem);
 			line-height: 50px;
 		}
 	}
@@ -30,8 +28,7 @@
         color: #999;
 		margin: 0;
         @media screen and (max-width: 768px) {
-            font-size: 22px;
-            font-size: 2.2rem;
+            @include rem(font-size, 22px);
         }
 		a {
 			color: #999;
@@ -50,10 +47,6 @@
 		color: #fff;
         padding: 200px 0;
         height: 100%;
-        &.swiper-slide {
-            height: 450px;
-			padding: 175px 0;
-        }
 		.background {
 			position: absolute;
 			height: 100%;
@@ -76,9 +69,6 @@
             @media screen and (max-width: 768px) {
                 top: auto;
             }
-        }
-        &.swiper-slide:not(.home) header {
-            top: auto;
         }
 		h1 {
 			color: #fff;
@@ -107,19 +97,4 @@
 			}
 		}
 	}
-    .fa-angle-down {
-    	display: none; // remove entirely?
-        position: absolute;
-        bottom: 0;
-        color: #fff;
-        left: 0;
-        right: 0;
-        cursor: pointer;
-        font-size: 60px;
-        margin: auto;
-        width: 40px;
-        @media screen and (max-width: 768px) {
-            display: none;
-        }
-    }
 }

@@ -17,8 +17,7 @@
 
 .comment-author {
 	margin: 5px 0;
-	font-size: 24px;
-    font-size: 2.4rem;
+    @include rem(font-size, 24px);
     a {
         color: #232730;
     }

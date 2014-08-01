@@ -17,7 +17,7 @@
         clip: auto !important;
         color: #21759b;
         display: block;
-        font-size: 14px;
+        @include rem(font-size, 14px);
         font-weight: bold;
         height: auto;
         left: 5px;
