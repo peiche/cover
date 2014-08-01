@@ -50,32 +50,9 @@ function cover_setup() {
 
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
-	
-	// Enable featured content.
-	add_theme_support( 'featured-content', array(
-		'filter'		=> 'cover_get_featured_posts'
-	) );
 }
 endif; // cover_setup
 add_action( 'after_setup_theme', 'cover_setup' );
-
-/**
- * Getter function for Featured Content Plugin.
- *
- * @return array An array of WP_Post objects.
- */
-function cover_get_featured_posts() {
-	return apply_filters( 'cover_get_featured_posts', array() );
-}
-
-/**
- * A helper conditional function that returns a boolean value.
- *
- * @return bool Whether there are featured posts.
- */
-function cover_has_featured_posts() {
-	return ! is_paged() && (bool) cover_get_featured_posts();
-}
 
 /**
  * Register widgetized area and update sidebar with default widgets.
@@ -101,12 +78,8 @@ function cover_scripts() {
 	wp_enqueue_style( 'cover-style', get_stylesheet_uri() );
     
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'cover-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
 	wp_enqueue_script( 'cover-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
-	wp_enqueue_script( 'idangerous-slider', get_template_directory_uri() . '/js/idangerous.swiper.js', array(), '20140210', true );
 	wp_enqueue_script( 'waypoints', get_template_directory_uri() . '/js/waypoints.js', array(), '20140508', true );
-    wp_enqueue_script( 'pace', get_template_directory_uri() . '/js/pace.min.js', array(), '20140617', true );
-    wp_enqueue_script( 'prettify', 'https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js', array(), '20140617', true );
     wp_enqueue_script( 'cover-lib', get_template_directory_uri() . '/js/cover.min.js', array(), '20140210', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

@@ -17,13 +17,9 @@ jQuery(document).ready(function() {
         jQuery('.overlay').removeClass('show');
     });
     
-	// back to top
-	jQuery('.backtotop').click(function() {
-		jQuery('html, body').animate({ scrollTop: jQuery('body').offset().top });
-		return false;
-	});
-	
-	jQuery('img[alt="Fork me on GitHub"]').hide();
+	// waypoints
+    
+    jQuery('img[alt="Fork me on GitHub"]').hide();
     
     jQuery('#page').waypoint({
         handler: function(direction) {
