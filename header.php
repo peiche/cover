@@ -38,9 +38,11 @@ if ( (is_single() && '' != get_the_post_thumbnail()) || is_category() ) {
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
     </div>
     
-    <div class="header-right">
-        <a class="toggle-overlay" data-overlay-class="widget-area" href="#"><i class="fa fa-fw fa-ellipsis-v"></i></a>
-    </div>
+    <?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
+        <div class="header-right">
+            <a class="toggle-overlay" data-overlay-class="widget-area" href="#"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+        </div>
+    <?php } ?>
 </header>
 
 <div id="menu-area" class="overlay">
@@ -59,6 +61,7 @@ if ( (is_single() && '' != get_the_post_thumbnail()) || is_category() ) {
 <div id="widget-area" class="overlay">
     <a href="#" class="overlay-close right"><i class="fa fa-fw fa-times"></i></a>
     <!-- widgets here -->
+    <?php get_sidebar(); ?>
 </div>
 
 <!--
