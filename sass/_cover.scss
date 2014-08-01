@@ -20,7 +20,7 @@
 			margin-bottom: 0;
 		}
 		@media screen and (max-width: 768px) {
-			@include rem(font-size, 40rem);
+			@include rem(font-size, 40px);
 			line-height: 50px;
 		}
 	}
