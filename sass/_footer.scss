@@ -1,9 +1,16 @@
 #colophon {
-	@include site-width;
-	margin-top: 20px;
-	padding-bottom: 20px;
-	text-align: center;
-	font: 400 13px $font-stack-content;
-	line-height: 34px;
-	color: #a6a6a6;
+    padding: 30px 0;
+    background: #333;
+    color: #666;
+    @include rem(font-size, 13px);
+    .site-info {
+        @include site-width;
+        text-align: center;
+    }
+    a {
+        color: #fff;
+        &:hover {
+            color: $link-color;
+        }
+    }
 }
