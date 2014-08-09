@@ -2,6 +2,8 @@ var homeSwiper, gallerySwiper, relatedSwiper;
 
 jQuery(document).ready(function() {
 	
+    // overlays
+    
     jQuery('.toggle-overlay').click(function(e) {
         e.preventDefault();
         
@@ -23,7 +25,7 @@ jQuery(document).ready(function() {
     
     jQuery('#page').waypoint({
         handler: function(direction) {
-            jQuery('.backtotop').toggleClass('show');
+            jQuery('.header').toggleClass('switch');
             jQuery('img[alt="Fork me on GitHub"]').fadeToggle(200);
         }
     });
@@ -31,5 +33,13 @@ jQuery(document).ready(function() {
     // aesop
 	
 	jQuery('.aesop-stacked-img').height(jQuery(window).height());
+    
+    // back to top
+    
+    jQuery('.header').click(function(e) {
+        if (jQuery(e.target).closest('a').length == 0) {
+            jQuery('html, body').animate({ scrollTop: jQuery('html').offset().top });
+        }
+    });
     
 });
