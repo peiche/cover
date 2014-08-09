@@ -242,28 +242,60 @@ a {
 --------------------------------------------------------------*/
 
 .header {
-    &-left,
-    &-right {
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+    @include box-shadow(0 1px 0 rgba(0,0,0,0.15));
+    @include rem(font-size, 24px);
+    @include transition(all 200ms);
+    z-index: 500;
+    @media screen and (max-width: 768px) {
         position: absolute;
-        margin: 20px;
-        @include rem(font-size, 24px);
-        z-index: 1000;
-        a {
-            float: left;
-            color: #000;
-            &:hover {
-                color: $link-color;
+    }
+    .has-featured-image & {
+        background: transparent;
+        @include box-shadow(none);
+        &.switch {
+            background: #fff;
+            background: rgba(255,255,255,0.9);
+            @include box-shadow(0 1px 0 rgba(0,0,0,0.15));
+            a {
+                color: #000;
+                &:hover {
+                    color: $link-color;
+                }
             }
-            .has-featured-image & {
-                color: #fff;
-            }
-            & + a {
-                padding-left: 10px;
+            .tagline {
+                color: #777;
             }
         }
     }
-    &-right {
-        right: 0;
+    a {
+        color: #000;
+        &:hover {
+            color: $link-color;
+        }
+        .has-featured-image & {
+            color: #fff;
+        }
+        & + a {
+            padding-left: 10px;
+        }
+    }
+    .tagline {
+        @include rem(font-size, 18px);
+        margin-left: 10px;
+        padding-left: 10px;
+        color: #777;
+        border-left: 1px solid #ccc;
+        .has-featured-image & {
+            color: #fff;
+        }
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
     }
 }
 
