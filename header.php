@@ -33,13 +33,14 @@ if ( (is_single() && '' != get_the_post_thumbnail()) || is_category() ) {
 <?php // do_action(‘ase_theme_body_inside_top’); ?>
 
 <header class="header">
-    <div class="header-left">
+    <div class="pull-left">
         <a class="toggle-overlay" data-overlay-class="menu-area" href="#"><i class="fa fa-fw fa-bars"></i></a>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+        <span class="tagline"><?php bloginfo( 'description' ); ?></span>
     </div>
     
     <?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
-        <div class="header-right">
+        <div class="pull-right">
             <a class="toggle-overlay" data-overlay-class="widget-area" href="#"><i class="fa fa-fw fa-ellipsis-v"></i></a>
         </div>
     <?php } ?>
@@ -63,22 +64,3 @@ if ( (is_single() && '' != get_the_post_thumbnail()) || is_category() ) {
     <!-- widgets here -->
     <?php get_sidebar(); ?>
 </div>
-
-<!--
-<header id="header">
-	<div class="header-container">
-		<a class="title" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-
-		<div class="mobile-menu">
-			<a class="burger" href="#"><i class="fa fa-bars fa-fw"></i></a>
-		</div>
-
-		<nav id="site-navigation" class="main-navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav>
-
-	</div>
-</header>
--->
-
-<!-- <div class="aesop-entry-header"></div> -->
