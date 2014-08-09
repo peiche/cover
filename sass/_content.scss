@@ -9,7 +9,7 @@
 }
 
 #content {
-	padding-top: 30px;
+	padding-top: 76px;
 }
 
 .sticky {
@@ -77,7 +77,10 @@
     &-header {
         @include site-width;
         h1 {
-            margin: 20px 0 0;
+            @include rem(font-size, 40px);
+            @media screen and (max-width: 768px) {
+                @include rem(font-size, 30px);
+            }
             a {
                 position: relative;
                 padding: 10px 0;

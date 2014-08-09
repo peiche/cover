@@ -47,7 +47,13 @@
 		color: #fff;
         padding: 200px 0;
         height: 100%;
-		.background {
+		&.half {
+            //height: 50%;
+        }
+        &.auto {
+            //height: auto;
+        }
+        .background {
 			position: absolute;
 			height: 100%;
 			width: 100%;
@@ -65,7 +71,7 @@
 			}
 		}
         header {
-            top: 30%;
+            top: 40%;
             @media screen and (max-width: 768px) {
                 top: auto;
             }
