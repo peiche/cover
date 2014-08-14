@@ -14,7 +14,7 @@
 			<?php } ?>
 			<div class="background<?php if ('' != get_the_post_thumbnail()) { ?> darken" style="background-image: url('<?php echo $image[0]; ?>');<?php } ?>"></div>
 			<header>
-				<h2><?php echo single_cat_title(); ?></h2>
+				<h1><?php echo single_cat_title(); ?></h1>
 				<?php
 					// Show term description if it exists.
 					$term_description = term_description();
