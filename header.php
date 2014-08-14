@@ -50,12 +50,7 @@ if ( (is_single() && '' != get_the_post_thumbnail()) || is_category() ) {
     <nav class="main-navigation">
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     </nav>
-    <!--
-	<nav class="search">
-        <?php get_search_form(); ?>
-    </nav>
-    -->
-	<nav class="social-navigation">
+    <nav class="social-navigation">
         <?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
     </nav>
 	
