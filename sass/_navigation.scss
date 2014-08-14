@@ -245,37 +245,47 @@ a {
     position: absolute;
     width: 100%;
     padding: 20px;
-    background: #fff;
-    background: rgba(255,255,255,0.95);
     @include rem(font-size, 24px);
     @include transition(all 200ms);
     z-index: 500;
     @media screen and (max-width: 768px) {
         position: absolute;
     }
-    &.switch {
-		position: fixed;
-		@include box-shadow(0 0 1px rgba(0,0,0,0.15));
-		@media screen and (max-width: 768px) {
-			position: absolute;
-			@include box-shadow(none);
-		}
-	}
+    &.headroom {
+        @include transition(all 200ms linear);
+        &--pinned {
+            @include transform(translateY(0));
+        }
+        &--unpinned {
+            @include transform(translateY(-100%));
+        }
+        &--top {
+            position: absolute;
+        }
+        &--not-top {
+            position: fixed;
+            background: #fff;
+            background: rgba(255, 255, 255, 0.95);
+            @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
+        }
+    }
 	.has-featured-image & {
         background: transparent;
         @include box-shadow(none);
-        &.switch {
-            background: #fff;
-            background: rgba(255, 255, 255, 0.95);
-			@include box-shadow(0 0 1px rgba(0,0,0,0.15));
-            a {
-                color: #000;
-                &:hover {
-                    color: $link-color;
+        &.headroom {
+            &--not-top {
+                background: #fff;
+                background: rgba(255, 255, 255, 0.95);
+                @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
+                a {
+                    color: #000;
+                    &:hover {
+                        color: $link-color;
+                    }
                 }
-            }
-            .tagline {
-                color: #777;
+                .tagline {
+                    color: #777;
+                }
             }
         }
     }
@@ -286,9 +296,6 @@ a {
         }
         .has-featured-image & {
             color: #fff;
-        }
-        & + a {
-            padding-left: 10px;
         }
     }
     .tagline {
@@ -327,7 +334,7 @@ a {
     }
     .main-navigation {
         @include site-width($narrow);
-        margin-top: 100px;
+        margin-top: 60px;
         float: none;
         ul {
             display: block;
@@ -363,7 +370,7 @@ a {
     }
     .social-navigation {
         @include site-width;
-        margin-bottom: 100px;
+        margin-bottom: 60px;
         text-align: center;
         ul {
             list-style: none;
@@ -380,19 +387,19 @@ a {
         }
     }
     .widget-area {
-        margin-top: 100px;
-        margin-bottom: 100px;
+        margin-top: 60px;
+        margin-bottom: 60px;
         color: #ccc;
         .widget {
             @include site-width($narrow);
             margin-bottom: 60px;
             &.widget_tag_cloud {
-                max-width: $medium;
+                //max-width: $medium;
             }
             &-title {
                 color: #999;
                 @include rem(font-size, 30px);
-                margin-bottom: 0;
+                margin-bottom: 15px;
             }
             ul {
                 list-style: none;
@@ -450,6 +457,8 @@ a {
 5.5 Jetpack Infinite Scroll
 --------------------------------------------------------------*/
 
+/*
+
 #infinite-handle {
 	padding: 50px 0;
 	text-align: center;
@@ -464,3 +473,5 @@ a {
 		margin: 0 auto;
 	}
 }
+
+*/
