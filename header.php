@@ -34,33 +34,31 @@ if ( (is_single() && '' != get_the_post_thumbnail()) || is_category() ) {
 
 <header class="header">
     <div class="pull-left">
-        <a class="toggle-overlay" data-overlay-class="menu-area" href="#"><i class="fa fa-fw fa-bars"></i></a>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
         <span class="tagline"><?php bloginfo( 'description' ); ?></span>
     </div>
     
     <?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
         <div class="pull-right">
-            <a class="toggle-overlay" data-overlay-class="widget-area" href="#"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+            <a class="toggle-overlay" data-overlay-class="menu-area" href="#"><i class="fa fa-fw fa-bars"></i></a>
         </div>
     <?php } ?>
 </header>
 
 <div id="menu-area" class="overlay">
-    <a href="#" class="overlay-close"><i class="fa fa-fw fa-times"></i></a>
+    <a href="#" class="overlay-close right"><i class="fa fa-fw fa-times"></i></a>
     <nav class="main-navigation">
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     </nav>
-    <nav class="search">
+    <!--
+	<nav class="search">
         <?php get_search_form(); ?>
     </nav>
-    <nav class="social-navigation">
+    -->
+	<nav class="social-navigation">
         <?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
     </nav>
-</div>
-
-<div id="widget-area" class="overlay">
-    <a href="#" class="overlay-close right"><i class="fa fa-fw fa-times"></i></a>
-    <!-- widgets here -->
+	
+	<!-- widgets here -->
     <?php get_sidebar(); ?>
 </div>
