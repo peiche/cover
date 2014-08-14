@@ -24,12 +24,12 @@
 	margin: 0;
     position: relative;
     &:after {
-        @include site-width($narrow);
+        @include site-width;
 		content: '';
-        height: 3px;
-        background: $divider-color;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.05);
         position: absolute;
-        bottom: 5px;
+        bottom: 0;
         left: 0;
         right: 0;
     }
@@ -45,42 +45,21 @@
         border: 0;
         padding: 0;
     }
-    .entry-summary {
-        p,
-        .tiled-gallery {
-            margin-top: 30px;
-        }
-        blockquote p,
-        cite p,
-        q p {
-            margin:0;
-            padding:0;
-        }
-    }
-    .entry-content > h2:first-child,
-    .entry-content > p:first-child {
-        margin-top: 0;
-    }
-    .entry-content > p:first-child,
-    .entry-content > p:first-of-type,
-    .entry-content > p:first-child:empty + p,
-    .entry-content > p:first-of-type:empty + p {
-        font-weight: 600;
-        color: #1d1d1d;
-    }
 }
 .entry {
     &-image {
         @include site-width($wide);
         margin-bottom: 30px;
+		img {
+			display: block;
+			margin: auto;
+		}
     }
     &-header {
         @include site-width;
         h1 {
-            @include rem(font-size, 40px);
-            @media screen and (max-width: 768px) {
-                @include rem(font-size, 30px);
-            }
+            @include rem(font-size, 30px);
+			margin: 0;
             a {
                 position: relative;
                 padding: 10px 0;
@@ -108,11 +87,17 @@
     }
     &-summary {
         margin: 0;
+		h1 {
+		
+		}
         p {
-            margin-bottom: 0;
+            margin: 0 auto;
         }
         & > * {
             @include site-width;
+        }
+        .tiled-gallery {
+            margin-top: 30px;
         }
     }
     &-content {
@@ -121,7 +106,18 @@
                 @include site-width;
             }
         }
-        & > blockquote.pullquote,
+		& > h2:first-child,
+		& > p:first-child {
+			margin-top: 0;
+		}
+		& > p:first-child,
+		& > p:first-of-type,
+		& > p:first-child:empty + p,
+		& > p:first-of-type:empty + p {
+			font-weight: bold;
+			color: #1d1d1d;
+		}
+		& > blockquote.pullquote,
         & > pre {
             max-width: 1000px;
         }
@@ -226,4 +222,93 @@ footer.entry-meta {
 .site-main [class*="navigation"] {
 	@include site-width($wide);
     padding: 50px 0;
+}
+
+/*--------------------------------------------------------------
+10.4 Grid
+--------------------------------------------------------------*/
+
+.site-main.grid {
+	@include site-width($wide);
+	margin-top: 50px;
+	.grid-row {
+		@extend .cf;
+	}
+	.hentry {
+		height: 350px;
+		width: 100%;
+		margin-bottom: 10px;
+		padding: 0;
+		clear: none;
+		float: left;
+		background: #fff;
+		border: 1px solid rgba(0, 0, 0, 0.15);
+		&:after {
+			display: none;
+		}
+		&.has-post-thumbnail {
+			border: none;
+			background: #2b2b2b;
+			@include transition(opacity 200ms);
+			.entry-header {
+				position: absolute;
+				width: 100%;
+				padding: 60px 40px;
+				bottom: 0;
+				h1 {
+					@include rem(font-size, 35px);
+				}
+			}
+			a {
+				color: #fff;
+			}
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+		.entry-summary {
+			display: none;
+		}
+		a.cover {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+		.background {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-size: cover;
+			background-position: center;
+			opacity: .6;
+		}
+	}
+	.grid-row:nth-child(odd) .hentry:nth-child(odd),
+	.grid-row:nth-child(even) .hentry:nth-child(even) {
+		width: 640px;
+	}
+	.grid-row:nth-child(odd) .hentry:nth-child(even),
+	.grid-row:nth-child(even) .hentry:nth-child(odd) {
+		width: 350px;
+	}
+	.grid-row:nth-child(odd) .hentry:nth-child(odd) {
+		margin-right: 10px;
+	}
+	.grid-row:nth-child(even) .hentry:nth-child(even) {
+		margin-left: 10px;
+	}
+	@media screen and (max-width: 1000px) {
+		.grid-row:nth-child(n) .hentry:nth-child(n) {
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+	[class*="navigation"] {
+		width: auto;
+	}
 }

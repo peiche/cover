@@ -1,3 +1,7 @@
+div.aesop-content {
+	@include site-width;
+}
+
 .aesop-component {
     margin: 40px 0;
     &.aesop-audio-component {
@@ -74,15 +78,13 @@
 .aesop-image-component-image {
 	position: relative;
 	.aesop-image-component-caption {
-		position: absolute;
-		bottom: 20px;
-		background: #fff;
-		padding: 10px 20px;
+		@include site-width;
+		font-style: italic;
 		font-family: $font-stack-content;
         @include rem(font-size, 15px);
-	}
-	&.aesop-image-component-caption-right .aesop-image-component-caption {
-		right: 0;
+		i, em {
+			font-style: normal;
+		}
 	}
 }
 

@@ -1,7 +1,7 @@
 .cover {
 	position: relative;
-	background-color: rgba(0,0,0,0.05);
 	padding: 80px 0;
+	padding: 156px 0 0;
 	overflow: hidden;
 	z-index: 400;
 	header {
@@ -9,7 +9,7 @@
 		position: relative;
 	}
 	h1 {
-        @include rem(font-size, 58px);
+        @include rem(font-size, 50px);
 		line-height: 86px;
 		margin: 0;
         a {
@@ -32,10 +32,8 @@
         }
 		a {
 			color: #999;
-			border: 0;
 			&:hover {
 				color: #aaa;
-				border: 0;
 			}
 		}
 	}
@@ -51,7 +49,7 @@
             //height: 50%;
         }
         &.auto {
-            //height: auto;
+            height: auto;
         }
         .background {
 			position: absolute;
@@ -71,14 +69,18 @@
 			}
 		}
         header {
-            top: 40%;
+            top: 30%;
             @media screen and (max-width: 768px) {
                 top: auto;
             }
         }
 		h1 {
+			@include rem(font-size, 58px);
 			color: #fff;
 			text-shadow: 0 0 30px rgba(0,0,0,.8);
+			@media screen and (max-width: 768px) {
+				@include rem(font-size, 40px);
+			}
             a {
                 color: #fff;
             }
@@ -89,7 +91,6 @@
 				color: #ddd;
 				&:hover {
 					color: #fff;
-					border: 0;
 				}
 			}
 		}
@@ -99,8 +100,14 @@
 		a {
 			color: #fff;
 			&:hover {
-				border-bottom: 3px solid rgba(255,255,255,0.2);
+				border-bottom: 2px solid rgba(255,255,255,0.2);
 			}
+		}
+		.taxonomy-description {
+			margin-top: 80px;
+			padding-top: 50px;
+			border-top: 1px solid #fff;
+			border-color: rgba(255, 255, 255, 0.1);
 		}
 	}
 }

@@ -29,3 +29,46 @@
         }
     }
 }
+
+// ----
+
+/* inverse color */
+.notification {
+	background: #333;
+	border-radius: 0;
+/* --- */
+/*	background: #fff;
+	border: 1px solid #444; */
+}
+
+.notification .ntitle {
+	margin-right: 20px;
+	font-weight: normal;
+	color: #fff;
+	border-color: #666;
+	border-width: 1px;
+/* --- */
+/*	color: #444;
+	border-color: #ccc; */
+}
+
+@media screen and (max-width: 768px) {
+	.notification .ntitle {
+		display: none;
+	}
+}
+
+.notification .message {
+	font-weight: normal;
+	padding: 0;
+/* --- */
+/*	color: #444; */
+}
+
+.notification a {
+	background: #fff;
+	color: #333;
+/* --- */
+/*	background: #444;
+	color: #fff; */
+}
