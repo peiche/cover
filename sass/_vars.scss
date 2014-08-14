@@ -90,12 +90,6 @@ $divider-color: #b3b3b3;
     transform: $val;
 }
 
-@mixin transform3d($val) {
-	-webkit-transform3d: $val;
-	-moz-transform3d: $val;
-	transform3d: $val;
-}
-
 @mixin site-width($width: $medium) {
     width: 90%;
 	max-width: $width;
