@@ -21,12 +21,9 @@ jQuery(document).ready(function() {
     
 	// waypoints
     
-    jQuery('img[alt="Fork me on GitHub"]').hide();
-    
     jQuery('#page').waypoint({
         handler: function(direction) {
             jQuery('.header').toggleClass('switch');
-            jQuery('img[alt="Fork me on GitHub"]').fadeToggle(200);
         }
     });
     
