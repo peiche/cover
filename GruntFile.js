@@ -1,5 +1,5 @@
 /*!
- * Cover-WP Gruntfile
+ * Cover Gruntfile
  * http://eichefam.net/projects/cover
  * @author Paul Eiche
  */
