@@ -19,15 +19,7 @@ jQuery(document).ready(function() {
         jQuery('.overlay').removeClass('show');
     });
     
-	// waypoints
-    
-    jQuery('#page').waypoint({
-        handler: function(direction) {
-            jQuery('.header').toggleClass('switch');
-        }
-    });
-    
-    // aesop
+	// aesop
 	
 	jQuery('.aesop-stacked-img').height(jQuery(window).height());
     
@@ -38,5 +30,10 @@ jQuery(document).ready(function() {
             jQuery('html, body').animate({ scrollTop: jQuery('html').offset().top });
         }
     });
+    
+    // headroom
+    
+    var headroom = new Headroom(jQuery('.header')[0]);
+    headroom.init();
     
 });
