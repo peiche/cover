@@ -13,7 +13,11 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
-
+            
+            <div>
+                <?php get_search_form(); ?>
+            </div>
+            
 			<div class="notification">
 				<span class="ntitle">Search</span>
 				<span class="message">
