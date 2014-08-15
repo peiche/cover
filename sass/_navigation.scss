@@ -130,7 +130,8 @@ a {
     }
 }
 
-.nav-previous {
+.nav-previous,
+.nav-next {
     .comment-navigation &,
     .paging-navigation &,
     .post-navigation & {
@@ -152,7 +153,6 @@ a {
     .post-navigation & {
         float: right;
         text-align: right;
-        width: 50%;
     }
 }
 
