@@ -8,7 +8,7 @@ get_header(); ?>
 <?php get_template_part( 'parts/wrapper', 'top' ); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main grid" role="main">
+		<main id="main" class="site-main" role="main"> <!-- .grid -->
             
             <?php
                 if ( cover_has_featured_posts() ) {
@@ -18,27 +18,13 @@ get_header(); ?>
             
 			<?php if ( have_posts() ) : ?>
 				
-                <div class="grid">
-                
-                    <?php $count = 0; ?>
-                    <?php while ( have_posts() ) : the_post(); ?>
+                <?php $count = 0; ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-                        <?php $count = $count + 1; ?>
-                        <?php if ( $count < 2) { ?>
-                            <div class="grid-row">
-                        <?php } ?>
-
-                        <?php get_template_part( 'content' ); ?>
-
-                        <?php if ( $count == 2 ) { ?>
-                            </div>
-                            <?php $count = 0; ?>
-                        <?php } ?>
-
-                    <?php endwhile; ?>
-                    <?php cover_paging_nav(); ?>
+                    <?php get_template_part( 'content' ); ?>
                     
-                </div>
+                <?php endwhile; ?>
+                <?php cover_paging_nav(); ?>
 
 			<?php else : ?>
 
