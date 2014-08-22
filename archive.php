@@ -9,6 +9,7 @@
 
 get_header(); ?>
 
+<?php get_template_part( 'parts/cover', 'archive' ); ?>
 <?php get_template_part( 'parts/wrapper', 'top' ); ?>
 
 	<section id="primary" class="content-area">
@@ -16,6 +17,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 			
+            <!--
 			<div class="notification">
 				<span class="ntitle">
 					
@@ -117,6 +119,8 @@ get_header(); ?>
 				</span>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa fa-times"></i></a>
 			</div>
+
+            -->
 			
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
