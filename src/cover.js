@@ -31,6 +31,16 @@ jQuery(document).ready(function() {
         }
     });
     
+    // waypoints
+    
+    /*
+    jQuery('.header').waypoint({
+        handler: function(direction) {
+            jQuery('.header').toggleClass('header--not-top');
+        }
+    });
+    */
+    
     // headroom
     
     var headroom = new Headroom(jQuery('.header')[0]);
