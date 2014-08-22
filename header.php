@@ -22,7 +22,7 @@
 <?php
 
 $has_image = '';
-if ( (is_single() && '' != get_the_post_thumbnail()) || is_category() || is_tag() || is_author() ) {
+if ( (is_single() && '' != get_the_post_thumbnail()) || is_archive() || is_author() ) {
     $has_image = 'has-featured-image';
 }
 
