@@ -16,11 +16,18 @@ if ( has_post_thumbnail() ) {
 	<?php if ( has_post_thumbnail() ) : ?>
 		<?php if ('' != get_the_post_thumbnail()) { ?>
 			<div class="background" style="background-image: url('<?php echo $img[0]; ?>');"></div>
+            <figure class="entry-image">
+                <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></a>
+            </figure>
 		<?php } ?>
 	<?php endif; ?><!-- .entry-image -->
     
     <header class="entry-header">
+        <h2><?php the_category(', ') ?></h2>
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+        <div class="entry-meta">
+            <?php cover_posted_on(); ?>
+        </div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 	
 	<div class="entry-summary">
