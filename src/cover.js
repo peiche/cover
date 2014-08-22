@@ -36,4 +36,10 @@ jQuery(document).ready(function() {
     var headroom = new Headroom(jQuery('.header')[0]);
     headroom.init();
     
+    // skrollr
+    
+    skrollr.init({
+        forceHeight: false
+    });
+    
 });
