@@ -7,7 +7,7 @@
 a {
     color: $link-color;
 	text-decoration: none;
-	border-bottom: 2px solid transparent;
+	border-bottom: 1px solid transparent;
     @include transition(all .2s ease-in-out);
     &:visited {
         color: $link-color;
@@ -22,7 +22,8 @@ a {
         color: $link-color-hover;
         p &,
         .info &,
-        .edit-link & {
+        .edit-link &,
+        .entry-meta & {
             border-color: $link-border-color;
         }
     }
@@ -257,6 +258,7 @@ a {
             @include transform(translateY(0));
         }
         &--unpinned {
+            opacity: 0;
             @include transform(translateY(-100%));
         }
         &--top {
@@ -267,26 +269,6 @@ a {
             background: #fff;
             background: rgba(255, 255, 255, 0.95);
             @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
-        }
-    }
-	.has-featured-image & {
-        background: transparent;
-        @include box-shadow(none);
-        &.headroom {
-            &--not-top {
-                background: #fff;
-                background: rgba(255, 255, 255, 0.95);
-                @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
-                a {
-                    color: #000;
-                    &:hover {
-                        color: $link-color;
-                    }
-                }
-                .tagline {
-                    color: #777;
-                }
-            }
         }
     }
     a {
@@ -302,13 +284,33 @@ a {
         @include rem(font-size, 18px);
         margin-left: 20px;
         padding-left: 20px;
-        color: #777;
-        border-left: 1px solid #ccc;
+        color: #999;
+        border-left: 1px solid #ddd;
         .has-featured-image & {
             color: #fff;
         }
         @media screen and (max-width: 768px) {
             display: none;
+        }
+    }
+    .has-featured-image & {
+        background: transparent;
+        @include box-shadow(none);
+        &.headroom {
+            &--not-top {
+                background: #fff;
+                background: rgba(255, 255, 255, 0.95);
+                @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
+                a {
+                    color: #000;
+                    &:hover {
+                        color: $link-color;
+                    }
+                }
+                .tagline {
+                    color: #999;
+                }
+            }
         }
     }
 }
@@ -457,8 +459,6 @@ a {
 5.5 Jetpack Infinite Scroll
 --------------------------------------------------------------*/
 
-/*
-
 #infinite-handle {
 	padding: 50px 0;
 	text-align: center;
@@ -473,5 +473,3 @@ a {
 		margin: 0 auto;
 	}
 }
-
-*/

@@ -27,7 +27,7 @@
         @include site-width;
 		content: '';
         height: 1px;
-        background: rgba(0, 0, 0, 0.05);
+        background: rgba(0, 0, 0, 0.15);
         position: absolute;
         bottom: 0;
         left: 0;
@@ -45,6 +45,9 @@
         border: 0;
         padding: 0;
     }
+    .background {
+        // height: 450px;
+    }
 }
 .entry {
     &-image {
@@ -54,6 +57,10 @@
 			display: block;
 			margin: auto;
 		}
+        display: none;
+        .home & {
+            // display: block;
+        }
     }
     &-header {
         @include site-width;
@@ -71,13 +78,13 @@
             }
         }
         h2 {
-            font: 600 20px $font-stack-content;
-            color: #b6b6b6;
+            @include rem(font-size, 20px);
+            color: #999;
             margin: 0;
             a {
-                color: #b6b6b6;
+                color: #999;
                 &:hover {
-                    border-bottom: 2px solid #b6b6b6;
+                    color: $link-color;
                 }
             }
         }
@@ -91,7 +98,10 @@
 		
 		}
         p {
-            margin: 0 auto;
+            margin: 1.5em auto 0;
+            &:first-child {
+                margin-top: 0;
+            }
         }
         & > * {
             @include site-width;
@@ -118,11 +128,8 @@
 			color: #1d1d1d;
 		}
 		& > blockquote.pullquote,
-        & > pre {
-            max-width: 1000px;
-        }
         & > hr {
-            max-width: 500px;
+            max-width: $narrow;
         }
         & > .tiled-gallery {
             width: 100%;
@@ -131,7 +138,10 @@
         }
     }
 	&-meta {
-		margin-top: 20px;
+		margin-top: 5px;
+        & .avatar {
+            margin-right: 5px;
+        }
 	}
 }
 .byline,
