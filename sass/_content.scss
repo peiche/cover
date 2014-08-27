@@ -50,16 +50,18 @@
     }
 }
 .entry {
-    &-image {
-        @include site-width($wide);
-        margin-bottom: 30px;
-		img {
-			display: block;
-			margin: auto;
-		}
+    &-background {
+        background-position: center;
+        background-size: cover;
+        @include site-width;
+        margin-bottom: 20px;
+        height: 350px;
         display: none;
         .home & {
-            // display: block;
+            display: block;
+        }
+        .hentry:first-child & {
+            height: 450px;
         }
     }
     &-header {
