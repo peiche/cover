@@ -143,3 +143,17 @@ $divider-color: #b3b3b3;
 	-ms-user-select: $val;
 	user-select: $val;
 }
+
+@mixin perspective($val) {
+    -webkit-perspective: $val; 
+    -moz-perspective: $val; 
+    -ms-perspective: $val; 
+    perspective: $val;
+}
+
+@mixin transform-style($val) {
+    -webkit-transform-style: $val;
+    -moz-transform-style: $val;
+    -ms-transform-style: $val;
+    transform-style: $val;
+}
