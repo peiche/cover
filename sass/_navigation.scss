@@ -85,15 +85,15 @@ a {
                 &:hover {}
             }
         }
+        &.hide {
+            display: none;
+        }
         li {
             &:hover {
                 &  > ul {
                     left: auto;
                 }
             }
-        }
-        @media screen and (max-width: 600px) {
-            display: none;
         }
     }
     li {
@@ -112,6 +112,29 @@ a {
     }
     .current-menu-item {
         a {}
+    }
+    .sub-menu-toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        color: #fff;
+        cursor: pointer;
+        @include rem(font-size, 30px);
+        &:hover {
+            background: #666;
+        }
+        .fa {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: 30px;
+            margin: auto;
+            text-align: center;
+        }
     }
 }
 /* Small menu */
@@ -339,7 +362,6 @@ a {
         margin-top: 60px;
         float: none;
         ul {
-            display: block;
             ul {
                 position: static;
                 float: none;
@@ -358,7 +380,7 @@ a {
             border-width: 1px;
             padding: 10px 5px;
             &:hover {
-                color: $link-color;
+                color: #aaa;
             }
         }
     }
@@ -395,9 +417,6 @@ a {
         .widget {
             @include site-width($narrow);
             margin-bottom: 60px;
-            &.widget_tag_cloud {
-                //max-width: $medium;
-            }
             &-title {
                 color: #999;
                 @include rem(font-size, 30px);
@@ -420,7 +439,7 @@ a {
             }
             a {
                 &:hover {
-                    color: $link-color;
+                    color: #aaa;
                 }
             }
             .tagcloud {
