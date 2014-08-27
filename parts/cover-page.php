@@ -23,7 +23,7 @@
 
 <div class="cover <?php echo $class; ?>">
 	<?php if ( '' != get_the_post_thumbnail() ) { ?>
-		<div class="background" style="background-image: url('<?php echo $img[0]; ?>');" data-0-top="background-position: 50% 0%;" data-top-bottom="background-position: 50% 100%;"></div>
+		<div class="background" style="background-image: url('<?php echo $img[0]; ?>');"></div>
 	<?php } ?>
 	<header>
 		<?php if (is_page() && $post->post_parent) { ?>
