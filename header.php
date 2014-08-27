@@ -50,10 +50,10 @@ if ( (is_single() && '' != get_the_post_thumbnail()) || is_archive() || is_autho
     <nav class="main-navigation">
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     </nav>
-    <nav class="social-navigation">
+    <nav class="social-navigation hide"> <!-- remove .hide class to show -->
         <?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
     </nav>
-	
+    
 	<!-- widgets here -->
     <?php get_sidebar(); ?>
 </div>
