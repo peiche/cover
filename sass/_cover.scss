@@ -59,8 +59,8 @@
 			left: 0;
 			opacity: .6;
 			background-size: cover;
-			background-attachment: scroll;
-			background-position: center;
+			background-attachment: scroll; // fixed
+			background-position: 50% 0%;
 			background-repeat: no-repeat;
 			@include transition(opacity 200ms);
 			&.darken {
