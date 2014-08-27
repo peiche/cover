@@ -15,10 +15,7 @@ if ( has_post_thumbnail() ) {
 	
 	<?php if ( has_post_thumbnail() ) : ?>
 		<?php if ('' != get_the_post_thumbnail()) { ?>
-			<div class="background" style="background-image: url('<?php echo $img[0]; ?>');"></div>
-            <figure class="entry-image">
-                <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></a>
-            </figure>
+			<div class="entry-background" style="background-image: url('<?php echo $img[0]; ?>');"></div>
 		<?php } ?>
 	<?php endif; ?><!-- .entry-image -->
     
