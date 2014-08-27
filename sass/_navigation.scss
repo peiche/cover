@@ -423,11 +423,6 @@ a {
                     color: $link-color;
                 }
             }
-            &_tag_cloud {
-                .widget-title {
-                    @include site-width($narrow);
-                }
-            }
             .tagcloud {
                 text-align: center;
             }
