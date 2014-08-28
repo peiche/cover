@@ -301,9 +301,12 @@ a {
         }
         .has-featured-image & {
             color: #fff;
+            &.title:hover {
+                border-color: #fff;
+            }
         }
     }
-    .tagline {
+    .site-description {
         @include rem(font-size, 18px);
         margin-left: 20px;
         padding-left: 20px;
@@ -330,12 +333,16 @@ a {
                         color: $link-color;
                     }
                 }
-                .tagline {
+                .site-description {
                     color: #999;
                 }
             }
         }
     }
+}
+
+.home .header.headroom--top .pull-left {
+    display: none;
 }
 
 /*--------------------------------------------------------------
@@ -378,9 +385,9 @@ a {
         a {
             border-color: #666;
             border-width: 1px;
-            padding: 10px 5px;
+            padding: 10px 15px;
             &:hover {
-                color: #aaa;
+                background: #666;
             }
         }
     }
@@ -434,16 +441,22 @@ a {
                     display: block;
                     border-color: #666;
                     border-width: 1px;
-                    padding: 10px 5px;
+                    padding: 10px 15px;
                 }
             }
             a {
                 &:hover {
-                    color: #aaa;
+                    background: #666;
                 }
             }
             .tagcloud {
                 text-align: center;
+                a {
+                    &:hover {
+                        background: transparent;
+                        border-color: #fff;
+                    }
+                }
             }
         }
     }
