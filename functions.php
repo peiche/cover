@@ -52,10 +52,13 @@ function cover_setup() {
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
     
 	// Enable featured content.
+    // leaving this commented out until I think of a good use for this.
+    /*
 	add_theme_support( 'featured-content', array(
 		'filter'		=> 'cover_get_featured_posts',
         'max_posts'     => 1
 	) );
+    */
 }
 endif; // cover_setup
 add_action( 'after_setup_theme', 'cover_setup' );
@@ -83,8 +86,8 @@ function cover_has_featured_posts() {
  */
 function cover_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'cover' ),
-		'id'            => 'sidebar-1',
+		'name'          => __( 'Overlay', 'cover' ),
+		'id'            => 'overlay',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -113,6 +116,11 @@ function cover_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cover_scripts' );
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
