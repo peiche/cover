@@ -27,9 +27,8 @@
 function cover_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'cover_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		//'default-text-color'     => '000000',
+		'width'                  => 1600,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'cover_header_style',
 		'admin-head-callback'    => 'cover_admin_header_style',
@@ -62,8 +61,8 @@ function cover_header_style() {
 	?>
 		.site-title,
 		.site-description {
-			position: absolute;
-			clip: rect(1px, 1px, 1px, 1px);
+			/* position: absolute;
+			clip: rect(1px, 1px, 1px, 1px); */
 		}
 	<?php
 		// If the user has set a custom color for the text use that
@@ -71,9 +70,18 @@ function cover_header_style() {
 	?>
 		.site-title a,
 		.site-description {
-			color: #<?php echo $header_text_color; ?>;
+			/* color: #<?php echo $header_text_color; ?>; */
 		}
 	<?php endif; ?>
+    
+    <?php if ( get_header_image() ) { ?>
+        
+        .home .cover.featured-image .background {
+            background-image: url('<?php echo get_header_image(); ?>') !important;
+        }
+        
+    <?php } ?>
+    
 	</style>
 	<?php
 }
