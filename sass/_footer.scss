@@ -1,6 +1,5 @@
 #colophon {
     padding: 30px 0;
-    background: #333;
     color: #666;
     @include rem(font-size, 13px);
     .site-info {
@@ -8,9 +7,8 @@
         text-align: center;
     }
     a {
-        color: #fff;
         &:hover {
-            color: $link-color;
+            border-color: $link-border-color;
         }
     }
 }
