@@ -22,7 +22,7 @@
 <?php
 
 $has_image = '';
-if ( (is_single() && '' != get_the_post_thumbnail()) || is_archive() || is_author() ) {
+if ( ( is_single() && '' != get_the_post_thumbnail()) || is_home() || is_archive() || is_author() ) {
     $has_image = 'has-featured-image';
 }
 
@@ -32,17 +32,15 @@ if ( (is_single() && '' != get_the_post_thumbnail()) || is_archive() || is_autho
 
 <?php // do_action(‘ase_theme_body_inside_top’); ?>
 
-<header class="header">
+<header class="header headroom headroom--top"> <?php // priming the pump, as it were ?>
     <div class="pull-left">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-        <span class="tagline"><?php bloginfo( 'description' ); ?></span>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
+        <span class="site-description"><?php bloginfo( 'description' ); ?></span>
     </div>
     
-    <?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
-        <div class="pull-right">
-            <a class="toggle-overlay" data-overlay-class="menu-area" href="#"><i class="fa fa-fw fa-bars"></i></a>
-        </div>
-    <?php } ?>
+    <div class="pull-right">
+        <a class="toggle-overlay" data-overlay-class="menu-area" href="#"><i class="fa fa-fw fa-bars"></i></a>
+    </div>
 </header>
 
 <div id="menu-area" class="overlay">
@@ -54,6 +52,9 @@ if ( (is_single() && '' != get_the_post_thumbnail()) || is_archive() || is_autho
         <?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
     </nav>
     
-	<!-- widgets here -->
-    <?php get_sidebar(); ?>
+	<?php if ( is_active_sidebar( 'overlay' ) ) { ?>
+        <div id="secondary" class="widget-area" role="complementary">
+            <?php dynamic_sidebar( 'overlay' ); ?>
+        </div><!-- #secondary -->
+    <?php } ?>
 </div>
