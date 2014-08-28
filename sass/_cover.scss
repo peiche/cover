@@ -60,7 +60,7 @@
 			opacity: .6;
 			background-size: cover;
 			background-attachment: scroll; // fixed
-			background-position: 50% 0%;
+			background-position: 50% 50%;
 			background-repeat: no-repeat;
 			@include transition(opacity 200ms);
 			&.darken {
@@ -109,4 +109,22 @@
 			border-color: rgba(255, 255, 255, 0.1);
 		}
 	}
+}
+
+.home,
+.archive {
+    .cover {
+        header {
+            text-align: center;
+            h2 {
+                margin-top: 50px;
+                padding-top: 50px;
+                border-top: 1px solid #fff;
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+            .taxonomy-description {
+                text-align: left;
+            }
+        }
+    }
 }
