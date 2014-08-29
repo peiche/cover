@@ -12,24 +12,20 @@ get_header(); ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+        <div class="notification">
+            <span class="ntitle">Search</span>
+            <span class="message">
+                <?php printf( __( '%s', 'cover' ), get_search_query() ); ?>
+            </span>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa fa-times"></i></a>
+        </div>
+        
 		<?php if ( have_posts() ) : ?>
             
-            <div>
-                <?php get_search_form(); ?>
-            </div>
-            
-			<div class="notification">
-				<span class="ntitle">Search</span>
-				<span class="message">
-					<?php printf( __( '%s', 'cover' ), get_search_query() ); ?>
-				</span>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa fa-times"></i></a>
-			</div>
-			
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'search' ); ?>
+				<?php get_template_part( 'content'); ?>
 
 			<?php endwhile; ?>
 
