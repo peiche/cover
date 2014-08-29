@@ -45,16 +45,34 @@ if ( ( is_single() && '' != get_the_post_thumbnail()) || is_home() || is_archive
 
 <div id="menu-area" class="overlay">
     <a href="#" class="overlay-close right"><i class="fa fa-fw fa-times"></i></a>
+    
+    <?php if ( is_active_sidebar( 'overlay-1' ) ) { ?>
+        <div class="widget-area" role="complementary">
+            <?php dynamic_sidebar( 'overlay-1' ); ?>
+        </div>
+    <?php } ?>
+    
     <nav class="main-navigation">
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     </nav>
-    <nav class="social-navigation hide"> <!-- remove .hide class to show -->
-        <?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
+    
+    <?php if ( is_active_sidebar( 'overlay-2' ) ) { ?>
+        <div class="widget-area" role="complementary">
+            <?php dynamic_sidebar( 'overlay-2' ); ?>
+        </div>
+    <?php } ?>
+    
+    <nav class="social-navigation">
+        <?php wp_nav_menu( array(
+            'theme_location' => 'social',
+            'link_before'    => '<span class="hide">',
+            'link_after'     => '</span>'
+        ) ); ?>
     </nav>
     
-	<?php if ( is_active_sidebar( 'overlay' ) ) { ?>
-        <div id="secondary" class="widget-area" role="complementary">
-            <?php dynamic_sidebar( 'overlay' ); ?>
-        </div><!-- #secondary -->
+	<?php if ( is_active_sidebar( 'overlay-3' ) ) { ?>
+        <div class="widget-area" role="complementary">
+            <?php dynamic_sidebar( 'overlay-3' ); ?>
+        </div>
     <?php } ?>
 </div>
