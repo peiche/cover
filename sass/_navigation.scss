@@ -301,7 +301,7 @@ a {
         }
         .has-featured-image & {
             color: #fff;
-            &.title:hover {
+            &.site-title:hover {
                 border-color: #fff;
             }
         }
@@ -360,6 +360,7 @@ a {
     @include rem(font-size, 20px);
     opacity: 0;
     visibility: hidden;
+    padding: 60px 0;
     @include transition(opacity 200ms);
     a {
         color: #fff;
@@ -367,6 +368,7 @@ a {
     .main-navigation {
         @include site-width($narrow);
         margin-top: 60px;
+        margin-bottom: 60px;
         float: none;
         ul {
             ul {
@@ -391,6 +393,15 @@ a {
             }
         }
     }
+    .social-navigation {
+        @include site-width($narrow + 30px);
+        margin-top: 60px;
+        margin-bottom: 60px;
+        .menu {
+            text-align: center;
+            @include social-icon('large');
+        }
+    }
     .search-form {
         input.search-field {
             width: 100%;
@@ -399,74 +410,14 @@ a {
             @include box-sizing(border-box);
         }
     }
-    .social-navigation {
-        @include site-width;
-        margin-bottom: 60px;
-        text-align: center;
-        ul {
-            list-style: none;
-            ul {
-                display: none;
-            }
-        }
-        li {
-            display: inline-block;
-            margin: 20px;
-        }
-        a {
-            border: 0;
-        }
-    }
-    .widget-area {
-        margin-top: 60px;
-        margin-bottom: 60px;
-        color: #ccc;
-        .widget {
-            @include site-width($narrow);
-            margin-bottom: 60px;
-            &-title {
-                color: #999;
-                @include rem(font-size, 30px);
-                margin-bottom: 15px;
-            }
-            ul {
-                list-style: none;
-                margin-left: 0;
-                ul {
-                    margin-left: 40px;
-                }
-            }
-            li {
-                a {
-                    display: block;
-                    border-color: #666;
-                    border-width: 1px;
-                    padding: 10px 15px;
-                }
-            }
-            a {
-                &:hover {
-                    background: #666;
-                }
-            }
-            .tagcloud {
-                text-align: center;
-                a {
-                    &:hover {
-                        background: transparent;
-                        border-color: #fff;
-                    }
-                }
-            }
-        }
-    }
     &.show {
         opacity: 1;
         visibility: visible;
     }
     &-close {
         position: fixed;
-        margin: 20px;
+        margin-top: -60px; // to negate the 60px top padding of .overlay
+        padding: 20px;
         @include rem(font-size, 24px);
         color: #fff;
         z-index: 1;
