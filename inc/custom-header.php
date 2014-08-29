@@ -27,9 +27,7 @@
 function cover_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'cover_custom_header_args', array(
 		'default-image'          => '',
-		//'default-text-color'     => '000000',
 		'width'                  => 1600,
-		'flex-height'            => true,
 		'wp-head-callback'       => 'cover_header_style',
 		'admin-head-callback'    => 'cover_admin_header_style',
 		'admin-preview-callback' => 'cover_admin_header_image',
@@ -44,46 +42,15 @@ if ( ! function_exists( 'cover_header_style' ) ) :
  * @see cover_custom_header_setup().
  */
 function cover_header_style() {
-	$header_text_color = get_header_textcolor();
-
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == $header_text_color ) {
-		return;
-	}
-
-	// If we get this far, we have custom styles. Let's do this.
-	?>
+	if ( get_header_image() ) {
+    ?>
 	<style type="text/css">
-	<?php
-		// Has the text been hidden?
-		if ( 'blank' == $header_text_color ) :
-	?>
-		.site-title,
-		.site-description {
-			/* position: absolute;
-			clip: rect(1px, 1px, 1px, 1px); */
-		}
-	<?php
-		// If the user has set a custom color for the text use that
-		else :
-	?>
-		.site-title a,
-		.site-description {
-			/* color: #<?php echo $header_text_color; ?>; */
-		}
-	<?php endif; ?>
-    
-    <?php if ( get_header_image() ) { ?>
-        
         .home .cover.featured-image .background {
             background-image: url('<?php echo get_header_image(); ?>') !important;
         }
-        
-    <?php } ?>
-    
 	</style>
 	<?php
+    }
 }
 endif; // cover_header_style
 
@@ -98,17 +65,6 @@ function cover_admin_header_style() {
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
 			border: none;
-		}
-		#headimg h1,
-		#desc {
-		}
-		#headimg h1 {
-		}
-		#headimg h1 a {
-		}
-		#desc {
-		}
-		#headimg img {
 		}
 	</style>
 <?php
