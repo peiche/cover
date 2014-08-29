@@ -29,37 +29,7 @@
         font: 400 14px $font-stack-content;
         line-height: 32px;
     }
-    .social {
-        list-style: none;
-        margin: 20px 0 0;
-        padding: 0;
-        overflow: hidden;
-        @include transition(all .25s ease-out);
-        @include transform(translateZ(0));
-        li {
-            float: left;
-            margin: 0 10px 10px 0;
-            padding: 0;
-        }
-        a {
-            display: inline-block;
-            padding: 9px 0;
-            width: 40px;
-			border: 0;
-            text-align: center;
-            color: #fff;
-            @include border-radius(50%);
-            @include transition(all .25s ease-out);
-        }
-        @each $social-network, $color in (facebook, $facebook-color), (twitter, $twitter-color), (google-plus, $google-plus-color) {
-            .#{$social-network} {
-                @include box-shadow(inset 0 0 0 20px $color);
-                &:hover {
-                    color: $color;
-                    @include box-shadow(inset 0 0 0 2px $color);
-                    border: 0;
-                }
-            }
-        }
+    ul.social {
+        @include social-icon;
     }
 }
