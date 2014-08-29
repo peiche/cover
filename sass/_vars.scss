@@ -26,11 +26,6 @@ $narrow: 500px;
 $medium: 760px;
 $wide: 1000px;
 
-$facebook-color: #3b5998;
-$twitter-color: #00acee;
-$google-plus-color: #dd4b39;
-$github-color: #000; // TODO
-
 $divider-color: #b3b3b3;
 
 @function parseInt($n) {
@@ -156,4 +151,91 @@ $divider-color: #b3b3b3;
     -moz-transform-style: $val;
     -ms-transform-style: $val;
     transform-style: $val;
+}
+
+/*
+Styles for defining social media icons.
+Use @include on the <ul> element to cascade onto <li> and <a> elements.
+*/
+
+$facebook-color: #3b5998;
+$twitter-color: #00acee;
+$google-color: #dd4b39;
+$github-color: #4183C4;
+$foursquare-color: #0072B1;
+$flickr-color: #FF0084;
+$appnet-color: #D87A68;
+$linkedin-color: #0976B4;
+$youtube-color: #E52D27;
+$wordpress-color: #21759B;
+$codepen-color: #60c2ff;
+
+@mixin social-icon($size: 'normal') {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+    overflow: hidden;
+    @include transition(all .25s ease-out);
+    @include transform(translateZ(0));
+    li {
+        display: inline-block;
+        padding: 0;
+    }
+    a {
+        @extend .fa; // font awesome
+        display: none;
+        @if ($size == 'normal') {
+            margin: 0 10px 10px 0;
+            padding: 12px 0;
+            width: 40px;
+        } @else if ($size == 'large') {
+            margin: 13px;
+            padding: 15px 0;
+            width: 58px;
+            @include rem(font-size, 28px);
+        }
+        border: 0;
+        text-align: center;
+        color: #fff;
+        @include border-radius(50%);
+        @include transition(all .25s ease-out);
+        @each $url, $color, $char in 
+                ('facebook', $facebook-color, $fa-var-facebook),
+                ('twitter', $twitter-color, $fa-var-twitter),
+                ('google', $google-color, $fa-var-google-plus),
+                ('github', $github-color, $fa-var-github),
+                ('foursqaure', $foursquare-color, $fa-var-foursquare),
+                ('flickr', $flickr-color, $fa-var-flickr),
+                ('linkedin', $linkedin-color, $fa-var-linkedin),
+                ('youtube', $youtube-color, $fa-var-youtube-play),
+                ('wordpress', $wordpress-color, $fa-var-wordpress),
+                ('codepen', $codepen-color, $fa-var-codepen) {
+            &[href*='#{$url}'] {
+                display: inline-block;
+                @include box-shadow(inset 0 0 0 30px $color);
+                &:before {
+                    content: $char;
+                }
+                &:hover {
+                    color: $color;
+                    @include box-shadow(inset 0 0 0 2px $color);
+                    border: 0;
+                }
+            }
+        }
+        
+        // needs more work
+        .tooltip {
+            position: absolute;
+            font-size: 15px;
+            background: #111;
+            padding: 5px 10px;
+            border-radius: 3px;
+            top: 75%;
+            left: 75%;
+            color: #fff;
+            font-family: sans-serif;
+        }
+        
+    }
 }
