@@ -43,13 +43,13 @@
 			?>
 			
 			<?php if ('' != $fb) { ?>
-				<li><a href="<?php echo $fb; ?>" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="<?php echo $fb; ?>" target="_blank"></i></a></li>
 			<?php } ?>
 			<?php if ('' != $tw) { ?>
-				<li><a href="http://twitter.com/<?php echo $tw; ?>" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="http://twitter.com/<?php echo $tw; ?>" target="_blank"></a></li>
 			<?php } ?>
 			<?php if ('' != $gp) { ?>
-				<li><a href="<?php echo $gp; ?>" class="google-plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="<?php echo $gp; ?>" target="_blank"></a></li>
 			<?php } ?>
 			
 		</ul>
