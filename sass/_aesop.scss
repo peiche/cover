@@ -20,6 +20,19 @@ div.aesop-content {
 			font-family: $font-stack-content;
             display: block;
             width: 90%;
+			.aesop-quote-component-cite {
+				font-family: $font-stack-content;
+				font-size: 80%;
+				color: inherit;
+				opacity: 0.75;
+				display: block;
+				margin-top: 15px;
+			}
+		}
+	}
+	&.aesop-content-component {
+		p {
+			color: inherit;
 		}
 	}
 }

@@ -4,49 +4,54 @@
 	padding: 156px 0 0;
 	overflow: hidden;
 	z-index: 400;
-	header {
+	&-header {
 		@include site-width;
 		position: relative;
-	}
-	h1 {
-        @include rem(font-size, 50px);
-		line-height: 86px;
-		margin: 0;
-        a {
-            color: $text-color-heading;
-			font-weight: normal !important;
-        }
-		.page & {
-			margin-bottom: 0;
-		}
-		@media screen and (max-width: 768px) {
-			@include rem(font-size, 40px);
-			line-height: 50px;
-		}
-	}
-	h2 {
-        color: #999;
-		margin: 0;
-        @media screen and (max-width: 768px) {
-            @include rem(font-size, 22px);
-        }
-		a {
-			color: #999;
-			&:hover {
-				color: #aaa;
+		h1 {
+			@include rem(font-size, 50px);
+			line-height: 86px;
+			margin: 0;
+			a {
+				color: $text-color-heading;
+				font-weight: normal !important;
+			}
+			.page & {
+				margin-bottom: 0;
+			}
+			@media screen and (max-width: 768px) {
+				@include rem(font-size, 40px);
+				line-height: 50px;
 			}
 		}
-	}
-	a:hover {
-		border-color: $link-border-color;
+		h2 {
+			color: #999;
+			margin: 0;
+			@media screen and (max-width: 768px) {
+				@include rem(font-size, 22px);
+			}
+			a {
+				color: #999;
+				&:hover {
+					color: #aaa;
+				}
+			}
+		}
+		a:hover {
+			border-color: $link-border-color;
+		}
 	}
 	&.featured-image {
 		background-color: #2b2b2b;
 		color: #fff;
         padding: 200px 0;
+		@media screen and (max-width: 768px) {
+			//padding-bottom: 50px;
+		}
         height: 100%;
 		&.half {
-            //height: 50%;
+            height: 50%;
+			padding: 0;
+			margin-bottom: 50px;
         }
         &.auto {
             height: auto;
@@ -59,7 +64,7 @@
 			left: 0;
 			opacity: .6;
 			background-size: cover;
-			background-attachment: scroll; // fixed
+			background-attachment: fixed;
 			background-position: 50% 50%;
 			background-repeat: no-repeat;
 			@include transition(opacity 200ms);
@@ -107,6 +112,21 @@
 			padding-top: 50px;
 			border-top: 1px solid #fff;
 			border-color: rgba(255, 255, 255, 0.25);
+			p {
+				margin-bottom: 0;
+			}
+		}
+		.search {
+			&-form {
+				@include site-width($narrow);
+				margin-top: 60px;
+			}
+			&-field {
+				width: 100%;
+				padding: 10px;
+				@include border-radius(0);
+				@include box-sizing(border-box);
+			}
 		}
 	}
 }
@@ -128,7 +148,9 @@
     }
 }
 
-.archive {
+.archive,
+.search,
+.error404 {
     .cover {
         header {
             h1 {
@@ -142,4 +164,8 @@
             }
         }
     }
+}
+
+.archive .cover.featured-image.auto {
+	padding-bottom: 100px;
 }

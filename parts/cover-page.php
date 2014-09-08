@@ -25,7 +25,7 @@
 	<?php if ( '' != get_the_post_thumbnail() ) { ?>
 		<div class="background" style="background-image: url('<?php echo $img[0]; ?>');" data-0-top="background-position: 50% 50%;" data-top-bottom="background-position: 50% 100%;"></div>
 	<?php } ?>
-	<header>
+	<header class="cover-header">
 		<?php if (is_page() && $post->post_parent) { ?>
 			<?php
 				$parent_permalink = get_permalink($post->post_parent);

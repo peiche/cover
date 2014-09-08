@@ -45,7 +45,9 @@ function cover_header_style() {
 	if ( get_header_image() ) {
     ?>
 	<style type="text/css">
-        .home .cover.featured-image .background {
+        .home .cover.featured-image .background,
+		.archive .cover.featured-image .background,
+		.search .cover.featured-image .background {
             background-image: url('<?php echo get_header_image(); ?>') !important;
         }
 	</style>

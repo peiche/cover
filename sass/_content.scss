@@ -10,6 +10,9 @@
 
 #content {
 	padding-top: 76px;
+	.has-featured-image & {
+		padding-top: 50px;
+	}
 }
 
 .sticky {
@@ -128,6 +131,9 @@
 		& > p:first-of-type:empty + p {
 			font-weight: bold;
 			color: #1d1d1d;
+			a:hover {
+				border-width: 2px;
+			}
 		}
 		& > blockquote.pullquote,
         & > hr {

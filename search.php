@@ -7,11 +7,13 @@
 
 get_header(); ?>
 
+<?php get_template_part( 'parts/cover', 'archive' ); ?>
 <?php get_template_part( 'parts/wrapper', 'top' ); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+		
+		<!--
         <div class="notification">
             <span class="ntitle">Search</span>
             <span class="message">
@@ -19,6 +21,7 @@ get_header(); ?>
             </span>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa fa-times"></i></a>
         </div>
+		-->
         
 		<?php if ( have_posts() ) : ?>
             

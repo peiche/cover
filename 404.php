@@ -7,21 +7,15 @@
 
 get_header(); ?>
 
+<?php get_template_part( 'parts/cover', '404' ); ?>
 <?php get_template_part( 'parts/wrapper', 'top' ); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'cover' ); ?></h1>
-				</header><!-- .page-header -->
-
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'cover' ); ?></p>
-
-					<?php get_search_form(); ?>
-
+					
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
 					<?php if ( cover_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
@@ -32,7 +26,7 @@ get_header(); ?>
 							wp_list_categories( array(
 								'orderby'    => 'count',
 								'order'      => 'DESC',
-								'show_count' => 1,
+								'show_count' => 0,
 								'title_li'   => '',
 								'number'     => 10,
 							) );

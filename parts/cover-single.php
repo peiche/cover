@@ -27,7 +27,26 @@
     <?php if ('' != get_the_post_thumbnail()) { ?>
 		<div class="background" style="background-image: url('<?php echo $img[0]; ?>');" data-0-top="background-position: 50% 50%;" data-top-bottom="background-position: 50% 100%;"></div>
 	<?php } ?>
-    <header>
+    
+	<?php if ( !strrpos( $class, 'half' ) ) { ?>
+	
+		<header class="cover-header">
+			<?php
+				/* translators: used between list items, there is a space after the comma */
+				$categories_list = get_the_category_list( __( ', ', 'cover' ) );
+				if ( $categories_list && cover_categorized_blog() ) :
+			?>
+				<h2><?php echo $categories_list; ?></h2>
+			<?php endif; ?>
+			<h1><?php the_title(); ?></h1>
+		</header>
+	
+	<?php } ?>
+</div>
+
+<?php if ( strrpos( $class, 'half' ) ) { ?>
+	
+	<header class="cover-header">
         
 		<?php
 			/* translators: used between list items, there is a space after the comma */
@@ -38,4 +57,5 @@
 		<?php endif; ?>
 		<h1><?php the_title(); ?></h1>
     </header>
-</div>
+	
+<?php } ?>
