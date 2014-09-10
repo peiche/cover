@@ -14,12 +14,16 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-    <?php get_template_part( 'parts/cover', 'page' ); ?>
+    <?php get_template_part( 'parts/cover', 'post' ); ?>
     <?php get_template_part( 'parts/wrapper', 'top' ); ?>
 
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
 
+                <?php if ( '' == get_the_post_thumbnail() ) { ?>
+                    <?php get_template_part( 'parts/cover', 'header' ); ?>
+                <?php } ?>
+                
                 <?php get_template_part( 'content', 'page' ); ?>
 
                 <?php
