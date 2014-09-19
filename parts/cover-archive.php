@@ -29,7 +29,7 @@
 				single_cat_title();
 
 			elseif ( is_tag() ) :
-				single_tag_title('#');
+				single_tag_title();
 
 			elseif ( is_day() ) :
 				printf( __( '%s', 'cover' ), get_the_date() );
