@@ -4,24 +4,45 @@ div.aesop-content {
 
 .aesop-component {
     margin: 40px 0;
+    display: block;
     &.aesop-audio-component {
         @include site-width;
-    }
-    &.aesop-quote-component {
-        padding: 80px 120px;
     }
 	&.aesop-image-component {
 		margin: 40px 0; // necessary override
 	}
 	&.aesop-quote-component {
 		padding: 60px 0;
-		blockquote {
+        &.aesop-component-align-left,
+        &.aesop-component-align-right {
+            margin: 10px 30px;
+            padding: 20px;
+            width: 400px !important;
+            @media screen and (max-width: 768px) {
+                width: 100% !important;
+                margin: 30px 0;
+                float: none;
+            }
+        }
+        blockquote {
 			color: inherit;
-			font-family: $font-stack-content;
-            display: block;
-            width: 90%;
+			display: block;
+            text-align: center;
+            @include rem(font-size, 30px);
+            &.aesop-component-align-left {
+                text-align: left;
+            }
+            &.aesop-component-align-right {
+                text-align: right;
+            }
+            &.aesop-component-align-left,
+            &.aesop-component-align-right {
+                @media screen and (max-width: 768px) {
+                    text-align: center;
+                    float: none;
+                }
+            }
 			.aesop-quote-component-cite {
-				font-family: $font-stack-content;
 				font-size: 80%;
 				color: inherit;
 				opacity: 0.75;
@@ -29,8 +50,8 @@ div.aesop-content {
 				margin-top: 15px;
 			}
 		}
-	}
-	&.aesop-content-component {
+    }
+    &.aesop-content-component {
 		p {
 			color: inherit;
 		}

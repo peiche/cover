@@ -34,6 +34,10 @@ h3, h4 {
 h4 {
     @include rem(font-size, 20px);
 }
+ol,
+ul {
+    line-height: 38px;
+}
 p {
 	margin: 30px 0;
 	line-height: 38px;
@@ -68,52 +72,21 @@ q {
 	padding: 5px 0 5px 30px;
 	line-height: 38px;
 	color: $text-color-quote;
-	font: 400 22px $font-stack-quote;
+	@include rem(font-size, 22px);
     cite,
     p {
         margin:0;
         padding:0;
         border: none;
         color: $text-color-quote;
-        font-style: italic;
     }
     cite {
         color: $text-color-cite;
+        font-style: italic;
     }
     i,
     em {
         font-style: normal;
-    }
-}
-blockquote {
-    &.pullquote {
-        @include rem(font-size, 36px);
-        margin: 48px 0;
-        padding: 0;
-        text-align: center;
-        border: none;
-        @media screen and (max-width: 1000px) {
-            margin-left: 0;
-            margin-right: 0;
-        }
-    }
-    &.large {
-        font-size: 200%;
-        border-color: transparent;
-        position: relative;
-        padding: 0;
-        margin: 30px 0;
-        @media screen and (max-width: 1000px) {
-            margin-left: 50px;
-        }
-        &:before {
-            position: absolute;
-            top: -10px;
-            left: -50px;
-            content: '“';
-            font-size: 250%;
-            opacity: 0.3;
-        }
     }
 }
 address {

@@ -135,9 +135,43 @@
 				border-width: 2px;
 			}
 		}
-		& > blockquote.pullquote,
-        & > hr {
+		& > hr {
             max-width: $narrow;
+        }
+        & > blockquote {
+            &.large {
+                @include rem(font-size, 40px);
+                border: 0;
+                position: relative;
+                padding: 0;
+                max-width: $wide;
+                text-align: center;
+            }
+            &.pullquote {
+                @include rem(font-size, 30px);
+                padding: 0;
+                text-align: center;
+                border: 0;
+                max-width: $narrow;
+                &.left {
+                    float: left;
+                    text-align: left;
+                }
+                &.right {
+                    float: right;
+                    text-align: right;
+                }
+                &.left,
+                &.right {
+                    width: 400px;
+                    margin: 10px 30px;
+                    @media screen and (max-width: 768px) {
+                        @include site-width($narrow);
+                        float: none;
+                        text-align: center;
+                    }
+                }
+            }
         }
         & > .tiled-gallery {
             width: 100%;
