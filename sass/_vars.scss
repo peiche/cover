@@ -168,6 +168,8 @@ $linkedin-color: #0976B4;
 $youtube-color: #E52D27;
 $wordpress-color: #21759B;
 $codepen-color: #60c2ff;
+$instagram-color: #517fa4;
+$tumblr-color: #2c4762;
 
 @mixin social-icon($size: 'normal') {
     list-style: none;
@@ -208,7 +210,9 @@ $codepen-color: #60c2ff;
                 ('linkedin', $linkedin-color, $fa-var-linkedin),
                 ('youtube', $youtube-color, $fa-var-youtube-play),
                 ('wordpress', $wordpress-color, $fa-var-wordpress),
-                ('codepen', $codepen-color, $fa-var-codepen) {
+                ('codepen', $codepen-color, $fa-var-codepen),
+                ('instagram', $instagram-color, $fa-var-instagram),
+                ('tumblr', $tumblr-color, $fa-var-tumblr) {
             &[href*='#{$url}'] {
                 display: inline-block;
                 @include box-shadow(inset 0 0 0 30px $color);
