@@ -116,10 +116,14 @@
         }
     }
     &-content {
-        @each $elem in h1, h2, h3, h4, div, span, p, ul, ol, blockquote, pre, hr, form {
+        @each $elem in h1, h2, h3, h4, div, span, p, ul, ol, blockquote, pre, hr, form, iframe {
             & > #{$elem} {
                 @include site-width;
             }
+        }
+        & > .twitter-tweet {
+            margin-left: auto !important;
+            margin-right: auto !important;
         }
 		& > h2:first-child,
 		& > p:first-child {
