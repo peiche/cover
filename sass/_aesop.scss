@@ -20,7 +20,8 @@ div.aesop-content {
             width: 400px !important;
             @media screen and (max-width: 768px) {
                 width: 100% !important;
-                margin: 30px 0;
+                margin: 40px 0;
+                padding: 60px 0;
                 float: none;
             }
         }
@@ -29,6 +30,9 @@ div.aesop-content {
 			display: block;
             text-align: center;
             @include rem(font-size, 30px);
+            @media screen and (max-width: 768px) {
+                width: 90%;
+            }
             &.aesop-component-align-left {
                 text-align: left;
             }
@@ -40,6 +44,7 @@ div.aesop-content {
                 @media screen and (max-width: 768px) {
                     text-align: center;
                     float: none;
+                    margin: auto;
                 }
             }
 			.aesop-quote-component-cite {
