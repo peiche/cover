@@ -121,8 +121,8 @@ a {
         position: absolute;
         top: 0;
         right: 0;
-        width: 50px;
-        height: 50px;
+        bottom: 0;
+		width: 60px;
         color: #fff;
         cursor: pointer;
         @include rem(font-size, 30px);
