@@ -121,8 +121,8 @@ a {
         position: absolute;
         top: 0;
         right: 0;
-        bottom: 0;
 		width: 60px;
+        height: 59px;
         color: #fff;
         cursor: pointer;
         @include rem(font-size, 30px);
@@ -299,54 +299,38 @@ a {
         }
     }
     a {
-        color: #000;
-        &:hover {
-            color: $link-color;
-        }
-        .has-featured-image & {
-            color: #fff;
-            &.site-title:hover {
-                border-color: #fff;
-            }
-        }
+        color: #fff;
     }
     .site-description {
         @include rem(font-size, 18px);
         margin-left: 20px;
         padding-left: 20px;
-        color: #999;
+        color: #fff;
         border-left: 1px solid #ddd;
-        .has-featured-image & {
-            color: #fff;
-        }
         @media screen and (max-width: 768px) {
             display: none;
         }
     }
-    .has-featured-image & {
-        background: transparent;
-        @include box-shadow(none);
-        &.headroom {
-            &--not-top {
-                background: #fff;
-                background: rgba(255, 255, 255, 0.95);
-                @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
-                a {
-                    color: #000;
-                    &:hover {
-                        color: $link-color;
-                    }
+    &.headroom {
+        &--not-top {
+            background: #fff;
+            background: rgba(255, 255, 255, 0.95);
+            @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
+            a {
+                color: #000;
+                &:hover {
+                    color: $link-color;
                 }
-                .site-description {
-                    color: #999;
-                }
+            }
+            .site-description {
+                color: #999;
             }
         }
     }
 }
 
 .home .header.headroom--top .pull-left {
-    display: none;
+    display: none; // hack to hide the site title on the home page
 }
 
 /*--------------------------------------------------------------
