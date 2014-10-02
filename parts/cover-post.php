@@ -15,27 +15,15 @@
         $height = $img[2];
 		
 		$class = 'featured-image';
-        $header_outside_cover = false;
 		
-        if ( $height <= 300 ) {
+        if ( $height <= 600 ) {
             $class = $class . ' auto';
-        } else if ( $height <= 600 ) {
-            $class = $class . ' half';
-            $header_outside_cover = true;
         }
     }
 
 ?>
 
-<?php if ( '' != get_the_post_thumbnail() ) { ?>
-    <div class="cover <?php echo $class; ?>">
-        <div class="background" style="background-image: url('<?php echo $img[0]; ?>');" data-0-top="background-position: 50% 50%;" data-top-bottom="background-position: 50% 100%;"></div>
-        <?php if ( !$header_outside_cover ) { ?>
-            <?php get_template_part( 'parts/cover', 'header' ); ?>
-        <?php } ?>
-    </div>
-
-    <?php if ( $header_outside_cover ) { ?>
-        <?php get_template_part( 'parts/cover', 'header' ); ?>
-    <?php } ?>
-<?php } ?>
+<div class="cover <?php echo $class; ?>">
+    <div class="background" style="background-image: url('<?php echo $img[0]; ?>');" data-0-top="background-position: 50% 50%;" data-top-bottom="background-position: 50% 100%;"></div>
+    <?php get_template_part( 'parts/cover', 'header' ); ?>
+</div>

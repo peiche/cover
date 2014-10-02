@@ -15,10 +15,6 @@ get_header(); ?>
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
                 
-                <?php if ( '' == get_the_post_thumbnail() ) { ?>
-                    <?php get_template_part( 'parts/cover', 'header' ); ?>
-                <?php } ?>
-                
                 <?php get_template_part( 'content', 'single' ); ?>
 
                 <?php
