@@ -36,16 +36,88 @@ object {
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
+    padding: 0;
+	border: 0;
+	position: relative;
+    img[class*="wp-image-"] {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    &-text {
+        text-align: center;
+    }
+    .wp-caption-text {
+        margin: 0.8075em 0;
+    }
+    &.aligncenter {
+        margin: 40px auto;
+		padding: 0;
+		width: auto;
+        max-width: 100%;
+        .wp-caption-text {
+			//@include image-caption;
+		}
+    }
+    &.alignleft,
+    &.alignright {
+        margin: 10px 30px;
+		padding: 0;
+		max-width: 45%;
+		@media screen and (max-width: 768px) {
+			margin: 40px auto;
+			float: none;
+            max-width: none;
+            width: auto !important;
+		}
+        .wp-caption-text {
+            //
+        }
+    }
+    &.alignleft {
+        //padding-right: 15px;
+        // caption?
+    }
+    &.alignright {
+        //padding-left: 15px;
+        // caption?
+    }
+
+    .wp-caption-text {
+        @include image-caption;
+        width: 100%;
+        text-align: center;
+        @media screen and (max-width: 768px) {
+            width: 90%;
+        }
+    }
+	&.alignleft .wp-caption-text {
+        text-align: left;
+		@media screen and (max-width: 768px) {
+            width: 90%;
+            text-align: center;
+        }
+	}
+    &.alignright .wp-caption-text {
+        text-align: right;
+		@media screen and (max-width: 768px) {
+            width: 90%;
+            text-align: center;
+        }
+	}
+	&.aligncenter .wp-caption-text {
+		@media screen and (max-width: 768px) {
+            width: 90%;
+            text-align: center;
+        }
+	}
 }
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin: 0 auto;
-}
-.wp-caption-text {
-	text-align: center;
-}
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+
+.wp-caption {
+	&.alignleft,
+	&.alignright {
+		
+	}
 }
 
 /*--------------------------------------------------------------

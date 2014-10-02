@@ -116,14 +116,19 @@ div.aesop-content {
 
 .aesop-image-component-image {
 	position: relative;
+    &.aesop-component-align-left,
+    &.aesop-component-align-right {
+        margin: 10px 30px;
+        max-width: 45% !important;
+        @media screen and (max-width: 768px) {
+            margin: 40px auto;
+            float: none;
+            width: auto !important;
+            max-width: none !important;
+        }
+    }
 	.aesop-image-component-caption {
-		@include site-width;
-		font-style: italic;
-		font-family: $font-stack-content;
-        @include rem(font-size, 15px);
-		i, em {
-			font-style: normal;
-		}
+		@include image-caption;
 	}
 }
 

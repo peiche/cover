@@ -152,6 +152,18 @@ $divider-color: #b3b3b3;
     transform-style: $val;
 }
 
+@mixin image-caption { // style used for both normal and aesop image component captions
+    @include site-width;
+    @include rem(margin-top, 5px);
+    @include rem(margin-bottom, 10px);
+    font-style: italic;
+    font-family: $font-stack-content;
+    @include rem(font-size, 15px);
+    i, em {
+        font-style: normal;
+    }
+}
+
 /*
 Styles for defining social media icons.
 Use @include on the <ul> element to cascade onto <li> and <a> elements.
