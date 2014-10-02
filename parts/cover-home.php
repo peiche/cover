@@ -18,7 +18,6 @@
 			<header class="cover-header">
                 <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
                 <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-				<!--<div class="taxonomy-description"><p><?php bloginfo( 'description' ); ?></p></div>-->
 			</header>
 		</div>
 
