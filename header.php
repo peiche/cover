@@ -33,13 +33,12 @@ if ( ( (is_single() || is_page() ) && '' != get_the_post_thumbnail() ) || is_hom
 <?php // do_action(‘ase_theme_body_inside_top’); ?>
 
 <header class="header headroom headroom--top"> <?php // priming the pump, as it were ?>
-    <div class="pull-left">
+    <div class="toggle-container">
+        <a class="toggle-overlay" data-overlay-class="menu-area" href="#"><i class="fa fa-fw fa-bars"></i></a>
+    </div>
+    <div class="site-title-container">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
         <span class="site-description"><?php bloginfo( 'description' ); ?></span>
-    </div>
-    
-    <div class="pull-right">
-        <a class="toggle-overlay" data-overlay-class="menu-area" href="#"><i class="fa fa-fw fa-bars"></i></a>
     </div>
 </header>
 
