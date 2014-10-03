@@ -327,10 +327,16 @@ a {
             }
         }
     }
+    .site-title-container {
+        float: left;
+    }
+    .toggle-container {
+        float: right;
+    }
 }
 
-.home .header.headroom--top .pull-left {
-    display: none; // hack to hide the site title on the home page
+.home .header.headroom--top {
+    //display: none; // hack to hide the site title on the home page
 }
 
 /*--------------------------------------------------------------
