@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'parts/cover', 'home' ); ?>
+<?php //get_template_part( 'parts/cover', 'home' ); ?>
 <?php get_template_part( 'parts/wrapper', 'top' ); ?>
 
 	<div id="primary" class="content-area">
