@@ -279,13 +279,33 @@ a {
     @media screen and (max-width: 768px) {
         position: absolute;
     }
+    a {
+        color: #fff;
+    }
+    .site {
+        &-info {
+            float: left;
+        }
+        &-description {
+            @include rem(font-size, 18px);
+            margin-left: 20px;
+            padding-left: 20px;
+            color: #fff;
+            border-left: 1px solid #ddd;
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+    .toggle-container {
+        float: right;
+    }
     &.headroom {
-        @include transition(all 200ms linear);
+        @include transition(all .25s linear);
         &--pinned {
             @include transform(translateY(0));
         }
         &--unpinned {
-            opacity: 0;
             @include transform(translateY(-100%));
         }
         &--top {
@@ -293,26 +313,6 @@ a {
         }
         &--not-top {
             position: fixed;
-            background: #fff;
-            background: rgba(255, 255, 255, 0.95);
-            @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
-        }
-    }
-    a {
-        color: #fff;
-    }
-    .site-description {
-        @include rem(font-size, 18px);
-        margin-left: 20px;
-        padding-left: 20px;
-        color: #fff;
-        border-left: 1px solid #ddd;
-        @media screen and (max-width: 768px) {
-            display: none;
-        }
-    }
-    &.headroom {
-        &--not-top {
             background: #fff;
             background: rgba(255, 255, 255, 0.95);
             @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
@@ -325,18 +325,27 @@ a {
             .site-description {
                 color: #999;
             }
+            &.masthead-in-view {
+                //@include transform(translateY(-100%));
+            }
         }
-    }
-    .site-title-container {
-        float: left;
-    }
-    .toggle-container {
-        float: right;
     }
 }
 
-.home .header.headroom--top {
-    //display: none; // hack to hide the site title on the home page
+.header.masthead-in-view {
+    position: absolute;
+}
+
+.header.masthead-in-view.headroom--top {
+    
+}
+
+.header.masthead-in-view.headroom--not-top.headroom--pinned {}
+
+.header.masthead-in-view.headroom--not-top.headroom--unpinned {}
+
+.home .header.headroom--top .site-info {
+    display: none; // hack to hide the site title on the home page
 }
 
 /*--------------------------------------------------------------
