@@ -36,7 +36,7 @@ if ( ( (is_single() || is_page() ) && '' != get_the_post_thumbnail() ) || is_hom
     <div class="toggle-container">
         <a class="toggle-overlay" data-overlay-class="menu-area" href="#"><i class="fa fa-fw fa-bars"></i></a>
     </div>
-    <div class="site-title-container">
+    <div class="site-info">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
         <span class="site-description"><?php bloginfo( 'description' ); ?></span>
     </div>
