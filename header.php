@@ -32,7 +32,7 @@ if ( ( (is_single() || is_page() ) && '' != get_the_post_thumbnail() ) || is_hom
 
 <?php // do_action(‘ase_theme_body_inside_top’); ?>
 
-<header class="header">
+<header class="header headroom headroom--top"> <?php // priming the pump, as it were ?>
     <div class="toggle-container">
         <a class="toggle-overlay" data-overlay-class="menu-area" href="#"><i class="fa fa-fw fa-bars"></i></a>
     </div>
