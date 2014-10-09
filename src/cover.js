@@ -30,19 +30,42 @@ jQuery(document).ready(function() {
     
     // waypoints
     /*
-    jQuery('.header').waypoint({
-        handler: function(direction) {
-            jQuery('.header').toggleClass('header--not-top');
+    jQuery('.header').addClass('smart'); // inital class addition to make it sticky
+    
+    jQuery('.header').waypoint(function() {
+        jQuery(this).toggleClass('smart--not-top')
+    }, {
+        offset: function() {
+            return -(jQuery('.header').outerHeight());
+        }
+    });
+    
+    jQuery('.header').waypoint(function(direction) {
+        if (direction === 'up') {
+            jQuery(this).toggleClass('smart--pinned');
+        } else if (direction === 'down') {
+            jQuery(this).toggleClass('smart--unpinned');
+        }
+    }, {
+        offset: function() {
+            return -(jQuery('.header').outerHeight());
+        }
     });
     */
     
     // headroom init
+    /*
     var elem = jQuery('.header')[0];
     var headroom = new Headroom(elem, {
-        tolerance: 5,
-        offset: jQuery('.cover').outerHeight()
+        //tolerance: 5,
+        //offset: (jQuery('.cover').outerHeight() / 2)
+        tolerance: {
+            up: 0,
+            down: (jQuery('.cover').outerHeight() / 2)
+        }
     });
     headroom.init();
+    */
     
     // skrollr init, if the user agent isn't a touch device (this is an imperfect solution)
     if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
