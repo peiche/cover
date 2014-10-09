@@ -300,6 +300,28 @@ a {
     .toggle-container {
         float: right;
     }
+    
+    /*
+    &.smart {
+        position: absolute;
+        //@include transition(all .25s linear);
+        &--top {
+            //background: transparent; // override
+        }
+        &--not-top {
+            position: fixed;
+            background: #666; // temp
+        }
+        &--pinned {
+            @include transform(translateY(0));
+        }
+        &--unpinned {
+            @include transform(translateY(-100%));
+        }
+    }
+    */
+    
+    /*
     &.headroom {
         @include transition(all .25s linear);
         &--pinned {
@@ -326,10 +348,12 @@ a {
                 color: #999;
             }
             &.masthead-in-view {
-                //@include transform(translateY(-100%));
+                @include transform(translateY(-100%));
             }
         }
     }
+    */
+    
 }
 
 .header.masthead-in-view {
