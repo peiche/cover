@@ -9,10 +9,8 @@ jQuery(document).ready(function() {
 		
 		if (jQuery('html').hasClass('show-overlay')) {
 			jQuery('html').removeClass('show-overlay');
-        	jQuery('#' + overlay_id + '.overlay').removeClass('show');
 		} else {
 			jQuery('html').addClass('show-overlay');
-			jQuery('#' + overlay_id + '.overlay').addClass('show');
 		}
     });
     
@@ -39,7 +37,7 @@ jQuery(document).ready(function() {
 	}
     
     // add dropdown buttons to menus with children
-    jQuery('.menu .menu-item-has-children').append('<div class="sub-menu-toggle"><i class="fa fa-angle-down"></i></div>');
+    jQuery('.menu .menu-item-has-children').append('<div class="sub-menu-toggle"><i class="fa fa-angle-down fa-animate"></i></div>');
     
     // hide submenus
     jQuery('.menu .menu-item-has-children .sub-menu').addClass('hide');
@@ -48,7 +46,7 @@ jQuery(document).ready(function() {
     jQuery('.menu .menu-item-has-children').on('click', '.sub-menu-toggle', function() {
         var $this = jQuery(this);
         
-        $this.children('.fa-angle-down').toggleClass('fa-flip-vertical');
+        $this.children('.fa-angle-down').toggleClass('fa-rotate-180');
         $this.siblings('.sub-menu').toggleClass('hide');
     });
     
