@@ -33,17 +33,23 @@ if ( ( (is_single() || is_page() ) && '' != get_the_post_thumbnail() ) || is_hom
 <?php // do_action(‘ase_theme_body_inside_top’); ?>
 
 <header class="header">
-    <div class="toggle-container">
-        <a class="toggle-overlay" data-overlay-class="menu-area" href="#"><i class="fa fa-fw fa-bars"></i></a>
-    </div>
-    <div class="site-info">
+    <a id="toggle-overlay" class="hamburger" data-overlay-id="menu-area" href="#"><span></span></a>
+	<div class="site-info">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
-        <span class="site-description"><?php bloginfo( 'description' ); ?></span>
+        <span class="site-description">
+			<?php 
+			if (is_single()) {
+				echo cover_posted_on();
+			} else {
+				bloginfo( 'description' ); 
+			}
+			?>
+		</span>
     </div>
 </header>
 
 <div id="menu-area" class="overlay">
-    <a href="#" class="overlay-close right"><i class="fa fa-fw fa-times"></i></a>
+    <?php // <a href="#" class="overlay-close right"><i class="fa fa-fw fa-times"></i></a> ?>
     
     <?php if ( is_active_sidebar( 'overlay-1' ) ) { ?>
         <div class="widget-area" role="complementary">
