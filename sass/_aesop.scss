@@ -73,7 +73,11 @@ div.aesop-content {
 	top: 0;
 	position: relative;
 	overflow: hidden;
-	height: 500px; // default height overridden by jquery
+	height: 500px; // default height overridden by js
+    @media screen and (max-width: 768px) {
+        background-attachment: scroll;
+        background-size: contain !important; // overrides inline style set by js
+    }
 }
 
 .aesop-img-enlarge {
