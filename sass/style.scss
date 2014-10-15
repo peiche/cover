@@ -46,3 +46,76 @@ GitHub Branch: master
 
 // z-index include
 
+.header.headroom {
+	transition-property: background, transform;
+	transition-duration: 0.25s, 0.25s;
+	&--not-top {
+		transition-delay: 1s, 0;
+		&.headroom--pinned {
+			transition-delay: 0, 0;
+		}
+	}
+}
+
+.header.headroom .site-info {
+	transition-property: opacity;
+	transition-duration: 0.25s;
+	.home & {
+		//display: block;
+		//opacity: 0;
+	}
+}
+
+// make header stationary for small screens
+
+.home .header.headroom--not-top .site-info {
+	opacity: 1;
+}
+.show-overlay .home .header.headroom--not-top .site-info {
+	opacity: 0;
+}
+
+// make entire hamburger icon clickable, not just the bars
+.hamburger {
+	position: relative;
+	border: 0;
+	height: 15px;
+	.show-overlay & {
+		margin-right: 17px;
+	}
+	&:before {
+		position: absolute;
+		top: -9px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		content: '';
+		.show-overlay & {
+			top: -13px; // fix clickable area positioning after animation
+		}
+	}
+}
+
+// modified header behavior during overlay
+.show-overlay {
+	.header {
+		pointer-events: none;
+		background: transparent;
+		box-shadow: none;
+		transition-delay: 0, 0;
+		.site-info {
+			opacity: 0;
+		}
+		.hamburger {
+			pointer-events: auto;
+			span:before,
+			span:after {
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+.fa-animate {
+	transition: transform 0.25s ease-in-out;
+}
