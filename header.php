@@ -33,7 +33,7 @@ if ( ( (is_single() || is_page() ) && '' != get_the_post_thumbnail() ) || is_hom
 <?php // do_action(‘ase_theme_body_inside_top’); ?>
 
 <header class="header">
-    <a id="toggle-overlay" class="hamburger" data-overlay-id="menu-area" href="#"><span></span></a>
+    <a id="toggle-overlay" class="navicon-button x" data-overlay-id="menu-area" href="#"><div class="navicon"></div></a>
 	<div class="site-info">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
         <span class="site-description">
