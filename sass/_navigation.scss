@@ -275,53 +275,45 @@ a {
     padding: 20px;
     @include rem(font-size, 24px);
     @include transition(all 200ms);
-    z-index: 500;
+    z-index: 600;
     @media screen and (max-width: 768px) {
         position: absolute;
     }
     a {
         color: #fff;
+		&:hover {
+			border-bottom-color: #fff;
+		}
     }
     .site {
         &-info {
             float: left;
+			@media screen and (max-width: 768px) {
+				float: none;
+			}
         }
         &-description {
-            @include rem(font-size, 18px);
+            @include rem(font-size, 14px);
             margin-left: 20px;
             padding-left: 20px;
             color: #fff;
-            border-left: 1px solid #ddd;
+			border: 0 solid rgba(255,255,255,0.25);
+            border-left-width: 1px;
+			vertical-align: middle;
+			@include transition(color 0.2s ease-in-out);
             @media screen and (max-width: 768px) {
-                display: none;
+                display: block;
+				margin: 10px 0 0;
+				padding: 10px 0 0;
+				border-left-width: 0;
+				border-top-width: 1px;
             }
+			.avatar {
+				margin-right: 5px;
+			}
         }
-    }
-    .toggle-container {
-        float: right;
     }
     
-    /*
-    &.smart {
-        position: absolute;
-        //@include transition(all .25s linear);
-        &--top {
-            //background: transparent; // override
-        }
-        &--not-top {
-            position: fixed;
-            background: #666; // temp
-        }
-        &--pinned {
-            @include transform(translateY(0));
-        }
-        &--unpinned {
-            @include transform(translateY(-100%));
-        }
-    }
-    */
-    
-    /*
     &.headroom {
         @include transition(all .25s linear);
         &--pinned {
@@ -338,6 +330,9 @@ a {
             background: #fff;
             background: rgba(255, 255, 255, 0.95);
             @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
+			@media screen and (max-width: 768px) {
+				position: absolute;
+			}
             a {
                 color: #000;
                 &:hover {
@@ -345,35 +340,86 @@ a {
                 }
             }
             .site-description {
-                color: #999;
+                color: #000;
+				border-color: rgba(0,0,0,0.25);
             }
             &.masthead-in-view {
                 @include transform(translateY(-100%));
             }
         }
     }
-    */
     
 }
 
-.header.masthead-in-view {
-    position: absolute;
-}
-
-.header.masthead-in-view.headroom--top {
-    
-}
-
-.header.masthead-in-view.headroom--not-top.headroom--pinned {}
-
-.header.masthead-in-view.headroom--not-top.headroom--unpinned {}
-
-.home .header.headroom--top .site-info {
+.home .header .site-info {
     display: none; // hack to hide the site title on the home page
+}
+.home .header.headroom--not-top .site-info {
+	display: block;
 }
 
 /*--------------------------------------------------------------
-5.4 Overlay for menus and widgets
+5.4 Hamburger menu, which animates into close x
+--------------------------------------------------------------*/
+
+.hamburger {
+	display: block;
+	width: 28px;
+	height: 30px;
+	margin: 15px auto -15px;
+	//
+	float: right;
+	&:hover {
+		border-color: transparent !important;
+	}
+}
+
+.hamburger span:after,
+.hamburger span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -9px;
+}
+.hamburger span:after{
+  top: 9px;
+}
+.hamburger span {
+  position: relative;
+  display: block;
+}
+
+.hamburger span,
+.hamburger span:after,
+.hamburger span:before {
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 2px;
+}
+
+.header.headroom--not-top .hamburger span,
+.header.headroom--not-top .hamburger span:after,
+.header.headroom--not-top .hamburger span:before {
+	background-color: #000;
+}
+
+/* on activation */
+.show-overlay .hamburger span,
+.show-overlay .header.headroom--not-top .hamburger span {
+  background-color: transparent;
+}
+.show-overlay .hamburger span:before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.show-overlay .hamburger span:after {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+
+/*--------------------------------------------------------------
+5.5 Overlay for menus and widgets
 --------------------------------------------------------------*/
 
 .overlay {
@@ -383,7 +429,7 @@ a {
     height: 100%;
     left: 0;
     right: 0;
-    z-index: 9999;
+    z-index: 500;
     @include rem(font-size, 20px);
     opacity: 0;
     visibility: hidden;
