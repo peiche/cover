@@ -15,7 +15,6 @@
             <h2><?php echo $categories_list; ?></h2>
         <?php endif; ?>
         <h1><?php the_title(); ?></h1>
-        <?php // echo cover_posted_on(); ?>
     <?php } ?>
     
     <?php if ( is_page() ) { ?>
