@@ -3,19 +3,17 @@ var homeSwiper, gallerySwiper, relatedSwiper;
 jQuery(document).ready(function() {
 	
     // overlay
-    jQuery('.toggle-overlay').click(function(e) {
+    jQuery('#toggle-overlay').click(function(e) {
         e.preventDefault();
-        
-        var overlay_class = jQuery(this).attr('data-overlay-class');
-        jQuery('html').addClass('show-overlay');
-        jQuery('#' + overlay_class).addClass('show');
-    });
-    
-    jQuery('.overlay-close').click(function(e) {
-        e.preventDefault();
-        
-        jQuery('html').removeClass('show-overlay');
-        jQuery('.overlay').removeClass('show');
+        var overlay_id = jQuery(this).attr('data-overlay-id');
+		
+		if (jQuery('html').hasClass('show-overlay')) {
+			jQuery('html').removeClass('show-overlay');
+        	jQuery('#' + overlay_id + '.overlay').removeClass('show');
+		} else {
+			jQuery('html').addClass('show-overlay');
+			jQuery('#' + overlay_id + '.overlay').addClass('show');
+		}
     });
     
 	// aesop stacked images have a default height of 500px, this matches them to window height
@@ -28,44 +26,10 @@ jQuery(document).ready(function() {
         }
     });
     
-    // waypoints
-    /*
-    jQuery('.header').addClass('smart'); // inital class addition to make it sticky
-    
-    jQuery('.header').waypoint(function() {
-        jQuery(this).toggleClass('smart--not-top')
-    }, {
-        offset: function() {
-            return -(jQuery('.header').outerHeight());
-        }
-    });
-    
-    jQuery('.header').waypoint(function(direction) {
-        if (direction === 'up') {
-            jQuery(this).toggleClass('smart--pinned');
-        } else if (direction === 'down') {
-            jQuery(this).toggleClass('smart--unpinned');
-        }
-    }, {
-        offset: function() {
-            return -(jQuery('.header').outerHeight());
-        }
-    });
-    */
-    
     // headroom init
-    /*
     var elem = jQuery('.header')[0];
-    var headroom = new Headroom(elem, {
-        //tolerance: 5,
-        //offset: (jQuery('.cover').outerHeight() / 2)
-        tolerance: {
-            up: 0,
-            down: (jQuery('.cover').outerHeight() / 2)
-        }
-    });
+    var headroom = new Headroom(elem);
     headroom.init();
-    */
     
     // skrollr init, if the user agent isn't a touch device (this is an imperfect solution)
     if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
