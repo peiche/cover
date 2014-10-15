@@ -281,16 +281,18 @@ a {
     }
     a {
         color: #fff;
-		&:hover {
-			border-bottom-color: #fff;
-		}
+        border: none;
     }
     .site {
         &-info {
             float: left;
+            @include transition(opacity 200ms);
 			@media screen and (max-width: 768px) {
 				float: none;
 			}
+            .home & {
+                display: none;
+            }
         }
         &-description {
             @include rem(font-size, 14px);
@@ -313,109 +315,96 @@ a {
 			}
         }
     }
-    
-    &.headroom {
-        @include transition(all .25s linear);
-        &--pinned {
-            @include transform(translateY(0));
-        }
-        &--unpinned {
-            @include transform(translateY(-100%));
-        }
-        &--top {
-            position: absolute;
-        }
-        &--not-top {
-            position: fixed;
-            background: #fff;
-            background: rgba(255, 255, 255, 0.95);
-            @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
-			@media screen and (max-width: 768px) {
-				position: absolute;
-			}
-            a {
-                color: #000;
-                &:hover {
-                    color: $link-color;
-                }
-            }
-            .site-description {
-                color: #000;
-				border-color: rgba(0,0,0,0.25);
-            }
-            &.masthead-in-view {
-                @include transform(translateY(-100%));
-            }
-        }
-    }
-    
 }
 
-.home .header .site-info {
-    display: none; // hack to hide the site title on the home page
-}
-.home .header.headroom--not-top .site-info {
-	display: block;
+.show-overlay .header {
+    pointer-events: none;
+    & .site-info {
+        opacity: 0;
+    }
 }
 
 /*--------------------------------------------------------------
-5.4 Hamburger menu, which animates into close x
+5.4 Nav menu, which animates into close x
 --------------------------------------------------------------*/
 
-.hamburger {
-	display: block;
-	width: 28px;
-	height: 30px;
-	margin: 15px auto -15px;
-	//
-	float: right;
-	&:hover {
-		border-color: transparent !important;
-	}
+.navicon-button {
+    border: 0;
+    float: right;
+    display: inline-block;
+    position: relative;
+    padding: 2rem 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    @include transition(none);
+    .navicon:before,
+    .navicon:after {
+        @include transition(200ms);
+    }
+    .navicon:before {
+        top: .825rem;
+    }
+    .navicon:after {
+        top: -.825rem;
+    }
 }
 
-.hamburger span:after,
-.hamburger span:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -9px;
-}
-.hamburger span:after{
-  top: 9px;
-}
-.hamburger span {
-  position: relative;
-  display: block;
-}
-
-.hamburger span,
-.hamburger span:after,
-.hamburger span:before {
-  width: 100%;
-  height: 5px;
-  background-color: #fff;
-  transition: all 0.3s;
-  backface-visibility: hidden;
-  border-radius: 2px;
-}
-
-.header.headroom--not-top .hamburger span,
-.header.headroom--not-top .hamburger span:after,
-.header.headroom--not-top .hamburger span:before {
-	background-color: #000;
+.navicon {
+    position: relative;
+    width: 2.5rem;
+    height: .3125rem;
+    @include transition(200ms);
+    @include border-radius(2.5rem);
+    background: #fff;
+    &:before,
+    &:after {
+        display: block;
+        content: "";
+        height: .3125rem;
+        width: 2.5rem;
+        position: absolute;
+        z-index: -1;
+        background: #fff;
+        @include transition(200ms);
+        @include border-radius(2.5rem);
+    }
+    &:before {
+        top: .625rem;
+    }
+    &:after {
+        top: -.625rem;
+    }
 }
 
-/* on activation */
-.show-overlay .hamburger span,
-.show-overlay .header.headroom--not-top .hamburger span {
-  background-color: transparent;
+.show-overlay .navicon-button {
+    pointer-events: auto;
+    margin-right: 18px;
+    @media screen and (max-width: 768px) {
+        margin-right: 0;
+    }
 }
-.show-overlay .hamburger span:before {
-  transform: rotate(45deg) translate(5px, 5px);
+
+.show-overlay .navicon:before,
+.show-overlay .navicon:after {
+    top: 0 !important;
+    @include transition(200ms);
 }
-.show-overlay .hamburger span:after {
-  transform: rotate(-45deg) translate(7px, -8px);
+
+/* × */
+.show-overlay .x {
+    .navicon {
+        background: transparent;
+        &:before,
+        &:after {
+            background: #fff;
+        }
+        &:before {
+            @include transform(rotate(-45deg));
+        }
+        &:after {
+            @include transform(rotate(45deg));
+        }
+    }
 }
 
 /*--------------------------------------------------------------
@@ -483,31 +472,69 @@ a {
             @include box-sizing(border-box);
         }
     }
-    &.show {
+    .show-overlay & {
         opacity: 1;
         visibility: visible;
     }
-    &-close {
-        position: fixed;
-        margin-top: -60px; // to negate the 60px top padding of .overlay
-        padding: 20px;
-        @include rem(font-size, 24px);
-        color: #fff;
-        z-index: 1;
-        &.right {
-            right: 15px;
-			@media screen and (max-width: 768px) {
-				right: 0;
-			}
+}
+
+/*--------------------------------------------------------------
+5.5 Headroom.js
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 769px) {
+    .header.headroom {
+        @include transition(all 0.5s);
+        &--pinned {
+            @include transform(translateY(0));
         }
-        &:visited {
-            color: #fff;
+        &--unpinned {
+            @include transform(translateY(-100%));
+        }
+        &--top {
+        }
+        &--not-top {
+            position: fixed;
+            background: #fff;
+            background: rgba(255, 255, 255, 0.95);
+            color: #000;
+            @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
+            a {
+                color: #000;
+            }
+            .site {
+                &-info {
+                    display: block;
+                }
+                &-description {
+                    color: #000;
+                    border-color: rgba(0,0,0,0.25);
+                }
+            }
+            .navicon,
+            .navicon:before,
+            .navicon:after {
+                background: #000;
+            }
+        }
+    }
+}
+
+.show-overlay .header.headroom--not-top {
+    background: transparent;
+    @include box-shadow(none);
+    transition-delay: 0, 0;
+    .navicon {
+        background: transparent;
+        &:before,
+        &:after {
+            background: #fff;
         }
     }
 }
 
 /*--------------------------------------------------------------
-5.5 Jetpack Infinite Scroll
+5.6 Jetpack Infinite Scroll
 --------------------------------------------------------------*/
 
 #infinite-handle {
