@@ -16,7 +16,7 @@ module.exports = function(grunt) {
             options: {
                 style: 'compressed',
                 noCache: true,
-				sourcemap: false,
+				sourcemap: 'none',
 				unixNewlines: true
             },
 			dist: {
