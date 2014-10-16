@@ -8,13 +8,6 @@
 	position: relative;
 }
 
-#content {
-	padding-top: 76px;
-	.has-featured-image & {
-		padding-top: 0;
-	}
-}
-
 .sticky {
     background: #333;
     * {
