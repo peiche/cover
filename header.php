@@ -21,9 +21,24 @@
 
 <?php
 
+/*
 $has_image = '';
 if ( ( (is_single() || is_page() ) && '' != get_the_post_thumbnail() ) || is_home() || is_archive() || is_author() || is_search() || is_404() ) {
     $has_image = 'has-featured-image';
+}
+*/
+
+$nav_primary = 'primary';
+$nav_social  = 'social';
+
+$build_overlay = false;
+if ( 
+        has_nav_menu( $nav_primary ) ||
+        has_nav_menu( $nav_social ) ||
+        is_active_sidebar( 'overlay-1' ) || 
+        is_active_sidebar( 'overlay-2' ) ||
+        is_active_sidebar( 'overlay-3' ) ) {
+    $build_overlay = true;
 }
 
 ?>
@@ -33,8 +48,10 @@ if ( ( (is_single() || is_page() ) && '' != get_the_post_thumbnail() ) || is_hom
 <?php // do_action(‘ase_theme_body_inside_top’); ?>
 
 <header class="header">
-    <a id="toggle-overlay" class="hamburger" data-overlay-id="menu-area" href="#"><span></span></a>
-	<div class="site-info">
+    <?php if ( $build_overlay ) { ?>
+        <a id="toggle-overlay" class="hamburger" data-overlay-id="menu-area" href="#"><span></span></a>
+    <?php } ?>
+    <div class="site-info">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
         <span class="site-description">
 			<?php 
@@ -48,36 +65,40 @@ if ( ( (is_single() || is_page() ) && '' != get_the_post_thumbnail() ) || is_hom
     </div>
 </header>
 
-<div id="menu-area" class="overlay">
-    <?php // <a href="#" class="overlay-close right"><i class="fa fa-fw fa-times"></i></a> ?>
-    
-    <?php if ( is_active_sidebar( 'overlay-1' ) ) { ?>
-        <div class="widget-area" role="complementary">
-            <?php dynamic_sidebar( 'overlay-1' ); ?>
-        </div>
-    <?php } ?>
-    
-    <nav class="main-navigation">
-        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-    </nav>
-    
-    <?php if ( is_active_sidebar( 'overlay-2' ) ) { ?>
-        <div class="widget-area" role="complementary">
-            <?php dynamic_sidebar( 'overlay-2' ); ?>
-        </div>
-    <?php } ?>
-    
-    <nav class="social-navigation">
-        <?php wp_nav_menu( array(
-            'theme_location' => 'social',
-            'link_before'    => '<span class="hide">',
-            'link_after'     => '</span>'
-        ) ); ?>
-    </nav>
-    
-	<?php if ( is_active_sidebar( 'overlay-3' ) ) { ?>
-        <div class="widget-area" role="complementary">
-            <?php dynamic_sidebar( 'overlay-3' ); ?>
-        </div>
-    <?php } ?>
-</div>
+<?php if ( $build_overlay ) { ?>
+    <div id="menu-area" class="overlay">
+        <?php if ( is_active_sidebar( 'overlay-1' ) ) { ?>
+            <div class="widget-area" role="complementary">
+                <?php dynamic_sidebar( 'overlay-1' ); ?>
+            </div>
+        <?php } ?>
+
+        <?php if ( has_nav_menu( $nav_primary ) ) { ?>
+            <nav class="main-navigation">
+                <?php wp_nav_menu( array( 'theme_location' => $nav_primary ) ); ?>
+            </nav>
+        <?php } ?>
+
+        <?php if ( is_active_sidebar( 'overlay-2' ) ) { ?>
+            <div class="widget-area" role="complementary">
+                <?php dynamic_sidebar( 'overlay-2' ); ?>
+            </div>
+        <?php } ?>
+
+        <?php if ( has_nav_menu( $nav_social ) ) { ?>
+            <nav class="social-navigation">
+                <?php wp_nav_menu( array(
+                    'theme_location' => $nav_social,
+                    'link_before'    => '<span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x social-icon"></i><span class="hide">', //'<span class="hide">',
+                    'link_after'     => '</span></span>'
+                ) ); ?>
+            </nav>
+        <?php } ?>
+
+        <?php if ( is_active_sidebar( 'overlay-3' ) ) { ?>
+            <div class="widget-area" role="complementary">
+                <?php dynamic_sidebar( 'overlay-3' ); ?>
+            </div>
+        <?php } ?>
+    </div>
+<?php } ?>
