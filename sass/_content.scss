@@ -10,12 +10,30 @@
 
 .sticky {
     background: #333;
+    &.hentry {
+        margin-top: -50px;
+    }
+    .entry-header h1 a {
+        color: #fff;
+        padding-bottom: 2px;
+        &:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+    }
+    .entry-header h2 a {
+        color: #aaa;
+        &:hover {
+            color: #aaa;
+            border-color: #999;
+        }
+    }
     * {
         color: #fff;
     }
 }
 .hentry {
-	padding: 0 0 50px;
+	padding: 50px 0;
 	clear: both;
 	margin: 0;
     position: relative;
@@ -46,20 +64,6 @@
     }
 }
 .entry {
-    &-background {
-        background-position: center;
-        background-size: cover;
-        @include site-width;
-        margin-bottom: 20px;
-        height: 350px;
-        display: none;
-        .home & {
-            //display: block;
-        }
-        .hentry:first-child & {
-            height: 450px;
-        }
-    }
     &-header {
         @include site-width;
         h1 {
@@ -109,10 +113,19 @@
         }
     }
     &-content {
-        @each $elem in h1, h2, h3, h4, div, span, p, ul, ol, blockquote, pre, hr, form, iframe {
+        @each $elem in h1, h2, h3, h4, h5, h6, div, span, p, ul, ol, blockquote, pre, hr, form, iframe, address, table, dl {
             & > #{$elem} {
                 @include site-width;
             }
+        }
+        @each $elem in ul, ol {
+            & > #{$elem} {
+                list-style-position: inside;
+            }
+        }
+        & > section > h2,
+        & > section > p {
+            @include site-width;
         }
         & > .twitter-tweet {
             margin-left: auto !important;
@@ -125,7 +138,8 @@
 		& > p:first-child,
 		& > p:first-of-type,
 		& > p:first-child:empty + p,
-		& > p:first-of-type:empty + p {
+		& > p:first-of-type:empty + p,
+        p.lead {
 			font-weight: bold;
 			color: #1d1d1d;
 			a:hover {
@@ -177,7 +191,7 @@
         }
     }
 	&-meta {
-		margin-top: 5px;
+		margin-top: 30px;
         & .avatar {
             margin-right: 5px;
         }
@@ -195,10 +209,6 @@
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
-}
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
 }
 
 /*--------------------------------------------------------------

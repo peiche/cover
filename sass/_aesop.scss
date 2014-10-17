@@ -57,8 +57,12 @@ div.aesop-content {
 		}
     }
     &.aesop-content-component {
-		p {
+		.aesop-content-comp-inner {
+            padding: 30px 0;
+        }
+        p {
 			color: inherit;
+            margin: 0;
 		}
 	}
 }
@@ -149,6 +153,14 @@ div.aesop-content {
 
 .aesop-video-container {
     max-width: 100%;
+}
+
+.aesop-timeline {
+    // absolutely position this somewhere
+}
+
+.aesop-timeline-stop {
+    padding-top: 140px;
 }
 
 // override width for top-level aesop components

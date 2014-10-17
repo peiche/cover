@@ -35,7 +35,7 @@ object {
 --------------------------------------------------------------*/
 .wp-caption {
 	margin-bottom: 1.5em;
-	max-width: 100%;
+	max-width: 100% !important; // overrides .entry-content > div
     padding: 0;
 	border: 0;
 	position: relative;

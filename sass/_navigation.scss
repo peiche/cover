@@ -24,7 +24,8 @@ a {
     &:hover {
         text-decoration: none;
         color: $link-color-hover;
-        p &,
+        .entry-summary &,
+        .entry-content &,
         .info &,
         .edit-link &,
         .entry-meta & {
@@ -42,6 +43,19 @@ a {
             border: 2px solid #0066d9;
             background: #0066d9;
             color: #fff;
+        }
+    }
+}
+
+.author a {
+    .name {
+        border-bottom: 1px solid transparent;
+        @include transition(border .2s ease-in-out);
+    }
+    &:hover {
+        border-color: transparent;
+        .name {
+            border-color: $link-border-color;
         }
     }
 }
@@ -281,7 +295,9 @@ a {
     }
     a {
         color: #fff;
-        border: none;
+        &:hover {
+            border-color: #fff;
+        }
     }
     .site {
         &-info {
@@ -313,6 +329,12 @@ a {
 			.avatar {
 				margin-right: 5px;
 			}
+            .author a:hover {
+                border-color: transparent;
+                .name {
+                    border-color: #fff;
+                }
+            }
         }
     }
 }
@@ -335,6 +357,7 @@ a {
 	margin: 0 auto -15px;
 	padding-top: 15px;
 	float: right;
+    border: 0;
 }
 
 .hamburger span:after,
@@ -504,6 +527,10 @@ a {
             @include box-shadow(0 0 1px rgba(0, 0, 0, 0.15));
             a {
                 color: #000;
+                &:hover {
+                    color: $link-color;
+                    border-color: transparent;
+                }
             }
             .site {
                 &-info {
@@ -512,6 +539,9 @@ a {
                 &-description {
                     color: #000;
                     border-color: rgba(0,0,0,0.25);
+                    .author a:hover .name {
+                        border-color: transparent;
+                    }
                 }
             }
         }

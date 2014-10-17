@@ -109,8 +109,10 @@
 	}
 }
 
-.home {
+.home,
+.blog {
     .cover {
+        padding: 200px 0;
         header {
             text-align: center;
             h2 {

@@ -196,9 +196,21 @@ $tumblr-color: #2c4762;
                 ('instagram', $instagram-color, $fa-var-instagram),
                 ('tumblr', $tumblr-color, $fa-var-tumblr) {
             &[href*='#{$url}'] {
+                .fa-circle:before {
+                    color: $color;
+                    @include transition(color 200ms);
+                }
                 .social-icon:before {
                     content: $char;
-                    color: $color;
+                    @include transition(color 200ms);
+                }
+                &:hover {
+                    .fa-circle:before {
+                        color: #fff;
+                    }
+                    .social-icon:before {
+                        color: $color;
+                    }
                 }
             }
         }
