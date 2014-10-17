@@ -423,17 +423,15 @@ a {
         list-style: none;
         margin: 0;
         padding-left: 0;
-        ul {
-            ul {
-                position: static;
-                float: none;
-                box-shadow: none;
-                margin-left: 40px;
-                a {
-                    width: auto;
-                }
-            }
-        }
+		ul {
+			position: static;
+			float: none;
+			box-shadow: none;
+			margin-left: 40px;
+			a {
+				width: auto;
+			}
+		}
         li {
             float: none;
         }
@@ -454,16 +452,19 @@ a {
         float: none;
     }
     .social-navigation {
-        li {
-            
-        }
-        a {
-            border: none;
-            padding: 0 !important; // fixme
-            &:hover {
-                background: transparent !important; // fixme: do something else here
-            }
-        }
+        ul.menu {
+			text-align: center;
+			li {
+				display: inline-block;
+			}
+			a {
+				border: none;
+				padding: 0;
+				&:hover {
+					background: transparent; // fixme: do something else here
+				}
+			}
+		}
         @include social-icon;
     }
     .search-form {
