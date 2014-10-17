@@ -13,16 +13,6 @@ get_header(); ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		
-		<!--
-        <div class="notification">
-            <span class="ntitle">Search</span>
-            <span class="message">
-                <?php printf( __( '%s', 'cover' ), get_search_query() ); ?>
-            </span>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa fa-times"></i></a>
-        </div>
-		-->
-        
 		<?php if ( have_posts() ) : ?>
             
 			<?php /* Start the Loop */ ?>

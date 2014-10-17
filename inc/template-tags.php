@@ -86,14 +86,14 @@ function cover_posted_on() {
 	);
     
     printf( __( '<span class="posted-on">%1$s on %2$s</span>', 'cover' ),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s %3$s</a></span>',
+		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s <span class="name">%3$s</span></a></span>',
                 esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
                 get_avatar( get_the_author_meta( 'ID' ), 35 ) . ' ',
                 esc_html( get_the_author() )
 		),
         sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-			get_day_link( get_the_time('Y'), get_the_time('m'), get_the_time('d') ),
-			$time_string
+			get_the_permalink(),
+            $time_string
 		)
 	);
     

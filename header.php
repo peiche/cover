@@ -55,7 +55,7 @@ if (
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
         <span class="site-description">
 			<?php 
-			if (is_single()) {
+			if ( is_single() ) {
 				echo cover_posted_on();
 			} else {
 				bloginfo( 'description' ); 
@@ -89,7 +89,7 @@ if (
             <nav class="social-navigation">
                 <?php wp_nav_menu( array(
                     'theme_location' => $nav_social,
-                    'link_before'    => '<span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x social-icon"></i><span class="hide">', //'<span class="hide">',
+                    'link_before'    => '<span class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x social-icon"></i><span class="hide">',
                     'link_after'     => '</span></span>'
                 ) ); ?>
             </nav>

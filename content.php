@@ -11,14 +11,6 @@ if ( has_post_thumbnail() ) {
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-	<a class="cover" href="<?php the_permalink(); ?>" rel="bookmark"></a>
-	
-	<?php if ( has_post_thumbnail() ) : ?>
-		<?php if ('' != get_the_post_thumbnail()) { ?>
-			<div class="entry-background" style="background-image: url('<?php echo $img[0]; ?>');"></div>
-		<?php } ?>
-	<?php endif; ?><!-- .entry-image -->
-    
     <header class="entry-header">
         <h2><?php the_category(', ') ?></h2>
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>

@@ -14,7 +14,6 @@
         ?>
             <h2><?php echo $categories_list; ?></h2>
         <?php endif; ?>
-        <h1><?php the_title(); ?></h1>
     <?php } ?>
     
     <?php if ( is_page() ) { ?>
@@ -24,7 +23,8 @@
         ?>
             <h2><a href="<?php echo $parent_permalink; ?>"><i class="fa fa-angle-left"></i> <?php echo $parent_title; ?></a></h2>
         <?php } ?>
-        <h1><?php the_title(); ?></h1>
     <?php } ?>
+    
+    <h1><?php the_title(); ?></h1>
     
 </header>
