@@ -37,7 +37,7 @@ jQuery(document).ready(function() {
 	}
     
     // add dropdown buttons to menus with children
-    jQuery('.menu .menu-item-has-children').append('<div class="sub-menu-toggle"><i class="fa fa-angle-down fa-animate"></i></div>');
+    jQuery('.menu .menu-item-has-children').append('<div class="sub-menu-toggle"><i class="fa fa-angle-down"></i></div>');
     
     // hide submenus
     jQuery('.menu .menu-item-has-children .sub-menu').addClass('hide');
