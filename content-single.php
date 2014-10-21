@@ -21,9 +21,15 @@
         <?php
             $tags = get_the_tags();
             if ( $tags ) {
+        ?>
+        <ul class="tags">
+        <?php
                 foreach( $tags as $tag ) {
-                    echo '<a class="btn gray" href="' . get_tag_link( $tag->term_id ) . '" title="' . esc_attr( sprintf( __("View all posts in %s" ), $tag->name ) ) . '">' . $tag->name . '</a>'; 
+            echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="' . esc_attr( sprintf( __("View all posts in %s" ), $tag->name ) ) . '">' . $tag->name . '</a></li>'; 
                 }
+        ?>
+        </ul>
+        <?php
             }
         ?>
 		
