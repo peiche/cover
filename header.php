@@ -45,7 +45,7 @@ if (
 
 <body <?php body_class( $has_image ); ?>>
 
-<?php // do_action(‘ase_theme_body_inside_top’); ?>
+<?php do_action(‘ase_theme_body_inside_top’); ?>
 
 <header class="header">
     <?php if ( $build_overlay ) { ?>
