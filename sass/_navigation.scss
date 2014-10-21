@@ -318,7 +318,7 @@ a {
 			border: 0 solid rgba(255,255,255,0.25);
             border-left-width: 1px;
 			vertical-align: middle;
-			@include transition(color 0.2s ease-in-out);
+			@include transition(all 0.2s ease-in-out);
             @media screen and (max-width: 768px) {
                 display: block;
 				margin: 10px 0 0;

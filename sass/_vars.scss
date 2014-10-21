@@ -180,7 +180,7 @@ $codepen-color: #60c2ff;
 $instagram-color: #517fa4;
 $tumblr-color: #2c4762;
 
-@mixin social-icon($size: 'normal') {
+@mixin social-icon {
     a {
         @each $url, $color, $char in 
                 ('facebook', $facebook-color, $fa-var-facebook),

@@ -43,8 +43,13 @@ jQuery(document).ready(function() {
     jQuery('.menu .menu-item-has-children .sub-menu').addClass('hide');
     
     // click event on submenu toggles
-    jQuery('.menu .menu-item-has-children').on('click', '.sub-menu-toggle', function() {
+    jQuery('.menu .menu-item-has-children').on('click', '.sub-menu-toggle', function(e) {
+		e.stopPropagation();
         var $this = jQuery(this);
+		
+		console.log($this);
+		console.log($this.children('.fa-angle-down'));
+		console.log($this.siblings('.sub-menu'));
         
         $this.children('.fa-angle-down').toggleClass('fa-rotate-180');
         $this.siblings('.sub-menu').toggleClass('hide');

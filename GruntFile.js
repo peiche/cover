@@ -30,7 +30,6 @@ module.exports = function(grunt) {
                 files: {
                     'js/cover.min.js': ['src/cover.js'],
                     'js/customizer.min.js': ['src/customizer.js'],
-                    'js/navigation.min.js': ['src/navigation.js'],
                     'js/skip-link-focus-fix.min.js': ['src/skip-link-focus-fix.js']
                 }
             }
