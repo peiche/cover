@@ -160,7 +160,7 @@ div.aesop-content {
 }
 
 .aesop-cover-title {
-    @include site-width;
+    @include site-width(100%);
     color: #fff;
     @include rem(font-size, 42px);
     padding: 250px 0 20px;
@@ -213,10 +213,9 @@ div.aesop-content {
 			}
 		}
 	}
-}
-
-.aesop-timeline-stop {
-    padding-top: 140px;
+    &-stop {
+        padding-top: 140px;
+    }
 }
 
 // override width for top-level aesop components

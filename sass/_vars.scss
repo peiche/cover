@@ -111,19 +111,17 @@ $divider-color: #b3b3b3;
     box-sizing: $val;
 }
 
-@mixin button {
-    display: inline-block;
-    padding: 7px 22px;
-    font: 600 14px $font-stack-content;
-    border: 2px solid $button-border-color;
-    background: $button-background;
-    color: $button-color;
-    @include border-radius(4px);
+@mixin button($background: $link-color, $color: #fff, $border-radius: 25px) {
+    padding: 8px 15px;
+    @include rem(font-size, 14px);
+    border: 0;
+    background: $background;
+    color: $color;
+    @include border-radius($border-radius);
     @include transition(all .2s ease-in-out);
     &:hover {
-        border-color: $link-color;
-        background: $link-color;
-        color: $button-color-hover;    
+        background: darken($background, 10%);
+        color: #fff;
     }
 }
 
@@ -196,19 +194,23 @@ $tumblr-color: #2c4762;
                 ('instagram', $instagram-color, $fa-var-instagram),
                 ('tumblr', $tumblr-color, $fa-var-tumblr) {
             &[href*='#{$url}'] {
-                .fa-circle:before {
+                .fa-circle {
                     color: $color;
-                    @include transition(color 200ms);
+                    &:before {
+                        @include transition(color 200ms);
+                    }
                 }
-                .social-icon:before {
-                    content: $char;
+                .social-icon {
                     @include transition(color 200ms);
+                    &:before {
+                        content: $char;
+                    }
                 }
                 &:hover {
-                    .fa-circle:before {
+                    .fa-circle {
                         color: #fff;
                     }
-                    .social-icon:before {
+                    .social-icon {
                         color: $color;
                     }
                 }

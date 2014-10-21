@@ -307,7 +307,8 @@ a {
 				float: none;
 			}
             .home & {
-                display: none;
+                opacity: 0;
+                visibility: hidden;
             }
         }
         &-description {
@@ -396,8 +397,6 @@ a {
         background-color: #000;
     }
 }
-
-/* on activation */
 
 .show-overlay .hamburger {
     pointer-events: auto;
@@ -534,7 +533,12 @@ a {
             }
             .site {
                 &-info {
-                    display: block;
+                    opacity: 1;
+                    visibility: visible;
+                    .show-overlay & {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
                 }
                 &-description {
                     color: #000;

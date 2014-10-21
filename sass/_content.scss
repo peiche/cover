@@ -130,6 +130,8 @@
         & > .twitter-tweet {
             margin-left: auto !important;
             margin-right: auto !important;
+            width: 90% !important;          // overrides inline styles
+            max-width: 760px !important;    // overrides inline styles
         }
 		& > h2:first-child,
 		& > p:first-child {
@@ -147,7 +149,7 @@
 			}
 		}
 		& > hr {
-            max-width: $narrow;
+            max-width: 250px;
         }
         & > blockquote {
             &.large {
@@ -249,4 +251,20 @@ footer.entry-meta {
 
 .not-found {
     @include site-width;
+}
+
+/*--------------------------------------------------------------
+10.5 Tags
+--------------------------------------------------------------*/
+
+ul.tags {
+    list-style: none;
+    margin: 0;
+    li {
+        display: inline-block;
+        margin: 0 15px 15px 0;
+    }
+    a {
+        @include button($button-gray-background, $button-gray-color, 4px);
+    }
 }
