@@ -58,6 +58,13 @@ $divider-color: #b3b3b3;
         }
     }
     
+    /**
+     * Note: this doubles the declarations of font-size, 
+     * resulting in a warning when the csslint task is run.
+     * Unlike multiple declarations of the background property, 
+     * the linter does not recognize this as providing a fallback
+     * for browsers that do not support rem.
+     */
     #{$property}: $px;
     #{$property}: $rem;
 }
