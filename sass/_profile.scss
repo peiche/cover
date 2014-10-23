@@ -1,28 +1,21 @@
 .profile {
+	text-align: center;
 	.single & {
         padding: 30px 0 60px;
     }
-	text-align: center;
+	h4 {
+		margin: 10px 0;
+	}
+	p {
+		margin: 0 0 15px;
+	}
 	.avatar {
         display: block;
         margin: auto;
         @include border-radius(50%);
-		&-container {
-			margin-bottom: 20px;
-		}
-    }
-	h4 {
-        margin: 0 0 15px;
-    }
-    p {
-        margin: 15px 0;
-        font: 400 14px $font-stack-content;
-        line-height: 32px;
-        &:last-child {
-            margin-bottom: 0;
-        }
     }
 	&-social {
+		margin-top: 10px;
 		@include social-icon;
 		a {
             color: #fff;
