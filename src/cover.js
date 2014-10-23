@@ -19,7 +19,7 @@ jQuery(document).ready(function() {
     
     // clicking on header acts as "back to top" link
     jQuery('.header').click(function(e) {
-        if (jQuery(e.target).closest('a').length == 0) {
+        if (jQuery(e.target).closest('a').length === 0) {
             jQuery('html, body').animate({ scrollTop: jQuery('html').offset().top });
         }
     });
