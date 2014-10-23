@@ -13,10 +13,8 @@ GitHub Theme URI: https://github.com/peiche/cover
 GitHub Branch: master
 */
 
-@import "vars";
-
 @import "FontAwesome/font-awesome";
-
+@import "vars";
 @import "reset";
 @import "typography";
 @import "elements";
@@ -29,14 +27,11 @@ GitHub Branch: master
 @import "content";
 @import "infinitescroll";
 @import "media";
-
 @import "cover";
 @import "profile";
 @import "comments";
-
 @import "archive";
 @import "footer";
-
+@import "jetpack";
 @import "aesop";
 @import "disqus";
-@import "jetpack";
