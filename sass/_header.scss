@@ -1,0 +1,160 @@
+/*--------------------------------------------------------------
+Header
+--------------------------------------------------------------*/
+
+.header {
+    @include rem(font-size, 24px);
+    padding: 20px;
+    position: absolute;
+    @include transition(all 200ms);
+    width: 100%;
+    z-index: 600;
+    
+    @media screen and (max-width: 768px) {
+        position: absolute;
+    }
+    
+    a {
+        color: #fff;
+        
+        &:hover {
+            border-color: #fff;
+        }
+    }
+    
+    .site {
+        &-info {
+            float: left;
+            @include transition(opacity 200ms);
+			
+            @media screen and (max-width: 768px) {
+				float: none;
+			}
+            
+            .home & {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        &-description {
+            border: 0 solid rgba(255, 255, 255, .25);
+            border-left-width: 1px;
+            color: #fff;
+            @include rem(font-size, 14px);
+            margin-left: 20px;
+            padding-left: 20px;
+            vertical-align: middle;
+			@include transition(all .2s ease-in-out);
+            
+            @media screen and (max-width: 768px) {
+                border-left-width: 0;
+				border-top-width: 1px;
+                display: block;
+				margin: 10px 0 0;
+				padding: 10px 0 0;
+            }
+        }
+    }
+    
+    .avatar {
+        margin-right: 5px;
+    }
+
+    .author a:hover {
+        border-color: transparent;
+
+        .name {
+            border-color: #fff;
+        }
+    }
+}
+
+.show-overlay .header {
+    pointer-events: none;
+    
+    .site-info {
+        opacity: 0;
+    }
+}
+
+/*--------------------------------------------------------------
+Nav menu, which animates into close x
+--------------------------------------------------------------*/
+
+.hamburger {
+	border: 0;
+    display: block;
+	float: right;
+    height: 30px;
+    margin: 0 auto -15px;
+    padding-top: 15px;
+    width: 28px;
+	
+    span {
+        display: block;
+        position: relative;
+        
+        &:before,
+        &:after {
+            content: '';
+            left: 0;
+            position: absolute;
+            top: -9px;
+        }
+        
+        &:after {
+            top: 9px;
+        }
+    }
+}
+
+.hamburger span,
+.hamburger span:after,
+.hamburger span:before {
+	backface-visibility: hidden;
+	background-color: #fff;
+	@include border-radius(2px);
+	height: 5px;
+    @include transition(all .5s);
+	width: 100%;
+    
+    @media screen and (max-width: 768px) {
+		@include transition(none);
+	}
+}
+
+@media screen and (min-width: 769px) {
+    .header.headroom--not-top .hamburger span,
+    .header.headroom--not-top .hamburger span:after,
+    .header.headroom--not-top .hamburger span:before {
+        background-color: #000;
+    }
+}
+
+.show-overlay .hamburger {
+    margin-right: 18px;
+    pointer-events: auto;
+    
+    @media screen and (max-width: 768px) {
+        margin-right: 0;
+    }
+    
+    span:before {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    span:after {
+        transform: rotate(-45deg) translate(7px, -8px);
+    }
+}
+
+.show-overlay .hamburger span,
+.show-overlay .header.headroom--not-top .hamburger span {
+	background-color: transparent;
+}
+
+.show-overlay .hamburger span:before,
+.show-overlay .hamburger span:after {
+	background-color: #fff !important;
+}

@@ -1,0 +1,105 @@
+/*--------------------------------------------------------------
+Overlay for menus and widgets
+--------------------------------------------------------------*/
+
+.overlay {
+    background: #333;
+    @include rem(font-size, 20px);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    overflow: auto;
+    padding: 60px 0;
+    position: fixed;
+    right: 0;
+    @include transition(opacity 200ms);
+    visibility: hidden;
+    z-index: 500;
+    
+    a {
+        color: #fff;
+        width: auto;
+        
+        &:hover {
+            background: #666;
+        }
+    }
+    
+    .widget-area {
+        color: #ccc;
+        margin-bottom: 60px;
+        margin-top: 60px;
+    }
+    
+    .tag-cloud a:hover {
+        border-color: #fff;
+    }
+    
+    ul.menu {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+        
+        ul {
+			box-shadow: none;
+            float: none;
+            margin-left: 40px;
+            position: static;
+		}
+        
+        li {
+            float: none;
+        }
+        
+        a {
+            border-color: #666;
+            border-width: 1px;
+            padding: 10px 15px;
+            
+            &:hover {
+                background: #666;
+            }
+        }
+    }
+    
+    .main-navigation,
+    .social-navigation {
+        float: none;
+        margin-bottom: 60px;
+        margin-top: 60px;
+        @include site-width($narrow);
+    }
+    
+    .social-navigation {
+        @include social-icon;
+        
+        ul.menu {
+			text-align: center;
+		}
+        
+        li {
+            display: inline-block;
+        }
+        
+        a {
+            border: 0;
+            padding: 0;
+
+            &:hover {
+                background: transparent; // fixme: do something else here
+            }
+        }
+    }
+    
+    .search-form input.search-field {
+        @include border-radius(0);
+        @include box-sizing(border-box);
+        padding: 10px;
+        width: 100%;
+    }
+    
+    .show-overlay & {
+        opacity: 1;
+        visibility: visible;
+    }
+}
