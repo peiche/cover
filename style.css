@@ -2195,17 +2195,86 @@ GitHub Branch: master
   content: "";
 }
 
+.wp-caption .wp-caption-text, .aesop-image-component-image .aesop-image-component-caption {
+  font-size: 15px;
+  font-size: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-top: 5px;
+  margin-top: 0.5rem;
+  margin-bottom: 10px;
+  margin-bottom: 1rem;
+}
+.wp-caption .wp-caption-text i, .aesop-image-component-image .aesop-image-component-caption i,
+.wp-caption .wp-caption-text em,
+.aesop-image-component-image .aesop-image-component-caption em {
+  font-style: normal;
+}
+
 /*--------------------------------------------------------------
 1.0 - Reset
 --------------------------------------------------------------*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
   border: 0;
   font-family: inherit;
   font-size: 100%;
@@ -2222,10 +2291,10 @@ html {
   /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
   overflow-y: scroll;
   /* Keeps page centered in all browsers regardless of content height */
-  -webkit-text-size-adjust: 100%;
-  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
   -ms-text-size-adjust: 100%;
   /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+  -webkit-text-size-adjust: 100%;
+  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 }
 html.show-overlay {
   overflow: hidden;
@@ -2235,10 +2304,10 @@ html.show-overlay {
 *:before,
 *:after {
   /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-  -webkit-box-sizing: border-box;
-  /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
   -moz-box-sizing: border-box;
   /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
+  -webkit-box-sizing: border-box;
+  /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
   box-sizing: border-box;
 }
 
@@ -2265,7 +2334,8 @@ section {
   display: block;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -2277,9 +2347,9 @@ ul.inline li {
   margin-right: 10px;
 }
 ul.inline li:after {
-  display: inline-block;
-  content: '\2022';
   color: #ccc;
+  content: '\2022';
+  display: inline-block;
   padding-left: 10px;
 }
 ul.inline li:last-child:after {
@@ -2292,18 +2362,23 @@ table {
   border-spacing: 0;
 }
 
-caption, th, td {
+caption,
+th,
+td {
   font-weight: normal;
   text-align: left;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: "";
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
 }
 
-blockquote, q {
-  quotes: "" "";
+blockquote,
+q {
+  quotes: '" "';
 }
 
 a:focus {
@@ -2329,34 +2404,28 @@ select,
 textarea {
   color: #3b3b3b;
   font-family: "Open Sans", sans-serif;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   clear: both;
 }
 
-h1, h2, h3, h4 {
-  margin: 30px 0;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
+h1,
+h2,
+h3,
+h4 {
+  color: #262b30;
   font-size: 24px;
   font-size: 2.4rem;
-  color: #262b30;
+  margin: 30px 0;
 }
 
 h1 {
@@ -2365,38 +2434,18 @@ h1 {
 
 h2 {
   margin-bottom: 20px;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 26px;
   font-size: 2.6rem;
 }
 
-h3, h4 {
+h3,
+h4 {
   margin: 20px 0 10px;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 22px;
   font-size: 2.2rem;
 }
 
 h4 {
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 20px;
   font-size: 2rem;
 }
@@ -2407,9 +2456,9 @@ ul {
 }
 
 p {
-  margin: 30px 0;
-  line-height: 38px;
   color: #333332;
+  line-height: 38px;
+  margin: 30px 0;
   word-wrap: break-word;
 }
 p img {
@@ -2426,40 +2475,37 @@ p img.alignright {
   margin-left: 15px;
 }
 
-b, strong {
+b,
+strong {
   font-weight: bold;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
   font-style: italic;
 }
 
 blockquote,
 q {
-  margin: 30px 0;
   border-left: 3px solid #c6d5e1;
-  padding: 5px 0 5px 30px;
-  line-height: 38px;
   color: #888;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 22px;
   font-size: 2.2rem;
+  line-height: 38px;
+  margin: 30px 0;
+  padding: 5px 0 5px 30px;
 }
 blockquote cite,
 blockquote p,
 q cite,
 q p {
-  margin: 0;
-  padding: 0;
-  border: none;
+  border: 0;
   color: #888;
   display: block;
+  margin: 0;
+  padding: 0;
 }
 blockquote cite,
 q cite {
@@ -2478,53 +2524,41 @@ address {
   margin: 0 0 1.5em;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
   font: 15px "Source Code Pro", monospace;
 }
 
 code {
-  padding: 2px 6px;
-  margin: 0 5px;
   background: #f3f3f3;
   border: 1px solid #e6e6e6;
+  margin: 0 5px;
+  padding: 2px 6px;
 }
 
 pre {
   background: #313339;
+  border: 0;
+  color: #fff;
   font-family: "Source Code Pro", monospace;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 15px;
   font-size: 1.5rem;
   line-height: 28px;
+  margin: 40px 0;
   max-width: 100%;
   overflow: auto;
-  padding: 1.6em;
-  border: 0;
-  color: #fff;
-  margin: 40px 0;
-  padding: 25px 35px;
-}
-pre.prettyprint {
-  line-height: 36px;
-}
-.entry-content pre.prettyprint {
-  border: 0;
   padding: 25px 35px;
 }
 pre code {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  color: #eee;
-  line-height: 28px;
-  background: 0 0;
+  background: 0;
   border: 0;
+  color: #eee;
+  display: inline-block;
+  line-height: 28px;
+  margin: 0;
+  padding: 0;
 }
 
 code .kwd,
@@ -2549,12 +2583,14 @@ pre .lit {
   color: #ae81ff;
 }
 
-abbr, acronym {
+abbr,
+acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
   background: #fff9c0;
   text-decoration: none;
 }
@@ -2588,14 +2624,15 @@ big {
 3.0 Elements
 --------------------------------------------------------------*/
 hr {
-  border: 0;
   background: #d8d6de;
+  border: 0;
   height: 1px;
-  margin-top: 30px;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
-ul, ol {
+ul,
+ol {
   margin: 0 0 1.5em 3em;
 }
 
@@ -2660,23 +2697,16 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+  -webkit-appearance: button;
+  /* Corrects inability to style clickable 'input' types in iOS */
+  background: #e6e6e6;
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
-  background: #e6e6e6;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
   /* Improves usability and consistency of cursor style between image-type 'input' and others */
-  -webkit-appearance: button;
-  /* Corrects inability to style clickable 'input' types in iOS */
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 12px;
   font-size: 1.2rem;
   line-height: 1;
@@ -2710,9 +2740,9 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* Addresses appearance set to searchfield in S5, Chrome */
+  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -2734,9 +2764,9 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-  color: #666;
   border: 1px solid #ccc;
   border-radius: 3px;
+  color: #666;
 }
 
 input[type="text"]:focus,
@@ -2797,7 +2827,7 @@ a:hover {
   text-decoration: none;
   color: #02549f;
 }
-.entry-summary a:hover, .entry-content a:hover, .info a:hover, .edit-link a:hover, .entry-meta a:hover {
+.entry-summary a:hover, .entry-content a:hover, .edit-link a:hover, .entry-meta a:hover {
   border-color: #c3c2c9;
 }
 a.block {
@@ -2891,13 +2921,6 @@ a.block:hover {
   height: 59px;
   color: #fff;
   cursor: pointer;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 30px;
   font-size: 3rem;
 }
@@ -2942,13 +2965,6 @@ a.block:hover {
 .paging-navigation .nav-previous a, .paging-navigation
 .nav-next a {
   padding: 8px 15px;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 14px;
   font-size: 1.4rem;
   border: 0;
@@ -3080,25 +3096,160 @@ a:hover .post-nav-container .post-nav-background:after {
 }
 
 /*--------------------------------------------------------------
-5.3 Header
+6.0 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+}
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar */
+}
+
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+8.0 Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.entry-content:before,
+.comment-content:before,
+.site-header:before,
+.site-content:before,
+.site-footer:before, .clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after,
+.cf:before,
+.cf:after {
+  content: '';
+  display: table;
+}
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after,
+.cf:after {
+  clear: both;
+}
+
+/*--------------------------------------------------------------
+9.0 Widgets
+--------------------------------------------------------------*/
+.widget {
+  margin: 60px 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+.widget ul {
+  list-style: none;
+  margin-left: 0;
+}
+.widget ul ul {
+  margin-left: 40px;
+}
+.widget li a {
+  border-color: #ddd;
+  border-width: 1px;
+  display: block;
+  padding: 10px 15px;
+}
+.widget a:hover {
+  background: #ddd;
+}
+.widget select {
+  max-width: 100%;
+}
+.widget .tagcloud {
+  text-align: center;
+}
+.widget .tagcloud a:hover {
+  background: transparent;
+  border-color: #c3c2c9;
+}
+.widget_search .search-submit {
+  display: none;
+}
+.widget-title {
+  color: #999;
+  font-size: 30px;
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+/*--------------------------------------------------------------
+X.X Header
 --------------------------------------------------------------*/
 .header {
-  position: absolute;
-  width: 100%;
-  padding: 20px;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 24px;
   font-size: 2.4rem;
+  padding: 20px;
+  position: absolute;
   -webkit-transition: all 200ms;
   -moz-transition: all 200ms;
   -o-transition: all 200ms;
   transition: all 200ms;
+  width: 100%;
   z-index: 600;
 }
 @media screen and (max-width: 768px) {
@@ -3129,20 +3280,13 @@ a:hover .post-nav-container .post-nav-background:after {
   visibility: hidden;
 }
 .header .site-description {
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
+  border: 0 solid rgba(255, 255, 255, 0.25);
+  border-left-width: 1px;
+  color: #fff;
   font-size: 14px;
   font-size: 1.4rem;
   margin-left: 20px;
   padding-left: 20px;
-  color: #fff;
-  border: 0 solid rgba(255, 255, 255, 0.25);
-  border-left-width: 1px;
   vertical-align: middle;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -3151,20 +3295,20 @@ a:hover .post-nav-container .post-nav-background:after {
 }
 @media screen and (max-width: 768px) {
   .header .site-description {
+    border-left-width: 0;
+    border-top-width: 1px;
     display: block;
     margin: 10px 0 0;
     padding: 10px 0 0;
-    border-left-width: 0;
-    border-top-width: 1px;
   }
 }
-.header .site-description .avatar {
+.header .avatar {
   margin-right: 5px;
 }
-.header .site-description .author a:hover {
+.header .author a:hover {
   border-color: transparent;
 }
-.header .site-description .author a:hover .name {
+.header .author a:hover .name {
   border-color: #fff;
 }
 
@@ -3179,44 +3323,44 @@ a:hover .post-nav-container .post-nav-background:after {
 5.4 Nav menu, which animates into close x
 --------------------------------------------------------------*/
 .hamburger {
+  border: 0;
   display: block;
-  width: 28px;
+  float: right;
   height: 30px;
   margin: 0 auto -15px;
   padding-top: 15px;
-  float: right;
-  border: 0;
+  width: 28px;
 }
-
-.hamburger span:after,
-.hamburger span:before {
-  content: "";
-  position: absolute;
+.hamburger span {
+  display: block;
+  position: relative;
+}
+.hamburger span:before, .hamburger span:after {
+  content: '';
   left: 0;
+  position: absolute;
   top: -9px;
 }
-
 .hamburger span:after {
   top: 9px;
-}
-
-.hamburger span {
-  position: relative;
-  display: block;
 }
 
 .hamburger span,
 .hamburger span:after,
 .hamburger span:before {
-  width: 100%;
-  height: 5px;
-  background-color: #fff;
   backface-visibility: hidden;
+  background-color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
   border-radius: 2px;
+  height: 5px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .hamburger span,
@@ -3237,13 +3381,19 @@ a:hover .post-nav-container .post-nav-background:after {
   }
 }
 .show-overlay .hamburger {
-  pointer-events: auto;
   margin-right: 18px;
+  pointer-events: auto;
 }
 @media screen and (max-width: 768px) {
   .show-overlay .hamburger {
     margin-right: 0;
   }
+}
+.show-overlay .hamburger span:before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.show-overlay .hamburger span:after {
+  transform: rotate(-45deg) translate(7px, -8px);
 }
 
 .show-overlay .hamburger span,
@@ -3256,44 +3406,41 @@ a:hover .post-nav-container .post-nav-background:after {
   background-color: #fff !important;
 }
 
-.show-overlay .hamburger span:before {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.show-overlay .hamburger span:after {
-  transform: rotate(-45deg) translate(7px, -8px);
-}
-
 /*--------------------------------------------------------------
-5.5 Overlay for menus and widgets
+X.X Overlay for menus and widgets
 --------------------------------------------------------------*/
 .overlay {
-  position: fixed;
-  overflow: auto;
   background: #333;
-  height: 100%;
-  left: 0;
-  right: 0;
-  z-index: 500;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 20px;
   font-size: 2rem;
+  height: 100%;
+  left: 0;
   opacity: 0;
-  visibility: hidden;
+  overflow: auto;
   padding: 60px 0;
+  position: fixed;
+  right: 0;
   -webkit-transition: opacity 200ms;
   -moz-transition: opacity 200ms;
   -o-transition: opacity 200ms;
   transition: opacity 200ms;
+  visibility: hidden;
+  z-index: 500;
 }
 .overlay a {
   color: #fff;
+  width: auto;
+}
+.overlay a:hover {
+  background: #666;
+}
+.overlay .widget-area {
+  color: #ccc;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+.overlay .tag-cloud a:hover {
+  border-color: #fff;
 }
 .overlay ul.menu {
   list-style: none;
@@ -3301,13 +3448,10 @@ a:hover .post-nav-container .post-nav-background:after {
   padding-left: 0;
 }
 .overlay ul.menu ul {
-  position: static;
-  float: none;
   box-shadow: none;
+  float: none;
   margin-left: 40px;
-}
-.overlay ul.menu ul a {
-  width: auto;
+  position: static;
 }
 .overlay ul.menu li {
   float: none;
@@ -3322,26 +3466,13 @@ a:hover .post-nav-container .post-nav-background:after {
 }
 .overlay .main-navigation,
 .overlay .social-navigation {
-  width: 90%;
+  float: none;
+  margin-bottom: 60px;
+  margin-top: 60px;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 60px;
-  margin-bottom: 60px;
-  float: none;
-}
-.overlay .social-navigation ul.menu {
-  text-align: center;
-}
-.overlay .social-navigation ul.menu li {
-  display: inline-block;
-}
-.overlay .social-navigation ul.menu a {
-  border: none;
-  padding: 0;
-}
-.overlay .social-navigation ul.menu a:hover {
-  background: transparent;
+  width: 90%;
 }
 .overlay .social-navigation a[href*='facebook'] .fa-circle {
   color: #3b5998;
@@ -3416,7 +3547,7 @@ a:hover .post-nav-container .post-nav-background:after {
   color: #dd4b39;
 }
 .overlay .social-navigation a[href*='github'] .fa-circle {
-  color: #4183C4;
+  color: #4183c4;
 }
 .overlay .social-navigation a[href*='github'] .fa-circle:before {
   -webkit-transition: color 200ms;
@@ -3437,10 +3568,10 @@ a:hover .post-nav-container .post-nav-background:after {
   color: #fff;
 }
 .overlay .social-navigation a[href*='github']:hover .social-icon {
-  color: #4183C4;
+  color: #4183c4;
 }
 .overlay .social-navigation a[href*='foursqaure'] .fa-circle {
-  color: #0072B1;
+  color: #0072b1;
 }
 .overlay .social-navigation a[href*='foursqaure'] .fa-circle:before {
   -webkit-transition: color 200ms;
@@ -3461,10 +3592,10 @@ a:hover .post-nav-container .post-nav-background:after {
   color: #fff;
 }
 .overlay .social-navigation a[href*='foursqaure']:hover .social-icon {
-  color: #0072B1;
+  color: #0072b1;
 }
 .overlay .social-navigation a[href*='flickr'] .fa-circle {
-  color: #FF0084;
+  color: #ff0084;
 }
 .overlay .social-navigation a[href*='flickr'] .fa-circle:before {
   -webkit-transition: color 200ms;
@@ -3485,10 +3616,10 @@ a:hover .post-nav-container .post-nav-background:after {
   color: #fff;
 }
 .overlay .social-navigation a[href*='flickr']:hover .social-icon {
-  color: #FF0084;
+  color: #ff0084;
 }
 .overlay .social-navigation a[href*='linkedin'] .fa-circle {
-  color: #0976B4;
+  color: #0976b4;
 }
 .overlay .social-navigation a[href*='linkedin'] .fa-circle:before {
   -webkit-transition: color 200ms;
@@ -3509,10 +3640,10 @@ a:hover .post-nav-container .post-nav-background:after {
   color: #fff;
 }
 .overlay .social-navigation a[href*='linkedin']:hover .social-icon {
-  color: #0976B4;
+  color: #0976b4;
 }
 .overlay .social-navigation a[href*='youtube'] .fa-circle {
-  color: #E52D27;
+  color: #e52d27;
 }
 .overlay .social-navigation a[href*='youtube'] .fa-circle:before {
   -webkit-transition: color 200ms;
@@ -3533,10 +3664,10 @@ a:hover .post-nav-container .post-nav-background:after {
   color: #fff;
 }
 .overlay .social-navigation a[href*='youtube']:hover .social-icon {
-  color: #E52D27;
+  color: #e52d27;
 }
 .overlay .social-navigation a[href*='wordpress'] .fa-circle {
-  color: #21759B;
+  color: #21759b;
 }
 .overlay .social-navigation a[href*='wordpress'] .fa-circle:before {
   -webkit-transition: color 200ms;
@@ -3557,7 +3688,7 @@ a:hover .post-nav-container .post-nav-background:after {
   color: #fff;
 }
 .overlay .social-navigation a[href*='wordpress']:hover .social-icon {
-  color: #21759B;
+  color: #21759b;
 }
 .overlay .social-navigation a[href*='codepen'] .fa-circle {
   color: #60c2ff;
@@ -3631,9 +3762,20 @@ a:hover .post-nav-container .post-nav-background:after {
 .overlay .social-navigation a[href*='tumblr']:hover .social-icon {
   color: #2c4762;
 }
+.overlay .social-navigation ul.menu {
+  text-align: center;
+}
+.overlay .social-navigation li {
+  display: inline-block;
+}
+.overlay .social-navigation a {
+  border: 0;
+  padding: 0;
+}
+.overlay .social-navigation a:hover {
+  background: transparent;
+}
 .overlay .search-form input.search-field {
-  width: 100%;
-  padding: 10px;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -3642,296 +3784,12 @@ a:hover .post-nav-container .post-nav-background:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
 }
 .show-overlay .overlay {
   opacity: 1;
   visibility: visible;
-}
-
-/*--------------------------------------------------------------
-5.5 Headroom.js
---------------------------------------------------------------*/
-@media screen and (min-width: 769px) {
-  .header.headroom {
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-  }
-  .header.headroom--pinned {
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -o-transform: translateY(0);
-    transform: translateY(0);
-  }
-  .header.headroom--unpinned {
-    -webkit-transform: translateY(-100%);
-    -moz-transform: translateY(-100%);
-    -o-transform: translateY(-100%);
-    transform: translateY(-100%);
-  }
-  .header.headroom--not-top {
-    position: fixed;
-    background: #fff;
-    background: rgba(255, 255, 255, 0.95);
-    color: #000;
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-    -o-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-  }
-  .header.headroom--not-top a {
-    color: #000;
-  }
-  .header.headroom--not-top a:hover {
-    color: #026ed2;
-    border-color: transparent;
-  }
-  .header.headroom--not-top .site-info {
-    opacity: 1;
-    visibility: visible;
-  }
-  .show-overlay .header.headroom--not-top .site-info {
-    opacity: 0;
-    visibility: hidden;
-  }
-  .header.headroom--not-top .site-description {
-    color: #000;
-    border-color: rgba(0, 0, 0, 0.25);
-  }
-  .header.headroom--not-top .site-description .author a:hover .name {
-    border-color: transparent;
-  }
-}
-.show-overlay .header.headroom--not-top {
-  background: transparent;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  transition-delay: 0, 0;
-}
-
-/*--------------------------------------------------------------
-5.6 Jetpack Infinite Scroll
---------------------------------------------------------------*/
-#infinite-handle {
-  padding: 50px 0;
-  text-align: center;
-}
-#infinite-handle span {
-  padding: 8px 15px;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
-  font-size: 14px;
-  font-size: 1.4rem;
-  border: 0;
-  background: #026ed2;
-  color: #fff;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-  border-radius: 25px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-#infinite-handle span:hover {
-  background: #02549f;
-  color: #fff;
-}
-
-.infinite-loader {
-  margin: 50px 0;
-}
-.infinite-loader .spinner {
-  margin: 0 auto;
-}
-
-/*--------------------------------------------------------------
-6.0 Accessibility
---------------------------------------------------------------*/
-/* Text meant only for screen readers */
-.screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
-  background-color: #f1f1f1;
-  border-radius: 3px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  clip: auto !important;
-  color: #21759b;
-  display: block;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
-  font-size: 14px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000;
-  /* Above WP toolbar */
-}
-
-/*--------------------------------------------------------------
-7.0 Alignments
---------------------------------------------------------------*/
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
-}
-
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
-}
-
-.aligncenter {
-  clear: both;
-  display: block;
-  margin: 0 auto;
-}
-
-.align-left {
-  text-align: left;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.align-center {
-  text-align: center;
-}
-
-.hide {
-  display: none;
-}
-
-/*--------------------------------------------------------------
-8.0 Clearings
---------------------------------------------------------------*/
-.cf, .clear,
-.entry-content,
-.comment-content,
-.site-header,
-.site-content,
-.site-footer {
-  *zoom: 1;
-}
-.cf:before, .clear:before,
-.entry-content:before,
-.comment-content:before,
-.site-header:before,
-.site-content:before,
-.site-footer:before, .cf:after, .clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-  content: '';
-  display: table;
-}
-.cf:after, .clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-  clear: both;
-}
-
-/*--------------------------------------------------------------
-9.0 Widgets
---------------------------------------------------------------*/
-.widget {
-  margin: 0 0 1.5em;
-  width: 90%;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-.widget ul {
-  list-style: none;
-  margin-left: 0;
-}
-.widget ul ul {
-  margin-left: 40px;
-}
-.widget li a {
-  display: block;
-  border-color: #ddd;
-  border-width: 1px;
-  padding: 10px 15px;
-}
-.overlay .widget li a {
-  border-color: #666;
-}
-.widget a:hover {
-  background: #ddd;
-}
-.overlay .widget a:hover {
-  background: #666;
-}
-.widget select {
-  max-width: 100%;
-}
-.widget .tagcloud {
-  text-align: center;
-}
-.widget .tagcloud a:hover {
-  background: transparent;
-  border-color: #c3c2c9;
-}
-.overlay .widget .tagcloud a:hover {
-  border-color: #fff;
-}
-.widget_search .search-submit {
-  display: none;
-}
-.overlay .widget-area {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  color: #ccc;
-}
-.widget-title {
-  color: #999;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
-  font-size: 30px;
-  font-size: 3rem;
-  margin-bottom: 15px;
 }
 
 /*--------------------------------------------------------------
@@ -3950,43 +3808,43 @@ a:hover .post-nav-container .post-nav-background:after {
 .sticky.hentry {
   margin-top: -50px;
 }
-.sticky .entry-header h1 a {
+.sticky .entry-title a {
   color: #fff;
   padding-bottom: 2px;
 }
-.sticky .entry-header h1 a:hover {
-  color: #fff;
+.sticky .entry-title a:hover {
   border-color: #fff;
+  color: #fff;
 }
-.sticky .entry-header h2 a {
+.sticky .entry-subtitle a {
   color: #aaa;
 }
-.sticky .entry-header h2 a:hover {
-  color: #aaa;
+.sticky .entry-subtitle a:hover {
   border-color: #999;
+  color: #aaa;
 }
 .sticky * {
   color: #fff;
 }
 
 .hentry {
-  padding: 50px 0;
   clear: both;
   margin: 0;
+  padding: 50px 0;
   position: relative;
 }
 .hentry:after {
-  width: 90%;
+  background: rgba(0, 0, 0, 0.15);
+  bottom: 0;
+  content: '';
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
-  content: '';
-  height: 1px;
-  background: rgba(0, 0, 0, 0.15);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  width: 90%;
 }
 .single .hentry:after {
   display: none;
@@ -4006,53 +3864,39 @@ a:hover .post-nav-container .post-nav-background:after {
 }
 
 .entry-header {
-  width: 90%;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
 }
-.entry-header h1 {
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
+.entry-header .span {
+  color: #b6b6b6;
+}
+.entry-title {
   font-size: 30px;
   font-size: 3rem;
   margin: 0;
 }
-.entry-header h1 a {
-  position: relative;
-  padding: 10px 0;
+.entry-title a {
   color: #262b30;
+  padding: 10px 0;
+  position: relative;
 }
-.entry-header h1 a:hover {
-  color: #026ed2;
+.entry-title a:hover {
   border-color: transparent;
+  color: #026ed2;
 }
-.entry-header h2 {
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
+.entry-subtitle {
   font-size: 20px;
   font-size: 2rem;
   color: #999;
   margin: 0;
 }
-.entry-header h2 a {
+.entry-subtitle a {
   color: #999;
 }
-.entry-header h2 a:hover {
+.entry-subtitle a:hover {
   color: #026ed2;
-}
-.entry-header .span {
-  color: #b6b6b6;
 }
 .entry-summary {
   margin: 0;
@@ -4064,155 +3908,71 @@ a:hover .post-nav-container .post-nav-background:after {
   margin-top: 0;
 }
 .entry-summary > * {
-  width: 90%;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
 }
 .entry-summary .tiled-gallery {
   margin-top: 30px;
 }
-.entry-content > h1 {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > h2 {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > h3 {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > h4 {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > h5 {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > h6 {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > div {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > span {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > p {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > ul {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > ol {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > blockquote {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > pre {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > hr {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > form {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > iframe {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > address {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.entry-content > table {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
+.entry-content > h1,
+.entry-content > h2,
+.entry-content > h3,
+.entry-content > h4,
+.entry-content > h5,
+.entry-content > h6,
+.entry-content > div,
+.entry-content > span,
+.entry-content > p,
+.entry-content > ul,
+.entry-content > ol,
+.entry-content > blockquote,
+.entry-content > pre,
+.entry-content > hr,
+.entry-content > form,
+.entry-content > iframe,
+.entry-content > address,
+.entry-content > table,
 .entry-content > dl {
-  width: 90%;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
 }
-.entry-content > ul {
-  list-style-position: inside;
-}
+.entry-content > ul,
 .entry-content > ol {
   list-style-position: inside;
 }
-.entry-content > section > h2, .entry-content > section > p {
-  width: 90%;
+.entry-content > section > h2,
+.entry-content > section > p {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
 }
 .entry-content > .twitter-tweet {
   margin-left: auto !important;
   margin-right: auto !important;
-  width: 90% !important;
   max-width: 760px !important;
+  width: 90% !important;
 }
-.entry-content > h2:first-child, .entry-content > p:first-child {
+.entry-content > h2:first-child,
+.entry-content > p:first-child {
   margin-top: 0;
 }
-.entry-content > p:first-child, .entry-content > p:first-of-type, .entry-content > p:first-child:empty + p, .entry-content > p:first-of-type:empty + p,
+.entry-content > p:first-child,
+.entry-content > p:first-of-type,
+.entry-content > p:first-child:empty + p,
+.entry-content > p:first-of-type:empty + p,
 .entry-content p.lead {
-  font-weight: bold;
   color: #1d1d1d;
+  font-weight: bold;
 }
-.entry-content > p:first-child a:hover, .entry-content > p:first-of-type a:hover, .entry-content > p:first-child:empty + p a:hover, .entry-content > p:first-of-type:empty + p a:hover,
+.entry-content > p:first-child a:hover,
+.entry-content > p:first-of-type a:hover,
+.entry-content > p:first-child:empty + p a:hover,
+.entry-content > p:first-of-type:empty + p a:hover,
 .entry-content p.lead a:hover {
   border-width: 2px;
 }
@@ -4220,35 +3980,21 @@ a:hover .post-nav-container .post-nav-background:after {
   max-width: 250px;
 }
 .entry-content > blockquote.large {
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 40px;
   font-size: 4rem;
   border: 0;
-  position: relative;
-  padding: 0;
   max-width: 1000px;
+  padding: 0;
+  position: relative;
   text-align: center;
 }
 .entry-content > blockquote.pullquote {
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
+  border: 0;
   font-size: 30px;
   font-size: 3rem;
+  max-width: 500px;
   padding: 0;
   text-align: center;
-  border: 0;
-  max-width: 500px;
 }
 .entry-content > blockquote.pullquote.left {
   float: left;
@@ -4259,23 +4005,23 @@ a:hover .post-nav-container .post-nav-background:after {
   text-align: right;
 }
 .entry-content > blockquote.pullquote.left, .entry-content > blockquote.pullquote.right {
-  width: 400px;
   margin: 10px 30px;
+  width: 400px;
 }
 @media screen and (max-width: 768px) {
   .entry-content > blockquote.pullquote.left, .entry-content > blockquote.pullquote.right {
-    width: 90%;
+    float: none;
+    text-align: center;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-    float: none;
-    text-align: center;
+    width: 90%;
   }
 }
 .entry-content > .tiled-gallery {
-  width: 100%;
-  max-width: 100%;
   margin: 30px 0;
+  max-width: 100%;
+  width: 100%;
 }
 .entry-meta {
   margin-top: 30px;
@@ -4316,10 +4062,10 @@ a:hover .post-nav-container .post-nav-background:after {
 }
 
 footer.entry-meta {
-  width: 90%;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
 }
 
 .edit-link {
@@ -4327,10 +4073,10 @@ footer.entry-meta {
 }
 
 .site-main [class*="navigation"] {
-  width: 90%;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
   padding: 50px 0;
 }
 
@@ -4338,10 +4084,10 @@ footer.entry-meta {
 10.4 Page Errors
 --------------------------------------------------------------*/
 .not-found {
-  width: 90%;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
 }
 
 /*--------------------------------------------------------------
@@ -4357,13 +4103,6 @@ ul.tags li {
 }
 ul.tags a {
   padding: 8px 15px;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 14px;
   font-size: 1.4rem;
   border: 0;
@@ -4387,14 +4126,11 @@ ul.tags a:hover {
 /*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .paging-navigation,
 .infinite-scroll.neverending .site-footer {
-  /* Theme Footer (when set to scrolling) */
   display: none;
 }
 
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
   display: block;
 }
@@ -4410,478 +4146,477 @@ img.avatar {
   border-radius: 50%;
 }
 img.avatar-20 {
-  width: 20px;
-  height: 20px;
   display: inline-block;
+  height: 20px;
   vertical-align: middle;
+  width: 20px;
 }
 img.avatar-21 {
-  width: 21px;
-  height: 21px;
   display: inline-block;
+  height: 21px;
   vertical-align: middle;
+  width: 21px;
 }
 img.avatar-22 {
-  width: 22px;
-  height: 22px;
   display: inline-block;
+  height: 22px;
   vertical-align: middle;
+  width: 22px;
 }
 img.avatar-23 {
-  width: 23px;
-  height: 23px;
   display: inline-block;
+  height: 23px;
   vertical-align: middle;
+  width: 23px;
 }
 img.avatar-24 {
-  width: 24px;
-  height: 24px;
   display: inline-block;
+  height: 24px;
   vertical-align: middle;
+  width: 24px;
 }
 img.avatar-25 {
-  width: 25px;
-  height: 25px;
   display: inline-block;
+  height: 25px;
   vertical-align: middle;
+  width: 25px;
 }
 img.avatar-26 {
-  width: 26px;
-  height: 26px;
   display: inline-block;
+  height: 26px;
   vertical-align: middle;
+  width: 26px;
 }
 img.avatar-27 {
-  width: 27px;
-  height: 27px;
   display: inline-block;
+  height: 27px;
   vertical-align: middle;
+  width: 27px;
 }
 img.avatar-28 {
-  width: 28px;
-  height: 28px;
   display: inline-block;
+  height: 28px;
   vertical-align: middle;
+  width: 28px;
 }
 img.avatar-29 {
-  width: 29px;
-  height: 29px;
   display: inline-block;
+  height: 29px;
   vertical-align: middle;
+  width: 29px;
 }
 img.avatar-30 {
-  width: 30px;
-  height: 30px;
   display: inline-block;
+  height: 30px;
   vertical-align: middle;
+  width: 30px;
 }
 img.avatar-31 {
-  width: 31px;
-  height: 31px;
   display: inline-block;
+  height: 31px;
   vertical-align: middle;
+  width: 31px;
 }
 img.avatar-32 {
-  width: 32px;
-  height: 32px;
   display: inline-block;
+  height: 32px;
   vertical-align: middle;
+  width: 32px;
 }
 img.avatar-33 {
-  width: 33px;
-  height: 33px;
   display: inline-block;
+  height: 33px;
   vertical-align: middle;
+  width: 33px;
 }
 img.avatar-34 {
-  width: 34px;
-  height: 34px;
   display: inline-block;
+  height: 34px;
   vertical-align: middle;
+  width: 34px;
 }
 img.avatar-35 {
-  width: 35px;
-  height: 35px;
   display: inline-block;
+  height: 35px;
   vertical-align: middle;
+  width: 35px;
 }
 img.avatar-36 {
-  width: 36px;
-  height: 36px;
   display: inline-block;
+  height: 36px;
   vertical-align: middle;
+  width: 36px;
 }
 img.avatar-37 {
-  width: 37px;
-  height: 37px;
   display: inline-block;
+  height: 37px;
   vertical-align: middle;
+  width: 37px;
 }
 img.avatar-38 {
-  width: 38px;
-  height: 38px;
   display: inline-block;
+  height: 38px;
   vertical-align: middle;
+  width: 38px;
 }
 img.avatar-39 {
-  width: 39px;
-  height: 39px;
   display: inline-block;
+  height: 39px;
   vertical-align: middle;
+  width: 39px;
 }
 img.avatar-40 {
-  width: 40px;
-  height: 40px;
   display: inline-block;
+  height: 40px;
   vertical-align: middle;
+  width: 40px;
 }
 img.avatar-41 {
-  width: 41px;
-  height: 41px;
   display: inline-block;
+  height: 41px;
   vertical-align: middle;
+  width: 41px;
 }
 img.avatar-42 {
-  width: 42px;
-  height: 42px;
   display: inline-block;
+  height: 42px;
   vertical-align: middle;
+  width: 42px;
 }
 img.avatar-43 {
-  width: 43px;
-  height: 43px;
   display: inline-block;
+  height: 43px;
   vertical-align: middle;
+  width: 43px;
 }
 img.avatar-44 {
-  width: 44px;
-  height: 44px;
   display: inline-block;
+  height: 44px;
   vertical-align: middle;
+  width: 44px;
 }
 img.avatar-45 {
-  width: 45px;
-  height: 45px;
   display: inline-block;
+  height: 45px;
   vertical-align: middle;
+  width: 45px;
 }
 img.avatar-46 {
-  width: 46px;
-  height: 46px;
   display: inline-block;
+  height: 46px;
   vertical-align: middle;
+  width: 46px;
 }
 img.avatar-47 {
-  width: 47px;
-  height: 47px;
   display: inline-block;
+  height: 47px;
   vertical-align: middle;
+  width: 47px;
 }
 img.avatar-48 {
-  width: 48px;
-  height: 48px;
   display: inline-block;
+  height: 48px;
   vertical-align: middle;
+  width: 48px;
 }
 img.avatar-49 {
-  width: 49px;
-  height: 49px;
   display: inline-block;
+  height: 49px;
   vertical-align: middle;
+  width: 49px;
 }
 img.avatar-50 {
-  width: 50px;
-  height: 50px;
   display: inline-block;
+  height: 50px;
   vertical-align: middle;
+  width: 50px;
 }
 img.avatar-51 {
-  width: 51px;
-  height: 51px;
   display: inline-block;
+  height: 51px;
   vertical-align: middle;
+  width: 51px;
 }
 img.avatar-52 {
-  width: 52px;
-  height: 52px;
   display: inline-block;
+  height: 52px;
   vertical-align: middle;
+  width: 52px;
 }
 img.avatar-53 {
-  width: 53px;
-  height: 53px;
   display: inline-block;
+  height: 53px;
   vertical-align: middle;
+  width: 53px;
 }
 img.avatar-54 {
-  width: 54px;
-  height: 54px;
   display: inline-block;
+  height: 54px;
   vertical-align: middle;
+  width: 54px;
 }
 img.avatar-55 {
-  width: 55px;
-  height: 55px;
   display: inline-block;
+  height: 55px;
   vertical-align: middle;
+  width: 55px;
 }
 img.avatar-56 {
-  width: 56px;
-  height: 56px;
   display: inline-block;
+  height: 56px;
   vertical-align: middle;
+  width: 56px;
 }
 img.avatar-57 {
-  width: 57px;
-  height: 57px;
   display: inline-block;
+  height: 57px;
   vertical-align: middle;
+  width: 57px;
 }
 img.avatar-58 {
-  width: 58px;
-  height: 58px;
   display: inline-block;
+  height: 58px;
   vertical-align: middle;
+  width: 58px;
 }
 img.avatar-59 {
-  width: 59px;
-  height: 59px;
   display: inline-block;
+  height: 59px;
   vertical-align: middle;
+  width: 59px;
 }
 img.avatar-60 {
-  width: 60px;
-  height: 60px;
   display: inline-block;
+  height: 60px;
   vertical-align: middle;
+  width: 60px;
 }
 img.avatar-61 {
-  width: 61px;
-  height: 61px;
   display: inline-block;
+  height: 61px;
   vertical-align: middle;
+  width: 61px;
 }
 img.avatar-62 {
-  width: 62px;
-  height: 62px;
   display: inline-block;
+  height: 62px;
   vertical-align: middle;
+  width: 62px;
 }
 img.avatar-63 {
-  width: 63px;
-  height: 63px;
   display: inline-block;
+  height: 63px;
   vertical-align: middle;
+  width: 63px;
 }
 img.avatar-64 {
-  width: 64px;
-  height: 64px;
   display: inline-block;
+  height: 64px;
   vertical-align: middle;
+  width: 64px;
 }
 img.avatar-65 {
-  width: 65px;
-  height: 65px;
   display: inline-block;
+  height: 65px;
   vertical-align: middle;
+  width: 65px;
 }
 img.avatar-66 {
-  width: 66px;
-  height: 66px;
   display: inline-block;
+  height: 66px;
   vertical-align: middle;
+  width: 66px;
 }
 img.avatar-67 {
-  width: 67px;
-  height: 67px;
   display: inline-block;
+  height: 67px;
   vertical-align: middle;
+  width: 67px;
 }
 img.avatar-68 {
-  width: 68px;
-  height: 68px;
   display: inline-block;
+  height: 68px;
   vertical-align: middle;
+  width: 68px;
 }
 img.avatar-69 {
-  width: 69px;
-  height: 69px;
   display: inline-block;
+  height: 69px;
   vertical-align: middle;
+  width: 69px;
 }
 img.avatar-70 {
-  width: 70px;
-  height: 70px;
   display: inline-block;
+  height: 70px;
   vertical-align: middle;
+  width: 70px;
 }
 img.avatar-71 {
-  width: 71px;
-  height: 71px;
   display: inline-block;
+  height: 71px;
   vertical-align: middle;
+  width: 71px;
 }
 img.avatar-72 {
-  width: 72px;
-  height: 72px;
   display: inline-block;
+  height: 72px;
   vertical-align: middle;
+  width: 72px;
 }
 img.avatar-73 {
-  width: 73px;
-  height: 73px;
   display: inline-block;
+  height: 73px;
   vertical-align: middle;
+  width: 73px;
 }
 img.avatar-74 {
-  width: 74px;
-  height: 74px;
   display: inline-block;
+  height: 74px;
   vertical-align: middle;
+  width: 74px;
 }
 img.avatar-75 {
-  width: 75px;
-  height: 75px;
   display: inline-block;
+  height: 75px;
   vertical-align: middle;
+  width: 75px;
 }
 img.avatar-76 {
-  width: 76px;
-  height: 76px;
   display: inline-block;
+  height: 76px;
   vertical-align: middle;
+  width: 76px;
 }
 img.avatar-77 {
-  width: 77px;
-  height: 77px;
   display: inline-block;
+  height: 77px;
   vertical-align: middle;
+  width: 77px;
 }
 img.avatar-78 {
-  width: 78px;
-  height: 78px;
   display: inline-block;
+  height: 78px;
   vertical-align: middle;
+  width: 78px;
 }
 img.avatar-79 {
-  width: 79px;
-  height: 79px;
   display: inline-block;
+  height: 79px;
   vertical-align: middle;
+  width: 79px;
 }
 img.avatar-80 {
-  width: 80px;
-  height: 80px;
   display: inline-block;
+  height: 80px;
   vertical-align: middle;
+  width: 80px;
 }
 img.avatar-81 {
-  width: 81px;
-  height: 81px;
   display: inline-block;
+  height: 81px;
   vertical-align: middle;
+  width: 81px;
 }
 img.avatar-82 {
-  width: 82px;
-  height: 82px;
   display: inline-block;
+  height: 82px;
   vertical-align: middle;
+  width: 82px;
 }
 img.avatar-83 {
-  width: 83px;
-  height: 83px;
   display: inline-block;
+  height: 83px;
   vertical-align: middle;
+  width: 83px;
 }
 img.avatar-84 {
-  width: 84px;
-  height: 84px;
   display: inline-block;
+  height: 84px;
   vertical-align: middle;
+  width: 84px;
 }
 img.avatar-85 {
-  width: 85px;
-  height: 85px;
   display: inline-block;
+  height: 85px;
   vertical-align: middle;
+  width: 85px;
 }
 img.avatar-86 {
-  width: 86px;
-  height: 86px;
   display: inline-block;
+  height: 86px;
   vertical-align: middle;
+  width: 86px;
 }
 img.avatar-87 {
-  width: 87px;
-  height: 87px;
   display: inline-block;
+  height: 87px;
   vertical-align: middle;
+  width: 87px;
 }
 img.avatar-88 {
-  width: 88px;
-  height: 88px;
   display: inline-block;
+  height: 88px;
   vertical-align: middle;
+  width: 88px;
 }
 img.avatar-89 {
-  width: 89px;
-  height: 89px;
   display: inline-block;
+  height: 89px;
   vertical-align: middle;
+  width: 89px;
 }
 img.avatar-90 {
-  width: 90px;
-  height: 90px;
   display: inline-block;
+  height: 90px;
   vertical-align: middle;
+  width: 90px;
 }
 img.avatar-91 {
-  width: 91px;
-  height: 91px;
   display: inline-block;
+  height: 91px;
   vertical-align: middle;
+  width: 91px;
 }
 img.avatar-92 {
-  width: 92px;
-  height: 92px;
   display: inline-block;
+  height: 92px;
   vertical-align: middle;
+  width: 92px;
 }
 img.avatar-93 {
-  width: 93px;
-  height: 93px;
   display: inline-block;
+  height: 93px;
   vertical-align: middle;
+  width: 93px;
 }
 img.avatar-94 {
-  width: 94px;
-  height: 94px;
   display: inline-block;
+  height: 94px;
   vertical-align: middle;
+  width: 94px;
 }
 img.avatar-95 {
-  width: 95px;
-  height: 95px;
   display: inline-block;
+  height: 95px;
   vertical-align: middle;
+  width: 95px;
 }
 img.avatar-96 {
-  width: 96px;
-  height: 96px;
   display: inline-block;
+  height: 96px;
   vertical-align: middle;
+  width: 96px;
 }
 
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
-  border: none;
+  border: 0;
   margin-bottom: 0;
   margin-top: 0;
   padding: 0;
 }
 
-/* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
 object {
@@ -4892,85 +4627,53 @@ object {
 12.1 Captions
 --------------------------------------------------------------*/
 .wp-caption {
+  border: 0;
   margin-bottom: 1.5em;
   max-width: 100% !important;
   padding: 0;
-  border: 0;
   position: relative;
 }
 .wp-caption img[class*="wp-image-"] {
   display: block;
-  max-width: 100%;
   margin: 0 auto;
+  max-width: 100%;
 }
 .wp-caption-text {
   text-align: center;
 }
 .wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
-}
-.wp-caption.aligncenter {
-  margin: 40px auto;
-  padding: 0;
-  width: auto;
-  max-width: 100%;
-}
-.wp-caption.alignleft, .wp-caption.alignright {
-  margin: 10px 30px;
-  padding: 0;
-  max-width: 45%;
-}
-@media screen and (max-width: 768px) {
-  .wp-caption.alignleft, .wp-caption.alignright {
-    margin: 40px auto;
-    float: none;
-    max-width: none;
-    width: auto !important;
-  }
-}
-.wp-caption .wp-caption-text {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
-  margin-top: 5px;
-  margin-top: 0.5rem;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
-  margin-bottom: 10px;
-  margin-bottom: 1rem;
-  font-style: italic;
-  font-family: "Open Sans", sans-serif;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
-  font-size: 15px;
-  font-size: 1.5rem;
-  width: 100%;
+  margin: .8075em 0;
   text-align: center;
-}
-.wp-caption .wp-caption-text i, .wp-caption .wp-caption-text em {
-  font-style: normal;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .wp-caption .wp-caption-text {
     width: 90%;
+  }
+}
+.wp-caption.aligncenter {
+  margin: 40px auto;
+  max-width: 100%;
+  padding: 0;
+  width: auto;
+}
+@media screen and (max-width: 768px) {
+  .wp-caption.aligncenter .wp-caption-text {
+    text-align: center;
+    width: 90%;
+  }
+}
+.wp-caption.alignleft, .wp-caption.alignright {
+  margin: 10px 30px;
+  max-width: 45%;
+  padding: 0;
+}
+@media screen and (max-width: 768px) {
+  .wp-caption.alignleft, .wp-caption.alignright {
+    float: none;
+    margin: 40px auto;
+    max-width: none;
+    width: auto !important;
   }
 }
 .wp-caption.alignleft .wp-caption-text {
@@ -4978,8 +4681,8 @@ object {
 }
 @media screen and (max-width: 768px) {
   .wp-caption.alignleft .wp-caption-text {
-    width: 90%;
     text-align: center;
+    width: 90%;
   }
 }
 .wp-caption.alignright .wp-caption-text {
@@ -4987,14 +4690,8 @@ object {
 }
 @media screen and (max-width: 768px) {
   .wp-caption.alignright .wp-caption-text {
-    width: 90%;
     text-align: center;
-  }
-}
-@media screen and (max-width: 768px) {
-  .wp-caption.aligncenter .wp-caption-text {
     width: 90%;
-    text-align: center;
   }
 }
 
@@ -5004,122 +4701,53 @@ object {
 .gallery {
   margin-bottom: 1.5em;
 }
-
 .gallery-item {
   display: inline-block;
   text-align: center;
   vertical-align: top;
   width: 100%;
 }
-
 .gallery-columns-2 .gallery-item {
   max-width: 50%;
 }
-
 .gallery-columns-3 .gallery-item {
   max-width: 33.33%;
 }
-
 .gallery-columns-4 .gallery-item {
   max-width: 25%;
 }
-
 .gallery-columns-5 .gallery-item {
   max-width: 20%;
 }
-
 .gallery-columns-6 .gallery-item {
   max-width: 16.66%;
 }
-
 .gallery-columns-7 .gallery-item {
   max-width: 14.28%;
 }
-
 .gallery-columns-8 .gallery-item {
   max-width: 12.5%;
 }
-
 .gallery-columns-9 .gallery-item {
   max-width: 11.11%;
 }
 
 .cover {
-  position: relative;
-  margin-bottom: 50px;
-  padding: 156px 0 80px;
-  overflow: hidden;
-  z-index: 400;
   background-color: #2b2b2b;
   color: #fff;
+  margin-bottom: 50px;
+  overflow: hidden;
+  padding: 156px 0 80px;
+  position: relative;
+  z-index: 400;
 }
 .cover-header {
-  width: 90%;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
   position: relative;
 }
-.cover-header h1 {
-  line-height: 86px;
-  margin: 0;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
-  font-size: 58px;
-  font-size: 5.8rem;
-  color: #fff;
-  text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-}
-.cover-header h1 a {
-  color: #fff;
-  font-weight: normal !important;
-}
-.page .cover-header h1 {
-  margin-bottom: 0;
-}
-@media screen and (max-width: 768px) {
-  .cover-header h1 {
-    /**
-     * Note: this doubles the declarations of font-size, 
-     * resulting in a warning when the csslint task is run.
-     * Unlike multiple declarations of the background property, 
-     * the linter does not recognize this as providing a fallback
-     * for browsers that do not support rem.
-     */
-    font-size: 40px;
-    font-size: 4rem;
-    line-height: 50px;
-  }
-}
-.cover-header h2 {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.8);
-}
-.cover-header h2 a {
-  color: rgba(255, 255, 255, 0.8);
-}
-.cover-header h2 a:hover {
-  color: #fff;
-}
-@media screen and (max-width: 768px) {
-  .cover-header h2 {
-    /**
-     * Note: this doubles the declarations of font-size, 
-     * resulting in a warning when the csslint task is run.
-     * Unlike multiple declarations of the background property, 
-     * the linter does not recognize this as providing a fallback
-     * for browsers that do not support rem.
-     */
-    font-size: 22px;
-    font-size: 2.2rem;
-  }
-}
-.cover-header .info h2,
 .cover-header p {
   color: #fff;
 }
@@ -5130,24 +4758,21 @@ object {
   border-color: #c3c2c9;
 }
 .cover-header .taxonomy-description {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
   margin-top: 80px;
   padding-top: 50px;
-  border-top: 1px solid #fff;
-  border-color: rgba(255, 255, 255, 0.25);
 }
 .cover-header .taxonomy-description p {
   margin-bottom: 0;
 }
 .cover-header .search-form {
-  width: 90%;
+  margin-top: 60px;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 60px;
+  width: 90%;
 }
 .cover-header .search-field {
-  width: 100%;
-  padding: 10px;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -5156,13 +4781,53 @@ object {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
 }
 #main .cover-header {
   margin: 50px auto;
 }
+.cover-title {
+  color: #fff;
+  font-size: 58px;
+  font-size: 5.8rem;
+  line-height: 86px;
+  margin: 0;
+  text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+.cover-title a {
+  color: #fff;
+  font-weight: normal !important;
+}
+.page .cover-title {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+  .cover-title {
+    font-size: 40px;
+    font-size: 4rem;
+    line-height: 50px;
+  }
+}
+.cover-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+.cover-subtitle a {
+  color: rgba(255, 255, 255, 0.8);
+}
+.cover-subtitle a:hover {
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .cover-subtitle {
+    font-size: 22px;
+    font-size: 2.2rem;
+  }
+}
 .cover.featured-image {
-  padding: 200px 0;
   height: 100%;
+  padding: 200px 0;
 }
 @media screen and (max-width: 768px) {
   .cover.featured-image {
@@ -5173,29 +4838,29 @@ object {
   height: auto;
 }
 .cover.featured-image .background {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: .6;
-  background-size: cover;
   background-attachment: fixed;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  opacity: .6;
+  position: absolute;
+  top: 0;
   -webkit-transition: opacity 200ms;
   -moz-transition: opacity 200ms;
   -o-transition: opacity 200ms;
   transition: opacity 200ms;
+  width: 100%;
 }
 .cover.featured-image .background.darken {
-  opacity: 0.1;
+  opacity: .1;
 }
-.cover.featured-image header {
+.cover.featured-image .cover-header {
   top: 30%;
 }
 @media screen and (max-width: 768px) {
-  .cover.featured-image header {
+  .cover.featured-image .cover-header {
     top: auto;
   }
 }
@@ -5204,34 +4869,32 @@ object {
 .blog .cover {
   padding: 200px 0;
 }
-.home .cover header,
-.blog .cover header {
+.home .cover-header,
+.blog .cover-header {
   text-align: center;
 }
-.home .cover header h2,
-.blog .cover header h2 {
-  margin-top: 50px;
-  padding-top: 50px;
-  border-top: 1px solid #fff;
-  border-color: rgba(255, 255, 255, 0.35);
-}
-.home .cover header .taxonomy-description,
-.blog .cover header .taxonomy-description {
+.home .cover-header .taxonomy-description,
+.blog .cover-header .taxonomy-description {
   text-align: left;
 }
-
-.archive .cover header h1,
-.search .cover header h1,
-.error404 .cover header h1 {
-  text-align: center;
-}
-.archive .cover header .site-description,
-.search .cover header .site-description,
-.error404 .cover header .site-description {
+.home .cover-subtitle,
+.blog .cover-subtitle {
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
   margin-top: 50px;
   padding-top: 50px;
-  border-top: 1px solid #fff;
-  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.archive .cover-title,
+.search .cover-title,
+.error404 .cover-title {
+  text-align: center;
+}
+.archive .cover .site-description,
+.search .cover .site-description,
+.error404 .cover .site-description {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  margin-top: 50px;
+  padding-top: 50px;
 }
 
 .archive .cover.featured-image.auto {
@@ -5335,7 +4998,7 @@ object {
   color: #dd4b39;
 }
 .profile-social a[href*='github'] .fa-circle {
-  color: #4183C4;
+  color: #4183c4;
 }
 .profile-social a[href*='github'] .fa-circle:before {
   -webkit-transition: color 200ms;
@@ -5356,10 +5019,10 @@ object {
   color: #fff;
 }
 .profile-social a[href*='github']:hover .social-icon {
-  color: #4183C4;
+  color: #4183c4;
 }
 .profile-social a[href*='foursqaure'] .fa-circle {
-  color: #0072B1;
+  color: #0072b1;
 }
 .profile-social a[href*='foursqaure'] .fa-circle:before {
   -webkit-transition: color 200ms;
@@ -5380,10 +5043,10 @@ object {
   color: #fff;
 }
 .profile-social a[href*='foursqaure']:hover .social-icon {
-  color: #0072B1;
+  color: #0072b1;
 }
 .profile-social a[href*='flickr'] .fa-circle {
-  color: #FF0084;
+  color: #ff0084;
 }
 .profile-social a[href*='flickr'] .fa-circle:before {
   -webkit-transition: color 200ms;
@@ -5404,10 +5067,10 @@ object {
   color: #fff;
 }
 .profile-social a[href*='flickr']:hover .social-icon {
-  color: #FF0084;
+  color: #ff0084;
 }
 .profile-social a[href*='linkedin'] .fa-circle {
-  color: #0976B4;
+  color: #0976b4;
 }
 .profile-social a[href*='linkedin'] .fa-circle:before {
   -webkit-transition: color 200ms;
@@ -5428,10 +5091,10 @@ object {
   color: #fff;
 }
 .profile-social a[href*='linkedin']:hover .social-icon {
-  color: #0976B4;
+  color: #0976b4;
 }
 .profile-social a[href*='youtube'] .fa-circle {
-  color: #E52D27;
+  color: #e52d27;
 }
 .profile-social a[href*='youtube'] .fa-circle:before {
   -webkit-transition: color 200ms;
@@ -5452,10 +5115,10 @@ object {
   color: #fff;
 }
 .profile-social a[href*='youtube']:hover .social-icon {
-  color: #E52D27;
+  color: #e52d27;
 }
 .profile-social a[href*='wordpress'] .fa-circle {
-  color: #21759B;
+  color: #21759b;
 }
 .profile-social a[href*='wordpress'] .fa-circle:before {
   -webkit-transition: color 200ms;
@@ -5476,7 +5139,7 @@ object {
   color: #fff;
 }
 .profile-social a[href*='wordpress']:hover .social-icon {
-  color: #21759B;
+  color: #21759b;
 }
 .profile-social a[href*='codepen'] .fa-circle {
   color: #60c2ff;
@@ -5562,10 +5225,10 @@ object {
 
 /** comments **/
 #comments {
-  width: 90%;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
   padding-bottom: 30px;
 }
 
@@ -5581,13 +5244,6 @@ object {
 
 .comment-author {
   margin: 5px 0;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 24px;
   font-size: 2.4rem;
 }
@@ -5599,15 +5255,17 @@ object {
 }
 .comment-author .avatar {
   float: left;
+  height: 62px;
   margin: -5px 23px 0 0;
   width: 62px;
-  height: 62px;
 }
 
 .comment-metadata {
-  margin: 5px 0 8px;
-  font: 600 14px "Open Sans", sans-serif;
   color: #abaeb6;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-family: "Open Sans", sans-serif;
+  margin: 5px 0 8px;
 }
 .comment-metadata a {
   color: #b6b6b6;
@@ -5623,134 +5281,102 @@ object {
   margin: 15px 0;
 }
 
-.notification {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-  padding: 20px 25px;
-  background: #1c78be;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-}
-.notification .ntitle {
-  color: #c4e2f8;
-  font: 700 18px 'Open Sans',Serif;
-  padding-right: 20px;
-  border-right: 2px solid #3285c4;
-}
-.notification .message {
-  color: #fff;
-  font: 700 18px 'Open Sans',Serif;
-  padding-left: 20px;
-}
-.notification a {
-  position: relative;
-  margin-top: -3px;
-  display: inline-block;
-  float: right;
-  padding: 4px 10px 3px;
-  color: #fff;
-  background: #0b4673;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
-  border-radius: 30px;
-}
-.notification a i {
-  margin-top: 3px;
-}
-
-/* inverse color */
-.notification {
-  background: #333;
-  border-radius: 0;
-  /* --- */
-  /*	background: #fff;
-  	border: 1px solid #444; */
-}
-
-.notification .ntitle {
-  margin-right: 20px;
-  font-weight: normal;
-  color: #fff;
-  border-color: #666;
-  border-width: 1px;
-  /* --- */
-  /*	color: #444;
-  	border-color: #ccc; */
-}
-
-@media screen and (max-width: 768px) {
-  .notification .ntitle {
-    display: none;
-  }
-}
-.notification .message {
-  font-weight: normal;
-  padding: 0;
-  /* --- */
-  /*	color: #444; */
-}
-
-.notification a {
-  background: #fff;
-  color: #333;
-  /* --- */
-  /*	background: #444;
-  	color: #fff; */
-}
-
 #colophon {
-  padding: 30px 0;
   color: #666;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 13px;
   font-size: 1.3rem;
+  padding: 30px 0;
 }
 #colophon .site-info {
-  width: 90%;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
   text-align: center;
 }
 #colophon a:hover {
   border-color: #c3c2c9;
 }
 
-div#jp-relatedposts {
-  margin-left: auto;
-  margin-right: auto;
+/*--------------------------------------------------------------
+Headroom.js
+--------------------------------------------------------------*/
+@media screen and (min-width: 769px) {
+  .header.headroom {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .header.headroom--pinned {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .header.headroom--unpinned {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  .header.headroom--not-top {
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    color: #000;
+    position: fixed;
+  }
+  .header.headroom--not-top a {
+    color: #000;
+  }
+  .header.headroom--not-top a:hover {
+    border-color: transparent;
+    color: #026ed2;
+  }
+  .header.headroom--not-top .site-info {
+    opacity: 1;
+    visibility: visible;
+  }
+  .show-overlay .header.headroom--not-top .site-info {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .header.headroom--not-top .site-description {
+    border-color: rgba(0, 0, 0, 0.25);
+    color: #000;
+  }
+  .header.headroom--not-top .author a:hover .name {
+    border-color: transparent;
+  }
+}
+.show-overlay .header.headroom--not-top {
+  background: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  transition-delay: 0, 0;
 }
 
-div.aesop-content {
-  width: 90%;
+.aesop-content {
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
 }
 
 .aesop-component {
-  margin: 40px 0;
   display: block;
+  margin: 40px 0;
 }
 .aesop-component.aesop-audio-component {
-  width: 90%;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
 }
 .aesop-component.aesop-image-component {
   margin: 40px 0;
@@ -5765,25 +5391,18 @@ div.aesop-content {
 }
 @media screen and (max-width: 768px) {
   .aesop-component.aesop-quote-component.aesop-component-align-left, .aesop-component.aesop-quote-component.aesop-component-align-right {
-    width: 100% !important;
+    float: none;
     margin: 40px 0;
     padding: 60px 0;
-    float: none;
+    width: 100% !important;
   }
 }
 .aesop-component.aesop-quote-component blockquote {
   color: inherit;
   display: block;
-  text-align: center;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 30px;
   font-size: 3rem;
+  text-align: center;
 }
 @media screen and (max-width: 768px) {
   .aesop-component.aesop-quote-component blockquote {
@@ -5798,17 +5417,20 @@ div.aesop-content {
 }
 @media screen and (max-width: 768px) {
   .aesop-component.aesop-quote-component blockquote.aesop-component-align-left, .aesop-component.aesop-quote-component blockquote.aesop-component-align-right {
-    text-align: center;
     float: none;
     margin: auto;
+    text-align: center;
   }
 }
 .aesop-component.aesop-quote-component blockquote .aesop-quote-component-cite {
-  font-size: 80%;
   color: inherit;
-  opacity: 0.75;
   display: block;
+  font-size: 80%;
   margin-top: 15px;
+  opacity: .75;
+}
+.aesop-component.aesop-quote-component.quote-is-parallax.aesop-quote-faded blockquote {
+  opacity: 1;
 }
 .aesop-component.aesop-quote-component.quote-is-parallax blockquote {
   opacity: 0;
@@ -5825,9 +5447,6 @@ div.aesop-content {
     transform: none !important;
   }
 }
-.aesop-component.aesop-quote-component.quote-is-parallax.aesop-quote-faded blockquote {
-  opacity: 1;
-}
 .aesop-component.aesop-content-component .aesop-content-comp-inner {
   padding: 30px 0;
   width: 90%;
@@ -5842,12 +5461,12 @@ div.aesop-content {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
-  left: 0;
-  top: 0;
-  position: relative;
-  overflow: hidden;
   height: 500px;
+  left: 0;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .aesop-stacked-img {
@@ -5861,17 +5480,9 @@ div.aesop-content {
 }
 
 .aesop-parallax-sc-caption-wrap {
-  background: #333;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   font-family: "Open Sans", sans-serif;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 16px;
   font-size: 1.6rem;
   padding: 10px 20px;
@@ -5880,11 +5491,11 @@ div.aesop-content {
 .aesopicon {
   display: inline-block;
   font-family: FontAwesome;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 .aesopicon.aesopicon-search-plus:before {
   content: '\f00e';
@@ -5910,49 +5521,11 @@ div.aesop-content {
 }
 @media screen and (max-width: 768px) {
   .aesop-image-component-image.aesop-component-align-left, .aesop-image-component-image.aesop-component-align-right {
-    margin: 40px auto;
     float: none;
-    width: auto !important;
+    margin: 40px auto;
     max-width: none !important;
+    width: auto !important;
   }
-}
-.aesop-image-component-image .aesop-image-component-caption {
-  width: 90%;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
-  margin-top: 5px;
-  margin-top: 0.5rem;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
-  margin-bottom: 10px;
-  margin-bottom: 1rem;
-  font-style: italic;
-  font-family: "Open Sans", sans-serif;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
-  font-size: 15px;
-  font-size: 1.5rem;
-}
-.aesop-image-component-image .aesop-image-component-caption i, .aesop-image-component-image .aesop-image-component-caption em {
-  font-style: normal;
 }
 
 .aesop-article-chapter {
@@ -5960,21 +5533,14 @@ div.aesop-content {
 }
 
 .aesop-cover-title {
-  width: 90%;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   color: #fff;
-  /**
-   * Note: this doubles the declarations of font-size, 
-   * resulting in a warning when the csslint task is run.
-   * Unlike multiple declarations of the background property, 
-   * the linter does not recognize this as providing a fallback
-   * for browsers that do not support rem.
-   */
   font-size: 42px;
   font-size: 4.2rem;
   padding: 250px 0 20px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
 }
 
 .aesop-video-container {
@@ -5985,16 +5551,15 @@ div.aesop-content {
   border: 0;
 }
 .aesop-lightbox:hover {
-  opacity: 0.8;
+  opacity: .8;
 }
 
 .aesop-timeline {
-  position: fixed;
+  background-color: rgba(255, 255, 255, 0.9);
   bottom: 0;
   left: 0;
+  position: fixed;
   right: 0;
-  background: #fff;
-  background: rgba(255, 255, 255, 0.9);
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
   -o-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
@@ -6002,13 +5567,13 @@ div.aesop-content {
   z-index: 500;
 }
 .aesop-timeline ol {
-  width: 90%;
+  list-style: none;
+  margin-bottom: 0;
+  text-align: center;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 0;
-  list-style: none;
-  text-align: center;
+  width: 90%;
 }
 .aesop-timeline ol:after {
   display: none;
@@ -6025,8 +5590,8 @@ div.aesop-content {
   border-color: #c3c2c9;
 }
 .aesop-timeline li.active a {
-  font-weight: bold;
   border-bottom-width: 2px;
+  font-weight: bold;
 }
 .aesop-timeline-stop {
   padding-top: 140px;
@@ -6037,10 +5602,10 @@ div.aesop-content {
   width: 100%;
 }
 .entry-content > .aesop-component.aesop-audio-component {
-  width: 90%;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
 }
 
 .entry-content > .aesop-story-collection {
@@ -6048,17 +5613,64 @@ div.aesop-content {
   width: 100%;
 }
 .entry-content > .aesop-story-collection.aesop-audio-component {
-  width: 90%;
   max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+/*--------------------------------------------------------------
+Jetpack
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Infinite Scroll
+--------------------------------------------------------------*/
+#infinite-handle {
+  padding: 50px 0;
+  text-align: center;
+}
+#infinite-handle span {
+  padding: 8px 15px;
+  font-size: 14px;
+  font-size: 1.4rem;
+  border: 0;
+  background: #026ed2;
+  color: #fff;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+#infinite-handle span:hover {
+  background: #02549f;
+  color: #fff;
+}
+
+.infinite-loader {
+  margin: 50px 0;
+}
+.infinite-loader .spinner {
+  margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+Related Posts
+--------------------------------------------------------------*/
+#jp-relatedposts {
   margin-left: auto;
   margin-right: auto;
 }
 
 #disqus_thread {
-  width: 90%;
   max-width: 760px;
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
 }
 
 /*# sourceMappingURL=style.css.map */
