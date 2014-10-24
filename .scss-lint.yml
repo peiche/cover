@@ -1,0 +1,7 @@
+linters:
+  Comment:
+    enabled: false
+  Indentation:
+    enabled: false
+  SelectorFormat:
+    ignored_names: [ disqus_thread ]

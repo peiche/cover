@@ -4,14 +4,20 @@
  * @author Paul Eiche
  */
  
-'use strict';
- 
 /**
  * Grunt Module
  */
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+        scsslint: {
+            allFiles: ['sass/*.scss'],
+            options: {
+                config: '.scss-lint.yml',
+                reporterOutput: 'report/scss-lint-report.xml',
+                colorizeOutput: true
+            },
+        },
         sass: {
             dev: {
                 options: {
@@ -36,79 +42,48 @@ module.exports = function(grunt) {
                 }
             },
 		},
-        csslint: {
+        // FIXME csslint?
+        jshint: {
+            files: ['GruntFile.js', 'src/*.js'],
             options: {
-                formatters: [
-                    {
-                        id: 'text',
-                        dest: 'report/csslint.txt'
-                    }
-                ]
-            },
-            strict: {
-                options: {
-                    import: 2,
-                    'box-sizing': false,
-                    'adjoining-classes': false
-                },
-                src: ['style.css']
+                'globals': {
+                    jQuery: true,
+                    alert: true,
+                    Headroom: true,
+                    skrollr: true,
+                    wp: true
+                }
             }
         },
-        jshint: {
-            options: {
-                "bitwise": true,
-                "browser": true,
-                "curly": true,
-                "eqeqeq": true,
-                "eqnull": true,
-                "es5": true,
-                "esnext": true,
-                "immed": true,
-                "jquery": true,
-                "latedef": true,
-                "newcap": true,
-                "noarg": true,
-                "node": true,
-                "strict": false,
-                "trailing": true,
-                "undef": true,
-                "globals": {
-                "jQuery": true,
-                    "alert": true
-                }
-            },
-            all: [
-                'Gruntfile.js',
-                'src/cover.js'
-            ]
-        },
         uglify: {
-            my_target: {
-                files: {
-                    'js/cover.min.js': ['src/cover.js'],
-                    'js/customizer.min.js': ['src/customizer.js'],
-                    'js/skip-link-focus-fix.min.js': ['src/skip-link-focus-fix.js']
-                }
+            build: {
+                files: [{
+                    expand: true,
+                    cwd: 'src',
+                    dest: 'js',
+                    src: '**/*.js',
+                    ext: '.min.js'
+                }]
             }
         },
         watch: {
 			css: {
 				files: 'sass/*.scss',
-				tasks: ['sass', 'csslint']
+				tasks: ['scsslint', 'sass'] // FIXME csslint?
 			},
             javascript: {
                 files: 'src/*.js',
-                tasks: ['uglify'] // FIXME: add jshint
+                tasks: ['jshint', 'uglify']
             }
 		}
 	});
     
+    grunt.loadNpmTasks('grunt-scss-lint');
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-csslint');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     
-	grunt.registerTask('sasslint', ['sass', 'csslint']); // FIXME: add jshint
-    grunt.registerTask('default', ['sass', 'csslint', 'uglify', 'watch']); // FIXME: add jshint
+    grunt.registerTask('build', ['scsslint', 'sass', 'jshint', 'uglify']); // FIXME csslint?
+	grunt.registerTask('default', ['scsslint', 'sass', 'jshint', 'uglify', 'watch']); // FIXME csslint?
 };

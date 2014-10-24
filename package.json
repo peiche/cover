@@ -1,30 +1,31 @@
 {
-    "name": "Cover",
-    "version": "1.0.0",
-    "description": "Simple WordPress theme focused on content.",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/peiche/cover.git"
-    },
-    "keywords": [
-        "wordpress"
-    ],
-    "author": "Paul Eiche",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/peiche/cover/issues"
-    },
-    "homepage": "https://github.com/peiche/cover",
-    "devDependencies": {
-        "grunt": "^0.4.5",
-        "grunt-contrib-sass": "~0.8.1",
-        "grunt-contrib-csslint": "~0.3.1",
-        "grunt-contrib-jshint": "~0.8.0",
-        "grunt-contrib-uglify": "~0.6.0",
-        "grunt-contrib-watch": "~0.6.1"
-    }
+  "name": "Cover",
+  "version": "1.0.0",
+  "description": "Simple WordPress theme focused on content.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peiche/cover.git"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "Paul Eiche",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peiche/cover/issues"
+  },
+  "homepage": "https://github.com/peiche/cover",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-csslint": "~0.3.1",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-sass": "~0.8.1",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-scss-lint": "^0.3.3"
+  }
 }
