@@ -14,7 +14,7 @@
 	</div>
 	
 	<?php if (is_author()) { ?>
-		<h1><?php echo get_the_author(); ?></h1>
+		<h1 class="cover-title"><?php echo get_the_author(); ?></h1>
 		<p>
 			<?php the_author_meta( 'description' ); ?>
 		</p>

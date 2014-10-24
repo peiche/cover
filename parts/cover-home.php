@@ -25,7 +25,7 @@
             <img src="<?php echo esc_url( jetpack_get_site_logo( 'url' ) ); ?>" class="site-logo" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
         <?php endif; // End site logo check. ?>
         
-        <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-        <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+        <h1 class="cover-title"><?php bloginfo( 'name' ); ?></h1>
+        <h2 class="cover-subtitle"><?php bloginfo( 'description' ); ?></h2>
     </header>
 </div>

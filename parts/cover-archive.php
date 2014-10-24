@@ -23,7 +23,7 @@
 	<div class="background<?php if ( '' != $image ) { ?> darken" style="background-image: url('<?php echo $image[0]; ?>');<?php } ?>" data-0-top="background-position: 50% 50%;" data-top-bottom="background-position: 50% 100%;"></div>
 	<header class="cover-header">
 
-		<h1>
+		<h1 class="cover-title">
 		<?php
 			if ( is_category() ) :
 				single_cat_title();
