@@ -27,7 +27,7 @@ $wide: 1000px;
 
 $divider-color: #b3b3b3;
 
-@function parseInt($n) {
+@function parse-int($n) {
     @return $n / ($n * 0 + 1);
 }
 
@@ -38,33 +38,28 @@ $divider-color: #b3b3b3;
     @each $value in $values {
         
         @if $value == 0 or $value == auto {
-            $px : append($px , $value);
+            $px : append($px, $value);
             $rem: append($rem, $value);
-        }
-        
-        @else { 
+        } @else { 
             $unit: unit($value);
-            $val: parseInt($value);
+            $val: parse-int($value);
             
-            @if $unit == "px" {
-                $px : append($px,  $value);
+            @if $unit == 'px' {
+                $px : append($px, $value);
                 $rem: append($rem, ($val / 10 * 1rem));
             }
             
-            @if $unit == "rem" {
-                $px : append($px,  ($val * 10 * 1px));
+            @if $unit == 'rem' {
+                $px : append($px, ($val * 10 * 1px));
                 $rem: append($rem, $value);
             }
         }
     }
     
-    /**
-     * Note: this doubles the declarations of font-size, 
-     * resulting in a warning when the csslint task is run.
-     * Unlike multiple declarations of the background property, 
-     * the linter does not recognize this as providing a fallback
-     * for browsers that do not support rem.
-     */
+    // Note: this doubles the declarations of font-size, 
+    // Unlike multiple declarations of the background property, 
+    // css linter tasks do not recognize this as providing a fallback
+    // for browsers that do not support the rem property.
     #{$property}: $px;
     #{$property}: $rem;
 }
@@ -92,10 +87,10 @@ $divider-color: #b3b3b3;
 }
 
 @mixin site-width($width: $medium) {
-    width: 90%;
-	max-width: $width;
+    max-width: $width;
     margin-left: auto;
     margin-right: auto;
+    width: 90%;
 }
 
 @mixin background-gradient($color1, $color2) {
@@ -107,9 +102,9 @@ $divider-color: #b3b3b3;
 }
 
 @mixin box-shadow($val) {
-  @each $prefix in -webkit-, -moz-, -o-, null {
-    #{$prefix}box-shadow: $val;
-  }
+    @each $prefix in -webkit-, -moz-, -o-, null {
+        #{$prefix}box-shadow: $val;
+    }
 }
 
 @mixin box-sizing($val) {
@@ -157,14 +152,15 @@ $divider-color: #b3b3b3;
     transform-style: $val;
 }
 
-@mixin image-caption { // style used for both normal and aesop image component captions
+%image-caption { // style used for both normal and aesop image component captions
+    @include rem(font-size, 15px);
+    font-family: $font-stack-content;
+    font-style: italic;
     @include site-width;
     @include rem(margin-top, 5px);
     @include rem(margin-bottom, 10px);
-    font-style: italic;
-    font-family: $font-stack-content;
-    @include rem(font-size, 15px);
-    i, em {
+    i,
+    em {
         font-style: normal;
     }
 }
@@ -174,13 +170,13 @@ $divider-color: #b3b3b3;
 $facebook-color: #3b5998;
 $twitter-color: #00acee;
 $google-color: #dd4b39;
-$github-color: #4183C4;
-$foursquare-color: #0072B1;
-$flickr-color: #FF0084;
-$appnet-color: #D87A68;
-$linkedin-color: #0976B4;
-$youtube-color: #E52D27;
-$wordpress-color: #21759B;
+$github-color: #4183c4;
+$foursquare-color: #0072b1;
+$flickr-color: #ff0084;
+$appnet-color: #d87a68;
+$linkedin-color: #0976b4;
+$youtube-color: #e52d27;
+$wordpress-color: #21759b;
 $codepen-color: #60c2ff;
 $instagram-color: #517fa4;
 $tumblr-color: #2c4762;
@@ -203,20 +199,24 @@ $tumblr-color: #2c4762;
             &[href*='#{$url}'] {
                 .fa-circle {
                     color: $color;
+                    
                     &:before {
                         @include transition(color 200ms);
                     }
                 }
+                
                 .social-icon {
                     @include transition(color 200ms);
                     &:before {
                         content: $char;
                     }
                 }
+                
                 &:hover {
                     .fa-circle {
                         color: #fff;
                     }
+                    
                     .social-icon {
                         color: $color;
                     }

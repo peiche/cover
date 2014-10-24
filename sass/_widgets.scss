@@ -2,40 +2,28 @@
 9.0 Widgets
 --------------------------------------------------------------*/
 .widget {
-	margin: 0 0 1.5em;
-	
+	margin: 60px 0;
 	@include site-width($narrow);
-	margin-top: 60px;
-	margin-bottom: 60px;
 	
 	ul {
 		list-style: none;
 		margin-left: 0;
-		ul {
+		
+        ul {
 			margin-left: 40px;
 		}
 	}
 	
-	li {
-		a {
-			display: block;
-			border-color: #ddd;
-			border-width: 1px;
-			padding: 10px 15px;
-			.overlay & {
-				border-color: #666;
-			}
-		}
-	}
+	li a {
+        border-color: #ddd;
+        border-width: 1px;
+        display: block;
+        padding: 10px 15px;
+    }
 	
-	a {
-		&:hover {
-			background: #ddd;
-			.overlay & {
-				background: #666;
-			}
-		}
-	}
+	a:hover {
+        background: #ddd;
+    }
 	
 	select {
 		max-width: 100%; // Make sure select elements fit in widgets
@@ -43,28 +31,16 @@
 	
 	.tagcloud {
 		text-align: center;
-		a {
-			&:hover {
-				background: transparent;
-				border-color: $link-border-color;
-				.overlay & {
-					border-color: #fff;
-				}
-			}
-		}
+		
+        a:hover {
+            background: transparent;
+            border-color: $link-border-color;
+        }
 	}
 	
 	&_search {
 		.search-submit {
 			display: none; // hide search widget's submit button
-		}
-	}
-	
-	&-area {
-		.overlay & {
-			margin-top: 60px;
-			margin-bottom: 60px;
-			color: #ccc;
 		}
 	}
 	

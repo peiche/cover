@@ -10,203 +10,258 @@
 
 .sticky {
     background: #333;
+    
     &.hentry {
         margin-top: -50px;
     }
-    .entry-header h1 a {
+    
+    .entry-title a {
         color: #fff;
         padding-bottom: 2px;
+        
         &:hover {
-            color: #fff;
             border-color: #fff;
+            color: #fff;
         }
     }
-    .entry-header h2 a {
+    
+    .entry-subtitle a {
         color: #aaa;
+        
         &:hover {
-            color: #aaa;
             border-color: #999;
+            color: #aaa;
         }
     }
+    
     * {
         color: #fff;
     }
 }
+
 .hentry {
-	padding: 50px 0;
 	clear: both;
 	margin: 0;
+    padding: 50px 0;
     position: relative;
+    
     &:after {
-        @include site-width;
-		content: '';
-        height: 1px;
-        background: rgba(0, 0, 0, 0.15);
-        position: absolute;
+        background: rgba(0, 0, 0, .15);
         bottom: 0;
+        content: '';
+        height: 1px;
         left: 0;
+        position: absolute;
         right: 0;
+        @include site-width;
     }
+    
     .single &:after {
         display: none;
     }
+    
     @each $location in (home, archive, search) {
         .#{$location} & {
             padding-top: 50px;
         }
     }
+    
     .single & {
         border: 0;
         padding: 0;
     }
-    .background {
-        // height: 450px;
-    }
 }
+
 .entry {
     &-header {
         @include site-width;
-        h1 {
-            @include rem(font-size, 30px);
-			margin: 0;
-            a {
-                position: relative;
-                padding: 10px 0;
-                color: $text-color-heading;
-                &:hover {
-                    color: $link-color;
-                    border-color: transparent;
-                }
-            }
-        }
-        h2 {
-            @include rem(font-size, 20px);
-            color: #999;
-            margin: 0;
-            a {
-                color: #999;
-                &:hover {
-                    color: $link-color;
-                }
-            }
-        }
+        
         .span {
             color: #b6b6b6;
         }
     }
+    
+    &-title {
+        @include rem(font-size, 30px);
+        margin: 0;
+
+        a {
+            color: $text-color-heading;
+            padding: 10px 0;
+            position: relative;
+
+            &:hover {
+                border-color: transparent;
+                color: $link-color;
+            }
+        }
+    }
+    
+    &-subtitle {
+        @include rem(font-size, 20px);
+        color: #999;
+        margin: 0;
+
+        a {
+            color: #999;
+
+            &:hover {
+                color: $link-color;
+            }
+        }
+    }
+    
     &-summary {
         margin: 0;
-		h1 {
 		
-		}
         p {
             margin: 1.5em auto 0;
+            
             &:first-child {
                 margin-top: 0;
             }
         }
-        & > * {
+        
+        > * {
             @include site-width;
         }
+        
         .tiled-gallery {
             margin-top: 30px;
         }
     }
+    
     &-content {
-        @each $elem in h1, h2, h3, h4, h5, h6, div, span, p, ul, ol, blockquote, pre, hr, form, iframe, address, table, dl {
-            & > #{$elem} {
-                @include site-width;
-            }
-        }
-        @each $elem in ul, ol {
-            & > #{$elem} {
-                list-style-position: inside;
-            }
-        }
-        & > section > h2,
-        & > section > p {
+        
+        > h1, 
+        > h2, 
+        > h3, 
+        > h4, 
+        > h5, 
+        > h6, 
+        > div, 
+        > span, 
+        > p, 
+        > ul, 
+        > ol, 
+        > blockquote, 
+        > pre, 
+        > hr, 
+        > form, 
+        > iframe, 
+        > address, 
+        > table, 
+        > dl {
             @include site-width;
         }
-        & > .twitter-tweet {
+        
+        > ul,
+        > ol {
+            list-style-position: inside;
+        }
+        
+        > section > h2,
+        > section > p {
+            @include site-width;
+        }
+        
+        > .twitter-tweet {
             margin-left: auto !important;
             margin-right: auto !important;
-            width: 90% !important;          // overrides inline styles
             max-width: 760px !important;    // overrides inline styles
+            width: 90% !important;          // overrides inline styles
         }
-		& > h2:first-child,
-		& > p:first-child {
+		
+        > h2:first-child,
+		> p:first-child {
 			margin-top: 0;
 		}
-		& > p:first-child,
-		& > p:first-of-type,
-		& > p:first-child:empty + p,
-		& > p:first-of-type:empty + p,
+		
+        > p:first-child,
+		> p:first-of-type,
+		> p:first-child:empty + p,
+		> p:first-of-type:empty + p,
         p.lead {
-			font-weight: bold;
 			color: #1d1d1d;
-			a:hover {
+            font-weight: bold;
+			
+            a:hover {
 				border-width: 2px;
 			}
 		}
-		& > hr {
+		
+        > hr {
             max-width: 250px;
         }
-        & > blockquote {
+        
+        > blockquote {
+            
             &.large {
                 @include rem(font-size, 40px);
                 border: 0;
-                position: relative;
-                padding: 0;
                 max-width: $wide;
+                padding: 0;
+                position: relative;
                 text-align: center;
             }
+            
             &.pullquote {
+                border: 0;
                 @include rem(font-size, 30px);
+                max-width: $narrow;
                 padding: 0;
                 text-align: center;
-                border: 0;
-                max-width: $narrow;
+                
                 &.left {
                     float: left;
                     text-align: left;
                 }
+                
                 &.right {
                     float: right;
                     text-align: right;
                 }
+                
                 &.left,
                 &.right {
-                    width: 400px;
                     margin: 10px 30px;
+                    width: 400px;
+                    
                     @media screen and (max-width: 768px) {
-                        @include site-width($narrow);
                         float: none;
                         text-align: center;
+                        @include site-width($narrow);
                     }
                 }
             }
         }
-        & > .tiled-gallery {
-            width: 100%;
-            max-width: 100%;
+        
+        > .tiled-gallery {
             margin: 30px 0;
+            max-width: 100%;
+            width: 100%;
         }
     }
+    
 	&-meta {
 		margin-top: 30px;
-        & .avatar {
+        
+        .avatar {
             margin-right: 5px;
         }
 	}
 }
+
 .byline,
 .updated {
 	display: none;
 }
+
 .single .byline,
 .group-blog .byline {
 	display: inline;
 }
+
 .page-content,
 .entry-content,
 .entry-summary {
@@ -226,8 +281,6 @@
 --------------------------------------------------------------*/
 .comment-content a {
 	word-wrap: break-word;
-}
-.bypostauthor {
 }
 
 // --------------------------------------
@@ -260,10 +313,12 @@ footer.entry-meta {
 ul.tags {
     list-style: none;
     margin: 0;
+    
     li {
         display: inline-block;
         margin: 0 15px 15px 0;
     }
+    
     a {
         @include button($button-gray-background, $button-gray-color, 4px);
     }

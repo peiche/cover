@@ -2,13 +2,14 @@
 8.0 Clearings
 --------------------------------------------------------------*/
 
+%cf,
 .cf {
-    *zoom: 1;
     &:before,
     &:after {
         content: '';
         display: table;
     }
+    
     &:after {
         clear: both;
     }
@@ -20,5 +21,5 @@
 .site-header,
 .site-content,
 .site-footer {
-	@extend .cf;
+	@extend %cf;
 }

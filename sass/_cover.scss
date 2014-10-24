@@ -1,107 +1,130 @@
 .cover {
-	position: relative;
-	margin-bottom: 50px;
-    padding: 156px 0 80px;
-	overflow: hidden;
-	z-index: 400;
-    background-color: #2b2b2b;
+	background-color: #2b2b2b;
     color: #fff;
-	&-header {
+    margin-bottom: 50px;
+    overflow: hidden;
+    padding: 156px 0 80px;
+    position: relative;
+	z-index: 400;
+	
+    &-header {
 		@include site-width;
 		position: relative;
-		h1 {
-			line-height: 86px;
-			margin: 0;
-            @include rem(font-size, 58px);
-			color: #fff;
-			text-shadow: 0 0 30px rgba(0,0,0,.8);
-            a {
-				color: #fff;
-                font-weight: normal !important;
-			}
-			.page & {
-				margin-bottom: 0;
-			}
-			@media screen and (max-width: 768px) {
-				@include rem(font-size, 40px);
-				line-height: 50px;
-			}
-		}
-		h2 {
-			margin: 0;
-            color: rgba(255,255,255,0.8);
-			a {
-				color: rgba(255,255,255,0.8);
-				&:hover {
-					color: #fff;
-				}
-			}
-			@media screen and (max-width: 768px) {
-				@include rem(font-size, 22px);
-			}
-		}
-        .info h2,
+		
         p {
             color: #fff;
         }
+        
 		a {
             color: #fff;
+            
             &:hover {
                 border-color: $link-border-color;
             }
         }
+        
         .taxonomy-description {
-			margin-top: 80px;
+			border-top: 1px solid rgba(255, 255, 255, .25);
+            margin-top: 80px;
 			padding-top: 50px;
-			border-top: 1px solid #fff;
-			border-color: rgba(255, 255, 255, 0.25);
-			p {
+			
+            p {
 				margin-bottom: 0;
 			}
 		}
+        
 		.search {
-			&-form {
-				@include site-width($narrow);
+			
+            &-form {
 				margin-top: 60px;
+                @include site-width($narrow);
 			}
-			&-field {
-				width: 100%;
-				padding: 10px;
+			
+            &-field {
 				@include border-radius(0);
-				@include box-sizing(border-box);
+                @include box-sizing(border-box);
+                padding: 10px;
+                width: 100%;
 			}
 		}
+        
         #main & {
             margin: 50px auto;
         }
 	}
+    
+    &-title {
+        color: #fff;
+        @include rem(font-size, 58px);
+        line-height: 86px;
+        margin: 0;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .8);
+
+        a {
+            color: #fff;
+            font-weight: normal !important;
+        }
+
+        .page & {
+            margin-bottom: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            @include rem(font-size, 40px);
+            line-height: 50px;
+        }
+    }
+    
+    &-subtitle {
+        color: rgba(255, 255, 255, .8);
+        margin: 0;
+
+        a {
+            color: rgba(255, 255, 255, .8);
+
+            &:hover {
+                color: #fff;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            @include rem(font-size, 22px);
+        }
+    }
+    
 	&.featured-image {
-		padding: 200px 0;
-        height: 100%;
+		height: 100%;
+        padding: 200px 0;
+        
         @media screen and (max-width: 768px) {
             height: auto;
         }
+        
         &.auto {
             height: auto;
         }
+        
         .background {
-			position: absolute;
-			height: 100%;
-			width: 100%;
-			top: 0;
-			left: 0;
-			opacity: .6;
-			background-size: cover;
 			background-attachment: fixed;
 			background-position: 50% 50%;
-			background-repeat: no-repeat;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            left: 0;
+            opacity: .6;
+            position: absolute;
+			top: 0;
 			@include transition(opacity 200ms);
-			&.darken {
-				opacity: 0.1;
+            width: 100%;
+			
+            &.darken {
+				opacity: .1;
 			}
 		}
-        header {
+        
+        .cover-header {
             top: 30%;
+            
             @media screen and (max-width: 768px) {
                 top: auto;
             }
@@ -109,40 +132,36 @@
 	}
 }
 
-.home,
-.blog {
-    .cover {
-        padding: 200px 0;
-        header {
-            text-align: center;
-            h2 {
-                margin-top: 50px;
-                padding-top: 50px;
-                border-top: 1px solid #fff;
-                border-color: rgba(255, 255, 255, 0.35);
-            }
-            .taxonomy-description {
-                text-align: left;
-            }
+.home .cover,
+.blog .cover {
+    padding: 200px 0;
+
+    &-header {
+        text-align: center;
+
+        .taxonomy-description {
+            text-align: left;
         }
+    }
+
+    &-subtitle {
+        border-top: 1px solid rgba(255, 255, 255, .35);
+        margin-top: 50px;
+        padding-top: 50px;
     }
 }
 
-.archive,
-.search,
-.error404 {
-    .cover {
-        header {
-            h1 {
-                text-align: center;
-            }
-            .site-description {
-                margin-top: 50px;
-                padding-top: 50px;
-                border-top: 1px solid #fff;
-                border-color: rgba(255, 255, 255, 0.25);
-            }
-        }
+.archive .cover,
+.search .cover,
+.error404 .cover {
+    &-title {
+        text-align: center;
+    }
+    
+    .site-description {
+        border-top: 1px solid rgba(255, 255, 255, .25);
+        margin-top: 50px;
+        padding-top: 50px;
     }
 }
 

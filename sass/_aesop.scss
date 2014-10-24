@@ -1,80 +1,95 @@
-div.aesop-content {
+.aesop-content {
 	@include site-width;
 }
 
 .aesop-component {
-    margin: 40px 0;
     display: block;
+    margin: 40px 0;
+    
     &.aesop-audio-component {
         @include site-width;
     }
-	&.aesop-image-component {
+	
+    &.aesop-image-component {
 		margin: 40px 0; // necessary override
 	}
-	&.aesop-quote-component {
+	
+    &.aesop-quote-component {
 		padding: 60px 0;
+        
         &.aesop-component-align-left,
         &.aesop-component-align-right {
             margin: 10px 30px;
             padding: 20px;
             width: 400px !important;
             @media screen and (max-width: 768px) {
-                width: 100% !important;
+                float: none;
                 margin: 40px 0;
                 padding: 60px 0;
-                float: none;
+                width: 100% !important;
             }
         }
-		blockquote {
+		
+        blockquote {
 			color: inherit;
 			display: block;
-            text-align: center;
             @include rem(font-size, 30px);
+            text-align: center;
+            
             @media screen and (max-width: 768px) {
                 width: 90%;
             }
+            
             &.aesop-component-align-left {
                 text-align: left;
             }
+            
             &.aesop-component-align-right {
                 text-align: right;
             }
+            
             &.aesop-component-align-left,
             &.aesop-component-align-right {
                 @media screen and (max-width: 768px) {
-                    text-align: center;
                     float: none;
                     margin: auto;
+                    text-align: center;
                 }
             }
-			.aesop-quote-component-cite {
-				font-size: 80%;
+			
+            .aesop-quote-component-cite {
 				color: inherit;
-				opacity: 0.75;
-				display: block;
+                display: block;
+                font-size: 80%;
 				margin-top: 15px;
+				opacity: .75;
 			}
 		}
-		&.quote-is-parallax {
-			blockquote {
+		
+        &.quote-is-parallax {
+			&.aesop-quote-faded {
+				blockquote {
+					opacity: 1;
+				}
+			}
+            
+            blockquote {
 				opacity: 0;
 				@include transition(opacity 200ms);
 				@media screen and (max-width: 768px) {
 					@include transform(none !important);
 				}
 			}
-			&.aesop-quote-faded {
-				blockquote {
-					opacity: 1;
-				}
-			}
 		}
     }
+    
     &.aesop-content-component {
-		.aesop-content-comp-inner {
+		
+        .aesop-content-comp-inner {
             padding: 30px 0;
 			width: 90%;
         }
+        
         p {
 			color: inherit;
             margin: 0;
@@ -87,12 +102,13 @@ div.aesop-content {
 	background-position: 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 100%;
-	left: 0;
-	top: 0;
-	position: relative;
-	overflow: hidden;
 	height: 500px; // default height overridden by js
+    left: 0;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    width: 100%;
+	
     @media screen and (max-width: 768px) {
         background-attachment: scroll;
         background-size: contain !important; // overrides inline style set by js
@@ -104,8 +120,7 @@ div.aesop-content {
 }
 
 .aesop-parallax-sc-caption-wrap {
-    background: #333;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, .8);
     color: #fff;
     font-family: $font-stack-content;
     @include rem(font-size, 16px);
@@ -116,11 +131,12 @@ div.aesop-content {
 .aesopicon {
     display: inline-block;
     font-family: FontAwesome;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     font-style: normal;
     font-weight: normal;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    
     &.aesopicon-search-plus:before {
         content: '\f00e';
     }
@@ -132,26 +148,30 @@ div.aesop-content {
 
 .aesop-sequence-img-wrap {
 	margin: 0;
-	& img {
+	
+    img {
 		display: block;
 	}
 }
 
 .aesop-image-component-image {
 	position: relative;
+    
     &.aesop-component-align-left,
     &.aesop-component-align-right {
         margin: 10px 30px;
         max-width: 45% !important;
+        
         @media screen and (max-width: 768px) {
-            margin: 40px auto;
             float: none;
-            width: auto !important;
+            margin: 40px auto;
             max-width: none !important;
+            width: auto !important;
         }
     }
+    
 	.aesop-image-component-caption {
-		@include image-caption;
+		@extend %image-caption;
 	}
 }
 
@@ -160,10 +180,10 @@ div.aesop-content {
 }
 
 .aesop-cover-title {
-    @include site-width(100%);
     color: #fff;
     @include rem(font-size, 42px);
     padding: 250px 0 20px;
+    @include site-width(100%);
 }
 
 .aesop-video-container {
@@ -172,47 +192,46 @@ div.aesop-content {
 
 .aesop-lightbox {
 	border: 0;
-	&:hover {
-		opacity: 0.8;
+	
+    &:hover {
+		opacity: .8;
 	}
 }
 
 .aesop-timeline {
-	position: fixed;
+	background-color: rgba(255, 255, 255, .9);
 	bottom: 0;
 	left: 0;
-	right: 0;
-	background: #fff;
-	background: rgba(255,255,255,0.9);
-	@include box-shadow(0 0 1px rgba(0,0,0,0.15));
+	position: fixed;
+    right: 0;
+	@include box-shadow(0 0 1px rgba(0, 0, 0, .15));
 	z-index: 500;
-	ol {
-		@include site-width($wide);
-		margin-bottom: 0;
+	
+    ol {
 		list-style: none;
+		margin-bottom: 0;
 		text-align: center;
-		&:after {
+		@include site-width($wide);
+        &:after {
 			display: none;
 		}
 	}
-	li {
-		display: inline-block;
-		margin: 0 10px;
-		@include transition(all 200ms);
-		a {
-			&:hover {
-				border-color: $link-border-color;
-			}
+	
+    li {
+        display: inline-block;
+        margin: 0 10px;
+        @include transition(all 200ms);
+        
+        a:hover {
+            border-color: $link-border-color;
 		}
-		&.in-view {
-		}
-		&.active {
-			a {
-				font-weight: bold;
-				border-bottom-width: 2px;
-			}
-		}
+		
+        &.active a {
+            border-bottom-width: 2px;
+            font-weight: bold;
+        }
 	}
+    
     &-stop {
         padding-top: 140px;
     }
@@ -220,9 +239,11 @@ div.aesop-content {
 
 // override width for top-level aesop components
 @each $class in aesop-component, aesop-story-collection {
+    
     .entry-content > .#{$class} {
         max-width: 100%;
         width: 100%;
+        
         &.aesop-audio-component {
             @include site-width;
         }

@@ -6,10 +6,10 @@ img {
         @include border-radius(50%);
         @for $i from 20 through 96 {
             &-#{$i} {
-                width: #{$i}px;
-                height: #{$i}px;
                 display: inline-block;
+                height: #{$i}px;
                 vertical-align: middle;
+                width: #{$i}px;
             }
         }
     }
@@ -18,12 +18,13 @@ img {
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
-	border: none;
+	border: 0;
 	margin-bottom: 0;
 	margin-top: 0;
 	padding: 0;
 }
-/* Make sure embeds and iframes fit their containers */
+
+// Make sure embeds and iframes fit their containers
 embed,
 iframe,
 object {
@@ -34,89 +35,73 @@ object {
 12.1 Captions
 --------------------------------------------------------------*/
 .wp-caption {
-	margin-bottom: 1.5em;
+	border: 0;
+    margin-bottom: 1.5em;
 	max-width: 100% !important; // overrides .entry-content > div
     padding: 0;
-	border: 0;
 	position: relative;
+    
     img[class*="wp-image-"] {
         display: block;
-        max-width: 100%;
         margin: 0 auto;
+        max-width: 100%;
     }
+    
     &-text {
         text-align: center;
     }
+    
     .wp-caption-text {
-        margin: 0.8075em 0;
-    }
-    &.aligncenter {
-        margin: 40px auto;
-		padding: 0;
-		width: auto;
-        max-width: 100%;
-        .wp-caption-text {
-			//@include image-caption;
-		}
-    }
-    &.alignleft,
-    &.alignright {
-        margin: 10px 30px;
-		padding: 0;
-		max-width: 45%;
-		@media screen and (max-width: 768px) {
-			margin: 40px auto;
-			float: none;
-            max-width: none;
-            width: auto !important;
-		}
-        .wp-caption-text {
-            //
-        }
-    }
-    &.alignleft {
-        //padding-right: 15px;
-        // caption?
-    }
-    &.alignright {
-        //padding-left: 15px;
-        // caption?
-    }
-
-    .wp-caption-text {
-        @include image-caption;
-        width: 100%;
+        @extend %image-caption;
+        margin: .8075em 0;
         text-align: center;
+        width: 100%;
         @media screen and (max-width: 768px) {
             width: 90%;
         }
     }
+    
+    &.aligncenter {
+        margin: 40px auto;
+		max-width: 100%;
+        padding: 0;
+		width: auto;
+        
+        .wp-caption-text {
+            @media screen and (max-width: 768px) {
+                text-align: center;
+                width: 90%;
+            }
+        }
+    }
+    
+    &.alignleft,
+    &.alignright {
+        margin: 10px 30px;
+		max-width: 45%;
+        padding: 0;
+		@media screen and (max-width: 768px) {
+			float: none;
+            margin: 40px auto;
+            max-width: none;
+            width: auto !important;
+		}
+    }
+    
 	&.alignleft .wp-caption-text {
         text-align: left;
 		@media screen and (max-width: 768px) {
-            width: 90%;
             text-align: center;
+            width: 90%;
         }
 	}
+    
     &.alignright .wp-caption-text {
         text-align: right;
 		@media screen and (max-width: 768px) {
-            width: 90%;
             text-align: center;
-        }
-	}
-	&.aligncenter .wp-caption-text {
-		@media screen and (max-width: 768px) {
             width: 90%;
-            text-align: center;
         }
-	}
-}
-
-.wp-caption {
-	&.alignleft,
-	&.alignright {
-		
 	}
 }
 
@@ -125,35 +110,44 @@ object {
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
+    
+    &-item {
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        width: 100%;
+        
+        .gallery-columns-2 & {
+            max-width: 50%;
+        }
+
+        .gallery-columns-3 & {
+            max-width: 33.33%;
+        }
+
+        .gallery-columns-4 & {
+            max-width: 25%;
+        }
+
+        .gallery-columns-5 & {
+            max-width: 20%;
+        }
+
+        .gallery-columns-6 & {
+            max-width: 16.66%;
+        }
+
+        .gallery-columns-7 & {
+            max-width: 14.28%;
+        }
+
+        .gallery-columns-8 & {
+            max-width: 12.5%;
+        }
+
+        .gallery-columns-9 & {
+            max-width: 11.11%;
+        }
+    }
+    
 }
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-	width: 100%;
-}
-.gallery-columns-2 .gallery-item {
-	max-width: 50%;
-}
-.gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
-}
-.gallery-columns-4 .gallery-item {
-	max-width: 25%;
-}
-.gallery-columns-5 .gallery-item {
-	max-width: 20%;
-}
-.gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
-}
-.gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
-}
-.gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
-}
-.gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
-}
-.gallery-caption {}
