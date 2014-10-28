@@ -84,6 +84,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     
-    grunt.registerTask('build', ['scsslint', 'sass', 'jshint', 'uglify']); // FIXME csslint?
-	grunt.registerTask('default', ['scsslint', 'sass', 'jshint', 'uglify', 'watch']); // FIXME csslint?
+    grunt.registerTask('build', ['sass', 'uglify']); // just build
+	grunt.registerTask('validate', ['scsslint', 'jshint']); // just lint scss and js
+	grunt.registerTask('default', ['scsslint', 'sass', 'jshint', 'uglify', 'watch']); // scsslint FIXME csslint?
 };
