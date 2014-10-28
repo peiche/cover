@@ -32,8 +32,8 @@ Header
 			}
             
             .home & {
-                opacity: 0;
-                visibility: hidden;
+                //opacity: 0;
+                //visibility: hidden;
             }
         }
         
@@ -63,10 +63,10 @@ Header
 
     .author a:hover {
         border-color: transparent;
-
-        .name {
-            border-color: #fff;
-        }
+		
+		.name {
+			border-color: #fff;
+		}
     }
 }
 
@@ -140,6 +140,15 @@ Nav menu, which animates into close x
         margin-right: 0;
     }
     
+	span {
+		background-color: transparent !important;
+	}
+	
+	span:before,
+	span:after {
+		background-color: #fff !important;
+	}
+	
     span:before {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -147,14 +156,4 @@ Nav menu, which animates into close x
     span:after {
         transform: rotate(-45deg) translate(7px, -8px);
     }
-}
-
-.show-overlay .hamburger span,
-.show-overlay .header.headroom--not-top .hamburger span {
-	background-color: transparent;
-}
-
-.show-overlay .hamburger span:before,
-.show-overlay .hamburger span:after {
-	background-color: #fff !important;
 }
