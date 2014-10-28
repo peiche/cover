@@ -3,5 +3,7 @@ linters:
     enabled: false
   Indentation:
     enabled: false
+  SelectorDepth:
+    max_depth: 4
   SelectorFormat:
     ignored_names: [ disqus_thread ]
