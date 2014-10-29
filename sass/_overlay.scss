@@ -25,17 +25,24 @@ Overlay for menus and widgets
         }
     }
     
-    .widget-area {
-        color: #ccc;
-        margin-bottom: 60px;
-        margin-top: 60px;
+    .widget {
+        
+        &-area {
+            color: #ccc;
+            margin-bottom: 60px;
+            margin-top: 60px;
+        }
+        
+        li a {
+            border-color: #666;
+        }
     }
     
     .tag-cloud a:hover {
         border-color: #fff;
     }
     
-    ul.menu {
+    .menu {
         list-style: none;
         margin: 0;
         padding-left: 0;
@@ -66,21 +73,21 @@ Overlay for menus and widgets
     .social-navigation {
         @include social-icon;
         
-        ul.menu {
+        .menu {
 			text-align: center;
+            
+            a {
+                border: 0;
+                padding: 0;
+
+                &:hover {
+                    background: transparent; // fixme: do something else here
+                }
+            }
 		}
         
         li {
             display: inline-block;
-        }
-        
-        a {
-            border: 0;
-            padding: 0;
-
-            &:hover {
-                background: transparent; // fixme: do something else here
-            }
         }
     }
     

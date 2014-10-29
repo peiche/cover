@@ -1,6 +1,8 @@
 linters:
   Comment:
     enabled: false
+  IdWithExtraneousSelector:
+    enabled: false
   Indentation:
     enabled: false
   SelectorDepth:

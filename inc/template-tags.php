@@ -56,11 +56,19 @@ function cover_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'cover' ); ?></h1>
 		<div class="nav-links cf">
 			<?php
-				$prev_img = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'single-post-thumbnail' );
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<div class="post-nav-container"><div class="post-nav-background" style="background-image: url(\'' . $prev_img[0] . '\')"></div><i class="fa fa-fw fa-chevron-left meta-nav"></i></div><span class="left">%title</span>', 'Previous post link', 'cover' ) );
-				
-				$next_img = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'single-post-thumbnail' );
-				next_post_link( '<div class="nav-next">%link</div>', _x( '<span class="right">%title</span><div class="post-nav-container"><div class="post-nav-background" style="background-image: url(\'' . $next_img[0] . '\')"></div><i class="fa fa-fw fa-chevron-right meta-nav"></i></div>', 'Next post link', 'cover' ) );
+				if ( ! $next ) {
+                    $prev_img = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'single-post-thumbnail' )[0];
+                } else {
+                    $prev_img = '';
+                }
+                previous_post_link( '<div class="nav-previous">%link</div>', _x( '<h2 class="subtitle">Previous post</h2><h1 class="title">%title</h1>', 'Previous post link', 'cover' ) );
+    
+				$next_img = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'single-post-thumbnail' )[0];
+                if ( '' != $next_img ) {
+                    $style = ' style="background-image: url(\'' . $next_img . '\')"';
+                }
+                next_post_link( '<div class="nav-next">%link</div>', _x( '<div class="cover"><div class="background"' . $style . '></div><div class="cover-header"><h2 class="cover-subtitle">Next post</h2><h1 class="cover-title">%title</h1></div></div>', 'Next post link', 'cover' ) );
+    
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->

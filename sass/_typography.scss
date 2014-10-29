@@ -32,6 +32,7 @@ h4 {
 
 h1 {
     font-family: $font-stack-heading;
+    @include rem(font-size, 58px);
 }
 
 h2 {

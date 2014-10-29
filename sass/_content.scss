@@ -283,19 +283,8 @@
 	word-wrap: break-word;
 }
 
-// --------------------------------------
-
 footer.entry-meta {
     @include site-width;
-}
-
-.edit-link {
-    margin-top: 15px;
-}
-
-.site-main [class*="navigation"] {
-	@include site-width($wide);
-    padding: 50px 0;
 }
 
 /*--------------------------------------------------------------

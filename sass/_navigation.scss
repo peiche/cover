@@ -132,36 +132,31 @@ a {
 }
 
 .site-main .comment-navigation,
-.site-main .paging-navigation,
-.site-main .post-navigation {
+.site-main .paging-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
+    padding: 50px 0;
+    @include site-width($wide);
 }
 
-.nav-previous,
-.nav-next {
-    .comment-navigation &,
-    .paging-navigation &,
-    .post-navigation & {
-        float: left;
-        width: 50%;
-	}
-    
-	.paging-navigation & a {
-        @include button;
-		
-		@media screen and (max-width: 405px) {
-			display: block;
-			margin-bottom: 10px;
-			text-align: center;
-			width: auto;
-		}
+.paging-navigation a {
+    @include button;
+
+    @media screen and (max-width: 405px) {
+        display: block;
+        margin-bottom: 10px;
+        text-align: center;
+        width: auto;
     }
 }
 
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous {
+	float: left;
+}
+
 .comment-navigation .nav-next,
-.paging-navigation .nav-next,
-.post-navigation .nav-next {
+.paging-navigation .nav-next {
 	float: right;
 	text-align: right;
 }
@@ -169,100 +164,57 @@ a {
 @media screen and (max-width: 405px) {
 	.comment-navigation .nav-previous,
 	.paging-navigation .nav-previous,
-	.post-navigation .nav-previous,
 	.comment-navigation .nav-next,
-	.paging-navigation .nav-next,
-	.post-navigation .nav-next {
+	.paging-navigation .nav-next {
 		float: none;
 		width: auto;
 	}
 }
 
-// FIXME redo post navigation
-.post-nav-container {
-	background-color: #2b2b2b;
-	@include border-radius(50%);
-	display: inline-block;
-	height: 120px;
-	position: relative;
-	vertical-align: middle;
-	width: 120px;
-	
-	.post-nav-background {
-		background-position: 50%;
-		background-size: cover;
-		@include border-radius(50%);
-		height: 100%;
-		left: 0;
-		opacity: .6;
-		position: absolute;
-		top: 0;
-		@include transition(all 200ms);
-		width: 100%;
-		z-index: 0;
-		
-		&:after {
-            background: #fff;
-			@include border-radius(50%);
-			bottom: 0;
-			content: '';
-			height: 0;
-			left: 0;
-			margin: auto;
-			position: absolute;
-            right: 0;
-            top: 0;
-            @include transition(all 200ms);
-			width: 0;
+.post-navigation {
+    background: #eee;
+    margin-top: 50px;
+    padding-top: 50px;
+    
+    a:hover .cover {
+        opacity: .9;
+    }
+    
+    [class$="title"] {
+        margin: 0 0 30px;
+    }
+    
+    [class$="subtitle"] {
+        border-bottom: 1px solid rgba(255, 255, 255, .35);
+        margin: 0 0 20px;
+        padding-bottom: 20px;
+    }
+    
+    .nav-previous {
+        margin-bottom: 50px;
+        @include site-width;
+        
+        .subtitle {
+            border-color: rgba(0, 0, 0, .1);
+            color: rgba(0, 0, 0, .5);
+            @include rem(font-size, 20px);
+            margin-bottom: 15px;
+            padding-bottom: 15px;
         }
         
-		a:hover & {
-            opacity: 1;
-            
-			&:after {
-                height: 100px;
-				width: 100px;
-            }
+        .title {
+            color: rgba(0, 0, 0, .6);
+            @include rem(font-size, 40px);
         }
-	}
-}
-
-.post-navigation {
-	a {
-		i.fa {
-			bottom: 0;
-			color: #fff;
-			font-size: 200%;
-			height: 30px;
-			left: 0;
-			margin: auto;
-			position: absolute;
-			right: 0;
-			text-align: center;
-			top: 0;
-		}
-		
-		span {
-			border-bottom: 2px solid transparent;
-			color: #666;
-			margin: 0 15px;
-			padding: 4px 0;
-			position: relative;
-			@include transition(all 200ms);
-			
-			@media screen and (max-width: 768px) {
-				display: none;
-			}
-		}
-		
-		&:hover {
-			span {
-				border-color: #ccc;
-			}
-            
-			i.fa {
-                color: #333;
-            }
-		}
-	}
+    }
+    
+    .cover {
+        margin: 0;
+        padding: 20px 0 80px;
+        @include transition(opacity .25s);
+        
+        .background {
+            background-attachment: scroll;
+        }
+    }
 }

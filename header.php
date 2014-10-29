@@ -52,6 +52,11 @@ if (
         <a id="toggle-overlay" class="hamburger" data-overlay-id="menu-area" href="#"><span></span></a>
     <?php } ?>
     <div class="site-info">
+        
+        <?php if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) { ?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo"><img src="<?php echo esc_url( jetpack_get_site_logo( 'url' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></a>
+        <?php } ?>
+        
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
         <span class="site-description">
 			<?php 

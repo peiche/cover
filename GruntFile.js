@@ -8,7 +8,10 @@
  * Grunt Module
  */
 module.exports = function(grunt) {
-	grunt.initConfig({
+	
+    var target = grunt.option('target') || 'dist';
+    
+    grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
         scsslint: {
             allFiles: ['sass/*.scss'],
@@ -23,7 +26,7 @@ module.exports = function(grunt) {
                 options: {
                     style: 'expanded',
                     noCache: true,
-                    sourcemap: 'auto',
+                    sourcemap: 'none',
                     unixNewlines: true
                 },
                 files: {
@@ -38,11 +41,10 @@ module.exports = function(grunt) {
                     unixNewlines: true
                 },
                 files: {
-                    'style.min.css': 'sass/style.scss'
+                    'style.css': 'sass/style.scss'
                 }
             },
 		},
-        // FIXME csslint?
         jshint: {
             files: ['GruntFile.js', 'src/*.js'],
             options: {
@@ -69,7 +71,7 @@ module.exports = function(grunt) {
         watch: {
 			css: {
 				files: 'sass/*.scss',
-				tasks: ['scsslint', 'sass'] // FIXME csslint?
+				tasks: ['scsslint', 'sass:' + target]
 			},
             javascript: {
                 files: 'src/*.js',
@@ -84,7 +86,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     
-    grunt.registerTask('build', ['sass', 'uglify']); // just build
-	grunt.registerTask('validate', ['scsslint', 'jshint']); // just lint scss and js
-	grunt.registerTask('default', ['scsslint', 'sass', 'jshint', 'uglify', 'watch']); // scsslint FIXME csslint?
+    grunt.registerTask('build', ['sass:' + target, 'uglify']);
+	grunt.registerTask('validate', ['scsslint', 'jshint']);
+	grunt.registerTask('default', ['scsslint', 'sass:' + target, 'jshint', 'uglify', 'watch']);
 };

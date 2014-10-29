@@ -9,6 +9,10 @@ jQuery(document).ready(function() {
 		
 		if (jQuery('html').hasClass('show-overlay')) {
 			jQuery('html').removeClass('show-overlay');
+            
+            setTimeout(function() {
+				jQuery('.overlay').scrollTop(0);
+			}, 200);
 		} else {
 			jQuery('html').addClass('show-overlay');
 		}

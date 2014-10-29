@@ -54,34 +54,14 @@ function cover_setup() {
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
     
 	// Enable featured content.
-    // leaving this commented out until I think of a good use for this.
-    /*
-	add_theme_support( 'featured-content', array(
+    add_theme_support( 'featured-content', array(
 		'filter'		=> 'cover_get_featured_posts',
         'max_posts'     => 1
 	) );
-    */
+    
 }
 endif; // cover_setup
 add_action( 'after_setup_theme', 'cover_setup' );
-
- /**
- * Getter function for Featured Content Plugin.
- *
- * @return array An array of WP_Post objects.
- */
-function cover_get_featured_posts() {
-	return apply_filters( 'cover_get_featured_posts', array() );
-}
-
-/**
- * A helper conditional function that returns a boolean value.
- *
- * @return bool Whether there are featured posts.
- */
-function cover_has_featured_posts() {
-	return ! is_paged() && (bool) cover_get_featured_posts();
-}
 
 /**
  * Register widgetized area and update sidebar with default widgets.
@@ -155,11 +135,11 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
+ * Load Jetpack compatibility.
  */
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Load Aesop Story Engine compatibility file.
+ * Load Aesop Story Engine compatibility.
  */
 require get_template_directory() . '/inc/aesop.php';

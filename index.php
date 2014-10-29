@@ -5,7 +5,6 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'parts/cover', 'home' ); ?>
 <?php get_template_part( 'parts/wrapper', 'top' ); ?>
 
 	<div id="primary" class="content-area">
@@ -14,8 +13,14 @@ get_header(); ?>
             <?php
                 if ( cover_has_featured_posts() ) {
                     get_template_part( 'parts/cover', 'featured' );
-                }
+                } else {
             ?>
+            
+            <div class="cover">
+                <div class="background"></div>
+            </div>
+            
+            <?php } ?>
             
 			<?php if ( have_posts() ) : ?>
 				

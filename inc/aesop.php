@@ -18,7 +18,7 @@ function cover_aesop_setup() {
         //"collection", 
         //"chapter", 
         //"document", 
-        "character", 
+        "character", // FIXME
         //"map", 
         //"timeline"
     );

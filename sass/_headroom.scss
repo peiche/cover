@@ -24,8 +24,15 @@ Headroom.js
                 color: #000;
                 
                 &:hover {
-                    border-color: transparent;
-                    color: $link-color;
+                    border-color: #000;
+                }
+            }
+            
+            .author a {
+                border-color: transparent;
+                
+                &:hover .name {
+                    border-color: #000;
                 }
             }
             

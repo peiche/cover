@@ -13,11 +13,16 @@
 get_header(); ?>
 
 <?php 
+    
+    /*
     if ( is_front_page() ) {
         get_template_part( 'parts/cover', 'home' );
     } else {
         get_template_part( 'parts/cover', 'post' );
     }
+    */
+
+    get_template_part( 'parts/cover', 'post' );
 ?>
 <?php while ( have_posts() ) : the_post(); ?>
     
