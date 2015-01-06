@@ -9,7 +9,7 @@
  */
 module.exports = function(grunt) {
 	
-    var target = grunt.option('target') || 'dist';
+    var target = grunt.option('target') || 'prod';
     
     grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -17,6 +17,7 @@ module.exports = function(grunt) {
             allFiles: ['sass/*.scss'],
             options: {
                 config: '.scss-lint.yml',
+				exclude: 'sass/FontAwesome',
                 reporterOutput: 'report/scss-lint-report.xml',
                 colorizeOutput: true
             },
@@ -26,14 +27,14 @@ module.exports = function(grunt) {
                 options: {
                     style: 'expanded',
                     noCache: true,
-                    sourcemap: 'none',
+                    sourcemap: 'auto',
                     unixNewlines: true
                 },
                 files: {
                     'style.css': 'sass/style.scss'
                 }
             },
-            dist: {
+            prod: {
                 options: {
                     style: 'compressed',
                     noCache: true,
@@ -45,8 +46,15 @@ module.exports = function(grunt) {
                 }
             },
 		},
+		autoprefixer: {
+            dist: {
+                files: {
+                    'style.css': 'style.css'
+                }
+            }
+        },
         jshint: {
-            files: ['GruntFile.js', 'src/*.js'],
+            files: ['GruntFile.js', 'js/src/*.js'],
             options: {
                 'globals': {
                     jQuery: true,
@@ -61,7 +69,7 @@ module.exports = function(grunt) {
             build: {
                 files: [{
                     expand: true,
-                    cwd: 'src',
+                    cwd: 'js/src',
                     dest: 'js',
                     src: '**/*.js',
                     ext: '.min.js'
@@ -71,10 +79,10 @@ module.exports = function(grunt) {
         watch: {
 			css: {
 				files: 'sass/*.scss',
-				tasks: ['scsslint', 'sass:' + target]
+				tasks: ['scsslint', 'sass:' + target, 'autoprefixer']
 			},
             javascript: {
-                files: 'src/*.js',
+                files: 'js/src/*.js',
                 tasks: ['jshint', 'uglify']
             }
 		}
@@ -82,11 +90,12 @@ module.exports = function(grunt) {
     
     grunt.loadNpmTasks('grunt-scss-lint');
     grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     
-    grunt.registerTask('build', ['sass:' + target, 'uglify']);
+    grunt.registerTask('build', ['sass:' + target, 'autoprefixer', 'uglify']);
 	grunt.registerTask('validate', ['scsslint', 'jshint']);
-	grunt.registerTask('default', ['scsslint', 'sass:' + target, 'jshint', 'uglify', 'watch']);
+	grunt.registerTask('default', ['scsslint', 'watch']);
 };
