@@ -8,11 +8,11 @@
 <?php while (have_posts()) : the_post(); ?>
 	<?php if ($count == 0) { ?>
 
-		<div class="cover featured-image auto">
+		<div class="cover<?php if ('' != get_the_post_thumbnail()) { ?> featured-image hero<?php } ?>">
 			<?php if ('' != get_the_post_thumbnail()) { ?>
 				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 			<?php } ?>
-			<div class="background<?php if ('' != get_the_post_thumbnail()) { ?> darken" style="background-image: url('<?php echo $image[0]; ?>');<?php } ?>" data-0-top="background-position: 50% 50%;" data-top-bottom="background-position: 50% 100%;"></div>
+			<div class="background<?php if ('' != get_the_post_thumbnail()) { ?> darken" style="background-image: url('<?php echo $image[0]; ?>');<?php } ?>"></div>
 			<header class="cover-header">
 				<?php get_template_part( 'parts/author-bio' ); ?>
 			</header>
