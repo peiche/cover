@@ -21,21 +21,19 @@
 
 <?php
 
-/*
-$has_image = '';
-if ( ( (is_single() || is_page() ) && '' != get_the_post_thumbnail() ) || is_home() || is_archive() || is_author() || is_search() || is_404() ) {
-    $has_image = 'has-featured-image';
+$header_class = '';
+if ( !( is_single() || is_page() || is_archive() || is_author() || is_search() || is_404() || cover_has_featured_posts() ) ) {
+    $header_class = ' bg';
 }
-*/
 
 $nav_primary = 'primary';
 $nav_social  = 'social';
 
 $build_overlay = false;
-if ( 
+if (
         has_nav_menu( $nav_primary ) ||
         has_nav_menu( $nav_social ) ||
-        is_active_sidebar( 'overlay-1' ) || 
+        is_active_sidebar( 'overlay-1' ) ||
         is_active_sidebar( 'overlay-2' ) ||
         is_active_sidebar( 'overlay-3' ) ) {
     $build_overlay = true;
@@ -43,35 +41,36 @@ if (
 
 ?>
 
-<body <?php body_class( $has_image ); ?>>
+<body <?php body_class(); ?>>
 
-<?php do_action(‘ase_theme_body_inside_top’); ?>
+<?php do_action( 'ase_theme_body_inside_top' ); ?>
 
-<header class="header">
-    <?php if ( $build_overlay ) { ?>
-        <a id="toggle-overlay" class="hamburger" data-overlay-id="menu-area" href="#"><span></span></a>
-    <?php } ?>
-    <div class="site-info">
-        
-        <?php if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) { ?>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo"><img src="<?php echo esc_url( jetpack_get_site_logo( 'url' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></a>
-        <?php } ?>
-        
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
-        <span class="site-description">
-			<?php 
-			if ( is_single() ) {
-				echo cover_posted_on();
-			} else {
-				bloginfo( 'description' ); 
-			}
-			?>
-		</span>
-    </div>
+<header class="header<?php echo $header_class; ?>">
+    <div class="backdrop" data-0-top="opacity: 0;" data-0-top-bottom="opacity: 1;" data-anchor-target=".cover"></div>
+
+	<div class="site-nav">
+		<a class="site-search" data-action="toggle-overlay" data-overlay-id="search-overlay" href="#"><span class="fa fa-search"></span></a>
+		<?php if ( $build_overlay ) { ?>
+			<a class="hamburger" data-action="toggle-overlay" data-overlay-id="menu-overlay" href="#"><span></span></a>
+		<?php } ?>
+	</div>
+	
+	<div class="site-info">
+		<?php if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) { ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo"><img src="<?php echo esc_url( jetpack_get_site_logo( 'url' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></a>
+		<?php } ?>
+
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
+		<?php if ( is_single() ) { ?>
+			<span class="site-description"><?php echo cover_posted_on(); ?></span>
+		<?php } else { ?>
+			<span class="site-description"><?php bloginfo( 'description' ); ?></span>
+		<?php } ?>
+	</div>
 </header>
 
 <?php if ( $build_overlay ) { ?>
-    <div id="menu-area" class="overlay">
+    <div id="menu-overlay" class="overlay">
         <?php if ( is_active_sidebar( 'overlay-1' ) ) { ?>
             <div class="widget-area" role="complementary">
                 <?php dynamic_sidebar( 'overlay-1' ); ?>
@@ -107,3 +106,7 @@ if (
         <?php } ?>
     </div>
 <?php } ?>
+
+<div id="search-overlay" class="overlay overlay-search">
+	<?php get_search_form(); ?>
+</div>
