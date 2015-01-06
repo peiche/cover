@@ -7,29 +7,30 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'parts/cover', 'archive' ); ?>
 <?php get_template_part( 'parts/wrapper', 'top' ); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-		
-		<?php if ( have_posts() ) : ?>
-            
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			
+			<?php get_template_part( 'parts/cover', 'archive' ); ?>
+			
+			<?php if ( have_posts() ) : ?>
 
-				<?php get_template_part( 'content'); ?>
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php endwhile; ?>
+					<?php get_template_part( 'content'); ?>
 
-			<?php cover_paging_nav(); ?>
+				<?php endwhile; ?>
 
-		<?php else : ?>
+				<?php cover_paging_nav(); ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php else : ?>
 
-		<?php endif; ?>
+				<?php get_template_part( 'content', 'none' ); ?>
 
+			<?php endif; ?>
+			
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
