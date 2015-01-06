@@ -11,7 +11,7 @@
 		if ($count == 0) {
 			
 			if ('' != get_the_post_thumbnail()) {
-				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
 			}
 			
 		}
@@ -19,8 +19,8 @@
 	endwhile;
 ?><!-- end of loop -->
 
-<div class="cover featured-image auto">
-	<div class="background<?php if ( '' != $image ) { ?> darken" style="background-image: url('<?php echo $image[0]; ?>');<?php } ?>" data-0-top="background-position: 50% 50%;" data-top-bottom="background-position: 50% 100%;"></div>
+<div class="cover<?php if ( '' != $image ) { ?> featured-image hero<?php } ?>">
+	<div class="background<?php if ( '' != $image ) { ?> darken" style="background-image: url('<?php echo $image; ?>');<?php } ?>"></div>
 	<header class="cover-header">
 
 		<h1 class="cover-title">
