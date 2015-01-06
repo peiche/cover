@@ -1,6 +1,8 @@
 linters:
   Comment:
     enabled: false
+  DuplicateProperty:
+    enabled: false # necessary for fallback properties, like font-size (px and rem) and height (px and vh)
   Indentation:
     enabled: false
   SelectorDepth:
