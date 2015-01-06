@@ -10,19 +10,13 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main"> <!-- .grid -->
             
-            <?php
-                if ( cover_has_featured_posts() ) {
-                    get_template_part( 'parts/cover', 'featured' );
-                } else {
-            ?>
-            
-            <div class="cover">
-                <div class="background"></div>
-            </div>
-            
-            <?php } ?>
-            
-			<?php if ( have_posts() ) : ?>
+			<?php
+				if ( cover_has_featured_posts() ) {
+					get_template_part( 'parts/cover', 'featured' );
+				}
+			?>
+			
+            <?php if ( have_posts() ) : ?>
 				
                 <?php $count = 0; ?>
                 <?php while ( have_posts() ) : the_post(); ?>
