@@ -9,12 +9,13 @@ while ( have_posts() ) : the_post();
 
 get_header(); // call header inside the loop to get author info ?>
 
-    <?php get_template_part( 'parts/cover', 'post' ); ?>
     <?php get_template_part( 'parts/wrapper', 'top' ); ?>
 
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
                 
+				<?php get_template_part( 'parts/cover', 'post' ); ?>
+				
                 <?php get_template_part( 'content', 'single' ); ?>
 
                 <?php
