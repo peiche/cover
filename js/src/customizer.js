@@ -16,4 +16,9 @@
 			$( '.site-description' ).text( to );
 		} );
 	} );
+	wp.customize( 'display_header_text', function( value ) {
+		value.bind( function( to ) {
+			$( '.site-title' ).hide();
+		} );
+	} );
 } )( jQuery );
