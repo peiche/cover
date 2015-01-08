@@ -1,0 +1,22 @@
+.header .backdrop.skrollable {
+	&-between ~ div {
+		a,
+		.site-description {
+			color: #fff;
+		}
+		
+		.site-description {
+			border-color: rgba(255, 255, 255, .25);
+		}
+		
+		.hamburger span,
+		.hamburger span:after,
+		.hamburger span:before {
+			background-color: #fff;
+		}
+	}
+	
+	&-after {
+		transition: all .5s; // matches .header's transition
+	}
+}
