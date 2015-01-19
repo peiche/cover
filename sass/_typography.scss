@@ -8,7 +8,7 @@ select,
 textarea {
 	color: $text-color-base;
 	font-family: $font-stack-content;
-    @include rem(font-size, 16px);
+    @include rem(font-size, $font-size-normal);
 	line-height: 1.5;
 }
 
@@ -94,7 +94,7 @@ i {
 
 blockquote,
 q {
-	border-left: 3px solid #c6d5e1;
+	border-left: 3px solid $text-color-quote;
     color: $text-color-quote;
     @include rem(font-size, 22px);
     line-height: 38px;
@@ -113,7 +113,6 @@ q {
     cite {
         color: $text-color-cite;
         font-style: italic;
-        text-align: right;
     }
     
     i,
@@ -141,7 +140,7 @@ code {
 }
 
 pre {
-	background: #313339;
+	background: $background-color-code; 
 	border: 0;
     color: #fff;
     font-family: $font-stack-code;
