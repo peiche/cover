@@ -27,7 +27,7 @@
 				<div class="background"<?php if ( '' != $img ) { ?> style="background-image: url('<?php echo $img; ?>');"<?php } ?>></div>
 				<header class="cover-header">
 					<h1 class="cover-title"><?php the_title(); ?></h1>
-					<h2 class="cover-subtitle">
+					<h2 class="cover-summary">
 					<?php 
 						$pos = strpos( $post->post_content, '<!--more-->' );
 						if ( $pos ) {
