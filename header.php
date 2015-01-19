@@ -16,6 +16,8 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+    
+<meta name="theme-color" content="#026ed2">
 
 </head>
 
