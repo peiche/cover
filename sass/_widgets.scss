@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 .widget {
 	margin: 60px 0;
-	@include site-width($narrow);
+	@include site-width($width-narrow);
 	
 	ul {
 		list-style: none;
