@@ -67,27 +67,6 @@ Overlay for menus and widgets
         @include site-width($width-narrow);
     }
     
-    .social-navigation {
-        @include social-icon;
-        
-        .menu {
-			text-align: center;
-            
-            a {
-                border: 0;
-                padding: 0;
-
-                &:hover {
-                    background: transparent; // fixme: do something else here
-                }
-            }
-		}
-        
-        li {
-            display: inline-block;
-        }
-    }
-    
     .search-form input.search-field {
         border-radius: 0;
         box-sizing: border-box;

@@ -203,6 +203,30 @@ a {
     }
 }
 
+.social-navigation {
+    @include social-icon;
+    
+    .menu {
+        line-height: normal;
+        list-style: none;
+        margin: 0;
+        
+        a {
+            border: 0;
+            padding: 0;
+
+            &:hover {
+                background: transparent;
+            }
+        }
+    }
+
+    li {
+        display: inline-block;
+        line-height: normal;
+    }
+}
+
 /*--------------------------------------------------------------
 Back to Top Link
 --------------------------------------------------------------*/
