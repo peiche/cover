@@ -14,9 +14,9 @@
 	}
 	
     .avatar {
+		border-radius: 50%;
         display: block;
         margin: auto;
-        @include border-radius(50%);
     }
 	
     &-social {
