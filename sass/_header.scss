@@ -172,6 +172,15 @@ Nav menu, which animates into close x
         margin-right: 0;
     }
     
+    &:before {
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: -25%;
+        width: 100%;
+    }
+    
 	span {
 		background-color: transparent !important;
 	}
