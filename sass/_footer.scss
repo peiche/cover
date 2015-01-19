@@ -4,8 +4,17 @@
     padding: 30px 0;
     
     .site-info {
+        @extend %cf;
         @include site-width;
-        text-align: center;
+        
+        .site-credits {
+            float: left;
+        }
+        
+        .social-navigation {
+            float: right;
+            font-size: $font-size-normal;
+        }
     }
     
     a:hover {

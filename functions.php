@@ -45,7 +45,10 @@ function cover_setup() {
 		'primary' => __( 'Primary Menu', 'cover' ),
 	) );
     register_nav_menus( array(
-		'social' => __( 'Social Menu', 'cover' ),
+		'social_header' => __( 'Social Menu (Overlay)', 'cover' ),
+	) );
+    register_nav_menus( array(
+		'social_footer' => __( 'Social Menu (Footer)', 'cover' ),
 	) );
 
 	// Enable support for HTML5 markup.

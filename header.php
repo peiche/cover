@@ -27,7 +27,7 @@ if ( !( is_single() || is_page() || is_archive() || is_author() || is_search() |
 }
 
 $nav_primary = 'primary';
-$nav_social  = 'social';
+$nav_social  = 'social_header';
 
 $build_overlay = false;
 if (
