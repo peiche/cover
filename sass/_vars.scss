@@ -1,31 +1,60 @@
-$text-color-base: #3b3b3b;
-$text-color-heading: #262b30;
-$text-color-content: #333332;
-$text-color-quote: #888;
-$text-color-cite: #bbb;
+$color-blue: #026ed2; // #2196F3 is the Material Design color, but I personally feel it's too light.
+$color-red: #f44336;
+$color-pink: #e91e63;
+$color-purple: #9c27b0;
+$color-deep-purple: #673ab7;
+$color-indigo: #3f51b5;
+$color-light-blue: #03a9f4;
+$color-cyan: #00bcd4;
+$color-teal: #009688;
+$color-green: #4caf50;
+$color-light-green: #8bc34a;
+$color-orange: #ff9800;
+$color-deep-orange: #ff5722;
+$color-brown: #795548;
+$color-grey: #9e9e9e;
+$color-light-grey: #c3c2c9;
+$color-dark-grey: #2b2b2b;
+$color-blue-grey: #607d8b;
 
+$text-color-base: #3b3b3b;
+$text-color-heading: darken($text-color-base, 10%);
+$text-color-content: $text-color-base;
+$text-color-quote: lighten($text-color-base, 10%);
+$text-color-cite: lighten($text-color-base, 25%);
+
+$background-color-cover: $color-blue; // $color-dark-grey;
+$background-color-cover-neutral: $color-dark-grey;
+$background-color-code: $color-dark-grey;
+
+$font-size-normal: 16px;
 $font-weight-normal: 400;
 
 $font-stack-content: 'Open Sans', sans-serif;
 $font-stack-heading: Montserrat, sans-serif;
 $font-stack-code: 'Source Code Pro', monospace;
 
-$link-color: #026ed2;
-$link-color-hover: darken($link-color, 10%);
-$link-border-color: #c3c2c9;
+$link-color: $color-blue;
+$link-color-active: darken($link-color, 15%);
+$link-border-color: $color-light-grey;
 
-$button-background: #fff;
-$button-border-color: #c3c2c9;
-$button-color: #686868;
-$button-color-hover: #fff;
-$button-gray-background: #edebf3;
-$button-gray-color: #858585;
+$button-background: #edebf3;
+$button-color: #858585;
 
-$narrow: 500px;
-$medium: 760px;
-$wide: 1000px;
+$width-narrow: 500px;
+$width-medium: 760px;
+$width-wide: 1000px;
 
-$divider-color: #b3b3b3;
+$z-index-above-wp-toolbar: 100000;
+$z-index-addthis: 100021;
+
+$z-index-header: 600;
+$z-index-header-backdrop: -1;
+$z-index-cover: 400;
+$z-index-aesop-timeline: 500;
+$z-index-overlay: 500;
+
+$divider-color: $color-light-grey;
 
 @function parse-int($n) {
     @return $n / ($n * 0 + 1);
@@ -56,117 +85,109 @@ $divider-color: #b3b3b3;
         }
     }
     
-    // Note: this doubles the declarations of font-size, 
-    // Unlike multiple declarations of the background property, 
-    // css linter tasks do not recognize this as providing a fallback
-    // for browsers that do not support the rem property.
+    /*
+	 * Note: this doubles the declarations of font-size, 
+     * Unlike multiple declarations of the background property, 
+     * css linter tasks do not recognize this as providing a fallback
+     * for browsers that do not support the rem property.
+	 */
     #{$property}: $px;
     #{$property}: $rem;
 }
 
-@mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    -o-border-radius: $radius;
-    border-radius: $radius;
-}
-
-@mixin transition($val) {
-    -webkit-transition: $val;
-    -moz-transition: $val;
-    -o-transition: $val;
-    transition: $val;
-}
-
-@mixin transform($val) {
-    -webkit-transform: $val;
-    -moz-transform: $val;
-    -o-transform: $val;
-    transform: $val;
-}
-
-@mixin site-width($width: $medium) {
-    max-width: $width;
+@mixin site-width($width: $width-medium) {
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    max-width: $width;
+	width: 90%;
 }
 
-@mixin background-gradient($color1, $color2) {
-	background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, $color1), color-stop(100%, $color2));
-	background-image: -webkit-linear-gradient($color1, $color2);
-	background-image: -moz-linear-gradient($color1, $color2);
-	background-image: -o-linear-gradient($color1, $color2);
-	background-image: linear-gradient($color1, $color2);
+@mixin button($color: $color-grey) {
+	background-color: $color;
+	border: 0;
+	border-radius: 4px;
+	color: #fff;
+	display: inline-block;
+	@include rem(font-size, $font-size-normal);
+	line-height: normal;
+	padding: 10px 20px;
+	text-decoration: none;
+	transition: all .2s;
+	
+	&:focus,
+	&:visited {
+		color: #fff;
+	}
+	
+	&:hover {
+		background-color: darken($color, 10%);
+		color: #fff;
+		opacity: .9;
+	}
+	
+	&:active {
+		background-color: darken($color, 20%);
+		color: #fff;
+	}
+	
+	&.round {
+		border-radius: 25px;
+	}
+ 	 
+	&.full {
+		display: block;
+	}
 }
 
-@mixin box-shadow($val) {
-    @each $prefix in -webkit-, -moz-, -o-, null {
-        #{$prefix}box-shadow: $val;
-    }
+@mixin bg-color-hover($color: $color-grey) {
+	background-color: $color;
+	
+	&:hover {
+		background-color: darken($color, 10%);
+	}
+	
+	&:active {
+		background-color: darken($color, 20%);
+	}
 }
 
-@mixin box-sizing($val) {
-    -webkit-box-sizing: $val;
-    -moz-box-sizing: $val;
-    box-sizing: $val;
-}
-
-@mixin button($background: $link-color, $color: #fff, $border-radius: 25px) {
-    padding: 8px 15px;
-    @include rem(font-size, 14px);
-    border: 0;
-    background: $background;
-    color: $color;
-    @include border-radius($border-radius);
-    @include transition(all .2s ease-in-out);
-    &:hover {
-        background: darken($background, 10%);
-        color: #fff;
-    }
-}
-
-@mixin user-select($val) {
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	outline: 0;
-	-webkit-touch-callout: $val;
-	-webkit-user-select: $val;
-	-khtml-user-select: $val;
-	-moz-user-select: $val;
-	-ms-user-select: $val;
-	user-select: $val;
-}
-
-@mixin perspective($val) {
-    -webkit-perspective: $val; 
-    -moz-perspective: $val; 
-    -ms-perspective: $val; 
-    perspective: $val;
-}
-
-@mixin transform-style($val) {
-    -webkit-transform-style: $val;
-    -moz-transform-style: $val;
-    -ms-transform-style: $val;
-    transform-style: $val;
+.button {
+	@include button;
+	
+	&.blue {
+		@include bg-color-hover($color-blue);
+	}
+	
+	&.red {
+		@include bg-color-hover($color-red);
+	}
+	
+	&.pink {
+		@include bg-color-hover($color-pink);
+	}
+	
+	&.green {
+		@include bg-color-hover($color-green);
+	}
 }
 
 %image-caption { // style used for both normal and aesop image component captions
-    @include rem(font-size, 15px);
     font-family: $font-stack-content;
-    font-style: italic;
+    @include rem(font-size, 15px);
+	font-style: italic;
+    margin-bottom: 10px;
+	margin-top: 5px;
     @include site-width;
-    @include rem(margin-top, 5px);
-    @include rem(margin-bottom, 10px);
-    i,
+	
+	i,
     em {
         font-style: normal;
     }
 }
 
-// Styles for defining social media icons.
-
+/*
+ * Styles for defining social media icons.
+ */
 $facebook-color: #3b5998;
 $twitter-color: #00acee;
 $google-color: #dd4b39;
@@ -201,13 +222,14 @@ $tumblr-color: #2c4762;
                     color: $color;
                     
                     &:before {
-                        @include transition(color 200ms);
+                        transition: color 200ms;
                     }
                 }
                 
                 .social-icon {
-                    @include transition(color 200ms);
-                    &:before {
+                    transition: color 200ms;
+                    
+					&:before {
                         content: $char;
                     }
                 }
