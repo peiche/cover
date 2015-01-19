@@ -19,7 +19,7 @@
 	endwhile;
 ?><!-- end of loop -->
 
-<div class="cover<?php if ( '' != $image ) { ?> featured-image hero<?php } ?>">
+<div class="cover">
 	<div class="background<?php if ( '' != $image ) { ?> darken" style="background-image: url('<?php echo $image; ?>');<?php } ?>"></div>
 	<header class="cover-header">
 
@@ -68,7 +68,7 @@
 				_e( 'Chats', 'cover' );
 
 			elseif ( is_search() ) :
-				_e( 'Results', 'cover' );
+				_e( 'Results for &quot;', 'cover' ) . _e( the_search_query(), 'cover' ) . _e( '&quot;', 'cover' );
 
 			else :
 				_e( 'Archives', 'cover' );
@@ -76,10 +76,6 @@
 			endif;
 		?>
 		</h1>
-
-		<?php if ( is_search() ) { ?>
-			<?php get_search_form(); ?>
-		<?php } ?>
 
 		<?php
 			// Show term description if it exists.
