@@ -54,19 +54,16 @@ if (
 			<a class="hamburger" data-action="toggle-overlay" data-overlay-id="menu-overlay" href="#"><span></span></a>
 		<?php } ?>
 	</div>
-	
-	<div class="site-info">
-		<?php if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) { ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo"><img src="<?php echo esc_url( jetpack_get_site_logo( 'url' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></a>
-		<?php } ?>
-
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
-		<?php if ( is_single() ) { ?>
+    
+    <div class="site-info">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
+        <?php if ( is_single() ) { ?>
 			<span class="site-description"><?php echo cover_posted_on(); ?></span>
 		<?php } else { ?>
 			<span class="site-description"><?php bloginfo( 'description' ); ?></span>
 		<?php } ?>
 	</div>
+    
 </header>
 
 <?php if ( $build_overlay ) { ?>
