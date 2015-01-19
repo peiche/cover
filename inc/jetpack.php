@@ -20,15 +20,6 @@ function cover_jetpack_setup() {
 		'footer' => 'page'
 	) );
     
-    /*
-     * See Jetpack support for more info
-     * @link http://jetpack.me/support/site-logo/
-     * @link https://twitter.com/jetpack/status/523027112455057408
-     */
-    add_theme_support( 'site-logo', array( 
-        'cover-site-logo' 
-    ) );
-    
     add_theme_support( 'jetpack-responsive-videos' );
 }
 add_action( 'after_setup_theme', 'cover_jetpack_setup' );
