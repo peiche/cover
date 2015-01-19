@@ -1,18 +1,10 @@
 /*--------------------------------------------------------------
 12.0 Media
 --------------------------------------------------------------*/
-img {
-    &.avatar {
-        @include border-radius(50%);
-        @for $i from 20 through 96 {
-            &-#{$i} {
-                display: inline-block;
-                height: #{$i}px;
-                vertical-align: middle;
-                width: #{$i}px;
-            }
-        }
-    }
+.avatar {
+	border-radius: 50%;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .page-content img.wp-smiley,
@@ -53,7 +45,7 @@ object {
     
     .wp-caption-text {
         @extend %image-caption;
-        margin: .8075em 0;
+        margin: 10px auto;
         text-align: center;
         width: 100%;
         @media screen and (max-width: 768px) {
