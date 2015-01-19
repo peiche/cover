@@ -66,11 +66,6 @@ jQuery(document).ready(function() {
 	 * Don't load if the user agent is a touch device.
 	 */
     if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-		// skrollr init
-		skrollr.init({
-			forceHeight: false
-		});
-		
 		// headroom
 		var header_headroom = new Headroom(jQuery('.header')[0]);
 		header_headroom.init();
@@ -78,6 +73,11 @@ jQuery(document).ready(function() {
 		var cover_height = 0;
 		if (jQuery('.cover').length > 0) {
 			cover_height = jQuery('.cover').outerHeight();
+            
+            // skrollr init
+            skrollr.init({
+                forceHeight: false
+            });
 		}
 		var btt_headroom = new Headroom(jQuery('.back-to-top')[0], {
 			offset: cover_height
