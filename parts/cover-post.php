@@ -28,7 +28,17 @@
     <div class="background" <?php if ( '' != $class ) { ?>style="background-image: url('<?php echo $img[0]; ?>');"<?php } ?>></div>
 
     <header class="cover-header">
-
+		
+		<?php if ( is_single() ) { ?>
+			<?php
+				/* translators: used between list items, there is a space after the comma */
+                $categories_list = get_the_category_list( __( ', ', 'cover' ) );
+                if ( $categories_list && cover_categorized_blog() ) :
+            ?>
+            <h2 class="cover-subtitle"><?php echo $categories_list; ?></h2>
+            <?php endif; ?>
+        <?php } ?>
+		
         <?php if ( is_page() ) { ?>
             <?php if ( $post->post_parent ) {
                 $parent_permalink = get_permalink($post->post_parent);

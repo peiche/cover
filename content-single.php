@@ -19,21 +19,9 @@
 	<footer class="entry-meta">
 
 		<?php
-			$categories = get_the_category();
-            $tags = get_the_tags();
-        ?>
-
-        <?php if ( $categories ) { ?>
-        <ul class="categories">
-		<?php
-			foreach( $categories as $category ) {
-				echo '<li><a href="' . get_category_link( $category->term_id ) . '" title="' . esc_attr( sprintf( __("View all posts in %s" ), $category->name ) ) . '">' . $category->name . '</a></li>';
-			}
+			$tags = get_the_tags();
+			if ( $tags ) {
 		?>
-		</ul>
-		<?php } ?>
-
-        <?php if ( $tags ) { ?>
         <ul class="tags">
         <?php
                 foreach( $tags as $tag ) {
