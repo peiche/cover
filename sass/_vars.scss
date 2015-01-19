@@ -224,9 +224,14 @@ $tumblr-color: #2c4762;
                     &:before {
                         transition: color 200ms;
                     }
+                    
+                    + .social-icon {
+                        color: inherit;
+                    }
                 }
                 
                 .social-icon {
+                    color: $text-color-base;
                     transition: color 200ms;
                     
 					&:before {
