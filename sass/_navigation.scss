@@ -8,7 +8,7 @@ a {
     border-bottom: 1px solid transparent;
 	color: $link-color;
 	text-decoration: none;
-	@include transition(all .2s ease-in-out);
+	transition: all .2s ease-in-out;
     
 	b &,
     strong & {
@@ -22,11 +22,11 @@ a {
 	&:hover,
     &:focus,
     &:active {
-        color: $link-color-hover;
+        color: $link-color-active;
     }
     
 	&:hover {
-        color: $link-color-hover;
+        color: $link-color-active;
 		text-decoration: none;
         
 		.entry-summary &,
@@ -37,35 +37,20 @@ a {
         }
     }
 	
-    &.block {
-        @include border-radius(4px);
-		border: 2px solid #c3c2c9;
-		color: #686868;
-		display: block;
-        font-weight: 600;
-        text-align: center;
-        
-		&:hover {
-            background: #0066d9;
-			border: 2px solid #0066d9;
-            color: #fff;
-        }
-    }
-}
-
-.author a {
-    .name {
-        border-bottom: 1px solid transparent;
-        @include transition(border .2s ease-in-out);
-    }
-	
-    &:hover {
-        border-color: transparent;
-        
+	&.author {
 		.name {
-            border-color: $link-border-color;
-        }
-    }
+			border-bottom: 1px solid transparent;
+			transition: border .2s ease-in-out;
+		}
+
+		&:hover {
+			border-color: transparent;
+
+			.name {
+				border-color: $link-border-color;
+			}
+		}
+	}
 }
 
 /*--------------------------------------------------------------
@@ -136,12 +121,12 @@ a {
 	margin: 0 0 1.5em;
 	overflow: hidden;
     padding: 50px 0;
-    @include site-width($wide);
+    @include site-width($width-wide);
 }
 
 .paging-navigation a {
-    @include button;
-
+    @include button($color-blue);
+	
     @media screen and (max-width: 405px) {
         display: block;
         margin-bottom: 10px;
@@ -176,18 +161,12 @@ a {
     margin-top: 50px;
     padding-top: 50px;
     
-    a:hover .cover {
-        opacity: .9;
-    }
-    
     [class$="title"] {
         margin: 0 0 30px;
     }
     
     [class$="subtitle"] {
-        border-bottom: 1px solid rgba(255, 255, 255, .35);
         margin: 0 0 20px;
-        padding-bottom: 20px;
     }
     
     .nav-previous {
@@ -195,7 +174,7 @@ a {
         @include site-width;
         
         .subtitle {
-            border-color: rgba(0, 0, 0, .1);
+			border-bottom: 1px solid rgba(0, 0, 0, .1);
             color: rgba(0, 0, 0, .5);
             @include rem(font-size, 20px);
             margin-bottom: 15px;
@@ -209,12 +188,44 @@ a {
     }
     
     .cover {
+		background-color: $background-color-cover-neutral;
         margin: 0;
         padding: 20px 0 80px;
-        @include transition(opacity .25s);
+		z-index: auto;
+		
+		&-header {
+			margin: 50px auto;
+		}
         
         .background {
             background-attachment: scroll;
         }
     }
+}
+
+/*--------------------------------------------------------------
+Back to Top Link
+--------------------------------------------------------------*/
+.back-to-top {
+	border: 0;
+	bottom: -64px;
+	position: fixed;
+	right: 15px;
+	
+	.fa-stack-2x { // generic class in case we change it to a different shape
+		color: $color-red;
+		transition: color .2s;
+	}
+	
+	&:hover .fa-stack-2x {
+		color: darken($color-red, 10%);
+	}
+	
+	&:active .fa-stack-2x {
+		color: darken($color-red, 20%);
+	}
+	
+	.fa-angle-up { // specific for the angle character
+		margin-top: -3px;
+	}
 }

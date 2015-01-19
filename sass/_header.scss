@@ -4,16 +4,35 @@ Header
 
 .header {
     @include rem(font-size, 24px);
-    padding: 20px;
+    color: #fff;
+	padding: 0 20px;
     position: absolute;
-    @include transition(all 200ms);
     width: 100%;
-    z-index: 600;
-    
+    z-index: $z-index-header;
+	
     @media screen and (max-width: 768px) {
         position: absolute;
     }
     
+	.backdrop {
+		background-color: $color-dark-grey;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: $z-index-header-backdrop;
+		
+		.noscroll & {
+			background-color: transparent !important;
+		}
+	}
+	
+	&.bg .backdrop {
+		opacity: 1;
+	}
+	
     a {
         color: #fff;
         
@@ -24,28 +43,41 @@ Header
     
     .site {
         &-info {
-            float: left;
-            @include transition(opacity 200ms);
-			
-            @media screen and (max-width: 768px) {
-				float: none;
-			}
+			transition: opacity 200ms;
         }
+		
+		&-nav {
+			float: right;
+			margin: 20px 0;
+		}
         
         &-logo {
+			transition: opacity 200ms;
+			
             &:hover {
                 border-color: transparent;
             }
             
             img {
-                height: 39px;
-                vertical-align: middle;
-            }
-            
-            + .site-title {
-                margin-left: 5px;
+                height: 47px;
+                margin: 15px 15px 15px 0;
+				vertical-align: bottom;
+				
+				@media screen and (max-width: 768px) {
+					margin-bottom: 0;
+					margin-right: 10px;
+				}
             }
         }
+		
+		&-title {
+			display: inline-block;
+			margin: 20px 0;
+
+			@media screen and (max-width: 768px) {
+				margin-bottom: 5px;
+			}
+		}
         
         &-description {
             border: 0 solid rgba(255, 255, 255, .25);
@@ -54,8 +86,12 @@ Header
             @include rem(font-size, 14px);
             margin-left: 20px;
             padding-left: 20px;
-            vertical-align: middle;
-			@include transition(all .2s ease-in-out);
+            transition: all .2s ease-in-out;
+			vertical-align: middle;
+			
+			&:empty {
+				display: none;
+			}
             
             @media screen and (max-width: 768px) {
                 border-left-width: 0;
@@ -71,21 +107,34 @@ Header
         margin-right: 5px;
     }
 
-    .author a:hover {
+    .author:hover {
         border-color: transparent;
 		
 		.name {
 			border-color: #fff;
 		}
     }
+	
+	.noscroll & {
+		pointer-events: none;
+		
+		.site-info {
+			opacity: 0;
+		}
+	}
 }
 
-.show-overlay .header {
-    pointer-events: none;
-    
-    .site-info {
-        opacity: 0;
-    }
+/*--------------------------------------------------------------
+Search
+--------------------------------------------------------------*/
+
+.site-search {
+	border: 0;
+	margin-right: 20px;
+	
+	.noscroll & {
+		opacity: 0;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -94,11 +143,10 @@ Nav menu, which animates into close x
 
 .hamburger {
 	border: 0;
-    display: block;
-	float: right;
-    height: 30px;
-    margin: 0 auto -15px;
-    padding-top: 15px;
+    display: inline-block;
+	height: 30px;
+    margin: 1px auto -15px;
+    padding-top: 5px;
     width: 28px;
 	
     span {
@@ -124,28 +172,21 @@ Nav menu, which animates into close x
 .hamburger span:before {
 	backface-visibility: hidden;
 	background-color: #fff;
-	@include border-radius(2px);
+	border-radius: 2px;
 	height: 5px;
-    @include transition(all .5s);
+    transition: all .5s;
 	width: 100%;
     
     @media screen and (max-width: 768px) {
-		@include transition(none);
+		transition: none;
 	}
 }
 
-@media screen and (min-width: 769px) {
-    .header.headroom--not-top .hamburger span,
-    .header.headroom--not-top .hamburger span:after,
-    .header.headroom--not-top .hamburger span:before {
-        background-color: #000;
-    }
-}
-
-.show-overlay .hamburger {
+.noscroll .hamburger {
     margin-right: 18px;
     pointer-events: auto;
-    
+    transform: translate3d(0, 3px, 0);
+	
     @media screen and (max-width: 768px) {
         margin-right: 0;
     }

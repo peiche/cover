@@ -4,16 +4,8 @@
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
-#page {
-	position: relative;
-}
-
 .sticky {
     background: #333;
-    
-    &.hentry {
-        margin-top: -50px;
-    }
     
     .entry-title a {
         color: #fff;
@@ -60,13 +52,14 @@
         display: none;
     }
     
-    @each $location in (home, archive, search) {
-        .#{$location} & {
-            padding-top: 50px;
-        }
-    }
-    
-    .single & {
+	.home &,
+	.archive &,
+	.search & {
+		padding-top: 50px;
+	}
+	
+    .single &,
+	.page & {
         border: 0;
         padding: 0;
     }
@@ -112,18 +105,16 @@
     }
     
     &-summary {
-        margin: 0;
+        > * {
+            @include site-width;
+        }
 		
-        p {
+		p {
             margin: 1.5em auto 0;
             
             &:first-child {
                 margin-top: 0;
             }
-        }
-        
-        > * {
-            @include site-width;
         }
         
         .tiled-gallery {
@@ -161,20 +152,13 @@
         }
         
         > section > h2,
+		> section > h3,
         > section > p {
             @include site-width;
         }
         
-        > .twitter-tweet {
-            margin-left: auto !important;
-            margin-right: auto !important;
-            max-width: 760px !important;    // overrides inline styles
-            width: 90% !important;          // overrides inline styles
-        }
-		
-        > h2:first-child,
-		> p:first-child {
-			margin-top: 0;
+        > :first-child {
+			margin-top: 60px;
 		}
 		
         > p:first-child,
@@ -197,9 +181,9 @@
         > blockquote {
             
             &.large {
-                @include rem(font-size, 40px);
+                @include rem(font-size, 30px);
                 border: 0;
-                max-width: $wide;
+                max-width: $width-wide;
                 padding: 0;
                 position: relative;
                 text-align: center;
@@ -208,7 +192,7 @@
             &.pullquote {
                 border: 0;
                 @include rem(font-size, 30px);
-                max-width: $narrow;
+                max-width: $width-narrow;
                 padding: 0;
                 text-align: center;
                 
@@ -230,7 +214,7 @@
                     @media screen and (max-width: 768px) {
                         float: none;
                         text-align: center;
-                        @include site-width($narrow);
+                        @include site-width($width-narrow);
                     }
                 }
             }
@@ -262,8 +246,6 @@
 	display: inline;
 }
 
-.page-content,
-.entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
 }
@@ -299,7 +281,9 @@ footer.entry-meta {
 10.5 Tags
 --------------------------------------------------------------*/
 
+ul.categories,
 ul.tags {
+	display: inline;
     list-style: none;
     margin: 0;
     
@@ -307,8 +291,20 @@ ul.tags {
         display: inline-block;
         margin: 0 15px 15px 0;
     }
-    
-    a {
-        @include button($button-gray-background, $button-gray-color, 4px);
-    }
+	
+	a {
+		@include button;
+	}
+}
+
+ul.categories a {
+	@include bg-color-hover($color-blue);
+}
+
+/*--------------------------------------------------------------
+10.6 Modules
+--------------------------------------------------------------*/
+.twitter-tweet {
+	margin-left: auto !important;
+	margin-right: auto !important;
 }

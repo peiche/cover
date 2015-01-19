@@ -1,14 +1,14 @@
 .aesop-component {
     display: block;
-    margin: 40px 0;
-    
-    &.aesop-audio-component {
+    margin: 30px auto;
+	
+	+ p {
+		margin-top: 30px; // overrides stupid rule in ai-core.css
+	}
+	
+	&.aesop-audio-component {
         @include site-width;
     }
-	
-    &.aesop-image-component {
-		margin: 40px 0; // necessary override
-	}
 	
     &.aesop-quote-component {
 		padding: 60px 0;
@@ -71,15 +71,18 @@
             
             blockquote {
 				opacity: 0;
-				@include transition(opacity 200ms);
+				transition: opacity 200ms;
 				@media screen and (max-width: 768px) {
-					@include transform(none !important);
+					transform: none !important;
 				}
 			}
 		}
     }
     
     &.aesop-content-component {
+		* {
+			color: inherit;
+		}
 		
         .aesop-content-comp-inner {
             padding: 30px 0;
@@ -89,11 +92,6 @@
                 @include site-width;
             }
         }
-        
-        p {
-			color: inherit;
-            margin: 0;
-		}
 	}
 }
 
@@ -102,7 +100,8 @@
 	background-position: 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 500px; // default height overridden by js
+	height: 500px; // fallback for browsers that don't support vh
+	height: 100vh;
     left: 0;
     overflow: hidden;
     position: relative;
@@ -123,7 +122,7 @@
     background: rgba(0, 0, 0, .8);
     color: #fff;
     font-family: $font-stack-content;
-    @include rem(font-size, 16px);
+    @include rem(font-size, $font-size-normal);
     padding: 10px 20px;
 }
 
@@ -157,6 +156,11 @@
 .aesop-image-component-image {
 	position: relative;
     
+	img {
+		display: block;
+		margin: auto;
+	}
+	
     &.aesop-component-align-left,
     &.aesop-component-align-right {
         margin: 10px 30px;
@@ -169,9 +173,26 @@
             width: auto !important;
         }
     }
-    
+	
 	.aesop-image-component-caption {
 		@extend %image-caption;
+		max-width: none;
+		width: auto;
+		
+		@media screen and (max-width: 768px) {
+			@include site-width;
+		}
+	}
+}
+
+.aesop-image-component-caption-center .aesop-image-component-caption {
+	@include site-width;
+}
+
+@media screen and (max-width: 768px) {
+	.aesop-image-component .aesop-image-component-image.aesop-image-component-caption-left,
+	.aesop-image-component .aesop-image-component-image.aesop-image-component-caption-right {
+		text-align: center;
 	}
 }
 
@@ -183,35 +204,40 @@
     color: #fff;
     @include rem(font-size, 42px);
     padding: 250px 0 20px;
-    @include site-width(100%);
+    @include site-width;
 }
 
 .aesop-video-container {
-    max-width: 100%;
+    margin: 40px auto;
+	max-width: 100%;
 }
 
 .aesop-lightbox {
 	border: 0;
 	
-    &:hover {
-		opacity: .8;
+	img {
+		transition: opacity .2s;
+	}
+	
+    &:hover img {
+		opacity: .9;
 	}
 }
 
 .aesop-timeline {
 	background-color: rgba(255, 255, 255, .9);
 	bottom: 0;
+	box-shadow: 0 0 1px rgba(0, 0, 0, .15);
 	left: 0;
 	position: fixed;
     right: 0;
-	@include box-shadow(0 0 1px rgba(0, 0, 0, .15));
-	z-index: 500;
+	z-index: $z-index-aesop-timeline;
 	
     ol {
 		list-style: none;
 		margin-bottom: 0;
 		text-align: center;
-		@include site-width($wide);
+		@include site-width($width-wide);
         &:after {
 			display: none;
 		}
@@ -220,7 +246,7 @@
     li {
         display: inline-block;
         margin: 0 10px;
-        @include transition(all 200ms);
+        transition: all 200ms;
         
         a:hover {
             border-color: $link-border-color;
@@ -237,15 +263,25 @@
     }
 }
 
-// override width for top-level aesop components
-@each $class in aesop-component, aesop-story-collection {
-    
-    .entry-content > .#{$class} {
-        max-width: 100%;
-        width: 100%;
-        
-        &.aesop-audio-component {
-            @include site-width;
-        }
-    }
+.aesop-sticky-map.aesop-sticky-map-left .aesop-map-component:before {
+	box-shadow: none;
+}
+
+.entry-content > .aesop-component,
+.entry-content > .aesop-story-collection {
+	max-width: 100%;
+	width: 100%;
+	
+	&:first-child {
+		margin-top: 0;
+	}
+	
+	&.aesop-audio-component {
+		@include site-width;
+	}
+}
+
+#aesop-toggle-chapter-menu,
+#aesop-chapter-menu {
+	display: none; // fix meeeee
 }

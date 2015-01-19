@@ -1,11 +1,15 @@
 .cover {
-	background-color: #2b2b2b;
+	background-color: $background-color-cover;
     color: #fff;
-    margin-bottom: 50px;
     overflow: hidden;
     padding: 156px 0 80px;
     position: relative;
-	z-index: 400;
+	transition: opacity .25s;
+	z-index: $z-index-cover;
+	
+	a:hover & {
+        opacity: .9;
+    }
 	
     &-header {
 		@include site-width;
@@ -25,8 +29,7 @@
         
         .taxonomy-description {
 			border-top: 1px solid rgba(255, 255, 255, .25);
-            margin-top: 80px;
-			padding-top: 50px;
+            margin-top: 20px;
 			
             p {
 				margin-bottom: 0;
@@ -37,20 +40,17 @@
 			
             &-form {
 				margin-top: 60px;
-                @include site-width($narrow);
+                @include site-width($width-narrow);
 			}
 			
             &-field {
-				@include border-radius(0);
-                @include box-sizing(border-box);
+				border: 0;
+				border-radius: 0;
+                box-sizing: border-box;
                 padding: 10px;
                 width: 100%;
 			}
 		}
-        
-        #main & {
-            margin: 50px auto;
-        }
 	}
     
     &-title {
@@ -58,8 +58,7 @@
         @include rem(font-size, 58px);
         line-height: 86px;
         margin: 0;
-        text-shadow: 0 0 30px rgba(0, 0, 0, .8);
-
+        
         a {
             color: #fff;
             font-weight: normal !important;
@@ -75,7 +74,8 @@
         }
     }
     
-    &-subtitle {
+    &-subtitle,
+	&-summary {
         color: rgba(255, 255, 255, .8);
         @include rem(font-size, 26px);
         margin: 0;
@@ -92,10 +92,21 @@
             @include rem(font-size, 20px);
         }
     }
+	
+	&-subtitle {
+		border-bottom: 1px solid rgba(255, 255, 255, .35);
+		margin-bottom: 20px;
+		padding-bottom: 30px;
+	}
+	
+	&-summary {
+		border-top: 1px solid rgba(255, 255, 255, .35);
+		margin-top: 20px;
+		padding-top: 30px;
+	}
     
-     .background {
-        background-attachment: fixed;
-        background-position: 50% 50%;
+	.background {
+		background-position: 50% 50%;
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%;
@@ -103,50 +114,40 @@
         opacity: .6;
         position: absolute;
         top: 0;
-        @include transition(opacity 200ms);
+        transition: opacity 200ms;
         width: 100%;
-
+		
+		&.skrollable {
+			background-attachment: fixed;
+		}
+		
         &.darken {
             opacity: .1;
         }
-    }
+	}
     
 	&.featured-image {
-		height: 100%;
-        padding: 200px 0;
-        
-        @media screen and (max-width: 768px) {
-            height: auto;
-        }
-        
-        &.auto {
-            height: auto;
-        }
-        
-        .cover-header {
-            top: 30%;
-            
-            @media screen and (max-width: 768px) {
-                top: auto;
-            }
-        }
+		background-color: $color-dark-grey !important; // needs to override accent colors
+		
+		&.hero,
+		&.full {
+			padding: 200px 0;
+		}
+		
+        &.full {
+			height: 100vh;
+			
+			@media screen and (max-width: 768px) {
+				height: auto;
+			}
+			
+			.cover-header {
+				top: 30%;
+
+				@media screen and (max-width: 768px) {
+					top: auto;
+				}
+			}
+		}
 	}
-}
-
-.archive .cover,
-.search .cover,
-.error404 .cover {
-    &-title {
-        text-align: center;
-    }
-    
-    .site-description {
-        border-top: 1px solid rgba(255, 255, 255, .25);
-        margin-top: 50px;
-        padding-top: 50px;
-    }
-}
-
-.archive .cover.featured-image.auto {
-	padding-bottom: 100px;
 }

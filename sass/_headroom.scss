@@ -4,60 +4,29 @@ Headroom.js
 
 @media screen and (min-width: 769px) {
     .header.headroom {
-        @include transition(all .5s);
-        
-        &--pinned {
-            @include transform(translateY(0));
+		position: fixed;
+        transition: all .5s;
+		
+		&--pinned {
+            transform: translateY(0);
         }
         
         &--unpinned {
-            @include transform(translateY(-100%));
-        }
-        
-        &--not-top {
-            background: rgba(255, 255, 255, .95);
-            @include box-shadow(0 0 1px rgba(0, 0, 0, .15));
-            color: #000;
-            position: fixed;
-            
-            a {
-                color: #000;
-                
-                &:hover {
-                    border-color: #000;
-                }
-            }
-            
-            .author a {
-                border-color: transparent;
-                
-                &:hover .name {
-                    border-color: #000;
-                }
-            }
-            
-            .site {
-                &-info {
-                    opacity: 1;
-                    visibility: visible;
-                    
-                    .show-overlay & {
-                        opacity: 0;
-                        visibility: hidden;
-                    }
-                }
-                
-                &-description {
-                    border-color: rgba(0, 0, 0, .25);
-                    color: #000;
-                }
-            }
+			transform: translateY(-100%);
+				
+			.noscroll & {
+				transform: translateY(0);
+			}
         }
     }
 }
 
-.show-overlay .header.headroom--not-top {
-    background: transparent;
-    @include box-shadow(none);
-    transition-delay: 0, 0;
+.back-to-top.headroom {
+	&--not-top {
+		transform: translate3d(0, -79px, 0);
+	}
+	
+	&--pinned {
+		transform: translate3d(0, 0, 0);
+	}
 }

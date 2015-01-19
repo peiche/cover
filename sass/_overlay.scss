@@ -3,20 +3,21 @@ Overlay for menus and widgets
 --------------------------------------------------------------*/
 
 .overlay {
-    background: #333;
+	background: #333;
     @include rem(font-size, 20px);
     height: 100%;
     left: 0;
     opacity: 0;
     overflow: auto;
-    padding: 60px 0;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+	padding: 60px 0;
     position: fixed;
     right: 0;
-    @include transition(opacity 200ms);
+    transition: opacity 200ms;
     visibility: hidden;
-    z-index: 500;
-    
-    a {
+    z-index: $z-index-overlay;
+	
+	a {
         color: #fff;
         width: auto;
         
@@ -47,10 +48,6 @@ Overlay for menus and widgets
         margin: 0;
         padding-left: 0;
         
-        ul {
-			margin-left: 40px;
-		}
-        
         a {
             border-color: #666;
             border-width: 1px;
@@ -67,7 +64,7 @@ Overlay for menus and widgets
         float: none;
         margin-bottom: 60px;
         margin-top: 60px;
-        @include site-width($narrow);
+        @include site-width($width-narrow);
     }
     
     .social-navigation {
@@ -92,14 +89,50 @@ Overlay for menus and widgets
     }
     
     .search-form input.search-field {
-        @include border-radius(0);
-        @include box-sizing(border-box);
+        border-radius: 0;
+        box-sizing: border-box;
         padding: 10px;
         width: 100%;
     }
     
-    .show-overlay & {
+    &.show {
         opacity: 1;
         visibility: visible;
     }
+	
+	&-search {
+		.search {
+			&-form {
+				display: table;
+				height: 100%;
+				width: 100%;
+				
+				input.search-field {
+					@include site-width($width-wide);
+				}
+			}
+			
+			&-field {
+				background-color: transparent;
+				border: 0;
+				color: #fff;
+				display: block;
+				@include rem(font-size, 50px);
+				outline: 0;
+				
+				@media screen and (max-width: 768px) {
+					@include rem(font-size, 30px);
+				}
+				
+				&:focus {
+					color: #fff;
+				}
+			}
+		}
+		
+		label {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
 }

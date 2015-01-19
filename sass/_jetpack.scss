@@ -5,12 +5,12 @@ Jetpack
 Infinite Scroll
 --------------------------------------------------------------*/
 
-#infinite-handle {
+body #infinite-handle { // increased specificity to override jetpack's css
 	padding: 50px 0;
 	text-align: center;
 	
     span {
-		@include button;
+		@include button($color-blue);
 	}
 }
 
@@ -22,12 +22,20 @@ Infinite Scroll
 	}
 }
 
+#infinite-footer {
+	display: none; // I don't like the infinite scroll footer
+}
+
 /*--------------------------------------------------------------
 Related Posts
 --------------------------------------------------------------*/
 
-.entry-content #jp-relatedposts {
-	margin-left: auto;
-	margin-right: auto;
+.entry-content .jp-relatedposts {
+	@include site-width;
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
 
+.jp-relatedposts-post {
+	transition: opacity .2s; // I reject your reality, and substitute my own!
+}
