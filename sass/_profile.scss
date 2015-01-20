@@ -15,20 +15,16 @@
 		margin: 0 0 15px;
 	}
 	
-    .avatar {
-		border-radius: 50%;
-        display: block;
-        margin: auto;
-    }
-	
-    &-avatar,
-    &-info {
-        display: inline-block;
+    &-avatar {
+        position: absolute;
     }
     
-    &-avatar {
-        margin-right: 20px;
-        vertical-align: top;
+    &-info {
+        margin-left: 150px;
+        
+        .single & {
+            margin-left: 100px;
+        }
     }
     
     &-social {
