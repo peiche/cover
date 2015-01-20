@@ -8,7 +8,7 @@
 <?php while (have_posts()) : the_post(); ?>
 	<?php if ($count == 0) { ?>
 
-		<div class="cover<?php if ('' != get_the_post_thumbnail()) { ?> featured-image hero<?php } ?>">
+		<div class="cover<?php if ('' != get_the_post_thumbnail()) { ?> featured-image<?php } ?>">
 			<?php if ('' != get_the_post_thumbnail()) { ?>
 				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 			<?php } ?>
