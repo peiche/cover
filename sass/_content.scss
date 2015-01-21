@@ -59,7 +59,7 @@
     }
     
     &:first-child {
-        margin-top: 80px;
+        margin-top: 77px; // header height
         
         .cover ~ & {
             margin: 0;
