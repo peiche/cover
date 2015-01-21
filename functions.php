@@ -60,6 +60,9 @@ function cover_setup() {
         'max_posts'     => 1
 	) );
     
+    // WordPress 4.1 and above
+    add_theme_support( "title-tag" );
+    
 }
 endif; // cover_setup
 add_action( 'after_setup_theme', 'cover_setup' );
@@ -69,7 +72,7 @@ add_action( 'after_setup_theme', 'cover_setup' );
  */
 function cover_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Overlay [≡] (above menus)', 'cover' ),
+		'name'          => __( 'Overlay Widgets (above menus)', 'cover' ),
 		'id'            => 'overlay-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -77,7 +80,7 @@ function cover_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
     register_sidebar( array(
-		'name'          => __( 'Overlay [≡] (between menus)', 'cover' ),
+		'name'          => __( 'Overlay Widgets (between menus)', 'cover' ),
 		'id'            => 'overlay-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -85,7 +88,7 @@ function cover_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
     register_sidebar( array(
-		'name'          => __( 'Overlay [≡] (below menus)', 'cover' ),
+		'name'          => __( 'Overlay Widgets (below menus)', 'cover' ),
 		'id'            => 'overlay-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
