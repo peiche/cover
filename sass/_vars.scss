@@ -107,6 +107,7 @@ $divider-color: $color-light-grey;
 	border: 0;
 	border-radius: 4px;
 	color: #fff;
+    cursor: pointer;
 	display: inline-block;
 	@include rem(font-size, $font-size-normal);
 	line-height: normal;
