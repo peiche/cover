@@ -86,6 +86,16 @@ module.exports = function(grunt) {
                 tasks: ['jshint', 'uglify']
             }
 		}
+        
+        /*
+        wp_readme_to_markdown: {
+            your_target: {
+                files: {
+                    'readme.md': 'readme.txt'
+                }
+            },
+        }
+        */
 	});
     
     grunt.loadNpmTasks('grunt-scss-lint');
@@ -95,7 +105,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     
-    grunt.registerTask('build', ['sass:' + target, 'autoprefixer', 'uglify']);
+    //grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
+    
+    grunt.registerTask('build', ['sass:' + target, 'autoprefixer', 'uglify']); // wp_readme_to_markdown
 	grunt.registerTask('validate', ['scsslint', 'jshint']);
 	grunt.registerTask('default', ['scsslint', 'watch']);
 };
