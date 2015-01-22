@@ -17,7 +17,7 @@
 		}
 		$count++;
 	endwhile;
-?><!-- end of loop -->
+?>
 
 <div class="cover">
 	<div class="background<?php if ( '' != $image ) { ?> darken" style="background-image: url('<?php echo $image; ?>');<?php } ?>"></div>
