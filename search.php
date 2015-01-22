@@ -7,12 +7,12 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'parts/wrapper', 'top' ); ?>
+<?php get_template_part( 'inc/wrapper', 'top' ); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			
-			<?php get_template_part( 'parts/cover', 'archive' ); ?>
+			<?php get_template_part( 'inc/cover', 'archive' ); ?>
 			
 			<?php if ( have_posts() ) : ?>
 

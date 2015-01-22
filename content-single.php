@@ -33,7 +33,7 @@
 
         <?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit', 'cover' ), '<div><span class="edit-link">', '</span></div>' ); ?>
 
-		<?php get_template_part( 'parts/author-bio' ); ?>
+		<?php get_template_part( 'inc/author-bio' ); ?>
 
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

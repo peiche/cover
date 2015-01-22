@@ -5,14 +5,14 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'parts/wrapper', 'top' ); ?>
+<?php get_template_part( 'inc/wrapper', 'top' ); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main"> <!-- .grid -->
             
 			<?php
 				if ( cover_has_featured_posts() ) {
-					get_template_part( 'parts/cover', 'featured' );
+					get_template_part( 'inc/cover', 'featured' );
 				}
 			?>
 			
