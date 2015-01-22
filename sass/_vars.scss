@@ -189,35 +189,92 @@ $divider-color: $color-light-grey;
 /*
  * Styles for defining social media icons.
  */
-$facebook-color: #3b5998;
-$twitter-color: #00acee;
-$google-color: #dd4b39;
-$github-color: #4183c4;
-$foursquare-color: #0072b1;
-$flickr-color: #ff0084;
 $appnet-color: #d87a68;
-$linkedin-color: #0976b4;
-$youtube-color: #e52d27;
-$wordpress-color: #21759b;
+$behance-color: #1769ff;
 $codepen-color: #60c2ff;
+$deviantart-color: #637768;
+$digg-color: #009ede;
+$dribbble-color: #ea4c89;
+$dropbox-color: #007ee5;
+$facebook-color: #3b5998;
+$flickr-color: #ff0084;
+$foursquare-color: #0072b1;
+$github-color: #4183c4;
+$googleplus-color: #dd4b39;
+$gratipay-color: #630;
 $instagram-color: #517fa4;
+$lastfm-color: #e31b23;
+$linkedin-color: #0976b4;
+$paypal-color: #009cde;
+$pinterest-color: #ab171e;
+$reddit-color: #ff4500;
+$skype-color: #00aff0;
+$slideshare-color: #0077b5;
+$soundcloud-color: #ff8601;
+$spotify-color: #23d05f;
+$stackexchange-color: #366fb3;
+$stackoverflow-color: #fc9a24;
+$stumbleupon-color: #eb4924;
+$trello-color: #0e74af;
 $tumblr-color: #2c4762;
+$twitch-color: #6541a5;
+$twitter-color: #00acee;
+$vimeo-color: #17b3e8;
+$vine-color: #00be8f;
+$wordpress-color: #21759b;
+$yahoo-color: #500095;
+$youtube-color: #e52d27;
 
+/*
+ * Uncomment the social networks you want icons for.
+ * Leaving all of them uncommented increases the size of the stylesheet substantially.
+ */
 @mixin social-icon {
     a {
         @each $url, $color, $char in 
-                ('facebook', $facebook-color, $fa-var-facebook),
-                ('twitter', $twitter-color, $fa-var-twitter),
-                ('google', $google-color, $fa-var-google-plus),
-                ('github', $github-color, $fa-var-github),
-                ('foursqaure', $foursquare-color, $fa-var-foursquare),
-                ('flickr', $flickr-color, $fa-var-flickr),
-                ('linkedin', $linkedin-color, $fa-var-linkedin),
-                ('youtube', $youtube-color, $fa-var-youtube-play),
-                ('wordpress', $wordpress-color, $fa-var-wordpress),
-                ('codepen', $codepen-color, $fa-var-codepen),
-                ('instagram', $instagram-color, $fa-var-instagram),
-                ('tumblr', $tumblr-color, $fa-var-tumblr) {
+                //('app.net', $appnet-color, $fa-var-adn),
+                //('behance.net', $behance-color, $fa-var-behance),
+                ('codepen.io', $codepen-color, $fa-var-codepen),
+                //('deviantart.com', $deviantart-color, $fa-var-deviantart),
+                //('digg.com', $digg-color, $fa-var-digg),
+                //('dribbble.com', $dribbble-color, $fa-var-dribbble),
+                //('dropbox.com', $dropbox-color, $fa-var-dropbox),
+                ('facebook.com', $facebook-color, $fa-var-facebook),
+                //('flickr.com', $flickr-color, $fa-var-flickr),
+                //('foursquare.com', $foursquare-color, $fa-var-foursquare),
+                ('github.com', $github-color, $fa-var-github),
+                //('gratipay.com', $gratipay-color, $fa-var-gittip),
+                //('instagram.com', $instagram-color, $fa-var-instagram),
+                //('last.fm', $lastfm-color, $fa-var-lastfm),
+                //('linkedin.com', $linkedin-color, $fa-var-linkedin),
+                //('paypal.com', $paypal-color, $fa-var-paypal),
+                //('pinterest.com', $pinterest-color, $fa-var-pinterest),
+                ('plus.google.com', $googleplus-color, $fa-var-google-plus),
+                //('reddit.com', $reddit-color, $fa-var-reddit),
+                //('skype.com', $skype-color, $fa-var-skype),
+                //('slideshare.net', $slideshare-color, $fa-var-slideshare),
+                //('soundcloud.com', $soundcloud-color, $fa-var-soundcloud),
+                //('spotify.com', $spotify-color, $fa-var-spotify),
+                //('stackexchange.com', $stackexchange-color, $fa-var-stack-exchange),
+                //('stackoverflow.com', $stackoverflow-color, $fa-var-stack-overflow),
+                //('stumbleupon.com', $stumbleupon-color, $fa-var-stumbleupon),
+                //('trello.com', $trello-color, $fa-var-trello),
+                //('tumblr.com', $tumblr-color, $fa-var-tumblr),
+                //('twitch.tv', $twitch-color, $fa-var-twitch),
+                ('twitter.com', $twitter-color, $fa-var-twitter),
+                
+                /*
+                 * TODO: Change to $fa-var-vimeo
+                 *       Waiting on this issue: https://github.com/FortAwesome/Font-Awesome/issues/2197
+                 */
+                //('vimeo.com', $vimeo-color, $fa-var-vimeo-square),
+                
+                //('vine.co', $vine-color, $fa-var-vine),
+                //('wordpress.com', $wordpress-color, $fa-var-wordpress),
+                ('wordpress.org', $wordpress-color, $fa-var-wordpress),
+                //('yahoo.com', $yahoo-color, $fa-var-yahoo),
+                //('youtube.com', $youtube-color, $fa-var-youtube-play)
+                {
             &[href*='#{$url}'] {
                 .fa-circle {
                     color: $color;
