@@ -10,7 +10,10 @@
 
 	</div><!-- #content -->
 	
+    <?php get_sidebar( 'footer' ); ?>
+    
 	<footer id="colophon" class="site-footer" role="contentinfo">
+        
         <div class="site-info">
 			<div class="site-credits">
                 <?php do_action( 'cover_credits' ); ?>
