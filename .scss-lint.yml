@@ -9,3 +9,5 @@ linters:
     max_depth: 4
   SelectorFormat:
     ignored_names: [ disqus_thread ]
+  SpaceBeforeBrace:
+    enabled: false # disabled for "social-icon" mixin
