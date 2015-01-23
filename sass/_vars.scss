@@ -1,4 +1,7 @@
-$color-blue: #026ed2; // #2196F3 is the Material Design color, but I personally feel it's too light.
+/*
+ * Material Design colors!
+ */
+$color-blue: #026ed2; // #2196F3 is the Material Design blue, but I personally feel it's too light.
 $color-red: #f44336;
 $color-pink: #e91e63;
 $color-purple: #9c27b0;
@@ -41,8 +44,10 @@ $link-border-color: $color-light-grey;
 $button-background: #edebf3;
 $button-color: #858585;
 
+$width-phone: 480px;
 $width-narrow: 500px;
 $width-medium: 760px;
+$width-tablet: 768px;
 $width-wide: 1000px;
 
 $z-index-above-wp-toolbar: 100000;
@@ -187,7 +192,7 @@ $divider-color: $color-light-grey;
 }
 
 /*
- * Styles for defining social media icons.
+ * Social network colors!
  */
 $appnet-color: #d87a68;
 $behance-color: #1769ff;
@@ -228,6 +233,26 @@ $youtube-color: #e52d27;
 /*
  * Uncomment the social networks you want icons for.
  * Leaving all of them uncommented increases the size of the stylesheet substantially.
+ *
+ * There are two different styles for displaying a social menu, one in the overlay and
+ * one in the footer. The overlay menu has this markup:
+ *
+ * <a href="#link_to_social_network">
+ *   <span class="fa-stack fa-2x">
+ *     <i class="fa fa-circle fa-stack-2x"></i>
+ *     <i class="fa fa-stack-1x social-icon"></i>
+ *     <span class="screen-reader-text">[Menu Item Name]</span>
+ *   </span>
+ * </a>
+ * 
+ * The footer social menu has this markup:
+ *
+ * <a href="#link_to_social_network">
+ *   <i class="fa fa-fw social-icon"></i>
+ *   <span class="screen-reader-text">[Menu Item Name]</span>
+ * </a>
+ *
+ * Both types of markup are supported by the following @each loop.
  */
 @mixin social-icon {
     a {
@@ -271,7 +296,7 @@ $youtube-color: #e52d27;
                 
                 //('vine.co', $vine-color, $fa-var-vine),
                 //('wordpress.com', $wordpress-color, $fa-var-wordpress),
-                ('wordpress.org', $wordpress-color, $fa-var-wordpress),
+                ('wordpress.org', $wordpress-color, $fa-var-wordpress) // add a comma if uncommenting urls after this point
                 //('yahoo.com', $yahoo-color, $fa-var-yahoo),
                 //('youtube.com', $youtube-color, $fa-var-youtube-play)
                 {
