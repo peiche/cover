@@ -5,7 +5,7 @@
 	margin: 60px 0;
 	@include site-width($width-narrow);
 	
-	ul {
+    ul {
 		list-style: none;
 		margin-left: 0;
 		
@@ -14,17 +14,15 @@
 		}
 	}
 	
-	li a {
-        border-color: #ddd;
-        border-width: 1px;
-        display: block;
-        padding: 10px 15px;
+    li {
+        border-top: 1px solid #ddd;
+        padding: 10px 0;
+        
+        &:first-child {
+            border: 0;
+        }
     }
-	
-	a:hover {
-        background: #ddd;
-    }
-	
+    
 	select {
 		max-width: 100%; // Make sure select elements fit in widgets
 	}
@@ -49,4 +47,28 @@
 		@include rem(font-size, 30px);
 		margin-bottom: 15px;
 	}
+}
+
+.widget-column {
+    margin: 30px auto 0;
+    text-align: center;
+    width: 90%;
+    
+    .widget {
+        display: inline-block;
+        margin: 0;
+        padding: 0 20px;
+        text-align: left;
+        vertical-align: top;
+        width: 33%;
+        
+        @media screen and (max-width: $width-wide) {
+            width: 50%;
+        }
+        
+        @media screen and (max-width: $width-tablet) {
+            padding: 0;
+            width: 100%;
+        }
+    }
 }
