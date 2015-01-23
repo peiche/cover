@@ -2,7 +2,7 @@
 Headroom.js
 --------------------------------------------------------------*/
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: $width-tablet) {
     .header.headroom {
 		position: fixed;
         transition: all .5s;

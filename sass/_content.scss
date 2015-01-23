@@ -213,7 +213,7 @@
                     margin: 10px 30px;
                     width: 400px;
                     
-                    @media screen and (max-width: 768px) {
+                    @media screen and (max-width: $width-tablet) {
                         float: none;
                         text-align: center;
                         @include site-width($width-narrow);

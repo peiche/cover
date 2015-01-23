@@ -62,14 +62,6 @@ a {
 	float: left;
 	width: 100%;
     
-	&.toggled {
-        .nav-menu {
-            @media screen and (max-width: 600px) {
-                display: block;
-            }
-        }
-    }
-	
 	ul {
         list-style: none;
         margin: 0;
@@ -81,11 +73,16 @@ a {
     }
 	
     li {
+        border-top: 1px solid #666;
+        padding: 10px 0;
         position: relative;
+        
+        &:first-child {
+            border: 0;
+        }
     }
 	
     a {
-        display: block;
         text-decoration: none;
     }
     
@@ -127,7 +124,7 @@ a {
 .paging-navigation a {
     @include button($color-blue);
 	
-    @media screen and (max-width: 405px) {
+    @media screen and (max-width: $width-phone) {
         display: block;
         margin-bottom: 10px;
         text-align: center;
@@ -146,7 +143,7 @@ a {
 	text-align: right;
 }
 
-@media screen and (max-width: 405px) {
+@media screen and (max-width: $width-phone) {
 	.comment-navigation .nav-previous,
 	.paging-navigation .nav-previous,
 	.comment-navigation .nav-next,

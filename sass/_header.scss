@@ -10,7 +10,7 @@ Header
     width: 100%;
     z-index: $z-index-header;
 	
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $width-tablet) {
         position: absolute;
     }
     
@@ -54,10 +54,6 @@ Header
 		&-title {
 			display: inline-block;
 			margin: 20px 0;
-
-			@media screen and (max-width: 768px) {
-				margin-bottom: 5px;
-			}
 		}
         
         &-description {
@@ -74,12 +70,8 @@ Header
 				display: none;
 			}
             
-            @media screen and (max-width: 768px) {
-                border-left-width: 0;
-				border-top-width: 1px;
-                display: block;
-				margin: 10px 0 0;
-				padding: 10px 0 0;
+            @media screen and (max-width: $width-tablet) {
+                display: none;
             }
         }
     }
@@ -158,7 +150,7 @@ Nav menu, which animates into close x
     transition: all .5s;
 	width: 100%;
     
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $width-tablet) {
 		transition: none;
 	}
 }
@@ -168,7 +160,7 @@ Nav menu, which animates into close x
     pointer-events: auto;
     transform: translate3d(0, 3px, 0);
 	
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $width-tablet) {
         margin-right: 0;
     }
     

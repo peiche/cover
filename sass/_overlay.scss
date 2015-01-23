@@ -19,11 +19,6 @@ Overlay for menus and widgets
 	
 	a {
         color: #fff;
-        width: auto;
-        
-        &:hover {
-            background: #666;
-        }
     }
     
     .widget {
@@ -34,7 +29,7 @@ Overlay for menus and widgets
             margin-top: 60px;
         }
         
-        li a {
+        li {
             border-color: #666;
         }
     }
@@ -47,12 +42,6 @@ Overlay for menus and widgets
         list-style: none;
         margin: 0;
         padding-left: 0;
-        
-        a {
-            border-color: #666;
-            border-width: 1px;
-            padding: 10px 15px;
-        }
     }
     
     .main-navigation,
@@ -99,7 +88,7 @@ Overlay for menus and widgets
 				@include rem(font-size, 50px);
 				outline: 0;
 				
-				@media screen and (max-width: 768px) {
+				@media screen and (max-width: $width-tablet) {
 					@include rem(font-size, 30px);
 				}
 				
