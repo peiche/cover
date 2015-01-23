@@ -34,9 +34,7 @@ $build_overlay = false;
 if (
         has_nav_menu( $nav_primary ) ||
         has_nav_menu( $nav_social ) ||
-        is_active_sidebar( 'overlay-1' ) ||
-        is_active_sidebar( 'overlay-2' ) ||
-        is_active_sidebar( 'overlay-3' ) ) {
+        is_active_sidebar( 'cover-overlay' ) ) {
     $build_overlay = true;
 }
 
@@ -58,33 +56,17 @@ if (
     
     <div class="site-info">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
-        <?php if ( is_single() ) { ?>
-			<span class="site-description"><?php echo cover_posted_on(); ?></span>
-		<?php } else { ?>
-			<span class="site-description"><?php bloginfo( 'description' ); ?></span>
-		<?php } ?>
+        <span class="site-description"><?php bloginfo( 'description' ); ?></span>
 	</div>
     
 </header>
 
 <?php if ( $build_overlay ) { ?>
     <div id="menu-overlay" class="overlay">
-        <?php if ( is_active_sidebar( 'overlay-1' ) ) { ?>
-            <div class="widget-area" role="complementary">
-                <?php dynamic_sidebar( 'overlay-1' ); ?>
-            </div>
-        <?php } ?>
-
         <?php if ( has_nav_menu( $nav_primary ) ) { ?>
             <nav class="main-navigation">
                 <?php wp_nav_menu( array( 'theme_location' => $nav_primary ) ); ?>
             </nav>
-        <?php } ?>
-
-        <?php if ( is_active_sidebar( 'overlay-2' ) ) { ?>
-            <div class="widget-area" role="complementary">
-                <?php dynamic_sidebar( 'overlay-2' ); ?>
-            </div>
         <?php } ?>
 
         <?php if ( has_nav_menu( $nav_social ) ) { ?>
@@ -96,12 +78,8 @@ if (
                 ) ); ?>
             </nav>
         <?php } ?>
-
-        <?php if ( is_active_sidebar( 'overlay-3' ) ) { ?>
-            <div class="widget-area" role="complementary">
-                <?php dynamic_sidebar( 'overlay-3' ); ?>
-            </div>
-        <?php } ?>
+        
+        <?php get_sidebar( 'overlay' ); ?>
     </div>
 <?php } ?>
 
