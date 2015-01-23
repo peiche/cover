@@ -71,25 +71,19 @@ add_action( 'after_setup_theme', 'cover_setup' );
  * Register widgetized area and update sidebar with default widgets.
  */
 function cover_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Overlay Widgets (above menus)', 'cover' ),
-		'id'            => 'overlay-1',
+	
+    register_sidebar( array(
+		'name'          => __( 'Overlay Widgets', 'cover' ),
+		'id'            => 'cover-overlay',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+    
     register_sidebar( array(
-		'name'          => __( 'Overlay Widgets (between menus)', 'cover' ),
-		'id'            => 'overlay-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-    register_sidebar( array(
-		'name'          => __( 'Overlay Widgets (below menus)', 'cover' ),
-		'id'            => 'overlay-3',
+		'name'          => __( 'Footer Widgets', 'cover' ),
+		'id'            => 'cover-footer',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
