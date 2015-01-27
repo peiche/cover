@@ -104,6 +104,7 @@ Search
 .site-search {
 	border: 0;
 	margin-right: 20px;
+    -webkit-tap-highlight-color: transparent;
 	
 	.noscroll & {
 		opacity: 0;
@@ -120,8 +121,9 @@ Nav menu, which animates into close x
 	height: 30px;
     margin: 1px auto -15px;
     padding-top: 5px;
+    -webkit-tap-highlight-color: transparent;
     width: 28px;
-	
+    
     span {
         display: block;
         position: relative;
@@ -149,10 +151,6 @@ Nav menu, which animates into close x
 	height: 5px;
     transition: all .5s;
 	width: 100%;
-    
-    @media screen and (max-width: $width-tablet) {
-		transition: none;
-	}
 }
 
 .noscroll .hamburger {
