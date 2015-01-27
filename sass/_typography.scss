@@ -133,8 +133,8 @@ var {
 }
 
 code {
-    background: #f3f3f3;
-	border: 1px solid #e6e6e6;
+    background: #eee;
+	border-radius: 3px;
 	margin: 0 5px;
     padding: 2px 6px;
 }
@@ -153,7 +153,6 @@ pre {
 	
     code {
         background: 0;
-        border: 0;
         color: #eee;
         display: inline-block;
         line-height: 28px;
