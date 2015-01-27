@@ -14,13 +14,10 @@
 		}
 	}
 	
-    li {
-        border-top: 1px solid #ddd;
+    li a {
+        border-bottom: 1px solid #ddd;
+        display: block;
         padding: 10px 0;
-        
-        &:first-child {
-            border: 0;
-        }
     }
     
 	select {

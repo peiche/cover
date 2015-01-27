@@ -16,9 +16,19 @@ Overlay for menus and widgets
     transition: opacity 200ms;
     visibility: hidden;
     z-index: $z-index-overlay;
+    
+    &:target {
+        opacity: 1;
+        visibility: visible;
+        z-index: $z-index-header;
+    }
 	
 	a {
-        color: #fff;
+        color: #ccc;
+        
+        &:hover {
+            color: #fff;
+        }
     }
     
     .widget {
@@ -29,7 +39,7 @@ Overlay for menus and widgets
             margin-top: 60px;
         }
         
-        li {
+        li a {
             border-color: #666;
         }
     }
@@ -103,4 +113,8 @@ Overlay for menus and widgets
 			vertical-align: middle;
 		}
 	}
+    
+    .header {
+        margin-top: -60px;
+    }
 }

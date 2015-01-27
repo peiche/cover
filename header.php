@@ -48,9 +48,9 @@ if (
     <div class="backdrop" data-0-top="opacity: 0;" data-0-top-bottom="opacity: 1;" data-anchor-target=".cover"></div>
 
 	<div class="site-nav">
-		<a class="site-search" data-action="toggle-overlay" data-overlay-id="search-overlay" href="#"><span class="fa fa-search"></span></a>
+		<a class="site-search" data-action="toggle-overlay" data-overlay-id="search-overlay" href="#search-overlay"><span class="fa fa-search"></span></a>
 		<?php if ( $build_overlay ) { ?>
-			<a class="hamburger" data-action="toggle-overlay" data-overlay-id="menu-overlay" href="#"><span></span></a>
+			<a class="hamburger" data-action="toggle-overlay" data-overlay-id="menu-overlay" href="#menu-overlay"><span></span></a>
 		<?php } ?>
 	</div>
     
@@ -63,6 +63,14 @@ if (
 
 <?php if ( $build_overlay ) { ?>
     <div id="menu-overlay" class="overlay">
+        <noscript>
+            <div class="header">
+                <div class="site-nav">
+                    <a class="hamburger close" href="#"><span></span></a>
+                </div>
+            </div>
+        </noscript>
+        
         <?php if ( has_nav_menu( $nav_primary ) ) { ?>
             <nav class="main-navigation">
                 <?php wp_nav_menu( array( 'theme_location' => $nav_primary ) ); ?>
@@ -84,5 +92,13 @@ if (
 <?php } ?>
 
 <div id="search-overlay" class="overlay overlay-search">
-	<?php get_search_form(); ?>
+    <noscript>
+        <div class="header">
+            <div class="site-nav">
+                <a class="hamburger close" href="#"><span></span></a>
+            </div>
+        </div>
+    </noscript>
+    
+    <?php get_search_form(); ?>
 </div>
