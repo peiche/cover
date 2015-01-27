@@ -1,13 +1,12 @@
-Introducing Cover
-===
+#Introducing Cover
 
 Cover is a content-driven blogging theme for WordPress. Built on top of Automattic’s _s (Underscores) and bundled with Font Awesome, Cover allows you to focus on your writing. There are no sidebars to mess with, just a single column view of your content.
 
 ##Features
 
-Cover is designed to be responsive. No matter the device or screen size, Cover always looks beautiful.
+Cover is designed for any size screen. No matter the device, Cover always looks beautiful.
 
-Drawing special attention to featured images, from the homepage to posts, category archives to pages, your blog is made uniquely yours through your images. Of course, you don’t _have_ to use images. Cover’s clean typography lets your writing stand on its own.
+Drawing special attention to featured images, from the homepage to posts, category archives to pages, your blog is made uniquely yours. Of course, you don’t _have_ to use images. Cover’s clean typography lets your writing stand on its own.
 
 ###Full-width featured images
 
@@ -21,9 +20,9 @@ Cover is bundled with Font Awesome v4.3, allowing you to include any of its icon
 
 Cover was built from the ground up with ASE in mind. Break out of the content area with full-width components like images, galleries, maps, and more.
 
-###Put your content first
+###Focus on your content
 
-We know you love your menus and your widgets. But that's not what your readers come for, is it? Of course not. Cover puts your content first, exactly where it should be. But that doesn't mean you can't have widgets and menus. That's where the overlay comes in.
+Cover puts your content first, exactly where it should be. But that doesn't mean you can't have widgets and menus, and that's where the overlay comes in.
 
 The overlay is a full-screen menu and widget display. You can define two menus -- a regular one and a social media one, more on that in a bit -- and as many widgets as your little heart desires.
 
@@ -31,19 +30,38 @@ The footer is also home to a social menu area and a three-column widget area. (D
 
 ###Social menus
 
-So, about those social menus. All you have to do is create a menu with links to your favorite social media accounts, and Cover will do the rest. It will detect the URL of the site in question and display the appropriate icon, courtesy of Font Awesome. [Click here for a list of supported sites.](socialmediaicons.md)
+So, about those social menus. All you have to do is create a menu with links to your favorite social media accounts, and Cover will do the rest. It will detect the URL of the site in question and display the appropriate icon, courtesy of Font Awesome. [Click here for the list of supported sites.](socialmediaicons.md) If you would like to request a site, please raise an issue. Or create a pull request and add it yourself!
 
 ###Built with Sass
 
 If you’re a developer and want to play around with Cover, you’ll find that its stylesheet is compressed. This is because I prefer to build the theme’s stylesheet using Sass. To that end, in the project you’ll find the `/sass` folder which holds all the components required to compile the stylesheet, including the bundled Font Awesome styles. (Similarly, the JavaScript used in Cover is compressed, but the uncompressed code is provided in the `/js/src` directory.)
 
-----
+##Installation
 
-Cover is built on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+Right now, there is only one way to install Cover.
 
-**Credits:**  
-[Google Fonts](http://www.google.com/fonts)  
-[Font Awesome](http://fontawesome.io/)  
-[Sass](http://sass-lang.com/)  
-[Headroom](http://wicky.nillia.ms/headroom.js/)  
-[Skrollr](http://prinzhorn.github.io/skrollr/)  
+###Direct Upload
+
+You can download the latest from Github. Follow these steps to active Cover:
+
+1. In your admin panel, go to **Appearance > Themes** and click the **Add New** button.
+2. Click **Upload** and **Choose File**, then select the theme's zip file. Click **Install Now**.
+3. Click **Activate**.
+
+##FAQ
+
+There's nothing here yet. Ask me something!
+
+##Contribute
+
+If you see something wrong, or you want to improve on what I've got here, feel free to submit an issue or create a pull request.
+
+##License
+
+Cover is [GPL v2.0 or later](LICENSE.txt).
+
+All other resources are licensed as follows:
+
+* Font Awesome - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+* Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE  
+* Skrollr - MIT - https://github.com/Prinzhorn/skrollr/blob/master/LICENSE.txt  
