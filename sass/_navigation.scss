@@ -77,10 +77,10 @@ a {
     }
 	
     a {
-        text-decoration: none;
+        border-bottom: 1px solid #666;
         display: block;
         padding: 10px 0;
-        border-bottom: 1px solid #666;
+        text-decoration: none;
     }
     
 	.sub-menu-toggle {
