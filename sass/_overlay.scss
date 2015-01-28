@@ -24,19 +24,23 @@ Overlay for menus and widgets
     }
 	
 	a {
-        color: #ccc;
+        border-color: #fff;
+        color: #fff;
         
         &:hover {
-            color: #fff;
+            color: #aaa;
         }
     }
     
     .widget {
-        
         &-area {
             color: #ccc;
             margin-bottom: 60px;
             margin-top: 60px;
+            
+            p {
+                color: #fff;
+            }
         }
         
         li a {
@@ -44,8 +48,13 @@ Overlay for menus and widgets
         }
     }
     
-    .tag-cloud a:hover {
-        border-color: #fff;
+    .tagcloud a {
+        border-color: transparent;
+        
+        &:hover {
+            border-color: #fff;
+            color: #fff;
+        }
     }
     
     .menu {
@@ -60,6 +69,10 @@ Overlay for menus and widgets
         margin-bottom: 60px;
         margin-top: 60px;
         @include site-width($width-narrow);
+    }
+    
+    .main-navigation a {
+        border-bottom-color: #666;
     }
     
     .social-navigation {
