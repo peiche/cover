@@ -20,13 +20,11 @@ Cover is bundled with Font Awesome v4.3, allowing you to include any of its icon
 
 Cover was built from the ground up with ASE in mind. Break out of the content area with full-width components like images, galleries, maps, and more.
 
-###Focus on your content
+###Put widgets in their place
 
 Cover puts your content first, exactly where it should be. But that doesn't mean you can't have widgets and menus, and that's where the overlay comes in.
 
-The overlay is a full-screen menu and widget display. You can define two menus -- a regular one and a social media one, more on that in a bit -- and as many widgets as your little heart desires.
-
-The footer is also home to a social menu area and a three-column widget area. (Don't worry about your mobile readers; smaller screens will display the widgets into a single column.)
+The overlay is a full-screen menu and widget display. You can define two menus -- a regular one and a social media one, more on that in a bit -- and as many widgets as your little heart desires. You can also put a social menu in the footer.
 
 ###Social menus
 
