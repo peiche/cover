@@ -7,11 +7,7 @@
 	transition: opacity .25s;
 	z-index: $z-index-cover;
 	
-	a:hover & {
-        opacity: .9;
-    }
-	
-    &-header {
+	&-header {
 		@include site-width;
 		position: relative;
 		
