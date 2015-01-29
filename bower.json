@@ -1,0 +1,13 @@
+{
+  "name": "Cover",
+  "version": "1.0",
+  "description": "A content-driven blogging theme for WordPress.",
+  "license": "GNU General Public License v2 or later",
+  "homepage": "http://eichefam.net/projects/cover",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
