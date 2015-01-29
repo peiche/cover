@@ -27,7 +27,6 @@
     "grunt-contrib-sass": "~0.8.1",
     "grunt-contrib-uglify": "~0.6.0",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-scss-lint": "^0.3.3",
-    "grunt-wp-readme-to-markdown": "^0.8.0"
+    "grunt-scss-lint": "^0.3.3"
   }
 }
