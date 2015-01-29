@@ -39,3 +39,69 @@ Related Posts
 .jp-relatedposts-post {
 	transition: opacity .2s; // I reject your reality, and substitute my own!
 }
+
+/*--------------------------------------------------------------
+Top Posts & Pages Widget
+--------------------------------------------------------------*/
+
+// Image List
+.widgets-list-layout {
+    a.bump-view {
+        border: 0;
+        padding: 0;
+
+        .widgets-list-layout-blavatar {
+            margin-right: 20px;
+            transition: all .2s ease-in-out;
+        }
+    }
+    
+    li {
+        border-bottom: 1px solid #666;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        
+        &:hover a.bump-view {
+            color: #aaa;
+
+            .widgets-list-layout-blavatar {
+                opacity: .8;
+            }
+        }
+    }
+    
+    /*
+     * I would like nothing better than to use this instead:
+     *
+     * &-links {
+     *
+     * Unfortunately, that results in the same level of specificity as defined by Jetpack's styles,
+     * which, because the plugin's CSS is loaded after Cover's, overrides it.
+     * As a result, we have to increase the specificity if we don't want to resort to using !important everywhere.
+     */
+    .widgets-list-layout-links {
+        float: none;
+        width: auto;
+    }
+}
+
+// Image Grid
+.widget-grid-view-image {
+    width: 33.33%;
+
+    a.bump-view,
+    &:nth-child(even) a.bump-view {
+        border: 0;
+        margin: 0;
+        opacity: .8;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}
