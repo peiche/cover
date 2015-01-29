@@ -45,27 +45,3 @@
 		margin-bottom: 15px;
 	}
 }
-
-.widget-column {
-    margin: 30px auto 0;
-    text-align: center;
-    width: 90%;
-    
-    .widget {
-        display: inline-block;
-        margin: 0;
-        padding: 0 20px;
-        text-align: left;
-        vertical-align: top;
-        width: 33%;
-        
-        @media screen and (max-width: $width-wide) {
-            width: 50%;
-        }
-        
-        @media screen and (max-width: $width-tablet) {
-            padding: 0;
-            width: 100%;
-        }
-    }
-}
