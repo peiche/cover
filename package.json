@@ -13,7 +13,10 @@
   "keywords": [
     "wordpress"
   ],
-  "author": "Paul Eiche",
+  "author": {
+    "name": "Paul Eiche",
+    "email": "peiche@gmail.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/peiche/cover/issues"
@@ -22,7 +25,8 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^1.0.1",
-    "grunt-contrib-csslint": "~0.3.1",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-contrib-copy": "0.7.0",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-sass": "~0.8.1",
     "grunt-contrib-uglify": "~0.6.0",
