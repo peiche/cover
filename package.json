@@ -1,7 +1,7 @@
 {
   "name": "Cover",
   "version": "1.0.0",
-  "description": "Simple WordPress theme focused on content.",
+  "description": "A content-driven blogging theme for WordPress.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
