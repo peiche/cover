@@ -131,6 +131,7 @@ module.exports = function(grunt) {
                             '!js/src/**',
                             '!node_modules/**',
                             '!releases/**',
+                            '!report/**',
                             '!sass/**'
                         ]
                     }
