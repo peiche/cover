@@ -213,6 +213,8 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+bower_components/
 node_modules/
+releases/
 report/
 grunt-watch.bat
