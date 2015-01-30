@@ -12,7 +12,8 @@ Domain Path: /languages/
 Tags: light, white, one-column, fixed-layout, fluid-layout, responsive-layout, custom-menu, featured-images, sticky-post
 */
 
-@import 'FontAwesome/font-awesome';
+$fa-font-path: "fonts"; // override fonts path
+@import '../bower_components/font-awesome/scss/font-awesome';
 
 @import 'vars';
 @import 'reset';
