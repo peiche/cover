@@ -4,7 +4,13 @@
   "description": "A content-driven blogging theme for WordPress.",
   "license": "GNU General Public License v2 or later",
   "homepage": "http://eichefam.net/projects/cover",
+  "devDependencies": {
+    "font-awesome": "~4.3.0",
+    "skrollr": "~0.6.29",
+    "headroom.js": "~0.7.0"
+  },
   "ignore": [
+    "**/.*",
     "node_modules",
     "bower_components",
     "test",
