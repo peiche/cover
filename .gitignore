@@ -214,7 +214,11 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 bower_components/
+fonts/
 node_modules/
 releases/
 report/
 grunt-watch.bat
+js/headroom.min.js
+js/skrollr.min.js
+style.css
