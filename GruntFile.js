@@ -13,6 +13,30 @@ module.exports = function(grunt) {
     
     grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+        copy: {
+            main: {
+                files: [
+                    {
+                        cwd: 'bower_components/font-awesome/fonts',
+                        src: '**/*',
+                        dest: 'fonts',
+                        expand: true
+                    },
+                    {
+                        cwd: 'bower_components/skrollr/dist',
+                        src: 'skrollr.min.js',
+                        dest: 'js',
+                        expand: true
+                    },
+                    {
+                        cwd: 'bower_components/headroom.js/dist',
+                        src: 'headroom.min.js',
+                        dest: 'js',
+                        expand: true
+                    }
+                ]
+            }
+        },
         scsslint: {
             allFiles: ['sass/*.scss'],
             options: {
@@ -85,17 +109,51 @@ module.exports = function(grunt) {
                 files: 'js/src/*.js',
                 tasks: ['jshint', 'uglify']
             }
-		}
+		},
+        compress: {
+            main: {
+                options: {
+                    mode: 'zip',
+                    archive: function() {
+                        return 'releases/cover.zip';
+                    }
+                },
+                files: [
+                    {
+                        expand: true,
+                        src: [
+                            '**',
+                            '!.*',
+                            '!*.json',
+                            '!*.md',
+                            '!gruntfile.js',
+                            '!bower_components/**',
+                            '!js/src/**',
+                            '!node_modules/**',
+                            '!releases/**',
+                            '!sass/**'
+                        ]
+                    }
+                ]
+            }
+        }
 	});
     
-    grunt.loadNpmTasks('grunt-scss-lint');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-scss-lint');
     
-    grunt.registerTask('build', ['sass:' + target, 'autoprefixer', 'uglify']);
+    grunt.registerTask('build', ['copy', 'sass:' + target, 'autoprefixer', 'uglify']);
 	grunt.registerTask('validate', ['scsslint', 'jshint']);
 	grunt.registerTask('default', ['scsslint', 'watch']);
+    
+    grunt.registerTask('zip', 'Make a zip file for installation.', function() {
+        grunt.log.writeln('Zipping up the project.');
+        grunt.task.run('compress');
+    });
 };
