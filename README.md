@@ -40,7 +40,7 @@ Right now, there is only one way to install Cover.
 
 ###Direct Upload
 
-You can download the latest from Github. Follow these steps to active Cover:
+You can download the latest from Github. Follow these steps to activate Cover:
 
 1. Download the [latest release](https://github.com/peiche/cover/releases).
 2. In your admin panel, go to **Appearance > Themes** and click the **Add New** button.
