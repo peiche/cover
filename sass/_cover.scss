@@ -21,6 +21,10 @@
             &:hover {
                 border-color: $link-border-color;
             }
+            
+            &.author:hover {
+                border-color: transparent;
+            }
         }
         
         .taxonomy-description {
@@ -117,7 +121,7 @@
 	}
     
 	&.featured-image {
-		background-color: $color-dark-grey !important; // needs to override accent colors
+		background-color: $color-dark-grey;
 		
 		&.hero,
 		&.full {
@@ -140,4 +144,8 @@
 			}
 		}
 	}
+    
+    .entry-meta {
+        margin: 0;
+    }
 }
