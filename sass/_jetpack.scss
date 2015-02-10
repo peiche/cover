@@ -88,6 +88,10 @@ Top Posts & Pages Widget
 // Image Grid
 .widget-grid-view-image {
     width: 33.33%;
+    
+    @media screen and (max-width: $width-phone) {
+        width: 50%;
+    }
 
     a.bump-view,
     &:nth-child(even) a.bump-view {
