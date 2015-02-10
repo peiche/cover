@@ -49,6 +49,12 @@
         <?php } ?>
 
         <h1 class="cover-title"><?php the_title(); ?></h1>
+        
+        <?php if ( is_single() ) { ?>
+            <div class="entry-meta">
+                <?php cover_posted_on(); ?>
+            </div>
+        <?php } ?>
 
     </header>
 
