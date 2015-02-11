@@ -50,9 +50,13 @@
             background-color: $color-dark-grey;
             float: left;
             position: relative;
-            width: 33.33%;
+            width: 25%;
             
             @media screen and (max-width: $width-medium) {
+                width: 50%;
+            }
+            
+            @media screen and (max-width: $width-phone) {
                 width: 100%;
             }
             
@@ -60,6 +64,10 @@
                 content: '';
                 display: block;
                 padding-top: 50%;
+                
+                @media screen and (max-width: $width-medium) {
+                    padding-top: 150px;
+                }
             }
         }
         
@@ -72,20 +80,27 @@
             opacity: .6;
             position: absolute;
             top: 0;
+            transition: background 200ms;
             width: 100%;
         }
         
         &-title {
+            @include rem(font-size, 18px);
+            bottom: 20px;
             color: #fff;
-            font-family: $font-stack-heading;
-            font-size: 20px;
             font-weight: normal;
-            left: 15px;
+            left: 20px;
+            line-height: normal;
             max-height: 100%;
             overflow: hidden;
             position: absolute;
-            right: 15px;
-            top: 20%;
+            
+            @media screen and (max-width: $width-phone) {
+                left: 0;
+                margin: auto;
+                right: 0;
+                width: 90%;
+            }
         }
     }
 }
