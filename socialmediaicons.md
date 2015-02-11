@@ -1,37 +1,18 @@
 ##Cover's Supported Social Menu Icons
 
-- App.net
-- Behance
 - CodePen
-- DeviantArt
-- Digg
 - Dribbble
-- Dropbox
 - Facebook
 - Flickr
-- Foursquare
 - Github
 - Google+
-- Gratipay (formerly known as Gittip)
 - Instagram
-- LastFM
 - LinkedIn
-- Paypal
 - Pinterest
-- Reddit
-- Skype
-- Slideshare
+- RSS
 - Soundcloud
-- Spotify
-- StackExchange
-- StackOverflow
-- Stumbleupon
-- Trello
 - Tumblr
-- Twitch.tv
 - Twitter
 - Vimeo
-- Vine
 - WordPress
-- Yahoo
 - YouTube

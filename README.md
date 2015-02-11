@@ -28,7 +28,7 @@ The overlay is a full-screen menu and widget display. You can define two menus -
 
 ###Social menus
 
-So, about those social menus. All you have to do is create a menu with links to your favorite social media accounts, and Cover will do the rest. It will detect the URL of the site in question and display the appropriate icon, courtesy of Font Awesome. [Click here for the list of supported sites.](socialmediaicons.md) If you would like to request a site, please raise an issue. Or create a pull request and add it yourself!
+So, about those social menus. All you have to do is create a menu with links to your favorite social media accounts, and Cover will do the rest. It will detect the URL of the site in question and display the appropriate icon, courtesy of Font Awesome. [Click here for the list of supported sites.](socialmediaicons.md) If you would like to request support for a site's icon, please raise an issue. Or create a pull request and add it yourself!
 
 ###Built with Sass
 
