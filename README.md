@@ -42,7 +42,7 @@ Right now, there is only one way to install Cover.
 
 You can download the latest from Github. Follow these steps to activate Cover:
 
-1. Download the [latest release](https://github.com/peiche/cover/releases).
+1. Download the [latest release](https://github.com/peiche/cover/releases/latest).
 2. In your admin panel, go to **Appearance > Themes** and click the **Add New** button.
 3. Click **Upload** and **Choose File**, then select the theme's zip file. Click **Install Now**.
 4. Click **Activate**.
