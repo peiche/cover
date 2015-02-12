@@ -54,12 +54,6 @@ function cover_setup() {
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
 	
-	// Enable featured content.
-    add_theme_support( 'featured-content', array(
-		'filter'		=> 'cover_get_featured_posts',
-        'max_posts'     => 1
-	) );
-    
     // WordPress 4.1 and above
     add_theme_support( "title-tag" );
     

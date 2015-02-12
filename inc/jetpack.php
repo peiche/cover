@@ -21,10 +21,16 @@ function cover_jetpack_setup() {
 	) );
     
     add_theme_support( 'jetpack-responsive-videos' );
+    
+    // Enable featured content.
+    add_theme_support( 'featured-content', array(
+		'filter'		=> 'cover_get_featured_posts',
+        'max_posts'     => 1
+	) );
 }
 add_action( 'after_setup_theme', 'cover_jetpack_setup' );
 
- /**
+/**
  * Getter function for Featured Content Plugin.
  *
  * @return array An array of WP_Post objects.
