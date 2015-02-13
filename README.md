@@ -1,3 +1,5 @@
+![Travis CI Build Status](https://travis-ci.org/peiche/cover.svg?branch=master)
+
 #Introducing Cover
 
 Cover is a content-driven blogging theme for WordPress. Built on top of Automattic’s _s (Underscores) and bundled with Font Awesome, Cover allows you to focus on your writing. There are no sidebars to mess with, just a single column view of your content.
