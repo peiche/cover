@@ -12,7 +12,14 @@ Author: Paul Eiche
     <?php while (have_posts()) : the_post(); ?>
     <li>
         <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-            <span class="yarpp-related-cover-background" <?php if (has_post_thumbnail()):?>style="background-image: url('<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0]; ?>');"<?php endif; ?>></span>
+            <?php 
+                $img = '';
+                if (has_post_thumbnail()) {
+                    $img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0];
+                }
+            ?>
+            
+            <span class="yarpp-related-cover-background"<?php if ($img != '') { ?> style="background-image: url('<?php echo $img ?>');"<?php } ?>></span>
             <span class="yarpp-related-cover-title"><?php the_title_attribute(); ?></span>
         </a>
     </li>
