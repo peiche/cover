@@ -18,15 +18,3 @@ php:
     - "5.3"
     # Current $required_php_version for WordPress: 5.2.4
     - "5.2"
-
-# Declare which versions of WordPress to test against.
-# Also declare whether or not to test in Multisite.
-env:
-    # Trunk
-    # @link https://github.com/WordPress/WordPress
-    - WP_VERSION=master WP_MULTISITE=0
-    - WP_VERSION=master WP_MULTISITE=1
-    # WordPress 4.1
-    # @link https://github.com/WordPress/WordPress/tree/4.1-branch
-    - WP_VERSION=4.1 WP_MULTISITE=0
-    - WP_VERSION=4.1 WP_MULTISITE=1
