@@ -306,7 +306,7 @@ msgid "_s"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://underscores.me/"
+msgid "http://eichefam.net/projects/cover"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -318,9 +318,9 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Automattic"
+msgid "Paul Eiche"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://automattic.com/"
+msgid "http://eichefam.net/"
 msgstr ""

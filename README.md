@@ -1,6 +1,9 @@
-![Travis CI Build Status](https://travis-ci.org/peiche/cover.svg?branch=master)
+#Cover
 
-#Introducing Cover
+[![GitHub Release](http://img.shields.io/github/release/peiche/cover.svg?style=flat)](https://github.com/peiche/cover/releases/latest)
+[![Built with Grunt](http://img.shields.io/badge/built_with-GRUNT-orange.svg?style=flat)](http://gruntjs.com/)
+![Build Status](https://travis-ci.org/peiche/cover.svg?branch=master)
+![License](https://img.shields.io/badge/license-GPLv2-blue.svg?style=flat)
 
 Cover is a content-driven blogging theme for WordPress. Built on top of Automattic’s _s (Underscores) and bundled with Font Awesome, Cover allows you to focus on your writing. There are no sidebars to mess with, just a single column view of your content.
 
