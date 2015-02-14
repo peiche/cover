@@ -9,7 +9,7 @@
 	$image = '';
 	while ( have_posts() ) : the_post();
 		if ( 0 == $count ) {
-			
+
 			if ( '' != get_the_post_thumbnail() ) {
 				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
 			}
