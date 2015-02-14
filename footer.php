@@ -24,7 +24,7 @@
                     <?php wp_nav_menu( array(
                         'theme_location' => $nav_social_footer,
                         'link_before'    => '<i class="fa fa-fw social-icon"></i><span class="screen-reader-text">',
-                        'link_after'     => '</span>'
+                        'link_after'     => '</span>',
                     ) ); ?>
                 </nav>
             <?php } ?>

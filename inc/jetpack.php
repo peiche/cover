@@ -10,22 +10,22 @@
  * Add theme support for Jetpack functionality.
  */
 function cover_jetpack_setup() {
-    
+
     /*
      * See Jetpack support for more info
      * @link http://jetpack.me/support/infinite-scroll/
      */
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'footer' => 'page'
+		'footer' => 'page',
 	) );
-    
+
     add_theme_support( 'jetpack-responsive-videos' );
-    
+
     // Enable featured content.
     add_theme_support( 'featured-content', array(
 		'filter'		=> 'cover_get_featured_posts',
-        'max_posts'     => 1
+        'max_posts'     => 1,
 	) );
 }
 add_action( 'after_setup_theme', 'cover_jetpack_setup' );

@@ -62,14 +62,14 @@ function cover_post_nav() {
                     $prev_img = '';
                 }
                 previous_post_link( '<div class="nav-previous">%link</div>', _x( '<h2 class="subtitle">Previous post</h2><h1 class="title">%title</h1>', 'Previous post link', 'cover' ) );
-    
+
 				$next_img = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'single-post-thumbnail' )[0];
                 if ( '' != $next_img ) {
                     $class = ' featured-image';
 					$style = ' style="background-image: url(\'' . $next_img . '\')"';
                 }
                 next_post_link( '<div class="nav-next">%link</div>', _x( '<div class="cover' . $class . '"><div class="background"' . $style . '></div><div class="cover-header"><h2 class="cover-subtitle">Next post</h2><h1 class="cover-title">%title</h1></div></div>', 'Next post link', 'cover' ) );
-    
+
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -93,7 +93,7 @@ function cover_posted_on() {
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
-    
+
     printf( __( '<span class="posted-on">%1$s on %2$s</span>', 'cover' ),
 		sprintf( '<a class="author vcard url fn n" href="%1$s">%2$s <span class="name">%3$s</span></a>',
                 esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
@@ -105,7 +105,7 @@ function cover_posted_on() {
             $time_string
 		)
 	);
-    
+
 }
 endif;
 

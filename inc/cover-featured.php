@@ -28,7 +28,7 @@
 				<header class="cover-header">
 					<h1 class="cover-title"><?php the_title(); ?></h1>
 					<h2 class="cover-summary">
-					<?php 
+					<?php
 						$pos = strpos( $post->post_content, '<!--more-->' );
 						if ( $pos ) {
 							echo get_the_content( __( '', 'cover' ) );

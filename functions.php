@@ -21,7 +21,7 @@ if ( ! function_exists( 'cover_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function cover_setup() {
-	
+
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -29,7 +29,7 @@ function cover_setup() {
 	 * to change 'cover' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'cover', get_template_directory() . '/languages' );
-    
+
     // Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -53,10 +53,10 @@ function cover_setup() {
 
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
-	
+
     // WordPress 4.1 and above
-    add_theme_support( "title-tag" );
-    
+    add_theme_support( 'title-tag' );
+
 }
 endif; // cover_setup
 add_action( 'after_setup_theme', 'cover_setup' );
@@ -65,7 +65,7 @@ add_action( 'after_setup_theme', 'cover_setup' );
  * Register widgetized area and update sidebar with default widgets.
  */
 function cover_widgets_init() {
-	
+
     register_sidebar( array(
 		'name'          => __( 'Overlay Widgets', 'cover' ),
 		'id'            => 'cover-overlay',
@@ -81,10 +81,10 @@ add_action( 'widgets_init', 'cover_widgets_init' );
  * Enqueue scripts and styles.
  */
 function cover_scripts() {
-	
+
     wp_enqueue_style( 'GoogleFonts', 'http://fonts.googleapis.com/css?family=Source+Code+Pro|Montserrat|Open+Sans:400,600' );
 	wp_enqueue_style( 'cover-style', get_stylesheet_uri() );
-    
+
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'cover-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
 	wp_enqueue_script( 'skrollr', get_template_directory_uri() . '/js/skrollr.min.js', array(), '20140821', true );

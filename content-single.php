@@ -24,8 +24,8 @@
 		?>
         <ul class="tags">
         <?php
-                foreach( $tags as $tag ) {
-            		echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s", "cover" ), $tag->name ) ) . '">' . $tag->name . '</a></li>';
+                foreach ( $tags as $tag ) {
+            		echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="' . esc_attr( sprintf( __( 'View all posts in %s', 'cover' ), $tag->name ) ) . '">' . $tag->name . '</a></li>';
                 }
         ?>
         </ul>

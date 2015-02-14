@@ -23,7 +23,7 @@
 <?php
 
 $header_class = '';
-if ( !( is_single() || is_page() || is_archive() || is_author() || is_search() || is_404() || cover_has_featured_posts() ) ) {
+if ( ! ( is_single() || is_page() || is_archive() || is_author() || is_search() || is_404() || cover_has_featured_posts() ) ) {
     $header_class = ' bg';
 }
 
@@ -82,7 +82,7 @@ if (
                 <?php wp_nav_menu( array(
                     'theme_location' => $nav_social,
                     'link_before'    => '<span class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x social-icon"></i><span class="screen-reader-text">',
-                    'link_after'     => '</span></span>'
+                    'link_after'     => '</span></span>',
                 ) ); ?>
             </nav>
         <?php } ?>

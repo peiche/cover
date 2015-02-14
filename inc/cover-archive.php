@@ -7,13 +7,12 @@
 <?php
 	$count = 0;
 	$image = '';
-	while (have_posts()) : the_post();
-		if ($count == 0) {
+	while ( have_posts() ) : the_post();
+		if ( 0 == $count ) {
 			
-			if ('' != get_the_post_thumbnail()) {
+			if ( '' != get_the_post_thumbnail() ) {
 				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
 			}
-			
 		}
 		$count++;
 	endwhile;
@@ -44,10 +43,10 @@
 				_e( 'Asides', 'cover' );
 
 			elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-				_e( 'Galleries', 'cover');
+				_e( 'Galleries', 'cover' );
 
 			elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-				_e( 'Images', 'cover');
+				_e( 'Images', 'cover' );
 
 			elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
 				_e( 'Videos', 'cover' );

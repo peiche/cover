@@ -41,8 +41,8 @@
 		
         <?php if ( is_page() ) { ?>
             <?php if ( $post->post_parent ) {
-                $parent_permalink = get_permalink($post->post_parent);
-                $parent_title = get_the_title($post->post_parent);
+                $parent_permalink = get_permalink( $post->post_parent );
+                $parent_title = get_the_title( $post->post_parent );
             ?>
                 <h2 class="cover-subtitle"><a href="<?php echo $parent_permalink; ?>"><i class="fa fa-angle-left"></i> <?php echo $parent_title; ?></a></h2>
             <?php } ?>
