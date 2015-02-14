@@ -26,23 +26,6 @@
             margin-left: 100px;
         }
     }
-    
-    &-social {
-		margin-top: 10px;
-		@include social-icon;
-		
-        a {
-            color: #fff;
-            
-            &:hover {
-                border-color: transparent;
-                
-                .fa-circle {
-                    color: #ddd !important;
-                }
-            }
-        }
-	}
 }
 
 .bypostauthor {
