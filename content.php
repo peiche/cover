@@ -21,14 +21,13 @@ if ( has_post_thumbnail() ) {
 	
 	<div class="entry-summary">
 		<?php
-
-		$pos = strpos( $post->post_content, '<!--more-->' );
-		if ( $pos ) {
-			the_content( __( '', 'cover' ) );
-		} else {
-			the_excerpt();
-		}
-
+            if( has_excerpt( ) ) {
+                the_excerpt();
+            } else if ( strpos( $post->post_content, '<!--more-->' ) ) {
+                the_content( __( '', 'cover' ) );
+            } else {
+                the_excerpt();
+            }
 		?>
 
 		<?php

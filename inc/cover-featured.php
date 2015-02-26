@@ -27,14 +27,15 @@
 				<div class="background"<?php if ( '' != $img ) { ?> style="background-image: url('<?php echo $img; ?>');"<?php } ?>></div>
 				<header class="cover-header">
 					<h1 class="cover-title"><?php the_title(); ?></h1>
-					<h2 class="cover-summary">
+                    <h2 class="cover-summary">
 					<?php
-						$pos = strpos( $post->post_content, '<!--more-->' );
-						if ( $pos ) {
-							echo get_the_content( __( '', 'cover' ) );
-						} else {
-							echo get_the_excerpt();
-						}
+						if( has_excerpt( ) ) {
+                            the_excerpt();
+                        } else if ( strpos( $post->post_content, '<!--more-->' ) ) {
+                            the_content( __( '', 'cover' ) );
+                        } else {
+                            the_excerpt();
+                        }
 					?>
 					</h2>
 				</header>
