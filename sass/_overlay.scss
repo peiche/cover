@@ -3,7 +3,7 @@ Overlay for menus and widgets
 --------------------------------------------------------------*/
 
 .overlay {
-	background: #333;
+	background: $overlay-color;
     @include rem(font-size, 20px);
     height: 100%;
     left: 0;
@@ -92,7 +92,7 @@ Overlay for menus and widgets
     }
 	
 	&-search {
-		.search {
+        .search {
 			&-form {
 				display: table;
 				height: 100%;
@@ -126,6 +126,21 @@ Overlay for menus and widgets
 			vertical-align: middle;
 		}
 	}
+    
+    &-icon {
+        bottom: 0;
+        color: darken($overlay-color, 2%);
+        font-size: 50vh;
+        height: 50%;
+        left: 0;
+        line-height: 50vh;
+        margin: auto;
+        position: fixed;
+        right: 0;
+        text-align: center;
+        top: 0;
+        z-index: -1;
+    }
     
     .header {
         margin-top: -60px;

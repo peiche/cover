@@ -92,6 +92,7 @@ if (
 <?php } ?>
 
 <div id="search-overlay" class="overlay overlay-search">
+    <span class="overlay-icon fa fa-search"></span>
     <noscript>
         <div class="header">
             <div class="site-nav">
