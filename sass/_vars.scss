@@ -63,6 +63,8 @@ $z-index-overlay: 500;
 
 $divider-color: $color-light-grey;
 
+$overlay-color: #333;
+
 @function parse-int($n) {
     @return $n / ($n * 0 + 1);
 }
