@@ -58,11 +58,19 @@
         padding: 0;
     }
     
-    &:first-child {
+    &:first-of-type {
         margin-top: 77px; // header height
         
+        .featured-container + & {
+            margin-top: 40px;
+        }
+        
         .cover ~ & {
-            margin: 0;
+            margin-top: 60px;
+        }
+        
+        .infinite-wrap & {
+            margin-top: 0; // remove margin for subsequent infinite scroll pages
         }
     }
 }
@@ -159,10 +167,6 @@
             @include site-width;
         }
         
-        > :first-child {
-			margin-top: 60px;
-		}
-		
         > p:first-child,
 		> p:first-of-type,
 		> p:first-child:empty + p,
