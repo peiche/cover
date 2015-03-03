@@ -14,16 +14,38 @@ body #infinite-handle { // increased specificity to override jetpack's css
 	}
 }
 
-.infinite-loader {
+.infinite-loader { // TODO: make this a full-page overlay
 	margin: 50px 0;
 	
-    .spinner {
-		margin: 0 auto;
+    .spinner { // hell, maybe we hide this entire thing and create our own with pseudoelements
+        display: none;
+        
+        /*
+        
+		margin: auto;
+        
+        > div {
+            display: none; // hide jetpack's default spinner
+        }
+        
+        &:before { // create a new spinner, based on http://codepen.io/peiche/pen/XJXOxe
+            animation: rotate .7s infinite linear;
+            border: 8px solid #ddd;
+            border-radius: 100%;
+            border-top-color: $color-blue;
+            content: '';
+            height: 50px;
+            margin: auto;
+            position: absolute;
+            width: 50px;
+        }
+        
+        */
 	}
 }
 
 #infinite-footer {
-	display: none; // I don't like the infinite scroll footer
+	display: none; // hide the infinite scroll footer
 }
 
 /*--------------------------------------------------------------
