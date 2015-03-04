@@ -14,34 +14,25 @@ body #infinite-handle { // increased specificity to override jetpack's css
 	}
 }
 
-.infinite-loader { // TODO: make this a full-page overlay
-	margin: 50px 0;
-	
-    .spinner { // hell, maybe we hide this entire thing and create our own with pseudoelements
-        display: none;
-        
-        /*
-        
-		margin: auto;
+// full-screen overlay spinner
+body .infinite-loader { // increased specificity to override jetpack's css
+    height: 42px; // match height of button
+    margin: 50px auto;
+    
+    .spinner {
+        animation: rotate .7s infinite linear;
+        border: 8px solid #ddd;
+        border-radius: 100%;
+        border-top-color: $color-blue;
+        height: 42px;
+        margin: auto;
+        position: static !important; // overrides inline style
+        width: 42px !important; // overrides inline style
         
         > div {
-            display: none; // hide jetpack's default spinner
+            display: none; // hide jetpack's default spinner parts
         }
-        
-        &:before { // create a new spinner, based on http://codepen.io/peiche/pen/XJXOxe
-            animation: rotate .7s infinite linear;
-            border: 8px solid #ddd;
-            border-radius: 100%;
-            border-top-color: $color-blue;
-            content: '';
-            height: 50px;
-            margin: auto;
-            position: absolute;
-            width: 50px;
-        }
-        
-        */
-	}
+    }
 }
 
 #infinite-footer {
