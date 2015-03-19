@@ -36,10 +36,5 @@
 
 <?php wp_footer(); ?>
 
-<a class="fa-stack fa-2x back-to-top" href="#">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    <i class="fa fa-angle-up fa-stack-1x fa-inverse"></i>
-</a>
-
 </body>
 </html>

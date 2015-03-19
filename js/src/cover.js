@@ -54,14 +54,6 @@ jQuery(document).ready(function() {
     });
 	
 	/*
-	 * Back to top link.
-	 */
-	jQuery('.back-to-top').click(function(e) {
-		e.preventDefault();
-        jQuery('html, body').animate({ scrollTop: jQuery('html').offset().top });
-    });
-    
-	/*
 	 * Skrollr and Headroom.
 	 * Don't load if the user agent is a touch device.
 	 */
@@ -79,10 +71,6 @@ jQuery(document).ready(function() {
                 forceHeight: false
             });
 		}
-		var btt_headroom = new Headroom(jQuery('.back-to-top')[0], {
-			offset: cover_height
-		});
-		btt_headroom.init();
 	}
     
     /*
