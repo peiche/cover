@@ -172,9 +172,8 @@
 		> p:first-child:empty + p,
 		> p:first-of-type:empty + p,
         p.lead {
-			color: #1d1d1d;
-            font-weight: bold;
-			
+			@include rem(font-size, 22px);
+            
             a:hover {
 				border-width: 2px;
 			}
