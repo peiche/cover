@@ -29,7 +29,7 @@
 					<h1 class="cover-title"><?php the_title(); ?></h1>
                     <h2 class="cover-summary">
 					<?php
-						if( has_excerpt( ) ) {
+						if ( has_excerpt() ) {
                             the_excerpt();
                         } else if ( strpos( $post->post_content, '<!--more-->' ) ) {
                             the_content( __( '', 'cover' ) );

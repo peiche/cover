@@ -21,7 +21,7 @@ if ( has_post_thumbnail() ) {
 	
 	<div class="entry-summary">
 		<?php
-            if( has_excerpt( ) ) {
+            if ( has_excerpt() ) {
                 the_excerpt();
             } else if ( strpos( $post->post_content, '<!--more-->' ) ) {
                 the_content( __( '', 'cover' ) );
