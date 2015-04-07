@@ -56,14 +56,10 @@ function cover_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'cover' ); ?></h1>
 		<div class="nav-links cf">
 			<?php
-				if ( ! $next ) {
-                    $prev_img = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'single-post-thumbnail' )[0];
-                } else {
-                    $prev_img = '';
-                }
-                previous_post_link( '<div class="nav-previous">%link</div>', _x( '<h2 class="subtitle">Previous post</h2><h1 class="title">%title</h1>', 'Previous post link', 'cover' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<h2 class="subtitle">Previous post</h2><h1 class="title">%title</h1>', 'Previous post link', 'cover' ) );
 
-				$next_img = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'single-post-thumbnail' )[0];
+				$next_img_array = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'single-post-thumbnail' );
+                $next_img = $next_img_array[0];
                 if ( '' != $next_img ) {
                     $class = ' featured-image';
 					$style = ' style="background-image: url(\'' . $next_img . '\')"';
