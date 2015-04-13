@@ -11,7 +11,8 @@
 		if ( 0 == $count ) {
 
 			if ( '' != get_the_post_thumbnail() ) {
-				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
+                $img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+                $img = $img_arr[0];
 			}
 		}
 		$count++;
@@ -19,7 +20,7 @@
 ?>
 
 <div class="cover">
-	<div class="background<?php if ( '' != $image ) { ?> darken" style="background-image: url('<?php echo $image; ?>');<?php } ?>"></div>
+	<div class="background<?php if ( '' != $img ) { ?> darken" style="background-image: url('<?php echo $img; ?>');<?php } ?>"></div>
 	<header class="cover-header">
 
 		<h1 class="cover-title">
