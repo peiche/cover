@@ -17,7 +17,7 @@ get_header(); ?>
 			<section class="error-404 not-found">
 				<div class="page-content">
 					
-                    <p>It looks like nothing was found at this location. Maybe try a search?</p>
+                    <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'cover' ); ?></p>
                     
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
