@@ -14,7 +14,6 @@
         
         <div class="site-info">
 			<div class="site-credits">
-                <?php do_action( 'cover_credits' ); ?>
                 <?php printf( __( 'Powered by %s and %s', 'cover' ), '<a href="http://www.wordpress.org/" title="WordPress">WordPress</a>', '<a href="http://eichefam.net/projects/cover/" title="Cover theme by Paul Eiche">Cover</a>' ); ?>
             </div>
             
