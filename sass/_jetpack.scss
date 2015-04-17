@@ -11,6 +11,12 @@ body #infinite-handle { // increased specificity to override jetpack's css
 	
     span {
 		@include button($color-blue);
+        
+        @media screen and (max-width: $width-phone) {
+            display: block;
+            margin: auto;
+            width: 90%;
+        }
 	}
 }
 
