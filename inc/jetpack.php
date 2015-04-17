@@ -16,8 +16,9 @@ function cover_jetpack_setup() {
      * @link http://jetpack.me/support/infinite-scroll/
      */
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'footer' => 'page',
+        'type' => 'click',
+        'container' => 'main',
+		'footer' => false,
 	) );
 
     add_theme_support( 'jetpack-responsive-videos' );
