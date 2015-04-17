@@ -222,30 +222,3 @@ a {
         line-height: normal;
     }
 }
-
-/*--------------------------------------------------------------
-Back to Top Link
---------------------------------------------------------------*/
-.back-to-top {
-	border: 0;
-	bottom: -64px;
-	position: fixed;
-	right: 15px;
-	
-	.fa-stack-2x { // generic class in case we change it to a different shape
-		color: $color-red;
-		transition: color .2s;
-	}
-	
-	&:hover .fa-stack-2x {
-		color: darken($color-red, 10%);
-	}
-	
-	&:active .fa-stack-2x {
-		color: darken($color-red, 20%);
-	}
-	
-	.fa-angle-up { // specific for the angle character
-		margin-top: -3px;
-	}
-}
