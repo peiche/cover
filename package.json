@@ -1,6 +1,6 @@
 {
   "name": "Cover",
-  "version": "1.2",
+  "version": "1.2.1",
   "description": "A content-driven blogging theme for WordPress.",
   "main": "index.js",
   "scripts": {
