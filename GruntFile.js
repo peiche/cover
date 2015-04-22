@@ -125,6 +125,7 @@ module.exports = function(grunt) {
                             '**',
                             '!.*',
                             '!*.json',
+                            '!*.log',
                             '!*.md',
                             '!*.xml',
                             '!GruntFile.js',
