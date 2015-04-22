@@ -60,6 +60,8 @@ function cover_post_nav() {
 
 				$next_img_array = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'single-post-thumbnail' );
                 $next_img = $next_img_array[0];
+                $class = '';
+                $style = '';
                 if ( '' != $next_img ) {
                     $class = ' featured-image';
 					$style = ' style="background-image: url(\'' . $next_img . '\')"';
