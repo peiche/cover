@@ -23,7 +23,7 @@
 				<div class="background"<?php if ( '' != $img ) { ?> style="background-image: url('<?php echo $img; ?>');"<?php } ?>></div>
 				<header class="cover-header">
 					<h1 class="cover-title"><?php the_title(); ?></h1>
-                    <h2 class="cover-summary">
+                    <div class="cover-summary">
 					<?php
 						if ( has_excerpt() ) {
                             the_excerpt();
@@ -33,7 +33,7 @@
                             the_excerpt();
                         }
 					?>
-					</h2>
+					</div>
 				</header>
 			</div>
 		</a>
