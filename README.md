@@ -85,9 +85,11 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 Cover is [GPL v2.0 or later](LICENSE.txt).
 
+Image used in screenshot.png - https://unsplash.com/photos/1uxV8fAfhVM/download by Luke Chesser  
+License - http://creativecommons.org/publicdomain/zero/1.0/  
+
 All other resources are licensed as follows:
 
 * Font Awesome - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 * Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE  
 * Skrollr - MIT - https://github.com/Prinzhorn/skrollr/blob/master/LICENSE.txt  
-* Image used in screenshot.png - http://creativecommons.org/publicdomain/zero/1.0/
