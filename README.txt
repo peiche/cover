@@ -77,3 +77,4 @@ All other resources are licensed as follows:
 * Font Awesome - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 * Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE  
 * Skrollr - MIT - https://github.com/Prinzhorn/skrollr/blob/master/LICENSE.txt  
+* Image used in screenshot.png - http://creativecommons.org/publicdomain/zero/1.0/
