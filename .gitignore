@@ -216,6 +216,7 @@ pip-log.txt
 bower_components/
 fonts/
 js/*.min.js
+languages/
 node_modules/
 releases/
 report/
