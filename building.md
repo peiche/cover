@@ -40,7 +40,13 @@ We haven't built anything yet, of course. This was just running the linters. Run
 $ grunt build
 ```
 
-The build process copies files from external sources (fonts from Font Awesome, and js from Skrollr and Headroom.js), compiles the .scss (including Font Awesome styles) into a single stylesheet, and minifies the JavaScript.
+The build process copies files from external sources (fonts from Font Awesome, and js from Skrollr and Headroom.js), compiles the .scss (including Font Awesome styles) into a single stylesheet, and minifies the JavaScript. But we have one more command to run before we have a fully working WordPress theme.
+
+```
+$ grunt pot
+```
+
+This command will scan the php files in your theme and generate the .pot file necessary for translating the static text strings. This command will fail unless you have the `xgettext` command available. Once it's been run, it will generate cover.pot.
 
 At this point, you have a working WordPress theme. But uploading a theme file by file is a pain, not to mention tedious. So we have one more command to run.
 
