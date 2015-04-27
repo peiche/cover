@@ -1,6 +1,6 @@
 {
   "name": "Cover",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "A content-driven blogging theme for WordPress.",
   "homepage": "https://github.com/peiche/cover",
   "main": "index.js",
