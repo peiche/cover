@@ -117,7 +117,7 @@ module.exports = function(grunt) {
         watch: {
 			css: {
 				files: 'sass/*.scss',
-				tasks: ['scsslint', 'sass', 'autoprefixer', 'pot']
+				tasks: ['scsslint', 'sass', 'autoprefixer']
 			},
             javascript: {
                 files: 'js/src/*.js',
@@ -166,7 +166,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-pot');
     grunt.loadNpmTasks('grunt-scss-lint');
     
-    grunt.registerTask('build', ['copy', 'sass', 'autoprefixer', 'uglify', 'pot']);
+    grunt.registerTask('build', ['copy', 'sass', 'autoprefixer', 'uglify']);
 	grunt.registerTask('validate', ['scsslint', 'jshint']);
 	grunt.registerTask('default', ['scsslint', 'watch']);
     
