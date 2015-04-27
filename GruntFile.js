@@ -125,7 +125,7 @@ module.exports = function(grunt) {
             }
 		},
         compress: {
-            main: {
+            build: {
                 options: {
                     mode: 'zip',
                     archive: function() {
