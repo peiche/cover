@@ -60,6 +60,14 @@ So, about those social menus. All you have to do is create a menu with links to 
 
 == Installation ==
 
+-- WordPress.org --
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Search for "Cover" and, once you've found the theme, click Install.
+3. Click Activate to start using Cover.
+
+-- Direct Upload --
+
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
