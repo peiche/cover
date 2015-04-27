@@ -9,12 +9,10 @@
  */
 module.exports = function(grunt) {
 	
-    var target = grunt.option('target') || 'prod';
-    
     grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
         copy: {
-            main: {
+            build: {
                 files: [
                     {
                         cwd: 'bower_components/font-awesome/fonts',
@@ -47,20 +45,9 @@ module.exports = function(grunt) {
             },
         },
         sass: {
-            dev: {
+            build: {
                 options: {
                     style: 'expanded',
-                    noCache: true,
-                    sourcemap: 'auto',
-                    unixNewlines: true
-                },
-                files: {
-                    'style.css': 'sass/style.scss'
-                }
-            },
-            prod: {
-                options: {
-                    style: 'compressed',
                     noCache: true,
                     sourcemap: 'none',
                     unixNewlines: true
@@ -71,7 +58,7 @@ module.exports = function(grunt) {
             },
 		},
 		autoprefixer: {
-            dist: {
+            build: {
                 files: {
                     'style.css': 'style.css'
                 }
@@ -100,10 +87,37 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        pot: {
+            options: {
+                text_domain: 'cover',
+                dest: 'languages/',
+                keywords: [
+                    '__',
+                    '_e',
+                    'esc_html__',
+                    'esc_html_e',
+                    'esc_attr__',
+                    'esc_attr_e',
+                    'esc_attr_x',
+                    'esc_html_x',
+                    'ngettext',
+                    '_n',
+                    '_ex',
+                    '_nx'
+                ]
+            },
+            build: {
+                src: [
+                    '**/*.php',
+                    '!node_modules/**'
+                ],
+                expand: true
+            }
+        },
         watch: {
 			css: {
 				files: 'sass/*.scss',
-				tasks: ['scsslint', 'sass:' + target, 'autoprefixer']
+				tasks: ['scsslint', 'sass', 'autoprefixer', 'pot']
 			},
             javascript: {
                 files: 'js/src/*.js',
@@ -149,9 +163,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-pot');
     grunt.loadNpmTasks('grunt-scss-lint');
     
-    grunt.registerTask('build', ['copy', 'sass:' + target, 'autoprefixer', 'uglify']);
+    grunt.registerTask('build', ['copy', 'sass', 'autoprefixer', 'uglify', 'pot']);
 	grunt.registerTask('validate', ['scsslint', 'jshint']);
 	grunt.registerTask('default', ['scsslint', 'watch']);
     
