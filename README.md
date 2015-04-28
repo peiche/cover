@@ -58,8 +58,6 @@ If you’re a developer and want to play around with Cover, you’ll find that i
 
 ##Installation
 
-Right now, there is only one way to install Cover.
-
 ###WordPress.org
 
 You can download the latest official release from WordPress.org on your self-hosted site's theme admin page. Follow these steps to activate Cover:
