@@ -82,7 +82,7 @@ add_action( 'widgets_init', 'cover_widgets_init' );
  */
 function cover_scripts() {
 
-    wp_enqueue_style( 'GoogleFonts', 'http://fonts.googleapis.com/css?family=Source+Code+Pro|Montserrat|Open+Sans:400,600' );
+    wp_enqueue_style( 'GoogleFonts', '//fonts.googleapis.com/css?family=Source+Code+Pro|Montserrat|Open+Sans:400,600' );
 	wp_enqueue_style( 'cover-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'jquery' );
