@@ -24,6 +24,7 @@
                         'theme_location' => $nav_social_footer,
                         'link_before'    => '<i class="fa fa-fw social-icon"></i><span class="screen-reader-text">',
                         'link_after'     => '</span>',
+                        'depth'          => 1
                     ) ); ?>
                 </nav>
             <?php } ?>

@@ -15,21 +15,45 @@ function cover_jetpack_setup() {
      * See Jetpack support for more info
      * @link http://jetpack.me/support/infinite-scroll/
      */
-	add_theme_support( 'infinite-scroll', array(
-        'type' => 'click',
+    add_theme_support( 'infinite-scroll', array(
         'container' => 'main',
 		'footer' => false,
 	) );
 
+    /*
+     * See Jetpack support for more info
+     * @link http://jetpack.me/support/responsive-videos/
+     */
     add_theme_support( 'jetpack-responsive-videos' );
 
-    // Enable featured content.
+    /*
+     * See Jetpack support for more info
+     * @link http://jetpack.me/support/featured-content/
+     */
     add_theme_support( 'featured-content', array(
 		'filter'		=> 'cover_get_featured_posts',
         'max_posts'     => 1,
 	) );
 }
 add_action( 'after_setup_theme', 'cover_jetpack_setup' );
+
+/**
+ * Handle `footer_widgets` argument
+ *
+ * @param bool $has_widgets
+ * @uses has_nav_menu
+ * @filter infinite_scroll_has_footer_widgets
+ * @return bool
+ */
+function cover_infinite_scroll_has_footer_widgets( $has_widgets ) {
+    $has_widgets = false;
+    if ( has_nav_menu( 'social_footer' ) ) {
+        $has_widgets = true;
+    }
+    
+    return $has_widgets;
+}
+add_filter( 'infinite_scroll_has_footer_widgets', 'cover_infinite_scroll_has_footer_widgets', 10, 1 );
 
 /**
  * Getter function for Featured Content Plugin.

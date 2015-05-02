@@ -20,7 +20,7 @@ Drawing special attention to featured images, from the homepage to posts, catego
 
 -- Full-width featured images --
 
-When you use a featured image in Cover, it displays it as a background image behind the title. Images taller than 600 pixels will be displayed full-screen.
+When you use a featured image in Cover, it displays as a background image behind the title. Images taller than 600 pixels will be displayed full-screen.
 
 -- Scalable vector icons --
 
@@ -60,13 +60,36 @@ So, about those social menus. All you have to do is create a menu with links to 
 
 == Installation ==
 
+-- WordPress.org --
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Search for "Cover" and, once you've found the theme, click Install.
+3. Click Activate to start using Cover.
+
+-- Direct Upload --
+
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
+== FAQ ==
 
-There's nothing here yet. Ask me something!
+1. How do I set the background image behind the post title?
+   
+   When you use a featured image in Cover, it displays as a background image behind the title. Images taller than 600 pixels will be displayed full-screen.
+
+2. Can I change the font size?
+   
+   Cover does not allow you to change the default font size. I recommend creating a child theme before making changes to the theme.
+
+== Changelog ==
+
+1.3.2
+- Update Google Fonts URL to be protocol-relative (thanks to BforBen)
+- Added WordPress.org installation directions.
+
+1.3.1
+- Initial release on the WordPress.org Theme Directory
 
 == License ==
 
