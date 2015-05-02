@@ -84,7 +84,7 @@ So, about those social menus. All you have to do is create a menu with links to 
 
 == Changelog ==
 
-1.4
+1.4.0
 - Jetpack's Infinite Scrolling module now detects whether or not the footer social menu is present.
 - Update Google Fonts URL to be protocol-relative (thanks to BforBen)
 - Added WordPress.org installation directions.
