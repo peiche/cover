@@ -16,16 +16,20 @@ function cover_jetpack_setup() {
      * @link http://jetpack.me/support/infinite-scroll/
      */
     add_theme_support( 'infinite-scroll', array(
-        'type' => 'scroll',
-        'footer_widgets' => false,
         'container' => 'main',
 		'footer' => false,
 	) );
 
-    // link?
+    /*
+     * See Jetpack support for more info
+     * @link http://jetpack.me/support/responsive-videos/
+     */
     add_theme_support( 'jetpack-responsive-videos' );
 
-    // Enable featured content. link?
+    /*
+     * See Jetpack support for more info
+     * @link http://jetpack.me/support/featured-content/
+     */
     add_theme_support( 'featured-content', array(
 		'filter'		=> 'cover_get_featured_posts',
         'max_posts'     => 1,
