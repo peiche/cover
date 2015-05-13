@@ -66,11 +66,14 @@ So, about those social menus. All you have to do is create a menu with links to 
 2. Search for "Cover" and, once you've found the theme, click Install.
 3. Click Activate to start using Cover.
 
--- Direct Upload --
+-- Github --
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+You can download the latest from Github. Follow these steps to activate Cover:
+
+1. Download the latest release at https://github.com/peiche/cover/releases/latest.
+2. In your admin panel, go to Appearance > Themes and click the Add New button.
+3. Click Upload and Choose File, then select the theme's zip file. Click Install Now.
+4. Click Activate.
 
 == FAQ ==
 

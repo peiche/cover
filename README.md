@@ -66,7 +66,7 @@ You can download the latest official release from WordPress.org on your self-hos
 2. Search for "Cover" and, once you've found the theme, click *Install*.
 3. Click *Activate* to start using Cover.
 
-###Direct Upload
+###Github
 
 You can download the latest from Github. Follow these steps to activate Cover:
 
