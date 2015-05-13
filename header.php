@@ -93,13 +93,21 @@ if (
 
 <div id="search-overlay" class="overlay overlay-search">
     <span class="overlay-icon fa fa-search"></span>
-    <noscript>
+    <?php if ( !$build_overlay ) { ?>
         <div class="header">
             <div class="site-nav">
-                <a class="hamburger close" href="#"><span></span></a>
+                <a class="hamburger close" data-action="toggle-overlay" data-overlay-id="search-overlay" href="#"><span></span></a>
             </div>
         </div>
-    </noscript>
+    <?php } else { ?>
+        <noscript>
+            <div class="header">
+                <div class="site-nav">
+                    <a class="hamburger close" href="#"><span></span></a>
+                </div>
+            </div>
+        </noscript>
+    <?php } ?>
     
     <?php get_search_form(); ?>
 </div>
