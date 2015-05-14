@@ -158,7 +158,9 @@
         
         > ul,
         > ol {
-            list-style-position: inside;
+            li {
+                margin-left: 25px;
+            }
         }
         
         > section > h2,
