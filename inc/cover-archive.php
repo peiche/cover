@@ -20,7 +20,7 @@
 ?>
 
 <div class="cover">
-	<div class="background<?php if ( '' != $img ) { ?> darken" style="background-image: url('<?php echo $img; ?>');<?php } ?>"></div>
+	<div class="cover-background<?php if ( '' != $img ) { ?> darken" style="background-image: url('<?php echo $img; ?>');<?php } ?>"></div>
 	<header class="cover-header">
 
 		<h1 class="cover-title">
