@@ -8,6 +8,6 @@ linters:
   SelectorDepth:
     max_depth: 4
   SelectorFormat:
-    ignored_names: [ disqus_thread ]
+    enabled: false # disabled for disqus and lasso
   SpaceBeforeBrace:
     enabled: false # disabled for "social-icon" mixin
