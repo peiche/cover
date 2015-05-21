@@ -51,6 +51,24 @@ Header
 			margin: 20px 0;
 		}
         
+        &-logo {
+            transition: opacity 200ms;
+            
+            &:hover {
+                border-color: transparent;
+            }
+            
+            img {
+                height: 47px;
+                margin: 15px 15px 15px 0;
+                vertical-align: bottom;
+                
+                @media screen and (max-width: 768px) {
+                    margin-right: 10px;
+                }
+            }
+        }
+        
 		&-title {
 			display: inline-block;
 			margin: 20px 0;

@@ -22,6 +22,14 @@ function cover_jetpack_setup() {
 
     /*
      * See Jetpack support for more info
+     * @link http://jetpack.me/support/site-logo/
+     */
+    add_theme_support( 'site-logo', array( 
+        'cover-site-logo' 
+    ) );
+
+    /*
+     * See Jetpack support for more info
      * @link http://jetpack.me/support/responsive-videos/
      */
     add_theme_support( 'jetpack-responsive-videos' );
