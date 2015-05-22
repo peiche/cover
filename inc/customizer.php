@@ -57,11 +57,14 @@ function cover_customize_options() {
  */
 
 a,
-a:hover,
 a:visited,
 .entry-title a:hover,
 .entry-subtitle a:hover {
     color: <?php echo $accent_color; ?>;
+}
+
+a:hover {
+    color: <?php echo sass_darken( $accent_color, 15 ); ?>;
 }
 
 .paging-navigation a,
@@ -81,8 +84,13 @@ body .infinite-loader .spinner {
  */
 
 .header a,
-.overlay a {
+.overlay a,
+.cover-header a {
     color: #fff;
+}
+
+.cover-subtitle a {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .entry-title a {
