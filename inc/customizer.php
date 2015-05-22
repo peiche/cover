@@ -23,6 +23,11 @@ function cover_customize_register( $wp_customize ) {
         'default' 		=> '#026ed2', // default blue
         'type' 			=> 'option'
     ) );
+    
+    $wp_customize->add_setting( 'cover_link_color', array(
+        'default' 		=> '#026ed2', // default blue
+        'type' 			=> 'option'
+    ) );
 
     $wp_customize->add_control( 
         new WP_Customize_Color_Control( 
@@ -35,12 +40,25 @@ function cover_customize_register( $wp_customize ) {
             )
         ) 
     );
+    
+    $wp_customize->add_control( 
+        new WP_Customize_Color_Control( 
+            $wp_customize, 
+            'cover_text_color', 
+            array(
+                'label'      => __( 'Link Color', 'cover' ),
+                'section'    => 'cover_options',
+                'settings'   => 'cover_link_color',
+            )
+        ) 
+    );
 
 }
-add_action( 'customize_register', 'cover_customize_register' );
+//add_action( 'customize_register', 'cover_customize_register' );
 
 function cover_customize_options() {
     $accent_color = get_option( 'cover_accent_color' );
+    $link_color = get_option( 'cover_link_color' );
     $contrast = getContrast( $accent_color );
     if ( $contrast == 'light' ) {
         $text_color_hex = '#000000';
@@ -60,11 +78,11 @@ a,
 a:visited,
 .entry-title a:hover,
 .entry-subtitle a:hover {
-    color: <?php echo $accent_color; ?>;
+    color: <?php echo $link_color; ?>;
 }
 
 a:hover {
-    color: <?php echo sass_darken( $accent_color, 15 ); ?>;
+    color: <?php echo sass_darken( $link_color, 15 ); ?>;
 }
 
 .paging-navigation a,
@@ -97,11 +115,13 @@ body .infinite-loader .spinner {
     color: #222;
 }
 
+.entry-subtitle a {
+    color: #999;
+}
+
 /**
  * Override colors based on accent color
  */
-
-/*
 
 .header a,
 .header .site-description {
@@ -122,15 +142,13 @@ body .infinite-loader .spinner {
     background-color: <?php echo $text_color_hex; ?>;
 }
 
-*/
-
 </style>
 
 <meta name="theme-color" content="<?php echo $accent_color; ?>">
 
 <?php
 }
-add_action( 'wp_head', 'cover_customize_options' );
+//add_action( 'wp_head', 'cover_customize_options' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
