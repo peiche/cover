@@ -67,11 +67,22 @@ Header
                     margin-right: 10px;
                 }
             }
+            
+            & + .site-title:empty + .site-description {
+                display: inline-block;
+                margin: 28px 0;
+            }
         }
         
 		&-title {
 			display: inline-block;
 			margin: 20px 0;
+            
+            &:empty + .site-description {
+                margin: 0;
+                border: 0;
+                padding: 0;
+            }
 		}
         
         &-description {
