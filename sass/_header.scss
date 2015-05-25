@@ -52,25 +52,26 @@ Header
 		}
         
         &-logo {
-            transition: opacity 200ms;
-            
-            &:hover {
-                border-color: transparent;
+            height: 47px;
+            margin: 15px 15px 15px 0;
+            vertical-align: bottom;
+            width: auto;
+
+            @media screen and (max-width: 768px) {
+                margin-right: 10px;
             }
             
-            img {
-                height: 47px;
-                margin: 15px 15px 15px 0;
-                vertical-align: bottom;
+            &-link {
+                transition: opacity 200ms;
                 
-                @media screen and (max-width: 768px) {
-                    margin-right: 10px;
+                &:hover {
+                    border-color: transparent;
                 }
-            }
-            
-            & + .site-title:empty + .site-description {
-                display: inline-block;
-                margin: 28px 0;
+                
+                & + .site-title:empty + .site-description {
+                    display: inline-block;
+                    margin: 28px 0;
+                }
             }
         }
         
