@@ -134,53 +134,47 @@ var {
 code {
     background: #eee;
 	border-radius: 3px;
-	margin: 0 5px;
-    padding: 2px 6px;
+	padding: 2px 6px;
 }
 
 pre {
-	background: $background-color-code; 
+	@include rem(font-size, 15px);
+    background: $background-color-code; 
 	border: 0;
     color: #fff;
     font-family: $font-stack-code;
-    @include rem(font-size, 15px);
-	line-height: 28px;
+    line-height: 28px;
 	margin: 40px 0;
     max-width: 100%;
 	overflow: auto;
-	padding: 25px 35px;
+	padding: 25px 0;
 	
     code {
+        @include site-width;
         background: 0;
         color: #eee;
-        display: inline-block;
-        line-height: 28px;
-        margin: 0;
+        display: block;
+        overflow: auto;
         padding: 0;
+        
+        &::-webkit-scrollbar {
+            background: $background-color-code;
+
+            &:horizontal {
+                height: 10px;
+            }
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: lighten($background-color-code, 5%);
+            border-radius: 15px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: lighten($background-color-code, 20%);
+            border-radius: 15px;
+        }
     }
-    
-}
-
-code .kwd, 
-pre .kwd {
-    color: #66d9ef;
-}
-
-code .pln, 
-code .pun, 
-pre .pln, 
-pre .pun {
-    color: #fff;
-}
-
-code .str, 
-pre .str {
-    color: #d64032;
-}
-
-code .lit, 
-pre .lit {
-    color: #ae81ff;
 }
 
 abbr, 
