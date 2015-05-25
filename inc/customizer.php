@@ -54,7 +54,7 @@ function cover_customize_register( $wp_customize ) {
     );
 
 }
-//add_action( 'customize_register', 'cover_customize_register' );
+add_action( 'customize_register', 'cover_customize_register' );
 
 function cover_customize_options() {
     $accent_color = get_option( 'cover_accent_color' );
@@ -148,7 +148,7 @@ body .infinite-loader .spinner {
 
 <?php
 }
-//add_action( 'wp_head', 'cover_customize_options' );
+add_action( 'wp_head', 'cover_customize_options' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
