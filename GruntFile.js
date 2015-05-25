@@ -49,7 +49,7 @@ module.exports = function(grunt) {
                 options: {
                     style: 'expanded',
                     noCache: true,
-                    sourcemap: 'auto',
+                    sourcemap: 'none',
                     unixNewlines: true
                 },
                 files: {
