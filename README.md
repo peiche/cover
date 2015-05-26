@@ -93,6 +93,10 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 ##Changelog
 
+**1.5.0**
+- Added support for Jetpack's Site Logo module.
+- Added ability to switch color themes.
+
 **1.4.0**
 - Jetpack's Infinite Scrolling module now detects whether or not the footer social menu is present.
 - Update Google Fonts URL to be protocol-relative (thanks to [BforBen](https://github.com/BforBen))

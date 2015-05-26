@@ -87,6 +87,10 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 == Changelog ==
 
+1.5.0
+- Added support for Jetpack's Site Logo module.
+- Added ability to switch color themes.
+
 1.4.0
 - Jetpack's Infinite Scrolling module now detects whether or not the footer social menu is present.
 - Update Google Fonts URL to be protocol-relative (thanks to BforBen)
