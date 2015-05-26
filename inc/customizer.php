@@ -13,59 +13,56 @@
 function cover_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-    $wp_customize->remove_section( 'colors' );
+    //$wp_customize->remove_section( 'colors' );
 
-    $wp_customize->add_section( 'cover_options', array(
-        'title' 		=> __( 'Cover Theme Options', 'cover' )
-    ) );
-
-    $wp_customize->add_setting( 'cover_accent_color', array(
-        'default' 		=> '#026ed2', // default blue
-        'type' 			=> 'option'
-    ) );
-    
-    $wp_customize->add_setting( 'cover_link_color', array(
-        'default' 		=> '#026ed2', // default blue
-        'type' 			=> 'option'
-    ) );
-
+    /*
     $wp_customize->add_control( 
         new WP_Customize_Color_Control( 
             $wp_customize, 
             'cover_accent_color', 
             array(
                 'label'      => __( 'Accent Color', 'cover' ),
-                'section'    => 'cover_options',
+                'section'    => 'colors',
                 'settings'   => 'cover_accent_color',
             )
         ) 
     );
+    */
     
-    $wp_customize->add_control( 
-        new WP_Customize_Color_Control( 
-            $wp_customize, 
-            'cover_text_color', 
-            array(
-                'label'      => __( 'Link Color', 'cover' ),
-                'section'    => 'cover_options',
-                'settings'   => 'cover_link_color',
-            )
-        ) 
+
+    $wp_customize->add_section( 'cover_options', array(
+        'title' 		=> __( 'Cover Theme Options', 'cover' )
+    ) );
+
+    $wp_customize->add_setting(
+        'cover_color_scheme',
+        array(
+            'default'   => '#026ed2',
+        )
+    );
+
+    $wp_customize->add_control(
+        'cover_color_scheme',
+        array(
+            'type'    => 'select',
+            'label'   => 'Color Scheme',
+            'section' => 'cover_options',
+            'choices' => array(
+                '#026ed2'   => 'Blue',
+                '#f44336'   => 'Red',
+                '#4caf50'   => 'Green',
+                '#e91e63'   => 'Pink',
+                '#9c27b0'   => 'Purple',
+                '#2b2b2b'   => 'Gray',
+            ),
+        )
     );
 
 }
 add_action( 'customize_register', 'cover_customize_register' );
 
 function cover_customize_options() {
-    $accent_color = get_option( 'cover_accent_color' );
-    $link_color = get_option( 'cover_link_color' );
-    $contrast = getContrast( $accent_color );
-    if ( $contrast == 'light' ) {
-        $text_color_hex = '#000000';
-    } else {
-        $text_color_hex = '#ffffff';
-    }
-    $text_color_rgb = hex2rgb( $text_color_hex );
+    $color_scheme = get_theme_mod( 'cover_color_scheme', '#026ed2' )
     ?>
 
 <style>
@@ -78,11 +75,16 @@ a,
 a:visited,
 .entry-title a:hover,
 .entry-subtitle a:hover {
-    color: <?php echo $link_color; ?>;
+    color: <?php echo $color_scheme; ?>;
 }
 
 a:hover {
-    color: <?php echo sass_darken( $link_color, 15 ); ?>;
+    color: <?php echo sass_darken( $color_scheme, 15 ); ?>;
+}
+
+.paging-navigation a:hover,
+body #infinite-handle span:hover {
+    background-color: <?php echo sass_darken( $color_scheme, 15 ); ?>;
 }
 
 .paging-navigation a,
@@ -90,11 +92,11 @@ a:hover {
 ul.categories a ,
 .cover,
 body #infinite-handle span {
-    background-color: <?php echo $accent_color; ?>;
+    background-color: <?php echo $color_scheme; ?>;
 }
 
 body .infinite-loader .spinner {
-    border-top-color: <?php echo $accent_color; ?>;
+    border-top-color: <?php echo $color_scheme; ?>;
 }
 
 /**
@@ -119,32 +121,9 @@ body .infinite-loader .spinner {
     color: #999;
 }
 
-/**
- * Override colors based on accent color
- */
-
-.header a,
-.header .site-description {
-    color: <?php echo $text_color_hex; ?>;
-}
-
-.header .site-description {
-    border-color: rgba(<?php echo $text_color_rgb[ 'red' ]; ?>, <?php echo $text_color_rgb[ 'green' ]; ?>, <?php echo $text_color_rgb[ 'blue' ]; ?>, .25);
-}
-
-.header a:hover {
-    border-color: <?php echo $text_color_hex; ?>;
-}
-
-.hamburger span,
-.hamburger span:after,
-.hamburger span:before {
-    background-color: <?php echo $text_color_hex; ?>;
-}
-
 </style>
 
-<meta name="theme-color" content="<?php echo $accent_color; ?>">
+<meta name="theme-color" content="<?php echo $color; ?>">
 
 <?php
 }
