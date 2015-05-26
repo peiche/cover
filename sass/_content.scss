@@ -160,6 +160,25 @@
             li {
                 margin-left: 25px;
             }
+            
+            &.inline {
+                li {
+                    display: inline-block;
+                    margin-left: 0;
+                    margin-right: 10px;
+                    
+                    &:after {
+                        color: #ccc;
+                        content: '\2022';
+                        display: inline-block;
+                        padding-left: 10px;
+                    }
+                    
+                    &:last-child:after {
+                        display: none;
+                    }
+                }
+            }
         }
         
         > section > h2,
