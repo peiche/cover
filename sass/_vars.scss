@@ -63,7 +63,8 @@ $z-index-overlay: 500;
 
 $divider-color: $color-light-grey;
 
-$overlay-color: #333;
+$overlay-color-dark: #333;
+$overlay-color-light: #fff;
 
 @function parse-int($n) {
     @return $n / ($n * 0 + 1);
@@ -164,6 +165,7 @@ $overlay-color: #333;
 .button {
 	@include button;
 	
+    &.default,
 	&.blue {
 		@include bg-color-hover($color-blue);
 	}
@@ -171,14 +173,26 @@ $overlay-color: #333;
 	&.red {
 		@include bg-color-hover($color-red);
 	}
+    
+    &.green {
+		@include bg-color-hover($color-green);
+	}
 	
 	&.pink {
 		@include bg-color-hover($color-pink);
 	}
 	
-	&.green {
-		@include bg-color-hover($color-green);
-	}
+	&.purple {
+        @include bg-color-hover($color-purple);
+    }
+    
+    &.orange {
+        @include bg-color-hover($color-orange);
+    }
+    
+    &.dark-gray {
+        @include bg-color-hover($color-dark-grey);
+    }
 }
 
 %image-caption { // style used for both normal and aesop image component captions
