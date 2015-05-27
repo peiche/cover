@@ -68,7 +68,7 @@ Header
                     border-color: transparent;
                 }
                 
-                & + .site-title:empty + .site-description {
+                + .site-title:empty + .site-description {
                     display: inline-block;
                     margin: 28px 0;
                 }
@@ -80,8 +80,8 @@ Header
 			margin: 20px 0;
             
             &:empty + .site-description {
-                margin: 0;
                 border: 0;
+                margin: 0;
                 padding: 0;
             }
 		}
