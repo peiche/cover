@@ -319,6 +319,12 @@ ul.tags {
 	
 	a {
 		@include button;
+        font-size: 95%;
+        padding: 5px 10px;
+        
+        &:before {
+            content: '# ';
+        }
 	}
 }
 
