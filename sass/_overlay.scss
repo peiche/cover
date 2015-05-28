@@ -76,6 +76,11 @@ Overlay for menus and widgets
         &-area {
             margin-bottom: 60px;
             margin-top: 60px;
+            
+            .search-field {
+                padding: 10px;
+                width: 100%;
+            }
         }
     }
     
@@ -169,7 +174,5 @@ Overlay for menus and widgets
     .search-form input.search-field {
         border-radius: 0;
         box-sizing: border-box;
-        padding: 10px;
-        width: 100%;
     }
 }
