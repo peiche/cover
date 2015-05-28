@@ -197,3 +197,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Aesop Story Engine compatibility.
  */
 require get_template_directory() . '/inc/aesop.php';
+
+/**
+ * Load Color Posts compatibility.
+ */
+require get_template_directory() . '/inc/color-posts.php';

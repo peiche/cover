@@ -64,6 +64,19 @@ function cover_customize_register( $wp_customize ) {
         )
     );
 
+    $wp_customize->add_setting(
+        'use_post_image_color'
+    );
+
+    $wp_customize->add_control(
+        'use_post_image_color',
+        array(
+            'type'      => 'checkbox',
+            'label'     => 'Use post image(s) to color header (requires Jetpack and Color Post plugins)',
+            'section'   => 'cover_options',
+        )
+    );
+
 }
 add_action( 'customize_register', 'cover_customize_register' );
 
