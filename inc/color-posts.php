@@ -11,7 +11,7 @@ function cover_use_custom_colors( $colors_css, $color, $contrast ) {
     $tonesque = get_post_meta( $post_id, '_post_colors', true );
     extract( $tonesque );
 
-    if ( get_theme_mod( 'use_post_image_color' ) != '' && $color != 'ffffff' ) {
+    if ( $color != 'ffffff' ) {
         $colors_css = "
             .header .backdrop {
                 background-color: #{$color} !important;
