@@ -1,6 +1,7 @@
 <?php
 /**
  * Color Posts Compatibility File
+ * @link https://wordpress.org/plugins/color-posts/
  *
  * @package Cover
  */
