@@ -57,11 +57,11 @@ jQuery(document).ready(function() {
 	 * Skrollr and Headroom.
 	 * Don't load if the user agent is a touch device.
 	 */
-    if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+    if (!isTouchDevice()) {
 		// headroom
 		var header_headroom = new Headroom(jQuery('.header')[0]);
 		header_headroom.init();
-
+        
 		var cover_height = 0;
 		if (jQuery('.cover').length > 0) {
 			cover_height = jQuery('.cover').outerHeight();
@@ -92,3 +92,7 @@ jQuery(document).ready(function() {
         $this.siblings('.sub-menu').toggleClass('hide');
     });
 });
+
+function isTouchDevice() {
+	return !!('ontouchstart' in window || navigator.msMaxTouchPoints);
+}
