@@ -202,3 +202,9 @@ require get_template_directory() . '/inc/aesop.php';
  * Load Color Posts compatibility.
  */
 require get_template_directory() . '/inc/color-posts.php';
+
+/**
+ * Load TGM Plugin Activation class.
+ */
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/tgm-plugin-activation.php';

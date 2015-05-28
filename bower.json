@@ -7,7 +7,8 @@
   "devDependencies": {
     "font-awesome": "~4.3.*",
     "skrollr": "~0.6.29",
-    "headroom.js": "~0.7.0"
+    "headroom.js": "~0.7.0",
+    "tgm-plugin-activation": "https://github.com/thomasgriffin/TGM-Plugin-Activation/archive/master.zip"
   },
   "ignore": [
     "**/.*",
