@@ -64,7 +64,7 @@ $z-index-overlay: 500;
 $divider-color: $color-light-grey;
 
 $overlay-color-dark: #333;
-$overlay-color-light: #fff;
+$overlay-color-light: #eee;
 
 @function parse-int($n) {
     @return $n / ($n * 0 + 1);
@@ -113,15 +113,16 @@ $overlay-color-light: #fff;
 }
 
 @mixin button($color: $color-grey) {
-	background-color: $color;
+	@include rem(font-size, $font-size-normal);
+    background-color: $color;
 	border: 0;
 	border-radius: 4px;
 	color: #fff;
     cursor: pointer;
 	display: inline-block;
-	@include rem(font-size, $font-size-normal);
 	line-height: normal;
-	padding: 10px 20px;
+	margin-bottom: 5px;
+    padding: 10px 20px;
 	text-decoration: none;
 	transition: all .2s;
 	
