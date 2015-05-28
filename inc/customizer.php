@@ -29,17 +29,17 @@ function cover_customize_register( $wp_customize ) {
         'cover_header_color',
         array(
             'type'      => 'select',
-            'label'     => 'Header Color',
+            'label'     => __( 'Header Color', 'cover' ),
             'section'   => 'cover_options',
             'choices'   => array(
-                '#026ed2'   => 'Blue',
-                '#f44336'   => 'Red',
-                '#4caf50'   => 'Green',
-                '#e91e63'   => 'Pink',
-                '#9c27b0'   => 'Purple',
-                '#ff9800'   => 'Orange',
-                '#9e9e9e'   => 'Gray',
-                '#2b2b2b'   => 'Dark Grey',
+                '#026ed2'   => __( 'Blue', 'cover' ),
+                '#f44336'   => __( 'Red', 'cover' ),
+                '#4caf50'   => __( 'Green', 'cover' ),
+                '#e91e63'   => __( 'Pink', 'cover' ),
+                '#9c27b0'   => __( 'Purple', 'cover' ),
+                '#ff9800'   => __( 'Orange', 'cover' ),
+                '#9e9e9e'   => __( 'Gray', 'cover' ),
+                '#2b2b2b'   => __( 'Dark Grey', 'cover' ),
             ),
         )
     );
@@ -55,11 +55,11 @@ function cover_customize_register( $wp_customize ) {
         'cover_overlay_color',
         array(
             'type'      => 'select',
-            'label'     => 'Overlay Color',
+            'label'     => __( 'Overlay Color', 'cover' ),
             'section'   => 'cover_options',
             'choices'   => array(
-                'overlay-dark'  => 'Dark',
-                'overlay-light' => 'Light',
+                'overlay-dark'  => __( 'Dark', 'cover' ),
+                'overlay-light' => __( 'Light', 'cover' ),
             ),
         )
     );
