@@ -1,5 +1,5 @@
 #Cover
-
+[![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://github.com/peiche/cover/blob/master/LICENSE.txt)
 [![Build Status](https://travis-ci.org/peiche/cover.svg?branch=master)](https://travis-ci.org/peiche/cover)
 
 Cover is a content-driven blogging theme for WordPress. Built on top of Automattic’s _s (Underscores) and bundled with Font Awesome, Cover allows you to focus on your writing. There are no sidebars to mess with, just a single column view of your content.
@@ -16,11 +16,7 @@ When you use a featured image in Cover, it displays as a background image behind
 
 ###Scalable vector icons
 
-Cover is bundled with Font Awesome v4.3, allowing you to include any of its icons on any post or page.
-
-###Built for Aesop Story Engine
-
-Cover was built from the ground up with ASE in mind. Break out of the content area with full-width components like images, galleries, maps, and more.
+Cover is bundled with Font Awesome, allowing you to include any of its icons on any post or page.
 
 ###Put widgets in their place
 
@@ -51,6 +47,29 @@ So, about those social menus. All you have to do is create a menu with links to 
 - YouTube
 
 If you would like to request support for a site's icon, please raise an issue. Or create a pull request and add it yourself!
+
+###Recommended Plugins
+
+####Aesop Story Engine
+
+Cover was built from the ground up with Aesop Story Engine in mind. Break out of the content area with full-width components like images, galleries, maps, and more.
+
+####Jetpack
+
+Automattic's Jetpack plugin comes packed with modules for any theme to use, but Cover is designed to work nicely with these:
+
+**Site Logo**  
+In the Customizer, you can not only set the site title and tagline, but also a site logo. You can enable and disable any combination of these three options.
+
+**Featured Posts**  
+In the Customizer (again), you'll find the option to assign a specific tag to featured posts (the default is "featured"). Tagging a post will give it a special place on your blog's home page: it's displayed larger than the normal post listing, with its featured image displayed prominently behind it. Please note that Cover currently only shows a single featured post, even though you may tag more than one post as featured.
+
+**Infinite Scroll**  
+The Infinite Scroll module already works just fine, and we're not messing with that. But Cover allows you to have a social menu in the footer, so I've made Jetpack respond accordingly. If you have infinite scrolling enabled and no footer menu, scrolling down will load more posts, just as it's meant to do. But if you _do_ have a footer menu, you will see a button to click in order to load more posts. (Otherwise, you'd never see the footer!)
+
+####Color Posts
+
+Using the [Color Posts](https://wordpress.org/plugins/color-posts/) plugin will allow Cover to match the header's color to the color of a post's featured image. It's not a requirement by any means, but I think it looks cool. Please note that this plugin requires Jetpack.
 
 ###Built with Sass
 
@@ -95,11 +114,14 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 **1.5.0**
 - Added support for Jetpack's Site Logo module.
-- Added ability to switch color themes.
+- Added Customizer option to switch header color.
+- Added Customizer option to switch overlay color between dark and light.
+- Added support for the Color Posts plugin to set the header color based on post images. (Please note that Color Posts requires Jetpack to function.)
+- Added TGM Plugin Activation class to suggest Aesop Story Engine, Jetpack, and Color Posts plugins.
 
 **1.4.0**
 - Jetpack's Infinite Scrolling module now detects whether or not the footer social menu is present.
-- Update Google Fonts URL to be protocol-relative (thanks to [BforBen](https://github.com/BforBen))
+- Update Google Fonts URL to be protocol-relative (thanks to [@BforBen](https://github.com/BforBen))
 - Added WordPress.org installation directions.
 
 **1.3.1**
@@ -117,3 +139,4 @@ All other resources are licensed as follows:
 * Font Awesome - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 * Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE  
 * Skrollr - MIT - https://github.com/Prinzhorn/skrollr/blob/master/LICENSE.txt  
+* TGM Plugin Activation - GPL v2.0 - https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md
