@@ -27,6 +27,10 @@ Header
 		.noscroll & {
 			background-color: transparent !important;
 		}
+        
+        @media screen and (max-width: $width-tablet) {
+            opacity: 1 !important; // override inline css via skrollr
+        }
 	}
 	
 	&.bg .backdrop {
