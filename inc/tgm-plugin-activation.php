@@ -12,16 +12,6 @@ function cover_register_recommended_plugins() {
 
     $plugins = array(
         array(
-            'name'      => 'Jetpack',
-            'slug'      => 'jetpack',
-            'required'  => false,
-        ),
-        array(
-            'name'      => 'Color Posts',
-            'slug'      => 'color-posts',
-            'required'  => false,
-        ),
-        array(
             'name'      => 'Aesop Story Engine',
             'slug'      => 'aesop-story-engine',
             'required'  => false,
