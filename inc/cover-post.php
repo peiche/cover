@@ -25,7 +25,7 @@
 ?>
 
 <div class="cover<?php echo $class; ?>">
-    <div class="cover-background" <?php if ( '' != $class ) { ?>style="background-image: url('<?php echo $img[0]; ?>');"<?php } ?>></div>
+    <div class="cover-background<?php if ( '' != $class ) { ?>" style="background-image: url('<?php echo $img[0]; ?>');" data-0-top="background-position: 50% 50%;" data-0-top-bottom="background-position: 50% 100%;<?php } ?>"></div>
 
     <header class="cover-header">
 		
