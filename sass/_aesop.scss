@@ -201,8 +201,15 @@
 	}
 }
 
-.aesop-article-chapter {
-    background-color: #333 !important;
+.aesop-article-chapter:after {
+    background-color: $color-dark-grey;
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .aesop-cover-title {
