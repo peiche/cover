@@ -10,11 +10,7 @@ Header
     width: 100%;
     z-index: $z-index-header;
 	
-    @media screen and (max-width: $width-tablet) {
-        position: absolute;
-    }
-    
-	.backdrop {
+    .backdrop {
 		background-color: $header-color;
 		bottom: 0;
 		left: 0;
