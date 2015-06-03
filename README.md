@@ -117,7 +117,8 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 - Added Customizer option to switch header color.
 - Added Customizer option to switch overlay color between dark and light.
 - Added support for the Color Posts plugin to set the header color based on post images. (Please note that Color Posts requires Jetpack to function.)
-- Added TGM Plugin Activation class to suggest Aesop Story Engine, Jetpack, and Color Posts plugins.
+- Added TGM Plugin Activation class to suggest Aesop Story Engine.
+- Added styles to account for Aesop Story Engine image gallery types (Grid, Thumbnail, Sequence, Photoset, Parallax)
 
 **1.4.0**
 - Jetpack's Infinite Scrolling module now detects whether or not the footer social menu is present.

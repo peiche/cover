@@ -107,6 +107,10 @@ body .infinite-loader .spinner {
     border-top-color: <?php echo $header_color; ?>;
 }
 
+.fotorama__thumb-border {
+    border-color: <?php echo $header_color; ?>;
+}
+
 /**
  * Restore default colors
  */
