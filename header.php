@@ -38,8 +38,6 @@ if (
     $build_overlay = true;
 }
 
-$overlay_color = get_theme_mod( 'cover_overlay_color', 'overlay-dark' );
-
 ?>
 
 <body <?php body_class(); ?>>
@@ -67,7 +65,7 @@ $overlay_color = get_theme_mod( 'cover_overlay_color', 'overlay-dark' );
 </header>
 
 <?php if ( $build_overlay ) { ?>
-    <div id="menu-overlay" class="overlay <?php echo $overlay_color; ?>">
+    <div id="menu-overlay" class="overlay">
         <noscript>
             <div class="header">
                 <div class="site-nav">
@@ -96,7 +94,7 @@ $overlay_color = get_theme_mod( 'cover_overlay_color', 'overlay-dark' );
     </div>
 <?php } ?>
 
-<div id="search-overlay" class="overlay overlay-search <?php echo $overlay_color; ?>">
+<div id="search-overlay" class="overlay overlay-search">
     <span class="overlay-icon fa fa-search"></span>
     <?php if ( !$build_overlay ) { ?>
         <div class="header">

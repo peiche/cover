@@ -84,67 +84,6 @@ Overlay for menus and widgets
         }
     }
     
-    &-dark {
-        background: $overlay-color-dark;
-        
-        a {
-            border-color: #fff;
-            color: #fff;
-
-            &:hover {
-                color: #aaa;
-            }
-        }
-        
-        .widget {
-            &-area {
-                color: #ccc;
-                
-                p {
-                    color: #fff;
-                }
-            }
-
-            li a {
-                border-color: #666;
-            }
-        }
-        
-        .main-navigation a {
-            border-bottom-color: #666;
-        }
-        
-        .tagcloud a {
-            border-color: transparent;
-
-            &:hover {
-                border-color: #fff;
-                color: #fff;
-            }
-        }
-        
-        .sub-menu-toggle {
-            color: #fff;
-            
-            &:hover {
-                background-color: #666;
-            }
-        }
-        
-        .search-field,
-        .search-field:focus {
-            color: #fff;
-        }
-    }
-    
-    &-light {
-        background: $overlay-color-light;
-        
-        .overlay-icon {
-            opacity: .05;
-        }
-    }
-    
     .header {
         margin-top: -60px;
     }
