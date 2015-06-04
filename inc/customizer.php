@@ -26,7 +26,9 @@ function cover_customize_register( $wp_customize ) {
         )
     );
     $wp_customize->add_setting(
+        'cover_link_color',
         array(
+            'default'   => '#026ed2',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -45,8 +47,11 @@ function cover_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         new WP_Customize_Color_Control( 
             $wp_customize, 
+            'cover_link_color', 
             array(
+                'label'      => __( 'Link Color', 'cover' ),
                 'section'    => 'colors',
+                'settings'   => 'cover_link_color',
             )
         ) 
     );
@@ -55,6 +60,7 @@ add_action( 'customize_register', 'cover_customize_register' );
 
 function cover_customize_options() {
     $header_color = get_theme_mod( 'cover_header_color', '#026ed2' );
+    $link_color = get_theme_mod( 'cover_link_color', '#026ed2' );
     ?>
     
     <style>
@@ -67,34 +73,37 @@ function cover_customize_options() {
         a:visited,
         .entry-title a:hover,
         .entry-subtitle a:hover {
-            color: <?php echo $header_color; ?>;
+            color: <?php echo $link_color; ?>;
         }
 
         a:hover {
-            color: <?php echo sass_darken( $header_color, 15 ); ?>;
+            color: <?php echo sass_darken( $link_color, 15 ); ?>;
+        }
+
+        .header .backdrop,
+        .cover {
+            background-color: <?php echo $header_color; ?>;
         }
 
         .paging-navigation a,
-        .header .backdrop,
         ul.categories a ,
-        .cover,
         body #infinite-handle span,
         .button.default {
-            background-color: <?php echo $header_color; ?>;
+            background-color: <?php echo $link_color; ?>;
         }
 
         .paging-navigation a:hover,
         body #infinite-handle span:hover,
         .button.default:hover {
-            background-color: <?php echo sass_darken( $header_color, 15 ); ?>;
+            background-color: <?php echo sass_darken( $link_color, 15 ); ?>;
         }
 
         body .infinite-loader .spinner {
-            border-top-color: <?php echo $header_color; ?>;
+            border-top-color: <?php echo $link_color; ?>;
         }
 
         .fotorama__thumb-border {
-            border-color: <?php echo $header_color; ?>;
+            border-color: <?php echo $link_color; ?>;
         }
 
         /**
@@ -120,7 +129,36 @@ function cover_customize_options() {
         }
         
         /**
+         * Contrasted header colors
          */
+        
+        <?php if ( getContrast( $header_color ) == 'light' ) { ?>
+        
+        .header,
+        .header a,
+        .header .site-description,
+        .cover
+        {
+            color: #000;
+        }
+        
+        /* reset */
+        .cover.featured-image {
+            color: #fff;
+        }
+        
+        .header a:hover {
+            border-color: #000;
+        }
+        
+        .header .site-description {
+            border-color: rgba(0, 0, 0, .25);
+        }
+        
+        .hamburger span,
+        .hamburger span:after,
+        .hamburger span:before {
+            background-color: #000;
         }
         
         <?php } ?>
