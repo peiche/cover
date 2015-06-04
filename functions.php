@@ -117,8 +117,8 @@ function getContrastYIQ( $hexcolor ) {
  */
 function getContrast( $hexcolor ) {
     return 
-        //getContrast50( $hexcolor )
-        getContrastYIQ( $hexcolor )
+        getContrast50( $hexcolor )
+        //getContrastYIQ( $hexcolor )
         ;
 }
 
