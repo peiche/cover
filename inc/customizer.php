@@ -26,9 +26,7 @@ function cover_customize_register( $wp_customize ) {
         )
     );
     $wp_customize->add_setting(
-        'cover_overlay_color',
         array(
-            'default'   => '#333333',
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
@@ -47,11 +45,8 @@ function cover_customize_register( $wp_customize ) {
     $wp_customize->add_control( 
         new WP_Customize_Color_Control( 
             $wp_customize, 
-            'cover_overlay_color', 
             array(
-                'label'      => __( 'Overlay Color', 'cover' ),
                 'section'    => 'colors',
-                'settings'   => 'cover_overlay_color',
             )
         ) 
     );
@@ -60,7 +55,6 @@ add_action( 'customize_register', 'cover_customize_register' );
 
 function cover_customize_options() {
     $header_color = get_theme_mod( 'cover_header_color', '#026ed2' );
-    $overlay_color = get_theme_mod( 'cover_overlay_color', '#333333' );
     ?>
     
     <style>
@@ -108,7 +102,7 @@ function cover_customize_options() {
          */
 
         .header a,
-        .overlay-dark a,
+        .overlay a,
         .cover-header a {
             color: #fff;
         }
@@ -124,56 +118,13 @@ function cover_customize_options() {
         .entry-subtitle a {
             color: #999;
         }
-
+        
         /**
-         * Set overlay color
          */
-        .overlay {
-            background-color: <?php echo $overlay_color; ?>;
         }
         
-        <?php
-            // TODO FIX THE CONTRAST
-        ?>
-        <?php if ( getContrast( $overlay_color ) == 'dark' ) { ?>
-            .overlay a {
-                border-color: #fff;
-                color: #fff;
-            }
-            .overlay a:hover {
-                color: #aaa;
-            }
-            .overlay .widget-area {
-                color: #ccc;
-            }
-            .overlay .widget-area p {
-                color: #fff;
-            }
-            .overlay .widget li a {
-                border-color: #666;
-            }
-            .overlay .main-navigation a {
-                border-bottom-color: #666;
-            }
-            .overlay .tagcloud a {
-                border-color: transparent;
-            }
-            .overlay .tagcloud a:hover {
-                border-color: #fff;
-                color: #fff;
-            }
-            .overlay .sub-menu-toggle {
-                color: #fff;
-            }
-            .overlay .sub-menu-toggle:hover {
-                background-color: #666;
-            }
-            .overlay .search-field,
-            .overlay .search-field:hover {
-                color: #fff;
-            }
         <?php } ?>
-
+        
     </style>
 
     <meta name="theme-color" content="<?php echo $header_color; ?>">
