@@ -6,21 +6,27 @@
 
 <?php
 if ( has_post_thumbnail() ) {
-	$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+	$img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+	$img = $img_arr[0];
 }
 ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
+    <?php if ( is_sticky() && '' != $img ) { ?>
+        <div class="cover-background darken" style="background-image: url('<?php echo $img; ?>');"></div>
+    <?php } ?>
+        
     <header class="entry-header">
         <h2 class="entry-subtitle"><?php the_category( ', ' ) ?></h2>
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+        <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
         <div class="entry-meta">
             <?php cover_posted_on(); ?>
         </div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
-	
-	<div class="entry-summary">
-		<?php
+    </header><!-- .entry-header -->
+
+    <div class="entry-summary">
+        <?php
             if ( has_excerpt() ) {
                 the_excerpt();
             } else if ( strpos( $post->post_content, '<!--more-->' ) ) {
@@ -28,14 +34,14 @@ if ( has_post_thumbnail() ) {
             } else {
                 the_excerpt();
             }
-		?>
+        ?>
 
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'cover' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-summary -->
-
+        <?php
+            wp_link_pages( array(
+                'before' => '<div class="page-links">' . __( 'Pages:', 'cover' ),
+                'after'  => '</div>',
+            ) );
+        ?>
+    </div><!-- .entry-summary -->
+    
 </article><!-- #post-## -->

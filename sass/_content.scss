@@ -29,6 +29,10 @@
     * {
         color: #fff;
     }
+    
+    &:after {
+        display: none;
+    }
 }
 
 .hentry {
@@ -78,6 +82,7 @@
 .entry {
     &-header {
         @include site-width;
+        position: relative;
         
         .span {
             color: #b6b6b6;
