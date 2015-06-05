@@ -7,7 +7,7 @@
 
 while ( have_posts() ) : the_post();
 
-get_header(); // call header inside the loop to get author info ?>
+get_header(); // Call header inside the loop to get author info. ?>
 
     <?php get_template_part( 'inc/wrapper', 'top' ); ?>
 
@@ -19,7 +19,7 @@ get_header(); // call header inside the loop to get author info ?>
                 <?php get_template_part( 'content', 'single' ); ?>
 
                 <?php
-                    // If comments are open or we have at least one comment, load up the comment template
+                    // If comments are open or we have at least one comment, load up the comment template.
                     if ( comments_open() || '0' != get_comments_number() ) :
                         comments_template();
                     endif;
@@ -30,5 +30,5 @@ get_header(); // call header inside the loop to get author info ?>
             </main><!-- #main -->
         </div><!-- #primary -->
 
-<?php endwhile; // end of the loop. ?>
+<?php endwhile; // End of the loop. ?>
 <?php get_footer(); ?>

@@ -66,7 +66,7 @@ function cover_post_nav() {
                     $class = ' featured-image';
 					$style = ' style="background-image: url(\'' . $next_img . '\')"';
                 }
-                next_post_link( '<div class="nav-next">%link</div>', _x( '<div class="cover' . $class . '"><div class="background"' . $style . '></div><div class="cover-header"><h2 class="cover-subtitle">Next post</h2><h1 class="cover-title">%title</h1></div></div>', 'Next post link', 'cover' ) );
+                next_post_link( '<div class="nav-next">%link</div>', _x( '<div class="cover' . $class . '"><div class="cover-background"' . $style . '></div><div class="cover-header"><h2 class="cover-subtitle">Next post</h2><h1 class="cover-title">%title</h1></div></div>', 'Next post link', 'cover' ) );
 
 			?>
 		</div><!-- .nav-links -->

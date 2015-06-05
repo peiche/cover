@@ -1,7 +1,10 @@
 <?php
 /**
+ * Header for 404 page.
+ *
  * @package Cover
  */
+
 ?>
 
 <div class="cover">

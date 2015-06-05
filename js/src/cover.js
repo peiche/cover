@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
 	
-	/*
+	/**
 	 * This will handle any and all overlays, 
 	 * as long as the clicked item's data-action
 	 * attribute is "toggle-overlay" and the 
@@ -32,7 +32,7 @@ jQuery(document).ready(function() {
 		}
 	});
 	
-	/*
+	/**
 	 * Clicking escape will close an open overlay/
 	 */
 	jQuery(document).keyup(function(e) {
@@ -44,7 +44,7 @@ jQuery(document).ready(function() {
 		}
 	});
     
-	/*
+	/**
 	 * Clicking on header acts as "back to top" link.
 	 */
 	jQuery('.header').click(function(e) {
@@ -53,27 +53,23 @@ jQuery(document).ready(function() {
         }
     });
 	
-	/*
-	 * Skrollr and Headroom.
+    /**
+     * Headroom.
+     */
+    var header_headroom = new Headroom(jQuery('.header')[0]);
+    header_headroom.init();
+    
+	/**
+	 * Skrollr.
 	 * Don't load if the user agent is a touch device.
 	 */
-    if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-		// headroom
-		var header_headroom = new Headroom(jQuery('.header')[0]);
-		header_headroom.init();
-
-		var cover_height = 0;
-		if (jQuery('.cover').length > 0) {
-			cover_height = jQuery('.cover').outerHeight();
-            
-            // skrollr init
-            skrollr.init({
-                forceHeight: false
-            });
-		}
+    if (!isTouchDevice() && jQuery('.cover').length > 0) {
+        skrollr.init({
+            forceHeight: false
+        });
 	}
     
-    /*
+    /**
 	 * Menu logic.
 	 */
 	
@@ -92,3 +88,12 @@ jQuery(document).ready(function() {
         $this.siblings('.sub-menu').toggleClass('hide');
     });
 });
+
+/**
+ * Helper function to detect touch devices.
+ * Much better solution than user agent detection, 
+ * which is a futile attempt at an arms race.
+ */
+function isTouchDevice() {
+	return !!('ontouchstart' in window || navigator.msMaxTouchPoints);
+}

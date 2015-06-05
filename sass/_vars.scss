@@ -112,15 +112,16 @@ $overlay-color: #333;
 }
 
 @mixin button($color: $color-grey) {
-	background-color: $color;
+	@include rem(font-size, $font-size-normal);
+    background-color: $color;
 	border: 0;
 	border-radius: 4px;
 	color: #fff;
     cursor: pointer;
 	display: inline-block;
-	@include rem(font-size, $font-size-normal);
 	line-height: normal;
-	padding: 10px 20px;
+	margin-bottom: 5px;
+    padding: 10px 20px;
 	text-decoration: none;
 	transition: all .2s;
 	
@@ -164,6 +165,7 @@ $overlay-color: #333;
 .button {
 	@include button;
 	
+    &.default,
 	&.blue {
 		@include bg-color-hover($color-blue);
 	}
@@ -171,14 +173,26 @@ $overlay-color: #333;
 	&.red {
 		@include bg-color-hover($color-red);
 	}
+    
+    &.green {
+		@include bg-color-hover($color-green);
+	}
 	
 	&.pink {
 		@include bg-color-hover($color-pink);
 	}
 	
-	&.green {
-		@include bg-color-hover($color-green);
-	}
+	&.purple {
+        @include bg-color-hover($color-purple);
+    }
+    
+    &.orange {
+        @include bg-color-hover($color-orange);
+    }
+    
+    &.dark-gray {
+        @include bg-color-hover($color-dark-grey);
+    }
 }
 
 %image-caption { // style used for both normal and aesop image component captions
