@@ -77,15 +77,14 @@ a {
     }
 	
     a {
-        border-bottom: 1px solid #666;
+        border-bottom: 1px solid #ddd;
         display: block;
         padding: 10px 0;
         text-decoration: none;
     }
     
 	.sub-menu-toggle {
-        color: #fff;
-		cursor: pointer;
+        cursor: pointer;
 		@include rem(font-size, 30px);
 		height: 59px;
 		position: absolute;
@@ -94,7 +93,7 @@ a {
         width: 60px;
         
 		&:hover {
-            background: #666;
+            background-color: #ddd;
         }
         
 		.fa {

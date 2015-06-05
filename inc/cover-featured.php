@@ -1,7 +1,10 @@
 <?php
 /**
+ * Include for Jetpack featured content
+ *
  * @package Cover
  */
+
 ?>
 
 <div class="featured-container">
@@ -20,7 +23,7 @@
 	
 		<a href="<?php the_permalink(); ?>" rel="bookmark">
 			<div class="cover<?php if ( '' != $img ) { ?> featured-image<?php } ?>">
-				<div class="background"<?php if ( '' != $img ) { ?> style="background-image: url('<?php echo $img; ?>');"<?php } ?>></div>
+				<div class="cover-background"<?php if ( '' != $img ) { ?> style="background-image: url('<?php echo $img; ?>');"<?php } ?>></div>
 				<header class="cover-header">
 					<h1 class="cover-title"><?php the_title(); ?></h1>
                     <div class="cover-summary">
@@ -28,7 +31,7 @@
 						if ( has_excerpt() ) {
                             the_excerpt();
                         } else if ( strpos( $post->post_content, '<!--more-->' ) ) {
-                            the_content( '' ); // no "more" link
+                            the_content( '' ); // No "more" link.
                         } else {
                             the_excerpt();
                         }

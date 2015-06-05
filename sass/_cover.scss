@@ -19,11 +19,15 @@
             color: #fff;
             
             &:hover {
-                border-color: $link-border-color;
+                border-color: #fff;
             }
             
             &.author:hover {
                 border-color: transparent;
+                
+                span {
+                    border-color: #fff;
+                }
             }
         }
         
@@ -93,7 +97,7 @@
         }
     }
 	
-	.background {
+	&-background {
 		background-position: 50% 50%;
         background-repeat: no-repeat;
         background-size: cover;
