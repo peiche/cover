@@ -55,6 +55,9 @@ if (
 	</div>
     
     <div class="site-info">
+        <?php if ( function_exists( 'jetpack_has_site_logo' ) ) { ?>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo-link" <?php if ( !jetpack_has_site_logo() ) { ?>style="display: none;"<?php } ?>><img src="<?php echo esc_url( jetpack_get_site_logo( 'url' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="site-logo"></a>
+        <?php } ?>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
         <span class="site-description"><?php bloginfo( 'description' ); ?></span>
 	</div>
@@ -93,13 +96,21 @@ if (
 
 <div id="search-overlay" class="overlay overlay-search">
     <span class="overlay-icon fa fa-search"></span>
-    <noscript>
+    <?php if ( !$build_overlay ) { ?>
         <div class="header">
             <div class="site-nav">
-                <a class="hamburger close" href="#"><span></span></a>
+                <a class="hamburger close" data-action="toggle-overlay" data-overlay-id="search-overlay" href="#"><span></span></a>
             </div>
         </div>
-    </noscript>
+    <?php } else { ?>
+        <noscript>
+            <div class="header">
+                <div class="site-nav">
+                    <a class="hamburger close" href="#"><span></span></a>
+                </div>
+            </div>
+        </noscript>
+    <?php } ?>
     
     <?php get_search_form(); ?>
 </div>

@@ -20,7 +20,7 @@
 ?>
 
 <div class="cover">
-	<div class="background<?php if ( '' != $img ) { ?> darken" style="background-image: url('<?php echo $img; ?>');<?php } ?>"></div>
+	<div class="cover-background<?php if ( '' != $img ) { ?> darken" style="background-image: url('<?php echo $img; ?>');<?php } ?>"></div>
 	<header class="cover-header">
 
 		<h1 class="cover-title">
@@ -29,7 +29,7 @@
 				single_cat_title();
 
 			elseif ( is_tag() ) :
-				single_tag_title();
+                _e( '# ', 'cover' ) . _e( single_tag_title(), 'cover' );
 
 			elseif ( is_day() ) :
 				printf( __( '%s', 'cover' ), get_the_date() );

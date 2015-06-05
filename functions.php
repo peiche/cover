@@ -97,6 +97,82 @@ function cover_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cover_scripts' );
 
+/*
+ * Color contrast calculations.
+ * @link http://24ways.org/2010/calculating-color-contrast/
+ */
+function getContrast50( $hexcolor ) {
+    return ( hexdec( $hexcolor ) > 0xffffff / 2 ) ? 'light' : 'dark';
+}
+function getContrastYIQ( $hexcolor ) {
+	$r = hexdec( substr( $hexcolor, 0, 2 ) );
+	$g = hexdec( substr( $hexcolor, 2, 2 ) );
+	$b = hexdec( substr( $hexcolor, 4, 2 ) );
+	$yiq = ( ( $r * 299 ) + ( $g * 587 ) + ( $b * 114 ) ) / 1000;
+	
+    return ( $yiq >= 128 ) ? 'light' : 'dark';
+}
+/*
+ * Leave the function that you want uncommented. 
+ */
+function getContrast( $hexcolor ) {
+    return 
+        getContrast50( $hexcolor )
+        //getContrastYIQ( $hexcolor )
+        ;
+}
+
+/*
+ * Utility function to convert a hexidecimal color to rgb.
+ * @link http://css-tricks.com/snippets/php/convert-hex-to-rgb/
+ */
+function hex2rgb( $colour ) {
+        if ( $colour[0] == '#' ) {
+                $colour = substr( $colour, 1 );
+        }
+        if ( strlen( $colour ) == 6 ) {
+                list( $r, $g, $b ) = array( $colour[0] . $colour[1], $colour[2] . $colour[3], $colour[4] . $colour[5] );
+        } elseif ( strlen( $colour ) == 3 ) {
+                list( $r, $g, $b ) = array( $colour[0] . $colour[0], $colour[1] . $colour[1], $colour[2] . $colour[2] );
+        } else {
+                return false;
+        }
+        $r = hexdec( $r );
+        $g = hexdec( $g );
+        $b = hexdec( $b );
+        return array( 'red' => $r, 'green' => $g, 'blue' => $b );
+}
+
+/**
+ * @link https://gist.github.com/jegtnes/5720178
+ */
+
+function sass_darken($hex, $percent) {
+    preg_match('/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors);
+	str_replace('%', '', $percent);
+	$color = "#";
+	for($i = 1; $i <= 3; $i++) {
+		$primary_colors[$i] = hexdec($primary_colors[$i]);
+		$primary_colors[$i] = round($primary_colors[$i] * (100-($percent*2))/100);
+		$color .= str_pad(dechex($primary_colors[$i]), 2, '0', STR_PAD_LEFT);
+	}
+
+	return $color;
+}
+
+function sass_lighten($hex, $percent) {
+	preg_match('/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors);
+	str_replace('%', '', $percent);
+	$color = "#";
+	for($i = 1; $i <= 3; $i++) {
+		$primary_colors[$i] = hexdec($primary_colors[$i]);
+		$primary_colors[$i] = round($primary_colors[$i] * (100+($percent*2))/100);
+		$color .= str_pad(dechex($primary_colors[$i]), 2, '0', STR_PAD_LEFT);
+	}
+
+	return $color;
+}
+
 /**
  * Custom template tags for this theme.
  */
@@ -121,3 +197,14 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Aesop Story Engine compatibility.
  */
 require get_template_directory() . '/inc/aesop.php';
+
+/**
+ * Load Color Posts compatibility.
+ */
+require get_template_directory() . '/inc/color-posts.php';
+
+/**
+ * Load TGM Plugin Activation class.
+ */
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/tgm-plugin-activation.php';
