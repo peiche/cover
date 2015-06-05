@@ -14,6 +14,23 @@ function cover_use_custom_colors( $colors_css, $color, $contrast ) {
 
     if ( $color != 'ffffff' ) {
         $colors_css = "
+            .header,
+            .header a,
+            .header .site-description,
+            .cover {
+                color: rgb({$contrast}) !important;
+            }
+            .header a:hover {
+                border-color: rgb({$contrast}) !important;
+            }
+            .header .site-description {
+                border-color: rgba({$contrast}, .25) !important;
+            }
+            .hamburger span,
+            .hamburger span:after,
+            .hamburger span:before {
+                background-color: rgb({$contrast}) !important;
+            }
             .header .backdrop {
                 background-color: #{$color} !important;
             }
