@@ -77,12 +77,12 @@ In the Customizer, you can not only set the site title and tagline, but also a s
 In the Customizer (again), you'll find the option to assign a specific tag to featured posts (the default is "featured"). Tagging a post will give it a special place on your blog's home page: it's displayed larger than the normal post listing, with its featured image displayed prominently behind it. Please note that Cover currently only shows a single featured post, even though you may tag more than one post as featured.
 
 * Infinite Scroll *  
-The Infinite Scroll module already works just fine, and we're not messing with that. But Cover allows you to have a social menu in the footer, so I've made Jetpack respond accordingly. If you have infinite scrolling enabled and no footer menu, scrolling down will load more posts, just as it's meant to do. But if you _do_ have a footer menu, you will see a button to click in order to load more posts. (Otherwise, you'd never see the footer!)
+The Infinite Scroll module already works just fine, and we're not messing with that. But Cover allows you to have a social menu in the footer, so now Jetpack responds accordingly. If you have infinite scrolling enabled and no footer menu, scrolling down will load more posts, just as it's meant to do. But if you do have a footer menu, you will see a button to click in order to load more posts. (Otherwise, you'd never see the footer!)
 
 Color Posts
 -----------
 
-Using the Color Posts (https://wordpress.org/plugins/color-posts/) plugin will allow Cover to match the header's color to the color of a post's featured image. It's not a requirement by any means, but I think it looks cool. Please note that this plugin requires Jetpack.
+Using the Color Posts (https://wordpress.org/plugins/color-posts/) plugin will allow Cover to match the header's color to the color of a post's featured image. Please note that this plugin requires Jetpack.
 
 == Installation ==
 
@@ -119,7 +119,9 @@ You can download the latest from Github. Follow these steps to activate Cover:
 - Added Customizer option to change link color.
 - Added support for the Color Posts plugin to set the header color based on post images. (Please note that Color Posts requires Jetpack to function.)
 - Added TGM Plugin Activation class to suggest Aesop Story Engine.
-- Added caption styles for Aesop Story Engine image gallery types (Grid, Thumbnail, Sequence, Photoset, Parallax)
+- Added caption styles for Aesop Story Engine image gallery types (Grid, Thumbnail, Sequence, Photoset, Parallax).
+- Added styles for Aesop Story Engine to darken the image behind the text in the chapter component, similar to the header.
+- Added background image for sticky posts in The Loop.
 
 1.4.0
 - Jetpack's Infinite Scrolling module now detects whether or not the footer social menu is present.
