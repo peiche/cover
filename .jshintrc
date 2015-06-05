@@ -1,0 +1,9 @@
+{
+    "globals": [
+        "jQuery": true,
+        "alert": true,
+        "Headroom": true,
+        "skrollr": true,
+        "wp": true
+    ]
+}
