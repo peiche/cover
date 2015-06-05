@@ -1,6 +1,7 @@
 <?php
 /**
  * Color Posts Compatibility File
+ *
  * @link https://wordpress.org/plugins/color-posts/
  *
  * @package Cover
@@ -9,6 +10,10 @@
 /**
  * Sets the custom CSS for the header background color,
  * plus text color overrides for the contrast
+ *
+ * @param $colors_css
+ * @param $color
+ * @param $contrast
  */
 function cover_use_custom_colors( $colors_css, $color, $contrast ) {
     $post_id = get_the_ID();
@@ -17,7 +22,7 @@ function cover_use_custom_colors( $colors_css, $color, $contrast ) {
     extract( $tonesque );
 
     if ( 'ffffff' != $color ) {
-        $colors_css = "
+        $colors_css = '
             .header,
             .header a,
             .header .site-description,
@@ -38,9 +43,9 @@ function cover_use_custom_colors( $colors_css, $color, $contrast ) {
             .header .backdrop {
                 background-color: #{$color} !important;
             }
-            ";
+            ';
     } else {
-        $colors_css = "";
+        $colors_css = '';
     }
 
     return $colors_css;

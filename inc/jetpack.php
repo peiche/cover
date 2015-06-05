@@ -56,7 +56,7 @@ function cover_infinite_scroll_has_footer_widgets( $has_widgets ) {
     if ( has_nav_menu( 'social_footer' ) ) {
         $has_widgets = true;
     }
-    
+
     return $has_widgets;
 }
 add_filter( 'infinite_scroll_has_footer_widgets', 'cover_infinite_scroll_has_footer_widgets', 10, 1 );

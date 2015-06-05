@@ -1,7 +1,10 @@
 <?php
 /**
+ * Wrapper include  
+ *
  * @package Cover
  */
+
 ?>
 
 <div id="page" class="hfeed site">

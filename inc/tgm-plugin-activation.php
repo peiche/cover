@@ -1,6 +1,7 @@
 <?php
 /**
  * TGM Plugin Activation
+ *
  * @link http://tgmpluginactivation.com/
  *
  * @package Cover
@@ -8,6 +9,9 @@
 
 add_action( 'tgmpa_register', 'cover_register_recommended_plugins' );
 
+/**
+ * Define recommended plugins.
+ */
 function cover_register_recommended_plugins() {
 
     $plugins = array(
@@ -51,7 +55,7 @@ function cover_register_recommended_plugins() {
             'return'                          => __( 'Return to Required Plugins Installer', 'cover' ),
             'plugin_activated'                => __( 'Plugin activated successfully.', 'cover' ),
             'complete'                        => __( 'All plugins installed and activated successfully. %s', 'cover' ), // %s = dashboard link.
-            'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
+            'nag_type'                        => 'updated', // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
         )
     );
 

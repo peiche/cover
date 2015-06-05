@@ -15,7 +15,7 @@ function cover_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
     $wp_customize->add_section( 'cover_options', array(
-        'title' 		=> __( 'Cover Theme Options', 'cover' )
+        'title' 		=> __( 'Cover Theme Options', 'cover' ),
     ) );
 
     $wp_customize->add_setting(
@@ -33,31 +33,34 @@ function cover_customize_register( $wp_customize ) {
         )
     );
 
-    $wp_customize->add_control( 
-        new WP_Customize_Color_Control( 
-            $wp_customize, 
-            'cover_header_color', 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'cover_header_color',
             array(
                 'label'      => __( 'Header Color', 'cover' ),
                 'section'    => 'colors',
                 'settings'   => 'cover_header_color',
             )
-        ) 
+        )
     );
-    $wp_customize->add_control( 
-        new WP_Customize_Color_Control( 
-            $wp_customize, 
-            'cover_link_color', 
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'cover_link_color',
             array(
                 'label'      => __( 'Link Color', 'cover' ),
                 'section'    => 'colors',
                 'settings'   => 'cover_link_color',
             )
-        ) 
+        )
     );
 }
 add_action( 'customize_register', 'cover_customize_register' );
 
+/**
+ * Output custom css based on header and link colors.
+ */
 function cover_customize_options() {
     $header_color = get_theme_mod( 'cover_header_color', '#026ed2' );
     $link_color = get_theme_mod( 'cover_link_color', '#026ed2' );
