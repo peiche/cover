@@ -99,7 +99,9 @@ add_action( 'wp_enqueue_scripts', 'cover_scripts' );
 
 /**
  * Color contrast calculation. Compares to value halfway between black and white.
+ *
  * @link http://24ways.org/2010/calculating-color-contrast/
+ * @param string $hexcolor The hexidecimal value of the color.
  */
 function get_contrast_50( $hexcolor ) {
     return ( hexdec( $hexcolor ) > 0xffffff / 2 ) ? 'light' : 'dark';
@@ -107,7 +109,9 @@ function get_contrast_50( $hexcolor ) {
 
 /**
  * Color contrast calculation. Converts RGB color space into YIQ.
+ *
  * @link http://24ways.org/2010/calculating-color-contrast/
+ * @param string $hexcolor The hexidecimal value of the color.
  */
 function get_contrast_yiq( $hexcolor ) {
 	$r = hexdec( substr( $hexcolor, 0, 2 ) );
@@ -119,10 +123,12 @@ function get_contrast_yiq( $hexcolor ) {
 }
 
 /**
- * The real contrast function. Call this one and leave the function that you want uncommented. 
+ * The real contrast function. Call this one and leave the function that you want uncommented.
+ *
+ * @param string $hexcolor The hexidecimal value of the color.
  */
 function get_contrast( $hexcolor ) {
-    return 
+    return
         get_contrast_50( $hexcolor )
         /* get_contrast_yiq( $hexcolor ) */
         ;
@@ -130,8 +136,8 @@ function get_contrast( $hexcolor ) {
 
 /**
  * Utility function to convert a hexidecimal color to rgb.
+ *
  * @link http://css-tricks.com/snippets/php/convert-hex-to-rgb/
- * 
  * @param string $color The hexidecimal value of the color.
  */
 function hex_to_rgb( $color ) {
@@ -159,13 +165,13 @@ function hex_to_rgb( $color ) {
  * @param string $percent The percentage to darken the color.
  */
 function sass_darken($hex, $percent) {
-    preg_match('/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors);
-	str_replace('%', '', $percent);
-	$color = "#";
-	for($i = 1; $i <= 3; $i++) {
-		$primary_colors[$i] = hexdec($primary_colors[$i]);
-		$primary_colors[$i] = round($primary_colors[$i] * (100-($percent*2))/100);
-		$color .= str_pad(dechex($primary_colors[$i]), 2, '0', STR_PAD_LEFT);
+    preg_match( '/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors );
+	str_replace( '%', '', $percent );
+	$color = '#';
+	for( $i = 1; $i <= 3; $i++ ) {
+		$primary_colors[ $i ] = hexdec( $primary_colors[ $i ] );
+		$primary_colors[ $i ] = round( $primary_colors[ $i ] * ( 100 - ( $percent * 2 ) ) / 100 );
+		$color .= str_pad( dechex( $primary_colors[ $i ] ), 2, '0', STR_PAD_LEFT );
 	}
 
 	return $color;
@@ -179,13 +185,13 @@ function sass_darken($hex, $percent) {
  * @param string $percent The percentage to lighten the color.
  */
 function sass_lighten($hex, $percent) {
-	preg_match('/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors);
-	str_replace('%', '', $percent);
-	$color = "#";
+	preg_match( '/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors );
+	str_replace( '%', '', $percent );
+	$color = '#';
 	for($i = 1; $i <= 3; $i++) {
-		$primary_colors[$i] = hexdec($primary_colors[$i]);
-		$primary_colors[$i] = round($primary_colors[$i] * (100+($percent*2))/100);
-		$color .= str_pad(dechex($primary_colors[$i]), 2, '0', STR_PAD_LEFT);
+		$primary_colors[$i] = hexdec( $primary_colors[ $i ] );
+		$primary_colors[$i] = round( $primary_colors[ $i ] * ( 100 + ( $percent * 2 ) ) / 100);
+		$color .= str_pad( dechex( $primary_colors[ $i ]), 2, '0', STR_PAD_LEFT );
 	}
 
 	return $color;
