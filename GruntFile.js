@@ -31,6 +31,12 @@ module.exports = function(grunt) {
                         src: 'headroom.min.js',
                         dest: 'js',
                         expand: true
+                    },
+                    {
+                        cwd: 'bower_components/tgm-plugin-activation',
+                        src: 'class-tgm-plugin-activation.php',
+                        dest: 'inc',
+                        expand: true
                     }
                 ]
             }
