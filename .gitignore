@@ -221,3 +221,5 @@ node_modules/
 releases/
 report/
 style.css
+style.css.map
+inc/class-tgm-plugin-activation.php

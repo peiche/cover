@@ -2,21 +2,19 @@
 Headroom.js
 --------------------------------------------------------------*/
 
-@media screen and (min-width: $width-tablet) {
-    .header.headroom {
-		position: fixed;
-        transition: all .5s;
-		
-		&--pinned {
+.header.headroom {
+    position: fixed;
+    transition: all .5s;
+
+    &--pinned {
+        transform: translateY(0);
+    }
+
+    &--unpinned {
+        transform: translateY(-100%);
+
+        .noscroll & {
             transform: translateY(0);
-        }
-        
-        &--unpinned {
-			transform: translateY(-100%);
-				
-			.noscroll & {
-				transform: translateY(0);
-			}
         }
     }
 }

@@ -3,8 +3,8 @@ Overlay for menus and widgets
 --------------------------------------------------------------*/
 
 .overlay {
-	background: $overlay-color;
-    @include rem(font-size, 20px);
+	@include rem(font-size, 20px);
+    background: $overlay-color;
     height: 100%;
     left: 0;
     opacity: 0;
