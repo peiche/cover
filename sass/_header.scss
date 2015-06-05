@@ -10,11 +10,7 @@ Header
     width: 100%;
     z-index: $z-index-header;
 	
-    @media screen and (max-width: $width-tablet) {
-        position: absolute;
-    }
-    
-	.backdrop {
+    .backdrop {
 		background-color: $header-color;
 		bottom: 0;
 		left: 0;
@@ -27,6 +23,10 @@ Header
 		.noscroll & {
 			background-color: transparent !important;
 		}
+        
+        @media screen and (max-width: $width-tablet) {
+            opacity: 1 !important; // override inline css via skrollr
+        }
 	}
 	
 	&.bg .backdrop {
@@ -51,9 +51,39 @@ Header
 			margin: 20px 0;
 		}
         
+        &-logo {
+            height: 47px;
+            margin: 15px 15px 15px 0;
+            vertical-align: bottom;
+            width: auto;
+
+            @media screen and (max-width: 768px) {
+                margin-right: 10px;
+            }
+            
+            &-link {
+                transition: opacity 200ms;
+                
+                &:hover {
+                    border-color: transparent;
+                }
+                
+                + .site-title:empty + .site-description {
+                    display: inline-block;
+                    margin: 28px 0;
+                }
+            }
+        }
+        
 		&-title {
 			display: inline-block;
 			margin: 20px 0;
+            
+            &:empty + .site-description {
+                border: 0;
+                margin: 0;
+                padding: 0;
+            }
 		}
         
         &-description {

@@ -124,9 +124,33 @@ Image Grid
             opacity: 1;
         }
     }
+    
+    a[title] {
+        position: relative;
+        
+        &:after {
+            background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
+            bottom: 0;
+            color: #fff;
+            content: attr(title);
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+            @include rem(font-size, 14px);
+        }
+    }
 
     img {
         display: block;
         width: 100%;
     }
+}
+
+/*--------------------------------------------------------------
+Featured Content
+--------------------------------------------------------------*/
+.featured-container a,
+.featured-container a:hover,
+.featured-container a:visited {
+  color: #fff;
 }

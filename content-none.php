@@ -6,6 +6,7 @@
  *
  * @package Cover
  */
+
 ?>
 
 <section class="no-results not-found">

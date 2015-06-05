@@ -6,6 +6,7 @@
  *
  * @package Cover
  */
+
 ?>
 
 <div class="profile">

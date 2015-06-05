@@ -1,5 +1,7 @@
 <?php
 /**
+ * The Index
+ *
  * @package Cover
  */
 

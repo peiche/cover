@@ -11,7 +11,7 @@
  */
 function cover_jetpack_setup() {
 
-    /*
+    /**
      * See Jetpack support for more info
      * @link http://jetpack.me/support/infinite-scroll/
      */
@@ -20,13 +20,19 @@ function cover_jetpack_setup() {
 		'footer' => false,
 	) );
 
-    /*
+    /**
+     * See Jetpack support for more info
+     * @link http://jetpack.me/support/site-logo/
+     */
+    add_theme_support( 'site-logo', array( 'cover-site-logo' ) );
+
+    /**
      * See Jetpack support for more info
      * @link http://jetpack.me/support/responsive-videos/
      */
     add_theme_support( 'jetpack-responsive-videos' );
 
-    /*
+    /**
      * See Jetpack support for more info
      * @link http://jetpack.me/support/featured-content/
      */
@@ -40,7 +46,7 @@ add_action( 'after_setup_theme', 'cover_jetpack_setup' );
 /**
  * Handle `footer_widgets` argument
  *
- * @param bool $has_widgets
+ * @param bool $has_widgets Indicates if there are widgets.
  * @uses has_nav_menu
  * @filter infinite_scroll_has_footer_widgets
  * @return bool
@@ -50,7 +56,7 @@ function cover_infinite_scroll_has_footer_widgets( $has_widgets ) {
     if ( has_nav_menu( 'social_footer' ) ) {
         $has_widgets = true;
     }
-    
+
     return $has_widgets;
 }
 add_filter( 'infinite_scroll_has_footer_widgets', 'cover_infinite_scroll_has_footer_widgets', 10, 1 );
