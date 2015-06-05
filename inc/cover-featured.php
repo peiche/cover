@@ -1,7 +1,10 @@
 <?php
 /**
+ * Include for Jetpack featured content
+ *
  * @package Cover
  */
+
 ?>
 
 <div class="featured-container">
@@ -28,7 +31,7 @@
 						if ( has_excerpt() ) {
                             the_excerpt();
                         } else if ( strpos( $post->post_content, '<!--more-->' ) ) {
-                            the_content( '' ); // no "more" link
+                            the_content( '' ); // No "more" link.
                         } else {
                             the_excerpt();
                         }

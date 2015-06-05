@@ -6,13 +6,17 @@
  * @package Cover
  */
 
+/**
+ * Sets the custom CSS for the header background color,
+ * plus text color overrides for the contrast
+ */
 function cover_use_custom_colors( $colors_css, $color, $contrast ) {
     $post_id = get_the_ID();
 
     $tonesque = get_post_meta( $post_id, '_post_colors', true );
     extract( $tonesque );
 
-    if ( $color != 'ffffff' ) {
+    if ( 'ffffff' != $color ) {
         $colors_css = "
             .header,
             .header a,

@@ -1,7 +1,10 @@
 <?php
 /**
+ * Header for archive page
+ *
  * @package Cover
  */
+
 ?>
 
 <?php

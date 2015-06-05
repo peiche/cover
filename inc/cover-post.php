@@ -1,7 +1,10 @@
 <?php
 /**
+ * Header for posts and pages
+ *
  * @package Cover
  */
+
 ?>
 
 <?php
