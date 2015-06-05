@@ -128,41 +128,6 @@ function cover_customize_options() {
             color: #999;
         }
         
-        /**
-         * Contrasted header colors
-         */
-        
-        <?php if ( getContrast( $header_color ) == 'light' ) { ?>
-        
-        .header,
-        .header a,
-        .header .site-description,
-        .cover
-        {
-            color: #000;
-        }
-        
-        /* reset */
-        .cover.featured-image {
-            color: #fff;
-        }
-        
-        .header a:hover {
-            border-color: #000;
-        }
-        
-        .header .site-description {
-            border-color: rgba(0, 0, 0, .25);
-        }
-        
-        .hamburger span,
-        .hamburger span:after,
-        .hamburger span:before {
-            background-color: #000;
-        }
-        
-        <?php } ?>
-        
     </style>
 
     <meta name="theme-color" content="<?php echo $header_color; ?>">
