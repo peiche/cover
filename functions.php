@@ -159,8 +159,8 @@ function hex_to_rgb( $color ) {
 
 /**
  * PHP equivalent to Sass function darken().
- * @link https://gist.github.com/jegtnes/5720178
  *
+ * @link https://gist.github.com/jegtnes/5720178
  * @param string $hex The hexidecimal value of the color.
  * @param string $percent The percentage to darken the color.
  */
@@ -168,7 +168,7 @@ function sass_darken($hex, $percent) {
     preg_match( '/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors );
 	str_replace( '%', '', $percent );
 	$color = '#';
-	for( $i = 1; $i <= 3; $i++ ) {
+	for ( $i = 1; $i <= 3; $i++ ) {
 		$primary_colors[ $i ] = hexdec( $primary_colors[ $i ] );
 		$primary_colors[ $i ] = round( $primary_colors[ $i ] * ( 100 - ( $percent * 2 ) ) / 100 );
 		$color .= str_pad( dechex( $primary_colors[ $i ] ), 2, '0', STR_PAD_LEFT );
@@ -179,8 +179,8 @@ function sass_darken($hex, $percent) {
 
 /**
  * PHP equivalent to Sass function lighten().
- * @link https://gist.github.com/jegtnes/5720178
  *
+ * @link https://gist.github.com/jegtnes/5720178
  * @param string $hex The hexidecimal value of the color.
  * @param string $percent The percentage to lighten the color.
  */
@@ -188,10 +188,10 @@ function sass_lighten($hex, $percent) {
 	preg_match( '/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors );
 	str_replace( '%', '', $percent );
 	$color = '#';
-	for($i = 1; $i <= 3; $i++) {
-		$primary_colors[$i] = hexdec( $primary_colors[ $i ] );
-		$primary_colors[$i] = round( $primary_colors[ $i ] * ( 100 + ( $percent * 2 ) ) / 100);
-		$color .= str_pad( dechex( $primary_colors[ $i ]), 2, '0', STR_PAD_LEFT );
+	for ( $i = 1; $i <= 3; $i++ ) {
+		$primary_colors[ $i ] = hexdec( $primary_colors[ $i ] );
+		$primary_colors[ $i ] = round( $primary_colors[ $i ] * ( 100 + ( $percent * 2 ) ) / 100);
+		$color .= str_pad( dechex( $primary_colors[ $i ] ), 2, '0', STR_PAD_LEFT );
 	}
 
 	return $color;
