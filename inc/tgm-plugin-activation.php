@@ -56,7 +56,7 @@ function cover_register_recommended_plugins() {
             'plugin_activated'                => __( 'Plugin activated successfully.', 'cover' ),
             'complete'                        => __( 'All plugins installed and activated successfully. %s', 'cover' ), // %s = dashboard link.
             'nag_type'                        => 'updated', // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
-        )
+        ),
     );
 
     tgmpa( $plugins, $config );

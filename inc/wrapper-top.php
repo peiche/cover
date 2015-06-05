@@ -1,6 +1,6 @@
 <?php
 /**
- * Wrapper include  
+ * Wrapper include
  *
  * @package Cover
  */

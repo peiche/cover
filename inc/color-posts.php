@@ -11,9 +11,9 @@
  * Sets the custom CSS for the header background color,
  * plus text color overrides for the contrast
  *
- * @param $colors_css
- * @param $color
- * @param $contrast
+ * @param string $colors_css The string that contains the output CSS.
+ * @param string $color The color derived from the image.
+ * @param string $contrast The black or white contrast color.
  */
 function cover_use_custom_colors( $colors_css, $color, $contrast ) {
     $post_id = get_the_ID();

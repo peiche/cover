@@ -46,7 +46,7 @@ add_action( 'after_setup_theme', 'cover_jetpack_setup' );
 /**
  * Handle `footer_widgets` argument
  *
- * @param bool $has_widgets
+ * @param bool $has_widgets Indicates if there are widgets.
  * @uses has_nav_menu
  * @filter infinite_scroll_has_footer_widgets
  * @return bool
