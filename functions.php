@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 1600; // actual content width is 760, but I prefer to unrestrict images from having a small width.
+	$content_width = 1600; // Actual content width is 760, but I prefer to unrestrict images from having a small width.
 }
 
 if ( ! function_exists( 'cover_setup' ) ) :
@@ -22,7 +22,7 @@ if ( ! function_exists( 'cover_setup' ) ) :
  */
 function cover_setup() {
 
-	/*
+	/**
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Cover, use a find and replace
@@ -52,13 +52,13 @@ function cover_setup() {
 	) );
 
 	// Enable support for HTML5 markup.
-	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
+	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form' ) );
 
-    // WordPress 4.1 and above
+    // WordPress 4.1 and above.
     add_theme_support( 'title-tag' );
 
 }
-endif; // cover_setup
+endif;
 add_action( 'after_setup_theme', 'cover_setup' );
 
 /**
@@ -98,6 +98,106 @@ function cover_scripts() {
 add_action( 'wp_enqueue_scripts', 'cover_scripts' );
 
 /**
+ * Color contrast calculation. Compares to value halfway between black and white.
+ *
+ * @link http://24ways.org/2010/calculating-color-contrast/
+ * @param string $hexcolor The hexidecimal value of the color.
+ */
+function get_contrast_50( $hexcolor ) {
+    return ( hexdec( $hexcolor ) > 0xffffff / 2 ) ? 'light' : 'dark';
+}
+
+/**
+ * Color contrast calculation. Converts RGB color space into YIQ.
+ *
+ * @link http://24ways.org/2010/calculating-color-contrast/
+ * @param string $hexcolor The hexidecimal value of the color.
+ */
+function get_contrast_yiq( $hexcolor ) {
+	$r = hexdec( substr( $hexcolor, 0, 2 ) );
+	$g = hexdec( substr( $hexcolor, 2, 2 ) );
+	$b = hexdec( substr( $hexcolor, 4, 2 ) );
+	$yiq = ( ( $r * 299 ) + ( $g * 587 ) + ( $b * 114 ) ) / 1000;
+
+    return ( $yiq >= 128 ) ? 'light' : 'dark';
+}
+
+/**
+ * The real contrast function. Call this one and leave the function that you want uncommented.
+ *
+ * @param string $hexcolor The hexidecimal value of the color.
+ */
+function get_contrast( $hexcolor ) {
+    return
+        get_contrast_50( $hexcolor )
+        /* get_contrast_yiq( $hexcolor ) */
+        ;
+}
+
+/**
+ * Utility function to convert a hexidecimal color to rgb.
+ *
+ * @link http://css-tricks.com/snippets/php/convert-hex-to-rgb/
+ * @param string $color The hexidecimal value of the color.
+ */
+function hex_to_rgb( $color ) {
+        if ( '#' == $color[0] ) {
+                $color = substr( $color, 1 );
+        }
+        if ( strlen( $color ) == 6 ) {
+                list( $r, $g, $b ) = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
+        } elseif ( strlen( $color ) == 3 ) {
+                list( $r, $g, $b ) = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
+        } else {
+                return false;
+        }
+        $r = hexdec( $r );
+        $g = hexdec( $g );
+        $b = hexdec( $b );
+        return array( 'red' => $r, 'green' => $g, 'blue' => $b );
+}
+
+/**
+ * PHP equivalent to Sass function darken().
+ *
+ * @link https://gist.github.com/jegtnes/5720178
+ * @param string $hex The hexidecimal value of the color.
+ * @param string $percent The percentage to darken the color.
+ */
+function sass_darken($hex, $percent) {
+    preg_match( '/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors );
+	str_replace( '%', '', $percent );
+	$color = '#';
+	for ( $i = 1; $i <= 3; $i++ ) {
+		$primary_colors[ $i ] = hexdec( $primary_colors[ $i ] );
+		$primary_colors[ $i ] = round( $primary_colors[ $i ] * ( 100 - ( $percent * 2 ) ) / 100 );
+		$color .= str_pad( dechex( $primary_colors[ $i ] ), 2, '0', STR_PAD_LEFT );
+	}
+
+	return $color;
+}
+
+/**
+ * PHP equivalent to Sass function lighten().
+ *
+ * @link https://gist.github.com/jegtnes/5720178
+ * @param string $hex The hexidecimal value of the color.
+ * @param string $percent The percentage to lighten the color.
+ */
+function sass_lighten($hex, $percent) {
+	preg_match( '/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors );
+	str_replace( '%', '', $percent );
+	$color = '#';
+	for ( $i = 1; $i <= 3; $i++ ) {
+		$primary_colors[ $i ] = hexdec( $primary_colors[ $i ] );
+		$primary_colors[ $i ] = round( $primary_colors[ $i ] * ( 100 + ( $percent * 2 ) ) / 100 );
+		$color .= str_pad( dechex( $primary_colors[ $i ] ), 2, '0', STR_PAD_LEFT );
+	}
+
+	return $color;
+}
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -121,3 +221,14 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Aesop Story Engine compatibility.
  */
 require get_template_directory() . '/inc/aesop.php';
+
+/**
+ * Load Color Posts compatibility.
+ */
+require get_template_directory() . '/inc/color-posts.php';
+
+/**
+ * Load TGM Plugin Activation class.
+ */
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/tgm-plugin-activation.php';
