@@ -113,6 +113,9 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 == Changelog ==
 
+1.5.1
+- Fixed header color for Color Posts plugin.
+
 1.5.0
 - Added support for Jetpack's Site Logo module.
 - Added Customizer option to change header color.
