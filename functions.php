@@ -114,10 +114,10 @@ function get_contrast_50( $hexcolor ) {
  * @param string $hexcolor The hexidecimal value of the color.
  */
 function get_contrast_yiq( $hexcolor ) {
-	$r = hexdec( substr( $hexcolor, 0, 2 ) );
-	$g = hexdec( substr( $hexcolor, 2, 2 ) );
-	$b = hexdec( substr( $hexcolor, 4, 2 ) );
-	$yiq = ( ( $r * 299 ) + ( $g * 587 ) + ( $b * 114 ) ) / 1000;
+	$red = hexdec( substr( $hexcolor, 0, 2 ) );
+	$green = hexdec( substr( $hexcolor, 2, 2 ) );
+	$blue = hexdec( substr( $hexcolor, 4, 2 ) );
+	$yiq = ( ( $red * 299 ) + ( $green * 587 ) + ( $blue * 114 ) ) / 1000;
 
     return ( $yiq >= 128 ) ? 'light' : 'dark';
 }
@@ -145,16 +145,16 @@ function hex_to_rgb( $color ) {
                 $color = substr( $color, 1 );
         }
         if ( strlen( $color ) == 6 ) {
-                list( $r, $g, $b ) = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
+                list( $red, $green, $blue ) = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
         } elseif ( strlen( $color ) == 3 ) {
-                list( $r, $g, $b ) = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
+                list( $red, $green, $blue ) = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
         } else {
                 return false;
         }
-        $r = hexdec( $r );
-        $g = hexdec( $g );
-        $b = hexdec( $b );
-        return array( 'red' => $r, 'green' => $g, 'blue' => $b );
+        $red = hexdec( $red );
+        $green = hexdec( $green );
+        $blue = hexdec( $blue );
+        return array( 'red' => $red, 'green' => $green, 'blue' => $blue );
 }
 
 /**
