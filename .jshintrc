@@ -1,0 +1,42 @@
+{
+    "asi": false,
+    "bitwise": true,
+    "browser": true,
+    "camelcase": false,
+    "curly": true,
+    "eqeqeq": true,
+    "eqnull": true,
+    "forin": true,
+    "globals": {
+        "jQuery": true,
+        "alert": true,
+        "Headroom": true,
+        "skrollr": true,
+        "wp": true
+    },
+    "immed": true,
+    "latedef": "nofunc",
+    "maxlen": false,
+    "newcap": true,
+    "noarg": true,
+    "noempty": true,
+    "nonew": true,
+    "predef": [
+        "$",
+        "jQuery",
+        "jasmine",
+        "beforeEach",
+        "describe",
+        "expect",
+        "it",
+        "angular",
+        "inject",
+        "module" // GruntFile.js
+    ],
+    "quotmark": true,
+    "trailing": true,
+    "undef": true,
+    "unused": [
+        "to" // customizer.js
+    ]
+}

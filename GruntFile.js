@@ -73,13 +73,7 @@ module.exports = function(grunt) {
         jshint: {
             files: ['GruntFile.js', 'js/src/*.js'],
             options: {
-                'globals': {
-                    jQuery: true,
-                    alert: true,
-                    Headroom: true,
-                    skrollr: true,
-                    wp: true
-                }
+                'jshintrc': true
             }
         },
         uglify: {
