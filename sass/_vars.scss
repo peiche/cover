@@ -53,13 +53,12 @@ $width-tablet: 768px;
 $width-wide: 1000px;
 
 $z-index-above-wp-toolbar: 100000;
-$z-index-addthis: 100021;
 
-$z-index-header: 600;
+$z-index-header: 1000;
 $z-index-header-backdrop: -1;
 $z-index-cover: 400;
 $z-index-aesop-timeline: 500;
-$z-index-overlay: 500;
+$z-index-overlay: 999;
 
 $divider-color: $color-light-grey;
 
