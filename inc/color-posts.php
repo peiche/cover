@@ -27,21 +27,21 @@ function cover_use_custom_colors( $colors_css, $color, $contrast ) {
             .header a,
             .header .site-description,
             .cover {
-                color: rgb({$contrast}) !important;
+                color: rgb(' . $contrast . ') !important;
             }
             .header a:hover {
-                border-color: rgb({$contrast}) !important;
+                border-color: rgb(' . $contrast . ') !important;
             }
             .header .site-description {
-                border-color: rgba({$contrast}, .25) !important;
+                border-color: rgba(' . $contrast . ', .25) !important;
             }
             .hamburger span,
             .hamburger span:after,
             .hamburger span:before {
-                background-color: rgb({$contrast}) !important;
+                background-color: rgb(' . $contrast . ') !important;
             }
             .header .backdrop {
-                background-color: #{$color} !important;
+                background-color: #' . $color . ' !important;
             }
             ';
     } else {

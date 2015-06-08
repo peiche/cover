@@ -112,6 +112,9 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 ##Changelog
 
+**1.5.1**
+- Fixed header color for Color Posts plugin.
+
 **1.5.0**
 - Added support for Jetpack's Site Logo module.
 - Added Customizer option to change header color.
