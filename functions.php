@@ -164,7 +164,7 @@ function hex_to_rgb( $color ) {
  * @param string $hex The hexidecimal value of the color.
  * @param string $percent The percentage to darken the color.
  */
-function sass_darken($hex, $percent) {
+function darken($hex, $percent) {
     preg_match( '/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors );
 	str_replace( '%', '', $percent );
 	$color = '#';

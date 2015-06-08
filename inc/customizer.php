@@ -80,7 +80,7 @@ function cover_customize_options() {
         }
 
         a:hover {
-            color: <?php echo sass_darken( $link_color, 15 ); ?>;
+            color: <?php echo darken( $link_color, 15 ); ?>;
         }
 
         .header .backdrop,
@@ -98,7 +98,7 @@ function cover_customize_options() {
         .paging-navigation a:hover,
         body #infinite-handle span:hover,
         .button.default:hover {
-            background-color: <?php echo sass_darken( $link_color, 15 ); ?>;
+            background-color: <?php echo darken( $link_color, 15 ); ?>;
         }
 
         body .infinite-loader .spinner {
