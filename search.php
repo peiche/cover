@@ -34,4 +34,4 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_footer();
+<?php get_footer(); ?>
