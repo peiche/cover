@@ -113,6 +113,9 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 ##Changelog
 
+**1.5.2**
+- Code cleanup.
+
 **1.5.1**
 - Fixed header color for Color Posts plugin.
 
