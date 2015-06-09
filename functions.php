@@ -135,29 +135,6 @@ function get_contrast( $hexcolor ) {
 }
 
 /**
- * Utility function to convert a hexidecimal color to rgb.
- *
- * @link http://css-tricks.com/snippets/php/convert-hex-to-rgb/
- * @param string $color The hexidecimal value of the color.
- */
-function hex_to_rgb( $color ) {
-        if ( '#' == $color[0] ) {
-                $color = substr( $color, 1 );
-        }
-        if ( strlen( $color ) == 6 ) {
-                list( $red, $green, $blue ) = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
-        } elseif ( strlen( $color ) == 3 ) {
-                list( $red, $green, $blue ) = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
-        } else {
-                return false;
-        }
-        $red = hexdec( $red );
-        $green = hexdec( $green );
-        $blue = hexdec( $blue );
-        return array( 'red' => $red, 'green' => $green, 'blue' => $blue );
-}
-
-/**
  * PHP equivalent to Sass function darken().
  *
  * @link https://gist.github.com/jegtnes/5720178
