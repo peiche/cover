@@ -66,74 +66,24 @@ function cover_customize_options() {
     $link_color = get_theme_mod( 'cover_link_color', '#026ed2' );
     ?>
     
-    <style>
-        
-        /**
-         * Set accent color
-         */
+<style>
+<?php // Set accent color. ?>
+a,a:visited,.entry-title a:hover,.entry-subtitle a:hover { color: <?php echo $link_color; ?>; }
+a:hover { color: <?php echo darken( $link_color, 15 ); ?>; }
+.header .backdrop, .cover { background-color: <?php echo $header_color; ?>; }
+.paging-navigation a, ul.categories a, body #infinite-handle span, .button.default { background-color: <?php echo $link_color; ?>; }
+.paging-navigation a:hover, body #infinite-handle span:hover, .button.default:hover { background-color: <?php echo darken( $link_color, 15 ); ?>; }
+body .infinite-loader .spinner { border-top-color: <?php echo $link_color; ?>; }
+.fotorama__thumb-border { border-color: <?php echo $link_color; ?>; }
 
-        a,
-        a:visited,
-        .entry-title a:hover,
-        .entry-subtitle a:hover {
-            color: <?php echo $link_color; ?>;
-        }
+<?php // Restore default colors. ?>
+.header a, .overlay a, .cover-header a { color: #fff; }
+.cover-subtitle a { color: rgba(255, 255, 255, 0.8); }
+.entry-title a { color: #222; }
+.entry-subtitle a { color: #999; }
+</style>
 
-        a:hover {
-            color: <?php echo darken( $link_color, 15 ); ?>;
-        }
-
-        .header .backdrop,
-        .cover {
-            background-color: <?php echo $header_color; ?>;
-        }
-
-        .paging-navigation a,
-        ul.categories a ,
-        body #infinite-handle span,
-        .button.default {
-            background-color: <?php echo $link_color; ?>;
-        }
-
-        .paging-navigation a:hover,
-        body #infinite-handle span:hover,
-        .button.default:hover {
-            background-color: <?php echo darken( $link_color, 15 ); ?>;
-        }
-
-        body .infinite-loader .spinner {
-            border-top-color: <?php echo $link_color; ?>;
-        }
-
-        .fotorama__thumb-border {
-            border-color: <?php echo $link_color; ?>;
-        }
-
-        /**
-         * Restore default colors
-         */
-
-        .header a,
-        .overlay a,
-        .cover-header a {
-            color: #fff;
-        }
-
-        .cover-subtitle a {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .entry-title a {
-            color: #222;
-        }
-
-        .entry-subtitle a {
-            color: #999;
-        }
-        
-    </style>
-
-    <meta name="theme-color" content="<?php echo $header_color; ?>">
+<meta name="theme-color" content="<?php echo $header_color; ?>">
 
 <?php
 }
