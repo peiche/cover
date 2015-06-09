@@ -114,10 +114,10 @@ function get_contrast_50( $hexcolor ) {
  * @param string $hexcolor The hexidecimal value of the color.
  */
 function get_contrast_yiq( $hexcolor ) {
-	$r = hexdec( substr( $hexcolor, 0, 2 ) );
-	$g = hexdec( substr( $hexcolor, 2, 2 ) );
-	$b = hexdec( substr( $hexcolor, 4, 2 ) );
-	$yiq = ( ( $r * 299 ) + ( $g * 587 ) + ( $b * 114 ) ) / 1000;
+	$red = hexdec( substr( $hexcolor, 0, 2 ) );
+	$green = hexdec( substr( $hexcolor, 2, 2 ) );
+	$blue = hexdec( substr( $hexcolor, 4, 2 ) );
+	$yiq = ( ( $red * 299 ) + ( $green * 587 ) + ( $blue * 114 ) ) / 1000;
 
     return ( $yiq >= 128 ) ? 'light' : 'dark';
 }
@@ -145,16 +145,16 @@ function hex_to_rgb( $color ) {
                 $color = substr( $color, 1 );
         }
         if ( strlen( $color ) == 6 ) {
-                list( $r, $g, $b ) = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
+                list( $red, $green, $blue ) = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
         } elseif ( strlen( $color ) == 3 ) {
-                list( $r, $g, $b ) = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
+                list( $red, $green, $blue ) = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
         } else {
                 return false;
         }
-        $r = hexdec( $r );
-        $g = hexdec( $g );
-        $b = hexdec( $b );
-        return array( 'red' => $r, 'green' => $g, 'blue' => $b );
+        $red = hexdec( $red );
+        $green = hexdec( $green );
+        $blue = hexdec( $blue );
+        return array( 'red' => $red, 'green' => $green, 'blue' => $blue );
 }
 
 /**
@@ -164,33 +164,13 @@ function hex_to_rgb( $color ) {
  * @param string $hex The hexidecimal value of the color.
  * @param string $percent The percentage to darken the color.
  */
-function sass_darken($hex, $percent) {
+function darken($hex, $percent) {
     preg_match( '/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors );
 	str_replace( '%', '', $percent );
 	$color = '#';
 	for ( $i = 1; $i <= 3; $i++ ) {
 		$primary_colors[ $i ] = hexdec( $primary_colors[ $i ] );
 		$primary_colors[ $i ] = round( $primary_colors[ $i ] * ( 100 - ( $percent * 2 ) ) / 100 );
-		$color .= str_pad( dechex( $primary_colors[ $i ] ), 2, '0', STR_PAD_LEFT );
-	}
-
-	return $color;
-}
-
-/**
- * PHP equivalent to Sass function lighten().
- *
- * @link https://gist.github.com/jegtnes/5720178
- * @param string $hex The hexidecimal value of the color.
- * @param string $percent The percentage to lighten the color.
- */
-function sass_lighten($hex, $percent) {
-	preg_match( '/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors );
-	str_replace( '%', '', $percent );
-	$color = '#';
-	for ( $i = 1; $i <= 3; $i++ ) {
-		$primary_colors[ $i ] = hexdec( $primary_colors[ $i ] );
-		$primary_colors[ $i ] = round( $primary_colors[ $i ] * ( 100 + ( $percent * 2 ) ) / 100 );
 		$color .= str_pad( dechex( $primary_colors[ $i ] ), 2, '0', STR_PAD_LEFT );
 	}
 

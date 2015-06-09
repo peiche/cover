@@ -31,4 +31,4 @@ get_header(); // Call header inside the loop to get author info. ?>
         </div><!-- #primary -->
 
 <?php endwhile; // End of the loop. ?>
-<?php get_footer(); ?>
+<?php get_footer();
