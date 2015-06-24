@@ -98,6 +98,19 @@
             }
         }
 	}
+    
+    &.aesop-component-chat {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    &.aesop-component-chat + .aesop-component-chat {
+        margin-top: -10px;
+    }
+}
+
+.aesop-component-chat-container {
+    width: 90%;
 }
 
 .aesop-stacked {
