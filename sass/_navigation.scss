@@ -72,40 +72,11 @@ a {
         }
     }
 	
-    li {
-        position: relative;
-    }
-	
     a {
         border-bottom: 1px solid #ddd;
         display: block;
         padding: 10px 0;
         text-decoration: none;
-    }
-    
-	.sub-menu-toggle {
-        cursor: pointer;
-		@include rem(font-size, 30px);
-		height: 59px;
-		position: absolute;
-        right: 0;
-		top: 0;
-        width: 60px;
-        
-		&:hover {
-            background-color: #ddd;
-        }
-        
-		.fa {
-            bottom: 0;
-			height: 30px;
-			left: 0;
-			margin: auto;
-			position: absolute;
-            right: 0;
-            text-align: center;
-			top: 0;
-        }
     }
 }
 
@@ -219,5 +190,38 @@ a {
     li {
         display: inline-block;
         line-height: normal;
+    }
+}
+
+.menu .menu-item-has-children {
+    position: relative;
+    
+    .sub-menu-toggle {
+        cursor: pointer;
+        @include rem(font-size, 30px);
+        height: 59px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60px;
+
+        &:hover {
+            background-color: #ddd;
+            
+            .overlay & {
+                background-color: #666;
+            }
+        }
+
+        .fa {
+            bottom: 0;
+            height: 30px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            top: 0;
+        }
     }
 }
