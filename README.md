@@ -114,9 +114,12 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 ##Changelog
 
 **1.5.2**
+<<<<<<< HEAD
 - Fixed header for touch screen devices.
 - Fixed widget menus.
 - Fixed overlay text color.
+=======
+>>>>>>> origin/master
 - Code cleanup.
 
 **1.5.1**
