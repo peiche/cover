@@ -33,10 +33,10 @@ jQuery(document).ready(function() {
 	});
 	
 	/**
-	 * Clicking escape will close an open overlay/
+	 * Hitting the escape key will close an open overlay/
 	 */
 	jQuery(document).keyup(function(e) {
-		if (e.keyCode == 27) {
+		if (e.keyCode === 27) {
 			jQuery('html.noscroll').removeClass('noscroll');
 			jQuery('.overlay.show').removeClass('show');
 			

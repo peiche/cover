@@ -1,6 +1,7 @@
 #Cover
 [![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://github.com/peiche/cover/blob/master/LICENSE.txt)
 [![Build Status](https://travis-ci.org/peiche/cover.svg?branch=master)](https://travis-ci.org/peiche/cover)
+[![Code Climate](https://codeclimate.com/github/peiche/cover/badges/gpa.svg)](https://codeclimate.com/github/peiche/cover)
 
 Cover is a content-driven blogging theme for WordPress. Built on top of Automattic’s _s (Underscores) and bundled with Font Awesome, Cover allows you to focus on your writing. There are no sidebars to mess with, just a single column view of your content.
 
@@ -111,6 +112,12 @@ So you want to build the project yourself. Great! Please follow [these direction
 If you see something wrong, or you want to improve on what I've got here, feel free to submit an issue or create a pull request.
 
 ##Changelog
+
+**1.5.2**
+- Fixed header for touch screen devices.
+- Fixed widget menus.
+- Fixed overlay text color.
+- Code cleanup.
 
 **1.5.1**
 - Fixed header color for Color Posts plugin.
