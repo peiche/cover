@@ -197,8 +197,8 @@ a {
     position: relative;
     
     .sub-menu-toggle {
-        cursor: pointer;
         @include rem(font-size, 30px);
+        cursor: pointer;
         height: 59px;
         position: absolute;
         right: 0;
@@ -206,10 +206,10 @@ a {
         width: 60px;
 
         &:hover {
-            background-color: #ddd;
+            background-color: $menu-toggle-background;
             
             .overlay & {
-                background-color: #666;
+                background-color: $menu-toggle-background-overlay;
             }
         }
 

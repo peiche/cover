@@ -100,12 +100,12 @@
 	}
     
     &.aesop-component-chat {
-        margin-top: 0;
         margin-bottom: 0;
-    }
-    
-    &.aesop-component-chat + .aesop-component-chat {
-        margin-top: -10px;
+        margin-top: 0;
+        
+        + .aesop-component-chat {
+            margin-top: -10px;
+        }
     }
 }
 

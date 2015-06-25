@@ -25,6 +25,7 @@ $text-color-heading: darken($text-color-base, 10%);
 $text-color-content: $text-color-base;
 $text-color-quote: lighten($text-color-base, 10%);
 $text-color-cite: lighten($text-color-base, 25%);
+$text-color-overlay: #ccc;
 
 $header-color: $color-blue;
 
@@ -63,6 +64,9 @@ $z-index-overlay: 999;
 $divider-color: $color-light-grey;
 
 $overlay-color: #333;
+
+$menu-toggle-background: #ddd;
+$menu-toggle-background-overlay: #666;
 
 @function parse-int($n) {
     @return $n / ($n * 0 + 1);
