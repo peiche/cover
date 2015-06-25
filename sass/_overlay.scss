@@ -5,6 +5,7 @@ Overlay for menus and widgets
 .overlay {
 	@include rem(font-size, 20px);
     background: $overlay-color;
+    color: #ccc;
     height: 100%;
     left: 0;
     opacity: 0;
@@ -34,7 +35,6 @@ Overlay for menus and widgets
     
     .widget {
         &-area {
-            color: #ccc;
             margin-bottom: 60px;
             margin-top: 60px;
             
