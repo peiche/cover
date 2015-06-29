@@ -1,6 +1,6 @@
 /*
- * Material Design colors!
- */
+* Material Design colors!
+*/
 $color-blue: #026ed2; // #2196F3 is the Material Design blue, but I personally feel it's too light.
 $color-red: #f44336;
 $color-pink: #e91e63;
@@ -19,6 +19,7 @@ $color-grey: #9e9e9e;
 $color-light-grey: #c3c2c9;
 $color-dark-grey: #2b2b2b;
 $color-blue-grey: #607d8b;
+$color-white: #fff;
 
 $text-color-base: #3b3b3b;
 $text-color-heading: darken($text-color-base, 10%);
@@ -69,152 +70,152 @@ $menu-toggle-background: #ddd;
 $menu-toggle-background-overlay: #666;
 
 @function parse-int($n) {
-    @return $n / ($n * 0 + 1);
+  @return $n / ($n * 0 + 1);
 }
 
 @mixin rem($property, $values) {
-    $px : ();
-    $rem: ();
-    
-    @each $value in $values {
-        
-        @if $value == 0 or $value == auto {
-            $px : append($px, $value);
-            $rem: append($rem, $value);
-        } @else { 
-            $unit: unit($value);
-            $val: parse-int($value);
-            
-            @if $unit == 'px' {
-                $px : append($px, $value);
-                $rem: append($rem, ($val / 10 * 1rem));
-            }
-            
-            @if $unit == 'rem' {
-                $px : append($px, ($val * 10 * 1px));
-                $rem: append($rem, $value);
-            }
-        }
+  $px : ();
+  $rem: ();
+
+  @each $value in $values {
+
+    @if $value == 0 or $value == auto {
+      $px : append($px, $value);
+      $rem: append($rem, $value);
+    } @else {
+      $unit: unit($value);
+      $val: parse-int($value);
+
+      @if $unit == 'px' {
+        $px : append($px, $value);
+        $rem: append($rem, ($val / 10 * 1rem));
+      }
+
+      @if $unit == 'rem' {
+        $px : append($px, ($val * 10 * 1px));
+        $rem: append($rem, $value);
+      }
     }
-    
-    /*
-	 * Note: this doubles the declarations of font-size, 
-     * Unlike multiple declarations of the background property, 
-     * css linter tasks do not recognize this as providing a fallback
-     * for browsers that do not support the rem property.
-	 */
-    #{$property}: $px;
-    #{$property}: $rem;
+  }
+
+  /*
+  * Note: this doubles the declarations of font-size,
+  * Unlike multiple declarations of the background property,
+  * css linter tasks do not recognize this as providing a fallback
+  * for browsers that do not support the rem property.
+  */
+  #{$property}: $px;
+  #{$property}: $rem;
 }
 
 @mixin site-width($width: $width-medium) {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $width;
-	width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $width;
+  width: 90%;
 }
 
 @mixin button($color: $color-grey) {
-	@include rem(font-size, $font-size-normal);
-    background-color: $color;
-	border: 0;
-	border-radius: 4px;
-	color: #fff;
-    cursor: pointer;
-	display: inline-block;
-	line-height: normal;
-	margin-bottom: 5px;
-    padding: 10px 20px;
-	text-decoration: none;
-	transition: all .2s;
-	
-	&:focus,
-	&:visited {
-		color: #fff;
-	}
-	
-	&:hover {
-		background-color: darken($color, 10%);
-		color: #fff;
-		opacity: .9;
-	}
-	
-	&:active {
-		background-color: darken($color, 20%);
-		color: #fff;
-	}
-	
-	&.round {
-		border-radius: 25px;
-	}
- 	 
-	&.full {
-		display: block;
-	}
+  @include rem(font-size, $font-size-normal);
+  background-color: $color;
+  border: 0;
+  border-radius: 4px;
+  color: $color-white;
+  cursor: pointer;
+  display: inline-block;
+  line-height: normal;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: all .2s;
+
+  &:focus,
+  &:visited {
+    color: $color-white;
+  }
+
+  &:hover {
+    background-color: darken($color, 10%);
+    color: $color-white;
+    opacity: .9;
+  }
+
+  &:active {
+    background-color: darken($color, 20%);
+    color: $color-white;
+  }
+
+  &.round {
+    border-radius: 25px;
+  }
+
+  &.full {
+    display: block;
+  }
 }
 
 @mixin bg-color-hover($color: $color-grey) {
-	background-color: $color;
-	
-	&:hover {
-		background-color: darken($color, 10%);
-	}
-	
-	&:active {
-		background-color: darken($color, 20%);
-	}
+  background-color: $color;
+
+  &:hover {
+    background-color: darken($color, 10%);
+  }
+
+  &:active {
+    background-color: darken($color, 20%);
+  }
 }
 
 .button {
-	@include button;
-	
-    &.default,
-	&.blue {
-		@include bg-color-hover($color-blue);
-	}
-	
-	&.red {
-		@include bg-color-hover($color-red);
-	}
-    
-    &.green {
-		@include bg-color-hover($color-green);
-	}
-	
-	&.pink {
-		@include bg-color-hover($color-pink);
-	}
-	
-	&.purple {
-        @include bg-color-hover($color-purple);
-    }
-    
-    &.orange {
-        @include bg-color-hover($color-orange);
-    }
-    
-    &.dark-gray {
-        @include bg-color-hover($color-dark-grey);
-    }
+  @include button;
+
+  &.default,
+  &.blue {
+    @include bg-color-hover($color-blue);
+  }
+
+  &.red {
+    @include bg-color-hover($color-red);
+  }
+
+  &.green {
+    @include bg-color-hover($color-green);
+  }
+
+  &.pink {
+    @include bg-color-hover($color-pink);
+  }
+
+  &.purple {
+    @include bg-color-hover($color-purple);
+  }
+
+  &.orange {
+    @include bg-color-hover($color-orange);
+  }
+
+  &.dark-gray {
+    @include bg-color-hover($color-dark-grey);
+  }
 }
 
 %image-caption { // style used for both normal and aesop image component captions
-    font-family: $font-stack-content;
-    @include rem(font-size, 15px);
-	font-style: italic;
-    margin-bottom: 10px;
-	margin-top: 5px;
-    @include site-width;
-	
-	i,
-    em {
-        font-style: normal;
-    }
+  font-family: $font-stack-content;
+  @include rem(font-size, 15px);
+  font-style: italic;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  @include site-width;
+
+  i,
+  em {
+    font-style: normal;
+  }
 }
 
 /*
- * Social network colors!
- */
+* Social network colors!
+*/
 $appnet-color: #d87a68;
 $behance-color: #1769ff;
 $codepen-color: #60c2ff;
@@ -253,123 +254,123 @@ $yahoo-color: #500095;
 $youtube-color: #e52d27;
 
 /*
- * Uncomment the social networks you want icons for.
- * Leaving all of them uncommented increases the size of the stylesheet substantially.
- *
- * There are two different styles for displaying a social menu, one in the overlay and
- * one in the footer. The overlay menu has this markup:
- *
- * <a href="#link_to_social_network">
- *   <span class="fa-stack fa-2x">
- *     <i class="fa fa-circle fa-stack-2x"></i>
- *     <i class="fa fa-stack-1x social-icon"></i>
- *     <span class="screen-reader-text">[Menu Item Name]</span>
- *   </span>
- * </a>
- * 
- * The footer social menu has this markup:
- *
- * <a href="#link_to_social_network">
- *   <i class="fa fa-fw social-icon"></i>
- *   <span class="screen-reader-text">[Menu Item Name]</span>
- * </a>
- *
- * Both types of markup are supported by the following @each loop.
- */
+* Uncomment the social networks you want icons for.
+* Leaving all of them uncommented increases the size of the stylesheet substantially.
+*
+* There are two different styles for displaying a social menu, one in the overlay and
+* one in the footer. The overlay menu has this markup:
+*
+* <a href="#link_to_social_network">
+*   <span class="fa-stack fa-2x">
+*     <i class="fa fa-circle fa-stack-2x"></i>
+*     <i class="fa fa-stack-1x social-icon"></i>
+*     <span class="screen-reader-text">[Menu Item Name]</span>
+*   </span>
+* </a>
+*
+* The footer social menu has this markup:
+*
+* <a href="#link_to_social_network">
+*   <i class="fa fa-fw social-icon"></i>
+*   <span class="screen-reader-text">[Menu Item Name]</span>
+* </a>
+*
+* Both types of markup are supported by the following @each loop.
+*/
 @mixin social-icon {
-    a {
-        @each $url, $color, $char in 
-                //('app.net', $appnet-color, $fa-var-adn),
-                //('behance.net', $behance-color, $fa-var-behance),
-                ('codepen.io', $codepen-color, $fa-var-codepen),
-                //('deviantart.com', $deviantart-color, $fa-var-deviantart),
-                //('digg.com', $digg-color, $fa-var-digg),
-                ('dribbble.com', $dribbble-color, $fa-var-dribbble),
-                //('dropbox.com', $dropbox-color, $fa-var-dropbox),
-                ('facebook.com', $facebook-color, $fa-var-facebook),
-                ('flickr.com', $flickr-color, $fa-var-flickr),
-                //('foursquare.com', $foursquare-color, $fa-var-foursquare),
-                ('github.com', $github-color, $fa-var-github),
-                //('gratipay.com', $gratipay-color, $fa-var-gittip),
-                //('gittip.com', $gratipay-color, $fa-var-gittip),
-                ('instagram.com', $instagram-color, $fa-var-instagram),
-                //('last.fm', $lastfm-color, $fa-var-lastfm),
-                ('linkedin.com', $linkedin-color, $fa-var-linkedin),
-                //('paypal.com', $paypal-color, $fa-var-paypal),
-                ('pinterest.com', $pinterest-color, $fa-var-pinterest),
-                ('plus.google.com', $googleplus-color, $fa-var-google-plus),
-                //('reddit.com', $reddit-color, $fa-var-reddit),
-                //('skype.com', $skype-color, $fa-var-skype),
-                //('slideshare.net', $slideshare-color, $fa-var-slideshare),
-                ('soundcloud.com', $soundcloud-color, $fa-var-soundcloud),
-                //('spotify.com', $spotify-color, $fa-var-spotify),
-                //('stackexchange.com', $stackexchange-color, $fa-var-stack-exchange),
-                //('stackoverflow.com', $stackoverflow-color, $fa-var-stack-overflow),
-                //('stumbleupon.com', $stumbleupon-color, $fa-var-stumbleupon),
-                //('trello.com', $trello-color, $fa-var-trello),
-                ('tumblr.com', $tumblr-color, $fa-var-tumblr),
-                //('twitch.tv', $twitch-color, $fa-var-twitch),
-                ('twitter.com', $twitter-color, $fa-var-twitter),
-                
-                /*
-                 * TODO: Change to $fa-var-vimeo
-                 *       Waiting on this issue: https://github.com/FortAwesome/Font-Awesome/issues/2197
-                 */
-                ('vimeo.com', $vimeo-color, $fa-var-vimeo-square),
-                
-                //('vine.co', $vine-color, $fa-var-vine),
-                ('wordpress.com', $wordpress-color, $fa-var-wordpress),
-                ('wordpress.org', $wordpress-color, $fa-var-wordpress),
-                //('yahoo.com', $yahoo-color, $fa-var-yahoo),
-                ('youtube.com', $youtube-color, $fa-var-youtube-play),
-                ('/feed', $rss-color, $fa-var-rss)
-                {
-            &[href*='#{$url}'] {
-                .fa-circle {
-                    color: $color;
-                    
-                    &:before {
-                        transition: color 200ms;
-                    }
-                    
-                    + .social-icon {
-                        color: inherit;
-                    }
-                }
-                
-                .social-icon {
-                    color: $text-color-base;
-                    transition: color 200ms;
-                    
-					&:before {
-                        content: $char;
-                    }
-                }
-                
-                &:hover {
-                    .fa-circle {
-                        color: #fff;
-                    }
-                    
-                    .social-icon {
-                        color: $color;
-                    }
-                }
-            }
+  a {
+    @each $url, $color, $char in
+    //('app.net', $appnet-color, $fa-var-adn),
+    //('behance.net', $behance-color, $fa-var-behance),
+    ('codepen.io', $codepen-color, $fa-var-codepen),
+    //('deviantart.com', $deviantart-color, $fa-var-deviantart),
+    //('digg.com', $digg-color, $fa-var-digg),
+    ('dribbble.com', $dribbble-color, $fa-var-dribbble),
+    //('dropbox.com', $dropbox-color, $fa-var-dropbox),
+    ('facebook.com', $facebook-color, $fa-var-facebook),
+    ('flickr.com', $flickr-color, $fa-var-flickr),
+    //('foursquare.com', $foursquare-color, $fa-var-foursquare),
+    ('github.com', $github-color, $fa-var-github),
+    //('gratipay.com', $gratipay-color, $fa-var-gittip),
+    //('gittip.com', $gratipay-color, $fa-var-gittip),
+    ('instagram.com', $instagram-color, $fa-var-instagram),
+    //('last.fm', $lastfm-color, $fa-var-lastfm),
+    ('linkedin.com', $linkedin-color, $fa-var-linkedin),
+    //('paypal.com', $paypal-color, $fa-var-paypal),
+    ('pinterest.com', $pinterest-color, $fa-var-pinterest),
+    ('plus.google.com', $googleplus-color, $fa-var-google-plus),
+    //('reddit.com', $reddit-color, $fa-var-reddit),
+    //('skype.com', $skype-color, $fa-var-skype),
+    //('slideshare.net', $slideshare-color, $fa-var-slideshare),
+    ('soundcloud.com', $soundcloud-color, $fa-var-soundcloud),
+    //('spotify.com', $spotify-color, $fa-var-spotify),
+    //('stackexchange.com', $stackexchange-color, $fa-var-stack-exchange),
+    //('stackoverflow.com', $stackoverflow-color, $fa-var-stack-overflow),
+    //('stumbleupon.com', $stumbleupon-color, $fa-var-stumbleupon),
+    //('trello.com', $trello-color, $fa-var-trello),
+    ('tumblr.com', $tumblr-color, $fa-var-tumblr),
+    //('twitch.tv', $twitch-color, $fa-var-twitch),
+    ('twitter.com', $twitter-color, $fa-var-twitter),
+
+    /*
+    * TODO: Change to $fa-var-vimeo
+    *       Waiting on this issue: https://github.com/FortAwesome/Font-Awesome/issues/2197
+    */
+    ('vimeo.com', $vimeo-color, $fa-var-vimeo-square),
+
+    //('vine.co', $vine-color, $fa-var-vine),
+    ('wordpress.com', $wordpress-color, $fa-var-wordpress),
+    ('wordpress.org', $wordpress-color, $fa-var-wordpress),
+    //('yahoo.com', $yahoo-color, $fa-var-yahoo),
+    ('youtube.com', $youtube-color, $fa-var-youtube-play),
+    ('/feed', $rss-color, $fa-var-rss)
+    {
+      &[href*='#{$url}'] {
+        .fa-circle {
+          color: $color;
+
+          &:before {
+            transition: color 200ms;
+          }
+
+          + .social-icon {
+            color: inherit;
+          }
         }
+
+        .social-icon {
+          color: $text-color-base;
+          transition: color 200ms;
+
+          &:before {
+            content: $char;
+          }
+        }
+
+        &:hover {
+          .fa-circle {
+            color: $color-white;
+          }
+
+          .social-icon {
+            color: $color;
+          }
+        }
+      }
     }
+  }
 }
 
 /**
- * Animations
- */
+* Animations
+*/
 
 @keyframes rotate {
-    from {
-        transform: rotate(0deg);
-        
-    } to {
-        transform: rotate(359deg);
-        
-    }
+  from {
+    transform: rotate(0deg);
+
+  } to {
+    transform: rotate(359deg);
+
+  }
 }

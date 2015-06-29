@@ -9,26 +9,26 @@ a {
 	color: $link-color;
 	text-decoration: none;
 	transition: all .2s ease-in-out;
-    
+
 	b &,
     strong & {
         border-width: 2px;
     }
-    
+
 	&:visited {
         color: $link-color;
     }
-    
+
 	&:hover,
     &:focus,
     &:active {
         color: $link-color-active;
     }
-    
+
 	&:hover {
         color: $link-color-active;
 		text-decoration: none;
-        
+
 		.entry-summary &,
         .entry-content &,
         .edit-link &,
@@ -36,7 +36,7 @@ a {
             border-color: $link-border-color;
         }
     }
-	
+
 	&.author {
 		.name {
 			border-bottom: 1px solid transparent;
@@ -61,17 +61,17 @@ a {
 	display: block;
 	float: left;
 	width: 100%;
-    
+
 	ul {
         list-style: none;
         margin: 0;
         padding-left: 0;
-        
+
         &.hide {
             display: none;
         }
     }
-	
+
     a {
         border-bottom: 1px solid #ddd;
         display: block;
@@ -90,7 +90,7 @@ a {
 
 .paging-navigation a {
     @include button($color-blue);
-	
+
     @media screen and (max-width: $width-phone) {
         display: block;
         margin-bottom: 10px;
@@ -123,46 +123,46 @@ a {
 .post-navigation {
     background: #eee;
     margin-top: 50px;
-    padding-top: 50px;
-    
+
     [class$="title"] {
         margin: 0 0 30px;
     }
-    
+
     [class$="subtitle"] {
         border-bottom: 1px solid rgba(255, 255, 255, .35);
         margin: 0 0 5px;
         padding-bottom: 15px;
     }
-    
+
     .nav-previous {
-        margin-bottom: 50px;
         @include site-width;
-        
+        padding-bottom: 50px;
+        padding-top: 50px;
+
         .subtitle {
-			border-bottom: 1px solid rgba(0, 0, 0, .1);
-            color: rgba(0, 0, 0, .5);
-            @include rem(font-size, 20px);
-            margin-bottom: 15px;
-            padding-bottom: 15px;
+          @include rem(font-size, 20px);
+          border-bottom: 1px solid rgba(0, 0, 0, .1);
+          color: rgba(0, 0, 0, .5);
+          margin-bottom: 15px;
+          padding-bottom: 15px;
         }
-        
+
         .title {
-            color: rgba(0, 0, 0, .6);
             @include rem(font-size, 40px);
+            color: rgba(0, 0, 0, .6);
         }
     }
-    
+
     .cover {
 		background-color: $background-color-cover-neutral;
         margin: 0;
         padding: 20px 0 80px;
 		z-index: auto;
-		
+
 		&-header {
 			margin: 50px auto;
 		}
-        
+
         .background {
             background-attachment: scroll;
         }
@@ -171,12 +171,12 @@ a {
 
 .social-navigation {
     @include social-icon;
-    
+
     .menu {
         line-height: normal;
         list-style: none;
         margin: 0;
-        
+
         a {
             border: 0;
             padding: 0;
@@ -195,7 +195,7 @@ a {
 
 .menu .menu-item-has-children {
     position: relative;
-    
+
     .sub-menu-toggle {
         @include rem(font-size, 30px);
         cursor: pointer;
@@ -207,7 +207,7 @@ a {
 
         &:hover {
             background-color: $menu-toggle-background;
-            
+
             .overlay & {
                 background-color: $menu-toggle-background-overlay;
             }

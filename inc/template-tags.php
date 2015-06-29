@@ -56,17 +56,21 @@ function cover_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'cover' ); ?></h1>
 		<div class="nav-links cf">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<h2 class="subtitle">Previous post</h2><h1 class="title">%title</h1>', 'Previous post link', 'cover' ) );
+				if ( $previous ) {
+					previous_post_link( '<div class="nav-previous">%link</div>', _x( '<h2 class="subtitle">Previous post</h2><h1 class="title">%title</h1>', 'Previous post link', 'cover' ) );
+				}
 
-				$next_img_array = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'single-post-thumbnail' );
-                $next_img = $next_img_array[0];
-                $class = '';
-                $style = '';
-                if ( '' != $next_img ) {
-                    $class = ' featured-image';
-					$style = ' style="background-image: url(\'' . $next_img . '\')"';
-                }
-                next_post_link( '<div class="nav-next">%link</div>', _x( '<div class="cover' . $class . '"><div class="cover-background"' . $style . '></div><div class="cover-header"><h2 class="cover-subtitle">Next post</h2><h1 class="cover-title">%title</h1></div></div>', 'Next post link', 'cover' ) );
+				if ( $next ) {
+					$next_img_array = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'single-post-thumbnail' );
+					$next_img = $next_img_array[0];
+	        $class = '';
+	        $style = '';
+	        if ( '' != $next_img ) {
+						$class = ' featured-image';
+						$style = ' style="background-image: url(\'' . $next_img . '\')"';
+	        }
+	        next_post_link( '<div class="nav-next">%link</div>', _x( '<div class="cover' . $class . '"><div class="cover-background"' . $style . '></div><div class="cover-header"><h2 class="cover-subtitle">Next post</h2><h1 class="cover-title">%title</h1></div></div>', 'Next post link', 'cover' ) );
+				}
 
 			?>
 		</div><!-- .nav-links -->
