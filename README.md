@@ -113,6 +113,13 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 ##Changelog
 
+**1.5.3**
+- Added overlay for Aesop Story Engine Content component to make text more readable.
+- Fixed [non-object property bug](https://github.com/peiche/cover/issues/29) in post navigation.
+- Fixed post background for sticky posts displayed in the loop.
+- Fixed header background transition timing.
+- Fixed post navigation margins.
+
 **1.5.2**
 - Fixed header for touch screen devices.
 - Fixed widget menus.

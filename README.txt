@@ -73,10 +73,10 @@ Automattic's Jetpack plugin comes packed with modules for any theme to use, but 
 * Site Logo *
 In the Customizer, you can not only set the site title and tagline, but also a site logo. You can enable and disable any combination of these three options.
 
-* Featured Posts *  
+* Featured Posts *
 In the Customizer (again), you'll find the option to assign a specific tag to featured posts (the default is "featured"). Tagging a post will give it a special place on your blog's home page: it's displayed larger than the normal post listing, with its featured image displayed prominently behind it. Please note that Cover currently only shows a single featured post, even though you may tag more than one post as featured.
 
-* Infinite Scroll *  
+* Infinite Scroll *
 The Infinite Scroll module already works just fine, and we're not messing with that. But Cover allows you to have a social menu in the footer, so now Jetpack responds accordingly. If you have infinite scrolling enabled and no footer menu, scrolling down will load more posts, just as it's meant to do. But if you do have a footer menu, you will see a button to click in order to load more posts. (Otherwise, you'd never see the footer!)
 
 Color Posts
@@ -104,14 +104,21 @@ You can download the latest from Github. Follow these steps to activate Cover:
 == FAQ ==
 
 1. How do I set the background image behind the post title?
-   
+
    When you use a featured image in Cover, it displays as a background image behind the title. Images taller than 600 pixels will be displayed full-screen.
 
 2. Can I change the font size?
-   
+
    Cover does not allow you to change the default font size. I recommend creating a child theme before making changes to the theme.
 
 == Changelog ==
+
+1.5.3
+- Added overlay for Aesop Story Engine Content component to make text more readable.
+- Fixed non-object property bug in post navigation.
+- Fixed post background for sticky posts displayed in the loop.
+- Fixed header background transition timing.
+- Fixed post navigation margins.
 
 1.5.2
 - Fixed header for touch screen devices.
@@ -144,12 +151,12 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 Cover is GPL v2.0 or later.
 
-Image used in screenshot.png - https://unsplash.com/photos/1uxV8fAfhVM/download by Luke Chesser  
-License - http://creativecommons.org/publicdomain/zero/1.0/  
+Image used in screenshot.png - https://unsplash.com/photos/1uxV8fAfhVM/download by Luke Chesser
+License - http://creativecommons.org/publicdomain/zero/1.0/
 
 All other resources are licensed as follows:
 
 * Font Awesome - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-* Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE  
-* Skrollr - MIT - https://github.com/Prinzhorn/skrollr/blob/master/LICENSE.txt  
+* Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE
+* Skrollr - MIT - https://github.com/Prinzhorn/skrollr/blob/master/LICENSE.txt
 * TGM Plugin Activation - GPL v2.0 - https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md
