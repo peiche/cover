@@ -42,7 +42,7 @@ linters:
   IdSelector:
     enabled: true
   ImportantRule:
-    enabled: true
+    enabled: false # disabled for aesop inline overrides
   ImportPath:
     enabled: true
     leading_underscore: false
