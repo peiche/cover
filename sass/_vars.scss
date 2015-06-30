@@ -88,11 +88,11 @@ $menu-toggle-background-overlay: #666;
 
       @if $unit == 'px' {
         $px : append($px, $value);
-        $rem: append($rem, ($val / 10 * 1rem));
+        $rem: append($rem, ($val / 16 * 1rem));
       }
 
       @if $unit == 'rem' {
-        $px : append($px, ($val * 10 * 1px));
+        $px : append($px, ($val * 16 * 1px));
         $rem: append($rem, $value);
       }
     }
@@ -200,12 +200,12 @@ $menu-toggle-background-overlay: #666;
 }
 
 %image-caption { // style used for both normal and aesop image component captions
-  font-family: $font-stack-content;
   @include rem(font-size, 15px);
+  @include site-width;
+  font-family: $font-stack-content;
   font-style: italic;
   margin-bottom: 10px;
   margin-top: 5px;
-  @include site-width;
 
   i,
   em {
