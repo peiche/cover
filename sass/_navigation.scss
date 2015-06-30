@@ -5,223 +5,226 @@
 5.1 Links
 --------------------------------------------------------------*/
 a {
-    border-bottom: 1px solid transparent;
-	color: $link-color;
-	text-decoration: none;
-	transition: all .2s ease-in-out;
+  border-bottom: 1px solid transparent;
+  color: $link-color;
+  text-decoration: none;
+  transition: 
+      border .2s ease-in-out,
+      color .2s ease-in-out,
+      opacity .2s ease-in-out;
 
-	b &,
-    strong & {
-        border-width: 2px;
+  b &,
+  strong & {
+    border-width: 2px;
+  }
+
+  &:visited {
+    color: $link-color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $link-color-active;
+  }
+
+  &:hover {
+    color: $link-color-active;
+    text-decoration: none;
+
+    .entry-summary &,
+    .entry-content &,
+    .edit-link &,
+    .entry-meta & {
+      border-color: $link-border-color;
+    }
+  }
+
+  &.author {
+    .name {
+      border-bottom: 1px solid transparent;
+      transition: border .2s ease-in-out;
     }
 
-	&:visited {
-        color: $link-color;
+    &:hover {
+      border-color: transparent;
+
+      .name {
+        border-color: $link-border-color;
+      }
     }
-
-	&:hover,
-    &:focus,
-    &:active {
-        color: $link-color-active;
-    }
-
-	&:hover {
-        color: $link-color-active;
-		text-decoration: none;
-
-		.entry-summary &,
-        .entry-content &,
-        .edit-link &,
-        .entry-meta & {
-            border-color: $link-border-color;
-        }
-    }
-
-	&.author {
-		.name {
-			border-bottom: 1px solid transparent;
-			transition: border .2s ease-in-out;
-		}
-
-		&:hover {
-			border-color: transparent;
-
-			.name {
-				border-color: $link-border-color;
-			}
-		}
-	}
+  }
 }
 
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%;
 
-	ul {
-        list-style: none;
-        margin: 0;
-        padding-left: 0;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
 
-        &.hide {
-            display: none;
-        }
+    &.hide {
+      display: none;
     }
+  }
 
-    a {
-        border-bottom: 1px solid #ddd;
-        display: block;
-        padding: 10px 0;
-        text-decoration: none;
-    }
+  a {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+  }
 }
 
 .site-main .comment-navigation,
 .site-main .paging-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-    padding: 50px 0;
-    @include site-width($width-medium);
+  margin: 0 0 1.5em;
+  overflow: hidden;
+  padding: 50px 0;
+  @include site-width($width-medium);
 }
 
 .paging-navigation a {
-    @include button($color-blue);
+  @include button($color-blue);
 
-    @media screen and (max-width: $width-phone) {
-        display: block;
-        margin-bottom: 10px;
-        text-align: center;
-        width: auto;
-    }
+  @media screen and (max-width: $width-phone) {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+    width: auto;
+  }
 }
 
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous {
-	float: left;
+  float: left;
 }
 
 .comment-navigation .nav-next,
 .paging-navigation .nav-next {
-	float: right;
-	text-align: right;
+  float: right;
+  text-align: right;
 }
 
 @media screen and (max-width: $width-phone) {
-	.comment-navigation .nav-previous,
-	.paging-navigation .nav-previous,
-	.comment-navigation .nav-next,
-	.paging-navigation .nav-next {
-		float: none;
-		width: auto;
-	}
+  .comment-navigation .nav-previous,
+  .paging-navigation .nav-previous,
+  .comment-navigation .nav-next,
+  .paging-navigation .nav-next {
+    float: none;
+    width: auto;
+  }
 }
 
 .post-navigation {
-    background: #eee;
-    margin-top: 50px;
+  background: #eee;
+  margin-top: 50px;
 
-    [class$="title"] {
-        margin: 0 0 30px;
+  [class$="title"] {
+    margin: 0 0 30px;
+  }
+
+  [class$="subtitle"] {
+    border-bottom: 1px solid rgba(255, 255, 255, .35);
+    margin: 0 0 5px;
+    padding-bottom: 15px;
+  }
+
+  .nav-previous {
+    @include site-width;
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+    .subtitle {
+      @include rem(font-size, 20px);
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+      color: rgba(0, 0, 0, .5);
+      margin-bottom: 15px;
+      padding-bottom: 15px;
     }
 
-    [class$="subtitle"] {
-        border-bottom: 1px solid rgba(255, 255, 255, .35);
-        margin: 0 0 5px;
-        padding-bottom: 15px;
+    .title {
+      @include rem(font-size, 40px);
+      color: rgba(0, 0, 0, .6);
+    }
+  }
+
+  .cover {
+    background-color: $background-color-cover-neutral;
+    margin: 0;
+    padding: 20px 0 80px;
+    z-index: auto;
+
+    &-header {
+      margin: 50px auto;
     }
 
-    .nav-previous {
-        @include site-width;
-        padding-bottom: 50px;
-        padding-top: 50px;
-
-        .subtitle {
-          @include rem(font-size, 20px);
-          border-bottom: 1px solid rgba(0, 0, 0, .1);
-          color: rgba(0, 0, 0, .5);
-          margin-bottom: 15px;
-          padding-bottom: 15px;
-        }
-
-        .title {
-            @include rem(font-size, 40px);
-            color: rgba(0, 0, 0, .6);
-        }
+    .background {
+      background-attachment: scroll;
     }
-
-    .cover {
-		background-color: $background-color-cover-neutral;
-        margin: 0;
-        padding: 20px 0 80px;
-		z-index: auto;
-
-		&-header {
-			margin: 50px auto;
-		}
-
-        .background {
-            background-attachment: scroll;
-        }
-    }
+  }
 }
 
 .social-navigation {
-    @include social-icon;
+  @include social-icon;
 
-    .menu {
-        line-height: normal;
-        list-style: none;
-        margin: 0;
+  .menu {
+    line-height: normal;
+    list-style: none;
+    margin: 0;
 
-        a {
-            border: 0;
-            padding: 0;
+    a {
+      border: 0;
+      padding: 0;
 
-            &:hover {
-                background: transparent;
-            }
-        }
+      &:hover {
+        background: transparent;
+      }
     }
+  }
 
-    li {
-        display: inline-block;
-        line-height: normal;
-    }
+  li {
+    display: inline-block;
+    line-height: normal;
+  }
 }
 
 .menu .menu-item-has-children {
-    position: relative;
+  position: relative;
 
-    .sub-menu-toggle {
-        @include rem(font-size, 30px);
-        cursor: pointer;
-        height: 59px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 60px;
+  .sub-menu-toggle {
+    @include rem(font-size, 30px);
+    cursor: pointer;
+    height: 59px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
 
-        &:hover {
-            background-color: $menu-toggle-background;
+    &:hover {
+      background-color: $menu-toggle-background;
 
-            .overlay & {
-                background-color: $menu-toggle-background-overlay;
-            }
-        }
-
-        .fa {
-            bottom: 0;
-            height: 30px;
-            left: 0;
-            margin: auto;
-            position: absolute;
-            right: 0;
-            text-align: center;
-            top: 0;
-        }
+      .overlay & {
+        background-color: $menu-toggle-background-overlay;
+      }
     }
+
+    .fa {
+      bottom: 0;
+      height: 30px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 0;
+    }
+  }
 }
