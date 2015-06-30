@@ -113,6 +113,9 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 == Changelog ==
 
+1.5.4
+- Removed 62.5% antipattern.
+
 1.5.3
 - Added overlay for Aesop Story Engine Content component to make text more readable.
 - Fixed non-object property bug in post navigation.
