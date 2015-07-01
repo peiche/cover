@@ -113,6 +113,9 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 == Changelog ==
 
+1.5.5
+- Fixed sticky post style inconsistencies.
+
 1.5.4
 - Removed 62.5% antipattern.
 

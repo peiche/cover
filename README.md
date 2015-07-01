@@ -113,6 +113,9 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 ##Changelog
 
+**1.5.5**
+- Fixed sticky post style inconsistencies.
+
 **1.5.4**
 - Removed 62.5% antipattern.
 
