@@ -8,10 +8,7 @@ a {
   border-bottom: 1px solid transparent;
   color: $link-color;
   text-decoration: none;
-  transition:
-      border .2s ease-in-out,
-      color .2s ease-in-out,
-      opacity .2s ease-in-out;
+  transition: border .2s ease-in-out, color .2s ease-in-out, opacity .2s ease-in-out;
 
   b &,
   strong & {
