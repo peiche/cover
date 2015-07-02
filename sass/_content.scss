@@ -33,11 +33,11 @@
   }
 
   .entry-subtitle a {
-    color: #aaa;
+    color: $color-light-grey-alt3;
 
     &:hover {
-      border-color: #999;
-      color: #aaa;
+      border-color: $color-grey-alt;
+      color: $color-light-grey-alt3;
     }
   }
 
@@ -75,6 +75,7 @@
   position: relative;
 
   &:after {
+    @include site-width;
     background: rgba(0, 0, 0, .15);
     bottom: 0;
     content: '';
@@ -82,7 +83,6 @@
     left: 0;
     position: absolute;
     right: 0;
-    @include site-width;
   }
 
   .single &:after {
@@ -148,11 +148,11 @@
 
   &-subtitle {
     @include rem(font-size, 20px);
-    color: #999;
+    color: $color-grey-alt;
     margin: 0;
 
     a {
-      color: #999;
+      color: $color-grey-alt;
 
       &:hover {
         border-color: $link-border-color;
@@ -217,7 +217,7 @@
           margin-right: 10px;
 
           &:after {
-            color: #ccc;
+            color: $color-light-grey-alt2;
             content: '\2022';
             display: inline-block;
             padding-left: 10px;
