@@ -56,7 +56,7 @@
   }
 
   * {
-    color: #fff;
+    color: $color-white;
   }
 
   code {
@@ -253,7 +253,6 @@
     }
 
     > blockquote {
-
       &.large {
         @include rem(font-size, 30px);
         border: 0;
@@ -264,8 +263,8 @@
       }
 
       &.pullquote {
-        border: 0;
         @include rem(font-size, 30px);
+        border: 0;
         max-width: $width-narrow;
         padding: 0;
         text-align: center;
@@ -286,9 +285,9 @@
           width: 400px;
 
           @media screen and (max-width: $width-tablet) {
+            @include site-width($width-narrow);
             float: none;
             text-align: center;
-            @include site-width($width-narrow);
           }
         }
       }
