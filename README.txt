@@ -115,6 +115,8 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 1.5.4
 - Removed 62.5% antipattern.
+- Fixed sticky post style inconsistencies.
+- Fixed undefined variable in `content.php`.
 
 1.5.3
 - Added overlay for Aesop Story Engine Content component to make text more readable.

@@ -16,9 +16,13 @@ $color-orange: #ff9800;
 $color-deep-orange: #ff5722;
 $color-brown: #795548;
 $color-grey: #9e9e9e;
+$color-grey-alt: #999;
 $color-light-grey: #c3c2c9;
 $color-light-grey-alt: #ddd;
+$color-light-grey-alt2: #ccc;
+$color-light-grey-alt3: #aaa;
 $color-dark-grey: #2b2b2b;
+$color-dark-grey-alt: #333;
 $color-blue-grey: #607d8b;
 $color-white: #fff;
 
@@ -27,7 +31,7 @@ $text-color-heading: darken($text-color-base, 10%);
 $text-color-content: $text-color-base;
 $text-color-quote: lighten($text-color-base, 10%);
 $text-color-cite: lighten($text-color-base, 25%);
-$text-color-overlay: #ccc;
+$text-color-overlay: $color-light-grey-alt2;
 
 $header-color: $color-blue;
 
@@ -65,7 +69,7 @@ $z-index-overlay: 999;
 
 $divider-color: $color-light-grey;
 
-$overlay-color: #333;
+$overlay-color: $color-dark-grey-alt;
 
 $menu-toggle-background: $color-light-grey-alt;
 $menu-toggle-background-overlay: #666;
