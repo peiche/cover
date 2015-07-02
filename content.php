@@ -15,11 +15,11 @@ if ( has_post_thumbnail() ) {
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
-    <?php if ( is_sticky() && '' != $img ) { ?>
+
+    <?php if ( is_sticky() && has_post_thumbnail() ) { ?>
         <div class="cover-background darken" style="background-image: url('<?php echo $img; ?>');"></div>
     <?php } ?>
-        
+
     <header class="entry-header">
         <h2 class="entry-subtitle"><?php the_category( ', ' ) ?></h2>
         <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
@@ -46,5 +46,5 @@ if ( has_post_thumbnail() ) {
             ) );
         ?>
     </div><!-- .entry-summary -->
-    
+
 </article><!-- #post-## -->
