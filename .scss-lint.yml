@@ -61,7 +61,7 @@ linters:
     convention: hyphenated_lowercase
   NestingDepth:
     enabled: true
-    max_depth: 4
+    max_depth: 5 # hound ci seems to confuse scss nesting with actual generated css nesting.
     severity: warning
   PlaceholderInExtend:
     enabled: false
