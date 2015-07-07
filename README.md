@@ -116,15 +116,15 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 **1.5.5**
 - Fixed sticky post style inconsistencies.
 - Fixed undefined variable in `content.php`.
-- Fixed full size featured images for posts with long titles.
+- Fixed full size featured images for posts with long titles (thanks to [@Music47ell](https://github.com/Music47ell)).
 - Fixed site header for long site titles.
 
 **1.5.4**
-- Removed 62.5% antipattern.
+- Removed 62.5% antipattern (thanks to [@Music47ell](https://github.com/Music47ell)).
 
 **1.5.3**
 - Added overlay for Aesop Story Engine Content component to make text more readable.
-- Fixed [non-object property bug](https://github.com/peiche/cover/issues/29) in post navigation.
+- Fixed [non-object property bug](https://github.com/peiche/cover/issues/29) in post navigation (thanks [@uusijani](https://github.com/uusijani)).
 - Fixed post background for sticky posts displayed in the loop.
 - Fixed header background transition timing.
 - Fixed post navigation margins.
@@ -150,7 +150,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 **1.4.0**
 - Jetpack's Infinite Scrolling module now detects whether or not the footer social menu is present.
-- Update Google Fonts URL to be protocol-relative (thanks to [@BforBen](https://github.com/BforBen))
+- Update Google Fonts URL to be protocol-relative (thanks to [@BforBen](https://github.com/BforBen)).
 - Added WordPress.org installation directions.
 
 **1.3.1**
