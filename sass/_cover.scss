@@ -1,6 +1,6 @@
 .cover {
 	background-color: $background-color-cover;
-	color: #fff;
+	color: $color-white;
 	overflow: hidden;
 	padding: 156px 0 80px;
 	position: relative;
@@ -12,21 +12,21 @@
 		position: relative;
 
 		p {
-			color: #fff;
+			color: $color-white;
 		}
 
 		a {
-			color: #fff;
+			color: $color-white;
 
 			&:hover {
-				border-color: #fff;
+				border-color: $color-white;
 			}
 
 			&.author:hover {
 				border-color: transparent;
 
 				span {
-					border-color: #fff;
+					border-color: $color-white;
 				}
 			}
 		}
@@ -58,13 +58,13 @@
 	}
 
 	&-title {
-		color: #fff;
 		@include rem(font-size, 58px);
+		color: $color-white;
 		line-height: 86px;
 		margin: 0;
 
 		a {
-			color: #fff;
+			color: $color-white;
 			font-weight: normal !important;
 		}
 
@@ -80,15 +80,15 @@
 
 	&-subtitle,
 	&-summary {
-		color: rgba(255, 255, 255, .8);
 		@include rem(font-size, 26px);
+		color: rgba(255, 255, 255, .8);
 		margin: 0;
 
 		a {
 			color: rgba(255, 255, 255, .8);
 
 			&:hover {
-				color: #fff;
+				color: $color-white;
 			}
 		}
 
