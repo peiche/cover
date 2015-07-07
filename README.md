@@ -117,6 +117,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 - Fixed sticky post style inconsistencies.
 - Fixed undefined variable in `content.php`.
 - Fixed full size featured images for posts with long titles.
+- Fixed site header for long site titles.
 
 **1.5.4**
 - Removed 62.5% antipattern.
