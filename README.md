@@ -120,7 +120,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 - Fixed site header for long site titles.
 
 **1.5.4**
-- Removed 62.5% antipattern (thanks to [@Music47ell](https://github.com/Music47ell)).
+- [Removed 62.5% antipattern](http://eichefam.net/2015/06/30/anti-antipattern/) (thanks to [@Music47ell](https://github.com/Music47ell)).
 
 **1.5.3**
 - Added overlay for Aesop Story Engine Content component to make text more readable.
@@ -142,7 +142,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 - Added support for Jetpack's Site Logo module.
 - Added Customizer option to change header color.
 - Added Customizer option to change link color.
-- Added support for the Color Posts plugin to set the header color based on post images. (Please note that Color Posts requires Jetpack to function.)
+- Added support for the [Color Posts](https://wordpress.org/plugins/color-posts/) plugin to set the header color based on post images. (Please note that this requires [Jetpack](https://wordpress.org/plugins/jetpack/) to function.)
 - Added TGM Plugin Activation class to suggest Aesop Story Engine.
 - Added caption styles for Aesop Story Engine image gallery types (Grid, Thumbnail, Sequence, Photoset, Parallax).
 - Added styles for Aesop Story Engine to darken the image behind the text in the chapter component, similar to the header.
@@ -150,7 +150,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 **1.4.0**
 - Jetpack's Infinite Scrolling module now detects whether or not the footer social menu is present.
-- Update Google Fonts URL to be protocol-relative (thanks to [@BforBen](https://github.com/BforBen)).
+- Updated Google Fonts URL to be protocol-relative (thanks to [@BforBen](https://github.com/BforBen)).
 - Added WordPress.org installation directions.
 
 **1.3.1**
