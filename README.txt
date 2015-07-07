@@ -116,6 +116,8 @@ You can download the latest from Github. Follow these steps to activate Cover:
 1.5.5
 - Fixed sticky post style inconsistencies.
 - Fixed undefined variable in `content.php`.
+- Fixed full size featured images for posts with long titles.
+- Fixed site header for long site titles.
 
 1.5.4
 - Removed 62.5% antipattern.

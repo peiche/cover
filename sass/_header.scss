@@ -3,125 +3,114 @@ Header
 --------------------------------------------------------------*/
 
 .header {
-    @include rem(font-size, 24px);
-    color: #fff;
-	padding: 0 20px;
+  @include rem(font-size, 24px);
+  color: $color-white;
+  padding: 0 20px;
+  position: absolute;
+  width: 100%;
+  z-index: $z-index-header;
+
+  .backdrop {
+    background-color: $header-color;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
     position: absolute;
-    width: 100%;
-    z-index: $z-index-header;
-	
-    .backdrop {
-		background-color: $header-color;
-		bottom: 0;
-		left: 0;
-		opacity: 0;
-		position: absolute;
-		right: 0;
-		top: 0;
+    right: 0;
+    top: 0;
+    transition: opacity 200ms;
+    z-index: $z-index-header-backdrop;
+
+    .noscroll & {
+      background-color: transparent !important;
+    }
+  }
+
+  &.bg .backdrop {
+    opacity: 1;
+  }
+
+  a {
+    color: $color-white;
+
+    &:hover {
+      border-color: $color-white;
+    }
+  }
+
+  .site {
+    &-info {
+      padding: 20px 0;
+      transition: opacity 200ms;
+    }
+
+    &-nav {
+      float: right;
+      margin: 20px 0;
+    }
+
+    &-logo {
+      height: 47px;
+      margin: 15px 15px 15px 0;
+      vertical-align: bottom;
+      width: auto;
+
+      @media screen and (max-width: 768px) {
+        margin-right: 10px;
+      }
+
+      &-link {
         transition: opacity 200ms;
-		z-index: $z-index-header-backdrop;
-		
-		.noscroll & {
-			background-color: transparent !important;
-		}
-	}
-	
-	&.bg .backdrop {
-		opacity: 1;
-	}
-	
-    a {
-        color: #fff;
-        
+
         &:hover {
-            border-color: #fff;
+          border-color: transparent;
         }
-    }
-    
-    .site {
-        &-info {
-			transition: opacity 200ms;
-        }
-		
-		&-nav {
-			float: right;
-			margin: 20px 0;
-		}
-        
-        &-logo {
-            height: 47px;
-            margin: 15px 15px 15px 0;
-            vertical-align: bottom;
-            width: auto;
-
-            @media screen and (max-width: 768px) {
-                margin-right: 10px;
-            }
-            
-            &-link {
-                transition: opacity 200ms;
-                
-                &:hover {
-                    border-color: transparent;
-                }
-                
-                + .site-title:empty + .site-description {
-                    display: inline-block;
-                    margin: 28px 0;
-                }
-            }
-        }
-        
-		&-title {
-			display: inline-block;
-			margin: 20px 0;
-            
-            &:empty + .site-description {
-                border: 0;
-                margin: 0;
-                padding: 0;
-            }
-		}
-        
-        &-description {
-            border: 0 solid rgba(255, 255, 255, .25);
-            border-left-width: 1px;
-            color: #fff;
-            @include rem(font-size, 14px);
-            margin-left: 20px;
-            padding-left: 20px;
-            transition: all .2s ease-in-out;
-			vertical-align: middle;
-			
-			&:empty {
-				display: none;
-			}
-            
-            @media screen and (max-width: $width-tablet) {
-                display: none;
-            }
-        }
-    }
-    
-    .avatar {
-        margin-right: 5px;
+      }
     }
 
-    .author:hover {
-        border-color: transparent;
-		
-		.name {
-			border-color: #fff;
-		}
+    &-title {
+      &:empty + .site-description {
+        border: 0;
+        margin: 0;
+        padding: 0;
+      }
     }
-	
-	.noscroll & {
-		pointer-events: none;
-		
-		.site-info {
-			opacity: 0;
-		}
-	}
+
+    &-description {
+      @include rem(font-size, 14px);
+      border: 0 solid rgba(255, 255, 255, .25);
+      border-left-width: 1px;
+      color: $color-white;
+      margin-left: 20px;
+      padding-left: 20px;
+      transition: all .2s ease-in-out;
+      vertical-align: middle;
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+
+  .avatar {
+    margin-right: 5px;
+  }
+
+  .author:hover {
+    border-color: transparent;
+
+    .name {
+      border-color: $color-white;
+    }
+  }
+
+  .noscroll & {
+    pointer-events: none;
+
+    .site-info {
+      opacity: 0;
+    }
+  }
 }
 
 /*--------------------------------------------------------------
@@ -129,13 +118,13 @@ Search
 --------------------------------------------------------------*/
 
 .site-search {
-	border: 0;
-	margin-right: 20px;
-    -webkit-tap-highlight-color: transparent;
-	
-	.noscroll & {
-		opacity: 0;
-	}
+  border: 0;
+  margin-right: 20px;
+  -webkit-tap-highlight-color: transparent;
+
+  .noscroll & {
+    opacity: 0;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -143,76 +132,76 @@ Nav menu, which animates into close x
 --------------------------------------------------------------*/
 
 .hamburger {
-	border: 0;
-    display: inline-block;
-	height: 30px;
-    margin: 1px auto -15px;
-    padding-top: 5px;
-    -webkit-tap-highlight-color: transparent;
-    width: 28px;
-    
-    span {
-        display: block;
-        position: relative;
-        
-        &:before,
-        &:after {
-            content: '';
-            left: 0;
-            position: absolute;
-            top: -9px;
-        }
-        
-        &:after {
-            top: 9px;
-        }
+  border: 0;
+  display: inline-block;
+  height: 30px;
+  margin: 1px auto -15px;
+  padding-top: 5px;
+  -webkit-tap-highlight-color: transparent;
+  width: 28px;
+
+  span {
+    display: block;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      left: 0;
+      position: absolute;
+      top: -9px;
     }
+
+    &:after {
+      top: 9px;
+    }
+  }
 }
 
 .hamburger span,
 .hamburger span:after,
 .hamburger span:before {
-	backface-visibility: hidden;
-	background-color: #fff;
-	border-radius: 2px;
-	height: 5px;
-    transition: all .5s;
-	width: 100%;
+  backface-visibility: hidden;
+  background-color: $color-white;
+  border-radius: 2px;
+  height: 5px;
+  transition: all .5s;
+  width: 100%;
 }
 
 .noscroll .hamburger,
 .hamburger.close {
-    margin-right: 18px;
-    pointer-events: auto;
-    transform: translate3d(0, 3px, 0);
-	
-    @media screen and (max-width: $width-tablet) {
-        margin-right: 0;
-    }
-    
-    &:before {
-        content: '';
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: -25%;
-        width: 100%;
-    }
-    
-	span {
-		background-color: transparent !important;
-	}
-	
-	span:before,
-	span:after {
-		background-color: #fff !important;
-	}
-	
-    span:before {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    span:after {
-        transform: rotate(-45deg) translate(7px, -8px);
-    }
+  margin-right: 18px;
+  pointer-events: auto;
+  transform: translate3d(0, 3px, 0);
+
+  @media screen and (max-width: $width-tablet) {
+    margin-right: 0;
+  }
+
+  &:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: -25%;
+    width: 100%;
+  }
+
+  span {
+    background-color: transparent !important;
+  }
+
+  span:before,
+  span:after {
+    background-color: $color-white !important;
+  }
+
+  span:before {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  span:after {
+    transform: rotate(-45deg) translate(7px, -8px);
+  }
 }

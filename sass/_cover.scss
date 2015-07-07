@@ -1,138 +1,134 @@
 .cover {
 	background-color: $background-color-cover;
-    color: #fff;
-    overflow: hidden;
-    padding: 156px 0 80px;
-    position: relative;
+	color: $color-white;
+	overflow: hidden;
+	padding: 156px 0 80px;
+	position: relative;
 	transition: opacity .25s;
 	z-index: $z-index-cover;
-	
+
 	&-header {
 		@include site-width;
 		position: relative;
-		
-        p {
-            color: #fff;
-        }
-        
+
+		p {
+			color: $color-white;
+		}
+
 		a {
-            color: #fff;
-            
-            &:hover {
-                border-color: #fff;
-            }
-            
-            &.author:hover {
-                border-color: transparent;
-                
-                span {
-                    border-color: #fff;
-                }
-            }
-        }
-        
-        .taxonomy-description {
+			color: $color-white;
+
+			&:hover {
+				border-color: $color-white;
+			}
+
+			&.author:hover {
+				border-color: transparent;
+
+				span {
+					border-color: $color-white;
+				}
+			}
+		}
+
+		.taxonomy-description {
 			border-top: 1px solid rgba(255, 255, 255, .25);
-            margin-top: 20px;
-			
-            p {
+			margin-top: 20px;
+
+			p {
 				margin-bottom: 0;
 			}
 		}
-        
+
 		.search {
-			
-            &-form {
+
+			&-form {
 				margin-top: 60px;
-                @include site-width($width-narrow);
+				@include site-width($width-narrow);
 			}
-			
-            &-field {
+
+			&-field {
 				border: 0;
 				border-radius: 0;
-                box-sizing: border-box;
-                padding: 10px;
-                width: 100%;
+				box-sizing: border-box;
+				padding: 10px;
+				width: 100%;
 			}
 		}
 	}
-    
-    &-title {
-        color: #fff;
-        @include rem(font-size, 58px);
-        line-height: 86px;
-        margin: 0;
-        
-        a {
-            color: #fff;
-            font-weight: normal !important;
-        }
 
-        .page & {
-            margin-bottom: 0;
-        }
+	&-title {
+		@include rem(font-size, 58px);
+		color: $color-white;
+		line-height: 86px;
+		margin: 0;
 
-        @media screen and (max-width: $width-tablet) {
-            @include rem(font-size, 40px);
-            line-height: 50px;
-        }
-    }
-    
-    &-subtitle,
+		a {
+			color: $color-white;
+			font-weight: normal !important;
+		}
+
+		.page & {
+			margin-bottom: 0;
+		}
+
+		@media screen and (max-width: $width-tablet) {
+			@include rem(font-size, 40px);
+			line-height: 50px;
+		}
+	}
+
+	&-subtitle,
 	&-summary {
-        color: rgba(255, 255, 255, .8);
-        @include rem(font-size, 26px);
-        margin: 0;
-        
-        a {
-            color: rgba(255, 255, 255, .8);
+		@include rem(font-size, 26px);
+		color: rgba(255, 255, 255, .8);
+		margin: 0;
 
-            &:hover {
-                color: #fff;
-            }
-        }
+		a {
+			color: rgba(255, 255, 255, .8);
 
-        @media screen and (max-width: $width-tablet) {
-            @include rem(font-size, 20px);
-        }
-    }
-	
+			&:hover {
+				color: $color-white;
+			}
+		}
+
+		@media screen and (max-width: $width-tablet) {
+			@include rem(font-size, 20px);
+		}
+	}
+
 	&-background {
 		background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100%;
-        left: 0;
-        opacity: .6;
-        position: absolute;
-        top: 0;
-        transition: opacity 200ms;
-        width: 100%;
-		
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100%;
+		left: 0;
+		opacity: .6;
+		position: absolute;
+		top: 0;
+		transition: opacity 200ms;
+		width: 100%;
+
 		&.skrollable {
 			background-attachment: fixed;
 		}
-		
-        &.darken {
-            opacity: .1;
-        }
+
+		&.darken {
+			opacity: .1;
+		}
 	}
-    
+
 	&.featured-image {
 		background-color: $color-dark-grey;
-		
+
 		&.hero,
 		&.full {
 			padding: 200px 0;
 		}
-		
-        &.full {
-			height: 100vh;
-			
-			@media screen and (max-width: $width-tablet) {
-				height: auto;
-			}
-			
+
+		&.full {
+			min-height: 100vh;
+
 			.cover-header {
 				top: 30%;
 
@@ -142,8 +138,8 @@
 			}
 		}
 	}
-    
-    .entry-meta {
-        margin: 0;
-    }
+
+	.entry-meta {
+		margin: 0;
+	}
 }
