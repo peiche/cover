@@ -119,6 +119,7 @@ You can download the latest from Github. Follow these steps to activate Cover:
 - Fixed full size featured images for posts with long titles.
 - Fixed site header for long site titles.
 - Fixed debug error in inc/cover-archive.php.
+- Fixed single page/post featured image styles.
 
 1.5.4
 - Removed 62.5% antipattern.

@@ -13,8 +13,8 @@
     if ( '' != get_the_post_thumbnail() ) {
         $img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
         $img = $img_arr[0];
-        $width = $img[1];
-        $height = $img[2];
+        $width = $img_arr[1];
+        $height = $img_arr[2];
         $class = ' featured-image';
         if ( $height > 1 && $height <= 600 ) {
           $class = $class . ' hero';

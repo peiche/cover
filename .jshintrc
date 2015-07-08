@@ -31,7 +31,9 @@
         "it",
         "angular",
         "inject",
-        "module" // GruntFile.js
+        "module", // GruntFile.js
+        "Headroom",
+        "skrollr"
     ],
     "quotmark": true,
     "trailing": true,

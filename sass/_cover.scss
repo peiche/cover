@@ -2,7 +2,7 @@
 	background-color: $background-color-cover;
 	color: $color-white;
 	overflow: hidden;
-	padding: 156px 0 80px;
+	padding: 160px 0 80px;
 	position: relative;
 	transition: opacity .25s;
 	z-index: $z-index-cover;
@@ -121,20 +121,16 @@
 	&.featured-image {
 		background-color: $color-dark-grey;
 
-		&.hero,
-		&.full {
+		&.hero {
 			padding: 200px 0;
 		}
 
 		&.full {
 			min-height: 100vh;
+			padding: 50vh 0 100px;
 
-			.cover-header {
-				top: 30%;
-
-				@media screen and (max-width: $width-tablet) {
-					top: auto;
-				}
+			@media screen and (max-width: $width-tablet) {
+				padding-top: 25vh;
 			}
 		}
 	}
