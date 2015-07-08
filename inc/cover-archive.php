@@ -9,14 +9,11 @@
 
 <?php
 	$count = 0;
-	$image = '';
+	$img = '';
 	while ( have_posts() ) : the_post();
-		if ( 0 == $count ) {
-
-			if ( '' != get_the_post_thumbnail() ) {
-                $img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-                $img = $img_arr[0];
-			}
+		if ( 0 == $count && '' != get_the_post_thumbnail() ) {
+			$img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+      $img = $img_arr[0];
 		}
 		$count++;
 	endwhile;
