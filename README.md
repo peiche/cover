@@ -82,9 +82,9 @@ If you’re a developer and want to play around with Cover, you’ll find that i
 
 You can download the latest official release from WordPress.org on your self-hosted site's theme admin page. Follow these steps to activate Cover:
 
-1. In your admin panel, go to Appearance > Themes and click the *Add New* button.
-2. Search for "Cover" and, once you've found the theme, click *Install*.
-3. Click *Activate* to start using Cover.
+1. In your admin panel, go to **Appearance > Themes** and click the **Add New** button.
+2. Search for "Cover" and, once you've found the theme, click **Install**.
+3. Click **Activate** to start using Cover.
 
 ###Github
 
