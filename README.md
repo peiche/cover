@@ -118,6 +118,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 - Fixed undefined variable in `content.php`.
 - Fixed full size featured images for posts with long titles (thanks to [@Music47ell](https://github.com/Music47ell)).
 - Fixed site header for long site titles.
+- Fixed debug error in `inc/cover-archive.php`.
 
 **1.5.4**
 - [Removed 62.5% antipattern](http://eichefam.net/2015/06/30/anti-antipattern/) (thanks to [@Music47ell](https://github.com/Music47ell)).
