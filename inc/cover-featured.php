@@ -10,17 +10,18 @@
 <div class="featured-container">
 
 	<?php
+		$img = '';
 		$featured_posts = cover_get_featured_posts();
 		foreach ( (array) $featured_posts as $order => $post ) :
 			setup_postdata( $post );
 
 			if ( '' != get_the_post_thumbnail() ) {
-                $img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+        $img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 				$img = $img_arr[0];
 			}
 	?>
 
-	
+
 		<a href="<?php the_permalink(); ?>" rel="bookmark">
 			<div class="cover<?php if ( '' != $img ) { ?> featured-image<?php } ?>">
 				<div class="cover-background"<?php if ( '' != $img ) { ?> style="background-image: url('<?php echo $img; ?>');"<?php } ?>></div>
@@ -40,7 +41,7 @@
 				</header>
 			</div>
 		</a>
-	
+
 
 	<?php
 		endforeach;
