@@ -40,8 +40,11 @@ Header
 
   .site {
     &-info {
+      overflow: hidden;
       padding: 20px 0;
+      text-overflow: ellipsis;
       transition: opacity 200ms;
+      white-space: nowrap;
     }
 
     &-nav {
@@ -55,7 +58,7 @@ Header
       vertical-align: bottom;
       width: auto;
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: $width-tablet) {
         margin-right: 10px;
       }
 
@@ -82,12 +85,24 @@ Header
       border-left-width: 1px;
       color: $color-white;
       margin-left: 20px;
+      overflow: hidden;
       padding-left: 20px;
+      text-overflow: ellipsis;
       transition: all .2s ease-in-out;
       vertical-align: middle;
 
       &:empty {
         display: none;
+      }
+
+      @media screen and (max-width: $width-narrow) {
+        border-left: 0;
+        border-top-width: 1px;
+        display: block;
+        margin-left: 0;
+        margin-top: 10px;
+        padding-left: 0;
+        padding-top: 10px;
       }
     }
   }
