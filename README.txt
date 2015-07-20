@@ -113,6 +113,9 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 == Changelog ==
 
+1.5.6
+- Fixed margin for comment and paging navigation.
+
 1.5.5
 - Fixed sticky post style inconsistencies.
 - Fixed undefined variable in content.php.
