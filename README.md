@@ -115,6 +115,8 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 **1.5.6**
 - Fixed margin for comment and paging navigation.
+- Fixed site description for small screens.
+- Fixed footer for small screens.
 
 **1.5.5**
 - Fixed sticky post style inconsistencies.
