@@ -8,182 +8,184 @@ select,
 textarea {
 	color: $text-color-base;
 	font-family: $font-stack-content;
-    @include rem(font-size, $font-size-normal);
+	@include rem(font-size, $font-size-normal);
 	line-height: 1.5;
 }
 
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
 	clear: both;
 }
 
-h1, 
-h2, 
-h3, 
+h1,
+h2,
+h3,
 h4 {
 	color: $text-color-heading;
-    @include rem(font-size, 24px);
+	@include rem(font-size, 24px);
 	margin: 30px 0;
 }
 
 h1 {
-    font-family: $font-stack-heading;
-    @include rem(font-size, 58px);
+	font-family: $font-stack-heading;
+	@include rem(font-size, 58px);
 }
 
 h2 {
 	margin-bottom: 20px;
-    @include rem(font-size, 26px);
+	@include rem(font-size, 26px);
 }
 
-h3, 
+h3,
 h4 {
 	margin: 20px 0 10px;
-    @include rem(font-size, 22px);
+	@include rem(font-size, 22px);
 }
 
 h4 {
-    @include rem(font-size, 20px);
+	@include rem(font-size, 20px);
 }
 
 ol,
 ul {
-    line-height: 38px;
+	line-height: 38px;
 }
 
 p {
 	color: $text-color-content;
-    line-height: 38px;
+	line-height: 38px;
 	margin: 30px 0;
-    word-wrap: break-word;
-    
-    img {
-        margin: 30px 0;
-		
-        &.alignleft,
+	word-wrap: break-word;
+
+	img {
+		margin: 30px 0;
+
+		&.alignleft,
 		&.alignright {
 			margin: 10px 0 0;
 			max-width: 50%;
 		}
-		
-        &.alignleft {
+
+		&.alignleft {
 			margin-right: 15px;
 		}
-		
-        &.alignright {
+
+		&.alignright {
 			margin-left: 15px;
 		}
-    }
+	}
 }
 
-b, 
+b,
 strong {
 	font-weight: bold;
 }
 
-dfn, 
-cite, 
-em, 
+dfn,
+cite,
+em,
 i {
 	font-style: italic;
 }
 
 blockquote,
 q {
-	@include rem(font-size, 18px);
-    border-left: 3px solid $text-color-quote;
-    color: $text-color-quote;
-    margin: 30px 0;
-	padding: 5px 0 5px 30px;
-    
-    cite,
-    p {
-        border: 0;
-        color: $text-color-quote;
-        display: block;
-        margin: 0;
-        padding: 0;
-    }
-    
-    cite {
-        color: $text-color-cite;
-        font-style: italic;
-    }
-    
-    i,
-    em {
-        font-style: normal;
-    }
+	@include rem(font-size, $font-size-large);
+	border-left: 5px solid $color-blue; // overridden by header color
+	margin: 30px 0;
+	padding: 10px 20px 10px 30px;
+
+	p & {
+		color: $text-color-quote;
+	}
+
+	cite,
+	p {
+		border: 0;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	cite {
+		font-style: italic;
+		opacity: .75;
+	}
+
+	i,
+	em {
+		font-style: normal;
+	}
 }
 
 address {
 	margin: 0 0 1.5em;
 }
 
-code, 
-kbd, 
-tt, 
+code,
+kbd,
+tt,
 var {
 	font-family: $font-stack-code;
 }
 
 code {
-    background: #eee;
+	background: #eee;
 	border-radius: 3px;
 	padding: 2px 6px;
 }
 
 pre {
 	@include rem(font-size, 15px);
-    background: $background-color-code; 
+	background: $background-color-code;
 	border: 0;
-    color: #fff;
-    font-family: $font-stack-code;
-    line-height: 28px;
+	color: #fff;
+	font-family: $font-stack-code;
+	line-height: 28px;
 	margin: 40px 0;
-    max-width: 100%;
+	max-width: 100%;
 	overflow: auto;
 	padding: 25px 0;
-	
-    code {
-        @include site-width;
-        background: 0;
-        color: #eee;
-        display: block;
-        overflow: auto;
-        padding: 0;
-        
-        &::-webkit-scrollbar {
-            background: $background-color-code;
 
-            &:horizontal {
-                height: 10px;
-            }
-        }
-        
-        &::-webkit-scrollbar-track {
-            background: lighten($background-color-code, 5%);
-            border-radius: 15px;
-        }
-        
-        &::-webkit-scrollbar-thumb {
-            background: lighten($background-color-code, 20%);
-            border-radius: 15px;
-        }
-    }
+	code {
+		@include site-width;
+		background: 0;
+		color: #eee;
+		display: block;
+		overflow: auto;
+		padding: 0;
+
+		&::-webkit-scrollbar {
+			background: $background-color-code;
+
+			&:horizontal {
+				height: 10px;
+			}
+		}
+
+		&::-webkit-scrollbar-track {
+			background: lighten($background-color-code, 5%);
+			border-radius: 15px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: lighten($background-color-code, 20%);
+			border-radius: 15px;
+		}
+	}
 }
 
-abbr, 
+abbr,
 acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
 
-mark, 
+mark,
 ins {
 	background: #fff9c0;
 	text-decoration: none;
