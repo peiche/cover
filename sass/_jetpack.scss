@@ -27,7 +27,7 @@ body .infinite-loader { // increased specificity to override jetpack's css
 
 	.spinner {
 		animation: rotate .7s infinite linear;
-		border: 8px solid #ddd;
+		border: 8px solid $color-light-grey-alt;
 		border-radius: 100%;
 		border-top-color: $color-blue;
 		height: 42px;
@@ -84,12 +84,12 @@ Top Posts & Pages Widget
 	}
 
 	li {
-		border-bottom: 1px solid #666;
+		border-bottom: 1px solid $color-gray-medium;
 		margin-bottom: 20px;
 		padding-bottom: 20px;
 
 		&:hover a.bump-view {
-			color: #aaa;
+			color: $color-light-grey-alt3;
 
 			.widgets-list-layout-blavatar {
 				opacity: .8;
@@ -137,14 +137,14 @@ Image Grid
 		position: relative;
 
 		&:after {
+			@include rem(font-size, 14px);
 			background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
 			bottom: 0;
-			color: #fff;
+			color: $color-white;
 			content: attr(title);
 			padding: 10px;
 			position: absolute;
 			width: 100%;
-			@include rem(font-size, 14px);
 		}
 	}
 
@@ -160,5 +160,5 @@ Featured Content
 .featured-container a,
 .featured-container a:hover,
 .featured-container a:visited {
-	color: #fff;
+	color: $color-white;
 }

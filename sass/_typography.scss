@@ -25,25 +25,25 @@ h1,
 h2,
 h3,
 h4 {
-	color: $text-color-heading;
 	@include rem(font-size, 24px);
+	color: $text-color-heading;
 	margin: 30px 0;
 }
 
 h1 {
-	font-family: $font-stack-heading;
 	@include rem(font-size, 58px);
+	font-family: $font-stack-heading;
 }
 
 h2 {
-	margin-bottom: 20px;
 	@include rem(font-size, 26px);
+	margin-bottom: 20px;
 }
 
 h3,
 h4 {
-	margin: 20px 0 10px;
 	@include rem(font-size, 22px);
+	margin: 20px 0 10px;
 }
 
 h4 {
@@ -143,7 +143,7 @@ pre {
 	@include rem(font-size, 15px);
 	background: $background-color-code;
 	border: 0;
-	color: #fff;
+	color: $color-white;
 	font-family: $font-stack-code;
 	line-height: 28px;
 	margin: 40px 0;
@@ -181,7 +181,7 @@ pre {
 
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted $color-gray-medium;
 	cursor: help;
 }
 
