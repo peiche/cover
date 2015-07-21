@@ -120,18 +120,6 @@ td {
 	text-align: left;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: '';
-}
-
-blockquote,
-q {
-	quotes: '" "';
-}
-
 a:hover,
 a:active,
 a:focus {
