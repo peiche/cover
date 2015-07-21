@@ -117,6 +117,7 @@ You can download the latest from Github. Follow these steps to activate Cover:
 - Fixed margin for comment and paging navigation.
 - Fixed site description for small screens.
 - Fixed footer for small screens.
+- Overhauled blockquote styles, for both the default and the Aesop Story Engine component.
 
 1.5.5
 - Fixed sticky post style inconsistencies.

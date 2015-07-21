@@ -117,6 +117,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 - Fixed margin for comment and paging navigation.
 - Fixed site description for small screens.
 - Fixed footer for small screens.
+- Overhauled blockquote styles, for both the default and the Aesop Story Engine component.
 
 **1.5.5**
 - Fixed sticky post style inconsistencies.
