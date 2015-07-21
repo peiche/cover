@@ -134,7 +134,7 @@ var {
 }
 
 code {
-	background: #eee;
+	background: $color-light-grey-alt4;
 	border-radius: 3px;
 	padding: 2px 6px;
 }
@@ -154,7 +154,7 @@ pre {
 	code {
 		@include site-width;
 		background: 0;
-		color: #eee;
+		color: $color-light-grey-alt4;
 		display: block;
 		overflow: auto;
 		padding: 0;
@@ -181,7 +181,7 @@ pre {
 
 abbr,
 acronym {
-	border-bottom: 1px dotted $color-gray-medium;
+	border-bottom: 1px dotted $color-medium-grey;
 	cursor: help;
 }
 

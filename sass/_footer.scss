@@ -1,5 +1,5 @@
 .site-footer {
-  color: #666;
+  color: $color-medium-grey;
   @include rem(font-size, 13px);
   padding: 30px 0;
 
@@ -10,7 +10,7 @@
     .site-credits {
       float: left;
     }
-    
+
     .social-navigation {
       float: right;
       font-size: $font-size-normal;
