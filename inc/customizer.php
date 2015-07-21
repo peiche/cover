@@ -65,7 +65,7 @@ function cover_customize_options() {
     $header_color = get_theme_mod( 'cover_header_color', '#026ed2' );
     $link_color = get_theme_mod( 'cover_link_color', '#026ed2' );
     ?>
-    
+
 <style>
 <?php // Set accent color. ?>
 a,a:visited,.entry-title a:hover,.entry-subtitle a:hover { color: <?php echo $link_color; ?>; }
@@ -75,6 +75,7 @@ a:hover { color: <?php echo darken( $link_color, 15 ); ?>; }
 .paging-navigation a:hover, body #infinite-handle span:hover, .button.default:hover { background-color: <?php echo darken( $link_color, 15 ); ?>; }
 body .infinite-loader .spinner { border-top-color: <?php echo $link_color; ?>; }
 .fotorama__thumb-border { border-color: <?php echo $link_color; ?>; }
+blockquote, q, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-left, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-right, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-center { border-color: <?php echo $header_color; ?> }
 
 <?php // Restore default colors. ?>
 .header a, .overlay a, .cover-header a { color: #fff; }
