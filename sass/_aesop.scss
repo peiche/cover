@@ -15,55 +15,40 @@
   }
 
   &.aesop-quote-component {
-    padding: 60px 0;
+    font-style: italic;
 
-    &.aesop-component-align-left,
-    &.aesop-component-align-right {
-      margin: 10px 30px;
-      padding: 20px;
-      width: 400px !important;
-
-      @media screen and (max-width: $width-tablet) {
-        float: none;
-        margin: 40px 0;
-        padding: 60px 0;
-        width: 100% !important;
-      }
+    &.aesop-quote-type-block {
+      padding: 30px;
     }
 
-    blockquote {
-      color: inherit;
-      display: block;
-      @include rem(font-size, 30px);
-      text-align: center;
-
-      &.aesop-component-align-left {
-        text-align: left;
-      }
-
-      &.aesop-component-align-right {
-        text-align: right;
+    &.aesop-quote-type-pull {
+      &.aesop-component-align-left,
+      &.aesop-component-align-right,
+      &.aesop-component-align-center {
+        border-color: $color-blue; // overridden by header color
       }
 
       &.aesop-component-align-left,
       &.aesop-component-align-right {
-        @media screen and (max-width: $width-tablet) {
+        margin: 0 20px;
+        padding: 10px 20px;
+      }
+
+      &.aesop-component-align-center {
+        border-bottom-style: solid;
+        border-bottom-width: 5px;
+        padding: 20px 0;
+      }
+
+      @media screen and (max-width: $width-narrow) {
+        margin: 30px auto;
+        max-width: 90%;
+
+        &.aesop-component-align-left,
+        &.aesop-component-align-right {
           float: none;
-          margin: auto;
-          text-align: center;
+          margin: 30px auto;
         }
-      }
-
-      .aesop-quote-component-cite {
-        color: inherit;
-        display: block;
-        font-size: 80%;
-        margin-top: 15px;
-        opacity: .75;
-      }
-
-      @media screen and (max-width: $width-tablet) {
-        width: 90%;
       }
     }
 
@@ -82,6 +67,10 @@
           transform: none !important;
         }
       }
+    }
+
+    blockquote {
+      display: block; // overrides aesop style
     }
   }
 
