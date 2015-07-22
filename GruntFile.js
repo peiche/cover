@@ -77,6 +77,11 @@ module.exports = function(grunt) {
       }
     },
     uglify: {
+      options: {
+        compress: {
+          //pure_funcs: [ 'console.log' ]
+        }
+      },
       build: {
         files: [{
           expand: true,

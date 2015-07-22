@@ -4,145 +4,128 @@ Overlay for menus and widgets
 
 .overlay {
 	@include rem(font-size, 20px);
-    background: $overlay-color;
-    color: $text-color-overlay;
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    overflow: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+	background: $overlay-color;
+	color: $text-color-overlay;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	overflow: auto;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
 	padding: 60px 0;
-    position: fixed;
-    right: 0;
-    transition: opacity 200ms;
-    visibility: hidden;
-    z-index: $z-index-overlay;
-    
-    &:target {
-        opacity: 1;
-        visibility: visible;
-        z-index: $z-index-header;
-    }
-	
+	position: fixed;
+	right: 0;
+	transition: opacity 200ms;
+	visibility: hidden;
+	z-index: $z-index-overlay;
+
+	&:target {
+		opacity: 1;
+		visibility: visible;
+		z-index: $z-index-header;
+	}
+
 	a {
-        border-color: #fff;
-        color: #fff;
-        
-        &:hover {
-            color: #aaa;
-        }
-    }
-    
-    .widget {
-        &-area {
-            margin-bottom: 60px;
-            margin-top: 60px;
-            
-            p {
-                color: #fff;
-            }
-        }
-        
-        li a {
-            border-color: #666;
-        }
-    }
-    
-    .tagcloud a {
-        border-color: transparent;
-        
-        &:hover {
-            border-color: #fff;
-            color: #fff;
-        }
-    }
-    
-    .menu {
-        list-style: none;
-        margin: 0;
-        padding-left: 0;
-    }
-    
-    .main-navigation,
-    .social-navigation {
-        float: none;
-        margin-bottom: 60px;
-        margin-top: 60px;
-        @include site-width($width-narrow);
-    }
-    
-    .main-navigation a {
-        border-bottom-color: #666;
-    }
-    
-    .social-navigation {
-        text-align: center;
-    }
-    
-    .search-form input.search-field {
-        border-radius: 0;
-        box-sizing: border-box;
-        padding: 10px;
-        width: 100%;
-    }
-    
-    &.show {
-        opacity: 1;
-        visibility: visible;
-    }
-	
+		border-color: $color-white;
+		color: $color-white;
+
+		&:hover {
+			color: $color-light-grey-alt3;
+		}
+	}
+
+	.widget {
+		&-area {
+			margin-bottom: 60px;
+			margin-top: 60px;
+
+			p {
+				color: $color-white;
+			}
+		}
+
+		li a {
+			border-color: $color-medium-grey;
+		}
+	}
+
+	.tagcloud a {
+		border-color: transparent;
+
+		&:hover {
+			border-color: $color-white;
+			color: $color-white;
+		}
+	}
+
+	.menu {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+	}
+
+	.main-navigation,
+	.social-navigation {
+		@include site-width($width-narrow);
+		float: none;
+		margin-bottom: 60px;
+		margin-top: 60px;
+	}
+
+	.main-navigation a {
+		border-bottom-color: $color-medium-grey;
+	}
+
+	.social-navigation {
+		text-align: center;
+	}
+
+	.search-form input.search-field {
+		border-radius: 0;
+		box-sizing: border-box;
+		padding: 10px;
+		width: 100%;
+	}
+
+	&.show {
+		opacity: 1;
+		visibility: visible;
+	}
+
 	&-search {
-        .search {
+		.search {
 			&-form {
-				display: table;
-				height: 100%;
-				width: 100%;
-				
+				@include site-width;
+
 				input.search-field {
-					@include site-width($width-wide);
+					border-bottom: 2px solid $color-white;
+					padding: 0;
 				}
 			}
-			
+
 			&-field {
+				@include rem(font-size, 50px);
 				background-color: transparent;
 				border: 0;
-				color: #fff;
+				color: $color-white;
 				display: block;
-				@include rem(font-size, 50px);
 				outline: 0;
-				
+
 				@media screen and (max-width: $width-tablet) {
 					@include rem(font-size, 30px);
 				}
-				
+
 				&:focus {
-					color: #fff;
+					color: $color-white;
 				}
 			}
 		}
-		
+
 		label {
-			display: table-cell;
-			vertical-align: middle;
+			display: block;
 		}
 	}
-    
-    &-icon {
-        bottom: 0;
-        color: darken($overlay-color, 2%);
-        font-size: 50vh;
-        height: 50%;
-        left: 0;
-        line-height: 50vh;
-        margin: auto;
-        position: fixed;
-        right: 0;
-        text-align: center;
-        top: 0;
-        z-index: -1;
-    }
-    
-    .header {
-        margin-top: -60px;
-    }
+
+	.header {
+		margin-top: -60px;
+	}
 }
