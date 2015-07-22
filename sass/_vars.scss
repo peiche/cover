@@ -27,6 +27,7 @@ $color-dark-grey: #2b2b2b;
 $color-dark-grey-alt: #333;
 $color-blue-grey: #607d8b;
 $color-white: #fff;
+$color-black: #000;
 
 $text-color-base: #3b3b3b;
 $text-color-heading: darken($text-color-base, 10%);
@@ -288,6 +289,23 @@ $youtube-color: #e52d27;
 */
 @mixin social-icon {
   a {
+    .fa-circle {
+      &:before {
+        transition: color 200ms;
+      }
+
+      + .social-icon {
+        color: $color-white;
+      }
+    }
+
+    .social-icon {
+      color: $text-color-base;
+      transition: color 200ms;
+    }
+  }
+
+  a {
     @each $url, $color, $char in
     //('app.net', $appnet-color, $fa-var-adn),
     //('behance.net', $behance-color, $fa-var-behance),
@@ -337,20 +355,9 @@ $youtube-color: #e52d27;
       &[href*='#{$url}'] {
         .fa-circle {
           color: $color;
-
-          &:before {
-            transition: color 200ms;
-          }
-
-          + .social-icon {
-            color: inherit;
-          }
         }
 
         .social-icon {
-          color: $text-color-base;
-          transition: color 200ms;
-
           &:before {
             content: $char;
           }

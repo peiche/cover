@@ -17,7 +17,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
-    
+
 </head>
 
 <?php
@@ -53,7 +53,7 @@ if (
 			<a class="hamburger" data-action="toggle-overlay" data-overlay-id="menu-overlay" href="#menu-overlay"><span></span></a>
 		<?php } ?>
 	</div>
-    
+
     <div class="site-info">
         <?php if ( function_exists( 'jetpack_has_site_logo' ) ) { ?>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo-link" <?php if ( ! jetpack_has_site_logo() ) { ?>style="display: none;"<?php } ?>><img src="<?php echo esc_url( jetpack_get_site_logo( 'url' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="site-logo"></a>
@@ -61,11 +61,11 @@ if (
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
         <span class="site-description"><?php bloginfo( 'description' ); ?></span>
 	</div>
-    
+
 </header>
 
 <?php if ( $build_overlay ) { ?>
-    <div id="menu-overlay" class="overlay">
+    <div id="menu-overlay" class="overlay overlay-menu">
         <noscript>
             <div class="header">
                 <div class="site-nav">
@@ -73,7 +73,7 @@ if (
                 </div>
             </div>
         </noscript>
-        
+
         <?php if ( has_nav_menu( $nav_primary ) ) { ?>
             <nav class="main-navigation">
                 <?php wp_nav_menu( array( 'theme_location' => $nav_primary ) ); ?>
@@ -89,13 +89,12 @@ if (
                 ) ); ?>
             </nav>
         <?php } ?>
-        
+
         <?php get_sidebar( 'overlay' ); ?>
     </div>
 <?php } ?>
 
 <div id="search-overlay" class="overlay overlay-search">
-    <span class="overlay-icon fa fa-search"></span>
     <?php if ( ! $build_overlay ) { ?>
         <div class="header">
             <div class="site-nav">
@@ -111,6 +110,13 @@ if (
             </div>
         </noscript>
     <?php } ?>
-    
+
     <?php get_search_form(); ?>
+
+    <div class="search-loading hide">
+      <span class="fa fa-circle-o-notch fa-spin"></span>
+    </div>
+    <div class="search-results">
+      <!-- dynamic results loaded here -->
+    </div>
 </div>

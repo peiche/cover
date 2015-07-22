@@ -78,7 +78,7 @@ body .infinite-loader .spinner { border-top-color: <?php echo $link_color; ?>; }
 blockquote, q, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-left, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-right, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-center { border-color: <?php echo $header_color; ?> }
 
 <?php // Restore default colors. ?>
-.header a, .overlay a, .cover-header a { color: #fff; }
+.header a, /* .overlay a, */ .cover-header a { color: #fff; }
 .cover-subtitle a { color: rgba(255, 255, 255, 0.8); }
 .entry-title a { color: #222; }
 .entry-subtitle a { color: #999; }

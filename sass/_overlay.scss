@@ -4,8 +4,9 @@ Overlay for menus and widgets
 
 .overlay {
 	@include rem(font-size, 20px);
-	background: $overlay-color;
-	color: $text-color-overlay;
+	//background-color: $overlay-color;
+	background-color: $color-white;
+	//color: $text-color-overlay;
 	height: 100%;
 	left: 0;
 	opacity: 0;
@@ -24,27 +25,18 @@ Overlay for menus and widgets
 		z-index: $z-index-header;
 	}
 
-	a {
-		border-color: $color-white;
-		color: $color-white;
-
-		&:hover {
-			color: $color-light-grey-alt3;
-		}
-	}
-
 	.widget {
 		&-area {
 			margin-bottom: 60px;
 			margin-top: 60px;
 
 			p {
-				color: $color-white;
+				//color: $color-white;
 			}
 		}
 
 		li a {
-			border-color: $color-medium-grey;
+			//border-color: $color-medium-grey;
 		}
 	}
 
@@ -52,8 +44,8 @@ Overlay for menus and widgets
 		border-color: transparent;
 
 		&:hover {
-			border-color: $color-white;
-			color: $color-white;
+			//border-color: $color-white;
+			//color: $color-white;
 		}
 	}
 
@@ -72,7 +64,7 @@ Overlay for menus and widgets
 	}
 
 	.main-navigation a {
-		border-bottom-color: $color-medium-grey;
+		//border-bottom-color: $color-medium-grey;
 	}
 
 	.social-navigation {
@@ -91,13 +83,29 @@ Overlay for menus and widgets
 		visibility: visible;
 	}
 
+	&-menu {
+		a,
+		a:link,
+		a:visited {
+			//border-color: $color-white;
+			//color: $color-white;
+			color: $color-dark-grey;
+
+			&:hover {
+				//color: $color-light-grey-alt3;
+				color: $color-grey;
+			}
+		}
+	}
+
 	&-search {
 		.search {
 			&-form {
 				@include site-width;
 
 				input.search-field {
-					border-bottom: 2px solid $color-white;
+					//border-bottom: 2px solid $color-white;
+					border-bottom: 2px solid $text-color-base;
 					padding: 0;
 				}
 			}
@@ -106,7 +114,7 @@ Overlay for menus and widgets
 				@include rem(font-size, 50px);
 				background-color: transparent;
 				border: 0;
-				color: $color-white;
+				//color: $color-white;
 				display: block;
 				outline: 0;
 
@@ -115,13 +123,50 @@ Overlay for menus and widgets
 				}
 
 				&:focus {
-					color: $color-white;
+					//color: $color-white;
 				}
+			}
+
+			&-results {
+				@include rem(font-size, $font-size-normal);
+
+				/*
+				.entry {
+					&-title {
+						color: $text-color-heading;
+
+						&:hover {
+			        color: $link-color;
+			      }
+					}
+
+					&-subtitle {
+						a {
+							color: $color-grey-alt;
+
+				      &:hover {
+				        color: $link-color;
+				      }
+						}
+					}
+				}
+				*/
+
 			}
 		}
 
 		label {
 			display: block;
+		}
+
+		.hentry,
+		.single & .hentry,
+		.page & .hentry {
+			padding: 50px 0;
+
+			&:first-of-type {
+				margin-top: 0;
+			}
 		}
 	}
 

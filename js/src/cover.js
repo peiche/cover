@@ -1,3 +1,5 @@
+var ajax_url = './wp-admin/admin-ajax.php';
+
 jQuery(document).ready(function() {
 
 	/**
@@ -6,7 +8,7 @@ jQuery(document).ready(function() {
 	 * attribute is "toggle-overlay" and the
 	 * data-overlay-id value matches the id
 	 * of the container with the overlay class.
-	 */
+	 **/
 	jQuery('[data-action="toggle-overlay"]').click(function(e) {
 		e.preventDefault();
 		var overlay_id = jQuery(this).attr('data-overlay-id');
@@ -15,9 +17,7 @@ jQuery(document).ready(function() {
 			jQuery('html').removeClass('noscroll');
 			jQuery('.overlay.show').removeClass('show');
 
-			jQuery('.overlay-search .search-field').val('');
-
-            setTimeout(function() {
+      setTimeout(function() {
 				jQuery('.overlay').scrollTop(0);
 			}, 200);
 		} else {
@@ -39,8 +39,6 @@ jQuery(document).ready(function() {
 		if (e.keyCode === 27) {
 			jQuery('html.noscroll').removeClass('noscroll');
 			jQuery('.overlay.show').removeClass('show');
-
-			jQuery('.overlay-search .search-field').val('');
 		}
 	});
 
@@ -89,6 +87,38 @@ jQuery(document).ready(function() {
 		$this.children('.fa-angle-down').toggleClass('fa-rotate-180');
     $this.siblings('.sub-menu').toggleClass('hide');
   });
+
+	/**
+	 * Search form
+	 **/
+	jQuery('#search-overlay .search-form').submit(function(e) {
+		e.preventDefault();
+
+		var $form = jQuery(this);
+    var $input = $form.find('input[name="s"]');
+    var query = $input.val();
+		var $loading = jQuery('#search-overlay .search-loading');
+    var $content = jQuery('#search-overlay .search-results');
+
+    jQuery.ajax({
+        type : 'post',
+        url : './wp-admin/admin-ajax.php',
+        data : {
+            action : 'load_search_results',
+            query : query
+        },
+        beforeSend: function() {
+            $input.prop('disabled', true);
+            $loading.removeClass('hide');
+        },
+        success : function( response ) {
+            $input.prop('disabled', false);
+            $loading.addClass('hide');
+            $content.html( response );
+        }
+    });
+
+	});
 });
 
 /**
