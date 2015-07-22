@@ -33,7 +33,8 @@
         "inject",
         "module", // GruntFile.js
         "Headroom",
-        "skrollr"
+        "skrollr",
+        "console"
     ],
     "quotmark": true,
     "trailing": true,
