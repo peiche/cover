@@ -73,7 +73,7 @@ Top Posts & Pages Widget
 
 // Image List
 .widgets-list-layout {
-	a.bump-view {
+	.bump-view {
 		border: 0;
 		padding: 0;
 
@@ -88,7 +88,7 @@ Top Posts & Pages Widget
 		margin-bottom: 20px;
 		padding-bottom: 20px;
 
-		&:hover a.bump-view {
+		&:hover .bump-view {
 			color: $color-light-grey-alt3;
 
 			.widgets-list-layout-blavatar {
@@ -122,8 +122,8 @@ Image Grid
 		width: 50%;
 	}
 
-	a.bump-view,
-	&:nth-child(even) a.bump-view {
+	.bump-view,
+	&:nth-child(even) .bump-view {
 		border: 0;
 		margin: 0;
 		opacity: .8;
