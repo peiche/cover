@@ -1,32 +1,32 @@
 .site-footer {
-    color: #666;
-    @include rem(font-size, 13px);
-    padding: 30px 0;
-    
-    .site-info {
-        @extend %cf;
-        @include site-width;
-        
-        .site-credits {
-            float: left;
-        }
-        
-        .social-navigation {
-            float: right;
-            font-size: $font-size-normal;
-        }
-        
-        @media screen and (max-width: 405px) {
-            .site-credits,
-            .social-navigation {
-                float: none;
-                margin-top: 20px;
-                text-align: center;
-            }
-        }
+  @include rem(font-size, 13px);
+  color: $color-medium-grey;
+  padding: 30px 0;
+
+  .site-info {
+    @extend %cf;
+    @include site-width;
+
+    .site-credits {
+      float: left;
     }
-    
-    a:hover {
-        border-color: $link-border-color;
+
+    .social-navigation {
+      float: right;
+      font-size: $font-size-normal;
     }
+
+    @media screen and (max-width: $width-phone) {
+      .site-credits,
+      .social-navigation {
+        float: none;
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+  }
+
+  a:hover {
+    border-color: $link-border-color;
+  }
 }

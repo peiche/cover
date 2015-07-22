@@ -83,7 +83,6 @@ a {
 .site-main .comment-navigation,
 .site-main .paging-navigation {
   @include site-width($width-medium);
-  margin: 0 0 1.5em;
   overflow: hidden;
   padding: 50px 0;
 }

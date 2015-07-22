@@ -254,7 +254,7 @@
 
     > blockquote {
       &.large {
-        @include rem(font-size, 30px);
+        @include rem(font-size, $font-size-huge);
         border: 0;
         max-width: $width-wide;
         padding: 0;
@@ -263,32 +263,27 @@
       }
 
       &.pullquote {
-        @include rem(font-size, 30px);
-        border: 0;
-        max-width: $width-narrow;
-        padding: 0;
-        text-align: center;
-
-        &.left {
-          float: left;
-          text-align: left;
-        }
+        @include rem(font-size, $font-size-normal);
+        float: left;
+        margin: 0 20px;
+        max-width: 35%; // whatever I guess
 
         &.right {
+          border-left: 0;
+          border-right-style: solid;
+          border-right-width: 5px;
           float: right;
           text-align: right;
+
+          @media screen and (max-width: $width-narrow) {
+            float: none;
+          }
         }
 
-        &.left,
-        &.right {
-          margin: 10px 30px;
-          width: 400px;
-
-          @media screen and (max-width: $width-tablet) {
-            @include site-width($width-narrow);
-            float: none;
-            text-align: center;
-          }
+        @media screen and (max-width: $width-narrow) {
+          float: none;
+          margin: 30px auto;
+          max-width: 90%;
         }
       }
     }
