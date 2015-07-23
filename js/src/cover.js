@@ -87,38 +87,7 @@ jQuery(document).ready(function() {
 		$this.children('.fa-angle-down').toggleClass('fa-rotate-180');
     $this.siblings('.sub-menu').toggleClass('hide');
   });
-
-	/**
-	 * Search form
-	 **/
-	jQuery('#search-overlay .search-form').submit(function(e) {
-		e.preventDefault();
-
-		var $form = jQuery(this);
-    var $input = $form.find('input[name="s"]');
-    var query = $input.val();
-		var $loading = jQuery('#search-overlay .search-loading');
-    var $content = jQuery('#search-overlay .search-results');
-
-    jQuery.ajax({
-        type : 'post',
-        url : './wp-admin/admin-ajax.php',
-        data : {
-            action : 'load_search_results',
-            query : query
-        },
-        beforeSend: function() {
-            $input.prop('disabled', true);
-            $loading.removeClass('hide');
-        },
-        success : function( response ) {
-            $input.prop('disabled', false);
-            $loading.addClass('hide');
-            $content.html( response );
-        }
-    });
-
-	});
+	
 });
 
 /**
