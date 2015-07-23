@@ -65,7 +65,7 @@ if (
 </header>
 
 <?php if ( $build_overlay ) { ?>
-    <div id="menu-overlay" class="overlay overlay-menu">
+    <div id="menu-overlay" class="overlay <?php echo get_theme_mod( 'cover_overlay_color', 'overlay-dark' ); ?> overlay-menu">
         <noscript>
             <div class="header">
                 <div class="site-nav">
@@ -94,7 +94,7 @@ if (
     </div>
 <?php } ?>
 
-<div id="search-overlay" class="overlay overlay-search">
+<div id="search-overlay" class="overlay <?php echo get_theme_mod( 'cover_overlay_color', 'overlay-dark' ); ?> overlay-search">
     <?php if ( ! $build_overlay ) { ?>
         <div class="header">
             <div class="site-nav">

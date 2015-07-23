@@ -34,7 +34,7 @@ $text-color-heading: darken($text-color-base, 10%);
 $text-color-content: $text-color-base;
 $text-color-quote: lighten($text-color-base, 10%);
 $text-color-cite: lighten($text-color-base, 25%);
-$text-color-overlay: $color-light-grey-alt2;
+$text-color-overlay-dark: $color-light-grey-alt2;
 
 $header-color: $color-blue;
 
@@ -74,7 +74,8 @@ $z-index-overlay: 999;
 
 $divider-color: $color-light-grey;
 
-$overlay-color: $color-dark-grey-alt;
+$overlay-color-light: $color-white;
+$overlay-color-dark: $color-dark-grey-alt;
 
 $menu-toggle-background: $color-light-grey-alt;
 $menu-toggle-background-overlay: #666;

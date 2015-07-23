@@ -4,9 +4,7 @@ Overlay for menus and widgets
 
 .overlay {
 	@include rem(font-size, 20px);
-	//background-color: $overlay-color;
-	background-color: $color-white;
-	//color: $text-color-overlay;
+	background-color: $overlay-color-light;
 	height: 100%;
 	left: 0;
 	opacity: 0;
@@ -29,24 +27,11 @@ Overlay for menus and widgets
 		&-area {
 			margin-bottom: 60px;
 			margin-top: 60px;
-
-			p {
-				//color: $color-white;
-			}
-		}
-
-		li a {
-			//border-color: $color-medium-grey;
 		}
 	}
 
 	.tagcloud a {
 		border-color: transparent;
-
-		&:hover {
-			//border-color: $color-white;
-			//color: $color-white;
-		}
 	}
 
 	.menu {
@@ -63,15 +48,11 @@ Overlay for menus and widgets
 		margin-top: 60px;
 	}
 
-	.main-navigation a {
-		//border-bottom-color: $color-medium-grey;
-	}
-
 	.social-navigation {
 		text-align: center;
 	}
 
-	.search-form input.search-field {
+	.search-form .search-field {
 		border-radius: 0;
 		box-sizing: border-box;
 		padding: 10px;
@@ -87,12 +68,9 @@ Overlay for menus and widgets
 		a,
 		a:link,
 		a:visited {
-			//border-color: $color-white;
-			//color: $color-white;
 			color: $color-dark-grey;
 
 			&:hover {
-				//color: $color-light-grey-alt3;
 				color: $color-grey;
 			}
 		}
@@ -102,9 +80,10 @@ Overlay for menus and widgets
 		.search {
 			&-form {
 				@include site-width;
+				margin-bottom: 40px;
+				margin-top: 100px;
 
-				input.search-field {
-					//border-bottom: 2px solid $color-white;
+				.search-field {
 					border-bottom: 2px solid $text-color-base;
 					padding: 0;
 				}
@@ -114,44 +93,16 @@ Overlay for menus and widgets
 				@include rem(font-size, 50px);
 				background-color: transparent;
 				border: 0;
-				//color: $color-white;
 				display: block;
 				outline: 0;
 
 				@media screen and (max-width: $width-tablet) {
 					@include rem(font-size, 30px);
 				}
-
-				&:focus {
-					//color: $color-white;
-				}
 			}
 
 			&-results {
 				@include rem(font-size, $font-size-normal);
-
-				/*
-				.entry {
-					&-title {
-						color: $text-color-heading;
-
-						&:hover {
-			        color: $link-color;
-			      }
-					}
-
-					&-subtitle {
-						a {
-							color: $color-grey-alt;
-
-				      &:hover {
-				        color: $link-color;
-				      }
-						}
-					}
-				}
-				*/
-
 			}
 		}
 
@@ -167,6 +118,68 @@ Overlay for menus and widgets
 			&:first-of-type {
 				margin-top: 0;
 			}
+		}
+	}
+
+	&-dark {
+		background-color: $overlay-color-dark;
+		color: $text-color-overlay-dark;
+
+		.widget {
+			&-area {
+				p {
+					color: $color-white;
+				}
+			}
+
+			li a {
+				border-color: $color-medium-grey;
+			}
+		}
+
+		.tagcloud a {
+			&:hover {
+				border-color: $color-white;
+				color: $color-white;
+			}
+		}
+
+		.main-navigation a {
+			border-bottom-color: $color-medium-grey;
+		}
+
+		&.overlay-menu {
+			a,
+			a:link,
+			a:visited {
+				color: $color-white;
+
+				&:hover {
+					color: $color-light-grey-alt3;
+				}
+			}
+		}
+
+		&.overlay-search {
+			.search {
+				&-form {
+					.search-field {
+						border-color: $color-white;
+					}
+				}
+
+				&-field {
+					color: $color-white;
+
+					&:focus {
+						color: $color-white;
+					}
+				}
+			}
+		}
+
+		.tagcloud a:hover {
+			color: $color-white;
 		}
 	}
 
