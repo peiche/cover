@@ -127,15 +127,11 @@
 
 		&.full {
 			min-height: 100vh;
-			padding: 50vh 0 100px;
+			padding-top: 50vh;
 
 			@media screen and (max-width: $width-tablet) {
-				padding-top: 25vh;
+				padding-top: 35vh;
 			}
 		}
-	}
-
-	.entry-meta {
-		margin: 0;
 	}
 }
