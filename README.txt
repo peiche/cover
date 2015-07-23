@@ -113,6 +113,10 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 == Changelog ==
 
+1.6.0
+- Added overlay color option: dark or light.
+- Tweaked profile layout for small screens.
+
 1.5.6
 - Fixed margin for comment and paging navigation.
 - Fixed site description for small screens.
