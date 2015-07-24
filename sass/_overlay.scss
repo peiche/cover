@@ -137,6 +137,15 @@ Overlay for menus and widgets
 		}
 
 		&.overlay-menu {
+			a,
+			a:visited {
+				color: $color-white;
+
+				&:hover {
+					color: $color-light-grey-alt3;
+				}
+			}
+
 			.tagcloud a {
 				&:hover {
 					border-color: $color-white;
@@ -147,17 +156,6 @@ Overlay for menus and widgets
 
 		.main-navigation a {
 			border-bottom-color: $color-medium-grey;
-		}
-
-		&.overlay-menu {
-			a,
-			a:visited {
-				color: $color-white;
-
-				&:hover {
-					color: $color-light-grey-alt3;
-				}
-			}
 		}
 
 		&.overlay-search {
