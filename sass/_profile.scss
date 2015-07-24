@@ -15,8 +15,8 @@
     position: absolute;
 
     @media screen and (max-width: $width-phone) {
-      position: static;
       float: left;
+      position: static;
     }
   }
 
