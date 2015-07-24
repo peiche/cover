@@ -66,7 +66,6 @@ Overlay for menus and widgets
 
 	&-menu {
 		a,
-		a:link,
 		a:visited {
 			color: $color-dark-grey;
 
@@ -137,10 +136,12 @@ Overlay for menus and widgets
 			}
 		}
 
-		.tagcloud a {
-			&:hover {
-				border-color: $color-white;
-				color: $color-white;
+		&.overlay-menu {
+			.tagcloud a {
+				&:hover {
+					border-color: $color-white;
+					color: $color-white;
+				}
 			}
 		}
 
@@ -150,7 +151,6 @@ Overlay for menus and widgets
 
 		&.overlay-menu {
 			a,
-			a:link,
 			a:visited {
 				color: $color-white;
 
@@ -176,10 +176,6 @@ Overlay for menus and widgets
 					}
 				}
 			}
-		}
-
-		.tagcloud a:hover {
-			color: $color-white;
 		}
 	}
 
