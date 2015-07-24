@@ -27,7 +27,7 @@ jQuery(document).ready(function() {
 			/**
 			 * Focus the search if there is a search field.
 			 * This will work for the pre-built search and widgets.
-			 */
+			 **/
 			jQuery('#' + overlay_id + ' .search-field').focus();
 		}
 	});
@@ -87,14 +87,14 @@ jQuery(document).ready(function() {
 		$this.children('.fa-angle-down').toggleClass('fa-rotate-180');
     $this.siblings('.sub-menu').toggleClass('hide');
   });
-	
+
 });
 
 /**
  * Helper function to detect touch devices.
  * Much better solution than user agent detection,
  * which is a futile attempt at an arms race.
- */
+ **/
 function isTouchDevice() {
 	return !!('ontouchstart' in window || navigator.msMaxTouchPoints);
 }
