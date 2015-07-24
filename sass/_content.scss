@@ -106,12 +106,20 @@
   &:first-of-type {
     margin-top: $header-height;
 
+    @media screen and (max-width: $width-phone) {
+      margin-top: 118px;
+    }
+
     .featured-container + & {
       margin-top: 40px;
     }
 
     .cover ~ & {
       margin-top: 60px;
+
+      @media screen and (max-width: $width-phone) {
+        margin-top: 40px;
+      }
     }
 
     .infinite-wrap & {
