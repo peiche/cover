@@ -37,6 +37,7 @@ $text-color-cite: lighten($text-color-base, 25%);
 $text-color-overlay-dark: $color-light-grey-alt2;
 
 $header-color: $color-blue;
+$header-height: 76px;
 
 $background-color-cover: $color-blue;
 $background-color-cover-neutral: $color-dark-grey;
@@ -58,11 +59,12 @@ $link-border-color: $color-light-grey;
 $button-background: #edebf3;
 $button-color: #858585;
 
-$width-phone: 480px;
-$width-narrow: 600px;
+$width-narrow: 500px;
 $width-medium: 760px;
-$width-tablet: 768px;
 $width-wide: 1000px;
+
+$width-phone: 480px;
+$width-tablet: 768px;
 
 $z-index-above-wp-toolbar: 100000;
 

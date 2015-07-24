@@ -40,7 +40,7 @@
         padding: 20px 0;
       }
 
-      @media screen and (max-width: $width-narrow) {
+      @media screen and (max-width: $width-phone) {
         margin: 30px auto;
         max-width: 90%;
 
@@ -260,11 +260,6 @@
   padding: 250px 0 20px;
   position: relative;
   z-index: 1;
-}
-
-.aesop-video-container {
-  margin: 40px auto;
-  max-width: 100%;
 }
 
 .aesop-lightbox {

@@ -14,7 +14,7 @@
   &-avatar {
     position: absolute;
 
-    @media screen and (max-width: $width-narrow) {
+    @media screen and (max-width: $width-phone) {
       position: static;
       float: left;
     }
@@ -23,7 +23,7 @@
   &-info {
     margin-left: 150px;
 
-    @media screen and (max-width: $width-narrow) {
+    @media screen and (max-width: $width-phone) {
       float: left;
       margin: 0;
     }
@@ -31,7 +31,7 @@
     .single & {
       margin-left: 100px;
 
-      @media screen and (max-width: $width-narrow) {
+      @media screen and (max-width: $width-phone) {
         margin: 0;
       }
     }
@@ -40,7 +40,7 @@
   &-bio {
     margin-left: 150px;
 
-    @media screen and (max-width: $width-narrow) {
+    @media screen and (max-width: $width-phone) {
       clear: both;
       margin: 0;
     }
@@ -48,7 +48,7 @@
     .single & {
       margin-left: 100px;
 
-      @media screen and (max-width: $width-narrow) {
+      @media screen and (max-width: $width-phone) {
         margin: 0;
       }
     }

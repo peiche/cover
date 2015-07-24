@@ -104,7 +104,7 @@
   }
 
   &:first-of-type {
-    margin-top: 77px; // header height
+    margin-top: $header-height;
 
     .featured-container + & {
       margin-top: 40px;
@@ -275,12 +275,12 @@
           float: right;
           text-align: right;
 
-          @media screen and (max-width: $width-narrow) {
+          @media screen and (max-width: $width-phone) {
             float: none;
           }
         }
 
-        @media screen and (max-width: $width-narrow) {
+        @media screen and (max-width: $width-phone) {
           float: none;
           margin: 30px auto;
           max-width: 90%;
