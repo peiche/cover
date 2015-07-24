@@ -116,6 +116,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 **1.6.0**
 - Added overlay color option: dark or light.
 - Tweaked profile layout for small screens.
+- Tweaked post spacing for small screens.
 
 **1.5.6**
 - Fixed margin for comment and paging navigation.

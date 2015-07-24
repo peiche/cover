@@ -116,6 +116,7 @@ You can download the latest from Github. Follow these steps to activate Cover:
 1.6.0
 - Added overlay color option: dark or light.
 - Tweaked profile layout for small screens.
+- Tweaked post spacing for small screens.
 
 1.5.6
 - Fixed margin for comment and paging navigation.
