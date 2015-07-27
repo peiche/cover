@@ -9,6 +9,8 @@
 
 <div class="featured-container">
 
+	<ul>
+
 	<?php
 		$img = '';
 		$featured_posts = cover_get_featured_posts();
@@ -21,7 +23,7 @@
 			}
 	?>
 
-
+	<li>
 		<a href="<?php the_permalink(); ?>" rel="bookmark">
 			<div class="cover<?php if ( '' != $img ) { ?> featured-image<?php } ?>">
 				<div class="cover-background"<?php if ( '' != $img ) { ?> style="background-image: url('<?php echo $img; ?>');"<?php } ?>></div>
@@ -41,12 +43,21 @@
 				</header>
 			</div>
 		</a>
-
+	</li>
 
 	<?php
 		endforeach;
 
 		wp_reset_postdata();
 	?>
+
+	</ul>
+
+	<div class="featured-arrow prev hide">
+		<span class="fa fa-angle-left"></span>
+	</div>
+	<div class="featured-arrow next hide">
+		<span class="fa fa-angle-right"></span>
+	</div>
 
 </div>
