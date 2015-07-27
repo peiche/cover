@@ -21,14 +21,14 @@ module.exports = function(grunt) {
             expand: true
           },
           {
-            cwd: 'bower_components/skrollr/dist',
-            src: 'skrollr.min.js',
+            cwd: 'bower_components/headroom.js/dist',
+            src: 'headroom.min.js',
             dest: 'js',
             expand: true
           },
           {
-            cwd: 'bower_components/headroom.js/dist',
-            src: 'headroom.min.js',
+            cwd: 'bower_components/skrollr/dist',
+            src: 'skrollr.min.js',
             dest: 'js',
             expand: true
           },
@@ -37,7 +37,13 @@ module.exports = function(grunt) {
             src: 'class-tgm-plugin-activation.php',
             dest: 'inc',
             expand: true
-          }
+          },
+          {
+            cwd: 'bower_components/unslider/src',
+            src: 'unslider.min.js',
+            dest: 'js',
+            expand: true
+          },
         ]
       }
     },

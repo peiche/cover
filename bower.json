@@ -6,9 +6,10 @@
   "license": "GNU General Public License v2 or later",
   "devDependencies": {
     "font-awesome": "~4.3.*",
-    "skrollr": "~0.6.29",
     "headroom.js": "~0.7.0",
-    "tgm-plugin-activation": "https://github.com/thomasgriffin/TGM-Plugin-Activation/archive/master.zip"
+    "skrollr": "~0.6.29",
+    "tgm-plugin-activation": "https://github.com/thomasgriffin/TGM-Plugin-Activation/archive/master.zip",
+    "unslider": "~1.0.0"
   },
   "ignore": [
     "**/.*",
