@@ -157,8 +157,57 @@ Image Grid
 /*--------------------------------------------------------------
 Featured Content
 --------------------------------------------------------------*/
-.featured-container a,
-.featured-container a:hover,
-.featured-container a:visited {
-	color: $color-white;
+.featured-container {
+	position: relative;
+
+	ul {
+		margin: 0;
+	}
+
+	a,
+	a:hover,
+	a:visited {
+		color: $color-white;
+	}
+
+	.dots {
+		bottom: 0;
+		display: none;
+		left: 0;
+		margin: 0;
+		position: absolute;
+		right: 0;
+		z-index: 400;
+	}
+
+	&.has-dots .dots {
+		display: block;
+	}
+
+	.dot {
+		border: 3px solid $color-white;
+		border-radius: 50%;
+		height: 25px;
+		width: 25px;
+
+		&.active {
+			background-color: $color-white;
+		}
+	}
+
+	.featured-arrow {
+		bottom: 0;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		width: 50px; // ??
+
+		&.prev {
+			left: 0;
+		}
+
+		&.next {
+			right: 0;
+		}
+	}
 }
