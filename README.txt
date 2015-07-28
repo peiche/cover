@@ -115,6 +115,8 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 1.6.0
 - Added overlay color option: dark or light.
+- Added Unslider for more than one featured post.
+- Increased featured post maximum from one to five.
 - Tweaked profile layout for small screens.
 - Tweaked post spacing for small screens.
 
@@ -182,3 +184,4 @@ All other resources are licensed as follows:
 * Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE
 * Skrollr - MIT - https://github.com/Prinzhorn/skrollr/blob/master/LICENSE.txt
 * TGM Plugin Activation - GPL v2.0 - https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md
+* Unslider - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md
