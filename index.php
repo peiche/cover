@@ -11,20 +11,20 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main"> <!-- .grid -->
-            
+
 			<?php
-				if ( cover_has_featured_posts() ) {
+				if ( cover_has_featured_posts( 1 ) ) {
 					get_template_part( 'inc/cover', 'featured' );
 				}
 			?>
-			
+
             <?php if ( have_posts() ) : ?>
-				
+
                 <?php $count = 0; ?>
                 <?php while ( have_posts() ) : the_post(); ?>
 
                     <?php get_template_part( 'content' ); ?>
-                    
+
                 <?php endwhile; ?>
                 <?php cover_paging_nav(); ?>
 

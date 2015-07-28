@@ -53,11 +53,15 @@
 
 	</ul>
 
+	<?php if ( cover_has_featured_posts( 2 ) ) { ?>
+
 	<div class="featured-arrow prev hide">
 		<span class="fa fa-angle-left"></span>
 	</div>
 	<div class="featured-arrow next hide">
 		<span class="fa fa-angle-right"></span>
 	</div>
+
+	<?php } ?>
 
 </div>

@@ -37,9 +37,9 @@ function cover_jetpack_setup() {
      * @link http://jetpack.me/support/featured-content/
      */
     add_theme_support( 'featured-content', array(
-		'filter'		=> 'cover_get_featured_posts',
-        'max_posts'     => 1,
-	) );
+		  'filter'		=> 'cover_get_featured_posts',
+      'max_posts' => 2, // overidde with customizer option
+	  ) );
 }
 add_action( 'after_setup_theme', 'cover_jetpack_setup' );
 
@@ -75,6 +75,21 @@ function cover_get_featured_posts() {
  *
  * @return bool Whether there are featured posts.
  */
-function cover_has_featured_posts() {
-	return ! is_paged() && (bool) cover_get_featured_posts();
+function cover_has_featured_posts( $minimum = 1 ) {
+	if ( is_paged() ) {
+    return false;
+  }
+
+  $minimum = absint( $minimum );
+  $featured_posts = apply_filters( 'cover_get_featured_posts', array() );
+
+  if ( ! is_array( $featured_posts ) ) {
+    return false;
+  }
+
+  if ( $minimum > count( $featured_posts ) ) {
+    return false;
+  }
+
+  return true;
 }
