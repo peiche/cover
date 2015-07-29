@@ -6,11 +6,8 @@ jQuery(document).ready(function() {
 
   // init unslider
   var unslider = jQuery('.featured-container').unslider({
-    speed: 500,
-    delay: 3000,
-    complete: function() {},
-    keys: true,
-    dots: true, // ehhh
+    delay: 0,
+    dots: true,
     fluid: true
   });
 
