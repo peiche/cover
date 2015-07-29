@@ -82,6 +82,8 @@ $overlay-color-dark: $color-dark-grey-alt;
 $menu-toggle-background: $color-light-grey-alt;
 $menu-toggle-background-overlay: #666;
 
+$featured-content-arrow-size: 50px;
+
 @function parse-int($n) {
   @return $n / ($n * 0 + 1);
 }

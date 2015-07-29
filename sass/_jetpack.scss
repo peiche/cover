@@ -177,11 +177,15 @@ Featured Content
 		margin: 0;
 		position: absolute;
 		right: 0;
-		z-index: 400;
+		z-index: $z-index-cover;
 	}
 
 	&.has-dots .dots {
-		display: block;
+		//display: block;
+
+		@media screen and (max-width: $width-medium) {
+			display: block;
+		}
 	}
 
 	.dot {
@@ -197,10 +201,12 @@ Featured Content
 
 	.featured-arrow {
 		bottom: 0;
+		cursor: pointer;
 		position: absolute;
 		text-align: center;
 		top: 0;
-		width: 50px; // ??
+		width: $featured-content-arrow-size;
+		z-index: $z-index-cover;
 
 		&.prev {
 			left: 0;
@@ -208,6 +214,24 @@ Featured Content
 
 		&.next {
 			right: 0;
+		}
+
+		@media screen and (max-width: $width-medium) {
+			display: none;
+		}
+
+		.fa {
+			@include rem(font-size, $featured-content-arrow-size);
+			bottom: 0;
+			color: $color-white;
+			height: $featured-content-arrow-size;
+			left: 0;
+			line-height: $featured-content-arrow-size;
+			margin: auto;
+			position: absolute;
+	    right: 0;
+			top: 0;
+			width: $featured-content-arrow-size;
 		}
 	}
 }
