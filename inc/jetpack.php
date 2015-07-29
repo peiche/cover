@@ -38,7 +38,7 @@ function cover_jetpack_setup() {
      */
     add_theme_support( 'featured-content', array(
 		  'filter'		=> 'cover_get_featured_posts',
-      'max_posts' => 2, // overidde with customizer option
+      'max_posts' => 5,
 	  ) );
 }
 add_action( 'after_setup_theme', 'cover_jetpack_setup' );
