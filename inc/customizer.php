@@ -35,6 +35,32 @@ function cover_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'cover_show_featured_image',
+		array(
+			'default' => false,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'cover_list_style',
+		array(
+			'default' => 'minimal',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'cover_number_of_columns',
+		array(
+			'default' => 1,
+		)
+	);
+
+	$wp_customize->add_section( 'cover_section_view' , array(
+	    'title'      => __( 'View', 'cover' ),
+	    'priority'   => 30,
+	) );
+
   $wp_customize->add_control(
     new WP_Customize_Color_Control(
       $wp_customize,
@@ -61,7 +87,7 @@ function cover_customize_register( $wp_customize ) {
 		'cover_overlay_color',
 		array(
 			'type'    => 'select',
-			'label'   => 'Overlay Color',
+			'label'   => __( 'Overlay Color', 'cover' ),
 			'section' => 'colors',
 			'choices' => array(
 				'overlay-dark'  => 'Dark',
@@ -69,6 +95,44 @@ function cover_customize_register( $wp_customize ) {
 			),
 		)
 	);
+
+	$wp_customize->add_control(
+		'cover_list_style',
+		array(
+			'type'    => 'select',
+			'label'   => __( 'Post Listing Style', 'cover' ),
+			'section' => 'cover_section_view',
+			'choices' => array(
+				'minimal'  => 'Minimal',
+				'grid' => 'Card',
+			),
+		)
+	);
+	$wp_customize->add_control(
+		'cover_number_of_columns',
+		array(
+			'type'    => 'select',
+			'label'   => __( 'Columns', 'cover' ),
+			'description' => 'Applied when View -> Post Listing Style is set to Grid.',
+			'section' => 'cover_section_view',
+			'choices' => array(
+				1  => '1',
+				2 => '2',
+				3 => '3'
+			),
+		)
+	);
+	$wp_customize->add_control(
+		'cover_show_featured_image',
+		array(
+			'type'    => 'checkbox',
+			'label'   => __( 'Show Featured Image', 'cover' ),
+			'section' => 'cover_section_view',
+		)
+	);
+
+	$wp_customize->get_control( 'background_color' )->description = __( 'Applied when View -> Post Listing Style is set to Grid.', 'cover' );
+	$wp_customize->get_control( 'background_image' )->description = __( 'Applied when View -> Post Listing Style is set to Grid.', 'cover' );
 }
 add_action( 'customize_register', 'cover_customize_register' );
 
@@ -79,6 +143,7 @@ function cover_customize_options() {
   $header_color = get_theme_mod( 'cover_header_color', '#026ed2' );
   $link_color = get_theme_mod( 'cover_link_color', '#026ed2' );
 	$overlay_color = get_theme_mod( 'cover_overlay_color', 'overlay-dark' );
+	$list_style = get_theme_mod( 'cover_list_style', 'minimal' );
   ?>
 
 <style>
@@ -106,7 +171,6 @@ blockquote, q, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aeso
   background-color: #000 !important;
 }
 <?php } ?>
-
 </style>
 
 <meta name="theme-color" content="<?php echo $header_color; ?>">

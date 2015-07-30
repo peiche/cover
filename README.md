@@ -114,8 +114,15 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 ##Changelog
 
 **1.6.0**
+- Upgraded to FontAwesome 4.4.
+- Updated Vimeo icon (per [this FontAwesome issue](https://github.com/FortAwesome/Font-Awesome/issues/2197)).
 - Added overlay color option: dark or light.
-- Added Unslider for more than one featured post.
+- Added Unslider plugin for more than one featured post.
+- Added post view option: minimal or grid.
+- Added custom background color option for grid view.
+- Added custom background image option for grid view.
+- Added column option for grid view.
+- Added Masonry plugin for grid view with more than one column.
 - Increased featured post maximum from one to five.
 - Tweaked profile layout for small screens.
 - Tweaked post spacing for small screens.

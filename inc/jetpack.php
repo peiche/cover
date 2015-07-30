@@ -16,9 +16,9 @@ function cover_jetpack_setup() {
      * @link http://jetpack.me/support/infinite-scroll/
      */
     add_theme_support( 'infinite-scroll', array(
-        'container' => 'main',
-		'footer' => false,
-	) );
+      'container' => 'main',
+		  'footer' => false,
+	  ) );
 
     /**
      * See Jetpack support for more info

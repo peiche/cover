@@ -87,6 +87,11 @@ a {
   padding: 50px 0;
 }
 
+.site-main .grid .comment-navigation,
+.site-main .grid .paging-navigation {
+  width: 100%;
+}
+
 .paging-navigation a {
   @include button($color-blue);
 

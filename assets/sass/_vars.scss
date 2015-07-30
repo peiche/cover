@@ -343,13 +343,7 @@ $youtube-color: #e52d27;
     ('tumblr.com', $tumblr-color, $fa-var-tumblr),
     //('twitch.tv', $twitch-color, $fa-var-twitch),
     ('twitter.com', $twitter-color, $fa-var-twitter),
-
-    /*
-    * TODO: Change to $fa-var-vimeo
-    *       Waiting on this issue: https://github.com/FortAwesome/Font-Awesome/issues/2197
-    */
-    ('vimeo.com', $vimeo-color, $fa-var-vimeo-square),
-
+    ('vimeo.com', $vimeo-color, $fa-var-vimeo),
     //('vine.co', $vine-color, $fa-var-vine),
     ('wordpress.com', $wordpress-color, $fa-var-wordpress),
     ('wordpress.org', $wordpress-color, $fa-var-wordpress),

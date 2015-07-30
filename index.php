@@ -10,7 +10,7 @@ get_header(); ?>
 <?php get_template_part( 'inc/wrapper', 'top' ); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main"> <!-- .grid -->
+		<main id="main" class="site-main" role="main">
 
 			<?php
 				if ( cover_has_featured_posts( 1 ) ) {
@@ -18,15 +18,17 @@ get_header(); ?>
 				}
 			?>
 
-            <?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
-                <?php $count = 0; ?>
-                <?php while ( have_posts() ) : the_post(); ?>
+        <?php $count = 0; ?>
+        <div id="posts" class="<?php echo get_theme_mod( 'cover_list_style', 'minimal' ); ?> <?php if ( 'grid' == get_theme_mod( 'cover_list_style', 'minimal' ) && get_theme_mod( 'cover_number_of_columns' ) > 1 ) { echo 'card-' . get_theme_mod( 'cover_number_of_columns', '1' ); } ?>">
+					<?php while ( have_posts() ) : the_post(); ?>
 
-                    <?php get_template_part( 'content' ); ?>
+	          <?php get_template_part( 'content' ); ?>
 
-                <?php endwhile; ?>
-                <?php cover_paging_nav(); ?>
+	        <?php endwhile; ?>
+				</div>
+        <?php cover_paging_nav(); ?>
 
 			<?php else : ?>
 

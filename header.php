@@ -38,9 +38,14 @@ if (
     $build_overlay = true;
 }
 
+$ignore_custom_background = '';
+if ( 'minimal' == get_theme_mod( 'cover_list_style', 'minimal' ) ) {
+  $ignore_custom_background = 'ignore-custom-background';
+}
+
 ?>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( $ignore_custom_background ); ?>>
 
 <?php do_action( 'ase_theme_body_inside_top' ); ?>
 
@@ -112,11 +117,4 @@ if (
     <?php } ?>
 
     <?php get_search_form(); ?>
-
-    <div class="search-loading hide">
-      <span class="fa fa-circle-o-notch fa-spin"></span>
-    </div>
-    <div class="search-results">
-      <!-- dynamic results loaded here -->
-    </div>
 </div>

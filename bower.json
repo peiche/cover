@@ -5,11 +5,12 @@
   "homepage": "https://github.com/peiche/cover",
   "license": "GNU General Public License v2 or later",
   "devDependencies": {
-    "font-awesome": "~4.3.*",
+    "font-awesome": "~4.4.*",
     "headroom.js": "~0.7.0",
     "skrollr": "~0.6.29",
     "tgm-plugin-activation": "https://github.com/thomasgriffin/TGM-Plugin-Activation/archive/master.zip",
-    "unslider": "~1.0.0"
+    "unslider": "~1.0.0",
+    "masonry": "~3.3.1"
   },
   "ignore": [
     "**/.*",
