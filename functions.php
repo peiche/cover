@@ -72,7 +72,7 @@ add_action( 'after_setup_theme', 'cover_setup' );
  */
 function cover_widgets_init() {
 
-    register_sidebar( array(
+  register_sidebar( array(
 		'name'          => __( 'Overlay Widgets', 'cover' ),
 		'id'            => 'cover-overlay',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -102,11 +102,13 @@ function cover_scripts() {
 	}
 
 	if ( cover_has_featured_posts( 2 ) ) {
+		wp_enqueue_script( 'jquery-move', get_template_directory_uri() . '/dist/js/jquery.event.move.js', array( 'jquery' ), '20150731', true );
+		wp_enqueue_script( 'jquery-swipe', get_template_directory_uri() . '/dist/js/jquery.event.swipe.js', array( 'jquery' ), '20150731', true );
     wp_enqueue_script( 'unslider', get_template_directory_uri() . '/dist/js/unslider.min.js', array( 'jquery' ), '20150727', true );
 		wp_enqueue_script( 'unslider-cover', get_template_directory_uri() . '/dist/js/cover-unslider.min.js', array( 'jquery' ), '20150727', true );
 	}
 
-	if ( 'grid' == get_theme_mod( 'cover_list_style', 'minimal' ) ) {
+	if ( 'grid' == get_theme_mod( 'cover_list_style', 'minimal' ) && ! is_singular() && ! is_page() ) {
 		wp_enqueue_script( 'masonry', get_template_directory_uri() . '/dist/js/masonry.pkgd.min.js', array( 'jquery'), '20150730', true );
 		wp_enqueue_script( 'masonry-cover', get_template_directory_uri() . '/dist/js/cover-masonry.min.js', array( 'jquery'), '20150730', true );
 	}
