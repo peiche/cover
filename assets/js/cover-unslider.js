@@ -1,10 +1,3 @@
-var unslider;
-var unsliderOptions = {
-  delay: 0,
-  dots: true,
-  fluid: true
-};
-
 jQuery(document).ready(function() {
 
   /**
@@ -12,7 +5,11 @@ jQuery(document).ready(function() {
    **/
 
   // init unslider
-  initUnslider();
+  var unslider = jQuery('.featured-container').unslider({
+    autoplay: false,
+    dots: true,
+    fluid: true
+  });
 
   // prev/next buttons
   jQuery('.featured-arrow').bind('click', function() {
@@ -30,7 +27,8 @@ jQuery(document).ready(function() {
    * Similar to debounce. Instead of running x milliseconds,
    * this will only run after resizing has completed.
    * https://css-tricks.com/snippets/jquery/done-resizing-event/
-   */
+   **/
+  /*
   var resizeTimer;
   jQuery(window).on('resize', function(e) {
     clearTimeout(resizeTimer);
@@ -38,8 +36,9 @@ jQuery(document).ready(function() {
       initUnslider();
     }, 250);
   });
+  */
 });
 
 function initUnslider() {
-  unslider = jQuery('.featured-container').unslider(unsliderOptions);
+
 }
