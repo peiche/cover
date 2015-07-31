@@ -73,19 +73,19 @@ jQuery(document).ready(function() {
 	 * Menu logic.
 	 **/
 
-	// Add dropdown buttons to menus with children.
-  jQuery('.menu .menu-item-has-children').append('<div class="sub-menu-toggle"><i class="fa fa-angle-down"></i></div>');
-
-  // hide submenus
-  jQuery('.menu .menu-item-has-children .sub-menu').addClass('hide');
+	/**
+	 * Find children by traversing up.
+	 * Not all menus or heirarchy widgets' parents has a class indicating so.
+	 **/
+	jQuery('.sub-menu, .children').addClass('hide').closest('li').addClass('menu-has-child').append('<div class="menu-toggle"><i class="fa fa-angle-down"></i></div>');
 
   // click event on submenu toggles
-  jQuery('.menu .menu-item-has-children').on('click', '.sub-menu-toggle', function(e) {
+  jQuery('body').on('click', '.menu-toggle', function(e) {
 		e.stopPropagation();
 		var $this = jQuery(this);
 
 		$this.children('.fa-angle-down').toggleClass('fa-rotate-180');
-    $this.siblings('.sub-menu').toggleClass('hide');
+    $this.siblings('.sub-menu, .children').toggleClass('hide');
   });
 });
 
