@@ -126,6 +126,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 - Added Masonry plugin for grid view.
 - Tweaked profile layout for small screens.
 - Tweaked post spacing for small screens.
+- Extended nested menu logic for all hierarchical items, including categories.
 
 **1.5.6**
 - Fixed margin for comment and paging navigation.
