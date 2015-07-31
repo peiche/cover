@@ -1,9 +1,14 @@
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
-body.custom-background.ignore-custom-background {
+body.custom-background {
+  &.ignore-custom-background,
+  &.single,
+  &.page,
+  &.error404 {
     background-color: $color-white;
     background-image: none;
+  }
 }
 
 .site-main {
@@ -20,11 +25,6 @@ body.custom-background.ignore-custom-background {
     &.card-3 {
       max-width: 100%;
     }
-  }
-
-  .single &,
-  .page & {
-    background-color: $color-white;
   }
 }
 
@@ -403,6 +403,10 @@ body.custom-background.ignore-custom-background {
 .single .byline,
 .group-blog .byline {
   display: inline;
+}
+
+.page-content {
+  padding-top: 40px;
 }
 
 /*--------------------------------------------------------------
