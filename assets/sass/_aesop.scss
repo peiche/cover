@@ -40,7 +40,7 @@
         padding: 20px 0;
       }
 
-      @media screen and (max-width: $width-narrow) {
+      @media screen and (max-width: $width-phone) {
         margin: 30px auto;
         max-width: 90%;
 
@@ -262,11 +262,6 @@
   z-index: 1;
 }
 
-.aesop-video-container {
-  margin: 40px auto;
-  max-width: 100%;
-}
-
 .aesop-lightbox {
   border: 0;
 
@@ -322,8 +317,7 @@
   box-shadow: none;
 }
 
-.entry-content > .aesop-component,
-.entry-content > .aesop-story-collection {
+.entry-content > .aesop-component {
   max-width: 100%;
   width: 100%;
 
@@ -379,4 +373,75 @@
   &__thumb-border {
     border-color: $color-blue;
   }
+}
+
+// custom collection styles
+$aesop-collection-margin: 10px;
+
+.aesop-collection {
+  &-item {
+    padding: $aesop-collection-margin;
+
+    .aesop-collection-grid.aesop-collection-grid-2col & {
+      @media screen and (max-width: $width-phone) {
+        width: 100%;
+      }
+    }
+
+    .aesop-collection-grid.aesop-collection-grid-3col & {
+      @media screen and (max-width: $width-tablet) {
+        width: 50%;
+      }
+
+      @media screen and (max-width: $width-phone) {
+        width: 100%;
+      }
+    }
+
+    &-inner {
+      //background-color: #eee;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    &-excerpt {
+      //color: $text-color-base;
+      color: $color-white;
+    }
+
+    &-img {
+      background-position: center;
+      bottom: $aesop-collection-margin;
+      left: $aesop-collection-margin;
+      position: absolute;
+      right: $aesop-collection-margin;
+      top: $aesop-collection-margin;
+
+      &:before {
+        background-color: $background-color-cover-neutral;
+        bottom: 0;
+        content: '';
+        left: 0;
+        opacity: .4;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &-entry-title {
+    color: $color-white;
+    margin: 0;
+  }
+
+  &-meta {
+    color: $color-white;
+    margin: 0;
+  }
+}
+
+.aesop-story-collection-title {
+  @include site-width;
 }

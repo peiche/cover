@@ -39,22 +39,6 @@
 				margin-bottom: 0;
 			}
 		}
-
-		.search {
-
-			&-form {
-				margin-top: 60px;
-				@include site-width($width-narrow);
-			}
-
-			&-field {
-				border: 0;
-				border-radius: 0;
-				box-sizing: border-box;
-				padding: 10px;
-				width: 100%;
-			}
-		}
 	}
 
 	&-title {
@@ -127,15 +111,11 @@
 
 		&.full {
 			min-height: 100vh;
-			padding: 50vh 0 100px;
+			padding-top: 50vh;
 
 			@media screen and (max-width: $width-tablet) {
-				padding-top: 25vh;
+				padding-top: 35vh;
 			}
 		}
-	}
-
-	.entry-meta {
-		margin: 0;
 	}
 }

@@ -214,8 +214,6 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 bower_components/
-fonts/
-js/*.min.js
 languages/
 node_modules/
 releases/

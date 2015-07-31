@@ -1,3 +1,5 @@
+var ajax_url = './wp-admin/admin-ajax.php';
+
 jQuery(document).ready(function() {
 
 	/**
@@ -6,7 +8,7 @@ jQuery(document).ready(function() {
 	 * attribute is "toggle-overlay" and the
 	 * data-overlay-id value matches the id
 	 * of the container with the overlay class.
-	 */
+	 **/
 	jQuery('[data-action="toggle-overlay"]').click(function(e) {
 		e.preventDefault();
 		var overlay_id = jQuery(this).attr('data-overlay-id');
@@ -15,9 +17,7 @@ jQuery(document).ready(function() {
 			jQuery('html').removeClass('noscroll');
 			jQuery('.overlay.show').removeClass('show');
 
-			jQuery('.overlay-search .search-field').val('');
-
-            setTimeout(function() {
+      setTimeout(function() {
 				jQuery('.overlay').scrollTop(0);
 			}, 200);
 		} else {
@@ -27,7 +27,7 @@ jQuery(document).ready(function() {
 			/**
 			 * Focus the search if there is a search field.
 			 * This will work for the pre-built search and widgets.
-			 */
+			 **/
 			jQuery('#' + overlay_id + ' .search-field').focus();
 		}
 	});
@@ -39,8 +39,6 @@ jQuery(document).ready(function() {
 		if (e.keyCode === 27) {
 			jQuery('html.noscroll').removeClass('noscroll');
 			jQuery('.overlay.show').removeClass('show');
-
-			jQuery('.overlay-search .search-field').val('');
 		}
 	});
 
@@ -75,19 +73,19 @@ jQuery(document).ready(function() {
 	 * Menu logic.
 	 **/
 
-	// Add dropdown buttons to menus with children.
-  jQuery('.menu .menu-item-has-children').append('<div class="sub-menu-toggle"><i class="fa fa-angle-down"></i></div>');
-
-  // hide submenus
-  jQuery('.menu .menu-item-has-children .sub-menu').addClass('hide');
+	/**
+	 * Find children by traversing up.
+	 * Not all menus or heirarchy widgets' parents has a class indicating so.
+	 **/
+	jQuery('.sub-menu, .children').addClass('hide').closest('li').addClass('menu-has-child').append('<div class="menu-toggle"><i class="fa fa-angle-down"></i></div>');
 
   // click event on submenu toggles
-  jQuery('.menu .menu-item-has-children').on('click', '.sub-menu-toggle', function(e) {
+  jQuery('body').on('click', '.menu-toggle', function(e) {
 		e.stopPropagation();
 		var $this = jQuery(this);
 
 		$this.children('.fa-angle-down').toggleClass('fa-rotate-180');
-    $this.siblings('.sub-menu').toggleClass('hide');
+    $this.siblings('.sub-menu, .children').toggleClass('hide');
   });
 });
 
@@ -95,7 +93,7 @@ jQuery(document).ready(function() {
  * Helper function to detect touch devices.
  * Much better solution than user agent detection,
  * which is a futile attempt at an arms race.
- */
+ **/
 function isTouchDevice() {
 	return !!('ontouchstart' in window || navigator.msMaxTouchPoints);
 }

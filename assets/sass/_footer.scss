@@ -1,5 +1,6 @@
 .site-footer {
   @include rem(font-size, 13px);
+  background-color: $color-white;
   color: $color-medium-grey;
   padding: 30px 0;
 

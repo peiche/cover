@@ -27,15 +27,17 @@ $color-dark-grey: #2b2b2b;
 $color-dark-grey-alt: #333;
 $color-blue-grey: #607d8b;
 $color-white: #fff;
+$color-black: #000;
 
 $text-color-base: #3b3b3b;
 $text-color-heading: darken($text-color-base, 10%);
 $text-color-content: $text-color-base;
 $text-color-quote: lighten($text-color-base, 10%);
 $text-color-cite: lighten($text-color-base, 25%);
-$text-color-overlay: $color-light-grey-alt2;
+$text-color-overlay-dark: $color-light-grey-alt2;
 
 $header-color: $color-blue;
+$header-height: 76px;
 
 $background-color-cover: $color-blue;
 $background-color-cover-neutral: $color-dark-grey;
@@ -57,11 +59,12 @@ $link-border-color: $color-light-grey;
 $button-background: #edebf3;
 $button-color: #858585;
 
-$width-phone: 480px;
-$width-narrow: 600px;
+$width-narrow: 500px;
 $width-medium: 760px;
-$width-tablet: 768px;
 $width-wide: 1000px;
+
+$width-phone: 480px;
+$width-tablet: 768px;
 
 $z-index-above-wp-toolbar: 100000;
 
@@ -73,10 +76,13 @@ $z-index-overlay: 999;
 
 $divider-color: $color-light-grey;
 
-$overlay-color: $color-dark-grey-alt;
+$overlay-color-light: $color-white;
+$overlay-color-dark: $color-dark-grey-alt;
 
 $menu-toggle-background: $color-light-grey-alt;
 $menu-toggle-background-overlay: #666;
+
+$featured-content-arrow-size: 50px;
 
 @function parse-int($n) {
   @return $n / ($n * 0 + 1);
@@ -288,6 +294,23 @@ $youtube-color: #e52d27;
 */
 @mixin social-icon {
   a {
+    .fa-circle {
+      &:before {
+        transition: color 200ms;
+      }
+
+      + .social-icon {
+        color: $color-white;
+      }
+    }
+
+    .social-icon {
+      color: $text-color-base;
+      transition: color 200ms;
+    }
+  }
+
+  a {
     @each $url, $color, $char in
     //('app.net', $appnet-color, $fa-var-adn),
     //('behance.net', $behance-color, $fa-var-behance),
@@ -320,13 +343,7 @@ $youtube-color: #e52d27;
     ('tumblr.com', $tumblr-color, $fa-var-tumblr),
     //('twitch.tv', $twitch-color, $fa-var-twitch),
     ('twitter.com', $twitter-color, $fa-var-twitter),
-
-    /*
-    * TODO: Change to $fa-var-vimeo
-    *       Waiting on this issue: https://github.com/FortAwesome/Font-Awesome/issues/2197
-    */
-    ('vimeo.com', $vimeo-color, $fa-var-vimeo-square),
-
+    ('vimeo.com', $vimeo-color, $fa-var-vimeo),
     //('vine.co', $vine-color, $fa-var-vine),
     ('wordpress.com', $wordpress-color, $fa-var-wordpress),
     ('wordpress.org', $wordpress-color, $fa-var-wordpress),
@@ -337,20 +354,9 @@ $youtube-color: #e52d27;
       &[href*='#{$url}'] {
         .fa-circle {
           color: $color;
-
-          &:before {
-            transition: color 200ms;
-          }
-
-          + .social-icon {
-            color: inherit;
-          }
         }
 
         .social-icon {
-          color: $text-color-base;
-          transition: color 200ms;
-
           &:before {
             content: $char;
           }

@@ -1,0 +1,60 @@
+.profile {
+  .single & {
+    padding: 30px 0 60px;
+  }
+
+  h4 {
+    margin: 0 0 10px;
+
+    a {
+      color: $text-color-base;
+    }
+  }
+
+  &-avatar {
+    position: absolute;
+
+    @media screen and (max-width: $width-phone) {
+      float: left;
+      position: static;
+    }
+  }
+
+  &-info {
+    margin-left: 150px;
+
+    @media screen and (max-width: $width-phone) {
+      float: left;
+      margin: 0;
+    }
+
+    .single & {
+      margin-left: 100px;
+
+      @media screen and (max-width: $width-phone) {
+        margin: 0;
+      }
+    }
+  }
+
+  &-bio {
+    margin-left: 150px;
+
+    @media screen and (max-width: $width-phone) {
+      clear: both;
+      margin: 0;
+    }
+
+    .single & {
+      margin-left: 100px;
+
+      @media screen and (max-width: $width-phone) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.bypostauthor {
+  /*! */
+}

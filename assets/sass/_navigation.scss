@@ -87,6 +87,11 @@ a {
   padding: 50px 0;
 }
 
+.site-main .grid .comment-navigation,
+.site-main .grid .paging-navigation {
+  width: 100%;
+}
+
 .paging-navigation a {
   @include button($color-blue);
 
@@ -192,35 +197,35 @@ a {
   }
 }
 
-.menu .menu-item-has-children {
+.menu-has-child {
   position: relative;
+}
 
-  .sub-menu-toggle {
-    @include rem(font-size, 30px);
-    cursor: pointer;
-    height: 59px;
+.menu-toggle {
+  @include rem(font-size, 30px);
+  cursor: pointer;
+  height: 59px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+
+  &:hover {
+    background-color: $menu-toggle-background;
+
+    .overlay-dark & {
+      background-color: $menu-toggle-background-overlay;
+    }
+  }
+
+  .fa {
+    bottom: 0;
+    height: 30px;
+    left: 0;
+    margin: auto;
     position: absolute;
     right: 0;
+    text-align: center;
     top: 0;
-    width: 60px;
-
-    &:hover {
-      background-color: $menu-toggle-background;
-
-      .overlay & {
-        background-color: $menu-toggle-background-overlay;
-      }
-    }
-
-    .fa {
-      bottom: 0;
-      height: 30px;
-      left: 0;
-      margin: auto;
-      position: absolute;
-      right: 0;
-      text-align: center;
-      top: 0;
-    }
   }
 }

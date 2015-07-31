@@ -95,7 +95,7 @@ Header
         display: none;
       }
 
-      @media screen and (max-width: $width-narrow) {
+      @media screen and (max-width: $width-phone) {
         border-left: 0;
         border-top-width: 1px;
         display: block;

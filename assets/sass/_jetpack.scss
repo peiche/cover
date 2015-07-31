@@ -6,7 +6,7 @@ Infinite Scroll
 --------------------------------------------------------------*/
 
 body #infinite-handle { // increased specificity to override jetpack's css
-	padding: 50px 0;
+	padding: 30px 0 50px;
 	text-align: center;
 
 	span {
@@ -157,8 +157,86 @@ Image Grid
 /*--------------------------------------------------------------
 Featured Content
 --------------------------------------------------------------*/
-.featured-container a,
-.featured-container a:hover,
-.featured-container a:visited {
-	color: $color-white;
+.featured-container {
+	position: relative;
+
+	ul {
+		margin: 0;
+	}
+
+	a,
+	a:hover,
+	a:visited {
+		color: $color-white;
+	}
+
+	.dots {
+		bottom: 0;
+		display: none;
+		left: 0;
+		margin: 0;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		z-index: $z-index-cover;
+	}
+
+	&.has-dots .dots {
+		@media screen and (max-width: $width-medium) {
+			display: block;
+		}
+	}
+
+	.dot {
+		border: 3px solid $color-white;
+		border-radius: 50%;
+		cursor: pointer;
+		display: inline-block;
+		height: 20px;
+		margin: 0 10px;
+		opacity: .5;
+		text-indent: -9999px;
+		width: 20px;
+
+		&.active {
+			background-color: $color-white;
+			opacity: 1;
+		}
+	}
+
+	.featured-arrow {
+		bottom: 0;
+		cursor: pointer;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		width: $featured-content-arrow-size;
+		z-index: $z-index-cover;
+
+		&.prev {
+			left: 0;
+		}
+
+		&.next {
+			right: 0;
+		}
+
+		@media screen and (max-width: $width-medium) {
+			display: none;
+		}
+
+		.fa {
+			@include rem(font-size, $featured-content-arrow-size);
+			bottom: 0;
+			color: $color-white;
+			height: $featured-content-arrow-size;
+			left: 0;
+			line-height: $featured-content-arrow-size;
+			margin: auto;
+			position: absolute;
+	    right: 0;
+			top: 0;
+			width: $featured-content-arrow-size;
+		}
+	}
 }

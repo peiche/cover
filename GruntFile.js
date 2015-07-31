@@ -11,25 +11,28 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    clean: {
+      build: ['dist']
+    },
     copy: {
       build: {
         files: [
           {
             cwd: 'bower_components/font-awesome/fonts',
             src: '**/*',
-            dest: 'fonts',
-            expand: true
-          },
-          {
-            cwd: 'bower_components/skrollr/dist',
-            src: 'skrollr.min.js',
-            dest: 'js',
+            dest: 'dist/fonts',
             expand: true
           },
           {
             cwd: 'bower_components/headroom.js/dist',
             src: 'headroom.min.js',
-            dest: 'js',
+            dest: 'dist/js',
+            expand: true
+          },
+          {
+            cwd: 'bower_components/skrollr/dist',
+            src: 'skrollr.min.js',
+            dest: 'dist/js',
             expand: true
           },
           {
@@ -37,15 +40,38 @@ module.exports = function(grunt) {
             src: 'class-tgm-plugin-activation.php',
             dest: 'inc',
             expand: true
+          },
+          {
+            cwd: 'bower_components/unslider/src',
+            src: 'unslider.min.js',
+            dest: 'dist/js',
+            expand: true
+          },
+          {
+            cwd: 'bower_components/jquery.event.move/js',
+            src: 'jquery.event.move.js',
+            dest: 'dist/js',
+            expand: true
+          },
+          {
+            cwd: 'bower_components/jquery.event.swipe/js',
+            src: 'jquery.event.swipe.js',
+            dest: 'dist/js',
+            expand: true
+          },
+          {
+            cwd: 'bower_components/masonry/dist',
+            src: 'masonry.pkgd.min.js',
+            dest: 'dist/js',
+            expand: true
           }
         ]
       }
     },
     scsslint: {
-      allFiles: ['sass/*.scss'],
+      allFiles: ['assets/sass/*.scss'],
       options: {
         config: '.scss-lint.yml',
-        exclude: 'sass/FontAwesome',
         reporterOutput: 'report/scss-lint-report.xml',
         colorizeOutput: true
       },
@@ -59,7 +85,7 @@ module.exports = function(grunt) {
           unixNewlines: true
         },
         files: {
-          'style.css': 'sass/style.scss'
+          'style.css': 'assets/sass/style.scss'
         }
       },
     },
@@ -71,17 +97,22 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['GruntFile.js', 'js/src/*.js'],
+      files: ['GruntFile.js', 'assets/js/*.js'],
       options: {
         'jshintrc': true
       }
     },
     uglify: {
+      options: {
+        compress: {
+          //pure_funcs: [ 'console.log', 'alert' ]
+        }
+      },
       build: {
         files: [{
           expand: true,
-          cwd: 'js/src',
-          dest: 'js',
+          cwd: 'assets/js',
+          dest: 'dist/js',
           src: '**/*.js',
           ext: '.min.js'
         }]
@@ -117,11 +148,11 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: 'sass/*.scss',
+        files: 'assets/sass/*.scss',
         tasks: ['scsslint', 'sass', 'autoprefixer']
       },
       javascript: {
-        files: 'js/src/*.js',
+        files: 'assets/js/*.js',
         tasks: ['jshint', 'uglify']
       }
     },
@@ -144,12 +175,11 @@ module.exports = function(grunt) {
               '!*.md',
               '!*.xml',
               '!GruntFile.js',
+              '!assets/**',
               '!bower_components/**',
-              '!js/src/**',
               '!node_modules/**',
               '!releases/**',
-              '!report/**',
-              '!sass/**'
+              '!report/**'
             ]
           }
         ]
@@ -158,6 +188,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -167,7 +198,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-pot');
   grunt.loadNpmTasks('grunt-scss-lint');
 
-  grunt.registerTask('build', ['copy', 'sass', 'autoprefixer', 'uglify']);
+  grunt.registerTask('build', ['clean', 'copy', 'sass', 'autoprefixer', 'uglify']);
   grunt.registerTask('validate', ['scsslint', 'jshint']);
   grunt.registerTask('default', ['scsslint', 'watch']);
 

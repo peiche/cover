@@ -16,9 +16,9 @@ function cover_jetpack_setup() {
      * @link http://jetpack.me/support/infinite-scroll/
      */
     add_theme_support( 'infinite-scroll', array(
-        'container' => 'main',
-		'footer' => false,
-	) );
+      'container' => 'main',
+		  'footer' => false,
+	  ) );
 
     /**
      * See Jetpack support for more info
@@ -37,9 +37,9 @@ function cover_jetpack_setup() {
      * @link http://jetpack.me/support/featured-content/
      */
     add_theme_support( 'featured-content', array(
-		'filter'		=> 'cover_get_featured_posts',
-        'max_posts'     => 1,
-	) );
+		  'filter'		=> 'cover_get_featured_posts',
+      'max_posts' => 5,
+	  ) );
 }
 add_action( 'after_setup_theme', 'cover_jetpack_setup' );
 
@@ -73,8 +73,24 @@ function cover_get_featured_posts() {
 /**
  * A helper conditional function that returns a boolean value.
  *
+ * @param integer $minimum Specifies the minimum posts.
  * @return bool Whether there are featured posts.
  */
-function cover_has_featured_posts() {
-	return ! is_paged() && (bool) cover_get_featured_posts();
+function cover_has_featured_posts( $minimum = 1 ) {
+	if ( is_paged() ) {
+    return false;
+  }
+
+  $minimum = absint( $minimum );
+  $featured_posts = apply_filters( 'cover_get_featured_posts', array() );
+
+  if ( ! is_array( $featured_posts ) ) {
+    return false;
+  }
+
+  if ( $minimum > count( $featured_posts ) ) {
+    return false;
+  }
+
+  return true;
 }
