@@ -73,6 +73,7 @@ function cover_get_featured_posts() {
 /**
  * A helper conditional function that returns a boolean value.
  *
+ * @param integer $minimum Specifies the minimum posts.
  * @return bool Whether there are featured posts.
  */
 function cover_has_featured_posts( $minimum = 1 ) {
