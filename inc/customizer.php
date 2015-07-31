@@ -31,28 +31,32 @@ function cover_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cover_overlay_color',
 		array(
-			'default' => 'overlay-dark',
+			'default'           => 'overlay-dark',
+			'sanitize_callback' => 'cover_sanitize_overlay_color',
 		)
 	);
 
 	$wp_customize->add_setting(
 		'cover_show_featured_image',
 		array(
-			'default' => false,
+			'default'           => false,
+			'sanitize_callback' => 'cover_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_setting(
 		'cover_list_style',
 		array(
-			'default' => 'minimal',
+			'default'           => 'minimal',
+			'sanitize_callback' => 'cover_sanitize_list_style',
 		)
 	);
 
 	$wp_customize->add_setting(
 		'cover_number_of_columns',
 		array(
-			'default' => 1,
+			'default'           => 1,
+			'sanitize_callback' => 'cover_sanitize_number_of_columns',
 		)
 	);
 
@@ -134,6 +138,74 @@ function cover_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'background_image' )->description = __( 'Applied when Cover View Options -> Post Listing Style is set to Grid.', 'cover' );
 }
 add_action( 'customize_register', 'cover_customize_register' );
+
+/**
+ * Sanitize select value.
+ *
+ * @param String $input The input to sanitize.
+ */
+function cover_sanitize_overlay_color( $input ) {
+	$valid = array(
+		'overlay-dark'  => 'Dark',
+		'overlay-light' => 'Light',
+	);
+
+	if ( array_key_exists( $input, $valid ) ) {
+		return $input;
+	} else {
+		return '';
+	}
+}
+
+/**
+ * Sanitize select value.
+ *
+ * @param String $input The input to sanitize.
+ */
+function cover_sanitize_list_style( $input ) {
+	$valid = array(
+		'minimal'  => 'Minimal',
+		'grid'     => 'Card',
+	);
+
+	if ( array_key_exists( $input, $valid ) ) {
+		return $input;
+	} else {
+		return '';
+	}
+}
+
+/**
+ * Sanitize select value.
+ *
+ * @param String $input The input to sanitize.
+ */
+function cover_sanitize_number_of_columns( $input ) {
+	$valid = array(
+		'1' => '1',
+		'2' => '2',
+		'3' => '3',
+	);
+
+	if ( array_key_exists( $input, $valid ) ) {
+		return $input;
+	} else {
+		return '';
+	}
+}
+
+/**
+ * Sanitize checkbox.
+ *
+ * @param integer $input The input to sanitize.
+ */
+function cover_sanitize_select( $input ) {
+	if ( 1 == $input ) {
+		return 1;
+	} else {
+		return '';
+	}
+}
 
 /**
  * Output custom css based on header and link colors.
