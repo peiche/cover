@@ -6,10 +6,20 @@ jQuery(document).ready(function() {
 
   // init unslider
   var unslider = jQuery('.featured-container').unslider({
-    autoplay: false,
-    dots: true,
-    fluid: true
-  });
+		fluid: true,
+		dots: true,
+		autoplay: false
+	});
+
+  /**
+   * We need to make sure the slides' width is a percentage,
+   * not a pixel value. Supposedly setting 'fluid: true' does this,
+   * but we're going to fix it here. Otherwise, we have to reset
+   * the slider on resize, and that's a slippery slope.
+   **/
+  var $slides = jQuery('.featured-container li:not(.dot)'); // ignore the dots, which unslider has already created
+  var slide_num = $slides.length;
+  $slides.width((100 / slide_num) + '%');
 
   // prev/next buttons
   jQuery('.featured-arrow').bind('click', function() {
@@ -22,23 +32,4 @@ jQuery(document).ready(function() {
   if (jQuery('.featured-container li').length > 1) {
     jQuery('.featured-arrow').removeClass('hide');
   }
-
-  /**
-   * Similar to debounce. Instead of running x milliseconds,
-   * this will only run after resizing has completed.
-   * https://css-tricks.com/snippets/jquery/done-resizing-event/
-   **/
-  /*
-  var resizeTimer;
-  jQuery(window).on('resize', function(e) {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-      initUnslider();
-    }, 250);
-  });
-  */
 });
-
-function initUnslider() {
-
-}
