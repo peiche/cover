@@ -6,7 +6,7 @@ Infinite Scroll
 --------------------------------------------------------------*/
 
 body #infinite-handle { // increased specificity to override jetpack's css
-	padding: 50px 0;
+	padding: 30px 0 50px;
 	text-align: center;
 
 	span {
