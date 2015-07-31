@@ -109,8 +109,8 @@ function cover_scripts() {
 	}
 
 	if ( 'grid' == get_theme_mod( 'cover_list_style', 'minimal' ) && ! is_singular() && ! is_page() ) {
-		wp_enqueue_script( 'masonry', get_template_directory_uri() . '/dist/js/masonry.pkgd.min.js', array( 'jquery'), '20150730', true );
-		wp_enqueue_script( 'masonry-cover', get_template_directory_uri() . '/dist/js/cover-masonry.min.js', array( 'jquery'), '20150730', true );
+		wp_enqueue_script( 'masonry', get_template_directory_uri() . '/dist/js/masonry.pkgd.min.js', array( 'jquery' ), '20150730', true );
+		wp_enqueue_script( 'masonry-cover', get_template_directory_uri() . '/dist/js/cover-masonry.min.js', array( 'jquery' ), '20150730', true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cover_scripts' );

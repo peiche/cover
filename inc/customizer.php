@@ -117,7 +117,7 @@ function cover_customize_register( $wp_customize ) {
 			'choices' => array(
 				1  => '1',
 				2 => '2',
-				3 => '3'
+				3 => '3',
 			),
 		)
 	);
