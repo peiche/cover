@@ -15,7 +15,9 @@ Tags: light, white, one-column, fluid-layout, responsive-layout, custom-menu, fe
 $fa-font-path: 'dist/fonts'; // override fonts path
 @import '../../bower_components/font-awesome/scss/font-awesome';
 
-@import 'vars';
+@import 'variables';
+@import 'mixins';
+@import 'social';
 @import 'reset';
 @import 'typography';
 @import 'elements';
@@ -34,6 +36,7 @@ $fa-font-path: 'dist/fonts'; // override fonts path
 @import 'profile';
 @import 'comments';
 @import 'footer';
+@import 'animations';
 
 // plugin support
 @import 'headroom';
