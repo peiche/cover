@@ -445,3 +445,9 @@ $aesop-collection-margin: 10px;
 .aesop-story-collection-title {
   @include site-width;
 }
+
+.aesop-video-component {
+  &-caption {
+    @extend %image-caption;
+  }
+}
