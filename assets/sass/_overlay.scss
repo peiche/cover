@@ -67,10 +67,10 @@ Overlay for menus and widgets
 	&-menu {
 		a,
 		a:visited {
-			color: $color-dark-grey;
+			color: $color-dark-gray;
 
 			&:hover {
-				color: $color-grey;
+				color: $color-gray;
 			}
 		}
 	}
@@ -132,7 +132,7 @@ Overlay for menus and widgets
 			}
 
 			li a {
-				border-color: $color-medium-grey;
+				border-color: $color-medium-gray;
 			}
 		}
 
@@ -142,7 +142,7 @@ Overlay for menus and widgets
 				color: $color-white;
 
 				&:hover {
-					color: $color-light-grey-alt3;
+					color: $color-light-gray-alt3;
 				}
 			}
 
@@ -155,7 +155,7 @@ Overlay for menus and widgets
 		}
 
 		.main-navigation a {
-			border-bottom-color: $color-medium-grey;
+			border-bottom-color: $color-medium-gray;
 		}
 
 		&.overlay-search {
