@@ -13,17 +13,19 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			
+
 			<?php get_template_part( 'inc/cover', 'archive' ); ?>
-			
+
 			<?php if ( have_posts() ) : ?>
 
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+				<div id="posts" class="<?php echo get_theme_mod( 'cover_list_style', 'minimal' ); ?> <?php if ( 'grid' == get_theme_mod( 'cover_list_style', 'minimal' ) && get_theme_mod( 'cover_number_of_columns' ) > 1 ) { echo 'card-' . get_theme_mod( 'cover_number_of_columns', '1' ); } ?>">
+					<?php /* Start the Loop */ ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'content' ); ?>
+						<?php get_template_part( 'content' ); ?>
 
-				<?php endwhile; ?>
+					<?php endwhile; ?>
+				</div>
 
 				<?php cover_paging_nav(); ?>
 
