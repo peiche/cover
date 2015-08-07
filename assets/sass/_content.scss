@@ -5,6 +5,7 @@ body.custom-background {
   &.ignore-custom-background,
   &.single,
   &.page,
+  &.search-no-results,
   &.error404 {
     background-color: $color-white;
     background-image: none;
@@ -28,6 +29,7 @@ body.custom-background {
   }
 }
 
+.cover + .grid,
 .featured-container + .grid {
   margin-top: 0;
 }
