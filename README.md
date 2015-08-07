@@ -113,6 +113,11 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 ##Changelog
 
+**1.6.1**
+- Extended nested menu logic for all hierarchical items, including categories.
+- Fixed caption styles for Aesop video components.
+- Fixed featured content slider format issue.
+
 **1.6.0**
 - Upgraded to FontAwesome 4.4.
 - Updated Vimeo icon (per [this FontAwesome issue](https://github.com/FortAwesome/Font-Awesome/issues/2197)).
@@ -126,7 +131,6 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 - Added Masonry plugin for grid view.
 - Tweaked profile layout for small screens.
 - Tweaked post spacing for small screens.
-- Extended nested menu logic for all hierarchical items, including categories.
 
 **1.5.6**
 - Fixed margin for comment and paging navigation.
