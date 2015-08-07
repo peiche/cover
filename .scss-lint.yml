@@ -8,8 +8,7 @@ linters:
     enabled: false
     convention: zero
   ColorKeyword:
-    enabled: true
-    severity: warning
+    enabled: false
   ColorVariable:
     enabled: true
   Comment:
