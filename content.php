@@ -8,7 +8,7 @@
 ?>
 
 <?php
-if ( has_post_thumbnail() ) {
+if ( '' != get_the_post_thumbnail() ) {
 	$img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 	$img = $img_arr[0];
 }
@@ -16,13 +16,11 @@ if ( has_post_thumbnail() ) {
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <?php if ( is_sticky() && has_post_thumbnail() ) { ?>
+    <?php if ( is_sticky() && '' != get_the_post_thumbnail() ) { ?>
         <div class="cover-background darken" style="background-image: url('<?php echo $img; ?>');"></div>
     <?php } ?>
 
-		<!-- <?php echo get_theme_mod( 'cover_show_featured_image', false ); ?> -->
-
-		<?php if ( ! is_sticky() && has_post_thumbnail() && 1 == get_theme_mod( 'cover_show_featured_image', 0 ) ) { ?>
+		<?php if ( ! is_sticky() && '' != get_the_post_thumbnail() && 1 == get_theme_mod( 'cover_show_featured_image', 0 ) ) { ?>
 			<div class="entry-featured-image" style="background-image: url('<?php echo $img; ?>');">
 				<a href="<?php the_permalink(); ?>"></a>
 			</div>

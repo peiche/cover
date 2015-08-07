@@ -1,0 +1,101 @@
+/*
+* Material Design colors!
+*/
+
+// main colors
+$color-blue:      #026ed2;
+$color-red:       #f44336;
+$color-green:     #4caf50;
+$color-pink:      #e91e63;
+$color-purple:    #9c27b0;
+$color-orange:    #ff9800;
+$color-dark-gray: #2b2b2b;
+
+// put into array for later use
+$main-colors: (
+  'default'   $color-blue,
+  'blue'      $color-blue,
+  'red'       $color-red,
+  'green'     $color-green,
+  'pink'      $color-pink,
+  'purple'    $color-purple,
+  'orange'    $color-orange,
+  'dark-gray' $color-dark-gray
+);
+
+// other colors because why not.
+$color-deep-purple: #673ab7;
+$color-indigo: #3f51b5;
+$color-light-blue: #03a9f4;
+$color-cyan: #00bcd4;
+$color-teal: #009688;
+$color-light-green: #8bc34a;
+$color-deep-orange: #ff5722;
+$color-brown: #795548;
+$color-gray: #9e9e9e;
+$color-gray-alt: #999;
+$color-light-gray: #c3c2c9;
+$color-light-gray-alt: #ddd;
+$color-light-gray-alt2: #ccc;
+$color-light-gray-alt3: #aaa;
+$color-light-gray-alt4: #eee;
+$color-medium-gray: #666;
+$color-dark-gray-alt: #333;
+$color-blue-gray: #607d8b;
+$color-white: #fff;
+$color-black: #000;
+
+$text-color-base: #3b3b3b;
+$text-color-heading: darken($text-color-base, 10%);
+$text-color-content: $text-color-base;
+$text-color-quote: lighten($text-color-base, 10%);
+$text-color-cite: lighten($text-color-base, 25%);
+$text-color-overlay-dark: $color-light-gray-alt2;
+
+$header-color: $color-blue;
+$header-height: 76px;
+
+$background-color-cover: $color-blue;
+$background-color-cover-neutral: $color-dark-gray;
+$background-color-code: $color-dark-gray;
+
+$font-size-normal: 16px;
+$font-size-large: 18px;
+$font-size-huge: 20px;
+$font-weight-normal: 400;
+
+$font-stack-content: 'Open Sans', sans-serif;
+$font-stack-heading: Montserrat, sans-serif;
+$font-stack-code: 'Source Code Pro', monospace;
+
+$link-color: $color-blue;
+$link-color-active: darken($link-color, 15%);
+$link-border-color: $color-light-gray;
+
+$button-background: #edebf3;
+$button-color: #858585;
+
+$width-narrow: 500px;
+$width-medium: 760px;
+$width-wide: 1000px;
+
+$width-phone: 480px;
+$width-tablet: 768px;
+
+$z-index-above-wp-toolbar: 100000;
+
+$z-index-header: 1000;
+$z-index-header-backdrop: -1;
+$z-index-cover: 400;
+$z-index-aesop-timeline: 500;
+$z-index-overlay: 999;
+
+$divider-color: $color-light-gray;
+
+$overlay-color-light: $color-white;
+$overlay-color-dark: $color-dark-gray-alt;
+
+$menu-toggle-background: $color-light-gray-alt;
+$menu-toggle-background-overlay: #666;
+
+$featured-content-arrow-size: 50px;

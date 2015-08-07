@@ -235,7 +235,7 @@
 }
 
 .aesop-article-chapter:after {
-  background-color: $color-dark-grey; // no background color defined by aesop component
+  background-color: $color-dark-gray; // no background color defined by aesop component
 }
 
 .aesop-content-img:after {
@@ -444,4 +444,10 @@ $aesop-collection-margin: 10px;
 
 .aesop-story-collection-title {
   @include site-width;
+}
+
+.aesop-video-component {
+  &-caption {
+    @extend %image-caption;
+  }
 }

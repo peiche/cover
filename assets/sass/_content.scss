@@ -5,6 +5,7 @@ body.custom-background {
   &.ignore-custom-background,
   &.single,
   &.page,
+  &.search-no-results,
   &.error404 {
     background-color: $color-white;
     background-image: none;
@@ -28,6 +29,7 @@ body.custom-background {
   }
 }
 
+.cover + .grid,
 .featured-container + .grid {
   margin-top: 0;
 }
@@ -36,7 +38,7 @@ body.custom-background {
 10.1 Posts and pages
 --------------------------------------------------------------*/
 .sticky {
-  background: $color-dark-grey-alt;
+  background: $color-dark-gray-alt;
 
   .entry-title a,
   .entry-meta a,
@@ -64,11 +66,11 @@ body.custom-background {
   }
 
   .entry-subtitle a {
-    color: $color-light-grey-alt3;
+    color: $color-light-gray-alt3;
 
     &:hover {
-      border-color: $color-grey-alt;
-      color: $color-light-grey-alt3;
+      border-color: $color-gray-alt;
+      color: $color-light-gray-alt3;
     }
   }
 
@@ -91,7 +93,7 @@ body.custom-background {
   }
 
   code {
-    background: $color-dark-grey-alt;
+    background: $color-dark-gray-alt;
   }
 
   &:after {
@@ -112,7 +114,7 @@ body.custom-background {
     width: 100%;
 
     &.sticky {
-      background-color: $color-dark-grey-alt;
+      background-color: $color-dark-gray-alt;
     }
 
     &:after {
@@ -237,11 +239,11 @@ body.custom-background {
 
   &-subtitle {
     @include rem(font-size, 20px);
-    color: $color-grey-alt;
+    color: $color-gray-alt;
     margin: 0;
 
     a {
-      color: $color-grey-alt;
+      color: $color-gray-alt;
 
       &:hover {
         border-color: $link-border-color;
@@ -308,7 +310,7 @@ body.custom-background {
           margin-right: 10px;
 
           &:after {
-            color: $color-light-grey-alt2;
+            color: $color-light-gray-alt2;
             content: '\2022';
             display: inline-block;
             padding-left: 10px;

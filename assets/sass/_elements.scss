@@ -53,3 +53,18 @@ table {
 th {
 	font-weight: bold;
 }
+
+// buttons
+
+.button {
+  @include button;
+
+  @each $colors in $main-colors {
+    $name: nth($colors, 1);
+    $color: nth($colors, 2);
+
+    &.#{$name} {
+      @include bg-color-hover($color);
+    }
+  }
+}

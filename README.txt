@@ -113,6 +113,12 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 == Changelog ==
 
+1.6.1
+- Extended nested menu logic for all hierarchical items, including categories.
+- Fixed caption styles for Aesop video components.
+- Fixed featured content slider format issue.
+- Added support for Naked Social Share plugin.
+
 1.6.0
 - Upgraded to FontAwesome 4.4.
 - Updated Vimeo icon (per [this FontAwesome issue](https://github.com/FortAwesome/Font-Awesome/issues/2197)).
@@ -126,7 +132,6 @@ You can download the latest from Github. Follow these steps to activate Cover:
 - Added Masonry plugin for grid view.
 - Tweaked profile layout for small screens.
 - Tweaked post spacing for small screens.
-- Extended nested menu logic for all hierarchical items, including categories.
 
 1.5.6
 - Fixed margin for comment and paging navigation.

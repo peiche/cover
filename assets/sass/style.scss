@@ -4,7 +4,7 @@ Theme URI: http://eichefam.net/projects/cover
 Author: Paul Eiche
 Author URI: http://eichefam.net/
 Description: A content-driven blogging theme for WordPress.
-Version: 1.6.0
+Version: 1.6.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: cover
@@ -15,7 +15,9 @@ Tags: light, white, one-column, fluid-layout, responsive-layout, custom-menu, fe
 $fa-font-path: 'dist/fonts'; // override fonts path
 @import '../../bower_components/font-awesome/scss/font-awesome';
 
-@import 'vars';
+@import 'variables';
+@import 'mixins';
+@import 'social';
 @import 'reset';
 @import 'typography';
 @import 'elements';
@@ -34,6 +36,7 @@ $fa-font-path: 'dist/fonts'; // override fonts path
 @import 'profile';
 @import 'comments';
 @import 'footer';
+@import 'animations';
 
 // plugin support
 @import 'headroom';
@@ -42,3 +45,4 @@ $fa-font-path: 'dist/fonts'; // override fonts path
 @import 'lasso';
 @import 'jetpack';
 @import 'disqus';
+@import 'nakedsocialshare';
