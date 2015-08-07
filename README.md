@@ -117,6 +117,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 - Extended nested menu logic for all hierarchical items, including categories.
 - Fixed caption styles for Aesop video components.
 - Fixed featured content slider format issue.
+- Added support for Naked Social Share plugin.
 
 **1.6.0**
 - Upgraded to FontAwesome 4.4.

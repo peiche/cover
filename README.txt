@@ -117,6 +117,7 @@ You can download the latest from Github. Follow these steps to activate Cover:
 - Extended nested menu logic for all hierarchical items, including categories.
 - Fixed caption styles for Aesop video components.
 - Fixed featured content slider format issue.
+- Added support for Naked Social Share plugin.
 
 1.6.0
 - Upgraded to FontAwesome 4.4.
