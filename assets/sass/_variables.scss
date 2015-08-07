@@ -11,25 +11,16 @@ $color-purple:    #9c27b0;
 $color-orange:    #ff9800;
 $color-dark-gray: #2b2b2b;
 
-$color-literal-default:   'default';
-$color-literal-blue:      'blue';
-$color-literal-red:       'red';
-$color-literal-green:     'green';
-$color-literal-pink:      'pink';
-$color-literal-purple:    'purple';
-$color-literal-orange:    'orange';
-$color-literal-dark-gray: 'dark-gray';
-
 // put into array for later use
 $main-colors: (
-  $color-literal-default   $color-blue,
-  $color-literal-blue      $color-blue,
-  $color-literal-red       $color-red,
-  $color-literal-green     $color-green,
-  $color-literal-pink      $color-pink,
-  $color-literal-purple    $color-purple,
-  $color-literal-orange    $color-orange,
-  $color-literal-dark-gray $color-dark-gray
+  'default'   $color-blue,
+  'blue'      $color-blue,
+  'red'       $color-red,
+  'green'     $color-green,
+  'pink'      $color-pink,
+  'purple'    $color-purple,
+  'orange'    $color-orange,
+  'dark-gray' $color-dark-gray
 );
 
 // other colors because why not.
