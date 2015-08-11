@@ -13,6 +13,10 @@ body.custom-background {
 }
 
 .site-main {
+  .minimal {
+    margin-top: $header-height;
+  }
+
   .grid {
     @extend .cf;
     @include site-width;
