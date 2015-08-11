@@ -40,7 +40,7 @@ function cover_customize_register( $wp_customize ) {
 		'cover_show_featured_image',
 		array(
 			'default'           => false,
-			'sanitize_callback' => 'cover_sanitize_checkbox',
+			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 
