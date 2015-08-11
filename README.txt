@@ -113,6 +113,11 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 == Changelog ==
 
+1.6.2
+- Escaped theme options.
+- Fixed missing margin for Minimal view.
+- Updated TGM Plugin Activation class.
+
 1.6.1
 - Extended nested menu logic for all hierarchical items, including categories.
 - Fixed caption styles for Aesop video components.
@@ -123,7 +128,7 @@ You can download the latest from Github. Follow these steps to activate Cover:
 - Upgraded to FontAwesome 4.4.
 - Updated Vimeo icon (per [this FontAwesome issue](https://github.com/FortAwesome/Font-Awesome/issues/2197)).
 - Added overlay color option: dark or light.
-- Added Unslider plugin with touch support for more than one featured post.
+- Added Unslider plugin for more than one featured post.
 - Increased featured post maximum from one to five.
 - Added post view option: minimal or grid.
 - Added custom background color option for grid view.
@@ -197,6 +202,4 @@ All other resources are licensed as follows:
 * Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE
 * Skrollr - MIT - https://github.com/Prinzhorn/skrollr/blob/master/LICENSE.txt
 * TGM Plugin Activation - GPL v2.0 - https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md
-* jquery.event.move - WTFPL - http://www.wtfpl.net/txt/copying/
-* jquery.event.swipe - WTFPL - http://www.wtfpl.net/txt/copying/
 * Unslider - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md
