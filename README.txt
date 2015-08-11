@@ -114,7 +114,7 @@ You can download the latest from Github. Follow these steps to activate Cover:
 == Changelog ==
 
 1.6.2
-- Escaped theme options.
+- Escaped theme option outputs.
 - Fixed missing margin for Minimal view.
 - Updated TGM Plugin Activation class.
 

@@ -114,7 +114,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 ##Changelog
 
 **1.6.2**
-- Escaped theme options.
+- Escaped theme option outputs.
 - Fixed missing margin for Minimal view. (Fixes [this issue](https://github.com/peiche/cover/issues/41).)
 - Updated TGM Plugin Activation class.
 
