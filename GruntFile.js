@@ -48,18 +48,6 @@ module.exports = function(grunt) {
             expand: true
           },
           {
-            cwd: 'bower_components/jquery.event.move/js',
-            src: 'jquery.event.move.js',
-            dest: 'dist/js',
-            expand: true
-          },
-          {
-            cwd: 'bower_components/jquery.event.swipe/js',
-            src: 'jquery.event.swipe.js',
-            dest: 'dist/js',
-            expand: true
-          },
-          {
             cwd: 'bower_components/masonry/dist',
             src: 'masonry.pkgd.min.js',
             dest: 'dist/js',
