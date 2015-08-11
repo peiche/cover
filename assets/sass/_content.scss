@@ -33,6 +33,8 @@ body.custom-background {
   }
 }
 
+.cover + .minimal,
+.featured-container + .minimal,
 .cover + .grid,
 .featured-container + .grid {
   margin-top: 0;
