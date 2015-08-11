@@ -39,7 +39,7 @@ if (
 }
 
 $ignore_custom_background = '';
-if ( 'minimal' == get_theme_mod( 'cover_list_style', 'minimal' ) ) {
+if ( 'minimal' == esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) ) ) {
   $ignore_custom_background = 'ignore-custom-background';
 }
 
@@ -69,8 +69,10 @@ if ( 'minimal' == get_theme_mod( 'cover_list_style', 'minimal' ) ) {
 
 </header>
 
+<?php $overlay_color = esc_attr( get_theme_mod( 'cover_overlay_color', 'overlay-dark' ) ); ?>
+
 <?php if ( $build_overlay ) { ?>
-    <div id="menu-overlay" class="overlay <?php echo get_theme_mod( 'cover_overlay_color', 'overlay-dark' ); ?> overlay-menu">
+    <div id="menu-overlay" class="overlay <?php echo $overlay_color; ?> overlay-menu">
         <noscript>
             <div class="header">
                 <div class="site-nav">
@@ -99,7 +101,7 @@ if ( 'minimal' == get_theme_mod( 'cover_list_style', 'minimal' ) ) {
     </div>
 <?php } ?>
 
-<div id="search-overlay" class="overlay <?php echo get_theme_mod( 'cover_overlay_color', 'overlay-dark' ); ?> overlay-search">
+<div id="search-overlay" class="overlay <?php echo $overlay_color; ?> overlay-search">
     <?php if ( ! $build_overlay ) { ?>
         <div class="header">
             <div class="site-nav">

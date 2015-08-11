@@ -211,10 +211,10 @@ function cover_sanitize_select( $input ) {
  * Output custom css based on header and link colors.
  */
 function cover_customize_options() {
-  $header_color = get_theme_mod( 'cover_header_color', '#026ed2' );
-  $link_color = get_theme_mod( 'cover_link_color', '#026ed2' );
-	$overlay_color = get_theme_mod( 'cover_overlay_color', 'overlay-dark' );
-	$list_style = get_theme_mod( 'cover_list_style', 'minimal' );
+  $header_color  = esc_attr( get_theme_mod( 'cover_header_color', '#026ed2' ) );
+  $link_color    = esc_attr( get_theme_mod( 'cover_link_color', '#026ed2' ) );
+	$overlay_color = esc_attr( get_theme_mod( 'cover_overlay_color', 'overlay-dark' ) );
+	$list_style    = esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) );
   ?>
 
 <style>
