@@ -12,7 +12,11 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     clean: {
-      build: ['dist']
+      build: [
+        'dist',
+        '*.css',
+        '*.css.map'
+      ]
     },
     copy: {
       build: {
@@ -48,18 +52,6 @@ module.exports = function(grunt) {
             expand: true
           },
           {
-            cwd: 'bower_components/jquery.event.move/js',
-            src: 'jquery.event.move.js',
-            dest: 'dist/js',
-            expand: true
-          },
-          {
-            cwd: 'bower_components/jquery.event.swipe/js',
-            src: 'jquery.event.swipe.js',
-            dest: 'dist/js',
-            expand: true
-          },
-          {
             cwd: 'bower_components/masonry/dist',
             src: 'masonry.pkgd.min.js',
             dest: 'dist/js',
@@ -77,7 +69,29 @@ module.exports = function(grunt) {
       },
     },
     sass: {
-      build: {
+      dev: {
+        options: {
+          style: 'expanded',
+          noCache: true,
+          sourcemap: 'auto',
+          unixNewlines: true
+        },
+        files: {
+          'style.css': 'assets/sass/style.scss'
+        }
+      },
+      prod: {
+        options: {
+          style: 'compressed',
+          noCache: true,
+          sourcemap: 'none',
+          unixNewlines: true
+        },
+        files: {
+          'style.css': 'assets/sass/style.scss'
+        }
+      },
+      wporg: {
         options: {
           style: 'expanded',
           noCache: true,
@@ -87,7 +101,7 @@ module.exports = function(grunt) {
         files: {
           'style.css': 'assets/sass/style.scss'
         }
-      },
+      }
     },
     autoprefixer: {
       build: {
@@ -103,18 +117,34 @@ module.exports = function(grunt) {
       }
     },
     uglify: {
-      options: {
-        compress: {
-          //pure_funcs: [ 'console.log', 'alert' ]
-        }
-      },
-      build: {
+      dev: {
+        options: {
+          mangle: false,
+          beautify: true
+        },
         files: [{
           expand: true,
           cwd: 'assets/js',
           dest: 'dist/js',
           src: '**/*.js',
-          ext: '.min.js'
+          ext: '.js'
+        }]
+      },
+      prod: {
+        options: {
+          compress: {
+            pure_funcs: [
+              'console.log',
+              'alert'
+            ]
+          }
+        },
+        files: [{
+          expand: true,
+          cwd: 'assets/js',
+          dest: 'dist/js',
+          src: '**/*.js',
+          ext: '.js'
         }]
       }
     },
@@ -149,11 +179,11 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: 'assets/sass/*.scss',
-        tasks: ['scsslint', 'sass', 'autoprefixer']
+        tasks: ['scsslint', 'sass:dev', 'autoprefixer']
       },
       javascript: {
         files: 'assets/js/*.js',
-        tasks: ['jshint', 'uglify']
+        tasks: ['jshint', 'uglify:dev']
       }
     },
     compress: {
@@ -198,9 +228,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-pot');
   grunt.loadNpmTasks('grunt-scss-lint');
 
-  grunt.registerTask('build', ['clean', 'copy', 'sass', 'autoprefixer', 'uglify']);
   grunt.registerTask('validate', ['scsslint', 'jshint']);
-  grunt.registerTask('default', ['scsslint', 'watch']);
+
+  grunt.registerTask('dev', ['clean', 'copy', 'sass:dev', 'autoprefixer', 'uglify']);
+  grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer', 'uglify:prod']);
+  grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer', 'uglify:prod']);
+
+  grunt.registerTask('default', ['scsslint', 'jshint', 'watch']);
 
   grunt.registerTask('zip', 'Make a zip file for installation.', function() {
     grunt.log.writeln('Zipping up the project.');

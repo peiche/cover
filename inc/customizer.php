@@ -40,7 +40,7 @@ function cover_customize_register( $wp_customize ) {
 		'cover_show_featured_image',
 		array(
 			'default'           => false,
-			'sanitize_callback' => 'cover_sanitize_checkbox',
+			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 
@@ -211,10 +211,10 @@ function cover_sanitize_select( $input ) {
  * Output custom css based on header and link colors.
  */
 function cover_customize_options() {
-  $header_color = get_theme_mod( 'cover_header_color', '#026ed2' );
-  $link_color = get_theme_mod( 'cover_link_color', '#026ed2' );
-	$overlay_color = get_theme_mod( 'cover_overlay_color', 'overlay-dark' );
-	$list_style = get_theme_mod( 'cover_list_style', 'minimal' );
+  $header_color  = esc_attr( get_theme_mod( 'cover_header_color', '#026ed2' ) );
+  $link_color    = esc_attr( get_theme_mod( 'cover_link_color', '#026ed2' ) );
+	$overlay_color = esc_attr( get_theme_mod( 'cover_overlay_color', 'overlay-dark' ) );
+	$list_style    = esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) );
   ?>
 
 <style>
@@ -254,6 +254,6 @@ add_action( 'wp_head', 'cover_customize_options' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function cover_customize_preview_js() {
-	wp_enqueue_script( 'cover_customizer', get_template_directory_uri() . '/js/customizer.min.js', array( 'customize-preview' ), '20130508', true );
+	wp_enqueue_script( 'cover_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
 add_action( 'customize_preview_init', 'cover_customize_preview_js' );

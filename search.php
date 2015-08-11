@@ -16,7 +16,12 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-				<div id="posts" class="<?php echo get_theme_mod( 'cover_list_style', 'minimal' ); ?> <?php if ( 'grid' == get_theme_mod( 'cover_list_style', 'minimal' ) && get_theme_mod( 'cover_number_of_columns' ) > 1 ) { echo 'card-' . get_theme_mod( 'cover_number_of_columns', '1' ); } ?>">
+				<?php
+				$list_style = esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) );
+				$number_of_columns = esc_attr( get_theme_mod( 'cover_number_of_columns', 1 ) );
+				?>
+
+				<div id="posts" class="<?php echo $list_style; ?> <?php if ( 'grid' == $list_style && $number_of_columns > 1 ) { echo 'card-' . $number_of_columns; } ?>">
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 
@@ -24,7 +29,7 @@ get_header(); ?>
 
 					<?php endwhile; ?>
 				</div>
-				
+
 				<?php cover_paging_nav(); ?>
 
 			<?php else : ?>

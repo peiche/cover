@@ -20,7 +20,7 @@ if ( '' != get_the_post_thumbnail() ) {
         <div class="cover-background darken" style="background-image: url('<?php echo $img; ?>');"></div>
     <?php } ?>
 
-		<?php if ( ! is_sticky() && '' != get_the_post_thumbnail() && 1 == get_theme_mod( 'cover_show_featured_image', 0 ) ) { ?>
+		<?php if ( ! is_sticky() && '' != get_the_post_thumbnail() && 1 == esc_attr( get_theme_mod( 'cover_show_featured_image', 0 ) ) ) { ?>
 			<div class="entry-featured-image" style="background-image: url('<?php echo $img; ?>');">
 				<a href="<?php the_permalink(); ?>"></a>
 			</div>

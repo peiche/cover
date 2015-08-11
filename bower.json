@@ -7,10 +7,9 @@
     "font-awesome": "~4.4.*",
     "headroom.js": "~0.7.0",
     "skrollr": "~0.6.29",
-    "tgm-plugin-activation": "https://github.com/thomasgriffin/TGM-Plugin-Activation/archive/master.zip",
     "unslider": "~1.0.0",
     "masonry": "~3.3.1",
-    "jquery.event.swipe": "~0.5.4"
+    "tgm-plugin-activation": "https://github.com/thomasgriffin/TGM-Plugin-Activation/archive/master.zip"
   },
   "ignore": [
     "**/.*",
