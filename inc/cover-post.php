@@ -58,4 +58,8 @@
 
     </header>
 
+    <?php if ( $height > 600 ) { ?>
+      <a href="<?php echo $img; ?>" id="cover-background-expand" class="cover-background-link" target="_blank"><i class="fa fa-fw fa-expand"></i></a>
+    <?php } ?>
+
 </div>

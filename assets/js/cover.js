@@ -87,6 +87,25 @@ jQuery(document).ready(function() {
 		$this.children('.fa-angle-down').toggleClass('fa-rotate-180');
     $this.siblings('.sub-menu, .children').toggleClass('hide');
   });
+
+	/**
+	 **/
+
+	jQuery('#cover-background-expand').click(function(e) {
+		var $this = jQuery(this);
+
+		// Aesop comes with the Swipebox plugin.
+		// Let's use that, if we have it.
+		if (jQuery.swipebox !== undefined) {
+			e.preventDefault();
+
+			jQuery.swipebox([
+				{ href: $this.attr('href') }
+			]);
+		}
+
+	});
+
 });
 
 /**
