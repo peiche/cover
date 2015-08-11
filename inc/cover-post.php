@@ -25,7 +25,43 @@
 ?>
 
 <div class="cover<?php echo $class; ?>">
-    <div class="cover-background<?php if ( '' != $class ) { ?>" style="background-image: url('<?php echo $img; ?>');" data-0-top="background-position: 50% 50%;" data-0-top-bottom="background-position: 50% 100%;<?php } ?>"></div>
+  <div class="cover-background<?php if ( '' != $class ) { ?>" style="background-image: url('<?php echo $img; ?>');" data-0-top="background-position: 50% 50%;" data-0-top-bottom="background-position: 50% 100%;<?php } ?>"></div>
+
+    <!-- add more featured images if supported -->
+    <?php
+
+    if ( class_exists( 'Dynamic_Featured_Image' ) ) {
+      global $dynamic_featured_image;
+      $featured_images = $dynamic_featured_image->get_featured_images();
+
+      foreach ( $featured_images as &$value ) {
+      ?>
+
+      <div class="cover-background" style="background-image: url('<?php echo $value['full']; ?>'); opacity: 0;"></div>
+
+      <?php
+      }
+
+      ?>
+
+      <!-- move to enqueue -->
+      <script>
+
+      setInterval(function() {
+
+        var $
+        jQuery('.cover-background').css('opacity', 0);
+        .next('.cover-background')
+
+      }, 3000); // every three seconds
+
+      </script>
+
+      <?php
+
+    }
+
+    ?>
 
     <header class="cover-header">
 
