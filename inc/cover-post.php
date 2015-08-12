@@ -49,9 +49,9 @@
 
       setInterval(function() {
 
-        var $
-        jQuery('.cover-background').css('opacity', 0);
-        .next('.cover-background')
+        //var $
+        //jQuery('.cover-background').css('opacity', 0);
+        //.next('.cover-background')
 
       }, 3000); // every three seconds
 
@@ -95,7 +95,8 @@
     </header>
 
     <?php if ( $height > 600 ) { ?>
-      <a href="<?php echo $img; ?>" id="cover-background-expand" class="cover-background-link" target="_blank"><i class="fa fa-fw fa-expand"></i></a>
+      <a href="#post-<?php the_ID(); ?>" class="cover-background-jump"><i class="fa fa-fw fa-angle-down"></i></a>
+      <a href="<?php echo $img; ?>" class="cover-background-link swipebox" target="_blank"><i class="fa fa-fw fa-expand"></i></a>
     <?php } ?>
 
 </div>
