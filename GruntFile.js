@@ -230,7 +230,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('validate', ['scsslint', 'jshint']);
 
-  grunt.registerTask('dev', ['clean', 'copy', 'sass:dev', 'autoprefixer', 'uglify']);
+  grunt.registerTask('dev', ['clean', 'copy', 'sass:dev', 'autoprefixer', 'uglify:dev']);
   grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer', 'uglify:prod']);
   grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer', 'uglify:prod']);
 
