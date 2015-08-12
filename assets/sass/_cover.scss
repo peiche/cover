@@ -101,8 +101,8 @@
 			opacity: .1;
 		}
 
+		&-jump,
 		&-link {
-			@include rem(font-size, 25px);
 			bottom: 0;
 			color: $color-white;
 			opacity: .5;
@@ -119,6 +119,16 @@
 			&:hover {
 				opacity: 1;
 			}
+		}
+
+		&-jump {
+			@include rem(font-size, 50px);
+			left: 0;
+			text-align: center;
+		}
+
+		&-link {
+			@include rem(font-size, 25px);
 		}
 	}
 
