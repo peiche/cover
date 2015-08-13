@@ -299,7 +299,8 @@ body.custom-background {
     > iframe,
     > address,
     > table,
-    > dl {
+    > dl,
+    > fieldset {
       @include site-width;
     }
 
