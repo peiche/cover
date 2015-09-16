@@ -110,6 +110,10 @@ You can download the latest from Github. Follow these steps to activate Cover:
 2. Can I change the font size?
 
    Cover does not allow you to change the default font size. I recommend creating a child theme before making changes to the theme.
+   
+3. I am receiving an error in the Customizer, what should I do?
+
+   Disable any caching plugins that you may have activated.
 
 == Changelog ==
 
