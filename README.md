@@ -107,6 +107,9 @@ So you want to build the project yourself. Great! Please follow [these direction
 2. **Can I change the font size?**  
    Cover does not allow you to change the default font size. I recommend creating a child theme before making changes to the theme.
 
+3. **I am receiving an error in the Customizer, what should I do?**
+   Disable any caching plugins that you may have activated.
+
 ##Contribute
 
 If you see something wrong, or you want to improve on what I've got here, feel free to submit an issue or create a pull request.
