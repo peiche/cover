@@ -157,7 +157,7 @@ function get_contrast( $hexcolor ) {
  * @param string $hex The hexidecimal value of the color.
  * @param string $percent The percentage to darken the color.
  */
-function darken($hex, $percent) {
+function darken( $hex, $percent ) {
     preg_match( '/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors );
 	str_replace( '%', '', $percent );
 	$color = '#';
