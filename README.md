@@ -59,13 +59,13 @@ Cover was built from the ground up with Aesop Story Engine in mind. Break out of
 
 Automattic's Jetpack plugin comes packed with modules for any theme to use, but Cover is designed to work nicely with these:
 
-**Site Logo**  
+- **Site Logo**  
 In the Customizer, you can not only set the site title and tagline, but also a site logo. You can enable and disable any combination of these three options.
 
-**Featured Posts**  
+- **Featured Posts**  
 In the Customizer (again), you'll find the option to assign a specific tag to featured posts (the default is "featured"). Tagging a post will give it a special place on your blog's home page: it's displayed larger than the normal post listing, with its featured image displayed prominently behind it. Please note that Cover currently only shows a single featured post, even though you may tag more than one post as featured.
 
-**Infinite Scroll**  
+- **Infinite Scroll**  
 The Infinite Scroll module already works just fine, and we're not messing with that. But Cover allows you to have a social menu in the footer, so now Jetpack responds accordingly. If you have infinite scrolling enabled and no footer menu, scrolling down will load more posts, just as it's meant to do. But if you _do_ have a footer menu, you will see a button to click in order to load more posts. (Otherwise, you'd never see the footer!)
 
 ####Color Posts
@@ -115,6 +115,13 @@ So you want to build the project yourself. Great! Please follow [these direction
 If you see something wrong, or you want to improve on what I've got here, feel free to submit an issue or create a pull request.
 
 ##Changelog
+
+**1.6.3**
+- Added link on posts to view featured image.
+- Added link on posts with featured images to jump straight to content.
+- Fixed color theme for Chrome on Android Lollipop.
+- [Fixed broken `customizer.js` link](https://github.com/peiche/cover/issues/43) (thanks [@michaelbeil](https://github.com/michaelbeil)).
+- Stylesheet fixes.
 
 **1.6.2**
 - Escaped theme option outputs.
