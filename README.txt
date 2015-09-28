@@ -70,13 +70,13 @@ Jetpack
 
 Automattic's Jetpack plugin comes packed with modules for any theme to use, but Cover is designed to work nicely with these:
 
-* Site Logo *
+- * Site Logo *
 In the Customizer, you can not only set the site title and tagline, but also a site logo. You can enable and disable any combination of these three options.
 
-* Featured Posts *
+- * Featured Posts *
 In the Customizer (again), you'll find the option to assign a specific tag to featured posts (the default is "featured"). Tagging a post will give it a special place on your blog's home page: it's displayed larger than the normal post listing, with its featured image displayed prominently behind it. Please note that Cover currently only shows a single featured post, even though you may tag more than one post as featured.
 
-* Infinite Scroll *
+- * Infinite Scroll *
 The Infinite Scroll module already works just fine, and we're not messing with that. But Cover allows you to have a social menu in the footer, so now Jetpack responds accordingly. If you have infinite scrolling enabled and no footer menu, scrolling down will load more posts, just as it's meant to do. But if you do have a footer menu, you will see a button to click in order to load more posts. (Otherwise, you'd never see the footer!)
 
 Color Posts
