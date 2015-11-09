@@ -118,4 +118,6 @@ if ( 'minimal' == esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) ) ) {
     <?php } ?>
 
     <?php get_search_form(); ?>
+
+    <?php get_sidebar( 'search' ); ?>
 </div>

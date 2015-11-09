@@ -72,9 +72,20 @@ add_action( 'after_setup_theme', 'cover_setup' );
  */
 function cover_widgets_init() {
 
-  register_sidebar( array(
+	// main overlay widgets
+	register_sidebar( array(
 		'name'          => __( 'Overlay Widgets', 'cover' ),
 		'id'            => 'cover-overlay',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+
+	// search overlay widgets
+	register_sidebar( array(
+		'name'          => __( 'Search Widgets', 'cover' ),
+		'id'            => 'cover-search',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
