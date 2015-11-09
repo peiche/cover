@@ -6,6 +6,10 @@
   h4 {
     margin: 0 0 10px;
 
+    @include max-width($width-phone) {
+      margin: 50% 0;
+    }
+
     a {
       color: $text-color-base;
     }
@@ -14,7 +18,7 @@
   &-avatar {
     position: absolute;
 
-    @media screen and (max-width: $width-phone) {
+    @include max-width($width-phone) {
       float: left;
       position: static;
     }
@@ -23,7 +27,7 @@
   &-info {
     margin-left: 150px;
 
-    @media screen and (max-width: $width-phone) {
+    @include max-width($width-phone) {
       float: left;
       margin: 0;
     }
@@ -31,7 +35,7 @@
     .single & {
       margin-left: 100px;
 
-      @media screen and (max-width: $width-phone) {
+      @include max-width($width-phone) {
         margin: 0;
       }
     }
@@ -40,7 +44,7 @@
   &-bio {
     margin-left: 150px;
 
-    @media screen and (max-width: $width-phone) {
+    @include max-width($width-phone) {
       clear: both;
       margin: 0;
     }
@@ -48,7 +52,7 @@
     .single & {
       margin-left: 100px;
 
-      @media screen and (max-width: $width-phone) {
+      @include max-width($width-phone) {
         margin: 0;
       }
     }

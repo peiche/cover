@@ -12,7 +12,7 @@ body #infinite-handle { // increased specificity to override jetpack's css
 	span {
 		@include button($color-blue);
 
-		@media screen and (max-width: $width-phone) {
+		@include max-width($width-phone) {
 			display: block;
 			margin: auto;
 			width: 90%;
@@ -118,7 +118,7 @@ Image Grid
 .widget-grid-view-image {
 	width: 33.33%;
 
-	@media screen and (max-width: $width-phone) {
+	@include max-width($width-phone) {
 		width: 50%;
 	}
 
@@ -183,7 +183,7 @@ Featured Content
 	}
 
 	&.has-dots .dots {
-		@media screen and (max-width: $width-medium) {
+		@include max-width($width-medium) {
 			display: block;
 		}
 	}
@@ -222,7 +222,7 @@ Featured Content
 			right: 0;
 		}
 
-		@media screen and (max-width: $width-medium) {
+		@include max-width($width-medium) {
 			display: none;
 		}
 

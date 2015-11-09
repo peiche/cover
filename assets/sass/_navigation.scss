@@ -95,7 +95,7 @@ a {
 .paging-navigation a {
   @include button($color-blue);
 
-  @media screen and (max-width: $width-phone) {
+  @include max-width($width-phone) {
     display: block;
     margin-bottom: 10px;
     text-align: center;
@@ -114,7 +114,7 @@ a {
   text-align: right;
 }
 
-@media screen and (max-width: $width-phone) {
+@include max-width($width-phone) {
   .comment-navigation .nav-previous,
   .paging-navigation .nav-previous,
   .comment-navigation .nav-next,

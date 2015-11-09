@@ -95,7 +95,7 @@ Overlay for menus and widgets
 				display: block;
 				outline: 0;
 
-				@media screen and (max-width: $width-tablet) {
+				@include max-width($width-tablet) {
 					@include rem(font-size, 30px);
 				}
 			}

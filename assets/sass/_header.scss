@@ -58,7 +58,7 @@ Header
       vertical-align: bottom;
       width: auto;
 
-      @media screen and (max-width: $width-tablet) {
+      @include max-width($width-tablet) {
         margin-right: 10px;
       }
 
@@ -95,7 +95,7 @@ Header
         display: none;
       }
 
-      @media screen and (max-width: $width-phone) {
+      @include max-width($width-phone) {
         border-left: 0;
         border-top-width: 1px;
         display: block;
@@ -190,7 +190,7 @@ Nav menu, which animates into close x
   pointer-events: auto;
   transform: translate3d(0, 3px, 0);
 
-  @media screen and (max-width: $width-tablet) {
+  @include max-width($width-tablet) {
     margin-right: 0;
   }
 
