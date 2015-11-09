@@ -1,6 +1,6 @@
 <?php
 /**
- * The Footer Sidebar
+ * The Overlay Sidebar
  *
  * @package Cover
  * @since 1.0.0
