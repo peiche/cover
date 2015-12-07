@@ -120,6 +120,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 - Added link on posts to view featured image.
 - Added link on posts with featured images to jump straight to content.
 - Added widget area on search overlay.
+- Fixed missing translation text in post navigation.
 - Fixed color theme for Chrome on Android Lollipop.
 - [Fixed broken `customizer.js` link](https://github.com/peiche/cover/issues/43) (thanks [@michaelbeil](https://github.com/michaelbeil)).
 - Stylesheet fixes.

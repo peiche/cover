@@ -121,6 +121,7 @@ You can download the latest from Github. Follow these steps to activate Cover:
 - Added link on posts to view featured image.
 - Added link on posts with featured images to jump straight to content.
 - Added widget area on search overlay.
+- Fixed missing translation text in post navigation.
 - Fixed color theme for Chrome on Android Lollipop.
 - Fixed broken `customizer.js` link (thanks @michaelbeil).
 - Stylesheet fixes.
