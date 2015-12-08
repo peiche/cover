@@ -48,6 +48,13 @@
   width: 90%;
 }
 
+// handles min-width media query, eliminating repeat code
+@mixin min-width($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
 // handles max-width media query, eliminating repeat code
 @mixin max-width($breakpoint) {
   @media screen and (max-width: $breakpoint) {
