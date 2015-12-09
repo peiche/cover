@@ -13,9 +13,9 @@ get_header(); // Call header inside the loop to get author info. ?>
 
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
-                
+
 				<?php get_template_part( 'inc/cover', 'post' ); ?>
-				
+
                 <?php get_template_part( 'content', 'single' ); ?>
 
                 <?php
@@ -24,8 +24,10 @@ get_header(); // Call header inside the loop to get author info. ?>
                         comments_template();
                     endif;
                 ?>
-                
-                <?php cover_post_nav(); ?>
+
+                <?php if ( 'thread' != get_post_type() ) { ?>
+                  <?php cover_post_nav(); ?>
+                <?php } ?>
 
             </main><!-- #main -->
         </div><!-- #primary -->
