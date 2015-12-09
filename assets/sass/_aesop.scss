@@ -103,6 +103,19 @@
   width: 90%;
 }
 
+.entry-content > .aesop-component-timeline-container {
+  max-width: 100%;
+}
+
+.aesop-component-timeline-link {
+  @extend .button;
+
+  &:empty {
+    background: none;
+    border: 0;
+  }
+}
+
 .aesop-stacked {
   &-img {
     background-attachment: fixed;
