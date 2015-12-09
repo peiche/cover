@@ -119,7 +119,9 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 **1.6.3**
 - Added link on posts to view featured image.
 - Added link on posts with featured images to jump straight to content.
+- Added support for my fork of the [Threads](https://github.com/peiche/wp-threads/) plugin.
 - Added widget area on search overlay.
+- Updated to Font Awesome 4.5.
 - Fixed missing translation text in post navigation.
 - Fixed color theme for Chrome on Android Lollipop.
 - [Fixed broken `customizer.js` link](https://github.com/peiche/cover/issues/43) (thanks [@michaelbeil](https://github.com/michaelbeil)).

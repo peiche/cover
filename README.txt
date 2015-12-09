@@ -120,7 +120,9 @@ You can download the latest from Github. Follow these steps to activate Cover:
 1.6.3
 - Added link on posts to view featured image.
 - Added link on posts with featured images to jump straight to content.
+- Added support for my fork of the Threads plugin.
 - Added widget area on search overlay.
+- Updated to Font Awesome 4.5.
 - Fixed missing translation text in post navigation.
 - Fixed color theme for Chrome on Android Lollipop.
 - Fixed broken `customizer.js` link (thanks @michaelbeil).
