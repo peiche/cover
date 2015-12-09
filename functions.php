@@ -72,7 +72,7 @@ add_action( 'after_setup_theme', 'cover_setup' );
  */
 function cover_widgets_init() {
 
-	// main overlay widgets
+	// Main overlay widgets.
 	register_sidebar( array(
 		'name'          => __( 'Overlay Widgets', 'cover' ),
 		'id'            => 'cover-overlay',
@@ -82,7 +82,7 @@ function cover_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 
-	// search overlay widgets
+	// Search overlay widgets.
 	register_sidebar( array(
 		'name'          => __( 'Search Widgets', 'cover' ),
 		'id'            => 'cover-search',
