@@ -17,12 +17,17 @@
     width: 90%;
   }
 
-  .threads-content {
+  .threads-content,
+  .threads-intersects {
     background-color: $threads-content-background;
+  }
 
-    &:before {
-      border-right-color: $threads-content-background;
-    }
+  .threads-content:before {
+    border-right-color: $threads-content-background;
+  }
+
+  .threads-intersects {
+  	border-top: 1px solid $threads-background;
   }
 
   .threads-image:before,
