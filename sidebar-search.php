@@ -1,15 +1,15 @@
 <?php
 /**
- * The Overlay Sidebar
+ * The Search Sidebar
  *
  * @package Cover
  * @since 1.0.0
  */
 
-if ( ! is_active_sidebar( 'cover-overlay' ) ) {
+if ( ! is_active_sidebar( 'cover-search' ) ) {
 	return;
 }
 ?>
 <div class="widget-area" role="complementary">
-  <?php dynamic_sidebar( 'cover-overlay' ); ?>
+  <?php dynamic_sidebar( 'cover-search' ); ?>
 </div>

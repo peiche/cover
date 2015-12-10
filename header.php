@@ -12,7 +12,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#026ed2">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -119,4 +118,6 @@ if ( 'minimal' == esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) ) ) {
     <?php } ?>
 
     <?php get_search_form(); ?>
+
+    <?php get_sidebar( 'search' ); ?>
 </div>

@@ -1,0 +1,58 @@
+// increase specificity to override plugin defaults
+.entry-content {
+
+  .threads-post-notice {
+    background-color: $threads-background;
+    padding: 20px;
+  }
+
+  .threads-container {
+    background-color: $threads-background;
+    max-width: none;
+    width: 100%;
+  }
+
+  .threads-timeline {
+    margin: auto;
+    width: 90%;
+  }
+
+  .threads-content,
+  .threads-intersects {
+    background-color: $threads-content-background;
+  }
+
+  .threads-content:before {
+    border-right-color: $threads-content-background;
+  }
+
+  .threads-intersects {
+  	border-top: 1px solid $threads-background;
+  }
+
+  .threads-image:before,
+  .threads-image:after {
+    border-left-color: $threads-background;
+  }
+
+  .threads-image--overlay {
+    background-color: rgba(0, 0, 0, .4);
+  }
+
+  @media only screen and (min-width: 1170px) {
+    .threads-content:before {
+      border-color: transparent;
+      border-left-color: $threads-content-background;
+    }
+
+    .threads-block:nth-child(even) .threads-content:before {
+      border-right-color: $threads-content-background;
+    }
+
+    .threads-block:nth-child(odd) .threads-image:before,
+    .threads-block:nth-child(odd) .threads-image:after {
+      border-right-color: $threads-background;
+    }
+  }
+
+}

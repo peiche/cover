@@ -17,7 +17,7 @@
       font-size: $font-size-normal;
     }
 
-    @media screen and (max-width: $width-phone) {
+    @include max-width($width-phone) {
       .site-credits,
       .social-navigation {
         float: none;

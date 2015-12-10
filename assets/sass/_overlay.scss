@@ -95,7 +95,7 @@ Overlay for menus and widgets
 				display: block;
 				outline: 0;
 
-				@media screen and (max-width: $width-tablet) {
+				@include max-width($width-tablet) {
 					@include rem(font-size, 30px);
 				}
 			}
@@ -116,6 +116,29 @@ Overlay for menus and widgets
 
 			&:first-of-type {
 				margin-top: 0;
+			}
+		}
+
+		.widget {
+			@include min-width($width-tablet) {
+				&:not(:only-child) {
+					float: left;
+			    margin-left: 5%;
+			    margin-right: 5%;
+			    max-width: none;
+					width: 40%;
+				}
+
+				&:nth-child(odd) {
+					clear: both; // not messing around with masonry bs, let's just clear each row
+				}
+			}
+
+			&-area {
+				@extend .cf;
+				margin-left: auto;
+				margin-right: auto;
+				width: 90%;
 			}
 		}
 	}

@@ -72,9 +72,20 @@ add_action( 'after_setup_theme', 'cover_setup' );
  */
 function cover_widgets_init() {
 
-  register_sidebar( array(
+	// Main overlay widgets.
+	register_sidebar( array(
 		'name'          => __( 'Overlay Widgets', 'cover' ),
 		'id'            => 'cover-overlay',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+
+	// Search overlay widgets.
+	register_sidebar( array(
+		'name'          => __( 'Search Widgets', 'cover' ),
+		'id'            => 'cover-search',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -157,7 +168,7 @@ function get_contrast( $hexcolor ) {
  * @param string $hex The hexidecimal value of the color.
  * @param string $percent The percentage to darken the color.
  */
-function darken($hex, $percent) {
+function darken( $hex, $percent ) {
     preg_match( '/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors );
 	str_replace( '%', '', $percent );
 	$color = '#';

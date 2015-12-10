@@ -104,7 +104,15 @@ module.exports = function(grunt) {
       }
     },
     autoprefixer: {
-      build: {
+      dev: {
+        options: {
+          map: true
+        },
+        files: {
+          'style.css': 'style.css'
+        }
+      },
+      prod: {
         files: {
           'style.css': 'style.css'
         }
@@ -230,9 +238,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('validate', ['scsslint', 'jshint']);
 
-  grunt.registerTask('dev', ['clean', 'copy', 'sass:dev', 'autoprefixer', 'uglify']);
-  grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer', 'uglify:prod']);
-  grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer', 'uglify:prod']);
+  grunt.registerTask('dev', ['clean', 'copy', 'sass:dev', 'autoprefixer:dev', 'uglify:dev']);
+  grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer:prod', 'uglify:prod']);
+  grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer:prod', 'uglify:prod']);
 
   grunt.registerTask('default', ['scsslint', 'jshint', 'watch']);
 

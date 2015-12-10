@@ -254,6 +254,6 @@ add_action( 'wp_head', 'cover_customize_options' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function cover_customize_preview_js() {
-	wp_enqueue_script( 'cover_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+	wp_enqueue_script( 'cover_customizer', get_template_directory_uri() . '/dist/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
 add_action( 'customize_preview_init', 'cover_customize_preview_js' );

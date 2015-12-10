@@ -40,7 +40,7 @@
         padding: 20px 0;
       }
 
-      @media screen and (max-width: $width-phone) {
+      @include max-width($width-phone) {
         margin: 30px auto;
         max-width: 90%;
 
@@ -63,7 +63,7 @@
         opacity: 0;
         transition: opacity 200ms;
 
-        @media screen and (max-width: $width-tablet) {
+        @include max-width($width-tablet) {
           transform: none !important;
         }
       }
@@ -103,6 +103,19 @@
   width: 90%;
 }
 
+.entry-content > .aesop-component-timeline-container {
+  max-width: 100%;
+}
+
+.aesop-component-timeline-link {
+  @extend .button;
+
+  &:empty {
+    background: none;
+    border: 0;
+  }
+}
+
 .aesop-stacked {
   &-img {
     background-attachment: fixed;
@@ -117,7 +130,7 @@
     top: 0;
     width: 100%;
 
-    @media screen and (max-width: $width-tablet) {
+    @include max-width($width-tablet) {
       background-attachment: scroll;
       background-size: contain !important; // overrides inline style set by js
     }
@@ -193,7 +206,7 @@
     margin: 10px 30px;
     max-width: 45% !important;
 
-    @media screen and (max-width: $width-tablet) {
+    @include max-width($width-tablet) {
       float: none;
       margin: 40px auto;
       max-width: none !important;
@@ -206,7 +219,7 @@
     max-width: none;
     width: auto;
 
-    @media screen and (max-width: $width-tablet) {
+    @include max-width($width-tablet) {
       @include site-width;
     }
   }
@@ -216,7 +229,7 @@
   @include site-width;
 }
 
-@media screen and (max-width: $width-tablet) {
+@include max-width($width-tablet) {
   .aesop-image-component .aesop-image-component-image.aesop-image-component-caption-left,
   .aesop-image-component .aesop-image-component-image.aesop-image-component-caption-right {
     text-align: center;
@@ -383,17 +396,17 @@ $aesop-collection-margin: 10px;
     padding: $aesop-collection-margin;
 
     .aesop-collection-grid.aesop-collection-grid-2col & {
-      @media screen and (max-width: $width-phone) {
+      @include max-width($width-phone) {
         width: 100%;
       }
     }
 
     .aesop-collection-grid.aesop-collection-grid-3col & {
-      @media screen and (max-width: $width-tablet) {
+      @include max-width($width-tablet) {
         width: 50%;
       }
 
-      @media screen and (max-width: $width-phone) {
+      @include max-width($width-phone) {
         width: 100%;
       }
     }

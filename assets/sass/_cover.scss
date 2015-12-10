@@ -56,7 +56,7 @@
 			margin-bottom: 0;
 		}
 
-		@media screen and (max-width: $width-tablet) {
+		@include max-width($width-tablet) {
 			@include rem(font-size, 40px);
 			line-height: 50px;
 		}
@@ -76,7 +76,7 @@
 			}
 		}
 
-		@media screen and (max-width: $width-tablet) {
+		@include max-width($width-tablet) {
 			@include rem(font-size, 20px);
 		}
 	}
@@ -100,6 +100,36 @@
 		&.darken {
 			opacity: .1;
 		}
+
+		&-jump,
+		&-link {
+			bottom: 0;
+			color: $color-white;
+			opacity: .5;
+			padding: 10px;
+			position: absolute;
+			right: 0;
+
+			&:link,
+			&:visited,
+			&:hover {
+				color: $color-white;
+			}
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		&-jump {
+			@include rem(font-size, 50px);
+			left: 0;
+			text-align: center;
+		}
+
+		&-link {
+			@include rem(font-size, 25px);
+		}
 	}
 
 	&.featured-image {
@@ -113,7 +143,7 @@
 			min-height: 100vh;
 			padding-top: 50vh;
 
-			@media screen and (max-width: $width-tablet) {
+			@include max-width($width-tablet) {
 				padding-top: 35vh;
 			}
 		}
