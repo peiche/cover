@@ -29,7 +29,7 @@
 				single_cat_title();
 
 			elseif ( is_tag() ) :
-                _e( '# ', 'cover' ) . _e( single_tag_title(), 'cover' );
+        single_tag_title();
 
 			elseif ( is_day() ) :
 				printf( __( '%s', 'cover' ), get_the_date() );
@@ -68,7 +68,7 @@
 				_e( 'Chats', 'cover' );
 
 			elseif ( is_search() ) :
-				_e( 'Results for &quot;', 'cover' ) . _e( the_search_query(), 'cover' ) . _e( '&quot;', 'cover' );
+				_e( 'Results for &quot;', 'cover' ) . the_search_query() . _e( '&quot;', 'cover' );
 
 			else :
 				_e( 'Archives', 'cover' );
