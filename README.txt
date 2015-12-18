@@ -117,6 +117,9 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 == Changelog ==
 
+1.6.4
+- Updated TGM Plugin Activation class.
+
 1.6.3
 - Added link on posts to view featured image.
 - Added link on posts with featured images to jump straight to content.
