@@ -326,8 +326,51 @@
   }
 }
 
-.aesop-sticky-map.aesop-sticky-map-left .aesop-map-component:before {
-  box-shadow: none;
+.aesop-sticky-map {
+  .aesop-map-component:before {
+    box-shadow: none;
+  }
+
+  .header {
+    left: 0;
+    right: 0;
+  }
+
+  @include min-width(767px) {
+    &-top {
+      .header.headroom--unpinned {
+        opacity: 0; // fix header visibility for sticky maps
+      }
+
+      .cover {
+        z-index: 120; // match map component
+      }
+    }
+
+    &-left {
+      .header {
+        padding-left: 270px; // 250px body padding + 20px header padding
+
+        .backdrop {
+          left: 250px;
+        }
+      }
+    }
+
+    &-right {
+      .header {
+        padding-right: 270px; // 250px body padding + 20px header padding
+
+        .noscroll & {
+          padding-right: 20px; // cheating a little, oh well
+        }
+
+        .backdrop {
+          right: 250px;
+        }
+      }
+    }
+  }
 }
 
 .entry-content > .aesop-component {
