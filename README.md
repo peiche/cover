@@ -118,6 +118,8 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 **1.6.4**
 - Updated TGM Plugin Activation class.
+- Updated accessibility.
+- Fixed sticky map component in ASE.
 
 **1.6.3**
 - Added link on posts to view featured image.

@@ -119,6 +119,8 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 1.6.4
 - Updated TGM Plugin Activation class.
+- Updated accessibility.
+- Fixed sticky map component in ASE.
 
 1.6.3
 - Added link on posts to view featured image.
