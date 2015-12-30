@@ -52,14 +52,14 @@ if ( 'minimal' == esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) ) ) {
     <div class="backdrop" data-0-top="opacity: 0;" data-0-top-bottom="opacity: 1;" data-anchor-target=".cover"></div>
 
 	<div class="site-nav">
-		<a class="site-search" data-action="toggle-overlay" data-overlay-id="search-overlay" href="#search-overlay"><span class="fa fa-search"></span></a>
+		<a class="site-search" data-action="toggle-overlay" data-overlay-id="search-overlay" href="#search-overlay"><span class="fa fa-search" aria-label="Search Overlay"></span></a>
 		<?php if ( $build_overlay ) { ?>
-			<a class="hamburger" data-action="toggle-overlay" data-overlay-id="menu-overlay" href="#menu-overlay"><span></span></a>
+			<a class="hamburger" data-action="toggle-overlay" data-overlay-id="menu-overlay" href="#menu-overlay"><span aria-label="Toggle Overlay"></span></a>
 		<?php } ?>
 	</div>
 
     <div class="site-info">
-        <?php if ( function_exists( 'jetpack_has_site_logo' ) ) { ?>
+        <?php if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) { ?>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo-link" <?php if ( ! jetpack_has_site_logo() ) { ?>style="display: none;"<?php } ?>><img src="<?php echo esc_url( jetpack_get_site_logo( 'url' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="site-logo"></a>
         <?php } ?>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
@@ -75,7 +75,7 @@ if ( 'minimal' == esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) ) ) {
         <noscript>
             <div class="header">
                 <div class="site-nav">
-                    <a class="hamburger close" href="#"><span></span></a>
+                    <a class="hamburger close" href="#"><span aria-label="Toggle Overlay"></span></a>
                 </div>
             </div>
         </noscript>
@@ -90,8 +90,8 @@ if ( 'minimal' == esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) ) ) {
             <nav class="social-navigation">
                 <?php wp_nav_menu( array(
                     'theme_location' => $nav_social,
-                    'link_before'    => '<span class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x social-icon"></i><span class="screen-reader-text">',
-                    'link_after'     => '</span></span>',
+                    'link_before'    => '<span class="fa-stack fa-2x" aria-hidden="true"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x social-icon"></i></span><span class="screen-reader-text">',
+                    'link_after'     => '</span>',
                 ) ); ?>
             </nav>
         <?php } ?>
@@ -104,14 +104,14 @@ if ( 'minimal' == esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) ) ) {
     <?php if ( ! $build_overlay ) { ?>
         <div class="header">
             <div class="site-nav">
-                <a class="hamburger close" data-action="toggle-overlay" data-overlay-id="search-overlay" href="#"><span></span></a>
+                <a class="hamburger close" data-action="toggle-overlay" data-overlay-id="search-overlay" href="#"><span aria-label="Toggle Overlay"></span></a>
             </div>
         </div>
     <?php } else { ?>
         <noscript>
             <div class="header">
                 <div class="site-nav">
-                    <a class="hamburger close" href="#"><span></span></a>
+                    <a class="hamburger close" href="#"><span aria-label="Toggle Overlay"></span></a>
                 </div>
             </div>
         </noscript>
