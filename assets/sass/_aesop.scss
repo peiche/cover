@@ -174,7 +174,7 @@
   font-weight: normal;
   line-height: 1;
 
-  &.aesopicon-search-plus:before {
+  &.aesopicon-search-plus::before {
     content: '\f00e';
   }
 }
@@ -338,7 +338,7 @@
 }
 
 .aesop-sticky-map {
-  .aesop-map-component:before {
+  .aesop-map-component::before {
     box-shadow: none;
   }
 
@@ -533,7 +533,7 @@ $aesop-collection-margin: 10px;
       right: $aesop-collection-margin;
       top: $aesop-collection-margin;
 
-      &:before {
+      &::before {
         background-color: $background-color-cover-neutral;
         bottom: 0;
         content: '';
