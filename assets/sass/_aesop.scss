@@ -270,9 +270,20 @@
   color: $color-white;
   margin-bottom: 0;
   margin-top: 0;
-  padding: 250px 0 20px;
+  padding: 100px 0 50px;
   position: relative;
   z-index: 1;
+
+  small {
+    //display: block;
+  }
+
+  .aesop-chapter-full & {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
 }
 
 .aesop-lightbox {
@@ -340,6 +351,10 @@
     &-top {
       .header.headroom--unpinned {
         opacity: 0; // fix header visibility for sticky maps
+
+        .noscroll & {
+          opacity: 1;
+        }
       }
 
       .cover {
@@ -386,9 +401,53 @@
   }
 }
 
-#aesop-toggle-chapter-menu,
-#aesop-chapter-menu {
-  display: none; // fix meeeee
+.aesop-toggle-chapter-menu {
+  background: #000;
+  border: 0;
+  bottom: 20px;
+  color: #fff;
+  padding: 10px 20px 10px 10px;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+
+  &:visited,
+  &:hover,
+  &:active {
+    color: #fff;
+  }
+
+  .aesop-chapter-menu-open & .aesop-close-chapter-menu {
+    visibility: hidden;
+  }
+}
+
+.dashicons.aesop-close-chapter-menu {
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.aesop-chapter-menu {
+  background: #000;
+  bottom: 70px;
+  color: #fff;
+  display: none;
+  padding: 10px 50px 0 0;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+
+  .aesop-chapter-menu-open & {
+    display: block;
+  }
+
+  .aesop-close-chapter-menu {
+    bottom: -40px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+  }
 }
 
 .aesop-grid {
