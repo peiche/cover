@@ -121,8 +121,10 @@ function cover_scripts() {
 		wp_enqueue_script( 'masonry-cover', get_template_directory_uri() . '/dist/js/cover-masonry.js', array( 'jquery' ), '20150730', true );
 	}
 
-	// use dashicons on the front end
-	// http://jespervanengelen.com/snippets/use-wordpress-dashicons-frontend/
+	/**
+	 * Use dashicons on the front end.
+	 * http://jespervanengelen.com/snippets/use-wordpress-dashicons-frontend/
+	 **/
 	wp_enqueue_style( 'dashicons' );
 }
 add_action( 'wp_enqueue_scripts', 'cover_scripts' );

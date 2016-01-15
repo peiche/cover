@@ -13,6 +13,7 @@ function cover_jetpack_setup() {
 
     /**
      * See Jetpack support for more info
+     *
      * @link http://jetpack.me/support/infinite-scroll/
      */
     add_theme_support( 'infinite-scroll', array(
@@ -28,12 +29,14 @@ function cover_jetpack_setup() {
 
     /**
      * See Jetpack support for more info
+     *
      * @link http://jetpack.me/support/responsive-videos/
      */
     add_theme_support( 'jetpack-responsive-videos' );
 
     /**
      * See Jetpack support for more info
+     *
      * @link http://jetpack.me/support/featured-content/
      */
     add_theme_support( 'featured-content', array(

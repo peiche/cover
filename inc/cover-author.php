@@ -1,6 +1,7 @@
 <?php
 /**
  * Author include, used on author page and at the bottom of single posts
+ *
  * @package Cover
  */
 
