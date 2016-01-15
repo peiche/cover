@@ -11,7 +11,6 @@
         "jQuery": true,
         "alert": true,
         "Headroom": true,
-        "skrollr": true,
         "wp": true
     },
     "immed": true,
@@ -33,7 +32,6 @@
         "inject",
         "module", // GruntFile.js
         "Headroom",
-        "skrollr",
         "console"
     ],
     "quotmark": true,

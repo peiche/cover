@@ -49,7 +49,7 @@ if ( 'minimal' == esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) ) ) {
 <?php do_action( 'ase_theme_body_inside_top' ); ?>
 
 <header class="header<?php echo $header_class; ?>">
-    <div class="backdrop" data-0-top="opacity: 0;" data-0-top-bottom="opacity: 1;" data-anchor-target=".cover"></div>
+  <div class="backdrop"></div>
 
 	<div class="site-nav">
 		<a class="site-search" data-action="toggle-overlay" data-overlay-id="search-overlay" href="#search-overlay"><span class="fa fa-search" aria-label="Search Overlay"></span></a>

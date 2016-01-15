@@ -34,12 +34,6 @@ module.exports = function(grunt) {
             expand: true
           },
           {
-            cwd: 'bower_components/skrollr/dist',
-            src: 'skrollr.min.js',
-            dest: 'dist/js',
-            expand: true
-          },
-          {
             cwd: 'bower_components/tgm-plugin-activation',
             src: 'class-tgm-plugin-activation.php',
             dest: 'inc',
