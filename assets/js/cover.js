@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
 	 * attribute is "toggle-overlay" and the
 	 * data-overlay-id value matches the id
 	 * of the container with the overlay class.
-	 **/
+	 */
 
 	jQuery('[data-action="toggle-overlay"]').click(function(e) {
 		e.preventDefault();
@@ -28,14 +28,14 @@ jQuery(document).ready(function() {
 			/**
 			 * Focus the search if there is a search field.
 			 * This will work for the pre-built search and widgets.
-			 **/
+			 */
 			jQuery('#' + overlay_id + ' .search-field').focus();
 		}
 	});
 
 	/**
 	 * Hitting the escape key will close an open overlay
-	 **/
+	 */
 	jQuery(document).keyup(function(e) {
 		if (e.keyCode === 27) {
 			closeOverlay();
@@ -44,7 +44,7 @@ jQuery(document).ready(function() {
 
 	/**
 	 * Clicking on header acts as "back to top" link.
-	 **/
+	 */
 	jQuery('.header').click(function(e) {
 		if (jQuery(e.target).closest('a').length === 0) {
 			jQuery('html, body').animate({
@@ -55,7 +55,7 @@ jQuery(document).ready(function() {
 
 	/**
    * Headroom.
-   **/
+   */
   header_headroom = new Headroom(jQuery('.header')[0]);
   header_headroom.init();
 	header_headroom.onTop = function() {
@@ -87,12 +87,12 @@ jQuery(document).ready(function() {
 
   /**
 	 * Menu logic.
-	 **/
+	 */
 
 	/**
 	 * Find children by traversing up.
 	 * Not all menus or heirarchy widgets' parents has a class indicating so.
-	 **/
+	 */
 	jQuery('.sub-menu, .children').addClass('hide').closest('li').addClass('menu-has-child').append('<div class="menu-toggle"><i class="fa fa-angle-down"></i></div>');
 
   // click event on submenu toggles
@@ -124,7 +124,7 @@ jQuery(document).ready(function() {
 	 * Performs a smooth page scroll to an anchor on the same page.
 	 * Ignore overlay actions and ASE ids.
 	 * https://css-tricks.com/snippets/jquery/smooth-scrolling/
-	 **/
+	 */
 	jQuery('a[href*=#]:not([href="#"]):not([data-action="toggle-overlay"]):not([id^=aesop])').click(function() {
     if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
       var target = jQuery(this.hash);
@@ -149,7 +149,7 @@ jQuery(document).ready(function() {
 
 	/**
 	 * Aesop enhancements.
-	 **/
+	 */
 
 	// disable headroom while we're scrolling to a chapter point
 	if (jQuery('.aesop-chapter-menu').length > 0) {
@@ -168,7 +168,7 @@ jQuery(document).ready(function() {
  * Helper function to detect touch devices.
  * Much better solution than user agent detection,
  * which is a futile attempt at an arms race.
- **/
+ */
 function isTouchDevice() {
 	return !!('ontouchstart' in window || navigator.msMaxTouchPoints);
 }

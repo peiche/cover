@@ -23,6 +23,7 @@ function cover_jetpack_setup() {
 
     /**
      * See Jetpack support for more info
+     *
      * @link http://jetpack.me/support/site-logo/
      */
     add_theme_support( 'site-logo', array( 'cover-site-logo' ) );

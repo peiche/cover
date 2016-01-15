@@ -124,7 +124,7 @@ function cover_scripts() {
 	/**
 	 * Use dashicons on the front end.
 	 * http://jespervanengelen.com/snippets/use-wordpress-dashicons-frontend/
-	 **/
+	 */
 	wp_enqueue_style( 'dashicons' );
 }
 add_action( 'wp_enqueue_scripts', 'cover_scripts' );

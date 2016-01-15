@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
 
   /**
    * Slider for featured items on the homepage.
-   **/
+   */
 
   // init unslider
   var unslider = jQuery('.featured-container').unslider({
@@ -16,7 +16,7 @@ jQuery(document).ready(function() {
    * not a pixel value. Supposedly setting 'fluid: true' does this,
    * but we're going to fix it here. Otherwise, we have to reset
    * the slider on resize, and that's a slippery slope.
-   **/
+   */
   var $slides = jQuery('.featured-container li:not(.dot)'); // ignore the dots, which unslider has already created
   var slide_num = $slides.length;
   $slides.width((100 / slide_num) + '%');

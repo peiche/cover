@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
 
   /**
    * Masonry grid for items in blog or archive view.
-   **/
+   */
 
   var $grid = jQuery('.site-main .grid');
   $grid.masonry({
