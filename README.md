@@ -107,7 +107,7 @@ So you want to build the project yourself. Great! Please follow [these direction
 2. **Can I change the font size?**  
    Cover does not allow you to change the default font size. I recommend creating a child theme before making changes to the theme.
 
-3. **I am receiving an error in the Customizer, what should I do?**
+3. **I am receiving an error in the Customizer, what should I do?**  
    Disable any caching plugins that you may have activated.
 
 ##Contribute
@@ -118,8 +118,11 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 
 **1.6.4**
 - Updated TGM Plugin Activation class.
-- Updated accessibility.
-- Fixed sticky map component in ASE.
+- Updated markup for accessibility.
+- Updated chapter component styles in Aesop Story Engine plugin.
+- Improved Headroom functionality.
+- Fixed sticky map component in Aesop Story Engine plugin.
+- Removed Skrollr.
 
 **1.6.3**
 - Added link on posts to view featured image.
@@ -219,6 +222,5 @@ All other resources are licensed as follows:
 
 * Font Awesome - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 * Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE  
-* Skrollr - MIT - https://github.com/Prinzhorn/skrollr/blob/master/LICENSE.txt  
 * TGM Plugin Activation - GPL v2.0 - https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md
 * Unslider - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md

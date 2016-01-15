@@ -119,8 +119,11 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 1.6.4
 - Updated TGM Plugin Activation class.
-- Updated accessibility.
-- Fixed sticky map component in ASE.
+- Updated markup for accessibility.
+- Updated chapter component styles in Aesop Story Engine plugin.
+- Improved Headroom functionality.
+- Fixed sticky map component in Aesop Story Engine plugin.
+- Removed Skrollr.
 
 1.6.3
 - Added link on posts to view featured image.
@@ -220,6 +223,5 @@ All other resources are licensed as follows:
 
 * Font Awesome - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 * Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE
-* Skrollr - MIT - https://github.com/Prinzhorn/skrollr/blob/master/LICENSE.txt
 * TGM Plugin Activation - GPL v2.0 - https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md
 * Unslider - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md
