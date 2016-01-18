@@ -267,7 +267,10 @@
 .aesop-cover-title {
   @include rem(font-size, 42px);
   @include site-width;
+  border: 0;
+  bottom: auto;
   color: $color-white;
+  left: auto;
   margin-bottom: 0;
   margin-top: 0;
   padding: 100px 0 50px;
@@ -275,7 +278,7 @@
   z-index: 1;
 
   small {
-    //display: block;
+    font-size: 75%;
   }
 
   .aesop-chapter-full & {
@@ -402,51 +405,89 @@
 }
 
 .aesop-toggle-chapter-menu {
-  background: #000;
+  background: $link-color;
   border: 0;
+  border-radius: 0;
   bottom: 20px;
-  color: #fff;
+  color: $color-white;
+  height: auto;
   padding: 10px 20px 10px 10px;
   position: fixed;
   right: 0;
+  width: auto;
   z-index: 1;
 
   &:visited,
   &:hover,
-  &:active {
-    color: #fff;
+  &:active,
+  &:focus {
+    color: $color-white;
   }
 
-  .aesop-chapter-menu-open & .aesop-close-chapter-menu {
-    visibility: hidden;
+  &:hover {
+    background: $link-color;
+  }
+
+  .aesop-chapter-menu-open & {
+    right: 0;
+
+    .aesop-close-chapter-menu {
+      visibility: hidden;
+    }
   }
 }
 
 .dashicons.aesop-close-chapter-menu {
+  color: inherit;
   font-size: 30px;
   height: 30px;
+  position: static;
   width: 30px;
 }
 
 .aesop-chapter-menu {
   background: #000;
-  bottom: 70px;
+  bottom: 20px;
   color: #fff;
   display: none;
-  padding: 10px 50px 0 0;
+  height: auto;
+  padding-right: 60px;
   position: fixed;
   right: 0;
+  top: auto;
+  width: auto;
   z-index: 1;
+
+  li {
+    @include rem(font-size, $font-size-normal);
+    padding-left: 20px;
+  }
 
   .aesop-chapter-menu-open & {
     display: block;
   }
 
   .aesop-close-chapter-menu {
-    bottom: -40px;
+    bottom: 10px;
     cursor: pointer;
     position: absolute;
     right: 20px;
+    top: auto;
+  }
+}
+
+/**
+ * This is a total hack. We're hiding the real text of the first nav list item
+ * and changing its visible title to "Top" because of a bug in ASE.
+ * I will remove this when the bug is resolved.
+ * https://github.com/hyunsupul/aesop-core/issues/302
+ */
+.scroll-nav__item:first-child a.scroll-nav__link {
+  visibility: hidden;
+
+  &::before {
+    content: 'Top';
+    visibility: visible;
   }
 }
 
