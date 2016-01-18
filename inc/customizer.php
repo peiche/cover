@@ -227,6 +227,7 @@ a:hover { color: <?php echo darken( $link_color, 15 ); ?>; }
 body .infinite-loader .spinner { border-top-color: <?php echo $link_color; ?>; }
 .fotorama__thumb-border { border-color: <?php echo $link_color; ?>; }
 blockquote, q, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-left, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-right, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-center { border-color: <?php echo $header_color; ?> }
+.aesop-toggle-chapter-menu, .aesop-toggle-chapter-menu:hover { background-color: <?php echo $link_color; ?>; }
 
 <?php // Restore default colors. ?>
 .header a, <?php if ( 'overlay-dark' == $overlay_color ) { ?>.overlay a, <?php } ?>.cover-header a { color: #fff; }
