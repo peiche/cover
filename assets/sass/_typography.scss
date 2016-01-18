@@ -25,29 +25,28 @@ h1,
 h2,
 h3,
 h4 {
-	@include rem(font-size, 24px);
 	color: $text-color-heading;
 	margin: 30px 0;
 }
 
 h1 {
-	@include rem(font-size, 58px);
+	@include rem(font-size, $font-size-heading-1);
 	font-family: $font-stack-heading;
 }
 
 h2 {
-	@include rem(font-size, 26px);
+	@include rem(font-size, $font-size-heading-2);
 	margin-bottom: 20px;
 }
 
 h3,
 h4 {
-	@include rem(font-size, 22px);
+	@include rem(font-size, $font-size-heading-3);
 	margin: 20px 0 10px;
 }
 
 h4 {
-	@include rem(font-size, 20px);
+	@include rem(font-size, $font-size-heading-4);
 }
 
 ol,
