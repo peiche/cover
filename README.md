@@ -117,7 +117,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 ##Changelog
 
 **1.6.4**
-- Updated TGM Plugin Activation class.
+- Updated TGM Plugin Activation to latest version of [fork that passes wp.org theme-check](https://github.com/TGMPA/TGM-Plugin-Activation/issues/475#issuecomment-155816019).
 - Updated markup for accessibility.
 - Updated chapter component styles in Aesop Story Engine plugin.
 - Improved Headroom functionality.
