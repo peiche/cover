@@ -265,11 +265,18 @@
 }
 
 .aesop-cover-title {
+  /**
+   * Under ideal circumstances, this is all we'd need for font size.
+   * However, ASE devs saw fit to slap their base style with !important,
+   * so we need to do the same in order to override it.
+   */
   @include rem(font-size, 42px);
   @include site-width;
   border: 0;
   bottom: auto;
   color: $color-white;
+  font-size: 42px !important; // TODO remove once we've purged loading the ASE plugin styles
+  font-size: 2.625rem !important; // TODO remove once we've purged loading the ASE plugin styles
   left: auto;
   margin-bottom: 0;
   margin-top: 0;
