@@ -150,6 +150,38 @@ module.exports = function(grunt) {
         }]
       }
     },
+    checktextdomain: {
+      standard: {
+        options: {
+          text_domain: 'cover',
+          correct_domain: true, // correct text-domain instances (i.e., in class-tgm-plugin-activation)
+          force: true, // continue after correcting "errors"
+          keywords: [
+            '__:1,2d',
+    				'_e:1,2d',
+    				'_x:1,2c,3d',
+    				'esc_html__:1,2d',
+    				'esc_html_e:1,2d',
+    				'esc_html_x:1,2c,3d',
+    				'esc_attr__:1,2d',
+    				'esc_attr_e:1,2d',
+    				'esc_attr_x:1,2c,3d',
+    				'_ex:1,2c,3d',
+    				'_n:1,2,4d',
+    				'_nx:1,2,4c,5d',
+    				'_n_noop:1,2,3d',
+    				'_nx_noop:1,2,3c,4d'
+          ]
+        },
+        files: [{
+          src: [
+            '*.php',
+            'inc/*.php' // no way to flag all and ignore certain directories?
+          ],
+          expand: true
+        }]
+      }
+    },
     pot: {
       options: {
         text_domain: 'cover',
@@ -220,6 +252,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-checktextdomain');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -232,9 +265,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('validate', ['scsslint', 'jshint']);
 
-  grunt.registerTask('dev', ['clean', 'copy', 'sass:dev', 'autoprefixer:dev', 'uglify:dev']);
-  grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer:prod', 'uglify:prod']);
-  grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer:prod', 'uglify:prod']);
+  grunt.registerTask('dev', ['clean', 'copy', 'sass:dev', 'autoprefixer:dev', 'uglify:dev', 'checktextdomain', 'pot']);
+  grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'pot']);
+  grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'pot']);
 
   grunt.registerTask('default', ['scsslint', 'jshint', 'watch']);
 
