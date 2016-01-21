@@ -8,6 +8,10 @@
 
   &.aesop-image-component {
     margin: 60px 0; // overrides style in ai-core.css
+
+    &:hover {
+      opacity: 1; // overrides ASE style
+    }
   }
 
   &.aesop-audio-component {
