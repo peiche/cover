@@ -122,6 +122,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 - Updated chapter component styles in Aesop Story Engine plugin.
 - Improved Headroom functionality.
 - Fixed sticky map component in Aesop Story Engine plugin.
+- Fixed hover opacity on image components in Aesop Story Engine plugin.
 - Removed Skrollr.
 
 **1.6.3**

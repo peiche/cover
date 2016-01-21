@@ -123,6 +123,7 @@ You can download the latest from Github. Follow these steps to activate Cover:
 - Updated chapter component styles in Aesop Story Engine plugin.
 - Improved Headroom functionality.
 - Fixed sticky map component in Aesop Story Engine plugin.
+- Fixed hover opacity on image components in Aesop Story Engine plugin.
 - Removed Skrollr.
 
 1.6.3
