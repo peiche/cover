@@ -125,6 +125,7 @@ You can download the latest from Github. Follow these steps to activate Cover:
 - Fixed sticky map component in Aesop Story Engine plugin.
 - Fixed hover opacity on image components in Aesop Story Engine plugin.
 - Removed Skrollr.
+- Removed author data shim to mirror _s commit.
 
 1.6.3
 - Added link on posts to view featured image.
