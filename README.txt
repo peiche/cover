@@ -126,6 +126,7 @@ You can download the latest from Github. Follow these steps to activate Cover:
 - Fixed hover opacity on image components in Aesop Story Engine plugin.
 - Removed Skrollr.
 - Removed author data shim to mirror _s commit.
+- Removed custom paging function in favor of core navigation function.
 
 1.6.3
 - Added link on posts to view featured image.

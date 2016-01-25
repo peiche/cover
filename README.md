@@ -125,6 +125,7 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 - Fixed hover opacity on image components in Aesop Story Engine plugin.
 - Removed Skrollr.
 - Removed author data shim to mirror [_s commit](https://github.com/Automattic/_s/commit/2580a0a69f091b98272bc74e35c347b34a20a52d).
+- Removed custom paging function in favor of core navigation function.
 
 **1.6.3**
 - Added link on posts to view featured image.
