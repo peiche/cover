@@ -222,8 +222,8 @@ function cover_customize_options() {
 a,a:visited,.entry-title a:hover,.entry-subtitle a:hover { color: <?php echo $link_color; ?>; }
 a:hover { color: <?php echo darken( $link_color, 15 ); ?>; }
 .header .backdrop, .cover { background-color: <?php echo $header_color; ?>; }
-.paging-navigation a, ul.categories a, body #infinite-handle span, .button.default { background-color: <?php echo $link_color; ?>; }
-.paging-navigation a:hover, body #infinite-handle span:hover, .button.default:hover { background-color: <?php echo darken( $link_color, 15 ); ?>; }
+.posts-navigation a, ul.categories a, body #infinite-handle span, .button.default { background-color: <?php echo $link_color; ?>; }
+.posts-navigation a:hover, body #infinite-handle span:hover, .button.default:hover { background-color: <?php echo darken( $link_color, 15 ); ?>; }
 body .infinite-loader .spinner { border-top-color: <?php echo $link_color; ?>; }
 .fotorama__thumb-border { border-color: <?php echo $link_color; ?>; }
 blockquote, q, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-left, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-right, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-center { border-color: <?php echo $header_color; ?> }

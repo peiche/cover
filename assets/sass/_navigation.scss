@@ -81,18 +81,18 @@ a {
 }
 
 .site-main .comment-navigation,
-.site-main .paging-navigation {
+.site-main .posts-navigation {
   @include site-width($width-medium);
   overflow: hidden;
   padding: 50px 0;
 }
 
 .site-main .grid .comment-navigation,
-.site-main .grid .paging-navigation {
+.site-main .grid .posts-navigation {
   width: 100%;
 }
 
-.paging-navigation a {
+.posts-navigation a {
   @include button($color-blue);
 
   @include max-width($width-phone) {
@@ -104,21 +104,21 @@ a {
 }
 
 .comment-navigation .nav-previous,
-.paging-navigation .nav-previous {
+.posts-navigation .nav-previous {
   float: left;
 }
 
 .comment-navigation .nav-next,
-.paging-navigation .nav-next {
+.posts-navigation .nav-next {
   float: right;
   text-align: right;
 }
 
 @include max-width($width-phone) {
   .comment-navigation .nav-previous,
-  .paging-navigation .nav-previous,
+  .posts-navigation .nav-previous,
   .comment-navigation .nav-next,
-  .paging-navigation .nav-next {
+  .posts-navigation .nav-next {
     float: none;
     width: auto;
   }
