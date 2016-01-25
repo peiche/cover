@@ -69,21 +69,23 @@ jQuery(document).ready(function() {
 	var $backdrop = jQuery('.header .backdrop');
 	var range = 200;
 
-	jQuery(window).on('scroll', function () {
-		var scrollTop = jQuery(this).scrollTop();
-		var offset = $cover.offset().top;
-		var height = $cover.outerHeight();
-		offset = offset + height / 2;
-		var calc = 0 + ( scrollTop - offset + range ) / range;
+	if ($cover.length > 0 && $backdrop.lenth > 0) {
+		jQuery(window).on('scroll', function () {
+			var scrollTop = jQuery(this).scrollTop();
+			var offset = $cover.offset().top;
+			var height = $cover.outerHeight();
+			offset = offset + height / 2;
+			var calc = 0 + ( scrollTop - offset + range ) / range;
 
-		$backdrop.css({ 'opacity': calc });
+			$backdrop.css({ 'opacity': calc });
 
-		if ( calc > '1' ) {
-			$backdrop.css({ 'opacity': 1 });
-		} else if ( calc < '0' ) {
-			$backdrop.css({ 'opacity': 0 });
-		}
-	});
+			if ( calc > '1' ) {
+				$backdrop.css({ 'opacity': 1 });
+			} else if ( calc < '0' ) {
+				$backdrop.css({ 'opacity': 0 });
+			}
+		});
+	}
 
   /**
 	 * Menu logic.
