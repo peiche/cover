@@ -265,9 +265,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('validate', ['scsslint', 'jshint']);
 
-  grunt.registerTask('dev', ['clean', 'copy', 'sass:dev', 'autoprefixer:dev', 'uglify:dev', 'checktextdomain', 'pot']);
-  grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'pot']);
-  grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'pot']);
+  grunt.registerTask('dev', ['clean', 'copy', 'sass:dev', 'autoprefixer:dev', 'uglify:dev', 'checktextdomain', 'checktextdomain', 'pot']);
+  grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'checktextdomain', 'pot']);
+  grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'checktextdomain', 'pot']);
 
   grunt.registerTask('default', ['scsslint', 'jshint', 'watch']);
 
