@@ -61,7 +61,10 @@ $background-color-code: $color-dark-gray;
 
 $font-size-normal: 16px;
 $font-size-large: 18px;
-$font-size-huge: 20px;
+$font-size-heading-1: 58px;
+$font-size-heading-2: 26px;
+$font-size-heading-3: 22px;
+$font-size-heading-4: 20px;
 $font-weight-normal: 400;
 
 $font-stack-content: 'Open Sans', sans-serif;
@@ -102,3 +105,6 @@ $featured-content-arrow-size: 50px;
 
 $threads-background: #eee;
 $threads-content-background: #fff;
+
+// we don't want to interate through and generate all sizes, just ones we use in this theme
+$avatar-sizes: 35 80 96 120;

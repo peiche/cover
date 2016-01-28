@@ -50,6 +50,16 @@ Header
     &-nav {
       float: right;
       margin: 20px 0 20px 20px;
+
+      a {
+        border: 0;
+        margin-right: 20px;
+        -webkit-tap-highlight-color: transparent;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
     }
 
     &-logo {
@@ -128,18 +138,9 @@ Header
   }
 }
 
-/*--------------------------------------------------------------
-Search
---------------------------------------------------------------*/
-
-.site-search {
-  border: 0;
-  margin-right: 20px;
-  -webkit-tap-highlight-color: transparent;
-
-  .noscroll & {
-    opacity: 0;
-  }
+.noscroll .site-search,
+.noscroll .chapter-toggle {
+  opacity: 0;
 }
 
 /*--------------------------------------------------------------

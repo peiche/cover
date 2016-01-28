@@ -354,7 +354,7 @@ body.custom-background {
 
     > blockquote {
       &.large {
-        @include rem(font-size, $font-size-huge);
+        @include rem(font-size, $font-size-heading-4);
         border: 0;
         max-width: $width-wide;
         padding: 0;

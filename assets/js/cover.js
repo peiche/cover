@@ -1,3 +1,10 @@
+var header_headroom;
+
+function closeOverlay() {
+	jQuery('html').removeClass('noscroll');
+	jQuery('.overlay.show').removeClass('show');
+}
+
 jQuery(document).ready(function() {
 
 	/**
@@ -6,18 +13,14 @@ jQuery(document).ready(function() {
 	 * attribute is "toggle-overlay" and the
 	 * data-overlay-id value matches the id
 	 * of the container with the overlay class.
-	 **/
+	 */
+
 	jQuery('[data-action="toggle-overlay"]').click(function(e) {
 		e.preventDefault();
 		var overlay_id = jQuery(this).attr('data-overlay-id');
 
 		if (jQuery('html').hasClass('noscroll')) {
-			jQuery('html').removeClass('noscroll');
-			jQuery('.overlay.show').removeClass('show');
-
-      setTimeout(function() {
-				jQuery('.overlay').scrollTop(0);
-			}, 200);
+			closeOverlay();
 		} else {
 			jQuery('html').addClass('noscroll');
 			jQuery('#' + overlay_id).addClass('show');
@@ -25,24 +28,23 @@ jQuery(document).ready(function() {
 			/**
 			 * Focus the search if there is a search field.
 			 * This will work for the pre-built search and widgets.
-			 **/
+			 */
 			jQuery('#' + overlay_id + ' .search-field').focus();
 		}
 	});
 
 	/**
 	 * Hitting the escape key will close an open overlay
-	 **/
+	 */
 	jQuery(document).keyup(function(e) {
 		if (e.keyCode === 27) {
-			jQuery('html.noscroll').removeClass('noscroll');
-			jQuery('.overlay.show').removeClass('show');
+			closeOverlay();
 		}
 	});
 
 	/**
 	 * Clicking on header acts as "back to top" link.
-	 **/
+	 */
 	jQuery('.header').click(function(e) {
 		if (jQuery(e.target).closest('a').length === 0) {
 			jQuery('html, body').animate({
@@ -51,30 +53,48 @@ jQuery(document).ready(function() {
     }
   });
 
-  /**
-   * Headroom.
-   **/
-  var header_headroom = new Headroom(jQuery('.header')[0]);
-  header_headroom.init();
-
 	/**
-	 * Skrollr.
-	 * Don't load if the user agent is a touch device.
-	 **/
-  if (!isTouchDevice() && jQuery('.cover').length > 0) {
-    skrollr.init({
-      forceHeight: false
-    });
+   * Headroom.
+   */
+  header_headroom = new Headroom(jQuery('.header')[0]);
+  header_headroom.init();
+	header_headroom.onTop = function() {
+		header_headroom.tolerance = Headroom.options.tolerance;
+		header_headroom.pin();
+	};
+
+	// Control backdrop opacity on scroll.
+	// http://codepen.io/michaeldoyle/details/Bhsif/
+	var $cover = jQuery('.cover');
+	var $backdrop = jQuery('.header .backdrop');
+	var range = 200;
+
+	if ($cover.length > 0 && $backdrop.lenth > 0) {
+		jQuery(window).on('scroll', function () {
+			var scrollTop = jQuery(this).scrollTop();
+			var offset = $cover.offset().top;
+			var height = $cover.outerHeight();
+			offset = offset + height / 2;
+			var calc = 0 + ( scrollTop - offset + range ) / range;
+
+			$backdrop.css({ 'opacity': calc });
+
+			if ( calc > '1' ) {
+				$backdrop.css({ 'opacity': 1 });
+			} else if ( calc < '0' ) {
+				$backdrop.css({ 'opacity': 0 });
+			}
+		});
 	}
 
   /**
 	 * Menu logic.
-	 **/
+	 */
 
 	/**
 	 * Find children by traversing up.
 	 * Not all menus or heirarchy widgets' parents has a class indicating so.
-	 **/
+	 */
 	jQuery('.sub-menu, .children').addClass('hide').closest('li').addClass('menu-has-child').append('<div class="menu-toggle"><i class="fa fa-angle-down"></i></div>');
 
   // click event on submenu toggles
@@ -104,20 +124,45 @@ jQuery(document).ready(function() {
 
 	/**
 	 * Performs a smooth page scroll to an anchor on the same page.
+	 * Ignore overlay actions and ASE ids.
 	 * https://css-tricks.com/snippets/jquery/smooth-scrolling/
-	 **/
-	jQuery('a[href*=#]:not([href=#])').click(function() {
+	 */
+	jQuery('a[href*=#]:not([href="#"]):not([data-action="toggle-overlay"]):not([id^=aesop])').click(function() {
     if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
       var target = jQuery(this.hash);
       target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
       if (target.length) {
-        jQuery('html,body').animate({
+
+				header_headroom.tolerance = Number.MAX_SAFE_INTEGER;
+				header_headroom.unpin();
+
+				jQuery('html,body').animate({
           scrollTop: target.offset().top
-        }, 1000);
-        return false;
+        }, 500);
+
+				setTimeout(function() {
+					header_headroom.tolerance = Headroom.options.tolerance;
+				}, 1000);
+
+				return false;
       }
     }
   });
+
+	/**
+	 * Aesop enhancements.
+	 */
+
+	// disable headroom while we're scrolling to a chapter point
+	if (jQuery('.aesop-chapter-menu').length > 0) {
+		jQuery(document).on('click', '.aesop-chapter-menu .scroll-nav__item a', function() {
+			header_headroom.tolerance = Number.MAX_SAFE_INTEGER;
+			header_headroom.unpin();
+			setTimeout(function() {
+				header_headroom.tolerance = Headroom.options.tolerance;
+			}, 1000);
+		});
+	}
 
 });
 
@@ -125,7 +170,7 @@ jQuery(document).ready(function() {
  * Helper function to detect touch devices.
  * Much better solution than user agent detection,
  * which is a futile attempt at an arms race.
- **/
+ */
 function isTouchDevice() {
 	return !!('ontouchstart' in window || navigator.msMaxTouchPoints);
 }

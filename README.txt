@@ -117,6 +117,17 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 == Changelog ==
 
+1.6.4
+- Updated TGM Plugin Activation to latest version of fork that passes wp.org theme-check.
+- Updated markup for accessibility.
+- Updated chapter component styles in Aesop Story Engine plugin.
+- Improved Headroom functionality.
+- Fixed sticky map component in Aesop Story Engine plugin.
+- Fixed hover opacity on image components in Aesop Story Engine plugin.
+- Removed Skrollr.
+- Removed author data shim to mirror _s commit.
+- Removed custom paging function in favor of core navigation function.
+
 1.6.3
 - Added link on posts to view featured image.
 - Added link on posts with featured images to jump straight to content.
@@ -215,6 +226,5 @@ All other resources are licensed as follows:
 
 * Font Awesome - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 * Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE
-* Skrollr - MIT - https://github.com/Prinzhorn/skrollr/blob/master/LICENSE.txt
 * TGM Plugin Activation - GPL v2.0 - https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md
 * Unslider - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md

@@ -1,0 +1,10 @@
+# .scrutinizer.yml
+
+checks:
+    php:
+        code_rating: true
+        duplication: true
+tools:
+    php_code_sniffer:
+        config:
+            standard: "WordPress"

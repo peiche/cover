@@ -6,10 +6,9 @@
   "devDependencies": {
     "font-awesome": "~4.5.*",
     "headroom.js": "~0.7.0",
-    "skrollr": "~0.6.29",
     "unslider": "~1.0.0",
     "masonry": "~3.3.1",
-    "tgm-plugin-activation": "https://github.com/thomasgriffin/TGM-Plugin-Activation/archive/master.zip"
+    "tgm-plugin-activation": "https://github.com/Otto42/TGM-Plugin-Activation/archive/develop.zip"
   },
   "ignore": [
     "**/.*",

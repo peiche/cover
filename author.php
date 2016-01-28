@@ -13,9 +13,9 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			
+
 			<?php get_template_part( 'inc/cover', 'author' ); ?>
-			
+
 			<?php if ( have_posts() ) : ?>
 
 				<?php /* Start the Loop */ ?>
@@ -25,14 +25,14 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php cover_paging_nav(); ?>
+				<?php the_posts_navigation(); ?>
 
 			<?php else : ?>
 
 				<?php get_template_part( 'content', 'none' ); ?>
 
 			<?php endif; ?>
-			
+
 		</main><!-- #main -->
 	</section><!-- #primary -->
 

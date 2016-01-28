@@ -24,7 +24,7 @@ Run this next command to have Bower pull the third party projects in.
 $ bower install
 ```
 
-Cover uses Font Awesome to display icons, as well as jQuery plugins Skrollr and Headroom.js. Utilizing Bower this way prevents me from having to commit these projects' code into my own, while at the same time allowing me to bundle them in a build.
+Cover uses Font Awesome to display icons, as well as jQuery plugin Headroom.js. Utilizing Bower this way prevents me from having to commit these projects' code into my own, while at the same time allowing me to bundle them in a build.
 
 Now that we've got everything pulled in, we can run Grunt commands to validate and build the WordPress theme.
 
@@ -40,7 +40,7 @@ We haven't built anything yet, of course. This was just running the linters. Run
 $ grunt build
 ```
 
-The build process copies files from external sources (fonts from Font Awesome, and js from Skrollr and Headroom.js), compiles the .scss (including Font Awesome styles) into a single stylesheet, and minifies the JavaScript. But we have one more command to run before we have a fully working WordPress theme.
+The build process copies files from external sources (fonts from Font Awesome, and js from Headroom, Masonry, and Unslider), compiles the .scss (including Font Awesome styles) into a single stylesheet, and minifies the JavaScript. But we have one more command to run before we have a fully working WordPress theme.
 
 ```
 $ grunt pot

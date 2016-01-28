@@ -7,36 +7,6 @@
  * @package Cover
  */
 
-if ( ! function_exists( 'cover_paging_nav' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @return void
- */
-function cover_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'cover' ); ?></h1>
-		<div class="nav-links">
-
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'cover' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'cover' ) ); ?></div>
-			<?php endif; ?>
-
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
-endif;
-
 if ( ! function_exists( 'cover_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
@@ -99,7 +69,7 @@ function cover_posted_on() {
     printf( __( '<span class="posted-on">%1$s on %2$s</span>', 'cover' ),
 		sprintf( '<a class="author vcard url fn n" href="%1$s">%2$s <span class="name">%3$s</span></a>',
                 esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-                get_avatar( get_the_author_meta( 'ID' ), 35 ) . ' ',
+                get_avatar( get_the_author_meta( 'ID' ), 35, 'avatar_default', 'Profile Picture for ' . esc_html( get_the_author() ) ) . ' ',
                 esc_html( get_the_author() )
 		),
         sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
