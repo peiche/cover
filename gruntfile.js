@@ -54,6 +54,21 @@ module.exports = function(grunt) {
         ]
       }
     },
+    todo: {
+			options: {
+				// by default targets TODO, FIXME, and NOTE
+				file: 'report/report.md',
+				githubBoxes: true,
+				colophon: true,
+				usePackage: true
+			},
+			src: [
+			  'assets/**/*',
+			  '*.php',
+        'inc/**/*',
+        '!inc/class-tgm-plugin-activation.php'
+			]
+		},
     scsslint: {
       allFiles: ['assets/sass/*.scss'],
       options: {
@@ -262,8 +277,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-pot');
   grunt.loadNpmTasks('grunt-scss-lint');
+  grunt.loadNpmTasks('grunt-todo');
 
-  grunt.registerTask('validate', ['scsslint', 'jshint']);
+  grunt.registerTask('validate', ['todo', 'scsslint', 'jshint']);
 
   grunt.registerTask('dev', ['clean', 'copy', 'sass:dev', 'autoprefixer:dev', 'uglify:dev', 'checktextdomain', 'checktextdomain', 'pot']);
   grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'checktextdomain', 'pot']);
