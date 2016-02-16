@@ -169,23 +169,23 @@ Nav menu, which animates into close x
     display: block;
     position: relative;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       content: '';
       left: 0;
       position: absolute;
       top: -9px;
     }
 
-    &:after {
+    &::after {
       top: 9px;
     }
   }
 }
 
 .hamburger span,
-.hamburger span:after,
-.hamburger span:before {
+.hamburger span::after,
+.hamburger span::before {
   backface-visibility: hidden;
   background-color: $color-white;
   border-radius: 2px;
@@ -204,7 +204,7 @@ Nav menu, which animates into close x
     margin-right: 0;
   }
 
-  &:before {
+  &::before {
     content: '';
     height: 100%;
     left: 0;
@@ -217,16 +217,16 @@ Nav menu, which animates into close x
     background-color: transparent !important;
   }
 
-  span:before,
-  span:after {
+  span::before,
+  span::after {
     background-color: $color-white !important;
   }
 
-  span:before {
+  span::before {
     transform: rotate(45deg) translate(5px, 5px);
   }
 
-  span:after {
+  span::after {
     transform: rotate(-45deg) translate(7px, -8px);
   }
 }

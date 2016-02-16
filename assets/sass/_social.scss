@@ -103,7 +103,7 @@ $social-icons: (
 @mixin social-icon {
   a {
     .fa-circle {
-      &:before {
+      &::before {
         transition: color 200ms;
       }
 
@@ -130,7 +130,7 @@ $social-icons: (
         }
 
         .social-icon {
-          &:before {
+          &::before {
             content: $char;
           }
         }

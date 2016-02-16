@@ -93,10 +93,6 @@
 		transition: opacity 200ms;
 		width: 100%;
 
-		&.skrollable {
-			background-attachment: fixed;
-		}
-
 		&.darken {
 			opacity: .1;
 		}

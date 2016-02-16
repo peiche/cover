@@ -51,7 +51,7 @@ $nss-social-networks: (
       padding-left: $nss-border-margin;
 
       // fake out a border flush with the top and bottom
-      &:before {
+      &::before {
         background-color: $color-white;
         bottom: 0;
         content: '';

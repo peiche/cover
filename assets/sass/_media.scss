@@ -36,9 +36,12 @@ object {
 .wp-caption {
 	border: 0;
 	margin-bottom: 1.5em;
-	max-width: 100% !important; // overrides .entry-content > div
 	padding: 0;
 	position: relative;
+
+	.entry-content > & {
+		max-width: 100%;
+	}
 
 	img[class*="wp-image-"] {
 		display: block;
@@ -63,7 +66,6 @@ object {
 
 	&.aligncenter {
 		margin: 40px auto;
-		max-width: 100%;
 		padding: 0;
 		width: auto;
 
@@ -78,14 +80,17 @@ object {
 	&.alignleft,
 	&.alignright {
 		margin: 10px 30px;
-		max-width: 45%;
 		padding: 0;
+
+		.entry-content > & {
+			max-width: 45%;
+		}
 
 		@include max-width($width-tablet) {
 			float: none;
 			margin: 40px auto;
 			max-width: none;
-			width: auto !important;
+			width: auto;
 		}
 	}
 

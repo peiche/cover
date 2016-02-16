@@ -5,6 +5,8 @@ Jetpack
 Infinite Scroll
 --------------------------------------------------------------*/
 
+// NOTE necessary to target Jetpack infinite scroll handle
+// scss-lint:disable IdSelector
 body #infinite-handle { // increased specificity to override jetpack's css
 	padding: 30px 0 50px;
 	text-align: center;
@@ -19,6 +21,7 @@ body #infinite-handle { // increased specificity to override jetpack's css
 		}
 	}
 }
+// scss-lint:enable IdSelector
 
 // full-screen overlay spinner
 body .infinite-loader { // increased specificity to override jetpack's css
@@ -41,9 +44,12 @@ body .infinite-loader { // increased specificity to override jetpack's css
 	}
 }
 
+// NOTE necessary to target infinite scroll footer
+// scss-lint:disable IdSelector
 #infinite-footer {
 	display: none; // hide the infinite scroll footer
 }
+// scss-lint:enable IdSelector
 
 /*--------------------------------------------------------------
 Related Posts
@@ -136,7 +142,7 @@ Image Grid
 	a[title] {
 		position: relative;
 
-		&:after {
+		&::after {
 			@include rem(font-size, 14px);
 			background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
 			bottom: 0;
@@ -222,9 +228,12 @@ Featured Content
 			right: 0;
 		}
 
+		// FIXME remove disable rule when this issue has been resolved https://github.com/brigade/scss-lint/issues/494
+		// scss-lint:disable DeclarationOrder
 		@include max-width($width-medium) {
 			display: none;
 		}
+		// scss-lint:enable DeclarationOrder
 
 		.fa {
 			@include rem(font-size, $featured-content-arrow-size);

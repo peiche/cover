@@ -22,10 +22,13 @@ input[type="radio"] {
 	padding: 0; /* Addresses excess padding in IE8/9 */
 }
 
+// NOTE from _s
+// scss-lint:disable VendorPrefix
+
 input[type="search"] {
 	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
 	-moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+  -webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
 	box-sizing: content-box;
 }
 
@@ -38,6 +41,8 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 	border: 0;
 	padding: 0;
 }
+
+// scss-lint:enable VendorPrefix
 
 input[type="text"],
 input[type="email"],

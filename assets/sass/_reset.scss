@@ -70,10 +70,13 @@ td {
 }
 
 html {
+	// NOTE from _s
+	// scss-lint:disable VendorPrefix
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	// scss-lint:enable VendorPrefix
 
 	&.noscroll {
 		overflow: hidden;
@@ -81,8 +84,8 @@ html {
 }
 
 *,
-*:before,
-*:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+*::before,
+*::after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 	box-sizing: border-box;
 }
 

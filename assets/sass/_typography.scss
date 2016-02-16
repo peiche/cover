@@ -6,9 +6,9 @@ button,
 input,
 select,
 textarea {
+	@include rem(font-size, $font-size-normal);
 	color: $text-color-base;
 	font-family: $font-stack-content;
-	@include rem(font-size, $font-size-normal);
 	line-height: 1.5;
 }
 

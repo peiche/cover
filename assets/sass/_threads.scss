@@ -22,7 +22,7 @@
     background-color: $threads-content-background;
   }
 
-  .threads-content:before {
+  .threads-content::before {
     border-right-color: $threads-content-background;
   }
 
@@ -30,8 +30,8 @@
   	border-top: 1px solid $threads-background;
   }
 
-  .threads-image:before,
-  .threads-image:after {
+  .threads-image::before,
+  .threads-image::after {
     border-left-color: $threads-background;
   }
 
@@ -40,17 +40,17 @@
   }
 
   @media only screen and (min-width: 1170px) {
-    .threads-content:before {
+    .threads-content::before {
       border-color: transparent;
       border-left-color: $threads-content-background;
     }
 
-    .threads-block:nth-child(even) .threads-content:before {
+    .threads-block:nth-child(even) .threads-content::before {
       border-right-color: $threads-content-background;
     }
 
-    .threads-block:nth-child(odd) .threads-image:before,
-    .threads-block:nth-child(odd) .threads-image:after {
+    .threads-block:nth-child(odd) .threads-image::before,
+    .threads-block:nth-child(odd) .threads-image::after {
       border-right-color: $threads-background;
     }
   }

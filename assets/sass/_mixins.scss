@@ -6,25 +6,25 @@
 // outputs a rem value for a given property name, with a fallback pixel value
 // most commonly used for font sizes
 @mixin rem($property, $values) {
-  $px : ();
+  $px:  ();
   $rem: ();
 
   @each $value in $values {
 
     @if $value == 0 or $value == auto {
-      $px : append($px, $value);
+      $px:  append($px, $value);
       $rem: append($rem, $value);
     } @else {
       $unit: unit($value);
-      $val: parse-int($value);
+      $val:  parse-int($value);
 
       @if $unit == 'px' {
-        $px : append($px, $value);
+        $px:  append($px, $value);
         $rem: append($rem, ($val / 16 * 1rem));
       }
 
       @if $unit == 'rem' {
-        $px : append($px, ($val * 16 * 1px));
+        $px:  append($px, ($val * 16 * 1px));
         $rem: append($rem, $value);
       }
     }
