@@ -115,6 +115,24 @@
   }
 }
 
+@mixin post-format-color-fix($color: inherit) {
+  color: $color;
+
+  * {
+    color: inherit;
+  }
+
+  .entry-title a:hover,
+  .entry-meta a:hover,
+  a.author:hover .name {
+    border-color: $color;
+  }
+
+  a.author:hover {
+    border-color: transparent;
+  }
+}
+
 // shared style used for both normal and aesop image component captions
 // not technically a mixin, but never found in by itself in the stylesheet
 %image-caption {
