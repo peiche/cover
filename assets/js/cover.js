@@ -1,3 +1,5 @@
+var KEYCODE_ESCAPE = 27;
+
 var header_headroom;
 
 function closeOverlay() {
@@ -37,7 +39,7 @@ jQuery(document).ready(function() {
 	 * Hitting the escape key will close an open overlay
 	 */
 	jQuery(document).keyup(function(e) {
-		if (e.keyCode === 27) {
+		if (e.keyCode === KEYCODE_ESCAPE) {
 			closeOverlay();
 		}
 	});
