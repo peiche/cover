@@ -454,7 +454,7 @@ body.custom-background {
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
-  display: none;
+  //display: none; // TODO re-implement when introducing post format support
 }
 
 /*--------------------------------------------------------------
