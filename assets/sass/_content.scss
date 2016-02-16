@@ -112,6 +112,16 @@ body.custom-background {
   padding: 50px 0;
   position: relative;
 
+  @each $colors in $format-colors {
+    $format: nth($colors, 1);
+    $color: nth($colors, 2);
+
+    #posts &.format-#{$format} {
+      @include post-format-color-fix($color-white);
+      background-color: $color;
+    }
+  }
+
   .site-main .grid & {
     background-color: $color-white;
     float: left;
@@ -126,17 +136,6 @@ body.custom-background {
     &:after {
       display: none;
     }
-  }
-
-  &:after {
-    @include site-width;
-    background: rgba(0, 0, 0, .15);
-    bottom: 0;
-    content: '';
-    height: 1px;
-    left: 0;
-    position: absolute;
-    right: 0;
   }
 
   .site-main .grid.card-2 & {
@@ -218,6 +217,7 @@ body.custom-background {
 
   &-header {
     @include site-width;
+    margin-bottom: 1.5em;
     position: relative;
 
     .span {
@@ -238,7 +238,39 @@ body.custom-background {
 
       &:hover {
         border-color: $link-border-color;
+      }
+    }
+  }
+
+  &-format {
+    @include rem(font-size, 20px);
+    color: $color-gray-alt;
+
+    @include min-width($width-wide) {
+      @include rem(font-size, 30px);
+      position: absolute;
+      margin-right: 20px;
+      right: 100%;
+    }
+
+    a {
+      color: inherit;
+
+      &:hover {
+        border-color: $link-border-color;
         color: $link-color;
+
+          @include min-width($width-wide) {
+            border-color: transparent;
+          }
+      }
+    }
+
+    &-text {
+      margin-left: 5px;
+
+      @include min-width($width-wide) {
+        display: none;
       }
     }
   }
@@ -249,7 +281,7 @@ body.custom-background {
     margin: 0;
 
     a {
-      color: $color-gray-alt;
+      color: inherit;
 
       &:hover {
         border-color: $link-border-color;
@@ -259,7 +291,6 @@ body.custom-background {
   }
 
   &-summary {
-    margin: 1.5em 0 0;
     position: relative;
 
     > * {
@@ -435,6 +466,7 @@ body.custom-background {
 
 footer.entry-meta {
   @include site-width;
+  margin-bottom: 50px;
 }
 
 /*--------------------------------------------------------------
@@ -451,7 +483,6 @@ footer.entry-meta {
 
 ul.categories,
 ul.tags {
-  display: inline;
   list-style: none;
   margin: 0;
 
@@ -462,13 +493,12 @@ ul.tags {
 
   a {
     @include button;
-    font-size: 95%;
-    padding: 5px 10px;
-
-    &:before {
-      content: '# ';
-    }
   }
+}
+
+ul.tags a {
+  font-size: 95%;
+  padding: 5px 10px;
 }
 
 ul.categories a {
