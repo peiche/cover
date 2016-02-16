@@ -18,12 +18,7 @@ get_header(); // Call header inside the loop to get author info. ?>
 
                 <?php get_template_part( 'content', 'single' ); ?>
 
-                <?php
-                    // If comments are open or we have at least one comment, load up the comment template.
-                    if ( comments_open() || '0' != get_comments_number() ) :
-                        comments_template();
-                    endif;
-                ?>
+                <?php get_template_part( 'inc/comments' ); ?>
 
                 <?php if ( 'thread' != get_post_type() ) { ?>
                   <?php cover_post_nav(); ?>
