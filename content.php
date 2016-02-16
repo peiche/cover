@@ -27,6 +27,21 @@ if ( '' != get_the_post_thumbnail() ) {
 		<?php } ?>
 
     <header class="entry-header">
+
+			<!--
+			<?php
+				$format = get_post_format();
+				if ( current_theme_supports( 'post-formats', $format ) ) {
+					printf( '<span class="entry-format">%1$s<a href="%2$s"><i class="fa fa-fw fa-post-format-%3$s"></i><span class="entry-format-text">%4$s</span></a></span>',
+						sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'cover' ) ),
+						esc_url( get_post_format_link( $format ) ),
+						$format,
+						get_post_format_string( $format )
+					);
+				}
+			?>
+			-->
+
 			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
       <div class="entry-meta">
         <?php cover_posted_on(); ?>
