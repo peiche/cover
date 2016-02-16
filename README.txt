@@ -117,6 +117,9 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 == Changelog ==
 
+1.7
+- Added post format support.
+
 1.6.4
 - Updated TGM Plugin Activation to latest version of fork that passes wp.org theme-check.
 - Updated markup for accessibility.
