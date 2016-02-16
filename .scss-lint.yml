@@ -18,7 +18,7 @@ linters:
   DeclarationOrder:
     enabled: true
   DuplicateProperty:
-    enabled: false # disabled for fallback properties
+    enabled: true # NOTE disabled for fallback properties
   ElsePlacement:
     enabled: true
     style: same_line
@@ -41,7 +41,7 @@ linters:
   IdSelector:
     enabled: true
   ImportantRule:
-    enabled: false # disabled for aesop inline overrides
+    enabled: true # NOTE disabled for aesop inline overrides
   ImportPath:
     enabled: true
     leading_underscore: false
@@ -59,7 +59,7 @@ linters:
     allow_leading_underscore: true
     convention: hyphenated_lowercase
   NestingDepth:
-    enabled: false # hound ci seems to confuse scss nesting with actual generated css nesting.
+    enabled: true # NOTE hound ci seems to confuse scss nesting with actual generated css nesting.
   PlaceholderInExtend:
     enabled: false
   PropertyCount:
@@ -76,10 +76,10 @@ linters:
     enabled: false
   SelectorDepth:
     enabled: true
-    max_depth: 4 # increased for plugin overrides
+    max_depth: 3 # NOTE increased for plugin overrides
     severity: warning
   SelectorFormat:
-    enabled: false # disabled for disqus and lasso
+    enabled: true # NOTE disabled for disqus and lasso
   Shorthand:
     enabled: true
     severity: warning
@@ -96,7 +96,7 @@ linters:
   SpaceAfterPropertyName:
     enabled: true
   SpaceBeforeBrace:
-    enabled: false # disabled for "social-icon" mixin
+    enabled: true # NOTE disabled for "social-icon" mixin
   SpaceBetweenParens:
     enabled: true
     spaces: 0
