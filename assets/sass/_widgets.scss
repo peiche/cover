@@ -9,32 +9,32 @@
 		list-style: none;
 		margin-left: 0;
 	}
-	
+
     li a {
         border-bottom: 1px solid $color-light-gray-alt;
         display: block;
         padding: 10px 0;
     }
-    
+
 	select {
 		max-width: 100%; // Make sure select elements fit in widgets
 	}
-	
+
 	.tagcloud {
 		text-align: center;
-		
+
         a:hover {
             background: transparent;
             border-color: $link-border-color;
         }
 	}
-	
+
 	&_search {
 		.search-submit {
 			display: none; // hide search widget's submit button
 		}
 	}
-	
+
 	&-title {
 		@include rem(font-size, 30px);
 		color: $color-gray-alt;
