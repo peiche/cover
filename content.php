@@ -36,12 +36,12 @@ if ( '' != get_the_post_thumbnail() ) {
     <div class="entry-summary">
         <?php
             if ( has_excerpt() ) {
-                the_excerpt();
+              the_excerpt();
             } else if ( strpos( $post->post_content, '<!--more-->' ) ) {
-                the_content( '' ); // No "more" link.
+              the_content( '' ); // No "more" link.
             } else {
-                the_excerpt();
-            }
+							the_excerpt();
+						}
         ?>
 
         <?php
@@ -51,5 +51,4 @@ if ( '' != get_the_post_thumbnail() ) {
             ) );
         ?>
     </div><!-- .entry-summary -->
-
 </article><!-- #post-## -->
