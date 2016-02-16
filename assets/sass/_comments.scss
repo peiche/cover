@@ -1,28 +1,27 @@
 /** comments **/
 
+.comments-container {
+  background-color: $color-light-gray-alt5;
+  padding-top: 20px;
+}
+
 .comments-area {
-    @include site-width;
+  @include site-width;
 	padding-bottom: 30px;
-	
+
 	ol {
 		list-style: none;
 		margin: 0;
+
+    &.children {
+      margin-left: 1.5em;
+    }
 	}
 }
 
 .comment {
-	&-list li {
-		border-bottom: 1px solid #eee;
-		padding: 30px 0 10px;
-	}
-	
 	&-author {
-		margin: 5px 0;
 		@include rem(font-size, 24px);
-
-		a {
-			color: #232730;
-		}
 
 		.says {
 			display: none;
@@ -31,26 +30,22 @@
 		.avatar {
 			float: left;
 			height: 62px;
-			margin: -5px 23px 0 0;
+			margin-right: 25px;
 			width: 62px;
 		}
 	}
-	
+
 	&-metadata {
-		color: #abaeb6;
 		@include rem(font-size, 14px);
 		font-family: $font-stack-content;
 		margin: 5px 0 8px;
-
-		a {
-			color: #b6b6b6;
-		}
-
-		time {
-			color: #65686e;
-		}
 	}
-	
+
+  &-body {
+    border-bottom: 1px solid $color-light-gray-alt4;
+    padding: 30px 0;
+  }
+
 	&-content {
 		clear: both;
 
@@ -58,4 +53,8 @@
 			margin: 15px 0;
 		}
 	}
+
+  &-reply-link {
+    @include button;
+  }
 }
