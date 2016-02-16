@@ -11,7 +11,7 @@
 	}
 	
     li a {
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid $color-light-gray-alt;
         display: block;
         padding: 10px 0;
     }
@@ -36,8 +36,8 @@
 	}
 	
 	&-title {
-		color: #999;
 		@include rem(font-size, 30px);
+		color: $color-gray-alt;
 		margin-bottom: 15px;
 	}
 }
