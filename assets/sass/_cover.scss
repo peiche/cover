@@ -148,4 +148,17 @@
 			}
 		}
 	}
+
+	@each $colors in $format-colors {
+		$format: nth($colors, 1);
+		$color: nth($colors, 2);
+
+		.single-format-#{$format} .site-main > & {
+			background-color: $color;
+
+			&.featured-image {
+				background-color: $color-dark-gray;
+			}
+		}
+	}
 }

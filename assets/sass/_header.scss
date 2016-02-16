@@ -21,6 +21,15 @@ Header
     transition: opacity 200ms;
     z-index: $z-index-header-backdrop;
 
+    @each $colors in $format-colors {
+      $format: nth($colors, 1);
+      $color: nth($colors, 2);
+
+      .single-format-#{$format} & {
+        background-color: $color;
+      }
+    }
+
     .noscroll & {
       background-color: transparent !important;
     }
