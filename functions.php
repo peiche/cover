@@ -30,7 +30,7 @@ function cover_setup() {
 	 */
 	load_theme_textdomain( 'cover', get_template_directory() . '/languages' );
 
-    // Add default posts and comments RSS feed links to head.
+  // Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
@@ -62,6 +62,8 @@ function cover_setup() {
 		'default-attachment' => 'fixed',
 		'default-repeat'     => 'no-repeat',
 	) ) );
+
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 
 }
 endif;
