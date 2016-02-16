@@ -80,38 +80,38 @@ a {
   }
 }
 
-.site-main .comment-navigation,
-.site-main .posts-navigation {
-  @include site-width($width-medium);
+.comment-navigation,
+.posts-navigation {
   overflow: hidden;
   padding: 50px 0;
-}
 
-.site-main .grid .comment-navigation,
-.site-main .grid .posts-navigation {
-  width: 100%;
-}
+  a {
+    @include button($color-blue);
 
-.posts-navigation a {
-  @include button($color-blue);
+    @include max-width($width-phone) {
+      display: block;
+      margin-bottom: 10px;
+      text-align: center;
+      width: auto;
+    }
+  }
 
-  @include max-width($width-phone) {
-    display: block;
-    margin-bottom: 10px;
-    text-align: center;
-    width: auto;
+  .nav-previous {
+    float: left;
+  }
+
+  .nav-next {
+    float: right;
+    text-align: right;
   }
 }
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous {
-  float: left;
-}
+.posts-navigation {
+  @include site-width($width-medium);
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next {
-  float: right;
-  text-align: right;
+  .grid & {
+    width: 100%;
+  }
 }
 
 @include max-width($width-phone) {
@@ -126,8 +126,7 @@ a {
 
 .post-navigation {
   background: $color-light-gray-alt4;
-  margin-top: 50px;
-
+  
   [class$="title"] {
     margin: 0 0 30px;
   }
