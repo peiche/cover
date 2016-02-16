@@ -126,10 +126,10 @@ jQuery(document).ready(function() {
 
 	/**
 	 * Performs a smooth page scroll to an anchor on the same page.
-	 * Ignore overlay actions and ASE ids.
+	 * Ignore overlay actions, ASE ids, and comment paging.
 	 * https://css-tricks.com/snippets/jquery/smooth-scrolling/
 	 */
-	jQuery('a[href*=#]:not([href="#"]):not([data-action="toggle-overlay"]):not([id^=aesop])').click(function() {
+	jQuery('a[href*=#]:not([href="#"]):not([href*="#comments"]):not([data-action="toggle-overlay"]):not([id^=aesop])').click(function() {
     if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
       var target = jQuery(this.hash);
       target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
