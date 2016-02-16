@@ -47,6 +47,29 @@ $color-dark-gray-alt:   #333;
 $color-blue-gray:       #607d8b;
 $color-white:           #fff;
 $color-black:           #000;
+
+$color-format-image:   $color-blue;
+$color-format-gallery: $color-cyan;
+$color-format-video:   $color-red;
+$color-format-audio:   $color-deep-orange;
+$color-format-link:    $color-teal;
+$color-format-status:  $color-green;
+$color-format-aside:   $color-brown;
+$color-format-quote:   $color-blue-gray;
+$color-format-chat:    $color-indigo;
+
+$format-colors: (
+  'image'   $color-format-image,
+  'gallery' $color-format-gallery,
+  'video'   $color-format-video,
+  'audio'   $color-format-audio,
+  'link'    $color-format-link,
+  'status'  $color-format-status,
+  'aside'   $color-format-aside,
+  'quote'   $color-format-quote,
+  'chat'    $color-format-chat
+);
+
 $text-color-base:         #3b3b3b;
 $text-color-heading:      darken($text-color-base, 10%);
 $text-color-content:      $text-color-base;
