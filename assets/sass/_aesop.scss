@@ -487,21 +487,6 @@
   }
 }
 
-/**
- * This is a total hack. We're hiding the real text of the first nav list item
- * and changing its visible title to "Top" because of a bug in ASE.
- * I will remove this when the bug is resolved.
- * https://github.com/hyunsupul/aesop-core/issues/302
- */
-.scroll-nav__item:first-child a.scroll-nav__link {
-  visibility: hidden;
-
-  &::before {
-    content: 'Top';
-    visibility: visible;
-  }
-}
-
 .aesop-grid {
   &-image {
     width: inherit; // overrides inline style/property
