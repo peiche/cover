@@ -1,3 +1,5 @@
+# https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md
+
 scss_files: "**/*.scss"
 linters:
   BangFormat:
@@ -18,7 +20,7 @@ linters:
   DeclarationOrder:
     enabled: true
   DuplicateProperty:
-    enabled: true # NOTE disabled for fallback properties
+    enabled: true
   ElsePlacement:
     enabled: true
     style: same_line
@@ -41,7 +43,7 @@ linters:
   IdSelector:
     enabled: true
   ImportantRule:
-    enabled: true # NOTE disabled for aesop inline overrides
+    enabled: true
   ImportPath:
     enabled: true
     leading_underscore: false
@@ -59,7 +61,9 @@ linters:
     allow_leading_underscore: true
     convention: hyphenated_lowercase
   NestingDepth:
-    enabled: true # NOTE hound ci seems to confuse scss nesting with actual generated css nesting.
+    enabled: true
+    max_depth: 4
+    ignore_parent_selectors: true
   PlaceholderInExtend:
     enabled: false
   PropertyCount:
@@ -76,10 +80,10 @@ linters:
     enabled: false
   SelectorDepth:
     enabled: true
-    max_depth: 3 # NOTE increased for plugin overrides
+    max_depth: 4
     severity: warning
   SelectorFormat:
-    enabled: true # NOTE disabled for disqus and lasso
+    enabled: true
   Shorthand:
     enabled: true
     severity: warning
@@ -96,7 +100,7 @@ linters:
   SpaceAfterPropertyName:
     enabled: true
   SpaceBeforeBrace:
-    enabled: true # NOTE disabled for "social-icon" mixin
+    enabled: true
   SpaceBetweenParens:
     enabled: true
     spaces: 0
@@ -126,5 +130,3 @@ linters:
   ZeroUnit:
     enabled: true
     severity: warning
-  Compass::PropertyWithMixin:
-    enabled: false
