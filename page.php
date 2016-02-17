@@ -14,16 +14,16 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-    <?php get_template_part( 'inc/wrapper', 'top' ); ?>
+    <?php get_template_part( 'template-parts/wrapper', 'top' ); ?>
 
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
 
-				      <?php get_template_part( 'inc/cover', 'post' ); ?>
+				      <?php get_template_part( 'template-parts/cover', 'page' ); ?>
 
-              <?php get_template_part( 'content', 'page' ); ?>
+              <?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-              <?php get_template_part( 'inc/comments' ); ?>
+              <?php get_template_part( 'template-parts/comments' ); ?>
 
             </main><!-- #main -->
         </div><!-- #primary -->

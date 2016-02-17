@@ -14,6 +14,8 @@
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'cover' ),
 				'after'  => '</div>',
+				'link_before' => '<span class="button small">',
+				'link_after'  => '</span>',
 			) );
 		?>
 	</div><!-- .entry-content -->

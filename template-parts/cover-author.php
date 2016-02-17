@@ -22,6 +22,6 @@
 <div class="cover">
 	<div class="cover-background<?php if ( '' != $img ) { ?> darken" style="background-image: url('<?php echo $img; ?>');<?php } ?>"></div>
 	<header class="cover-header">
-		<?php get_template_part( 'inc/author-bio' ); ?>
+		<?php get_template_part( 'template-parts/author-bio' ); ?>
 	</header>
 </div>

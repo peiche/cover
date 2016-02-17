@@ -7,14 +7,14 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'inc/wrapper', 'top' ); ?>
+<?php get_template_part( 'template-parts/wrapper', 'top' ); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 			<?php
 				if ( cover_has_featured_posts( 1 ) ) {
-					get_template_part( 'inc/cover', 'featured' );
+					get_template_part( 'template-parts/cover', 'featured' );
 				}
 			?>
 
@@ -28,7 +28,7 @@ get_header(); ?>
 				<div id="posts" class="<?php echo $list_style; ?> <?php if ( 'grid' == $list_style && $number_of_columns > 1 ) { echo 'card-' . $number_of_columns; } ?>">
 					<?php while ( have_posts() ) : the_post(); ?>
 
-	          <?php get_template_part( 'content' ); ?>
+	          <?php get_template_part( 'template-parts/content', 'summary' ); ?>
 
 	        <?php endwhile; ?>
 				</div>
@@ -36,7 +36,7 @@ get_header(); ?>
 
 			<?php else : ?>
 
-				<?php get_template_part( 'content', 'none' ); ?>
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 			<?php endif; ?>
 

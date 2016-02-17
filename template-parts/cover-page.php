@@ -30,23 +30,14 @@
 
     <header class="cover-header">
 
-      <?php if ( is_page() ) { ?>
-        <?php if ( $post->post_parent ) {
-          $parent_permalink = get_permalink( $post->post_parent );
-          $parent_title = get_the_title( $post->post_parent );
-        ?>
-          <h2 class="cover-subtitle"><a href="<?php echo $parent_permalink; ?>"><i class="fa fa-angle-left"></i> <?php echo $parent_title; ?></a></h2>
-        <?php } ?>
+      <?php if ( $post->post_parent ) {
+        $parent_permalink = get_permalink( $post->post_parent );
+        $parent_title = get_the_title( $post->post_parent );
+      ?>
+        <h2 class="cover-subtitle"><a href="<?php echo $parent_permalink; ?>"><i class="fa fa-angle-left"></i> <?php echo $parent_title; ?></a></h2>
       <?php } ?>
 
       <h1 class="cover-title"><?php the_title(); ?></h1>
-
-      <?php if ( is_single() && 'thread' != get_post_type() ) { ?>
-        <div class="entry-meta">
-          <?php cover_posted_on(); ?>
-        </div>
-      <?php } ?>
-
     </header>
 
     <?php if ( $height > 600 ) { ?>

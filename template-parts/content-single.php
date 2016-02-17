@@ -15,6 +15,8 @@
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'cover' ),
 				'after'  => '</div>',
+				'link_before' => '<span class="button small">',
+				'link_after'  => '</span>',
 			) );
 		?>
 	</div><!-- .entry-content -->
@@ -50,7 +52,7 @@
     <?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit', 'cover' ), '<div><span class="edit-link">', '</span></div>' ); ?>
 
 		<?php if ( 'thread' != get_post_type() ) { ?>
-			<?php get_template_part( 'inc/author-bio' ); ?>
+			<?php get_template_part( 'template-parts/author-bio' ); ?>
 		<?php } ?>
 
 	</footer><!-- .entry-meta -->
