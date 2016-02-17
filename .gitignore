@@ -213,6 +213,7 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+assets/sass/aesop/ai-core.scss
 bower_components/
 languages/
 node_modules/
