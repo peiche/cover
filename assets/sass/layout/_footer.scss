@@ -35,6 +35,8 @@
   .site-info {
     @extend %cf;
     @include site-width;
+    border-top: 1px solid $color-light-gray-alt;
+    padding-top: 30px;
 
     .site-credits {
       float: left;
