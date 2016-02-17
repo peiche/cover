@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     clean: {
       build: [
-        'assets/sass/aesop/ai-core.scss',
+        'assets/sass/plugins/aesop',
         'dist',
         '*.css',
         '*.css.map'
@@ -55,10 +55,10 @@ module.exports = function(grunt) {
           {
             cwd: 'bower_components/aesop-core/public/assets/css',
             src: 'ai-core.css',
-            dest: 'assets/sass/aesop',
+            dest: 'assets/sass/plugins/aesop',
             expand: true,
             rename: function(dest, src) {
-              return dest + '/' + src.replace('.css', '.scss');
+              return dest + '/_' + src.replace('.css', '.scss');
             }
           }
         ]
@@ -101,7 +101,10 @@ module.exports = function(grunt) {
 			]
 		},
     scsslint: {
-      allFiles: ['assets/sass/*.scss'],
+      allFiles: [
+        'assets/sass/**/*.scss',
+        '!assets/sass/plugins/aesop/_ai-core.scss'
+      ],
       options: {
         config: '.scss-lint.yml',
         reporterOutput: 'report/scss-lint-report.xml',
