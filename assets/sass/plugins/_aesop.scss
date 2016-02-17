@@ -340,7 +340,7 @@
       }
 
       .cover {
-        z-index: 120; // match map component
+        z-index: 119; // lower than map component
       }
     }
 
@@ -451,6 +451,10 @@
     padding-left: 20px;
   }
 
+  a {
+    color: inherit;
+  }
+
   .aesop-chapter-menu-open & {
     display: block;
   }
@@ -508,8 +512,14 @@
 $aesop-collection-margin: 10px;
 
 .aesop-collection {
+  &-grid {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
   &-item {
     padding: $aesop-collection-margin;
+    position: relative;
 
     .aesop-collection-grid.aesop-collection-grid-2col & {
       @include max-width($width-phone) {
