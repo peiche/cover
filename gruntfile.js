@@ -13,6 +13,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     clean: {
       build: [
+        'assets/sass/aesop/ai-core.scss',
         'dist',
         '*.css',
         '*.css.map'
@@ -50,6 +51,15 @@ module.exports = function(grunt) {
             src: 'masonry.pkgd.min.js',
             dest: 'dist/js',
             expand: true
+          },
+          {
+            cwd: 'bower_components/aesop-core/public/assets/css',
+            src: 'ai-core.css',
+            dest: 'assets/sass/aesop',
+            expand: true,
+            rename: function(dest, src) {
+              return dest + '/' + src.replace('.css', '.scss');
+            }
           }
         ]
       }
