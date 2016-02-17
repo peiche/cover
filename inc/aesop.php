@@ -9,4 +9,5 @@
  * Nothing here yet.
  */
 
-// TODO disable loading aesop styles.
+// Do not load Aesop styles from the plugin.
+define( 'AI_CORE_UNSTYLED', true );
