@@ -112,13 +112,30 @@ body.custom-background {
   padding: 50px 0;
   position: relative;
 
+  &::after {
+    @include site-width;
+    background-color: rgba(0, 0, 0, .15);
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
   @each $colors in $format-colors {
     $format: nth($colors, 1);
     $color: nth($colors, 2);
 
-    #posts &.format-#{$format} {
+    .blog &.format-#{$format},
+    .archive &.format-#{$format},
+    .search &.format-#{$format} {
       @include post-format-color-fix($color-white);
       background-color: $color;
+
+      &::after {
+        background-color: rgba(255, 255, 255, .5);
+      }
     }
   }
 
@@ -227,7 +244,7 @@ body.custom-background {
 
   &-title {
     @include rem(font-size, 30px);
-    margin: 0;
+    margin: 0 0 20px;
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -399,6 +416,12 @@ body.custom-background {
         margin: 0 20px;
         max-width: 35%; // whatever I guess
 
+        @include max-width($width-phone) {
+          float: none;
+          margin: 30px auto;
+          max-width: 90%;
+        }
+
         &.right {
           border-left: 0;
           border-right-style: solid;
@@ -409,12 +432,6 @@ body.custom-background {
           @include max-width($width-phone) {
             float: none;
           }
-        }
-
-        @include max-width($width-phone) {
-          float: none;
-          margin: 30px auto;
-          max-width: 90%;
         }
       }
     }
@@ -427,8 +444,6 @@ body.custom-background {
   }
 
   &-meta {
-    margin-top: 20px;
-
     .avatar {
       margin-right: 5px;
     }
@@ -449,12 +464,19 @@ body.custom-background {
   padding-top: 40px;
 }
 
+.page-links {
+  a {
+    border: none;
+  }
+}
+
 /*--------------------------------------------------------------
 10.2 Asides
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-  //display: none; // TODO re-implement when introducing post format support
+.archive .format-aside .entry-title,
+.search .format-aside .entry-title {
+  display: none;
 }
 
 /*--------------------------------------------------------------
@@ -509,6 +531,7 @@ ul.categories a {
 10.6 Modules
 --------------------------------------------------------------*/
 .twitter-tweet {
-  margin-left: auto !important;
-  margin-right: auto !important;
+  // TODO increase specificity to avoid using !important
+  margin-left: auto; // XXX removed !important
+  margin-right: auto; // XXX removed !important
 }

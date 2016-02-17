@@ -1,21 +1,37 @@
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
+.widget-area {
+	@include site-width($width-narrow);
+	display: flex;
+	flex-flow: row wrap;
+}
+
 .widget {
 	@include site-width($width-narrow);
 	margin-bottom: 60px;
 	margin-top: 60px;
+
+	@include min-width($width-tablet) {
+		&:not(:only-child) {
+			float: left;
+			margin-left: 5%;
+			margin-right: 5%;
+			max-width: none;
+			width: 40%;
+		}
+	}
 
 	ul {
 		list-style: none;
 		margin-left: 0;
 	}
 
-    li a {
-        border-bottom: 1px solid $color-light-gray-alt;
-        display: block;
-        padding: 10px 0;
-    }
+  li a {
+    border-bottom: 1px solid $color-light-gray-alt;
+    display: block;
+    padding: 10px 0;
+  }
 
 	select {
 		max-width: 100%; // Make sure select elements fit in widgets
@@ -24,10 +40,10 @@
 	.tagcloud {
 		text-align: center;
 
-        a:hover {
-            background: transparent;
-            border-color: $link-border-color;
-        }
+    a:hover {
+      background: transparent;
+      border-color: $link-border-color;
+    }
 	}
 
 	&_search {

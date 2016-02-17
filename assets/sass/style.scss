@@ -15,72 +15,16 @@ Tags: light, white, one-column, fluid-layout, responsive-layout, custom-menu, fe
 $fa-font-path: 'dist/fonts'; // override fonts path
 @import '../../bower_components/font-awesome/scss/font-awesome';
 
-// TODO move to a new .scss file
-.fa-post-format-image {
-  @extend .fa-picture-o;
-}
+@import 'variables/variables';
+@import 'mixins/mixins';
 
-.fa-post-format-gallery {
-  // TODO change when this issue is resolved: https://github.com/FortAwesome/Font-Awesome/issues/855
-  @extend .fa-picture-o;
-}
-
-.fa-post-format-audio {
-  @extend .fa-volume-off;
-}
-
-.fa-post-format-video {
-  @extend .fa-film;
-}
-
-.fa-post-format-aside {
-  @extend .fa-sticky-note-o;
-}
-
-.fa-post-format-quote {
-  @extend .fa-quote-left; // .fa-quote-right
-}
-
-.fa-post-format-status {
-  @extend .fa-dot-circle-o;
-}
-
-.fa-post-format-chat {
-  @extend .fa-comments-o;
-}
-
-.fa-post-format-link {
-  @extend .fa-link;
-}
-
-@import 'variables';
-@import 'mixins';
-@import 'social';
 @import 'reset';
-@import 'typography';
-@import 'elements';
-@import 'forms';
-@import 'navigation';
-@import 'accessibility';
-@import 'alignments';
-@import 'clearings';
-@import 'widgets';
-@import 'header';
-@import 'overlay';
-@import 'content';
-@import 'infinitescroll';
-@import 'media';
-@import 'cover';
-@import 'profile';
-@import 'comments';
-@import 'footer';
-@import 'animations';
 
-// plugin support
-@import 'headroom';
-@import 'aesop';
-@import 'lasso';
-@import 'jetpack';
-@import 'disqus';
-@import 'nakedsocialshare';
-@import 'threads';
+@import 'typography/typography';
+@import 'elements/elements';
+@import 'forms/forms';
+@import 'navigation/navigation';
+@import 'media/media';
+@import 'modules/modules';
+@import 'layout/layout';
+@import 'plugins/plugins';

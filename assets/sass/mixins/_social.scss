@@ -1,0 +1,70 @@
+/*
+* There are two different styles for displaying a social menu, one in the overlay and
+* one in the footer. The overlay menu has this markup:
+*
+* <a href="#link_to_social_network">
+*   <span class="fa-stack fa-2x">
+*     <i class="fa fa-circle fa-stack-2x"></i>
+*     <i class="fa fa-stack-1x social-icon"></i>
+*     <span class="screen-reader-text">[Menu Item Name]</span>
+*   </span>
+* </a>
+*
+* The footer social menu has this markup:
+*
+* <a href="#link_to_social_network">
+*   <i class="fa fa-fw social-icon"></i>
+*   <span class="screen-reader-text">[Menu Item Name]</span>
+* </a>
+*
+* Both types of markup are supported by the following @each loop.
+*/
+
+@mixin social-icon {
+  a {
+    .fa-circle {
+      &::before {
+        transition: color 200ms;
+      }
+
+      + .social-icon {
+        color: $color-white;
+      }
+    }
+
+    .social-icon {
+      color: $text-color-base;
+      transition: color 200ms;
+    }
+  }
+
+  a {
+    @each $social-icon in $social-icons {
+      $url: nth($social-icon, 1);
+      $color: nth($social-icon, 2);
+      $char: nth($social-icon, 3);
+
+      &[href*='#{$url}'] {
+        .fa-circle {
+          color: $color;
+        }
+
+        .social-icon {
+          &::before {
+            content: $char;
+          }
+        }
+
+        &:hover {
+          .fa-circle {
+            color: $color-white;
+          }
+
+          .social-icon {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+}

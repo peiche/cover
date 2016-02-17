@@ -77,24 +77,12 @@ $text-color-quote:        lighten($text-color-base, 10%);
 $text-color-cite:         lighten($text-color-base, 25%);
 $text-color-overlay-dark: $color-light-gray-alt2;
 
-$header-color:  $color-blue;
-$header-height: 76px;
+$header-color: $color-blue;
+$footer-color: #f0f0f0;
 
 $background-color-cover:         $color-blue;
 $background-color-cover-neutral: $color-dark-gray;
 $background-color-code:          $color-dark-gray;
-
-$font-size-normal:    16px;
-$font-size-large:     18px;
-$font-size-heading-1: 58px;
-$font-size-heading-2: 26px;
-$font-size-heading-3: 22px;
-$font-size-heading-4: 20px;
-$font-weight-normal:  400;
-
-$font-stack-content: 'Open Sans', sans-serif;
-$font-stack-heading: Montserrat, sans-serif;
-$font-stack-code:    'Source Code Pro', monospace;
 
 $link-color:        $color-blue;
 $link-color-active: darken($link-color, 15%);
@@ -102,21 +90,6 @@ $link-border-color: rgba(0, 0, 0, .25);
 
 $button-background: #edebf3;
 $button-color:      #858585;
-
-$width-narrow: 500px;
-$width-medium: 760px;
-$width-wide:   1000px;
-
-$width-phone:  480px;
-$width-tablet: 768px;
-
-$z-index-above-wp-toolbar: 100000;
-
-$z-index-header: 1000;
-$z-index-header-backdrop: -1;
-$z-index-cover: 400;
-$z-index-aesop-timeline: 500;
-$z-index-overlay: 999;
 
 $divider-color: $color-light-gray;
 
@@ -126,10 +99,43 @@ $overlay-color-dark: $color-dark-gray-alt;
 $menu-toggle-background: $color-light-gray-alt;
 $menu-toggle-background-overlay: #666;
 
-$featured-content-arrow-size: 50px;
-
 $threads-background: #eee;
 $threads-content-background: #fff;
 
-// we don't want to iterate through and generate all sizes, just ones we use in this theme
-$avatar-sizes: 35 80 96 120;
+// social network colors
+$appnet-color: #d87a68;
+$behance-color: #1769ff;
+$codepen-color: #60c2ff;
+$deviantart-color: #637768;
+$digg-color: #009ede;
+$dribbble-color: #ea4c89;
+$dropbox-color: #007ee5;
+$facebook-color: #3b5998;
+$flickr-color: #ff0084;
+$foursquare-color: #0072b1;
+$github-color: #4183c4;
+$googleplus-color: #dd4b39;
+$gratipay-color: #630;
+$instagram-color: #517fa4;
+$lastfm-color: #e31b23;
+$linkedin-color: #0976b4;
+$paypal-color: #009cde;
+$pinterest-color: #ab171e;
+$reddit-color: #ff4500;
+$rss-color: #f60;
+$skype-color: #00aff0;
+$slideshare-color: #0077b5;
+$soundcloud-color: #ff8601;
+$spotify-color: #23d05f;
+$stackexchange-color: #366fb3;
+$stackoverflow-color: #fc9a24;
+$stumbleupon-color: #eb4924;
+$trello-color: #0e74af;
+$tumblr-color: #2c4762;
+$twitch-color: #6541a5;
+$twitter-color: #00acee;
+$vimeo-color: #17b3e8;
+$vine-color: #00be8f;
+$wordpress-color: #21759b;
+$yahoo-color: #500095;
+$youtube-color: #e52d27;

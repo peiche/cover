@@ -1,0 +1,17 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    @include button($color-gray);
+}
+
+// NOTE from _s
+// scss-lint:disable VendorPrefix
+
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+
+// scss-lint:enable VendorPrefix

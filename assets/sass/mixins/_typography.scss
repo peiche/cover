@@ -1,0 +1,36 @@
+// outputs a rem value for a given property name, with a fallback pixel value
+// most commonly used for font sizes
+@mixin rem($property, $values) {
+  $px:  ();
+  $rem: ();
+
+  @each $value in $values {
+
+    @if $value == 0 or $value == auto {
+      $px:  append($px, $value);
+      $rem: append($rem, $value);
+    } @else {
+      $unit: unit($value);
+      $val:  parse-int($value);
+
+      @if $unit == 'px' {
+        $px:  append($px, $value);
+        $rem: append($rem, ($val / 16 * 1rem));
+      }
+
+      @if $unit == 'rem' {
+        $px:  append($px, ($val * 16 * 1px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  /*
+  * Note: this doubles the declarations of font-size,
+  * Unlike multiple declarations of the background property,
+  * css linter tasks do not recognize this as providing a fallback
+  * for browsers that do not support the rem property.
+  */
+  #{$property}: $px;
+  #{$property}: $rem;
+}

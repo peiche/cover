@@ -1,3 +1,5 @@
+@import 'aesop/ai-core';
+
 .aesop-component {
   display: block;
   margin: 60px auto;
@@ -26,6 +28,17 @@
     }
 
     &.aesop-quote-type-pull {
+      @include max-width($width-phone) {
+        margin: 30px auto;
+        max-width: 90%;
+
+        &.aesop-component-align-left,
+        &.aesop-component-align-right {
+          float: none;
+          margin: 30px auto;
+        }
+      }
+
       &.aesop-component-align-left,
       &.aesop-component-align-right,
       &.aesop-component-align-center {
@@ -42,34 +55,6 @@
         border-bottom-style: solid;
         border-bottom-width: 5px;
         padding: 20px 0;
-      }
-
-      @include max-width($width-phone) {
-        margin: 30px auto;
-        max-width: 90%;
-
-        &.aesop-component-align-left,
-        &.aesop-component-align-right {
-          float: none;
-          margin: 30px auto;
-        }
-      }
-    }
-
-    &.quote-is-parallax {
-      &.aesop-quote-faded {
-        blockquote {
-          opacity: 1;
-        }
-      }
-
-      blockquote {
-        opacity: 0;
-        transition: opacity 200ms;
-
-        @include max-width($width-tablet) {
-          transform: none !important;
-        }
       }
     }
 
@@ -112,7 +97,7 @@
 }
 
 .aesop-component-timeline-link {
-  @extend .button;
+  @include button;
 
   &:empty {
     background: none;
@@ -127,7 +112,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 500px; // fallback for browsers that don't support vh
+    // scss-lint:disable DuplicateProperty
     height: 100vh;
+    // scss-lint:enable DuplicateProperty
     left: 0;
     overflow: hidden;
     position: relative;
@@ -136,7 +123,6 @@
 
     @include max-width($width-tablet) {
       background-attachment: scroll;
-      background-size: contain !important; // overrides inline style set by js
     }
   }
 
@@ -208,18 +194,15 @@
   &.aesop-component-align-left,
   &.aesop-component-align-right {
     margin: 10px 30px;
-    max-width: 45% !important;
 
     @include max-width($width-tablet) {
       float: none;
       margin: 40px auto;
-      max-width: none !important;
-      width: auto !important;
     }
   }
 
   .aesop-image-component-caption {
-    @extend %image-caption;
+    @include image-caption;
     max-width: none;
     width: auto;
 
@@ -269,18 +252,11 @@
 }
 
 .aesop-cover-title {
-  /**
-   * Under ideal circumstances, this is all we'd need for font size.
-   * However, ASE devs saw fit to slap their base style with !important,
-   * so we need to do the same in order to override it.
-   */
   @include rem(font-size, 42px);
   @include site-width;
   border: 0;
   bottom: auto;
   color: $color-white;
-  font-size: 42px !important; // TODO remove once we've purged loading the ASE plugin styles
-  font-size: 2.625rem !important; // TODO remove once we've purged loading the ASE plugin styles
   left: auto;
   margin-bottom: 0;
   margin-top: 0;
@@ -322,10 +298,11 @@
   z-index: $z-index-aesop-timeline;
 
   ol {
+    @include site-width($width-wide);
     list-style: none;
     margin-bottom: 0;
     text-align: center;
-    @include site-width($width-wide);
+
     &::after {
       display: none;
     }
@@ -352,15 +329,6 @@
 }
 
 .aesop-sticky-map {
-  .aesop-map-component::before {
-    box-shadow: none;
-  }
-
-  .header {
-    left: 0;
-    right: 0;
-  }
-
   @include min-width(767px) {
     &-top {
       .header.headroom--unpinned {
@@ -399,6 +367,15 @@
         }
       }
     }
+  }
+
+  .header {
+    left: 0;
+    right: 0;
+  }
+
+  .aesop-map-component::before {
+    box-shadow: none;
   }
 }
 
@@ -600,6 +577,6 @@ $aesop-collection-margin: 10px;
 
 .aesop-video-component {
   &-caption {
-    @extend %image-caption;
+    @include image-caption;
   }
 }

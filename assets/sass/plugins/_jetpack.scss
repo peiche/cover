@@ -35,8 +35,10 @@ body .infinite-loader { // increased specificity to override jetpack's css
 		border-top-color: $color-blue;
 		height: 42px;
 		margin: auto;
+		// scss-lint:disable ImportantRule
 		position: static !important; // overrides inline style
 		width: 42px !important; // overrides inline style
+		// scss-lint:enable ImportantRule
 
 		> div {
 			display: none; // hide jetpack's default spinner parts
@@ -51,14 +53,25 @@ body .infinite-loader { // increased specificity to override jetpack's css
 }
 // scss-lint:enable IdSelector
 
+.infinite-scroll .posts-navigation, // Older / Newer Posts Navigation (always hidden)
+.infinite-scroll.neverending .site-footer { // Theme Footer (when set to scrolling)
+	display: none;
+}
+
+// When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
 /*--------------------------------------------------------------
 Related Posts
 --------------------------------------------------------------*/
 
 .entry-content .jp-relatedposts {
 	@include site-width;
-	margin-left: auto !important;
-	margin-right: auto !important;
+	// TODO test removal of !important
+	//margin-left: auto; // FIXME !important
+	//margin-right: auto; // FIXME !important
 }
 
 .jp-relatedposts-post {
@@ -220,6 +233,10 @@ Featured Content
 		width: $featured-content-arrow-size;
 		z-index: $z-index-cover;
 
+		@include max-width($width-medium) {
+			display: none;
+		}
+
 		&.prev {
 			left: 0;
 		}
@@ -227,13 +244,6 @@ Featured Content
 		&.next {
 			right: 0;
 		}
-
-		// FIXME remove disable rule when this issue has been resolved https://github.com/brigade/scss-lint/issues/494
-		// scss-lint:disable DeclarationOrder
-		@include max-width($width-medium) {
-			display: none;
-		}
-		// scss-lint:enable DeclarationOrder
 
 		.fa {
 			@include rem(font-size, $featured-content-arrow-size);

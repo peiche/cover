@@ -31,7 +31,7 @@ Header
     }
 
     .noscroll & {
-      background-color: transparent !important;
+      background-color: transparent;
     }
   }
 
@@ -72,21 +72,20 @@ Header
     }
 
     &-logo {
-      height: 47px;
-      margin: 15px 15px 15px 0;
-      vertical-align: bottom;
-      width: auto;
+      height: ($header-height - 20);
+      margin: 0 15px 0 0;
+      vertical-align: middle;
 
       @include max-width($width-tablet) {
         margin-right: 10px;
       }
 
       &-link {
+        border: none;
+        display: inline-block;
+        margin: -10px 0;
         transition: opacity 200ms;
-
-        &:hover {
-          border-color: transparent;
-        }
+        vertical-align: top;
       }
     }
 
@@ -110,10 +109,6 @@ Header
       transition: all .2s ease-in-out;
       vertical-align: middle;
 
-      &:empty {
-        display: none;
-      }
-
       @include max-width($width-phone) {
         border-left: 0;
         border-top-width: 1px;
@@ -122,6 +117,10 @@ Header
         margin-top: 10px;
         padding-left: 0;
         padding-top: 10px;
+      }
+
+      &:empty {
+        display: none;
       }
     }
   }
@@ -214,12 +213,12 @@ Nav menu, which animates into close x
   }
 
   span {
-    background-color: transparent !important;
+    background-color: transparent;
   }
 
   span::before,
   span::after {
-    background-color: $color-white !important;
+    background-color: $color-white;
   }
 
   span::before {

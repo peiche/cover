@@ -23,11 +23,9 @@ Overlay for menus and widgets
 		z-index: $z-index-header;
 	}
 
-	.widget {
-		&-area {
-			margin-bottom: 60px;
-			margin-top: 60px;
-		}
+	.widget-area {
+		margin-bottom: 60px;
+		margin-top: 60px;
 	}
 
 	.tagcloud a {
@@ -65,6 +63,10 @@ Overlay for menus and widgets
 	}
 
 	&-menu {
+		.widget:not(:only-child) {
+			width: 100%;
+		}
+
 		a,
 		a:visited {
 			color: $color-dark-gray;
@@ -119,27 +121,9 @@ Overlay for menus and widgets
 			}
 		}
 
-		.widget {
-			@include min-width($width-tablet) {
-				&:not(:only-child) {
-					float: left;
-			    margin-left: 5%;
-			    margin-right: 5%;
-			    max-width: none;
-					width: 40%;
-				}
-
-				&:nth-child(odd) {
-					clear: both; // not messing around with masonry bs, let's just clear each row
-				}
-			}
-
-			&-area {
-				@extend .cf;
-				margin-left: auto;
-				margin-right: auto;
-				width: 90%;
-			}
+		.widget-area {
+			@extend .cf;
+			max-width: none;
 		}
 	}
 

@@ -47,18 +47,13 @@
 		line-height: 86px;
 		margin: 0;
 
-		a {
-			color: $color-white;
-			font-weight: normal !important;
+		@include max-width($width-tablet) {
+			@include rem(font-size, 40px);
+			line-height: 50px;
 		}
 
 		.page & {
 			margin-bottom: 0;
-		}
-
-		@include max-width($width-tablet) {
-			@include rem(font-size, 40px);
-			line-height: 50px;
 		}
 	}
 
@@ -68,16 +63,16 @@
 		color: rgba(255, 255, 255, .8);
 		margin: 0;
 
+		@include max-width($width-tablet) {
+			@include rem(font-size, 20px);
+		}
+
 		a {
 			color: rgba(255, 255, 255, .8);
 
 			&:hover {
 				color: $color-white;
 			}
-		}
-
-		@include max-width($width-tablet) {
-			@include rem(font-size, 20px);
 		}
 	}
 
