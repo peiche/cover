@@ -66,7 +66,28 @@ module.exports = function(grunt) {
     },
     todo: {
 			options: {
-				// by default targets TODO, FIXME, and NOTE
+        marks: [
+					{
+						name: 'NOTE',
+						pattern: /NOTE/,
+						color: 'blue'
+					},
+					{
+						name: 'TODO',
+						pattern: /TODO/,
+						color: 'green'
+					},
+					{
+						name: 'FIXME',
+						pattern: /FIXME/,
+						color: 'yellow'
+					},
+					{
+						name: 'XXX',
+						pattern: /XXX/,
+						color: 'red'
+					}
+				],
 				file: 'report/report.md',
 				githubBoxes: true,
 				colophon: true,
