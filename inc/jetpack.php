@@ -68,7 +68,7 @@ function cover_infinite_scroll_render() {
  */
 function cover_infinite_scroll_has_footer_widgets( $has_widgets ) {
     $has_widgets = false;
-    if ( has_nav_menu( 'social_footer' ) ) {
+    if ( has_nav_menu( 'social_footer' ) || is_active_sidebar( 'cover-footer' ) ) {
         $has_widgets = true;
     }
 
