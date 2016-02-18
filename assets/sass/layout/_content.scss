@@ -136,6 +136,17 @@ body.custom-background {
       &::after {
         background-color: transparent;
       }
+
+      + .hentry.format-#{$format}::before {
+        @include site-width;
+        background-color: rgba(255, 255, 255, .5);
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 1px;
+      }
     }
   }
 
@@ -260,35 +271,9 @@ body.custom-background {
   }
 
   &-format {
-    @include rem(font-size, 20px);
-    color: $color-gray-alt;
-
-    @include min-width($width-wide) {
-      @include rem(font-size, 30px);
-      margin-right: 20px;
-      position: absolute;
-      right: 100%;
-    }
-
-    a {
-      color: inherit;
-
-      &:hover {
-        border-color: $link-border-color;
-        color: $link-color;
-
-          @include min-width($width-wide) {
-            border-color: transparent;
-          }
-      }
-    }
-
-    &-text {
-      margin-left: 5px;
-
-      @include min-width($width-wide) {
-        display: none;
-      }
+    .dashicons {
+      font-size: inherit;
+      vertical-align: middle;
     }
   }
 
@@ -444,6 +429,14 @@ body.custom-background {
   }
 
   &-meta {
+    a {
+      color: $text-color-base;
+
+      .cover & {
+        color: $color-white;
+      }
+    }
+
     .avatar {
       margin-right: 5px;
     }
@@ -525,13 +518,4 @@ ul.tags a {
 
 ul.categories a {
   @include bg-color-hover($color-blue);
-}
-
-/*--------------------------------------------------------------
-10.6 Modules
---------------------------------------------------------------*/
-.twitter-tweet {
-  // TODO increase specificity to avoid using !important
-  margin-left: auto; // XXX removed !important
-  margin-right: auto; // XXX removed !important
 }
