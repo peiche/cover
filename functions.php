@@ -63,6 +63,7 @@ function cover_setup() {
 		'default-repeat'     => 'no-repeat',
 	) ) );
 
+	// Post format support.
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 
 }
