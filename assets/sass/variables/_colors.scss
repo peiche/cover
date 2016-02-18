@@ -48,15 +48,15 @@ $color-blue-gray:       #607d8b;
 $color-white:           #fff;
 $color-black:           #000;
 
-$color-format-image:   $color-blue;
+$color-format-image:   $color-indigo;
 $color-format-gallery: $color-cyan;
 $color-format-video:   $color-red;
 $color-format-audio:   $color-deep-orange;
 $color-format-link:    $color-teal;
 $color-format-status:  $color-green;
 $color-format-aside:   $color-brown;
-$color-format-quote:   $color-blue-gray;
-$color-format-chat:    $color-indigo;
+$color-format-quote:   $color-dark-gray;
+$color-format-chat:    $color-blue-gray;
 
 $format-colors: (
   'image'   $color-format-image,
