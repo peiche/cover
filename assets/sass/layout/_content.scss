@@ -134,7 +134,7 @@ body.custom-background {
       background-color: $color;
 
       &::after {
-        background-color: rgba(255, 255, 255, .5);
+        background-color: transparent;
       }
     }
   }
