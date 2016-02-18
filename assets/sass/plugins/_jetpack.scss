@@ -67,12 +67,12 @@ body .infinite-loader { // increased specificity to override jetpack's css
 Related Posts
 --------------------------------------------------------------*/
 
-.entry-content .jp-relatedposts {
+// NOTE necessary to target related posts
+// scss-lint:disable IdSelector
+.entry-content #jp-relatedposts {
 	@include site-width;
-	// TODO test removal of !important
-	//margin-left: auto; // FIXME !important
-	//margin-right: auto; // FIXME !important
 }
+// scss-lint:enable IdSelector
 
 .jp-relatedposts-post {
 	transition: opacity .2s; // I reject your reality, and substitute my own!
