@@ -153,6 +153,8 @@ a {
     .title {
       @include rem(font-size, 40px);
       color: rgba(0, 0, 0, .6);
+      hyphens: auto;
+      word-wrap: break-word;
     }
   }
 
