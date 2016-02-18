@@ -44,8 +44,10 @@
 	&-title {
 		@include rem(font-size, 58px);
 		color: $color-white;
+		hyphens: auto;
 		line-height: 86px;
 		margin: 0;
+		word-wrap: break-word;
 
 		@include max-width($width-tablet) {
 			@include rem(font-size, 40px);
