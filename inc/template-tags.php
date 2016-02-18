@@ -54,6 +54,9 @@ if ( ! function_exists( 'cover_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function cover_posted_on() {
+
+	/*
+
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
@@ -77,6 +80,52 @@ function cover_posted_on() {
             $time_string
 		)
 	);
+
+	*/
+
+	// TODO relative date, like "2 days ago"
+
+	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+	}
+
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
+
+	?>
+
+	<div class="posted-on">
+		<div>
+			<a class="author vcard url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+				<?php echo get_avatar( get_the_author_meta( 'ID' ), 35, 'avatar_default', 'Profile Picture for ' . esc_html( get_the_author() ) ); ?>
+				<span class="name"><?php echo esc_html( get_the_author() ); ?></span>
+			</a>
+		</div>
+		<div>
+			<a href="<?php echo get_the_permalink(); ?>" rel="bookmark"><i class="fa fa-fw fa-clock-o"></i> <?php echo $time_string; ?></a>
+		</div>
+	</div>
+
+	<?php
+
+	$format = get_post_format();
+	if ( current_theme_supports( 'post-formats', $format ) ) {
+		$format_class = $format;
+		if ( 'link' == $format ) {
+			$format_class = 'links';
+		}
+		printf( '<div class="entry-format">%1$s<a href="%2$s"><i class="dashicons dashicons-format-%3$s"></i> %4$s</a></div>',
+			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'cover' ) ),
+			esc_url( get_post_format_link( $format ) ),
+			$format_class,
+			get_post_format_string( $format )
+		);
+	}
 
 }
 endif;
