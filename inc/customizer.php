@@ -234,6 +234,7 @@ blockquote, q, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aeso
 .cover-subtitle a { color: rgba(255, 255, 255, 0.8); }
 .entry-title a { color: #222; }
 .entry-subtitle a { color: #999; }
+.entry-meta a { color: #3b3b3b; }
 
 <?php if ( 'overlay-light' == $overlay_color ) { ?>
 .noscroll .hamburger span:before,
