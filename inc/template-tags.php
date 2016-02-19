@@ -107,7 +107,17 @@ function cover_posted_on() {
 			</a>
 		</div>
 		<div>
-			<a href="<?php echo get_the_permalink(); ?>" rel="bookmark"><i class="fa fa-fw fa-clock-o"></i> <?php echo $time_string; ?></a>
+			<a href="<?php echo get_the_permalink(); ?>" rel="bookmark">
+				<i class="fa fa-fw fa-clock-o"></i>
+				<?php //echo $time_string; ?>
+				<?php
+					// https://codex.wordpress.org/Function_Reference/human_time_diff
+					printf(
+						_x( '%s ago', '%s = human-readable time difference', 'cover' ),
+						human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) )
+					);
+				?>
+			</a>
 		</div>
 	</div>
 
