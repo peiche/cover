@@ -11,6 +11,11 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    hub: {
+      all: {
+        src: ['gruntfile-secondary.js']
+      }
+    },
     clean: {
       build: [
         'assets/sass/plugins/aesop',
@@ -309,6 +314,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-hub');
   grunt.loadNpmTasks('grunt-pot');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-todo');
