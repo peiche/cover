@@ -60,6 +60,14 @@ function cover_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'cover_relative_timestamp',
+		array(
+			'default'           => false,
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
 	$wp_customize->add_section( 'cover_section_view' , array(
 	    'title'      => __( 'Cover View Options', 'cover' ),
 	) );
@@ -130,6 +138,15 @@ function cover_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Show Featured Image', 'cover' ),
+			'section' => 'cover_section_view',
+		)
+	);
+
+	$wp_customize->add_control(
+		'cover_relative_timestamp',
+		array(
+			'type'    => 'checkbox',
+			'label'   => __( 'Relative timestamp', 'cover' ),
 			'section' => 'cover_section_view',
 		)
 	);

@@ -55,13 +55,10 @@ if ( ! function_exists( 'cover_posted_on' ) ) :
  */
 function cover_posted_on() {
 
-	/*
-
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
 	}
-
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
@@ -69,59 +66,33 @@ function cover_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-    printf( __( '<span class="posted-on">%1$s on %2$s</span>', 'cover' ),
-		sprintf( '<a class="author vcard url fn n" href="%1$s">%2$s <span class="name">%3$s</span></a>',
-                esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-                get_avatar( get_the_author_meta( 'ID' ), 35, 'avatar_default', 'Profile Picture for ' . esc_html( get_the_author() ) ) . ' ',
-                esc_html( get_the_author() )
+	$time_string_prefix = ' on ';
+
+	$relative_timestamp = esc_attr( get_theme_mod( 'cover_relative_timestamp', 0 ) );
+	if ( 1 == $relative_timestamp ) {
+		// https://codex.wordpress.org/Function_Reference/human_time_diff
+		$time_string = sprintf(
+			_x( '%s ago', '%s = human-readable time difference', 'cover' ),
+			human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) )
+		);
+		$time_string_prefix = ', ';
+	}
+
+	printf(
+		__( '<span class="posted-on">%1$s%2$s %3$s</span>', 'cover' ),
+		sprintf(
+			'<a class="author vcard url fn n" href="%1$s">%2$s <span class="name">%3$s</span></a>',
+      esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+      get_avatar( get_the_author_meta( 'ID' ), 35, 'avatar_default', 'Profile Picture for ' . esc_html( get_the_author() ) ) . ' ',
+      esc_html( get_the_author() )
 		),
-        sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
+		sprintf( $time_string_prefix ),
+    sprintf(
+			'<a href="%1$s" rel="bookmark">%2$s</a>',
 			get_the_permalink(),
-            $time_string
+    	$time_string
 		)
 	);
-
-	*/
-
-	// TODO relative date, like "2 days ago"
-
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
-	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	?>
-
-	<div class="posted-on">
-		<div>
-			<a class="author vcard url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
-				<?php echo get_avatar( get_the_author_meta( 'ID' ), 35, 'avatar_default', 'Profile Picture for ' . esc_html( get_the_author() ) ); ?>
-				<span class="name"><?php echo esc_html( get_the_author() ); ?></span>
-			</a>
-		</div>
-		<div>
-			<a href="<?php echo get_the_permalink(); ?>" rel="bookmark">
-				<i class="fa fa-fw fa-clock-o"></i>
-				<?php //echo $time_string; ?>
-				<?php
-					// https://codex.wordpress.org/Function_Reference/human_time_diff
-					printf(
-						_x( '%s ago', '%s = human-readable time difference', 'cover' ),
-						human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) )
-					);
-				?>
-			</a>
-		</div>
-	</div>
-
-	<?php
 
 	$format = get_post_format();
 	if ( current_theme_supports( 'post-formats', $format ) ) {
