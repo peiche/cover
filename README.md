@@ -118,7 +118,20 @@ If you see something wrong, or you want to improve on what I've got here, feel f
 ## Changelog
 
 **1.7**
-- Added post format support.
+- Added post format support with default colors (backgrounds for post listings like archives and searches, header color for single posts and pages).
+- Added footer widget area.
+- Added option to display timestamps as relative (for example, "2 days ago" instead of "February 20, 2016").
+- Changed comment section background color to differentiate it from post/page content.
+- Changed Aesop Story Engine plugin support to prevent loading plugin's stylesheet and load in complete custom styles.
+- Fixed submenu toggle script, which was also affecting nested comments ([issue 50](https://github.com/peiche/cover/issues/50)).
+- Fixed comment paging links.
+- Fixed Aesop Story Engine plugin's Parallax component styles (this also affected Quote and Content components when parallax functionality was enabled).
+- Fixed Aesop Story Engine plugin's Collection component grid display.
+- Fixed Jetpack logo styles.
+- Fixed horizontal scrolling bug for long post titles.
+- Reorganized template parts and includes.
+- Removed Aesop chapter component hack because it's been fixed.
+- Removed Skrollr styles (Skrollr itself was removed in v1.6.4).
 
 **1.6.4**
 - Updated TGM Plugin Activation to latest version of [fork that passes wp.org theme-check](https://github.com/TGMPA/TGM-Plugin-Activation/issues/475#issuecomment-155816019).
