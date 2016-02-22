@@ -28,18 +28,8 @@
 			<div class="cover<?php if ( '' != $img ) { ?> featured-image<?php } ?>">
 				<div class="cover-background"<?php if ( '' != $img ) { ?> style="background-image: url('<?php echo $img; ?>');"<?php } ?>></div>
 				<header class="cover-header">
+					<h2 class="cover-subtitle">Featured</h2>
 					<h1 class="cover-title"><?php the_title(); ?></h1>
-                    <div class="cover-summary">
-					<?php
-						if ( has_excerpt() ) {
-                            the_excerpt();
-                        } else if ( strpos( $post->post_content, '<!--more-->' ) ) {
-                            the_content( '' ); // No "more" link.
-                        } else {
-                            the_excerpt();
-                        }
-					?>
-					</div>
 				</header>
 			</div>
 		</a>
