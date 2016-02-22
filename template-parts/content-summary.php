@@ -27,6 +27,13 @@ if ( '' != get_the_post_thumbnail() ) {
 		<?php } ?>
 
     <header class="entry-header">
+			<?php
+        /* translators: used between list items, there is a space after the comma */
+        $categories_list = get_the_category_list( __( ', ', 'cover' ) );
+        if ( $categories_list && cover_categorized_blog() ) :
+      ?>
+        <h2 class="entry-subtitle"><?php echo $categories_list; ?></h2>
+      <?php endif; ?>
 			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
       <div class="entry-meta">
         <?php cover_posted_on(); ?>

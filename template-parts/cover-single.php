@@ -29,6 +29,14 @@
   <div class="cover-background<?php if ( '' != $class ) { ?>" style="background-image: url('<?php echo $img; ?>');<?php } ?>" role="img"></div>
 
     <header class="cover-header">
+      <?php
+        /* translators: used between list items, there is a space after the comma */
+        $categories_list = get_the_category_list( __( ', ', 'cover' ) );
+        if ( $categories_list && cover_categorized_blog() ) :
+      ?>
+        <h2 class="cover-subtitle"><?php echo $categories_list; ?></h2>
+      <?php endif; ?>
+
       <h1 class="cover-title"><?php the_title(); ?></h1>
 
       <?php if ( 'thread' != get_post_type() ) { ?>

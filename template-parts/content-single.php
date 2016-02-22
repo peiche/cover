@@ -22,20 +22,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-
-		<?php
-			$categories = get_the_category();
-			if ( $categories && cover_categorized_blog() ) {
-		?>
-      <ul class="categories">
-	      <?php
-	        foreach ( $categories as $category ) {
-	    			echo '<li><a href="' . get_tag_link( $category->term_id ) . '" title="' . esc_attr( sprintf( __( 'View all posts in %s', 'cover' ), $category->name ) ) . '">' . $category->name . '</a></li>';
-	        }
-	      ?>
-      </ul>
-    <?php } ?>
-
 		<?php
 			$tags = get_the_tags();
 			if ( $tags ) {
