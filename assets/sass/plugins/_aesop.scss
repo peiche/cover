@@ -71,10 +71,6 @@
     .aesop-content-comp-inner {
       padding: 30px 0;
       width: 90%;
-
-      &.aesop-content {
-        @include site-width;
-      }
     }
   }
 
@@ -86,6 +82,10 @@
       margin-top: -10px;
     }
   }
+}
+
+.aesop-content {
+  @include site-width;
 }
 
 .aesop-component-chat-container {
@@ -382,6 +382,7 @@
     margin-top: 0;
   }
 
+  &.aesop-content,
   &.aesop-audio-component {
     @include site-width;
   }
