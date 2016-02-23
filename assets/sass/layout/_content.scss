@@ -213,6 +213,10 @@ body.custom-background {
   &.sticky .cover-background {
     display: block;
   }
+
+  .cover + & {
+    margin-top: 40px;
+  }
 }
 
 .entry {
@@ -313,8 +317,6 @@ body.custom-background {
   }
 
   &-content {
-    padding-top: 40px;
-
     > h1,
     > h2,
     > h3,
