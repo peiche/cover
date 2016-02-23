@@ -246,6 +246,10 @@
   z-index: 1;
 }
 
+.aesop-article-chapter-wrap.aesop-chapter-full .aesop-article-chapter {
+  height: 100vh;
+}
+
 .aesop-cover-title {
   @include rem(font-size, 42px);
   @include site-width;
