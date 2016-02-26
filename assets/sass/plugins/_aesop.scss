@@ -590,3 +590,7 @@ $aesop-collection-margin: 10px;
     @include image-caption;
   }
 }
+
+.aesop-component-caption {
+  text-align: center;
+}
