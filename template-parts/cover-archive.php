@@ -7,17 +7,7 @@
 
 ?>
 
-<?php
-	$count = 0;
-	$img = '';
-	while ( have_posts() ) : the_post();
-		if ( 0 == $count && '' != get_the_post_thumbnail() ) {
-			$img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-      $img = $img_arr[0];
-		}
-		$count++;
-	endwhile;
-?>
+<?php $img = cover_get_first_featured_image(); ?>
 
 <div class="cover">
 	<div class="cover-background<?php if ( '' != $img ) { ?> darken" style="background-image: url('<?php echo $img; ?>');<?php } ?>"></div>

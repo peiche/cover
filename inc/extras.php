@@ -34,3 +34,22 @@ function cover_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'cover_body_classes' );
+
+/**
+ * Returns the first featured image from a collection of posts.
+ *
+ * @return String
+ */
+function cover_get_first_featured_image() {
+	$img = '';
+	while ( have_posts() ) : the_post();
+		if ( '' != get_the_post_thumbnail() ) {
+			$img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' );
+			$img = $img_arr[0];
+			break;
+		}
+	endwhile;
+	rewind_posts();
+
+	return $img;
+}
