@@ -70,7 +70,10 @@ function cover_posted_on() {
 
 	$relative_timestamp = esc_attr( get_theme_mod( 'cover_relative_timestamp', 0 ) );
 	if ( 1 == $relative_timestamp ) {
-		// https://codex.wordpress.org/Function_Reference/human_time_diff
+		/**
+		 * Relative timestamp
+		 * https://codex.wordpress.org/Function_Reference/human_time_diff
+		 */
 		$time_string = sprintf(
 			_x( '%s ago', '%s = human-readable time difference', 'cover' ),
 			human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) )
