@@ -15,7 +15,7 @@ get_header(); // Call header inside the loop to get author info. ?>
             <main id="main" class="site-main" role="main">
 
               <?php
-                get_template_part( 'template-parts/cover', 'single' );
+                get_template_part( 'template-parts/cover', 'post' );
 
                 get_template_part( 'template-parts/content', 'single' );
 
