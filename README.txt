@@ -119,11 +119,13 @@ You can download the latest from Github. Follow these steps to activate Cover:
 * Added footer widget area.
 * Added option to display timestamps as relative (for example, "2 days ago" instead of "February 20, 2016").
 * Changed comment section background color to differentiate it from post/page content.
-* Changed Aesop Story Engine plugin support to prevent loading plugin's stylesheet and load in complete custom styles.
-* Fixed submenu toggle script, which was also affecting nested comments.
+* Changed Aesop Story Engine plugin support to prevent loading plugin's stylesheet and load completely custom styles instead.
+* Fixed submenu toggle script, which was also affecting nested comments ([issue 50](https://github.com/peiche/cover/issues/50)).
 * Fixed comment paging links.
 * Fixed Aesop Story Engine plugin's Parallax component styles (this also affected Quote and Content components when parallax functionality was enabled).
 * Fixed Aesop Story Engine plugin's Collection component grid display.
+* Fixed Aesop Story Engine plugin's content wrapper default width.
+* Fixed Aesop Story Engine plugin's Chapter component's full chapter height.
 * Fixed Jetpack logo styles.
 * Fixed horizontal scrolling bug for long post titles.
 * Reorganized template parts and includes.
