@@ -4,7 +4,7 @@ Theme URI: http://eichefam.net/projects/cover
 Author: Paul Eiche
 Author URI: http://eichefam.net/
 Description: A content-driven blogging theme for WordPress.
-Version: 1.6.4
+Version: 1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: cover
@@ -15,35 +15,16 @@ Tags: light, white, one-column, fluid-layout, responsive-layout, custom-menu, fe
 $fa-font-path: 'dist/fonts'; // override fonts path
 @import '../../bower_components/font-awesome/scss/font-awesome';
 
-@import 'variables';
-@import 'mixins';
-@import 'social';
-@import 'reset';
-@import 'typography';
-@import 'elements';
-@import 'forms';
-@import 'navigation';
-@import 'accessibility';
-@import 'alignments';
-@import 'clearings';
-@import 'widgets';
-@import 'header';
-@import 'overlay';
-@import 'content';
-@import 'infinitescroll';
-@import 'media';
-@import 'cover';
-@import 'profile';
-@import 'comments';
-@import 'footer';
-@import 'animations';
+@import 'variables/variables';
+@import 'mixins/mixins';
 
-// plugin support
-@import 'headroom';
-@import 'skrollable';
-@import 'aesop';
-@import 'lasso';
-@import 'jetpack';
-@import 'disqus';
-@import 'nakedsocialshare';
-@import 'threads';
+@import 'reset';
+
+@import 'typography/typography';
+@import 'elements/elements';
+@import 'forms/forms';
+@import 'navigation/navigation';
+@import 'media/media';
+@import 'modules/modules';
+@import 'layout/layout';
+@import 'plugins/plugins';

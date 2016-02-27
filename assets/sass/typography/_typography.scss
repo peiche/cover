@@ -1,0 +1,216 @@
+body,
+button,
+input,
+select,
+textarea {
+	@include rem(font-size, $font-size-normal);
+	color: $text-color-base;
+	font-family: $font-stack-content;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	color: $text-color-heading;
+	margin: 30px 0;
+}
+
+h1 {
+	@include rem(font-size, $font-size-heading-1);
+	font-family: $font-stack-heading;
+}
+
+h2 {
+	@include rem(font-size, $font-size-heading-2);
+	margin-bottom: 20px;
+}
+
+h3,
+h4 {
+	@include rem(font-size, $font-size-heading-3);
+	margin: 20px 0 10px;
+}
+
+h4 {
+	@include rem(font-size, $font-size-heading-4);
+}
+
+ol,
+ul {
+	line-height: 38px;
+}
+
+p {
+	color: $text-color-content;
+	line-height: 38px;
+	margin: 30px 0;
+	word-wrap: break-word;
+
+	img {
+		margin: 30px 0;
+
+		&.alignleft,
+		&.alignright {
+			margin: 10px 0 0;
+			max-width: 50%;
+		}
+
+		&.alignleft {
+			margin-right: 15px;
+		}
+
+		&.alignright {
+			margin-left: 15px;
+		}
+	}
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote,
+q {
+	@include rem(font-size, $font-size-large);
+	border-left: 5px solid $color-blue; // overridden by header color
+	margin: 30px 0;
+	padding: 10px 20px 10px 30px;
+
+	p & {
+		color: $text-color-quote;
+	}
+
+	cite,
+	p {
+		border: 0;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	cite {
+		font-style: italic;
+		opacity: .75;
+	}
+
+	i,
+	em {
+		font-style: normal;
+	}
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: $font-stack-code;
+}
+
+code {
+	background: $color-light-gray-alt4;
+	border-radius: 3px;
+	padding: 2px 6px;
+}
+
+pre {
+	@include rem(font-size, 15px);
+	background: $background-color-code;
+	border: 0;
+	color: $color-white;
+	font-family: $font-stack-code;
+	line-height: 28px;
+	margin: 40px 0;
+	max-width: 100%;
+	overflow: auto;
+	padding: 25px;
+
+	code {
+		@include site-width;
+		background: 0;
+		color: $color-light-gray-alt4;
+		display: block;
+		line-height: inherit;
+		margin-bottom: 0;
+		margin-top: 0;
+		overflow: auto;
+		padding: 0;
+
+		&::-webkit-scrollbar {
+			background: $background-color-code;
+
+			&:horizontal {
+				height: 10px;
+			}
+		}
+
+		&::-webkit-scrollbar-track {
+			background: lighten($background-color-code, 5%);
+			border-radius: 15px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: lighten($background-color-code, 20%);
+			border-radius: 15px;
+		}
+	}
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted $color-medium-gray;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+small {
+	font-size: 75%;
+}
+
+big {
+	font-size: 125%;
+}

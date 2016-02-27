@@ -60,6 +60,14 @@ function cover_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'cover_relative_timestamp',
+		array(
+			'default'           => false,
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
 	$wp_customize->add_section( 'cover_section_view' , array(
 	    'title'      => __( 'Cover View Options', 'cover' ),
 	) );
@@ -130,6 +138,15 @@ function cover_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Show Featured Image', 'cover' ),
+			'section' => 'cover_section_view',
+		)
+	);
+
+	$wp_customize->add_control(
+		'cover_relative_timestamp',
+		array(
+			'type'    => 'checkbox',
+			'label'   => __( 'Relative timestamp', 'cover' ),
 			'section' => 'cover_section_view',
 		)
 	);
@@ -219,11 +236,11 @@ function cover_customize_options() {
 
 <style>
 <?php // Set accent color. ?>
-a,a:visited,.entry-title a:hover,.entry-subtitle a:hover { color: <?php echo $link_color; ?>; }
+a,a:visited, .entry-subtitle a:hover { color: <?php echo $link_color; ?>; }
 a:hover { color: <?php echo darken( $link_color, 15 ); ?>; }
 .header .backdrop, .cover { background-color: <?php echo $header_color; ?>; }
-.posts-navigation a, ul.categories a, body #infinite-handle span, .button.default { background-color: <?php echo $link_color; ?>; }
-.posts-navigation a:hover, body #infinite-handle span:hover, .button.default:hover { background-color: <?php echo darken( $link_color, 15 ); ?>; }
+.posts-navigation a, .comment-navigation a, ul.categories a, body #infinite-handle span, .button.default { background-color: <?php echo $link_color; ?>; }
+.posts-navigation a:hover, .comment-navigation a:hover, ul.categories a:hover, body #infinite-handle span:hover, .button.default:hover { background-color: <?php echo darken( $link_color, 15 ); ?>; }
 body .infinite-loader .spinner { border-top-color: <?php echo $link_color; ?>; }
 .fotorama__thumb-border { border-color: <?php echo $link_color; ?>; }
 blockquote, q, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-left, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-right, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-center { border-color: <?php echo $header_color; ?> }
@@ -234,6 +251,7 @@ blockquote, q, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aeso
 .cover-subtitle a { color: rgba(255, 255, 255, 0.8); }
 .entry-title a { color: #222; }
 .entry-subtitle a { color: #999; }
+.entry-meta a { color: #3b3b3b; }
 
 <?php if ( 'overlay-light' == $overlay_color ) { ?>
 .noscroll .hamburger span:before,

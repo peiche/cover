@@ -30,7 +30,7 @@ function cover_setup() {
 	 */
 	load_theme_textdomain( 'cover', get_template_directory() . '/languages' );
 
-    // Add default posts and comments RSS feed links to head.
+  // Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
@@ -63,6 +63,9 @@ function cover_setup() {
 		'default-repeat'     => 'no-repeat',
 	) ) );
 
+	// Post format support.
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+
 }
 endif;
 add_action( 'after_setup_theme', 'cover_setup' );
@@ -86,6 +89,16 @@ function cover_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Search Widgets', 'cover' ),
 		'id'            => 'cover-search',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+
+	// Footer widgets.
+	register_sidebar( array(
+		'name'          => __( 'Footer Widgets', 'cover' ),
+		'id'            => 'cover-footer',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',

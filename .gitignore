@@ -213,11 +213,15 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+assets/sass/plugins/aesop
 bower_components/
 languages/
 node_modules/
 releases/
 report/
+.ftppass
+gruntfile-secondary.js
 style.css
 style.css.map
 inc/class-tgm-plugin-activation.php

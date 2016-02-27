@@ -1,0 +1,60 @@
+/** comments **/
+
+.comments-container {
+  background-color: $color-light-gray-alt5;
+  padding: 50px 0;
+}
+
+.comments-area {
+  @include site-width;
+	padding-bottom: 30px;
+
+	ol {
+		list-style: none;
+		margin: 0;
+
+    &.children {
+      margin-left: 1.5em;
+    }
+	}
+}
+
+.comment {
+	&-author {
+		@include rem(font-size, 24px);
+
+		.says {
+			display: none;
+		}
+
+		.avatar {
+			float: left;
+			height: 62px;
+			margin-right: 25px;
+			width: 62px;
+		}
+	}
+
+	&-metadata {
+		@include rem(font-size, 14px);
+		font-family: $font-stack-content;
+		margin: 5px 0 8px;
+	}
+
+  &-body {
+    border-bottom: 1px solid $color-light-gray-alt4;
+    padding: 30px 0;
+  }
+
+	&-content {
+		clear: both;
+
+		p {
+			margin: 15px 0;
+		}
+	}
+
+  &-reply-link {
+    @include button;
+  }
+}

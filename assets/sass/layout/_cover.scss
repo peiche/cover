@@ -1,0 +1,157 @@
+.cover {
+	background-color: $background-color-cover;
+	color: $color-white;
+	overflow: hidden;
+	padding: 160px 0 80px;
+	position: relative;
+	transition: opacity .25s;
+	z-index: $z-index-cover;
+
+	&-header {
+		@include site-width;
+		position: relative;
+
+		p {
+			color: $color-white;
+		}
+
+		a {
+			color: $color-white;
+
+			&:hover {
+				border-color: $color-white;
+			}
+
+			&.author:hover {
+				border-color: transparent;
+
+				span {
+					border-color: $color-white;
+				}
+			}
+		}
+
+		.taxonomy-description {
+			border-top: 1px solid rgba(255, 255, 255, .25);
+			margin-top: 20px;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&-title {
+		@include rem(font-size, 58px);
+		color: $color-white;
+		hyphens: auto;
+		line-height: 86px;
+		margin: 0;
+		word-wrap: break-word;
+
+		@include max-width($width-tablet) {
+			@include rem(font-size, 40px);
+			line-height: 50px;
+		}
+
+		.page & {
+			margin-bottom: 0;
+		}
+	}
+
+	&-subtitle,
+	&-summary {
+		@include rem(font-size, 26px);
+		color: rgba(255, 255, 255, .8);
+		margin: 0;
+
+		@include max-width($width-tablet) {
+			@include rem(font-size, 20px);
+		}
+
+		a {
+			color: rgba(255, 255, 255, .8);
+
+			&:hover {
+				color: $color-white;
+			}
+		}
+	}
+
+	&-background {
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100%;
+		left: 0;
+		opacity: .6;
+		position: absolute;
+		top: 0;
+		transition: opacity 200ms;
+		width: 100%;
+
+		&.darken {
+			opacity: .1;
+		}
+
+		&-jump,
+		&-link {
+			bottom: 0;
+			color: $color-white;
+			opacity: .5;
+			padding: 10px;
+			position: absolute;
+			right: 0;
+
+			&:link,
+			&:visited,
+			&:hover {
+				color: $color-white;
+			}
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		&-jump {
+			@include rem(font-size, 50px);
+			left: 0;
+			text-align: center;
+		}
+
+		&-link {
+			@include rem(font-size, 25px);
+		}
+	}
+
+	&.featured-image {
+		background-color: $color-dark-gray;
+
+		&.hero {
+			padding: 200px 0;
+		}
+
+		&.full {
+			min-height: 100vh;
+			padding-top: 50vh;
+
+			@include max-width($width-tablet) {
+				padding-top: 35vh;
+			}
+		}
+	}
+
+	@each $colors in $format-colors {
+		$format: nth($colors, 1);
+		$color: nth($colors, 2);
+
+		.single-format-#{$format} .site-main > & {
+			background-color: $color;
+
+			&.featured-image {
+				background-color: $color-dark-gray;
+			}
+		}
+	}
+}

@@ -1,0 +1,36 @@
+// handles elements with a background color, which need to darken on hover
+@mixin bg-color-hover($color: $color-gray) {
+  background-color: $color;
+
+  &:hover {
+    background-color: darken($color, 10%);
+  }
+
+  &:active {
+    background-color: darken($color, 20%);
+  }
+}
+
+@mixin post-format-color-fix($color: inherit) {
+  color: $color;
+
+  * {
+    color: inherit;
+  }
+
+  .entry-title a:hover,
+  .entry-meta a:hover,
+  a.author:hover .name {
+    border-color: $color;
+  }
+
+  a.author:hover {
+    border-color: transparent;
+  }
+
+  .button {
+    background-color: transparent;
+    border: 1px solid $color;
+    color: $color;
+  }
+}

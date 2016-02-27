@@ -11,8 +11,14 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    hub: {
+      all: {
+        src: ['gruntfile-secondary.js']
+      }
+    },
     clean: {
       build: [
+        'assets/sass/plugins/aesop',
         'dist',
         '*.css',
         '*.css.map'
@@ -50,27 +56,60 @@ module.exports = function(grunt) {
             src: 'masonry.pkgd.min.js',
             dest: 'dist/js',
             expand: true
+          },
+          {
+            cwd: 'bower_components/aesop-core/public/assets/css',
+            src: 'ai-core.css',
+            dest: 'assets/sass/plugins/aesop',
+            expand: true,
+            rename: function(dest, src) {
+              return dest + '/_' + src.replace('.css', '.scss');
+            }
           }
         ]
       }
     },
     todo: {
 			options: {
-				// by default targets TODO, FIXME, and NOTE
+        marks: [
+					{
+						name: 'NOTE',
+						pattern: /NOTE/,
+						color: 'blue'
+					},
+					{
+						name: 'TODO',
+						pattern: /TODO/,
+						color: 'green'
+					},
+					{
+						name: 'FIXME',
+						pattern: /FIXME/,
+						color: 'yellow'
+					},
+					{
+						name: 'XXX',
+						pattern: /XXX/,
+						color: 'red'
+					}
+				],
 				file: 'report/report.md',
 				githubBoxes: true,
 				colophon: true,
 				usePackage: true
 			},
 			src: [
-			  'assets/**/*',
-			  '*.php',
+        'assets/**/*',
+        '*.php',
         'inc/**/*',
         '!inc/class-tgm-plugin-activation.php'
 			]
 		},
     scsslint: {
-      allFiles: ['assets/sass/*.scss'],
+      allFiles: [
+        'assets/sass/**/*.scss',
+        '!assets/sass/plugins/aesop/_ai-core.scss'
+      ],
       options: {
         config: '.scss-lint.yml',
         reporterOutput: 'report/scss-lint-report.xml',
@@ -275,6 +314,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-hub');
   grunt.loadNpmTasks('grunt-pot');
   grunt.loadNpmTasks('grunt-scss-lint');
   grunt.loadNpmTasks('grunt-todo');

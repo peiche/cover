@@ -1,35 +1,36 @@
-#Cover
+# Cover
 [![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://github.com/peiche/cover/blob/master/LICENSE.txt)
 [![Build Status](https://travis-ci.org/peiche/cover.svg?branch=master)](https://travis-ci.org/peiche/cover)
 [![Code Climate](https://codeclimate.com/github/peiche/cover/badges/gpa.svg)](https://codeclimate.com/github/peiche/cover)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
 Cover is a content-driven blogging theme for WordPress. Built on top of Automattic’s _s (Underscores) and bundled with Font Awesome, Cover allows you to focus on your writing. There are no sidebars to mess with, just a single column view of your content.
 
-##Features
+## Features
 
 Cover is designed for any size screen. No matter the device, Cover always looks beautiful.
 
 Drawing special attention to featured images, from the homepage to posts, category archives to pages, your blog is made uniquely yours. Of course, you don’t _have_ to use images. Cover’s clean typography lets your writing stand on its own.
 
-###Full-width featured images
+### Full-width featured images
 
 When you use a featured image in Cover, it displays as a background image behind the title. Images taller than 600 pixels will be displayed full-screen.
 
-###Scalable vector icons
+### Scalable vector icons
 
 Cover is bundled with Font Awesome, allowing you to include any of its icons on any post or page.
 
-###Put widgets in their place
+### Put widgets in their place
 
 Cover puts your content first, exactly where it should be. But that doesn't mean you can't have widgets and menus, and that's where the overlay comes in.
 
 The overlay is a full-screen menu and widget display. You can define two menus (a regular one and a social media one) and as many widgets as your little heart desires. You can also put a social menu in the footer.
 
-###Social menus
+### Social menus
 
-So, about those social menus. All you have to do is create a menu with links to your favorite social media accounts, and Cover will do the rest. It will detect the URL of the site in question and display the appropriate icon*, courtesy of Font Awesome.
+So, about those social menus. All you have to do is create a menu with links to your favorite social media accounts, and Cover will do the rest. It will detect the URL of the site in question and display the appropriate icon, courtesy of Font Awesome.
 
-*Supported sites:
+Supported sites:
 - CodePen
 - Dribbble
 - Facebook
@@ -49,13 +50,13 @@ So, about those social menus. All you have to do is create a menu with links to 
 
 If you would like to request support for a site's icon, please raise an issue. Or create a pull request and add it yourself!
 
-###Recommended Plugins
+### Recommended Plugins
 
-####Aesop Story Engine
+#### Aesop Story Engine
 
 Cover was built from the ground up with Aesop Story Engine in mind. Break out of the content area with full-width components like images, galleries, maps, and more.
 
-####Jetpack
+#### Jetpack
 
 Automattic's Jetpack plugin comes packed with modules for any theme to use, but Cover is designed to work nicely with these:
 
@@ -68,17 +69,17 @@ In the Customizer (again), you'll find the option to assign a specific tag to fe
 - **Infinite Scroll**  
 The Infinite Scroll module already works just fine, and we're not messing with that. But Cover allows you to have a social menu in the footer, so now Jetpack responds accordingly. If you have infinite scrolling enabled and no footer menu, scrolling down will load more posts, just as it's meant to do. But if you _do_ have a footer menu, you will see a button to click in order to load more posts. (Otherwise, you'd never see the footer!)
 
-####Color Posts
+#### Color Posts
 
 Using the [Color Posts](https://wordpress.org/plugins/color-posts/) plugin will allow Cover to match the header's color to the color of a post's featured image. Please note that this plugin requires Jetpack.
 
-###Built with Sass
+### Built with Sass
 
 If you’re a developer and want to play around with Cover, you’ll find that its stylesheet is compressed. This is because I prefer to build the theme’s stylesheet using Sass. To that end, in the project you’ll find the `/sass` folder which holds all the components required to compile the stylesheet, including the bundled Font Awesome styles. (Similarly, the JavaScript used in Cover is compressed, but the uncompressed code is provided in the `/js/src` directory.)
 
-##Installation
+## Installation
 
-###WordPress.org
+### WordPress.org
 
 You can download the latest official release from WordPress.org on your self-hosted site's theme admin page. Follow these steps to activate Cover:
 
@@ -86,7 +87,7 @@ You can download the latest official release from WordPress.org on your self-hos
 2. Search for "Cover" and, once you've found the theme, click **Install**.
 3. Click **Activate** to start using Cover.
 
-###Github
+### Github
 
 You can download the latest from Github. Follow these steps to activate Cover:
 
@@ -95,11 +96,11 @@ You can download the latest from Github. Follow these steps to activate Cover:
 3. Click **Upload** and **Choose File**, then select the theme's zip file. Click **Install Now**.
 4. Click **Activate**.
 
-##Building
+## Building
 
 So you want to build the project yourself. Great! Please follow [these directions](building.md).
 
-##FAQ
+## FAQ
 
 1. **How do I set the background image behind the post title?**  
    When you use a featured image in Cover, it displays as a background image behind the title. Images taller than 600 pixels will be displayed full-screen.
@@ -110,111 +111,11 @@ So you want to build the project yourself. Great! Please follow [these direction
 3. **I am receiving an error in the Customizer, what should I do?**  
    Disable any caching plugins that you may have activated.
 
-##Contribute
+## Contribute
 
 If you see something wrong, or you want to improve on what I've got here, feel free to submit an issue or create a pull request.
 
-##Changelog
-
-**1.6.4**
-- Updated TGM Plugin Activation to latest version of [fork that passes wp.org theme-check](https://github.com/TGMPA/TGM-Plugin-Activation/issues/475#issuecomment-155816019).
-- Updated markup for accessibility.
-- Updated chapter component styles in Aesop Story Engine plugin.
-- Improved Headroom functionality.
-- Fixed sticky map component in Aesop Story Engine plugin.
-- Fixed hover opacity on image components in Aesop Story Engine plugin.
-- Removed Skrollr.
-- Removed author data shim to mirror [_s commit](https://github.com/Automattic/_s/commit/2580a0a69f091b98272bc74e35c347b34a20a52d).
-- Removed custom paging function in favor of core navigation function.
-
-**1.6.3**
-- Added link on posts to view featured image.
-- Added link on posts with featured images to jump straight to content.
-- Added support for my fork of the [Threads](https://github.com/peiche/wp-threads/) plugin.
-- Added widget area on search overlay.
-- Updated to Font Awesome 4.5.
-- Fixed missing translation text in post navigation.
-- Fixed color theme for Chrome on Android Lollipop.
-- [Fixed broken `customizer.js` link](https://github.com/peiche/cover/issues/43) (thanks [@michaelbeil](https://github.com/michaelbeil)).
-- Stylesheet fixes.
-
-**1.6.2**
-- Escaped theme option outputs.
-- Fixed missing margin for Minimal view. (Fixes [this issue](https://github.com/peiche/cover/issues/41).)
-- Updated TGM Plugin Activation class.
-
-**1.6.1**
-- Extended nested menu logic for all hierarchical items, including categories.
-- Fixed caption styles for Aesop video components.
-- Fixed featured content slider format issue.
-- Added support for Naked Social Share plugin.
-
-**1.6.0**
-- Upgraded to FontAwesome 4.4.
-- Updated Vimeo icon (per [this FontAwesome issue](https://github.com/FortAwesome/Font-Awesome/issues/2197)).
-- Added overlay color option: dark or light.
-- Added Unslider plugin for more than one featured post.
-- Increased featured post maximum from one to five.
-- Added post view option: minimal or grid.
-- Added custom background color option for grid view.
-- Added custom background image option for grid view.
-- Added column option for grid view.
-- Added Masonry plugin for grid view.
-- Tweaked profile layout for small screens.
-- Tweaked post spacing for small screens.
-
-**1.5.6**
-- Fixed margin for comment and paging navigation.
-- Fixed site description for small screens.
-- Fixed footer for small screens.
-- Overhauled blockquote styles, for both the default and the Aesop Story Engine component.
-
-**1.5.5**
-- Fixed sticky post style inconsistencies.
-- Fixed undefined variable in `content.php`.
-- Fixed full size featured images for posts with long titles (thanks to [@Music47ell](https://github.com/Music47ell)).
-- Fixed site header for long site titles.
-- Fixed debug error in `inc/cover-archive.php`.
-- Fixed single page/post featured image styles.
-
-**1.5.4**
-- [Removed 62.5% antipattern](http://eichefam.net/2015/06/30/anti-antipattern/) (thanks to [@Music47ell](https://github.com/Music47ell)).
-
-**1.5.3**
-- Added overlay for Aesop Story Engine Content component to make text more readable.
-- Fixed [non-object property bug](https://github.com/peiche/cover/issues/29) in post navigation (thanks [@uusijani](https://github.com/uusijani)).
-- Fixed post background for sticky posts displayed in the loop.
-- Fixed header background transition timing.
-- Fixed post navigation margins.
-
-**1.5.2**
-- Fixed header for touch screen devices.
-- Fixed widget menus.
-- Fixed overlay text color.
-- Code cleanup.
-
-**1.5.1**
-- Fixed header color for Color Posts plugin.
-
-**1.5.0**
-- Added support for Jetpack's Site Logo module.
-- Added Customizer option to change header color.
-- Added Customizer option to change link color.
-- Added support for the [Color Posts](https://wordpress.org/plugins/color-posts/) plugin to set the header color based on post images. (Please note that this requires [Jetpack](https://wordpress.org/plugins/jetpack/) to function.)
-- Added TGM Plugin Activation class to suggest Aesop Story Engine.
-- Added caption styles for Aesop Story Engine image gallery types (Grid, Thumbnail, Sequence, Photoset, Parallax).
-- Added styles for Aesop Story Engine to darken the image behind the text in the chapter component, similar to the header.
-- Added background image for sticky posts in The Loop.
-
-**1.4.0**
-- Jetpack's Infinite Scrolling module now detects whether or not the footer social menu is present.
-- Updated Google Fonts URL to be protocol-relative (thanks to [@BforBen](https://github.com/BforBen)).
-- Added WordPress.org installation directions.
-
-**1.3.1**
-- Initial release on the [WordPress.org Theme Directory](https://wordpress.org/themes/cover/).
-
-##License
+## License
 
 Cover is [GPL v2.0 or later](LICENSE.txt).
 

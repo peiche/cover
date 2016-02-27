@@ -1,0 +1,4 @@
+// parses any value into an int
+@function parse-int($n) {
+  @return $n / ($n * 0 + 1);
+}

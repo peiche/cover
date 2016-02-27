@@ -1,0 +1,141 @@
+/*
+* Material Design colors!
+*/
+
+// main colors
+$color-blue:      #026ed2;
+$color-red:       #f44336;
+$color-green:     #4caf50;
+$color-pink:      #e91e63;
+$color-purple:    #9c27b0;
+$color-orange:    #ff9800;
+$color-dark-gray: #2b2b2b;
+
+// put into array for later use
+$main-colors: (
+  'default'   $color-blue,
+  'blue'      $color-blue,
+  'red'       $color-red,
+  'green'     $color-green,
+  'pink'      $color-pink,
+  'purple'    $color-purple,
+  'orange'    $color-orange,
+  'dark-gray' $color-dark-gray
+);
+
+// other colors because why not.
+$color-deep-purple:     #673ab7;
+$color-indigo:          #3f51b5;
+$color-light-blue:      #03a9f4;
+$color-cyan:            #00bcd4;
+$color-teal:            #009688;
+$color-light-green:     #8bc34a;
+$color-lime:            #cddc39;
+$color-deep-orange:     #ff5722;
+$color-amber:           #ffc107;
+$color-brown:           #795548;
+$color-gray:            #9e9e9e;
+$color-gray-alt:        #999;
+$color-light-gray:      #c3c2c9;
+$color-light-gray-alt:  #ddd;
+$color-light-gray-alt2: #ccc;
+$color-light-gray-alt3: #aaa;
+$color-light-gray-alt4: #eee;
+$color-light-gray-alt5: #fafafa;
+$color-medium-gray:     #666;
+$color-dark-gray-alt:   #333;
+$color-blue-gray:       #607d8b;
+$color-white:           #fff;
+$color-black:           #000;
+
+$color-format-image:   $color-indigo;
+$color-format-gallery: $color-cyan;
+$color-format-video:   $color-red;
+$color-format-audio:   $color-deep-orange;
+$color-format-link:    $color-teal;
+$color-format-status:  $color-green;
+$color-format-aside:   $color-brown;
+$color-format-quote:   $color-dark-gray;
+$color-format-chat:    $color-blue-gray;
+
+$format-colors: (
+  'image'   $color-format-image,
+  'gallery' $color-format-gallery,
+  'video'   $color-format-video,
+  'audio'   $color-format-audio,
+  'link'    $color-format-link,
+  'status'  $color-format-status,
+  'aside'   $color-format-aside,
+  'quote'   $color-format-quote,
+  'chat'    $color-format-chat
+);
+
+$text-color-base:         #3b3b3b;
+$text-color-heading:      darken($text-color-base, 10%);
+$text-color-content:      $text-color-base;
+$text-color-quote:        lighten($text-color-base, 10%);
+$text-color-cite:         lighten($text-color-base, 25%);
+$text-color-overlay-dark: $color-light-gray-alt2;
+
+$header-color: $color-blue;
+$footer-color: $color-white;
+
+$background-color-cover:         $color-blue;
+$background-color-cover-neutral: $color-dark-gray;
+$background-color-code:          $color-dark-gray;
+
+$link-color:        $color-blue;
+$link-color-active: darken($link-color, 15%);
+$link-border-color: rgba(0, 0, 0, .25);
+
+$button-background: #edebf3;
+$button-color:      #858585;
+
+$divider-color: $color-light-gray;
+
+$overlay-color-light: $color-white;
+$overlay-color-dark: $color-dark-gray-alt;
+
+$menu-toggle-background: $color-light-gray-alt;
+$menu-toggle-background-overlay: #666;
+
+$threads-background: #eee;
+$threads-content-background: #fff;
+
+// social network colors
+$appnet-color: #d87a68;
+$behance-color: #1769ff;
+$codepen-color: #60c2ff;
+$deviantart-color: #637768;
+$digg-color: #009ede;
+$dribbble-color: #ea4c89;
+$dropbox-color: #007ee5;
+$facebook-color: #3b5998;
+$flickr-color: #ff0084;
+$foursquare-color: #0072b1;
+$github-color: #4183c4;
+$googleplus-color: #dd4b39;
+$gratipay-color: #630;
+$instagram-color: #517fa4;
+$lastfm-color: #e31b23;
+$linkedin-color: #0976b4;
+$paypal-color: #009cde;
+$pinterest-color: #ab171e;
+$reddit-color: #ff4500;
+$rss-color: #f60;
+$skype-color: #00aff0;
+$slideshare-color: #0077b5;
+$soundcloud-color: #ff8601;
+$spotify-color: #23d05f;
+$stackexchange-color: #366fb3;
+$stackoverflow-color: #fc9a24;
+$stumbleupon-color: #eb4924;
+$trello-color: #0e74af;
+$tumblr-color: #2c4762;
+$twitch-color: #6541a5;
+$twitter-color: #00acee;
+$vimeo-color: #17b3e8;
+$vine-color: #00be8f;
+$wordpress-color: #21759b;
+$yahoo-color: #500095;
+$youtube-color: #e52d27;

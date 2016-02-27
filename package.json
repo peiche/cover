@@ -32,6 +32,8 @@
     "grunt-contrib-sass": "~0.8.1",
     "grunt-contrib-uglify": "~0.6.0",
     "grunt-contrib-watch": "~0.6.1",
+    "grunt-ftp-deploy": "^0.1.10",
+    "grunt-hub": "^0.7.0",
     "grunt-pot": "^0.2.1",
     "grunt-scss-lint": "^0.3.3",
     "grunt-todo": "^0.5.0"

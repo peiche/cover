@@ -1,0 +1,21 @@
+$header-height: 76px;
+
+$width-narrow: 500px;
+$width-medium: 760px;
+$width-wide:   1000px;
+
+$width-phone:  480px;
+$width-tablet: 768px;
+
+$z-index-above-wp-toolbar: 100000;
+
+$z-index-header: 1000;
+$z-index-header-backdrop: -1;
+$z-index-cover: 400;
+$z-index-aesop-timeline: 500;
+$z-index-overlay: 999;
+
+$featured-content-arrow-size: 50px;
+
+// we don't want to iterate through and generate all sizes, just ones we use in this theme
+$avatar-sizes: 35 80 96 120;

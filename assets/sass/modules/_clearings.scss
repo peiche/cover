@@ -1,0 +1,26 @@
+/*--------------------------------------------------------------
+8.0 Clearings
+--------------------------------------------------------------*/
+
+%cf,
+.cf {
+    &::before,
+    &::after {
+        content: '';
+        display: table;
+    }
+
+    &::after {
+        clear: both;
+    }
+}
+
+.clear,
+.clearfix,
+.entry-content,
+.comment-content,
+.site-header,
+.site-content,
+.site-footer {
+	@extend %cf;
+}

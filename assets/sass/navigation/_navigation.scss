@@ -1,0 +1,232 @@
+/*--------------------------------------------------------------
+5.0 Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+5.1 Links
+--------------------------------------------------------------*/
+a {
+  border-bottom: 1px solid transparent;
+  color: $link-color;
+  text-decoration: none;
+  transition: border .2s ease-in-out, color .2s ease-in-out, opacity .2s ease-in-out;
+
+  b &,
+  strong & {
+    border-width: 2px;
+  }
+
+  &:visited {
+    color: $link-color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $link-color-active;
+  }
+
+  &:hover {
+    color: $link-color-active;
+    text-decoration: none;
+
+    .entry-summary &,
+    .entry-content &,
+    .edit-link &,
+    .entry-meta & {
+      border-color: $link-border-color;
+    }
+  }
+
+  &.author {
+    .name {
+      border-bottom: 1px solid transparent;
+      transition: border .2s ease-in-out;
+    }
+
+    &:hover {
+      border-color: transparent;
+
+      .name {
+        border-color: $link-border-color;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+5.2 Menus
+--------------------------------------------------------------*/
+.main-navigation {
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  a {
+    border-bottom: 1px solid $color-light-gray-alt;
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+  }
+}
+
+.comment-navigation,
+.posts-navigation {
+  overflow: hidden;
+  padding: 50px 0;
+
+  a {
+    @include button($color-blue);
+
+    @include max-width($width-phone) {
+      display: block;
+      margin-bottom: 10px;
+      text-align: center;
+      width: auto;
+    }
+  }
+
+  .nav-previous {
+    float: left;
+  }
+
+  .nav-next {
+    float: right;
+    text-align: right;
+  }
+}
+
+.posts-navigation {
+  @include site-width($width-medium);
+
+  .grid & {
+    width: 100%;
+  }
+}
+
+@include max-width($width-phone) {
+  .comment-navigation .nav-previous,
+  .posts-navigation .nav-previous,
+  .comment-navigation .nav-next,
+  .posts-navigation .nav-next {
+    float: none;
+    width: auto;
+  }
+}
+
+.post-navigation {
+  background: $color-light-gray-alt4;
+
+  [class$="title"] {
+    margin: 0 0 30px;
+  }
+
+  [class$="subtitle"] {
+    border-bottom: 1px solid rgba(255, 255, 255, .35);
+    margin: 0 0 5px;
+    padding-bottom: 15px;
+  }
+
+  .nav-previous {
+    @include site-width;
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+    .subtitle {
+      @include rem(font-size, 20px);
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+      color: rgba(0, 0, 0, .5);
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+    }
+
+    .title {
+      @include rem(font-size, 40px);
+      color: rgba(0, 0, 0, .6);
+      hyphens: auto;
+      word-wrap: break-word;
+    }
+  }
+
+  .cover {
+    background-color: $background-color-cover-neutral;
+    margin: 0;
+    padding: 20px 0 80px;
+    z-index: auto;
+
+    &-header {
+      margin: 50px auto;
+    }
+
+    .background {
+      background-attachment: scroll;
+    }
+  }
+}
+
+.social-navigation {
+  @include social-icon;
+
+  .menu {
+    line-height: normal;
+    list-style: none;
+    margin: 0;
+
+    a {
+      border: 0;
+      padding: 0;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+
+  li {
+    display: inline-block;
+    line-height: normal;
+  }
+}
+
+.menu-has-child {
+  position: relative;
+}
+
+.menu-toggle {
+  @include rem(font-size, 30px);
+  cursor: pointer;
+  height: 59px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+
+  &:hover {
+    background-color: $menu-toggle-background;
+
+    .overlay-dark & {
+      background-color: $menu-toggle-background-overlay;
+    }
+  }
+
+  .fa {
+    bottom: 0;
+    height: 30px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+  }
+}

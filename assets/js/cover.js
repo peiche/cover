@@ -1,3 +1,5 @@
+var KEYCODE_ESCAPE = 27;
+
 var header_headroom;
 
 function closeOverlay() {
@@ -37,7 +39,7 @@ jQuery(document).ready(function() {
 	 * Hitting the escape key will close an open overlay
 	 */
 	jQuery(document).keyup(function(e) {
-		if (e.keyCode === 27) {
+		if (e.keyCode === KEYCODE_ESCAPE) {
 			closeOverlay();
 		}
 	});
@@ -95,7 +97,7 @@ jQuery(document).ready(function() {
 	 * Find children by traversing up.
 	 * Not all menus or heirarchy widgets' parents has a class indicating so.
 	 */
-	jQuery('.sub-menu, .children').addClass('hide').closest('li').addClass('menu-has-child').append('<div class="menu-toggle"><i class="fa fa-angle-down"></i></div>');
+	jQuery('.widget .sub-menu, .widget .children, .menu .children').addClass('hide').closest('li').addClass('menu-has-child').append('<div class="menu-toggle"><i class="fa fa-angle-down"></i></div>');
 
   // click event on submenu toggles
   jQuery('body').on('click', '.menu-toggle', function(e) {
@@ -124,10 +126,10 @@ jQuery(document).ready(function() {
 
 	/**
 	 * Performs a smooth page scroll to an anchor on the same page.
-	 * Ignore overlay actions and ASE ids.
+	 * Ignore overlay actions, ASE ids, and comment paging.
 	 * https://css-tricks.com/snippets/jquery/smooth-scrolling/
 	 */
-	jQuery('a[href*=#]:not([href="#"]):not([data-action="toggle-overlay"]):not([id^=aesop])').click(function() {
+	jQuery('a[href*=#]:not([href="#"]):not([href*="#comments"]):not([data-action="toggle-overlay"]):not([id^=aesop])').click(function() {
     if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
       var target = jQuery(this.hash);
       target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');

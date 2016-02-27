@@ -1,0 +1,10 @@
+// NOTE necessary to target Lasso featured image controls
+// scss-lint:disable IdSelector
+// scss-lint:disable SelectorFormat
+#lasso--featImgControls {
+    bottom: 0;
+    position: absolute;
+    top: auto;
+}
+// scss-lint:enable SelectorFormat
+// scss-lint:enable IdSelector

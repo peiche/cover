@@ -1,0 +1,599 @@
+@import 'aesop/ai-core';
+
+.aesop-component {
+  display: block;
+  margin: 60px auto;
+
+  + p {
+    margin-top: 30px; // overrides style in ai-core.css
+  }
+
+  &.aesop-image-component {
+    margin: 60px 0; // overrides style in ai-core.css
+
+    &:hover {
+      opacity: 1; // overrides ASE style
+    }
+  }
+
+  &.aesop-audio-component {
+    @include site-width;
+  }
+
+  &.aesop-quote-component {
+    font-style: italic;
+
+    &.aesop-quote-type-block {
+      padding: 30px;
+    }
+
+    &.aesop-quote-type-pull {
+      @include max-width($width-phone) {
+        margin: 30px auto;
+        max-width: 90%;
+
+        &.aesop-component-align-left,
+        &.aesop-component-align-right {
+          float: none;
+          margin: 30px auto;
+        }
+      }
+
+      &.aesop-component-align-left,
+      &.aesop-component-align-right,
+      &.aesop-component-align-center {
+        border-color: $color-blue; // overridden by header color
+      }
+
+      &.aesop-component-align-left,
+      &.aesop-component-align-right {
+        margin: 0 20px;
+        padding: 10px 20px;
+      }
+
+      &.aesop-component-align-center {
+        border-bottom-style: solid;
+        border-bottom-width: 5px;
+        padding: 20px 0;
+      }
+    }
+
+    blockquote {
+      display: block; // overrides aesop style
+    }
+  }
+
+  &.aesop-content-component {
+    * {
+      color: inherit;
+    }
+
+    .aesop-content-comp-inner {
+      padding: 30px 0;
+      width: 90%;
+    }
+  }
+
+  &.aesop-component-chat {
+    margin-bottom: 0;
+    margin-top: 0;
+
+    + .aesop-component-chat {
+      margin-top: -10px;
+    }
+  }
+}
+
+.aesop-content {
+  @include site-width;
+}
+
+.aesop-component-chat-container {
+  width: 90%;
+}
+
+.entry-content > .aesop-component-timeline-container {
+  max-width: 100%;
+}
+
+.aesop-component-timeline-link {
+  @include button;
+
+  &:empty {
+    background: none;
+    border: 0;
+  }
+}
+
+.aesop-stacked {
+  &-img {
+    background-attachment: fixed;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px; // fallback for browsers that don't support vh
+    // scss-lint:disable DuplicateProperty
+    height: 100vh;
+    // scss-lint:enable DuplicateProperty
+    left: 0;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    width: 100%;
+
+    @include max-width($width-tablet) {
+      background-attachment: scroll;
+    }
+  }
+
+  &-caption {
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+    color: $color-white;
+    left: 0;
+    padding: 20px 0 80px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+  }
+}
+
+.aesop-img-enlarge {
+  display: none;
+}
+
+.aesop-parallax-sc-caption-wrap {
+  @include rem(font-size, $font-size-normal);
+  background: rgba(0, 0, 0, .8);
+  color: $color-white;
+  font-family: $font-stack-content;
+  padding: 10px 20px;
+}
+
+// We're already bundling Font Awesome. Might as well use it :D
+.aesopicon {
+  display: inline-block;
+  font-family: FontAwesome;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+
+  &.aesopicon-search-plus::before {
+    content: '\f00e';
+  }
+}
+
+.aesop-collection-item {
+  float: left;
+}
+
+.aesop-sequence {
+  &-img {
+    display: block;
+  }
+
+  &-caption {
+    @include site-width;
+  }
+}
+
+.aesop-image-component-image {
+  position: relative;
+
+  img {
+    display: block;
+    margin: auto;
+  }
+
+  &.aesop-component-align-left,
+  &.aesop-component-align-right {
+    margin: 10px 30px;
+
+    @include max-width($width-tablet) {
+      float: none;
+      margin: 40px auto;
+    }
+  }
+
+  .aesop-image-component-caption {
+    @include image-caption;
+    max-width: none;
+    width: auto;
+
+    @include max-width($width-tablet) {
+      @include site-width;
+    }
+  }
+}
+
+.aesop-image-component-caption-center .aesop-image-component-caption {
+  @include site-width;
+}
+
+@include max-width($width-tablet) {
+  .aesop-image-component .aesop-image-component-image.aesop-image-component-caption-left,
+  .aesop-image-component .aesop-image-component-image.aesop-image-component-caption-right {
+    text-align: center;
+  }
+}
+
+.aesop-article-chapter::after,
+.aesop-content-img::after {
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: .4;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.aesop-article-chapter::after {
+  background-color: $color-dark-gray; // no background color defined by aesop component
+}
+
+.aesop-content-img::after {
+  background-color: inherit; // inherit color defined by aesop component
+}
+
+.aesop-content-component .aesop-content-comp-wrap.aesop-content-img::after {
+  display: block; // overrides display: table, and allows ::after overlay to work
+}
+
+.aesop-content-img .aesop-content {
+  position: relative; // makes sure content appears above ::after overlay
+  z-index: 1;
+}
+
+.aesop-article-chapter-wrap.aesop-chapter-full .aesop-article-chapter {
+  height: 100vh;
+}
+
+.aesop-cover-title {
+  @include rem(font-size, 42px);
+  @include site-width;
+  border: 0;
+  bottom: auto;
+  color: $color-white;
+  left: auto;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 100px 0 50px;
+  position: relative;
+  z-index: 1;
+
+  small {
+    font-size: 75%;
+  }
+
+  .aesop-chapter-full & {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.aesop-lightbox {
+  border: 0;
+
+  img {
+    transition: opacity .2s;
+  }
+
+  &:hover img {
+    opacity: .9;
+  }
+}
+
+.aesop-timeline {
+  background-color: rgba(255, 255, 255, .9);
+  bottom: 0;
+  box-shadow: 0 0 1px rgba(0, 0, 0, .15);
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: $z-index-aesop-timeline;
+
+  ol {
+    @include site-width($width-wide);
+    list-style: none;
+    margin-bottom: 0;
+    text-align: center;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 10px;
+    transition: all 200ms;
+
+    a:hover {
+      border-color: $link-border-color;
+    }
+
+    &.active a {
+      border-bottom-width: 2px;
+      font-weight: bold;
+    }
+  }
+
+  &-stop {
+    padding-top: 140px;
+  }
+}
+
+.aesop-sticky-map {
+  @include min-width(767px) {
+    &-top {
+      .header.headroom--unpinned {
+        opacity: 0; // fix header visibility for sticky maps
+
+        .noscroll & {
+          opacity: 1;
+        }
+      }
+
+      .cover {
+        z-index: 119; // lower than map component
+      }
+    }
+
+    &-left {
+      .header {
+        padding-left: 270px; // 250px body padding + 20px header padding
+
+        .backdrop {
+          left: 250px;
+        }
+      }
+    }
+
+    &-right {
+      .header {
+        padding-right: 270px; // 250px body padding + 20px header padding
+
+        .noscroll & {
+          padding-right: 20px; // cheating a little, oh well
+        }
+
+        .backdrop {
+          right: 250px;
+        }
+      }
+    }
+  }
+
+  .header {
+    left: 0;
+    right: 0;
+  }
+
+  .aesop-map-component::before {
+    box-shadow: none;
+  }
+}
+
+.entry-content > .aesop-component {
+  max-width: 100%;
+  width: 100%;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &.aesop-content,
+  &.aesop-audio-component {
+    @include site-width;
+  }
+}
+
+.aesop-toggle-chapter-menu {
+  background: $link-color;
+  border: 0;
+  border-radius: 0;
+  bottom: 20px;
+  color: $color-white;
+  height: auto;
+  padding: 10px 20px 10px 10px;
+  position: fixed;
+  right: 0;
+  width: auto;
+  z-index: 1;
+
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-white;
+  }
+
+  &:hover {
+    background: $link-color;
+  }
+
+  .aesop-chapter-menu-open & {
+    right: 0;
+
+    .aesop-close-chapter-menu {
+      visibility: hidden;
+    }
+  }
+}
+
+.dashicons.aesop-close-chapter-menu {
+  color: inherit;
+  font-size: 30px;
+  height: 30px;
+  position: static;
+  width: 30px;
+}
+
+.aesop-chapter-menu {
+  background: #000;
+  bottom: 20px;
+  color: #fff;
+  display: none;
+  height: auto;
+  padding-right: 60px;
+  position: fixed;
+  right: 0;
+  top: auto;
+  width: auto;
+  z-index: 1;
+
+  li {
+    @include rem(font-size, $font-size-normal);
+    padding-left: 20px;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .aesop-chapter-menu-open & {
+    display: block;
+  }
+
+  .aesop-close-chapter-menu {
+    bottom: 10px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: auto;
+  }
+}
+
+.aesop-grid {
+  &-image {
+    width: inherit; // overrides inline style/property
+  }
+
+  &-gallery {
+    .aesop-grid-gallery-caption {
+      @include rem(font-size, 16px);
+      background-color: transparent;
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
+      bottom: 0;
+      color: $color-white;
+      left: 0;
+      padding: 40px 20px 20px;
+      right: 0;
+      top: auto;
+      z-index: 1; // keeps caption above image
+    }
+
+    &-item {
+      text-align: center;
+    }
+  }
+}
+
+.fotorama {
+  &__caption__wrap {
+    @include rem(font-size, 16px);
+    background-color: transparent;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
+    color: $color-white;
+    display: block;
+    padding: 80px 20px 20px;
+  }
+
+  &__thumb-border {
+    border-color: $color-blue;
+  }
+}
+
+// custom collection styles
+$aesop-collection-margin: 10px;
+
+.aesop-collection {
+  &-grid {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &-item {
+    padding: $aesop-collection-margin;
+    position: relative;
+
+    .aesop-collection-grid.aesop-collection-grid-2col & {
+      @include max-width($width-phone) {
+        width: 100%;
+      }
+    }
+
+    .aesop-collection-grid.aesop-collection-grid-3col & {
+      @include max-width($width-tablet) {
+        width: 50%;
+      }
+
+      @include max-width($width-phone) {
+        width: 100%;
+      }
+    }
+
+    &-inner {
+      //background-color: #eee;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    &-excerpt {
+      //color: $text-color-base;
+      color: $color-white;
+    }
+
+    &-img {
+      background-position: center;
+      bottom: $aesop-collection-margin;
+      left: $aesop-collection-margin;
+      position: absolute;
+      right: $aesop-collection-margin;
+      top: $aesop-collection-margin;
+
+      &::before {
+        background-color: $background-color-cover-neutral;
+        bottom: 0;
+        content: '';
+        left: 0;
+        opacity: .4;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &-entry-title {
+    color: $color-white;
+    margin: 0;
+  }
+
+  &-meta {
+    color: $color-white;
+    margin: 0;
+  }
+}
+
+.aesop-story-collection-title {
+  @include site-width;
+}
+
+.aesop-video-component {
+  &-caption {
+    @include image-caption;
+  }
+}
+
+.aesop-component-caption {
+  font-style: italic;
+  line-height: 25px;
+  margin-top: 0;
+  text-align: center;
+}

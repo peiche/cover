@@ -18,6 +18,7 @@ function cover_jetpack_setup() {
      */
     add_theme_support( 'infinite-scroll', array(
       'container' => 'main',
+      'render'    => 'cover_infinite_scroll_render',
 		  'footer' => false,
 	  ) );
 
@@ -48,6 +49,16 @@ function cover_jetpack_setup() {
 add_action( 'after_setup_theme', 'cover_jetpack_setup' );
 
 /**
+ * Custom render function for Infinite Scroll.
+ */
+function cover_infinite_scroll_render() {
+	while ( have_posts() ) {
+		the_post();
+		get_template_part( 'template-parts/content', 'summary' );
+	}
+}
+
+/**
  * Handle `footer_widgets` argument
  *
  * @param bool $has_widgets Indicates if there are widgets.
@@ -57,7 +68,7 @@ add_action( 'after_setup_theme', 'cover_jetpack_setup' );
  */
 function cover_infinite_scroll_has_footer_widgets( $has_widgets ) {
     $has_widgets = false;
-    if ( has_nav_menu( 'social_footer' ) ) {
+    if ( has_nav_menu( 'social_footer' ) || is_active_sidebar( 'cover-footer' ) ) {
         $has_widgets = true;
     }
 

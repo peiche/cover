@@ -1,0 +1,26 @@
+/*--------------------------------------------------------------
+Headroom.js
+--------------------------------------------------------------*/
+
+.header.headroom {
+    position: fixed;
+    transition: all .5s;
+
+    &--not-top {
+        .backdrop {
+            opacity: 1;
+        }
+    }
+
+    &--pinned {
+        transform: translateY(0);
+    }
+
+    &--unpinned {
+        transform: translateY(-100%);
+
+        .noscroll & {
+            transform: translateY(0);
+        }
+    }
+}

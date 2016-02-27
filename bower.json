@@ -8,7 +8,8 @@
     "headroom.js": "~0.7.0",
     "unslider": "~1.0.0",
     "masonry": "~3.3.1",
-    "tgm-plugin-activation": "https://github.com/Otto42/TGM-Plugin-Activation/archive/develop.zip"
+    "tgm-plugin-activation": "https://github.com/Otto42/TGM-Plugin-Activation/archive/develop.zip",
+    "aesop-core": "https://github.com/hyunsupul/aesop-core/archive/master.zip"
   },
   "ignore": [
     "**/.*",

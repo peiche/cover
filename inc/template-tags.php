@@ -54,11 +54,11 @@ if ( ! function_exists( 'cover_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function cover_posted_on() {
+
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
 	}
-
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
@@ -66,17 +66,50 @@ function cover_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-    printf( __( '<span class="posted-on">%1$s on %2$s</span>', 'cover' ),
-		sprintf( '<a class="author vcard url fn n" href="%1$s">%2$s <span class="name">%3$s</span></a>',
-                esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-                get_avatar( get_the_author_meta( 'ID' ), 35, 'avatar_default', 'Profile Picture for ' . esc_html( get_the_author() ) ) . ' ',
-                esc_html( get_the_author() )
+	$time_string_prefix = ' on ';
+
+	$relative_timestamp = esc_attr( get_theme_mod( 'cover_relative_timestamp', 0 ) );
+	if ( 1 == $relative_timestamp ) {
+		/**
+		 * Relative timestamp
+		 * https://codex.wordpress.org/Function_Reference/human_time_diff
+		 */
+		$time_string = sprintf(
+			_x( '%s ago', '%s = human-readable time difference', 'cover' ),
+			human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) )
+		);
+		$time_string_prefix = ', ';
+	}
+
+	printf(
+		__( '<span class="posted-on">%1$s%2$s %3$s</span>', 'cover' ),
+		sprintf(
+			'<a class="author vcard url fn n" href="%1$s">%2$s <span class="name">%3$s</span></a>',
+      esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+      get_avatar( get_the_author_meta( 'ID' ), 35, 'avatar_default', 'Profile Picture for ' . esc_html( get_the_author() ) ) . ' ',
+      esc_html( get_the_author() )
 		),
-        sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
+		sprintf( $time_string_prefix ),
+    sprintf(
+			'<a href="%1$s" rel="bookmark">%2$s</a>',
 			get_the_permalink(),
-            $time_string
+    	$time_string
 		)
 	);
+
+	$format = get_post_format();
+	if ( current_theme_supports( 'post-formats', $format ) ) {
+		$format_class = $format;
+		if ( 'link' == $format ) {
+			$format_class = 'links';
+		}
+		printf( '<div class="entry-format">%1$s<a href="%2$s"><i class="dashicons dashicons-format-%3$s"></i> %4$s</a></div>',
+			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'cover' ) ),
+			esc_url( get_post_format_link( $format ) ),
+			$format_class,
+			get_post_format_string( $format )
+		);
+	}
 
 }
 endif;

@@ -1,0 +1,8 @@
+// NOTE necessary to target Disqus
+// scss-lint:disable IdSelector
+// scss-lint:disable SelectorFormat
+#disqus_thread {
+    @include site-width;
+}
+// scss-lint:enable SelectorFormat
+// scss-lint:enable IdSelector

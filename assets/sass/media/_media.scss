@@ -1,0 +1,165 @@
+/*--------------------------------------------------------------
+12.0 Media
+--------------------------------------------------------------*/
+.avatar {
+	border-radius: 50%;
+	display: inline-block;
+	vertical-align: middle;
+
+	@each $size in $avatar-sizes {
+		&-#{$size} {
+			height: #{$size}px;
+			width: #{$size}px;
+		}
+	}
+}
+
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: 0;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+// Make sure embeds and iframes fit their containers
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+12.1 Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	border: 0;
+	margin-bottom: 1.5em;
+	padding: 0;
+	position: relative;
+
+	.entry-content > & {
+		max-width: 100%;
+	}
+
+	img[class*="wp-image-"] {
+		display: block;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+
+	&-text {
+		text-align: center;
+	}
+
+	.wp-caption-text {
+		@include image-caption;
+		margin: 10px auto;
+		text-align: center;
+		width: 100%;
+
+		@include max-width($width-tablet) {
+			width: 90%;
+		}
+	}
+
+	&.aligncenter {
+		margin: 40px auto;
+		padding: 0;
+		width: auto;
+
+		.wp-caption-text {
+			@include max-width($width-tablet) {
+				text-align: center;
+				width: 90%;
+			}
+		}
+	}
+
+	&.alignleft,
+	&.alignright {
+		margin: 10px 30px;
+		padding: 0;
+
+		@include max-width($width-tablet) {
+			float: none;
+			margin: 40px auto;
+			max-width: none;
+			width: auto;
+		}
+
+		.entry-content > & {
+			max-width: 45%;
+		}
+	}
+
+	&.alignleft .wp-caption-text {
+		text-align: left;
+
+		@include max-width($width-tablet) {
+			text-align: center;
+			width: 90%;
+		}
+	}
+
+	&.alignright .wp-caption-text {
+		text-align: right;
+
+		@include max-width($width-tablet) {
+			text-align: center;
+			width: 90%;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+12.2 Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+
+	&-item {
+		display: inline-block;
+		text-align: center;
+		vertical-align: top;
+		width: 100%;
+
+		.gallery-columns-2 & {
+			max-width: 50%;
+		}
+
+		.gallery-columns-3 & {
+			max-width: 33.33%;
+		}
+
+		.gallery-columns-4 & {
+			max-width: 25%;
+		}
+
+		.gallery-columns-5 & {
+			max-width: 20%;
+		}
+
+		.gallery-columns-6 & {
+			max-width: 16.66%;
+		}
+
+		.gallery-columns-7 & {
+			max-width: 14.28%;
+		}
+
+		.gallery-columns-8 & {
+			max-width: 12.5%;
+		}
+
+		.gallery-columns-9 & {
+			max-width: 11.11%;
+		}
+	}
+
+	&-caption {
+		/*! */
+	}
+
+}
