@@ -16,11 +16,7 @@
 		$featured_posts = cover_get_featured_posts();
 		foreach ( (array) $featured_posts as $order => $post ) :
 			setup_postdata( $post );
-
-			if ( '' != get_the_post_thumbnail() ) {
-        $img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-				$img = $img_arr[0];
-			}
+			$img = cover_get_featured_image( $post->ID );
 	?>
 
 	<li>

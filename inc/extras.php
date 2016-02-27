@@ -43,13 +43,27 @@ add_filter( 'body_class', 'cover_body_classes' );
 function cover_get_first_featured_image() {
 	$img = '';
 	while ( have_posts() ) : the_post();
-		if ( '' != get_the_post_thumbnail() ) {
-			$img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' );
-			$img = $img_arr[0];
+		$img = cover_get_featured_image( get_the_ID() );
+		if ( '' != $img ) {
 			break;
 		}
 	endwhile;
 	rewind_posts();
+
+	return $img;
+}
+
+/**
+ * Returns the featured image of the post.
+ *
+ * @return String
+ */
+function cover_get_featured_image( $post_id ) {
+	$img = '';
+	if ( '' != get_the_post_thumbnail() ) {
+		$img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'single-post-thumbnail' );
+		$img = $img_arr[0];
+	}
 
 	return $img;
 }
