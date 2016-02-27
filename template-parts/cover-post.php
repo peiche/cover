@@ -51,7 +51,7 @@
 
       <h1 class="cover-title"><?php the_title(); ?></h1>
 
-      <?php if ( 'thread' != get_post_type() ) { ?>
+      <?php if ( is_single() && 'thread' != get_post_type() ) { ?>
         <div class="entry-meta">
           <?php cover_posted_on(); ?>
         </div>
