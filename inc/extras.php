@@ -56,6 +56,7 @@ function cover_get_first_featured_image() {
 /**
  * Returns the featured image of the post.
  *
+ * @param int $post_id The post id for the thumbnail.
  * @return String
  */
 function cover_get_featured_image( $post_id ) {
