@@ -1,4 +1,25 @@
+// imported with bower
 @import 'aesop/ai-core';
+
+// global ase styles
+@import 'aesop/base';
+
+// module styles
+@import 'aesop/image';
+@import 'aesop/character';
+@import 'aesop/quote';
+@import 'aesop/content';
+@import 'aesop/chapter';
+@import 'aesop/parallax';
+@import 'aesop/audio';
+@import 'aesop/video';
+@import 'aesop/map';
+@import 'aesop/timeline';
+@import 'aesop/document';
+@import 'aesop/collection';
+@import 'aesop/gallery';
+
+/*
 
 .aesop-component {
   display: block;
@@ -86,6 +107,11 @@
 
 .aesop-content {
   @include site-width;
+
+  .aesop-image-component & {
+    max-width: none;
+    width: 100%;
+  }
 }
 
 .aesop-component-chat-container {
@@ -597,3 +623,5 @@ $aesop-collection-margin: 10px;
   margin-top: 0;
   text-align: center;
 }
+
+*/
