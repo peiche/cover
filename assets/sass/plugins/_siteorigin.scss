@@ -5,13 +5,21 @@
   }
 
   .so-panel {
-    margin-bottom: 0;
-    margin-top: 0;
-    max-width: inherit;
-    width: inherit;
+    margin: auto;
+    max-width: none;
+    width: auto;
   }
 
   .sow-features-list {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sow-headline {
+    word-wrap: break-word;
+  }
+
+  .so-widget-image {
     margin-left: auto;
     margin-right: auto;
   }
