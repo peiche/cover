@@ -223,7 +223,7 @@
   }
 
   .aesop-image-component-caption {
-    @include image-caption;
+    @include caption;
     max-width: none;
     width: auto;
 
@@ -613,7 +613,7 @@ $aesop-collection-margin: 10px;
 
 .aesop-video-component {
   &-caption {
-    @include image-caption;
+    @include caption;
   }
 }
 
