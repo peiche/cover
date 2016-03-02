@@ -302,10 +302,27 @@ module.exports = function(grunt) {
           }
         ]
       }
+    },
+    browserSync : {
+      dev : {
+        options : {
+          files: [
+            root+'style.css',
+            root+'js/**/*.js',
+            root+'**/*.php'
+          ],
+          watchTask: true,
+          debugInfoe: true,
+          logConnections: true,
+          notify: true,
+          proxy: "localhost/www/wordpress",
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-checktextdomain');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compress');
