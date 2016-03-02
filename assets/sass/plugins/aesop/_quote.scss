@@ -1,0 +1,70 @@
+.aesop-quote-component {
+  display: block;
+
+  &.aesop-content {
+    @include site-width;
+  }
+
+  &.aesop-component-align-left,
+  &.aesop-component-align-right {
+    margin-bottom: 15px;
+    margin-top: 15px;
+
+    @include max-width($width-phone) {
+      float: none;
+      margin: 60px auto;
+    }
+  }
+
+  // NOTE Extra specificity to override ase-core
+  &.aesop-quote-type-pull {
+    max-width: 90%; // NOTE max-width overrides !important'd 100% width in ase-core
+  }
+
+  blockquote {
+    display: block;
+  }
+}
+
+.aesop-quote-component-cite {
+  font-size: 90%;
+}
+
+.aesop-quote-type-block {
+  padding: 30px;
+}
+
+// NOTE Extra specificity to override ase-core
+.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-left,
+.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-right,
+.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-center {
+  padding: 0 30px;
+}
+
+// NOTE Extra specificity to override ase-core
+.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-left,
+.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-right {
+  margin: 0 30px;
+
+  @include max-width($width-phone) {
+    float: none;
+    margin: 60px auto;
+
+    .aesop-component-align-right {
+      text-align: left;
+    }
+  }
+}
+
+// NOTE Extra specificity to override ase-core
+.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-right,
+.aesop-quote-component.aesop-quote-type-pull.aesop-component-align-center {
+  border-style: solid;
+  border-width: 0 0 0 5px;
+}
+
+// NOTE Extra specificity to override ase-core
+.aesop-quote-type-pull.aesop-component-align-center .aesop-component-align-center {
+  margin: 0;
+  text-align: left;
+}

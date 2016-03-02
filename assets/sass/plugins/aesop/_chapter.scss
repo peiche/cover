@@ -1,0 +1,87 @@
+.aesop-article-chapter-wrap {
+  margin-bottom: 30px;
+}
+
+.aesop-cover-title {
+  @include site-width;
+  @include rem(font-size, 30px);
+  margin-bottom: 0;
+  margin-top: 0;
+
+  .aesop-chapter-full & {
+    bottom: 60px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  small {
+    display: block;
+    opacity: .75;
+  }
+}
+
+.has-chapter-image {
+  .aesop-article-chapter {
+    padding: 30px 0;
+  }
+
+  .aesop-cover-title {
+    color: $color-white;
+  }
+}
+
+.aesop-toggle-chapter-menu {
+  bottom: 60px;
+  height: 40px;
+  padding: 10px;
+  position: fixed;
+  right: 0;
+
+  .aesop-close-chapter-menu {
+    color: $color-white;
+    display: block;
+  }
+}
+
+.aesop-chapter-menu {
+  background-color: $color-dark-gray-alt;
+  bottom: 60px;
+  color: $color-white;
+  display: none;
+  min-height: 40px;
+  position: fixed;
+  right: 40px;
+
+  // NOTE necessary to target chapter list and links
+  // scss-lint:disable SelectorFormat
+  .scroll-nav__list {
+    margin-bottom: 0;
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+
+  .scroll-nav__link {
+    color: $color-white;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+  // scss-lint:enable SelectorFormat
+
+  .aesop-close-chapter-menu {
+    @include rem(font-size, 40px);
+    background-color: $color-dark-gray-alt;
+    bottom: 0;
+    cursor: pointer;
+    height: 40px;
+    left: 100%;
+    position: absolute;
+    width: 40px;
+  }
+
+  .aesop-chapter-menu-open & {
+    display: block;
+  }
+}

@@ -1,0 +1,23 @@
+.aesop-document-component {
+  @include site-width;
+
+  a {
+    border: none;
+    display: block;
+  }
+
+  // NOTE increased specificity to override ase-core
+  .aesop-document-component--label {
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+    padding-left: 0;
+  }
+
+  .aesop-content {
+    margin-top: 10px;
+  }
+}
+
+.aesop-document-component--caption {
+  @include caption-style;
+}

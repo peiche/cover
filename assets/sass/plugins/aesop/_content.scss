@@ -1,0 +1,44 @@
+.aesop-content-component {
+  p {
+    color: inherit;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.aesop-content-comp-wrap {
+  padding: 30px;
+
+  // NOTE Extra specificity to override ase-core
+  &.aesop-content-img {
+    padding: 30px;
+
+    // semi-transparent overlay for images, so text is always readable
+    &::before {
+      background-color: rgba(0, 0, 0, .4);
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
+
+.aesop-content-comp-inner {
+  position: relative;
+
+  &.aesop-content {
+    @include site-width;
+  }
+}
