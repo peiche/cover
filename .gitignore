@@ -214,7 +214,7 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
-assets/sass/plugins/aesop
+assets/sass/plugins/aesop/_ai-core.scss
 bower_components/
 languages/
 node_modules/

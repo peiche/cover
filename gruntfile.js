@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     },
     clean: {
       build: [
-        'assets/sass/plugins/aesop',
+        'assets/sass/plugins/aesop/_ai-core.scss',
         'dist',
         '*.css',
         '*.css.map'
