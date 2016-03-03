@@ -247,7 +247,7 @@ blockquote, q, .aesop-component.aesop-quote-component.aesop-quote-type-pull.aeso
 .aesop-toggle-chapter-menu, .aesop-toggle-chapter-menu:hover { background-color: <?php echo $link_color; ?>; }
 
 <?php // Restore default colors. ?>
-.header a, <?php if ( 'overlay-dark' == $overlay_color ) { ?>.overlay a, <?php } ?>.cover-header a { color: #fff; }
+.header a, <?php if ( 'overlay-dark' == $overlay_color ) { ?>.overlay a, <?php } ?>.cover-header a, .aesop-error a { color: #fff; }
 .cover-subtitle a { color: rgba(255, 255, 255, 0.8); }
 .entry-title a { color: #222; }
 .entry-subtitle a { color: #999; }
