@@ -1,6 +1,6 @@
 .aesop-video-component {
-  //
 
+  // NOTE Extra specificity to override ase-core
   .aesop-video-component-caption {
     @include caption;
   }

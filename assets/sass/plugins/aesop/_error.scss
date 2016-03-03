@@ -1,0 +1,11 @@
+.aesop-error {
+  @include site-width;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding: 20px;
+
+  a {
+    border: none;
+    color: $color-white;
+  }
+}

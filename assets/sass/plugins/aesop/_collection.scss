@@ -1,0 +1,71 @@
+.aesop-story-collection {
+  background-color: $color-light-gray-alt4;
+  padding: 20px 0;
+}
+
+.aesop-story-collection-title {
+  @include site-width;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.aesop-collection-grid {
+  display: flex;
+  flex-flow: row wrap;
+
+  &.aesop-collection-grid-2col,
+  &.aesop-collection-grid-3col {
+    @include site-width($width-wide);
+  }
+}
+
+.aesop-collection-item {
+  float: left;
+  padding: 10px;
+
+  .aesop-collection-grid-1col & {
+    @include site-width;
+    float: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // NOTE increased specificity to override ase-core
+  .aesop-collection-grid.aesop-collection-grid-3col &,
+  .aesop-collection-grid.aesop-collection-grid-4col &,
+  .aesop-collection-grid.aesop-collection-grid-5col & {
+    @include max-width($width-tablet) {
+      width: 50%;
+    }
+  }
+
+  // NOTE increased specificity to override ase-core
+  .aesop-collection-grid.aesop-collection-grid-2col &,
+  .aesop-collection-grid.aesop-collection-grid-3col &,
+  .aesop-collection-grid.aesop-collection-grid-4col &,
+  .aesop-collection-grid.aesop-collection-grid-5col & {
+    @include max-width($width-phone) {
+      width: 100%;
+    }
+  }
+}
+
+.aesop-collection-item-inner {
+  background-color: $color-white;
+  padding: 10px 15px;
+}
+
+.aesop-collection-entry-title {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.aesop-collection-meta {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+// NOTE overides link color
+.aesop-collection-item-excerpt {
+  color: $text-color-base;
+}

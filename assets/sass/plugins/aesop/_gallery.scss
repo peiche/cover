@@ -1,0 +1,39 @@
+.aesop-gallery-component {
+  .aesop-component-caption {
+    @include caption;
+    text-align: center;
+  }
+}
+
+.aesop-grid-gallery-caption {
+  margin-right: 5px;
+}
+
+.aesop-sequence-img {
+  display: block;
+}
+
+.aesop-sequence-caption::before {
+  top: 0;
+}
+
+.aesop-stacked-img {
+  background-attachment: fixed;
+  padding: 20px;
+}
+
+.aesop-stacked-caption {
+  background: rgba(255, 255, 255, .85);
+  color: $text-color-aesop-caption;
+  display: inline-block;
+  padding: 6px 8px;
+}
+
+// NOTE ASE-controlled selectors
+// scss-lint:disable SelectorFormat
+.fotorama__caption {
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+}
+// scss-lint:enable SelectorFormat
