@@ -1,7 +1,3 @@
-/*--------------------------------------------------------------
-Overlay for menus and widgets
---------------------------------------------------------------*/
-
 .overlay {
 	@include rem(font-size, 20px);
 	background-color: $overlay-color-light;
@@ -13,6 +9,7 @@ Overlay for menus and widgets
 	padding: 60px 0;
 	position: fixed;
 	right: 0;
+	top: 0;
 	transition: opacity 200ms;
 	visibility: hidden;
 	z-index: $z-index-overlay;
