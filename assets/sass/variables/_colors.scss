@@ -76,6 +76,7 @@ $text-color-content:      $text-color-base;
 $text-color-quote:        lighten($text-color-base, 10%);
 $text-color-cite:         lighten($text-color-base, 25%);
 $text-color-overlay-dark: $color-light-gray-alt2;
+$text-color-aesop-caption: #555;
 
 $header-color: $color-blue;
 $footer-color: $color-white;
@@ -97,10 +98,10 @@ $overlay-color-light: $color-white;
 $overlay-color-dark: $color-dark-gray-alt;
 
 $menu-toggle-background: $color-light-gray-alt;
-$menu-toggle-background-overlay: #666;
+$menu-toggle-background-overlay: $color-medium-gray;
 
-$threads-background: #eee;
-$threads-content-background: #fff;
+$threads-background: $color-light-gray-alt4;
+$threads-content-background: $color-white;
 
 // social network colors
 $appnet-color: #d87a68;
