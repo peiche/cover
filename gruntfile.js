@@ -266,7 +266,7 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: 'assets/sass/*.scss',
+        files: 'assets/sass/**/*.scss',
         tasks: ['scsslint', 'sass:dev', 'autoprefixer']
       },
       javascript: {
@@ -306,16 +306,12 @@ module.exports = function(grunt) {
     browserSync : {
       dev : {
         options : {
-          files: [
-            root+'style.css',
-            root+'js/**/*.js',
-            root+'**/*.php'
-          ],
           watchTask: true,
           debugInfoe: true,
           logConnections: true,
           notify: true,
-          proxy: "localhost/www/wordpress",
+          proxy: 'localhost/wp',
+          browser: 'google chrome'
         }
       }
     }
@@ -342,7 +338,7 @@ module.exports = function(grunt) {
   grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'checktextdomain', 'pot']);
   grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'checktextdomain', 'pot']);
 
-  grunt.registerTask('default', ['scsslint', 'jshint', 'watch']);
+  grunt.registerTask('default', ['watch']);
 
   grunt.registerTask('zip', 'Make a zip file for installation.', function() {
     grunt.log.writeln('Zipping up the project.');
