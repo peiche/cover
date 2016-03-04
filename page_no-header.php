@@ -1,8 +1,10 @@
 <?php
 /**
- * The template for displaying all page without Cover's header.
+ * Template Name: No Header
+ *
+ * The template for displaying a page without Cover's header.
  * Please note that you will have to use a content builder plugin
- * such as Aesop Story Engine or SiteOrigin's Page Builder to
+ * such as Aesop Story Engine or SiteOrigin Page Builder to
  * make your own header.
  *
  * @package Cover
