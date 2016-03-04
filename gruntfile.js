@@ -264,16 +264,6 @@ module.exports = function(grunt) {
         expand: true
       }
     },
-    watch: {
-      css: {
-        files: 'assets/sass/**/*.scss',
-        tasks: ['scsslint', 'sass:dev', 'autoprefixer']
-      },
-      javascript: {
-        files: 'assets/js/*.js',
-        tasks: ['jshint', 'uglify:dev']
-      }
-    },
     compress: {
       build: {
         options: {
@@ -303,22 +293,19 @@ module.exports = function(grunt) {
         ]
       }
     },
-    browserSync : {
-      dev : {
-        options : {
-          watchTask: true,
-          debugInfoe: true,
-          logConnections: true,
-          notify: true,
-          proxy: 'localhost/wp',
-          browser: 'google chrome'
-        }
+    watch: {
+      css: {
+        files: 'assets/sass/**/*.scss',
+        tasks: ['scsslint', 'sass:dev', 'autoprefixer']
+      },
+      javascript: {
+        files: 'assets/js/*.js',
+        tasks: ['jshint', 'uglify:dev']
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-checktextdomain');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compress');
@@ -338,10 +325,10 @@ module.exports = function(grunt) {
   grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'checktextdomain', 'pot']);
   grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'checktextdomain', 'pot']);
 
-  grunt.registerTask('default', ['watch']);
-
   grunt.registerTask('zip', 'Make a zip file for installation.', function() {
     grunt.log.writeln('Zipping up the project.');
     grunt.task.run('compress');
   });
+
+  grunt.registerTask('default', ['watch']);
 };
