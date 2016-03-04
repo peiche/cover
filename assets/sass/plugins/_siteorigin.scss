@@ -8,6 +8,11 @@
     margin: auto;
     max-width: none;
     width: auto;
+
+    li a {
+      border: 0;
+      padding: 0;
+    }
   }
 
   .sow-features-list {
@@ -22,6 +27,10 @@
   .so-widget-image {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .so-carousel-thumbnail a {
+    border: 0;
   }
 
 }
