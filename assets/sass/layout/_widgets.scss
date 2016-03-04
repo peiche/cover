@@ -13,7 +13,9 @@
 	margin-top: 60px;
 
 	@include min-width($width-tablet) {
-		.widget-area &:not(:only-child) {
+		.overlay-search .widget-area &,
+		.site-footer .widget-area &
+		 {
 			float: left;
 			margin-left: 5%;
 			margin-right: 5%;
