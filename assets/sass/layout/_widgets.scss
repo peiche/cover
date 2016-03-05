@@ -14,8 +14,7 @@
 
 	@include min-width($width-tablet) {
 		.overlay-search .widget-area &,
-		.site-footer .widget-area &
-		 {
+		.site-footer .widget-area & {
 			float: left;
 			margin-left: 5%;
 			margin-right: 5%;
