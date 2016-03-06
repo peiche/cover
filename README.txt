@@ -45,7 +45,7 @@ Supported sites:
 * Dribbble
 * Facebook
 * Flickr
-* Github
+* GitHub
 * Google+
 * Instagram
 * LinkedIn
@@ -89,9 +89,9 @@ Using the Color Posts (https://wordpress.org/plugins/color-posts/) plugin will a
 2. Search for "Cover" and, once you've found the theme, click Install.
 3. Click Activate to start using Cover.
 
-= Github =
+= GitHub =
 
-You can download the latest from Github. Follow these steps to activate Cover:
+You can download the latest from GitHub. Follow these steps to activate Cover:
 
 1. Download the latest release at https://github.com/peiche/cover/releases/latest.
 2. In your admin panel, go to Appearance > Themes and click the Add New button.
