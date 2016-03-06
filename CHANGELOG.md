@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file. This projec
 
 **1.7.1**
 - Added SiteOrigin Page Builder plugin support.
+- Added "No Header" page template.
 - Rewrote Aesop Story Engine plugin styles.
 
 **1.7**
