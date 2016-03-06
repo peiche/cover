@@ -120,7 +120,7 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 * Added option to display timestamps as relative (for example, "2 days ago" instead of "February 20, 2016").
 * Changed comment section background color to differentiate it from post/page content.
 * Changed Aesop Story Engine plugin support to prevent loading plugin's stylesheet and load completely custom styles instead.
-* Fixed submenu toggle script, which was also affecting nested comments ([issue 50](https://github.com/peiche/cover/issues/50)).
+* Fixed submenu toggle script, which was also affecting nested comments.
 * Fixed comment paging links.
 * Fixed Aesop Story Engine plugin's Parallax component styles (this also affected Quote and Content components when parallax functionality was enabled).
 * Fixed Aesop Story Engine plugin's Collection component grid display.
@@ -167,7 +167,7 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
 = 1.6.0 =
 * Upgraded to FontAwesome 4.4.
-* Updated Vimeo icon (per [this FontAwesome issue](https://github.com/FortAwesome/Font-Awesome/issues/2197)).
+* Updated Vimeo icon.
 * Added overlay color option: dark or light.
 * Added Unslider plugin for more than one featured post.
 * Increased featured post maximum from one to five.
