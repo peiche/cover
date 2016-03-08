@@ -1,0 +1,16 @@
+.aesop-parallax-sc {
+  .aesop-lb-link {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.aesop-parallax-sc-caption-wrap {
+  @include rem(font-size, $font-size-normal);
+}
+
+.aesop-parallax-sc-floater {
+  color: $color-white;
+}

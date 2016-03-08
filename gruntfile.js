@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     },
     clean: {
       build: [
-        'assets/sass/plugins/aesop',
+        'assets/sass/plugins/aesop/_ai-core.scss',
         'dist',
         '*.css',
         '*.css.map'
@@ -94,7 +94,6 @@ module.exports = function(grunt) {
 					}
 				],
 				file: 'report/report.md',
-				githubBoxes: true,
 				colophon: true,
 				usePackage: true
 			},
@@ -264,16 +263,6 @@ module.exports = function(grunt) {
         expand: true
       }
     },
-    watch: {
-      css: {
-        files: 'assets/sass/*.scss',
-        tasks: ['scsslint', 'sass:dev', 'autoprefixer']
-      },
-      javascript: {
-        files: 'assets/js/*.js',
-        tasks: ['jshint', 'uglify:dev']
-      }
-    },
     compress: {
       build: {
         options: {
@@ -302,6 +291,16 @@ module.exports = function(grunt) {
           }
         ]
       }
+    },
+    watch: {
+      css: {
+        files: 'assets/sass/**/*.scss',
+        tasks: ['scsslint', 'sass:dev', 'autoprefixer']
+      },
+      javascript: {
+        files: 'assets/js/*.js',
+        tasks: ['jshint', 'uglify:dev']
+      }
     }
   });
 
@@ -325,10 +324,10 @@ module.exports = function(grunt) {
   grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'checktextdomain', 'pot']);
   grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'checktextdomain', 'pot']);
 
-  grunt.registerTask('default', ['scsslint', 'jshint', 'watch']);
-
   grunt.registerTask('zip', 'Make a zip file for installation.', function() {
     grunt.log.writeln('Zipping up the project.');
     grunt.task.run('compress');
   });
+
+  grunt.registerTask('default', ['watch']);
 };

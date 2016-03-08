@@ -1,0 +1,46 @@
+.aesop-image-component {
+  margin-bottom: 0;
+  margin-top: 0;
+
+  img {
+    display: block;
+  }
+
+  // NOTE nested to override ai-core
+  .aesop-image-component-image {
+    margin-top: 0;
+  }
+
+  // NOTE nested to override ai-core
+  .aesop-image-component-caption {
+    @include caption;
+  }
+
+  .aesop-component-align-left {
+    @include max-width($width-phone) {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .aesop-component-align-right {
+    @include max-width($width-phone) {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.aesop-img-enlarge {
+  display: none;
+}
+
+.aesop-image-component-caption-left {
+  text-align: left;
+}
+
+.aesop-image-component-caption-right {
+  text-align: right;
+}

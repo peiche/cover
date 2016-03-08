@@ -1,12 +1,10 @@
-/*--------------------------------------------------------------
-Header
---------------------------------------------------------------*/
-
 .header {
   @include rem(font-size, 24px);
   color: $color-white;
-  padding: 0 20px;
+  left: 0;
+  padding: 0 $header-padding;
   position: absolute;
+  right: 0;
   width: 100%;
   z-index: $z-index-header;
 
@@ -139,6 +137,7 @@ Header
 
   .noscroll & {
     pointer-events: none;
+    top: 0;
 
     .site-info {
       opacity: 0;
@@ -149,83 +148,4 @@ Header
 .noscroll .site-search,
 .noscroll .chapter-toggle {
   opacity: 0;
-}
-
-/*--------------------------------------------------------------
-Nav menu, which animates into close x
---------------------------------------------------------------*/
-
-.hamburger {
-  border: 0;
-  display: inline-block;
-  height: 30px;
-  margin: 1px auto -15px;
-  padding-top: 5px;
-  -webkit-tap-highlight-color: transparent;
-  width: 28px;
-
-  span {
-    display: block;
-    position: relative;
-
-    &::before,
-    &::after {
-      content: '';
-      left: 0;
-      position: absolute;
-      top: -9px;
-    }
-
-    &::after {
-      top: 9px;
-    }
-  }
-}
-
-.hamburger span,
-.hamburger span::after,
-.hamburger span::before {
-  backface-visibility: hidden;
-  background-color: $color-white;
-  border-radius: 2px;
-  height: 5px;
-  transition: all .5s;
-  width: 100%;
-}
-
-.noscroll .hamburger,
-.hamburger.close {
-  margin-right: 18px;
-  pointer-events: auto;
-  transform: translate3d(0, 3px, 0);
-
-  @include max-width($width-tablet) {
-    margin-right: 0;
-  }
-
-  &::before {
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: -25%;
-    width: 100%;
-  }
-
-  span {
-    background-color: transparent;
-  }
-
-  span::before,
-  span::after {
-    background-color: $color-white;
-  }
-
-  span::before {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  span::after {
-    transform: rotate(-45deg) translate(7px, -8px);
-  }
 }

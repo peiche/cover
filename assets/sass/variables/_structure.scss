@@ -1,4 +1,5 @@
 $header-height: 76px;
+$header-padding: 20px;
 
 $width-narrow: 500px;
 $width-medium: 760px;
@@ -7,12 +8,16 @@ $width-wide:   1000px;
 $width-phone:  480px;
 $width-tablet: 768px;
 
+$width-aesop-map: 250px;
+$width-aesop-map-breakpoint: 767px;
+
 $z-index-above-wp-toolbar: 100000;
 
 $z-index-header: 1000;
 $z-index-header-backdrop: -1;
 $z-index-cover: 400;
-$z-index-aesop-timeline: 500;
+$z-index-aesop-timeline: $z-index-cover - 1;
+$z-index-aesop-map: 120;
 $z-index-overlay: 999;
 
 $featured-content-arrow-size: 50px;

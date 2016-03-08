@@ -1,0 +1,45 @@
+.aesop-map-component {
+  &::before {
+    box-shadow: none;
+  }
+}
+
+@include min-width($width-aesop-map-breakpoint) {
+  .aesop-sticky-map-top {
+    .header.headroom--unpinned {
+      opacity: 0;
+
+      .noscroll & {
+        opacity: 1;
+      }
+    }
+
+    .cover {
+      z-index: $z-index-aesop-map - 1;
+    }
+  }
+
+  .aesop-sticky-map-left {
+    .header {
+      padding-left: $width-aesop-map + $header-padding;
+
+      .backdrop {
+        left: $width-aesop-map;
+      }
+    }
+  }
+
+  .aesop-sticky-map-right {
+    .header {
+      padding-right: $width-aesop-map + $header-padding;
+
+      .noscroll & {
+        padding-right: $header-padding;
+      }
+
+      .backdrop {
+        right: $width-aesop-map;
+      }
+    }
+  }
+}

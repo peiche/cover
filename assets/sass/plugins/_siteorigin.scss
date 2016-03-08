@@ -1,0 +1,36 @@
+.siteorigin-panels { // body class
+
+  .panel-grid {
+      max-width: 100%;
+  }
+
+  .so-panel {
+    margin: auto;
+    max-width: none;
+    width: auto;
+
+    li a {
+      border: 0;
+      padding: 0;
+    }
+  }
+
+  .sow-features-list {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sow-headline {
+    word-wrap: break-word;
+  }
+
+  .so-widget-image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .so-carousel-thumbnail a {
+    border: 0;
+  }
+
+}

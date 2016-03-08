@@ -64,12 +64,16 @@
   }
 }
 
-// shared style used for both normal and aesop image component captions
-@mixin image-caption {
+@mixin caption-style {
   @include rem(font-size, 15px);
-  @include site-width;
   font-family: $font-stack-content;
   font-style: italic;
+}
+
+// shared style used for both normal and aesop component captions
+@mixin caption {
+  @include caption-style;
+  @include site-width;
   margin-bottom: 10px;
   margin-top: 5px;
 

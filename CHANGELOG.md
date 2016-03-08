@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
+**1.7.1**
+- Added SiteOrigin Page Builder plugin support.
+- Added "No Header" page template.
+- Rewrote Aesop Story Engine plugin styles.
+
 **1.7**
 - Added post format support with default colors (backgrounds for post listings like archives and searches, header color for single posts and pages).
 - Added footer widget area.

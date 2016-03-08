@@ -1,0 +1,34 @@
+.aesop-timeline {
+  background-color: $color-white;
+  border-top: 1px solid $color-light-gray-alt;
+  bottom: 0;
+  left: 0;
+  opacity: .9;
+  position: fixed;
+  right: 0;
+  z-index: $z-index-aesop-timeline;
+
+  // NOTE ASE-controlled selectors
+  // scss-lint:disable SelectorFormat
+  .scroll-nav__list {
+    @include site-width($width-wide);
+    list-style: none;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .scroll-nav__item {
+    display: inline-block;
+    margin: 0 10px;
+    transition: all 200ms;
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+  // scss-lint:enable SelectorFormat
+}
+
+.aesop-timeline-stop {
+  margin-bottom: 30px;
+}

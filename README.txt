@@ -45,7 +45,7 @@ Supported sites:
 * Dribbble
 * Facebook
 * Flickr
-* Github
+* GitHub
 * Google+
 * Instagram
 * LinkedIn
@@ -89,9 +89,9 @@ Using the Color Posts (https://wordpress.org/plugins/color-posts/) plugin will a
 2. Search for "Cover" and, once you've found the theme, click Install.
 3. Click Activate to start using Cover.
 
-= Github =
+= GitHub =
 
-You can download the latest from Github. Follow these steps to activate Cover:
+You can download the latest from GitHub. Follow these steps to activate Cover:
 
 1. Download the latest release at https://github.com/peiche/cover/releases/latest.
 2. In your admin panel, go to Appearance > Themes and click the Add New button.
@@ -114,13 +114,18 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 == Changelog ==
 
+= 1.7.1 =
+* Added SiteOrigin Page Builder plugin support.
+* Added "No Header" page template.
+* Rewrote Aesop Story Engine plugin styles.
+
 = 1.7 =
 * Added post format support with default colors (backgrounds for post listings like archives and searches, header color for single posts and pages).
 * Added footer widget area.
 * Added option to display timestamps as relative (for example, "2 days ago" instead of "February 20, 2016").
 * Changed comment section background color to differentiate it from post/page content.
 * Changed Aesop Story Engine plugin support to prevent loading plugin's stylesheet and load completely custom styles instead.
-* Fixed submenu toggle script, which was also affecting nested comments ([issue 50](https://github.com/peiche/cover/issues/50)).
+* Fixed submenu toggle script, which was also affecting nested comments.
 * Fixed comment paging links.
 * Fixed Aesop Story Engine plugin's Parallax component styles (this also affected Quote and Content components when parallax functionality was enabled).
 * Fixed Aesop Story Engine plugin's Collection component grid display.
@@ -167,7 +172,7 @@ You can download the latest from Github. Follow these steps to activate Cover:
 
 = 1.6.0 =
 * Upgraded to FontAwesome 4.4.
-* Updated Vimeo icon (per [this FontAwesome issue](https://github.com/FortAwesome/Font-Awesome/issues/2197)).
+* Updated Vimeo icon.
 * Added overlay color option: dark or light.
 * Added Unslider plugin for more than one featured post.
 * Increased featured post maximum from one to five.
