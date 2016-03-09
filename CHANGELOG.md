@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
+**1.7.2**
+- Added validation for Color Posts compatibility.
+
 **1.7.1**
 - Added SiteOrigin Page Builder plugin support.
 - Added "No Header" page template.

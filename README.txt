@@ -114,6 +114,9 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
 == Changelog ==
 
+= 1.7.2 =
+* Added validation for Color Posts compatibility.
+
 = 1.7.1 =
 * Added SiteOrigin Page Builder plugin support.
 * Added "No Header" page template.
