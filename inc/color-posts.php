@@ -16,6 +16,9 @@
  * @param string $contrast The black or white contrast color.
  */
 function cover_use_custom_colors( $colors_css, $color, $contrast ) {
+    // Reset colors.
+    $colors_css = '';
+
     $post_id = get_the_ID();
 
     $tonesque = get_post_meta( $post_id, '_post_colors', true );
@@ -27,14 +30,14 @@ function cover_use_custom_colors( $colors_css, $color, $contrast ) {
               body .header,
               body .header a,
               body .header .site-description,
-              .cover {
-                  color: rgb(' . $contrast . ') !important;
+              body .cover {
+                  color: rgb(' . $contrast . ');
               }
-              .header a:hover {
+              body .header a:hover {
                   border-color: rgb(' . $contrast . ');
               }
-              .header .site-description {
-                  border-color: rgba(' . $contrast . ', .25) !important;
+              body .header .site-description {
+                  border-color: rgba(' . $contrast . ', .25);
               }
               .hamburger span,
               .hamburger span:after,
