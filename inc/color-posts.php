@@ -22,7 +22,7 @@ function cover_use_custom_colors( $colors_css, $color, $contrast ) {
     $post_id = get_the_ID();
 
     $tonesque = get_post_meta( $post_id, '_post_colors', true );
-    if ( is_array( $tonesque ) ) {
+    if ( ! empty( $tonesque ) && is_array( $tonesque ) ) {
       extract( $tonesque );
 
       if ( 'ffffff' != $color ) {
