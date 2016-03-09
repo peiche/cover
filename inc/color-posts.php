@@ -48,8 +48,6 @@ function cover_use_custom_colors( $colors_css, $color, $contrast ) {
                   background-color: #' . $color . ';
               }
               ';
-      } else {
-          $colors_css = '';
       }
     }
 
