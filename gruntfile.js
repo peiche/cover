@@ -301,10 +301,26 @@ module.exports = function(grunt) {
         files: 'assets/js/*.js',
         tasks: ['jshint', 'uglify:dev']
       }
+    },
+    browserSync: {
+      dev: {
+        files: {
+          src : [
+            './style.css',
+            'js/*.js',
+            '**/*.php'
+          ]
+        },
+        options: {
+          proxy: 'localhost/wp',
+          watchTask: true
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-checktextdomain');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compress');
@@ -329,5 +345,5 @@ module.exports = function(grunt) {
     grunt.task.run('compress');
   });
 
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['browserSync', 'watch']);
 };
