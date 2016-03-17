@@ -114,6 +114,9 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
 == Changelog ==
 
+= 1.7.3 =
+* Updated Headroom.js to 0.8.0.
+
 = 1.7.2 =
 * Added validation for Color Posts compatibility.
 
