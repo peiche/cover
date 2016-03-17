@@ -5,7 +5,7 @@
   "license": "GNU General Public License v2 or later",
   "devDependencies": {
     "font-awesome": "~4.5.*",
-    "headroom.js": "~0.7.0",
+    "headroom.js": "~0.8.0",
     "unslider": "~1.0.0",
     "masonry": "~3.3.1",
     "tgm-plugin-activation": "https://github.com/Otto42/TGM-Plugin-Activation/archive/develop.zip",
