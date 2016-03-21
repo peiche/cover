@@ -69,24 +69,6 @@
       }
     }
 
-    &-logo {
-      height: ($header-height - 20);
-      margin: 0 15px 0 0;
-      vertical-align: middle;
-
-      @include max-width($width-tablet) {
-        margin-right: 10px;
-      }
-
-      &-link {
-        border: none;
-        display: inline-block;
-        margin: -10px 0;
-        transition: opacity 200ms;
-        vertical-align: top;
-      }
-    }
-
     &-title {
       &:empty + .site-description {
         border: 0;
@@ -148,4 +130,23 @@
 .noscroll .site-search,
 .noscroll .chapter-toggle {
   opacity: 0;
+}
+
+.custom-logo {
+  height: ($header-height - 20);
+  margin: 0 15px 0 0;
+  vertical-align: middle;
+  width: auto;
+
+  @include max-width($width-tablet) {
+    margin-right: 10px;
+  }
+
+  &-link {
+    border: none;
+    display: inline-block;
+    margin: -10px 0;
+    transition: opacity 200ms;
+    vertical-align: top;
+  }
 }
