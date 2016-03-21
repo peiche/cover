@@ -4,7 +4,10 @@ All notable changes to this project will be documented in this file. This projec
 
 **1.7.3**
 - Updated Headroom.js to 0.8.0.
+- Updated Aesop Story Engine Image component styles.
 - Updated Aesop Story Engine Character component name and caption styles.
+- Added custom logo support (requires Jetpack or WordPress 4.5).
+- Miscellaneous stylesheet fixes.
 
 **1.7.2**
 - Added validation for Color Posts compatibility.
