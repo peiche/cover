@@ -115,6 +115,7 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 == Changelog ==
 
 = 1.7.3 =
+* Fixed JavaScript syntax error.
 * Updated Headroom.js to 0.8.0.
 * Updated Aesop Story Engine Image component styles.
 * Updated Aesop Story Engine Character component name and caption styles.
