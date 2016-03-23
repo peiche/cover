@@ -34,7 +34,7 @@ module.exports = function(grunt) {
             expand: true
           },
           {
-            cwd: 'bower_components/headroom.js/dist',
+            cwd: 'node_modules/headroom.js/dist',
             src: 'headroom.min.js',
             dest: 'dist/js',
             expand: true
