@@ -148,3 +148,19 @@ function cover_category_transient_flusher() {
 }
 add_action( 'edit_category', 'cover_category_transient_flusher' );
 add_action( 'save_post',     'cover_category_transient_flusher' );
+
+/**
+ * Returns the site logo inside a link.
+ * Uses functionality from core, with a fallback to use Jetpack.
+ *
+ * @return String
+ */
+function cover_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+		return get_custom_logo();
+	} else if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
+		return '<a href="' . esc_url( home_url( '/' ) ) . '" class="custom-logo-link ' . ( ( ! jetpack_has_site_logo() ) ? 'hide' : '' ) . '"><img src="' . esc_url( jetpack_get_site_logo( 'url' ) ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" class="site-logo"></a>';
+	}
+
+	return;
+}
