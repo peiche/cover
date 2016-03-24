@@ -27,7 +27,7 @@ function cover_post_nav() {
 		<div class="nav-links cf">
 			<?php
 				if ( $previous ) {
-					previous_post_link( '<div class="nav-previous">%link</div>', _x( '<h2 class="subtitle">' . __( 'Previous post', 'cover' ) . '</h2><h1 class="title">%title</h1>', 'Previous post link', 'cover' ) );
+					previous_post_link( '<div class="nav-previous">%link</div>', '<h2 class="subtitle">' . __( 'Previous post', 'cover' ) . '</h2><h1 class="title">' . __( 'Previous post link', 'cover' ) . '</h1>' );
 				}
 
 				if ( $next ) {
@@ -39,7 +39,7 @@ function cover_post_nav() {
 						$class = ' featured-image';
 						$style = ' style="background-image: url(\'' . $next_img . '\')"';
 	        }
-	        next_post_link( '<div class="nav-next">%link</div>', _x( '<div class="cover' . $class . '"><div class="cover-background"' . $style . '></div><div class="cover-header"><h2 class="cover-subtitle">' . __( 'Next post', 'cover' ) . '</h2><h1 class="cover-title">%title</h1></div></div>', 'Next post link', 'cover' ) );
+	        next_post_link( '<div class="nav-next">%link</div>', '<div class="cover' . $class . '"><div class="cover-background"' . $style . '></div><div class="cover-header"><h2 class="cover-subtitle">' . __( 'Next post', 'cover' ) . '</h2><h1 class="cover-title">' . __( 'Next post link', 'cover' ) . '</h1></div></div>' );
 				}
 
 			?>
