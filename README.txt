@@ -4,7 +4,7 @@ Contributors: peiche
 Tags: light, white, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, infinite-scroll, sticky-post
 
 Requires at least: 4.1
-Tested up to: 4.2.2
+Tested up to: 4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Cover is a content-driven blogging theme for WordPress.
 
 == Description ==
 
-Built on top of Automattic’s _s (Underscores) and bundled with Font Awesome, Cover allows you to focus on your writing. There are no sidebars to mess with, just a single column view of your content.
+Built on top of Automattic's _s (Underscores) and bundled with Font Awesome, Cover allows you to focus on your writing. There are no sidebars to mess with, just a single column view of your content.
 
 Cover is designed for any size screen. No matter the device, Cover always looks beautiful.
 
