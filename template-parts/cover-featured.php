@@ -39,7 +39,7 @@
 
 	</ul>
 
-	<?php if ( cover_has_featured_posts( 2 ) ) { ?>
+	<?php if ( function_exists( 'cover_has_featured_posts' ) && cover_has_featured_posts( 2 ) ) { ?>
 
 	<div class="featured-arrow prev hide">
 		<span class="fa fa-angle-left"></span>

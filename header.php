@@ -22,7 +22,7 @@
 <?php
 
 $header_class = '';
-if ( ! ( is_single() || is_page() || is_archive() || is_author() || is_search() || is_404() || cover_has_featured_posts() ) ) {
+if ( ! ( is_single() || is_page() || is_archive() || is_author() || is_search() || is_404() || ( function_exists( 'cover_has_featured_posts' ) && cover_has_featured_posts() ) ) ) {
     $header_class = ' bg';
 }
 
