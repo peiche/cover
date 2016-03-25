@@ -27,7 +27,7 @@ function cover_jetpack_setup() {
      *
      * @link http://jetpack.me/support/site-logo/
      */
-    add_theme_support( 'site-logo', array( 'cover-site-logo' ) );
+    add_theme_support( 'site-logo', array() );
 
     /**
      * See Jetpack support for more info
