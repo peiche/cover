@@ -66,8 +66,13 @@ function cover_setup() {
 	// Post format support.
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 
-	// WordPress 4.5 and above.
-	add_theme_support( 'custom-logo', array() );
+	/**
+	 * WordPress 4.5 and above.
+	 * Add custom logo support if Jetpack is not installed.
+	 */
+	if ( ! defined( 'JETPACK__VERSION' ) ) {
+		add_theme_support( 'custom-logo', array() );
+	}
 
 }
 endif;
@@ -220,7 +225,9 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility.
  */
-require get_template_directory() . '/inc/jetpack.php';
+if ( defined( 'JETPACK__VERSION' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
+}
 
 /**
  * Load Aesop Story Engine compatibility.
