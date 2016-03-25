@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
+**1.7.4**
+- Updated for WordPress 4.5: conditionally add custom logo support if Jetpack is not installed.
+
 **1.7.3**
 - Fixed JavaScript syntax error.
 - Updated Headroom.js to 0.8.0.
