@@ -116,6 +116,8 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
 = 1.7.4 =
 * Updated for WordPress 4.5: conditionally add custom logo support if Jetpack is not installed.
+* Updated custom logo spacing.
+* Fixed Aesop Story Engine Parallax Gallery component for small screens ([issue 64](https://github.com/peiche/cover/issues/64)).
 
 = 1.7.3 =
 * Fixed JavaScript syntax error.
