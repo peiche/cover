@@ -38,5 +38,8 @@
     "grunt-pot": "^0.2.1",
     "grunt-scss-lint": "^0.3.3",
     "grunt-todo": "^0.5.0"
+  },
+  "dependencies": {
+    "headroom.js": "^0.8.0"
   }
 }

@@ -66,6 +66,9 @@ function cover_setup() {
 	// Post format support.
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 
+	// WordPress 4.5 and above.
+	add_theme_support( 'custom-logo', array() );
+
 }
 endif;
 add_action( 'after_setup_theme', 'cover_setup' );

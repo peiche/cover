@@ -1,0 +1,7 @@
+// NOTE third-party selectors
+// scss-lint:disable SelectorFormat
+.cp_embed_iframe {
+  @include site-width;
+  display: block;
+}
+// scss-lint:enable SelectorFormat

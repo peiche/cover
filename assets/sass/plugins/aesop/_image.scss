@@ -1,6 +1,6 @@
-.aesop-image-component {
-  margin-bottom: 0;
-  margin-top: 0;
+// NOTE increased specificity to override ai-core
+.aesop-component.aesop-image-component {
+  margin: 60px auto; // NOTE reset margin because ai-core sets margin to 0
 
   img {
     display: block;

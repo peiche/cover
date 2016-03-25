@@ -59,9 +59,7 @@ if ( 'minimal' == esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) ) ) {
 	</div>
 
     <div class="site-info">
-        <?php if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) { ?>
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo-link <?php if ( ! jetpack_has_site_logo() ) { ?>hide<?php } ?>"><img src="<?php echo esc_url( jetpack_get_site_logo( 'url' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="site-logo"></a>
-        <?php } ?>
+        <?php echo cover_custom_logo(); ?>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title"><?php bloginfo( 'name' ); ?></a>
         <span class="site-description"><?php bloginfo( 'description' ); ?></span>
 	</div>

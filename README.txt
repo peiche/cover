@@ -4,7 +4,7 @@ Contributors: peiche
 Tags: light, white, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, infinite-scroll, sticky-post
 
 Requires at least: 4.1
-Tested up to: 4.2.2
+Tested up to: 4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Cover is a content-driven blogging theme for WordPress.
 
 == Description ==
 
-Built on top of Automattic’s _s (Underscores) and bundled with Font Awesome, Cover allows you to focus on your writing. There are no sidebars to mess with, just a single column view of your content.
+Built on top of Automattic's _s (Underscores) and bundled with Font Awesome, Cover allows you to focus on your writing. There are no sidebars to mess with, just a single column view of your content.
 
 Cover is designed for any size screen. No matter the device, Cover always looks beautiful.
 
@@ -113,6 +113,14 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
    Disable any caching plugins that you may have activated.
 
 == Changelog ==
+
+= 1.7.3 =
+* Fixed JavaScript syntax error.
+* Updated Headroom.js to 0.8.0.
+* Updated Aesop Story Engine Image component styles.
+* Updated Aesop Story Engine Character component name and caption styles.
+* Added custom logo support (requires Jetpack or WordPress 4.5).
+* Miscellaneous stylesheet fixes.
 
 = 1.7.2 =
 * Added validation for Color Posts compatibility.
