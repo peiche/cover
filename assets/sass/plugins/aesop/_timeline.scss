@@ -8,6 +8,10 @@
   right: 0;
   z-index: $z-index-aesop-timeline;
 
+  ol::after {
+    background-image: url('dist/img/timeline-break.png');
+  }
+
   // NOTE ASE-controlled selectors
   // scss-lint:disable SelectorFormat
   .scroll-nav__list {

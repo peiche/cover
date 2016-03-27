@@ -1,0 +1,12 @@
+// NOTE ASE-controlled selectors
+// scss-lint:disable IdSelector
+#swipebox-slider .slide {
+  background: url('dist/img/loader.gif') no-repeat center center;
+}
+
+#swipebox-action #swipebox-prev,
+#swipebox-action #swipebox-next,
+#swipebox-action #swipebox-close {
+  background-image: url('dist/img/icons.png');
+}
+// scss-lint:enable IdSelector
