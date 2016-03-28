@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. This projec
 - Updated for WordPress 4.5: conditionally add custom logo support if Jetpack is not installed.
 - Updated custom logo spacing.
 - Fixed Aesop Story Engine Parallax Gallery component for small screens ([issue 64](https://github.com/peiche/cover/issues/64)).
+- Fixed Aesop Story Engine image paths.
 
 **1.7.3**
 - Fixed JavaScript syntax error.
