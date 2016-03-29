@@ -5,6 +5,12 @@
   }
 }
 
+.aesop-gallery-photoset {
+  i {
+    display: none;
+  }
+}
+
 .aesop-grid-gallery-caption {
   margin-right: 5px;
 }
@@ -20,6 +26,15 @@
 .aesop-stacked-img {
   background-attachment: fixed;
   padding: 20px;
+
+  // NOTE overrides ASE height: 0 !important
+  // TODO https://github.com/hyunsupul/aesop-core/pull/311
+  // scss-lint:disable ImportantRule
+  @include max-width(400px) {
+    height: 500px !important; // fallback for browsers that do not support vh units
+    height: 100vh !important;
+  }
+  // scss-lint:enable ImportantRule
 }
 
 .aesop-stacked-caption {
@@ -28,12 +43,3 @@
   display: inline-block;
   padding: 6px 8px;
 }
-
-// NOTE ASE-controlled selectors
-// scss-lint:disable SelectorFormat
-.fotorama__caption {
-  bottom: 5px;
-  left: 5px;
-  right: 5px;
-}
-// scss-lint:enable SelectorFormat

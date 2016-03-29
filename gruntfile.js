@@ -65,6 +65,12 @@ module.exports = function(grunt) {
             rename: function(dest, src) {
               return dest + '/_' + src.replace('.css', '.scss');
             }
+          },
+          {
+            cwd: 'bower_components/aesop-core/public/assets/img',
+            src: '*',
+            dest: 'dist/img',
+            expand: true
           }
         ]
       }

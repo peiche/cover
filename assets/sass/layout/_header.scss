@@ -134,19 +134,18 @@
 
 .custom-logo {
   height: ($header-height - 20);
-  margin: 0 15px 0 0;
   vertical-align: middle;
   width: auto;
-
-  @include max-width($width-tablet) {
-    margin-right: 10px;
-  }
 
   &-link {
     border: none;
     display: inline-block;
-    margin: -10px 0;
+    margin: -10px 15px -10px 0;
     transition: opacity 200ms;
     vertical-align: top;
+
+    @include max-width($width-tablet) {
+      margin-right: 10px;
+    }
   }
 }

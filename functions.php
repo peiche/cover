@@ -66,8 +66,13 @@ function cover_setup() {
 	// Post format support.
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 
-	// WordPress 4.5 and above.
-	add_theme_support( 'custom-logo', array() );
+	/**
+	 * WordPress 4.5 and above.
+	 * Add custom logo support if Jetpack is not installed.
+	 */
+	if ( ! defined( 'JETPACK__VERSION' ) ) {
+		add_theme_support( 'custom-logo', array() );
+	}
 
 }
 endif;
@@ -127,7 +132,7 @@ function cover_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	if ( cover_has_featured_posts( 2 ) ) {
+	if ( function_exists( 'cover_has_featured_posts' ) && cover_has_featured_posts( 2 ) ) {
     wp_enqueue_script( 'unslider', get_template_directory_uri() . '/dist/js/unslider.min.js', array( 'jquery' ), '20150727', true );
 		wp_enqueue_script( 'unslider-cover', get_template_directory_uri() . '/dist/js/cover-unslider.js', array( 'jquery' ), '20150727', true );
 	}
@@ -220,7 +225,9 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility.
  */
-require get_template_directory() . '/inc/jetpack.php';
+if ( defined( 'JETPACK__VERSION' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
+}
 
 /**
  * Load Aesop Story Engine compatibility.

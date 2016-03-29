@@ -1,0 +1,19 @@
+// NOTE ASE-controlled selectors
+// scss-lint:disable SelectorFormat
+.fotorama__arr,
+.fotorama__fullscreen-icon,
+.fotorama__video-close,
+.fotorama__video-play {
+  background: url('dist/img/fotorama.png') no-repeat;
+
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 2dppx) {
+    background: url('dist/img/fotorama@2x.png') no-repeat;
+  }
+}
+
+.fotorama__caption {
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+}
+// scss-lint:enable SelectorFormat
