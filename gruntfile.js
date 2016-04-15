@@ -29,9 +29,10 @@ module.exports = function(grunt) {
         files: [
           {
             cwd: 'bower_components/font-awesome/fonts',
-            src: '**/*',
+            src: '*',
             dest: 'dist/fonts',
-            expand: true
+            expand: true,
+            filter: 'isFile'
           },
           {
             cwd: 'node_modules/headroom.js/dist',
