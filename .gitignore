@@ -221,7 +221,7 @@ node_modules/
 releases/
 report/
 .ftppass
-gruntfile-secondary.js
+gruntfile-hub.js
 style.css
 style.css.map
 inc/class-tgm-plugin-activation.php

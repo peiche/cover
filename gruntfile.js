@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     hub: {
       all: {
-        src: ['gruntfile-secondary.js']
+        src: ['gruntfile-hub.js']
       }
     },
     clean: {
