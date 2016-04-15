@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
+**1.7.5**
+- Updated to Font Awesome 4.6.
+- Updated styles for Aesop Story Engine 1.7.5.
+- Fixed post nav link titles.
+
 **1.7.4**
 - Updated for WordPress 4.5: conditionally add custom logo support if Jetpack is not installed.
 - Updated custom logo spacing.
