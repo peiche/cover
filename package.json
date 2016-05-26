@@ -40,6 +40,8 @@
     "grunt-todo": "^0.5.0"
   },
   "dependencies": {
-    "headroom.js": "^0.8.0"
+    "font-awesome": "^4.6.1",
+    "headroom.js": "^0.8.0",
+    "masonry-layout": "^4.0.0"
   }
 }
