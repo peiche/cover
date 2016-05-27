@@ -86,6 +86,10 @@ Likes
 	width: $width-medium;
 }
 
+.entry-content .sharedaddy {
+	@include site-width;
+}
+
 /*--------------------------------------------------------------
 Top Posts & Pages Widget
 --------------------------------------------------------------*/
