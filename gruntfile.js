@@ -282,6 +282,7 @@ module.exports = function(grunt) {
               '!*.md',
               '!*.xml',
               '!gruntfile.js',
+              '!gruntfile-hub.js',
               '!assets/**',
               '!node_modules/**',
               '!releases/**',
