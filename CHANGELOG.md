@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. This projec
 **1.7.6**
 - Removed all references to Bower.
 - Updated to TGM Plugin Activation 2.5.1.
+- Updated to Unslider 2.0.
 
 **1.7.5**
 - Updated to Font Awesome 4.6.

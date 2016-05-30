@@ -114,6 +114,11 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
 == Changelog ==
 
+= 1.7.6 =
+* Removed all references to Bower.
+* Updated to TGM Plugin Activation 2.5.1.
+* Updated to Unslider 2.0.
+
 = 1.7.5 =
 * Updated to Font Awesome 4.6.
 * Updated styles for Aesop Story Engine 1.7.5.
