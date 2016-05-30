@@ -1,0 +1,10 @@
+// NOTE necessary to target related posts
+// scss-lint:disable IdSelector
+.entry-content #jp-relatedposts {
+	@include site-width;
+}
+// scss-lint:enable IdSelector
+
+.jp-relatedposts-post {
+	transition: opacity .2s; // I reject your reality, and substitute my own!
+}

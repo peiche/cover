@@ -1,0 +1,7 @@
+.entry-content .jetpack-likes-widget-wrapper {
+	width: $width-medium;
+}
+
+.entry-content .sharedaddy {
+	@include site-width;
+}
