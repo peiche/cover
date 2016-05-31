@@ -10,9 +10,9 @@
 	<rule ref="WordPress">
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
 
-        <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
 		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
-        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
+    <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
 
 		<exclude name="WordPress.XSS.EscapeOutput" />
 		<exclude name="WordPress.WhiteSpace.ScopeIndent.Incorrect" />
@@ -23,5 +23,7 @@
 
 	<rule ref="WordPress-VIP">
 		<exclude name="WordPress.VIP.RestrictedFunctions" />
+		<exclude name="WordPress.VIP.ValidatedSanitizedInput.MissingUnslash" />
+		<exclude name="WordPress.VIP.ValidatedSanitizedInput.InputNotSanitized" />
 	</rule>
 </ruleset>
