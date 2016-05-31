@@ -1,0 +1,57 @@
+// NOTE necessary to target Jetpack infinite scroll handle
+// scss-lint:disable IdSelector
+body #infinite-handle { // increased specificity to override jetpack's css
+	padding: 30px 0 50px;
+	text-align: center;
+
+	span {
+		@include button($color-blue);
+
+		@include max-width($width-phone) {
+			display: block;
+			margin: auto;
+			width: 90%;
+		}
+	}
+}
+// scss-lint:enable IdSelector
+
+// full-screen overlay spinner
+body .infinite-loader { // increased specificity to override jetpack's css
+	height: 42px; // match height of button
+	margin: 50px auto;
+
+	.spinner {
+		animation: rotate .7s infinite linear;
+		border: 8px solid $color-light-gray-alt;
+		border-radius: 100%;
+		border-top-color: $color-blue;
+		height: 42px;
+		margin: auto;
+		// scss-lint:disable ImportantRule
+		position: static !important; // overrides inline style
+		width: 42px !important; // overrides inline style
+		// scss-lint:enable ImportantRule
+
+		> div {
+			display: none; // hide jetpack's default spinner parts
+		}
+	}
+}
+
+// NOTE necessary to target infinite scroll footer
+// scss-lint:disable IdSelector
+#infinite-footer {
+	display: none; // hide the infinite scroll footer
+}
+// scss-lint:enable IdSelector
+
+.infinite-scroll .posts-navigation, // Older / Newer Posts Navigation (always hidden)
+.infinite-scroll.neverending .site-footer { // Theme Footer (when set to scrolling)
+	display: none;
+}
+
+// When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before
+.infinity-end.neverending .site-footer {
+	display: block;
+}

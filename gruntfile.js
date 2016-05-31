@@ -28,7 +28,7 @@ module.exports = function(grunt) {
       build: {
         files: [
           {
-            cwd: 'bower_components/font-awesome/fonts',
+            cwd: 'node_modules/font-awesome/fonts',
             src: '*',
             dest: 'dist/fonts',
             expand: true,
@@ -41,25 +41,19 @@ module.exports = function(grunt) {
             expand: true
           },
           {
-            cwd: 'bower_components/tgm-plugin-activation',
-            src: 'class-tgm-plugin-activation.php',
-            dest: 'inc',
-            expand: true
-          },
-          {
-            cwd: 'bower_components/unslider/src',
-            src: 'unslider.min.js',
+            cwd: 'node_modules/unslider/dist/js',
+            src: 'unslider-min.js',
             dest: 'dist/js',
             expand: true
           },
           {
-            cwd: 'bower_components/masonry/dist',
+            cwd: 'node_modules/masonry-layout/dist',
             src: 'masonry.pkgd.min.js',
             dest: 'dist/js',
             expand: true
           },
           {
-            cwd: 'bower_components/aesop-core/public/assets/css',
+            cwd: 'node_modules/aesop-core/public/assets/css',
             src: 'ai-core.css',
             dest: 'assets/sass/plugins/aesop',
             expand: true,
@@ -68,7 +62,7 @@ module.exports = function(grunt) {
             }
           },
           {
-            cwd: 'bower_components/aesop-core/public/assets/img',
+            cwd: 'node_modules/aesop-core/public/assets/img',
             src: '*',
             dest: 'dist/img',
             expand: true
@@ -264,7 +258,6 @@ module.exports = function(grunt) {
       build: {
         src: [
           '**/*.php',
-          '!bower_components/**',
           '!node_modules/**'
         ],
         expand: true
@@ -289,8 +282,8 @@ module.exports = function(grunt) {
               '!*.md',
               '!*.xml',
               '!gruntfile.js',
+              '!gruntfile-hub.js',
               '!assets/**',
-              '!bower_components/**',
               '!node_modules/**',
               '!releases/**',
               '!report/**'
