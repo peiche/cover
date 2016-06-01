@@ -114,6 +114,10 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
 == Changelog ==
 
+= 1.7.7 =
+* Fixed featured post margins.
+* Removed TGM Plugin Activation.
+
 = 1.7.6 =
 * Removed all references to Bower.
 * Updated to TGM Plugin Activation 2.5.1.
