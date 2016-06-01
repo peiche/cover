@@ -101,8 +101,7 @@ module.exports = function(grunt) {
 			src: [
         'assets/**/*',
         '*.php',
-        'inc/**/*',
-        '!inc/class-tgm-plugin-activation.php'
+        'inc/**/*'
 			]
 		},
     scsslint: {
