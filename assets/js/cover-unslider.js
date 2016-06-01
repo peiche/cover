@@ -8,7 +8,11 @@ jQuery(document).ready(function() {
   var unslider = jQuery('.featured-container').unslider({
 		infinite: true,
 		autoplay: false,
-    animateHeight: true
+    animateHeight: true,
+    arrows: {
+      prev: '<a class="featured-arrow prev"><i class="fa fa-angle-left"></i></a>',
+      next: '<a class="featured-arrow next"><i class="fa fa-angle-right"></i></a>'
+    }
 	});
 
 });

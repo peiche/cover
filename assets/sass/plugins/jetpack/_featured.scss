@@ -1,18 +1,18 @@
-.unslider {
+.featured-container {
   margin-bottom: -$header-height;
-	position: relative;
 }
 
-.unslider-carousel {
-	margin: 0;
-	position: relative;
+.featured-list {
+  margin: 0;
+  position: relative;
 
-	li {
-		float: left;
-	}
+  &-item {
+    float: left;
+    width: 100%;
+  }
 }
 
-.unslider-arrow {
+.featured-arrow {
 	bottom: 0;
 	color: transparent;
 	cursor: pointer;
@@ -25,40 +25,31 @@
 		display: none;
 	}
 
-	&:hover {
-		color: inherit;
-	}
-
-	&::before {
-		@extend .fa;
-		@include rem(font-size, $featured-content-arrow-size);
-		bottom: 0;
-		color: $color-white;
-		height: $featured-content-arrow-size;
-    left: 0;
-		line-height: $featured-content-arrow-size;
-		margin: auto;
-		position: absolute;
-		text-align: center;
-		top: 0;
-		width: $featured-content-arrow-size;
-	}
-
 	&.prev {
 		left: 0;
-
-		&::before {
-			content: $fa-var-angle-left;
-		}
 	}
 
 	&.next {
 		right: 0;
-
-		&::before {
-			content: $fa-var-angle-right;
-		}
 	}
+
+  .fa {
+    @include rem(font-size, $featured-content-arrow-size);
+    bottom: 0;
+    color: $color-white;
+    height: $featured-content-arrow-size;
+    left: 0;
+    line-height: $featured-content-arrow-size;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: $featured-content-arrow-size;
+  }
+}
+
+.unslider {
+	position: relative;
 }
 
 .unslider-nav {
