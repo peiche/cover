@@ -207,7 +207,7 @@ module.exports = function(grunt) {
       standard: {
         options: {
           text_domain: 'cover',
-          correct_domain: true, // correct text-domain instances (i.e., in class-tgm-plugin-activation)
+          correct_domain: false, // correct text-domain instances
           force: true, // continue after correcting "errors"
           keywords: [
             '__:1,2d',
@@ -335,9 +335,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('validate', ['todo', 'scsslint', 'jshint']);
 
-  grunt.registerTask('dev', ['clean', 'copy', 'sass:dev', 'autoprefixer:dev', 'uglify:dev', 'checktextdomain', 'checktextdomain', 'pot']);
-  grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'checktextdomain', 'pot']);
-  grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'checktextdomain', 'pot']);
+  grunt.registerTask('dev', ['clean', 'copy', 'sass:dev', 'autoprefixer:dev', 'uglify:dev', 'checktextdomain', 'pot']);
+  grunt.registerTask('prod', ['clean', 'copy', 'sass:prod', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'pot']);
+  grunt.registerTask('wporg', ['clean', 'copy', 'sass:wporg', 'autoprefixer:prod', 'uglify:prod', 'checktextdomain', 'pot']);
 
   grunt.registerTask('zip', 'Make a zip file for installation.', function() {
     grunt.log.writeln('Zipping up the project.');
