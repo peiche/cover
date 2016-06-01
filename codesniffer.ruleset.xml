@@ -23,7 +23,5 @@
 
 	<rule ref="WordPress-VIP">
 		<exclude name="WordPress.VIP.RestrictedFunctions" />
-		<exclude name="WordPress.VIP.ValidatedSanitizedInput.MissingUnslash" />
-		<exclude name="WordPress.VIP.ValidatedSanitizedInput.InputNotSanitized" />
 	</rule>
 </ruleset>
