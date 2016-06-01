@@ -9,7 +9,7 @@
 
 <div class="featured-container">
 
-	<ul>
+	<ul class="featured-list">
 
 	<?php
 		$img = '';
@@ -19,7 +19,7 @@
 			$img = cover_get_featured_image( $post->ID );
 	?>
 
-		<li>
+		<li class="featured-list-item">
 			<a href="<?php the_permalink(); ?>" rel="bookmark">
 				<div class="cover<?php if ( '' != $img ) { ?> featured-image<?php } ?>">
 					<div class="cover-background"<?php if ( '' != $img ) { ?> style="background-image: url('<?php echo $img; ?>');"<?php } ?>></div>

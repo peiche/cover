@@ -114,6 +114,10 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
 == Changelog ==
 
+= 1.7.7 =
+* Fixed featured post margins.
+* Removed TGM Plugin Activation.
+
 = 1.7.6 =
 * Removed all references to Bower.
 * Updated to TGM Plugin Activation 2.5.1.
@@ -273,5 +277,4 @@ All other resources are licensed as follows:
 
 * Font Awesome - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 * Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE
-* TGM Plugin Activation - GPL v2.0 - https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md
 * Unslider - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md
