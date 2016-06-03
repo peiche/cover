@@ -82,3 +82,15 @@
     font-style: normal;
   }
 }
+
+@mixin clearfix {
+  &::before,
+  &::after {
+      content: '';
+      display: table;
+  }
+
+  &::after {
+      clear: both;
+  }
+}

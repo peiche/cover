@@ -2,19 +2,7 @@
 8.0 Clearings
 --------------------------------------------------------------*/
 
-%cf,
-.cf {
-    &::before,
-    &::after {
-        content: '';
-        display: table;
-    }
-
-    &::after {
-        clear: both;
-    }
-}
-
+.cf,
 .clear,
 .clearfix,
 .entry-content,
@@ -22,5 +10,5 @@
 .site-header,
 .site-content,
 .site-footer {
-	@extend %cf;
+	@include clearfix;
 }
