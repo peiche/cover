@@ -11,4 +11,4 @@
 <div class="comments-container">
   <?php comments_template(); ?>
 </div>
-<?php endif; ?>
+<?php endif;
