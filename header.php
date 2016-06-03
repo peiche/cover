@@ -37,14 +37,14 @@ if (
     $build_overlay = true;
 }
 
-$ignore_custom_background = '';
+$ignore_custom_bg = '';
 if ( 'minimal' == esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) ) ) {
-  $ignore_custom_background = 'ignore-custom-background';
+  $ignore_custom_bg = 'ignore-custom-background';
 }
 
 ?>
 
-<body <?php body_class( $ignore_custom_background ); ?>>
+<body <?php body_class( $ignore_custom_bg ); ?>>
 
 <?php do_action( 'ase_theme_body_inside_top' ); ?>
 
