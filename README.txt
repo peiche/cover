@@ -114,6 +114,10 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
 == Changelog ==
 
+= 1.7.8 =
+* Fixed clearing of featured content slider.
+* Fixed twitter embeds so they're centered in post content.
+
 = 1.7.7 =
 * Fixed featured post margins.
 * Removed TGM Plugin Activation.
