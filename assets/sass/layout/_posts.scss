@@ -289,7 +289,8 @@
     > address,
     > table,
     > dl,
-    > fieldset {
+    > fieldset,
+    > .twitter-tweet {
       @include site-width;
     }
 

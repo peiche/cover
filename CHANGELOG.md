@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
+**1.7.8**
+- Fixed clearing of featured content slider.
+- Fixed twitter embeds so they're centered in post content.
+
 **1.7.7**
 - Fixed featured post margins.
 - Removed TGM Plugin Activation.

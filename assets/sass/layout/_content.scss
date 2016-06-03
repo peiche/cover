@@ -32,7 +32,9 @@ body.custom-background {
 
 .cover + .minimal,
 .featured-container + .minimal,
+.unslider + .minimal,
 .cover + .grid,
-.featured-container + .grid {
+.featured-container + .grid,
+.unslider + .grid {
   margin-top: 0;
 }

@@ -1,8 +1,5 @@
-.featured-container {
-  margin-bottom: -$header-height;
-}
-
 .featured-list {
+  @include clearfix;
   margin: 0;
   position: relative;
 

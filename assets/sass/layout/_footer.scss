@@ -33,7 +33,7 @@
   }
 
   .site-info {
-    @extend %cf;
+    @include clearfix;
     @include site-width;
 
     .site-credits {
