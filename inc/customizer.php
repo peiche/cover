@@ -124,7 +124,7 @@ function cover_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'select',
 			'label'   => __( 'Columns', 'cover' ),
-			'description' => 'Applied when Cover View Options -> Post Listing Style is set to Grid.',
+			'description' => 'Applied when Cover View Options -> Post Listing Style is set to Card.',
 			'section' => 'cover_section_view',
 			'choices' => array(
 				1  => '1',
@@ -151,8 +151,8 @@ function cover_customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->get_control( 'background_color' )->description = __( 'Applied when Cover View Options -> Post Listing Style is set to Grid.', 'cover' );
-	$wp_customize->get_control( 'background_image' )->description = __( 'Applied when Cover View Options -> Post Listing Style is set to Grid.', 'cover' );
+	$wp_customize->get_control( 'background_color' )->description = __( 'Applied when Cover View Options -> Post Listing Style is set to Card.', 'cover' );
+	$wp_customize->get_control( 'background_image' )->description = __( 'Applied when Cover View Options -> Post Listing Style is set to Card.', 'cover' );
 }
 add_action( 'customize_register', 'cover_customize_register' );
 
