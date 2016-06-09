@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
+**1.7.9**
+- Fixed typo in Customizer ([issue 75](https://github.com/peiche/cover/issues/75)).
+- Updated to Font Awesome 4.6.3.
+
 **1.7.8**
 - Fixed clearing of featured content slider.
 - Fixed twitter embeds so they're centered in post content.
