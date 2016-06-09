@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "aesop-core": "git://github.com/hyunsupul/aesop-core.git",
-    "font-awesome": "^4.6.1",
+    "font-awesome": "^4.6.3",
     "headroom.js": "^0.8.0",
     "masonry-layout": "^4.0.0",
     "unslider": "git://github.com/idiot/unslider.git"
