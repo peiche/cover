@@ -115,7 +115,8 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 == Changelog ==
 
 = 1.7.9 =
-* Fixed typo in Customizer ([issue 75](https://github.com/peiche/cover/issues/75)).
+* Fixed typo in Customizer.
+* Fixed broken default Gravatar.
 * Updated to Font Awesome 4.6.3.
 
 = 1.7.8 =

@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file. This projec
 
 **1.7.9**
 - Fixed typo in Customizer ([issue 75](https://github.com/peiche/cover/issues/75)).
+- Fixed broken default Gravatar ([issue 76](https://github.com/peiche/cover/issues/76)).
 - Updated to Font Awesome 4.6.3.
 
 **1.7.8**
