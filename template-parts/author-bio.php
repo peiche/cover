@@ -11,7 +11,7 @@
 
 <div class="profile">
 	<div class="profile-avatar">
-		<?php echo get_avatar( get_the_author_meta( 'ID' ), ( is_author() ? 120 : 80 ) ); ?>
+		<?php echo get_avatar( get_the_author_meta( 'ID' ), ( is_author() ? 120 : 80 ), '', 'Profile Picture for ' . esc_html( get_the_author() ) ); ?>
 	</div>
 
   <div class="profile-info">
