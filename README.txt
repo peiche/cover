@@ -114,6 +114,9 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
 == Changelog ==
 
+= 1.7.10 =
+* Fixed alignment bug for post with paging.
+
 = 1.7.9 =
 * Fixed typo in Customizer.
 * Fixed broken default Gravatar.

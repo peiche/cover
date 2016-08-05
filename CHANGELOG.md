@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
+**1.7.10**
+- Fixed alignment bug for post with paging.
+
 **1.7.9**
 - Fixed typo in Customizer ([issue 75](https://github.com/peiche/cover/issues/75)).
 - Fixed broken default Gravatar ([issue 76](https://github.com/peiche/cover/issues/76)).
