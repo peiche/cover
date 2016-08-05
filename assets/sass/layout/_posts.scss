@@ -290,7 +290,8 @@
     > table,
     > dl,
     > fieldset,
-    > .twitter-tweet {
+    > .twitter-tweet,
+    > .page-links {
       @include site-width;
     }
 
