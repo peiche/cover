@@ -115,7 +115,11 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 == Changelog ==
 
 = 1.7.10 =
+* Added swipe support for Jetpack featured post slider.
 * Fixed alignment bug for post with paging.
+* Fixed alignment bug for Jetpack videos.
+* Fixed post paging button colors.
+* Updated styles for Aesop Story Engine 1.7.9.
 
 = 1.7.9 =
 * Fixed typo in Customizer.
