@@ -125,6 +125,8 @@ License - http://creativecommons.org/publicdomain/zero/1.0/
 
 All other resources are licensed as follows:
 
-* Font Awesome - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-* Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE  
-* Unslider - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md
+* [Font Awesome](http://fontawesome.io/) - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+* [Headroom](http://wicky.nillia.ms/headroom.js/) - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE  
+* [Unslider](http://unslider.com/) - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md
+* [jquery.event.move](http://stephband.info/jquery.event.move/) - WTFPL - http://www.wtfpl.net/txt/copying/
+* [jquery.event.swipe](http://stephband.info/jquery.event.swipe) - WTFPL - http://www.wtfpl.net/txt/copying/

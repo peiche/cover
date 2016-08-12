@@ -294,3 +294,5 @@ All other resources are licensed as follows:
 * Font Awesome - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 * Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE
 * Unslider - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md
+* jquery.event.move - WTFPL - http://www.wtfpl.net/txt/copying/
+* jquery.event.swipe - WTFPL - http://www.wtfpl.net/txt/copying/
