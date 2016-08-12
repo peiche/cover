@@ -239,7 +239,7 @@ function cover_customize_options() {
 a,a:visited, .entry-subtitle a:hover { color: <?php echo $link_color; ?>; }
 a:hover { color: <?php echo darken( $link_color, 15 ); ?>; }
 .header .backdrop, .cover { background-color: <?php echo $header_color; ?>; }
-.posts-navigation a, .comment-navigation a, ul.categories a, body #infinite-handle span, .button.default { background-color: <?php echo $link_color; ?>; }
+.posts-navigation a, .comment-navigation a, ul.categories a, body #infinite-handle span, .button.default, .page-links .button { background-color: <?php echo $link_color; ?>; }
 .posts-navigation a:hover, .comment-navigation a:hover, ul.categories a:hover, body #infinite-handle span:hover, .button.default:hover { background-color: <?php echo darken( $link_color, 15 ); ?>; }
 body .infinite-loader .spinner { border-top-color: <?php echo $link_color; ?>; }
 .fotorama__thumb-border { border-color: <?php echo $link_color; ?>; }
