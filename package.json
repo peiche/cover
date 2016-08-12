@@ -43,6 +43,8 @@
     "aesop-core": "git://github.com/hyunsupul/aesop-core.git",
     "font-awesome": "^4.6.3",
     "headroom.js": "^0.8.0",
+    "jquery.event.move": "^1.3.6",
+    "jquery.event.swipe": "^0.5.4",
     "masonry-layout": "^4.0.0",
     "unslider": "git://github.com/idiot/unslider.git"
   }

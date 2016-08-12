@@ -66,6 +66,18 @@ module.exports = function(grunt) {
             src: '*',
             dest: 'dist/img',
             expand: true
+          },
+          {
+            cwd: 'node_modules/jquery.event.move/js',
+            src: '*',
+            dest: 'dist/js',
+            expand: true
+          },
+          {
+            cwd: 'node_modules/jquery.event.swipe/js',
+            src: '*',
+            dest: 'dist/js',
+            expand: true
           }
         ]
       }
