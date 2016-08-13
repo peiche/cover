@@ -21,8 +21,14 @@
 			elseif ( is_tag() ) :
         single_tag_title();
 
-			elseif ( is_day() || is_month() || is_year() ) :
-				printf( __( '%s', 'cover' ), get_the_date() );
+			elseif ( is_day() ) :
+				printf( get_the_date() );
+
+      elseif ( is_month() ) :
+        printf( get_the_date( 'F Y' ) );
+
+      elseif ( is_year() ) :
+        printf( get_the_date( 'Y' ) );
 
 			elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
 				_e( 'Asides', 'cover' );
