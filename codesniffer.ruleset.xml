@@ -19,6 +19,8 @@
 		<exclude name="WordPress.Variables.GlobalVariables" />
 
     <exclude name="WordPress.VIP.RestrictedFunctions.get_tag_link" /> <!-- why is get_tag_link prohibited? -->
+
+		<exclude name="WordPress.Functions.DontExtract.extract" /> <!-- extract is needed for Color Posts plugin -->
 	</rule>
 
 	<rule ref="WordPress-VIP">
