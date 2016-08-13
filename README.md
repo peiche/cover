@@ -76,7 +76,7 @@ Using the [Color Posts](https://wordpress.org/plugins/color-posts/) plugin will 
 
 ### Built with Sass
 
-If you’re a developer and want to play around with Cover, you’ll find that its stylesheet is compressed. This is because I prefer to build the theme’s stylesheet using Sass. To that end, in the project you’ll find the `/sass` folder which holds all the components required to compile the stylesheet, including the bundled Font Awesome styles. (Similarly, the JavaScript used in Cover is compressed, but the uncompressed code is provided in the `/js/src` directory.)
+If you’re a developer and want to play around with Cover, the stylesheet is built using Sass. To that end, in the project you’ll find the `/sass` folder which holds all the components required to compile the stylesheet, including the bundled Font Awesome styles. (Similarly, the JavaScript used in Cover is compressed, but the uncompressed code is provided in the `/js/src` directory.)
 
 ## Installation
 
@@ -125,6 +125,8 @@ License - http://creativecommons.org/publicdomain/zero/1.0/
 
 All other resources are licensed as follows:
 
-* Font Awesome - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-* Headroom - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE  
-* Unslider - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md
+* [Font Awesome](http://fontawesome.io/) - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+* [Headroom](http://wicky.nillia.ms/headroom.js/) - MIT - https://github.com/WickyNilliams/headroom.js/blob/master/LICENSE  
+* [Unslider](http://unslider.com/) - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md
+* [jquery.event.move](http://stephband.info/jquery.event.move/) - WTFPL - http://www.wtfpl.net/txt/copying/
+* [jquery.event.swipe](http://stephband.info/jquery.event.swipe) - WTFPL - http://www.wtfpl.net/txt/copying/
