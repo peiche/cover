@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
+**1.7.11**
+- Fixed featured post slider bug.
+
 **1.7.10**
 - Added swipe support for Jetpack featured post slider.
 - Fixed alignment bug for post with paging.

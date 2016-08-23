@@ -114,6 +114,9 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
 == Changelog ==
 
+= 1.7.11 =
+* Fixed featured post slider bug.
+
 = 1.7.10 =
 * Added swipe support for Jetpack featured post slider.
 * Fixed alignment bug for post with paging.
