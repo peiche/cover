@@ -240,3 +240,8 @@ require get_template_directory() . '/inc/aesop.php';
  * Load Color Posts compatibility.
  */
 require get_template_directory() . '/inc/color-posts.php';
+
+/**
+ * Load AMP compatibility.
+ */
+require get_template_directory() . '/inc/amp.php';
