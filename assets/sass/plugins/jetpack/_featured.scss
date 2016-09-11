@@ -1,13 +1,17 @@
 .featured-list {
   @include clearfix;
+  font-size: 0;
+  line-height: normal;
   list-style: none;
   margin: 0;
+  overflow: auto;
   position: relative;
+  white-space: nowrap;
+}
 
-  &-item {
-    float: left;
-    width: 100%;
-  }
+.featured-list-item {
+	display: inline-block;
+  width: 100%;
 }
 
 .featured-arrow {
