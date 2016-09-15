@@ -97,7 +97,7 @@ jQuery(document).ready(function() {
 	 * Find children by traversing up.
 	 * Not all menus or heirarchy widgets' parents has a class indicating so.
 	 */
-	jQuery('.widget .sub-menu, .widget .children, .menu .children').addClass('hide').closest('li').addClass('menu-has-child').append('<div class="menu-toggle"><i class="fa fa-angle-down"></i></div>');
+	jQuery('.widget .sub-menu, .widget .children, .menu .children, .menu .sub-menu').addClass('hide').closest('li').addClass('menu-has-child').append('<div class="menu-toggle"><i class="fa fa-angle-down"></i></div>');
 
   // click event on submenu toggles
   jQuery('body').on('click', '.menu-toggle', function(e) {
