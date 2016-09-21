@@ -245,3 +245,8 @@ require get_template_directory() . '/inc/color-posts.php';
  * Load AMP compatibility.
  */
 require get_template_directory() . '/inc/amp.php';
+
+/**
+ * Load Algolia compatibility.
+ */
+require get_template_directory() . '/inc/algolia.php';
