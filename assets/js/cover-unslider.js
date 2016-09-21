@@ -12,7 +12,8 @@ jQuery(document).ready(function() {
     arrows: {
       prev: '<a class="featured-arrow prev"><i class="fa fa-angle-left"></i></a>',
       next: '<a class="featured-arrow next"><i class="fa fa-angle-right"></i></a>'
-    }
+    },
+    keys: false
 	});
 
 });
