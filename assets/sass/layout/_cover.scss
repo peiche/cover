@@ -47,6 +47,7 @@
 		hyphens: auto;
 		line-height: 86px;
 		margin: 0;
+		white-space: normal;
 		word-wrap: break-word;
 
 		@include max-width($width-tablet) {
