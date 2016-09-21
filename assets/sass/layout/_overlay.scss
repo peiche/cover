@@ -20,6 +20,18 @@
 		z-index: $z-index-header;
 	}
 
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $color-light-gray-alt2;
+	}
+
+	&.overlay-dark::-webkit-scrollbar-thumb {
+		background-color: $color-medium-gray;
+	}
+
 	.widget-area {
 		margin-bottom: 60px;
 		margin-top: 60px;
