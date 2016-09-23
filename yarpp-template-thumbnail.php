@@ -1,6 +1,6 @@
 <?php
 /*
-YARPP Template: Cover
+YARPP Template: Cover Grid
 Description: Related posts template built for the Cover theme. Works best with multiples of two.
 @link https://wordpress.org/themes/cover/
 Author: Paul Eiche
