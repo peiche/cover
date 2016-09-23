@@ -68,6 +68,7 @@ input.ais-search-box--input:focus {
   margin-top: 30px;
 }
 
+// scss-lint:disable SelectorFormat
 .ais-pagination--item {
   @include min-width($width-phone) {
     display: inline-block;
@@ -100,3 +101,4 @@ input.ais-search-box--input:focus {
     background-color: $color-blue; // TODO override in customizer
   }
 }
+// scss-lint:enable SelectorFormat
