@@ -2,8 +2,16 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
-**1.7.11**
-- Fixed featured post slider bug.
+**1.8**
+- Added support for [AMP](https://wordpress.org/plugins/amp/).
+- Added support for [Algolia plugin](https://community.algolia.com/wordpress/).
+- Added custom Algolia templates for Autocomplete and Search page.
+- Added support for [Yet Another Related Posts Plugin](https://wordpress.org/plugins/yet-another-related-posts-plugin/).
+- Added two custom YARPP templates: Grid and Slider.
+- Fixed post slider bug.
+- Fixed slider styles to eliminate page jump.
+- Fixed nested menu bug (thanks Mariusz).
+- Removed keyboard navigation for post slider.
 
 **1.7.10**
 - Added swipe support for Jetpack featured post slider.
