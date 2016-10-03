@@ -16,3 +16,11 @@ function cover_dequeue_styles() {
   wp_dequeue_style( 'algolia-instantsearch' );
 }
 add_action( 'wp_print_styles', 'cover_dequeue_styles', 100 );
+
+/**
+ * Set custom template path. Don't forget the trailing slash!
+ * @link https://community.algolia.com/wordpress/customize-templates.html#customize-templates-folder-name
+ */
+add_filter( 'algolia_templates_path', function() {
+  return 'template-parts/algolia/';
+} );
