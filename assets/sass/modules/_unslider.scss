@@ -1,4 +1,4 @@
-.featured-list {
+.slider-list {
   @include clearfix;
   font-size: 0;
   line-height: normal;
@@ -9,13 +9,13 @@
   white-space: nowrap;
 }
 
-.featured-list-item {
+.slider-list-item {
 	display: inline-block;
   vertical-align: top;
   width: 100%;
 }
 
-.featured-arrow {
+.slider-arrow {
 	bottom: 0;
 	color: transparent;
 	cursor: pointer;
