@@ -112,10 +112,30 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
    Disable any caching plugins that you may have activated.
 
+4. How do I make links look like buttons?
+
+  A normal like looks like this:
+  <a href="https://wordpress.org">WordPress</a>
+
+  To make the link look like a gray button, add the "button" class, like this:
+  <a href="https://wordpress.org" class="button">WordPress</a>
+
+  To make the link look like a button with the same link color as defined in the Customizer, add the optional "default" class, like this:
+  <a href="https://wordpress.org" class="button default">WordPress</a>
+
 == Changelog ==
 
-= 1.7.11 =
-* Fixed featured post slider bug.
+= 1.8 =
+* Added support for AMP plugin.
+* Added support for Algolia plugin.
+* Added custom Algolia templates for Autocomplete and Instant Search page.
+* Added support for Yet Another Related Posts Plugin.
+* Added custom YARPP templates: two column grid, three column grid, slider, full-width slider, bullet list, and comma separated.
+* Added support for Aesop Story Engine hero gallery.
+* Fixed slider bug where longer titles were being cut off.
+* Fixed slider styles to eliminate page jump.
+* Fixed nested menu bug (thanks Mariusz).
+* Removed keyboard navigation for post slider.
 
 = 1.7.10 =
 * Added swipe support for Jetpack featured post slider.
