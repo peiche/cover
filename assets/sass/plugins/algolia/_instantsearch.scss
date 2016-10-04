@@ -98,7 +98,7 @@ input.ais-search-box--input:focus {
   text-align: center;
 
   .ais-pagination--item__active & {
-    background-color: $color-blue; // TODO override in customizer
+    background-color: $color-blue;
   }
 }
 // scss-lint:enable SelectorFormat
