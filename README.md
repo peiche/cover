@@ -112,18 +112,22 @@ So you want to build the project yourself. Great! Please follow [these direction
 3. **I am receiving an error in the Customizer, what should I do?**  
    Disable any caching plugins that you may have activated.
 
-4. How do I make links look like buttons?
+4. **How do I make links look like buttons?**
 
    A normal like looks like this:
-   <pre><code>&lt;a href="http://www.google.com"&gt;Link Text&lt;/a&gt;</code></pre>
+   ```
+   <a href="https://wordpress.org">WordPress</a>
+   ```
 
-   To make the link look like a gray button, add the <code>button</code> class, like this:
+   To make the link look like a gray button, add the `button` class, like this:
+   ```
+   <a href="https://wordpress.org" class="button">WordPress</a>
+   ```
 
-   <pre><code>&lt;a href="http://www.google.com" class="button"&gt;Link Text&lt;/a&gt;</code></pre>
-
-   To make the link look like a button with the same link color as defined in the Customizer, add the optional <code>default</code> class, like this:
-
-   <pre><code>&lt;a href="http://www.google.com" class="button default"&gt;Link Text&lt;/a&gt;</code></pre>
+   To make the link look like a button with the same link color as defined in the Customizer, add the optional `default` class, like this:
+   ```
+   <a href="https://wordpress.org" class="button default">WordPress</a>
+   ```
 
 ## Contribute
 
