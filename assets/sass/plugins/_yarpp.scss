@@ -12,14 +12,10 @@
   p {
     margin-top: 0;
   }
-}
 
-.yarpp-related a {
-	font-weight: normal !important; // TODO increase specificity
-}
-
-.hentry .cover.featured-image .cover-background {
-	display: block; // FIXME overrides weird style
+  .cover-background {
+  	display: block;
+  }
 }
 
 .yarpp-grid-item {
@@ -55,8 +51,8 @@
 
 .yarpp-grid-item-3 {
   @include min-width($width-tablet) {
-    width: 31.3%;
     margin-right: 2%;
+    width: 31.3%;
 
     &:nth-child(3n+3) {
       margin-right: 0;
