@@ -2,7 +2,7 @@
 	@include rem(font-size, 20px);
   // NOTE needed to override inline style set via js
   // scss-lint:disable ImportantRule
-  position: static !important; // TODO stop the inline styles?
+  position: static !important; // FIXME remove after inline styles are removed
   // scss-lint:enable ImportantRule
 
   .autocomplete-header {
