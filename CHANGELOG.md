@@ -3,12 +3,13 @@
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
 **1.8**
-- Added support for [AMP](https://wordpress.org/plugins/amp/).
-- Added support for [Algolia plugin](https://community.algolia.com/wordpress/).
-- Added custom Algolia templates for Autocomplete and Search page.
+- Added support for [AMP plugin](https://wordpress.org/plugins/amp/).
+- Added support for [Algolia plugin](https://wordpress.org/plugins/search-by-algolia-instant-relevant-results/).
+- Added custom Algolia templates for Autocomplete and Instant Search page.
 - Added support for [Yet Another Related Posts Plugin](https://wordpress.org/plugins/yet-another-related-posts-plugin/).
-- Added two custom YARPP templates: Grid and Slider.
-- Fixed post slider bug.
+- Added custom YARPP templates: two column grid, three column grid, slider, full-width slider, bullet list, and comma separated.
+- Added support for Aesop Story Engine hero gallery.
+- Fixed slider bug where longer titles were being cut off.
 - Fixed slider styles to eliminate page jump.
 - Fixed nested menu bug (thanks Mariusz).
 - Removed keyboard navigation for post slider.
