@@ -81,6 +81,14 @@ The Infinite Scroll module already works just fine, and we're not messing with t
 
 Using the Color Posts (https://wordpress.org/plugins/color-posts/) plugin will allow Cover to match the header's color to the color of a post's featured image. Please note that this plugin requires Jetpack.
 
+= Yet Another Related Post Plugin =
+
+Cover includes six templates for use with YARPP: 2-across grid, 3-across grid, normal-width slider, full-width slider, comma-separated list, and bullet list.
+
+= Featured Video Plus =
+
+Adding a featured video will make a large play button appear on the the post's cover image. Clicking this will show the video in full screen and immediately start playing. (Some mobile devices, such as iPhones and iPads, do not support autoplay.)
+
 == Installation ==
 
 = WordPress.org =
@@ -132,6 +140,7 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 * Added support for Yet Another Related Posts Plugin.
 * Added custom YARPP templates: two column grid, three column grid, slider, full-width slider, bullet list, and comma separated.
 * Added support for Aesop Story Engine hero gallery.
+* Added support for Featured Video Plus plugin.
 * Fixed slider bug where longer titles were being cut off.
 * Fixed slider styles to eliminate page jump.
 * Fixed nested menu bug (thanks Mariusz).
@@ -319,3 +328,4 @@ All other resources are licensed as follows:
 * Unslider - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md
 * jquery.event.move - WTFPL - http://www.wtfpl.net/txt/copying/
 * jquery.event.swipe - WTFPL - http://www.wtfpl.net/txt/copying/
+* Vimeo player.js - https://github.com/vimeo/player.js/blob/master/LICENSE.md

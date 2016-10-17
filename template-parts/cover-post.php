@@ -16,6 +16,12 @@
         $img = $img_arr[0];
         $width = $img_arr[1];
         $height = $img_arr[2];
+
+        if ( function_exists('has_post_video') && has_post_video() ) {
+          $img = get_the_post_video_image_url();
+          $height = 601; // Force featured videos to have full screen image
+        }
+
         $class = ' featured-image';
         if ( $height > 1 && $height <= 600 ) {
           $class = $class . ' hero';
@@ -61,7 +67,39 @@
 
     <?php if ( $height > 600 ) { ?>
       <a href="#post-<?php the_ID(); ?>" class="cover-background-jump"><i class="fa fa-fw fa-angle-down"></i></a>
-      <a href="<?php echo $img; ?>" class="cover-background-link swipebox" target="_blank"><i class="fa fa-fw fa-expand"></i></a>
+
+      <?php if ( function_exists('has_post_video') && has_post_video() ) { ?>
+        <a href="#video-overlay" id="video-overlay-play-button" class="cover-background-link cover-background-video" data-action="toggle-overlay" data-overlay-id="video-overlay">
+          <span class="svg-icon"><?php echo file_get_contents( get_template_directory_uri() . '/dist/svg/play-circle.svg' ); ?></span>
+        </a>
+      <?php } else { ?>
+        <a href="<?php echo $img; ?>" class="cover-background-link swipebox" target="_blank"><i class="fa fa-fw fa-expand"></i></a>
+      <?php } ?>
+
     <?php } ?>
 
 </div>
+
+<?php if ( function_exists('has_post_video') && has_post_video() ) { ?>
+
+  <div id="video-overlay" class="overlay overlay-dark overlay-embed">
+    <noscript>
+      <div class="header">
+        <div class="site-nav">
+          <a class="hamburger close" href="#"><span aria-label="Toggle Overlay"></span></a>
+        </div>
+      </div>
+    </noscript>
+
+    <?php
+    $video_oembed =  wp_oembed_get( get_the_post_video_url() );
+    if ($video_oembed != '') {
+      echo $video_oembed;
+    } else {
+      echo '<video controls src="' . get_the_post_video_url() . '"><p>Your browser does not support native video playback.</p></video>"';
+    }
+    ?>
+
+  </div>
+
+<?php } ?>

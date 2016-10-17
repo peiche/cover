@@ -44,6 +44,7 @@ function cover_get_first_featured_image() {
 	$img = '';
 	while ( have_posts() ) : the_post();
 		$img = cover_get_featured_image( get_the_ID() );
+
 		if ( '' != $img ) {
 			break;
 		}
@@ -64,6 +65,11 @@ function cover_get_featured_image( $post_id ) {
 	if ( '' != get_the_post_thumbnail() ) {
 		$img_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'single-post-thumbnail' );
 		$img = $img_arr[0];
+	}
+
+	// Support for Featured Video Plus plugin.
+	if ( function_exists('has_post_video') && has_post_video() ) {
+		$img = get_the_post_video_image_url( get_the_ID() );
 	}
 
 	return $img;

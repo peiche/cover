@@ -78,6 +78,18 @@ module.exports = function(grunt) {
             src: '*',
             dest: 'dist/js',
             expand: true
+          },
+          {
+            cwd: 'assets/svg',
+            src: '*.svg',
+            dest: 'dist/svg',
+            expand: true
+          },
+          {
+            cwd: 'node_modules/@vimeo/player/dist',
+            src: 'player.min.js',
+            dest: 'dist/js',
+            expand: true
           }
         ]
       }
@@ -112,7 +124,7 @@ module.exports = function(grunt) {
 			},
 			src: [
         'assets/**/*',
-        '*.php',
+        '**/*.php',
         'inc/**/*'
 			]
 		},

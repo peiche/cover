@@ -145,6 +145,18 @@ function cover_scripts() {
 	}
 
 	/**
+	 * Load js for featured video on posts and pages
+	 */
+	// TODO only load on posts and pages that have a featured video
+	if ( function_exists('has_post_video') ) {
+
+		// TODO load https://player.vimeo.com/api/player.js only for vimeo videos
+		wp_enqueue_script( 'vimeo-player', get_template_directory_uri() . '/dist/js/player.min.js', array(), 20161013, true );
+
+		wp_enqueue_script( 'featured-video-plus-cover', get_template_directory_uri() . '/dist/js/cover-featuredvideo.js', array( 'jquery' ), '20161010', true );
+	}
+
+	/**
 	 * Use dashicons on the front end.
 	 * http://jespervanengelen.com/snippets/use-wordpress-dashicons-frontend/
 	 */

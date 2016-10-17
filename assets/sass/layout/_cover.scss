@@ -124,6 +124,20 @@
 		&-link {
 			@include rem(font-size, 25px);
 		}
+
+		&-video {
+			bottom: 0;
+			height: 25vh;
+			left: 0;
+			margin: auto;
+			opacity: .75;
+			padding: 0;
+			position: absolute;
+	    right: 0;
+			text-align: center;
+			top: 0;
+	    width: 25vw;
+		}
 	}
 
 	&.featured-image {

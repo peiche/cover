@@ -196,4 +196,47 @@
 	.header {
 		margin-top: -60px;
 	}
+
+	&-embed {
+		padding-bottom: 0;
+
+		video,
+		iframe {
+			bottom: 0;
+			display: block;
+			height: 56.25vw; // 16:9 aspect ratio
+			left: 0;
+			margin: auto;
+			max-height: calc(100vh - 60px); // eliminates scrollbar for supported browsers
+			//max-width: xxx; // TODO figure out how to limit width dynamically for 16:9 aspect ratio
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 100vw;
+		}
+	}
+}
+
+.svg-icon > svg {
+	height: 25%;
+	width: 25%;
+
+	path {
+		fill: $color-blue;
+	}
+
+	.entry-featured-image & {
+		bottom: 0;
+		display: block;
+		left: 0;
+		margin: auto;
+    position: absolute;
+    right: 0;
+		top: 0;
+	}
+
+	.cover-background-video & {
+		height: 100%;
+		width: 100%;
+	}
 }

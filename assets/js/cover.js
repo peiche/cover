@@ -5,6 +5,21 @@ var header_headroom;
 function closeOverlay() {
 	jQuery('html').removeClass('noscroll');
 	jQuery('.overlay.show').removeClass('show');
+
+	// Stop playing embedded featured video, if it exists
+	if (player) {
+		// Youtube
+		if (player.pauseVideo) {
+			player.pauseVideo();
+		}
+
+		// Vimeo and <video> tag
+		if (player.pause) {
+			player.pause();
+		}
+	}
+
+	// TODO stop self-hosted video
 }
 
 jQuery(document).ready(function() {
