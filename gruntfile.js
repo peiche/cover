@@ -125,7 +125,8 @@ module.exports = function(grunt) {
 			src: [
         'assets/**/*',
         '**/*.php',
-        'inc/**/*'
+        'inc/**/*',
+        '!node_modules/**/*'
 			]
 		},
     scsslint: {
