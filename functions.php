@@ -126,6 +126,14 @@ function cover_scripts() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'cover-skip-link-focus-fix', get_template_directory_uri() . '/dist/js/skip-link-focus-fix.js', array(), '20130115', true );
 	wp_enqueue_script( 'headroom', get_template_directory_uri() . '/dist/js/headroom.min.js', array(), '20140814', true );
+
+	/**
+	 * Load js for featured video on posts and pages
+	 */
+	if ( function_exists('has_post_video') ) {
+		wp_enqueue_script( 'vimeo-player', get_template_directory_uri() . '/dist/js/player.min.js', array(), 20161013, true );
+	}
+
 	wp_enqueue_script( 'cover-lib', get_template_directory_uri() . '/dist/js/cover.js', array( 'jquery' ), '20140210', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -142,17 +150,6 @@ function cover_scripts() {
 	if ( 'grid' == esc_attr( get_theme_mod( 'cover_list_style', 'minimal' ) ) && ! is_singular() && ! is_page() ) {
 		wp_enqueue_script( 'masonry', get_template_directory_uri() . '/dist/js/masonry.pkgd.min.js', array( 'jquery' ), '20150730', true );
 		wp_enqueue_script( 'masonry-cover', get_template_directory_uri() . '/dist/js/cover-masonry.js', array( 'jquery' ), '20150730', true );
-	}
-
-	/**
-	 * Load js for featured video on posts and pages
-	 */
-	// TODO only load on posts and pages that have a featured video
-	if ( function_exists('has_post_video') ) {
-
-		// TODO load https://player.vimeo.com/api/player.js only for vimeo videos
-		wp_enqueue_script( 'vimeo-player', get_template_directory_uri() . '/dist/js/player.min.js', array(), 20161013, true );
-
 	}
 
 	/**
