@@ -153,7 +153,6 @@ function cover_scripts() {
 		// TODO load https://player.vimeo.com/api/player.js only for vimeo videos
 		wp_enqueue_script( 'vimeo-player', get_template_directory_uri() . '/dist/js/player.min.js', array(), 20161013, true );
 
-		wp_enqueue_script( 'featured-video-plus-cover', get_template_directory_uri() . '/dist/js/cover-featuredvideo.js', array( 'jquery' ), '20161010', true );
 	}
 
 	/**
