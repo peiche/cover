@@ -103,12 +103,14 @@ function cover_posted_on() {
 		if ( 'link' == $format ) {
 			$format_class = 'links';
 		}
+		/*
 		printf( '<div class="entry-format">%1$s<a href="%2$s"><i class="dashicons dashicons-format-%3$s"></i> %4$s</a></div>',
 			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'cover' ) ),
 			esc_url( get_post_format_link( $format ) ),
 			$format_class,
 			get_post_format_string( $format )
 		);
+		*/
 	}
 
 }
