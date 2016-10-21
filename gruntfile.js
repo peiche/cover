@@ -253,8 +253,8 @@ module.exports = function(grunt) {
         },
         files: [{
           src: [
-            '*.php',
-            'inc/*.php' // no way to flag all and ignore certain directories?
+            '**/*.php',
+            '!node_modules/**'
           ],
           expand: true
         }]
