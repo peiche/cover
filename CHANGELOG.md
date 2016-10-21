@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. This projec
 - Fixed slider bug where longer titles were being cut off.
 - Fixed slider styles to eliminate page jump.
 - Fixed nested menu bug (thanks Mariusz).
+- Fixed missing post format colors for card view.
 - Removed keyboard navigation for post slider.
 
 **1.7.10**
