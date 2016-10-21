@@ -70,7 +70,7 @@
 
       <?php if ( function_exists('has_post_video') && has_post_video() ) { ?>
         <a href="#video-overlay" id="video-overlay-play-button" class="cover-background-link cover-background-video" data-action="toggle-overlay" data-overlay-id="video-overlay">
-          <span class="svg-icon"><?php echo file_get_contents( get_template_directory_uri() . '/dist/svg/play-circle.svg' ); ?></span>
+          <span class="svg-icon"><?php get_template_part( 'dist/svg/play', 'circle.svg' ); ?></span>
         </a>
       <?php } else { ?>
         <a href="<?php echo $img; ?>" class="cover-background-link swipebox" target="_blank"><i class="fa fa-fw fa-expand"></i></a>
