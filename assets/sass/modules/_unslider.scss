@@ -1,15 +1,21 @@
-.featured-list {
+.slider-list {
   @include clearfix;
+  font-size: 0;
+  line-height: normal;
+  list-style: none;
   margin: 0;
+  overflow: auto;
   position: relative;
-
-  &-item {
-    float: left;
-    width: 100%;
-  }
+  white-space: nowrap;
 }
 
-.featured-arrow {
+.slider-list-item {
+	display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+
+.slider-arrow {
 	bottom: 0;
 	color: transparent;
 	cursor: pointer;

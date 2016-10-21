@@ -27,14 +27,10 @@
   background-attachment: fixed;
   padding: 20px;
 
-  // NOTE overrides ASE height: 0 !important
-  // TODO https://github.com/hyunsupul/aesop-core/pull/311
-  // scss-lint:disable ImportantRule
   @include max-width(400px) {
-    height: 500px !important; // fallback for browsers that do not support vh units
-    height: 100vh !important;
+    height: 500px; // fallback for browsers that do not support vh units
+    height: 100vh;
   }
-  // scss-lint:enable ImportantRule
 }
 
 .aesop-stacked-caption {
@@ -42,4 +38,11 @@
   color: $text-color-aesop-caption;
   display: inline-block;
   padding: 6px 8px;
+}
+
+.aesop-hero-gallery-content {
+  @extend .cover-title;
+  font-family: $font-stack-heading;
+  top: 50%;
+  transform: translate(0, -50%);
 }

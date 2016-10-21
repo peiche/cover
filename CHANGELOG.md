@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
+**1.8**
+- Added support for [AMP plugin](https://wordpress.org/plugins/amp/).
+- Added support for [Algolia plugin](https://wordpress.org/plugins/search-by-algolia-instant-relevant-results/).
+- Added custom Algolia templates for Autocomplete and Instant Search page.
+- Added support for [Yet Another Related Posts Plugin](https://wordpress.org/plugins/yet-another-related-posts-plugin/).
+- Added custom YARPP templates: two column grid, three column grid, slider, full-width slider, bullet list, and comma separated.
+- Added support for Aesop Story Engine hero gallery.
+- Added support for [Featured Video Plus](https://wordpress.org/plugins/featured-video-plus/) plugin.
+- Fixed slider bug where longer titles were being cut off.
+- Fixed slider styles to eliminate page jump.
+- Fixed nested menu bug (thanks Mariusz).
+- Fixed missing post format colors for card view.
+- Removed keyboard navigation for post slider.
+
 **1.7.10**
 - Added swipe support for Jetpack featured post slider.
 - Fixed alignment bug for post with paging.

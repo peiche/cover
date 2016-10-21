@@ -9,8 +9,7 @@
 
 .widget {
 	@include site-width($width-narrow);
-	margin-bottom: 60px;
-	margin-top: 60px;
+	margin-bottom: 30px;
 
 	@include min-width($width-tablet) {
 		.overlay-search .widget-area &,

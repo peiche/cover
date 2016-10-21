@@ -34,5 +34,8 @@
 }
 
 .hide {
-    display: none;
+	// NOTE needed to override specificity
+	// scss-lint:disable ImportantRule
+  display: none !important;
+	// scss-lint:enable ImportantRule
 }

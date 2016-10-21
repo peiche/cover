@@ -5,14 +5,15 @@ jQuery(document).ready(function() {
    */
 
   // init unslider
-  var unslider = jQuery('.featured-container').unslider({
+  var unslider = jQuery('.slider-container').unslider({
 		infinite: true,
 		autoplay: false,
     animateHeight: true,
     arrows: {
-      prev: '<a class="featured-arrow prev"><i class="fa fa-angle-left"></i></a>',
-      next: '<a class="featured-arrow next"><i class="fa fa-angle-right"></i></a>'
-    }
+      prev: '<a class="slider-arrow prev"><i class="fa fa-angle-left"></i></a>',
+      next: '<a class="slider-arrow next"><i class="fa fa-angle-right"></i></a>'
+    },
+    keys: false
 	});
 
 });

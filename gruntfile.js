@@ -78,6 +78,18 @@ module.exports = function(grunt) {
             src: '*',
             dest: 'dist/js',
             expand: true
+          },
+          {
+            cwd: 'assets/svg',
+            src: '*',
+            dest: 'dist/svg',
+            expand: true
+          },
+          {
+            cwd: 'node_modules/@vimeo/player/dist',
+            src: 'player.min.js',
+            dest: 'dist/js',
+            expand: true
           }
         ]
       }
@@ -112,8 +124,9 @@ module.exports = function(grunt) {
 			},
 			src: [
         'assets/**/*',
-        '*.php',
-        'inc/**/*'
+        '**/*.php',
+        'inc/**/*',
+        '!node_modules/**/*'
 			]
 		},
     scsslint: {
@@ -240,8 +253,8 @@ module.exports = function(grunt) {
         },
         files: [{
           src: [
-            '*.php',
-            'inc/*.php' // no way to flag all and ignore certain directories?
+            '**/*.php',
+            '!node_modules/**'
           ],
           expand: true
         }]

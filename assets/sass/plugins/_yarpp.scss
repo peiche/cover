@@ -1,0 +1,87 @@
+.yarpp-header {
+  @include site-width;
+  border-bottom: 1px solid $color-light-gray-alt4;
+  padding-bottom: 10px;
+}
+
+.yarpp-container {
+  @include clearfix;
+  @include site-width;
+  list-style: none;
+
+  p {
+    margin-top: 0;
+  }
+
+  .cover-background {
+  	display: block;
+  }
+}
+
+.yarpp-grid-item {
+  background-color: $color-light-gray-alt4;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 100px 20px 10px;
+  position: relative;
+  transition: opacity 200ms;
+
+  @include min-width($width-tablet) {
+    float: left;
+  }
+
+  &.has-cover {
+    background-color: $color-dark-gray-alt;
+  }
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.yarpp-grid-item-2 {
+  @include min-width($width-tablet) {
+    width: 48%;
+
+    &:nth-child(odd) {
+      margin-right: 4%;
+    }
+  }
+}
+
+.yarpp-grid-item-3 {
+  @include min-width($width-tablet) {
+    margin-right: 2%;
+    width: 31.3%;
+
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
+  }
+}
+
+.yarpp-cover-image {
+  background-position: center;
+  background-size: cover;
+  border-radius: 4px;
+  bottom: 0;
+  left: 0;
+  opacity: .6;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.yarpp-title {
+  color: $color-dark-gray-alt;
+  display: block;
+  font-weight: normal;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  .has-cover & {
+    color: $color-white;
+  }
+}

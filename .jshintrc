@@ -32,7 +32,9 @@
         "inject",
         "module", // GruntFile.js
         "Headroom",
-        "console"
+        "console",
+        "YT",   // Youtube iframe API
+        "Vimeo" // Vimeo API
     ],
     "quotmark": true,
     "trailing": true,

@@ -74,6 +74,14 @@ The Infinite Scroll module already works just fine, and we're not messing with t
 
 Using the [Color Posts](https://wordpress.org/plugins/color-posts/) plugin will allow Cover to match the header's color to the color of a post's featured image. Please note that this plugin requires Jetpack.
 
+#### Yet Another Related Post Plugin
+
+Cover includes six templates for use with YARPP: 2-across grid, 3-across grid, normal-width slider, full-width slider, comma-separated list, and bullet list.
+
+#### Featured Video Plus
+
+Adding a featured video will make a large play button appear on the the post's cover image. Clicking this will show the video in full screen and immediately start playing. (Some mobile devices, such as iPhones and iPads, do not support autoplay.)
+
 ### Built with Sass
 
 If you’re a developer and want to play around with Cover, the stylesheet is built using Sass. To that end, in the project you’ll find the `/sass` folder which holds all the components required to compile the stylesheet, including the bundled Font Awesome styles. (Similarly, the JavaScript used in Cover is compressed, but the uncompressed code is provided in the `/js/src` directory.)
@@ -112,6 +120,23 @@ So you want to build the project yourself. Great! Please follow [these direction
 3. **I am receiving an error in the Customizer, what should I do?**  
    Disable any caching plugins that you may have activated.
 
+4. **How do I make links look like buttons?**
+
+   A normal like looks like this:
+   ```
+   <a href="https://wordpress.org">WordPress</a>
+   ```
+
+   To make the link look like a gray button, add the `button` class, like this:
+   ```
+   <a href="https://wordpress.org" class="button">WordPress</a>
+   ```
+
+   To make the link look like a button with the same link color as defined in the Customizer, add the optional `default` class, like this:
+   ```
+   <a href="https://wordpress.org" class="button default">WordPress</a>
+   ```
+
 ## Contribute
 
 If you see something wrong, or you want to improve on what I've got here, feel free to submit an issue or create a pull request.
@@ -130,3 +155,4 @@ All other resources are licensed as follows:
 * [Unslider](http://unslider.com/) - WTFPL - https://github.com/idiot/unslider/blob/master/readme.md
 * [jquery.event.move](http://stephband.info/jquery.event.move/) - WTFPL - http://www.wtfpl.net/txt/copying/
 * [jquery.event.swipe](http://stephband.info/jquery.event.swipe) - WTFPL - http://www.wtfpl.net/txt/copying/
+* [Vimeo player.js](https://github.com/vimeo/player.js) - https://github.com/vimeo/player.js/blob/master/LICENSE.md

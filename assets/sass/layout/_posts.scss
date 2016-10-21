@@ -112,6 +112,18 @@
     padding: 30px 0;
     width: 100%;
 
+    @each $colors in $format-colors {
+      $format: nth($colors, 1);
+      $color: nth($colors, 2);
+
+      &.format-#{$format},
+      &.format-#{$format},
+      &.format-#{$format} {
+        @include post-format-color-fix($color-white);
+        background-color: $color;
+      }
+    }
+
     &.sticky {
       background-color: $color-dark-gray-alt;
     }

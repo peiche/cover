@@ -126,6 +126,14 @@ function cover_scripts() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'cover-skip-link-focus-fix', get_template_directory_uri() . '/dist/js/skip-link-focus-fix.js', array(), '20130115', true );
 	wp_enqueue_script( 'headroom', get_template_directory_uri() . '/dist/js/headroom.min.js', array(), '20140814', true );
+
+	/**
+	 * Load js for featured video on posts and pages
+	 */
+	if ( function_exists('has_post_video') ) {
+		wp_enqueue_script( 'vimeo-player', get_template_directory_uri() . '/dist/js/player.min.js', array(), 20161013, true );
+	}
+
 	wp_enqueue_script( 'cover-lib', get_template_directory_uri() . '/dist/js/cover.js', array( 'jquery' ), '20140210', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -240,3 +248,13 @@ require get_template_directory() . '/inc/aesop.php';
  * Load Color Posts compatibility.
  */
 require get_template_directory() . '/inc/color-posts.php';
+
+/**
+ * Load AMP compatibility.
+ */
+require get_template_directory() . '/inc/amp.php';
+
+/**
+ * Load Algolia compatibility.
+ */
+require get_template_directory() . '/inc/algolia.php';

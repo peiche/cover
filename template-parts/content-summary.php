@@ -16,7 +16,10 @@
     <?php } ?>
 
 		<?php if ( ! is_sticky() && '' != $img && 1 == esc_attr( get_theme_mod( 'cover_show_featured_image', 0 ) ) ) { ?>
-			<div class="entry-featured-image" style="background-image: url('<?php echo $img; ?>');">
+      <div class="entry-featured-image" style="background-image: url('<?php echo $img; ?>');">
+        <?php if ( function_exists('has_post_video') && has_post_video() ) { ?>
+          <span class="svg-icon"><?php get_template_part( 'dist/svg/play', 'circle.svg' ); ?></span>
+        <?php } ?>
 				<a href="<?php the_permalink(); ?>"></a>
 			</div>
 		<?php } ?>
