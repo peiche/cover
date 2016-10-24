@@ -91,6 +91,15 @@
 		transition: opacity 200ms;
 		width: 100%;
 
+		video,
+		embed {
+			min-height: 100%;
+			min-width: 100%;
+			// TODO fallbacks for object-* styles
+			object-fit: cover;
+			object-position: center center;
+		}
+
 		&.darken {
 			opacity: .1;
 		}
