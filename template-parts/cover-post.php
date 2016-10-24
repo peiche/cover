@@ -96,7 +96,7 @@
     if ($video_oembed != '') {
       echo $video_oembed;
     } else {
-      echo '<video controls src="' . get_the_post_video_url() . '"><p>Your browser does not support native video playback.</p></video>"';
+      echo '<video controls src="' . get_the_post_video_url() . '"><p>Your browser does not support native video playback.</p></video>';
     }
     ?>
 
