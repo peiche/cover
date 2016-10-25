@@ -93,11 +93,18 @@
 
 		video,
 		embed {
+			bottom: auto;
+			display: block;
+			height: auto;
+			left: 50%;
+			max-width: none;
 			min-height: 100%;
 			min-width: 100%;
-			// TODO fallbacks for object-* styles
-			object-fit: cover;
-			object-position: center center;
+			position: absolute;
+			right: auto;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			width: auto;
 		}
 
 		&.darken {
