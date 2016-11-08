@@ -84,7 +84,7 @@ Adding a featured video will make a large play button appear on the the post's c
 
 ### Built with Sass
 
-If you’re a developer and want to play around with Cover, the stylesheet is built using Sass. To that end, in the project you’ll find the `/sass` folder which holds all the components required to compile the stylesheet, including the bundled Font Awesome styles. (Similarly, the JavaScript used in Cover is compressed, but the uncompressed code is provided in the `/js/src` directory.)
+If you’re a developer and want to play around with Cover, the stylesheet is built using Sass. To that end, in the project you’ll find the `/assets/sass` folder which holds all the components required to compile the stylesheet, including the bundled Font Awesome styles. (Similarly, the JavaScript used in Cover is compressed, but the uncompressed code is provided in the `/assets/js` directory.)
 
 ## Installation
 
