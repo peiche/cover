@@ -1,7 +1,7 @@
 === Cover ===
 
 Contributors: peiche
-Tags: light, white, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, infinite-scroll, sticky-post
+Tags: light, white, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, infinite-scroll, sticky-post, threaded-comments, translation-ready
 
 Requires at least: 4.1
 Tested up to: 4.5
