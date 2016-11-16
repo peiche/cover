@@ -18,7 +18,6 @@
         $height = $img_arr[2];
 
         if ( function_exists('has_post_video') && has_post_video() ) {
-          $img = get_the_post_video_image_url();
           $height = 601; // Force featured videos to have full screen image
         }
 
@@ -40,7 +39,7 @@
       if ($video_oembed != '') {
         echo $video_oembed;
       } else {
-        echo '<video muted autoplay loop src="' . get_the_post_video_url() . '"></video>';
+        echo '<video muted autoplay loop src="' . get_the_post_video_url() . '" poster="' . $img . '"></video>';
       }
     }
     ?>
