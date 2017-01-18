@@ -7,4 +7,7 @@
  * @package Cover
  */
 
+/**
+ * YARPP list template.
+ */
 require get_template_directory() . '/template-parts/yarpp-template-list.php';

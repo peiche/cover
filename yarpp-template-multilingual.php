@@ -7,4 +7,7 @@
  * @package Cover
  */
 
+/**
+ * YARPP slider template.
+ */
 require get_template_directory() . '/template-parts/yarpp-template-slider.php';

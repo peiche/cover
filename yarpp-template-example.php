@@ -7,4 +7,7 @@
  * @package Cover
  */
 
+/**
+ * YARPP grid (2 across) template.
+ */
 require get_template_directory() . '/template-parts/yarpp-template-grid-2.php';
