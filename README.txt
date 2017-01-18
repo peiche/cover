@@ -133,6 +133,12 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
 == Changelog ==
 
+= 1.8.1 =
+* Added background video for Video post formats and Featured Video Plus.
+* Fixed Featured Video Plus compatibility.
+* Fixed headings color inside Aesop Story Engine containers.
+* Fixed custom taxonomy archive titles.
+
 = 1.8 =
 * Added support for AMP plugin.
 * Added support for Algolia plugin.
