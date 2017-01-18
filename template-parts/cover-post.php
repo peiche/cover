@@ -79,7 +79,7 @@
     <?php if ( $height > 600 ) { ?>
       <a href="#post-<?php the_ID(); ?>" class="cover-background-jump"><i class="fa fa-fw fa-angle-down"></i></a>
 
-      <?php if ( !has_post_format( 'video' ) && function_exists( 'has_post_video' ) && has_post_video() ) { ?>
+      <?php if ( ! has_post_format( 'video' ) && function_exists( 'has_post_video' ) && has_post_video() ) { ?>
         <a href="#video-overlay" id="video-overlay-play-button" class="cover-background-link cover-background-video" data-action="toggle-overlay" data-overlay-id="video-overlay">
           <span class="svg-icon"><?php get_template_part( 'dist/svg/play', 'circle.svg' ); ?></span>
         </a>
@@ -91,7 +91,7 @@
 
 </div>
 
-<?php if ( !has_post_format( 'video' ) && function_exists( 'has_post_video' ) && has_post_video() ) { ?>
+<?php if ( ! has_post_format( 'video' ) && function_exists( 'has_post_video' ) && has_post_video() ) { ?>
 
   <div id="video-overlay" class="overlay overlay-dark overlay-embed">
     <noscript>
@@ -103,7 +103,7 @@
     </noscript>
 
     <?php
-    $video_oembed =  wp_oembed_get( get_the_post_video_url() );
+    $video_oembed = wp_oembed_get( get_the_post_video_url() );
     if ( '' != $video_oembed ) {
       echo $video_oembed;
     } else {
