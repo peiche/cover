@@ -17,8 +17,8 @@
         $width = $img_arr[1];
         $height = $img_arr[2];
 
-        if ( function_exists('has_post_video') && has_post_video() ) {
-          $height = 601; // Force featured videos to have full screen image
+        if ( function_exists( 'has_post_video' ) && has_post_video() ) {
+          $height = 601; // Force featured videos to have full screen image.
         }
 
         $class = ' featured-image';
@@ -34,9 +34,9 @@
 
   <div class="cover-background<?php if ( '' != $class ) { ?>" style="background-image: url('<?php echo $img; ?>');<?php } ?>" role="img">
     <?php
-    if ( has_post_format( 'video' ) && function_exists('has_post_video') && has_post_video() ) {
-      $video_oembed =  wp_oembed_get( get_the_post_video_url() );
-      if ($video_oembed != '') {
+    if ( has_post_format( 'video' ) && function_exists( 'has_post_video' ) && has_post_video() ) {
+      $video_oembed = wp_oembed_get( get_the_post_video_url() );
+      if ( '' != $video_oembed ) {
         echo $video_oembed;
       } else {
         echo '<video muted autoplay loop src="' . get_the_post_video_url() . '" poster="' . $img . '"></video>';
@@ -79,7 +79,7 @@
     <?php if ( $height > 600 ) { ?>
       <a href="#post-<?php the_ID(); ?>" class="cover-background-jump"><i class="fa fa-fw fa-angle-down"></i></a>
 
-      <?php if ( !has_post_format( 'video' ) && function_exists('has_post_video') && has_post_video() ) { ?>
+      <?php if ( !has_post_format( 'video' ) && function_exists( 'has_post_video' ) && has_post_video() ) { ?>
         <a href="#video-overlay" id="video-overlay-play-button" class="cover-background-link cover-background-video" data-action="toggle-overlay" data-overlay-id="video-overlay">
           <span class="svg-icon"><?php get_template_part( 'dist/svg/play', 'circle.svg' ); ?></span>
         </a>
@@ -91,7 +91,7 @@
 
 </div>
 
-<?php if ( !has_post_format( 'video' ) && function_exists('has_post_video') && has_post_video() ) { ?>
+<?php if ( !has_post_format( 'video' ) && function_exists( 'has_post_video' ) && has_post_video() ) { ?>
 
   <div id="video-overlay" class="overlay overlay-dark overlay-embed">
     <noscript>
@@ -104,7 +104,7 @@
 
     <?php
     $video_oembed =  wp_oembed_get( get_the_post_video_url() );
-    if ($video_oembed != '') {
+    if ( '' != $video_oembed ) {
       echo $video_oembed;
     } else {
       echo '<video controls src="' . get_the_post_video_url() . '"><p>Your browser does not support native video playback.</p></video>';

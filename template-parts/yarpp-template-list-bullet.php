@@ -3,9 +3,10 @@
  * YARPP Template: Cover Bullet List
  *
  * Description: Related posts template built for the Cover theme. Displays related posts as a bullet point list.
- * @link https://wordpress.org/themes/cover/
- * Author: Paul Eiche
+ *
+ * @package Cover
  */
+
 ?>
 
 <h2 class="yarpp-header">Related</h2>
@@ -18,7 +19,7 @@
 		endwhile;
 
 	echo '<ul>';
-	echo implode( "\n", $posts_array ); // print out a list of the related items
+	echo implode( "\n", $posts_array ); // Print out a list of the related items.
 	echo '</ul>';
 
 	else : ?>

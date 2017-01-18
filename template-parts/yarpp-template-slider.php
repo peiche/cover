@@ -3,9 +3,10 @@
  * YARPP Template: Cover Slider
  *
  * Description: Related posts slider built for the Cover theme.
- * @link https://wordpress.org/themes/cover/
- * Author: Paul Eiche
+ *
+ * @package Cover
  */
+
 ?>
 
 <?php if ( have_posts() ) : ?>

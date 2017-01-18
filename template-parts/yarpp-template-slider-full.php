@@ -3,9 +3,10 @@
  * YARPP Template: Cover Full-Width Slider
  *
  * Description: Related posts full-width slider built for the Cover theme.
- * @link https://wordpress.org/themes/cover/
- * Author: Paul Eiche
+ *
+ * @package Cover
  */
+
 ?>
 
 <?php if ( have_posts() ) : ?>

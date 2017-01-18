@@ -3,9 +3,11 @@
  * YARPP Template: Cover Grid (2 across)
  *
  * Description: Related posts template built for the Cover theme. Works best with multiples of two.
- * @link https://wordpress.org/themes/cover/
- * Author: Paul Eiche
- */ ?>
+ *
+ * @package Cover
+ */
+
+?>
 
 <?php if ( have_posts() ) : ?>
 
@@ -21,7 +23,7 @@
     ?>
     <li class="yarpp-grid-item yarpp-grid-item-2<?php if ( '' != $img ) { ?> has-cover<?php } ?>">
         <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-          <span class="yarpp-cover-image<?php if ( $img != '' ) { ?>" style="background-image: url('<?php echo $img ?>');<?php } ?>"></span>
+          <span class="yarpp-cover-image<?php if ( '' != $img ) { ?>" style="background-image: url('<?php echo $img ?>');<?php } ?>"></span>
           <span class="yarpp-title"><?php the_title_attribute(); ?></span>
         </a>
     </li>

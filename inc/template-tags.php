@@ -75,7 +75,7 @@ function cover_posted_on() {
 		 * https://codex.wordpress.org/Function_Reference/human_time_diff
 		 */
 		$time_string = sprintf(
-			// Translators: "time ago" relative date
+			// Translators: "time ago" relative date.
 			_x( '%s ago', '%s = human-readable time difference', 'cover' ),
 			human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) )
 		);
@@ -114,7 +114,8 @@ endif;
  * Returns true if a blog has more than 1 category.
  */
 function cover_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+	$all_the_cool_cats = get_transient( 'all_the_cool_cats' );
+	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'hide_empty' => 1,
