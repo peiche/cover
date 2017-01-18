@@ -91,6 +91,22 @@
 		transition: opacity 200ms;
 		width: 100%;
 
+		video,
+		embed {
+			bottom: auto;
+			display: block;
+			height: auto;
+			left: 50%;
+			max-width: none;
+			min-height: 100%;
+			min-width: 100%;
+			position: absolute;
+			right: auto;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			width: auto;
+		}
+
 		&.darken {
 			opacity: .1;
 		}

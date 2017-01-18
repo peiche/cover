@@ -75,6 +75,7 @@ function cover_posted_on() {
 		 * https://codex.wordpress.org/Function_Reference/human_time_diff
 		 */
 		$time_string = sprintf(
+			// Translators: "time ago" relative date.
 			_x( '%s ago', '%s = human-readable time difference', 'cover' ),
 			human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) )
 		);
@@ -82,6 +83,7 @@ function cover_posted_on() {
 	}
 
 	printf(
+		// Translators: the link, avatar image, and name of the author.
 		__( '<span class="posted-on">%1$s%2$s %3$s</span>', 'cover' ),
 		sprintf(
 			'<a class="author vcard url fn n" href="%1$s">%2$s <span class="name">%3$s</span></a>',
@@ -103,14 +105,6 @@ function cover_posted_on() {
 		if ( 'link' == $format ) {
 			$format_class = 'links';
 		}
-		/*
-		printf( '<div class="entry-format">%1$s<a href="%2$s"><i class="dashicons dashicons-format-%3$s"></i> %4$s</a></div>',
-			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'cover' ) ),
-			esc_url( get_post_format_link( $format ) ),
-			$format_class,
-			get_post_format_string( $format )
-		);
-		*/
 	}
 
 }
@@ -120,7 +114,8 @@ endif;
  * Returns true if a blog has more than 1 category.
  */
 function cover_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+	$all_the_cool_cats = get_transient( 'all_the_cool_cats' );
+	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'hide_empty' => 1,

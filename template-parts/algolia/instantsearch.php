@@ -1,3 +1,12 @@
+<?php
+/**
+ * The template for Algolia instant search
+ *
+ * @package Cover
+ */
+
+?>
+
 <?php get_header(); ?>
 
 	<div id="ais-wrapper">

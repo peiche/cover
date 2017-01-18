@@ -22,8 +22,14 @@
     background-color: $threads-content-background;
   }
 
-  .threads-content::before {
-    border-right-color: $threads-content-background;
+  .threads-content {
+    &::before {
+      border-right-color: $threads-content-background;
+    }
+
+    .threads-post-notice {
+      display: none;
+    }
   }
 
   .threads-intersects {

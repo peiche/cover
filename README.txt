@@ -1,7 +1,7 @@
 === Cover ===
 
 Contributors: peiche
-Tags: light, white, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, infinite-scroll, sticky-post
+Tags: light, white, one-column, fluid-layout, responsive-layout, custom-menu, featured-images, infinite-scroll, sticky-post, threaded-comments, translation-ready
 
 Requires at least: 4.1
 Tested up to: 4.5
@@ -132,6 +132,12 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
   <a href="https://wordpress.org" class="button default">WordPress</a>
 
 == Changelog ==
+
+= 1.8.1 =
+* Added background video for Video post formats and Featured Video Plus.
+* Fixed Featured Video Plus compatibility.
+* Fixed headings color inside Aesop Story Engine containers.
+* Fixed custom taxonomy archive titles.
 
 = 1.8 =
 * Added support for AMP plugin.

@@ -17,6 +17,7 @@
 
       <div class="site-info">
 				<div class="site-credits">
+					<?php // Translators: placeholders are links to WordPress.org and the theme. ?>
           <?php printf( __( 'Powered by %1$s and %2$s', 'cover' ), '<a href="http://www.wordpress.org/">WordPress</a>', '<a href="http://eichefam.net/projects/cover/" title="Cover theme by Paul Eiche">Cover</a>' ); ?>
         </div>
 

@@ -60,6 +60,9 @@
 			elseif ( is_search() ) :
 				_e( 'Results for &quot;', 'cover' ) . the_search_query() . _e( '&quot;', 'cover' );
 
+			elseif ( is_tax() ) :
+				single_term_title();
+
 			else :
 				_e( 'Archives', 'cover' );
 

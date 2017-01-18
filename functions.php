@@ -130,7 +130,7 @@ function cover_scripts() {
 	/**
 	 * Load js for featured video on posts and pages
 	 */
-	if ( function_exists('has_post_video') ) {
+	if ( function_exists( 'has_post_video' ) ) {
 		wp_enqueue_script( 'vimeo-player', get_template_directory_uri() . '/dist/js/player.min.js', array(), 20161013, true );
 	}
 
