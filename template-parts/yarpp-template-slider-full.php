@@ -1,17 +1,18 @@
 <?php
-/*
-YARPP Template: Cover Full-Width Slider
-Description: Related posts full-width slider built for the Cover theme.
-@link https://wordpress.org/themes/cover/
-Author: Paul Eiche
-*/
+/**
+ * YARPP Template: Cover Full-Width Slider
+ *
+ * Description: Related posts full-width slider built for the Cover theme.
+ * @link https://wordpress.org/themes/cover/
+ * Author: Paul Eiche
+ */
 ?>
 
-<?php if (have_posts()):?>
+<?php if ( have_posts() ) : ?>
 <div class="slider-container">
 	<ul class="slider-list">
 
-		<?php while (have_posts()) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php $img = cover_get_featured_image( get_the_ID() ); ?>
 

@@ -68,7 +68,7 @@ function cover_get_featured_image( $post_id ) {
 	}
 
 	// Support for Featured Video Plus plugin.
-	if ( function_exists('has_post_video') && has_post_video() ) {
+	if ( function_exists( 'has_post_video' ) && has_post_video() ) {
 		$img = get_the_post_video_image_url( get_the_ID() );
 	}
 

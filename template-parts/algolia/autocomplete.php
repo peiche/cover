@@ -1,3 +1,12 @@
+<?php
+/**
+ * The template for Algolia autocomplete
+ *
+ * @package Cover
+ */
+
+?>
+
 <script type="text/html" id="tmpl-autocomplete-header">
 	<div class="autocomplete-header">
 		<div class="autocomplete-header-title">{{ data.label }}</div>

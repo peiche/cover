@@ -7,6 +7,9 @@
 
 add_action( 'amp_post_template_css', 'cover_amp_post_template_css' );
 
+/**
+ * Set header color.
+ */
 function cover_amp_post_template_css( $amp_template ) {
     ?>
     .amp-wp-header {
