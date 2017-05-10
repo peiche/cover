@@ -133,6 +133,9 @@ You can download the latest from GitHub. Follow these steps to activate Cover:
 
 == Changelog ==
 
+= 1.8.2 =
+* Updated Algolia plugin templates for v2.
+
 = 1.8.1 =
 * Added background video for Video post formats and Featured Video Plus.
 * Fixed Featured Video Plus compatibility.
